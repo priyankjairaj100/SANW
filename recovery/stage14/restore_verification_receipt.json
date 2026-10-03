@@ -1,0 +1,17 @@
+{
+  "status": "verified",
+  "archive_count": 24,
+  "prediction_pairs": 1080,
+  "payload_files": 2160,
+  "raw_bytes": 188485090,
+  "archive_bytes": 189700260,
+  "existing_files_verified": 0,
+  "files_restored": 2160,
+  "archive_only": false,
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "test": "Complete restore into initially empty directory, then independent destination verification",
+  "all_2160_payload_files_verified": true,
+  "download_alias_names_supported": true,
+  "same_raw_payload_before_after_transport_repack": true,
+  "raw_payload_digest": "90fef9311aed0f0abff06f635f40ab7516b153bb7bf1b6bcb258af31f996c42b"
+}

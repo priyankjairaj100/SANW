@@ -1,0 +1,46 @@
+{
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20261004,
+  "dataset_hashes": {
+    "coco_karpathy": {
+      "features_sha256": "98648b2797dea805d8b54e7fd0606be7ebb89c4e6d12cefc8d59b6f7434818c8",
+      "manifest_sha256": "fca7a265ea104e06acd8b7dc074664ca898ac9c0fb207c8805e097c0f29801dd",
+      "metadata_sha256": "2e521c6c35a9023690c90b21cc0a4092135a989e1e6d87ac11ec370458fd18b0"
+    },
+    "e_vil_test1000": {
+      "features_sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+      "manifest_sha256": "8de6f0b0e9d0d497f79897074a16bc31337013cbf0b00535446f2f8674d18248",
+      "metadata_sha256": "ea49c9c5fb7925ef26571b3cbe7aa4fbe30445da716f7c29355b5ab02fd5fc4f"
+    },
+    "sugarcrepe": {
+      "features_sha256": "d5adf64ab19568de44a948ab023629cfa031e5a47f5c6ef3e6da7d23dd64b216",
+      "manifest_sha256": "5f05226c5245301b6c095084cf21326ac4c7d1332bd93663ef5309a36dce1228",
+      "metadata_sha256": "eb25e5925da84200c4c31baeb1378113a119b022b04fc055a5bf0770914afc7f"
+    },
+    "sugarcrepe_pp": {
+      "features_sha256": "68c2d484c3f129a758e51a7589aa91ff53892fdd559f8c09306c40f5f26428ca",
+      "manifest_sha256": "647a38462268209583df513fc7dab7a4ad787ca976b6d9b4e4a6a9a6f9178466",
+      "metadata_sha256": "66a5700bbb78ca4e673fb318378339e429d5906d5e7904594b5481aa86ba6907"
+    },
+    "visual_entailment": {
+      "features_sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+      "metadata_sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7"
+    }
+  },
+  "evaluation_indices": {
+    "results/review_followup/evaluation/selected_index.json": "c51850c31383305057c40d09b52b5a7f794e51056df54ba9607018d7bf416052",
+    "results/review_followup/evaluation/terminal_index.json": "2629609c886a2344981facd409dfc5555a822a27f350bbb6020e1cae75f0a048",
+    "results/review_followup/evaluation/trajectory_index.json": "8fb92d491d7263d312eed79de54ca8e7ec5894e3a990161e5dfb026c09dddd51"
+  },
+  "primary_family": 18,
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "schema_version": 1,
+  "source_hashes": {
+    "scripts/analyze_review_followup.py": "063b1667b814b981c1cd91d188841ec7e400fdb046c1306b815833a8da92ee2e",
+    "scripts/analyze_study.py": "8db66e76f5d9ab9affa959822bfa427d6da9d3381d6f6af3faeda2142ee94c84",
+    "scripts/evaluate_review_followup.py": "9b5a846486aa348efc43e54fed585cb6fd6d3d8547583c56db6e11bca5f1a349",
+    "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+    "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+  }
+}

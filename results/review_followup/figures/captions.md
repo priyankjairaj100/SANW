@@ -1,0 +1,5 @@
+# Follow-up figure captions
+
+**primary_effects.pdf and primary_effects_paper.pdf.** Supported promotion minus each comparator on full e-ViL test-pool Flickr source-caption retrieval. All 18 planned epoch-10 contrasts are shown at matched learning rates. Points average three training seeds. Randomized comparators first average three fixed assignment draws within each seed. Bars are 99.722% Bonferroni intervals from 10,000 paired image-cluster bootstrap samples. Text-to-image resampling keeps all five captions of an image together. Intervals condition on the fitted seeds and assignment draws. The zero line denotes equal Recall@1.
+
+**fixed_trajectories.pdf.** Descriptive Recall@1 at every planned learning rate and epoch for the four policy families. Both retrieval directions use the full 1,000-image / 5,000-caption pool. Randomized policies average assignment draws within seed before averaging seeds. Lines connect observed checkpoints and do not imply intermediate measurements. No extra confidence intervals or tests are introduced.

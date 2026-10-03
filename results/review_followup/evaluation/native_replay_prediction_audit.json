@@ -1,0 +1,233 @@
+{
+  "bitwise_equal_arrays": 259,
+  "comparisons": [
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737",
+      "followup_state": "frozen",
+      "original_predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737",
+      "original_state": "frozen"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb",
+      "followup_state": "frozen",
+      "original_predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb",
+      "original_state": "frozen"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c",
+      "followup_state": "frozen",
+      "original_predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c",
+      "original_state": "frozen"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67",
+      "followup_state": "frozen",
+      "original_predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77",
+      "original_state": "frozen"
+    },
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "9516089f58bfe71cd9055b27f0456af4e0ee15d73a92aae1c300cc50a64c6cb1",
+      "followup_state": "source__lr_0.0001__seed_17__epoch_01",
+      "original_predictions_sha256": "9516089f58bfe71cd9055b27f0456af4e0ee15d73a92aae1c300cc50a64c6cb1",
+      "original_state": "clip_seed_17"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "c5447d76d0fd1b0bcc9f4254bcf4bf6a30082811a0ac8f4ae3e155d972cfe311",
+      "followup_state": "source__lr_0.0001__seed_17__epoch_01",
+      "original_predictions_sha256": "c5447d76d0fd1b0bcc9f4254bcf4bf6a30082811a0ac8f4ae3e155d972cfe311",
+      "original_state": "clip_seed_17"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "6e125616255e868db4a8862f2debf056771c92c59e0a34ed17bb1e861cd042f5",
+      "followup_state": "source__lr_0.0001__seed_17__epoch_01",
+      "original_predictions_sha256": "6e125616255e868db4a8862f2debf056771c92c59e0a34ed17bb1e861cd042f5",
+      "original_state": "clip_seed_17"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "bd7b70dfa727e84e6a37088a67bd8a44e7f51b29c1730ea02dbceb627dac33c7",
+      "followup_state": "source__lr_0.0001__seed_17__epoch_01",
+      "original_predictions_sha256": "03dbe73a7669d87ba27194c277db95e581b24c045fc0c55c97fcdde8edb49d3d",
+      "original_state": "clip_seed_17"
+    },
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "7478523431ca5912fd05fdf17f94ce66a06881fc95817d1261389ca9bdf52ecd",
+      "followup_state": "source__lr_0.0001__seed_29__epoch_01",
+      "original_predictions_sha256": "7478523431ca5912fd05fdf17f94ce66a06881fc95817d1261389ca9bdf52ecd",
+      "original_state": "clip_seed_29"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "62903e1189d184653f33b9ae79c9881e9983e21c3a8201f3d479501aa5f210d5",
+      "followup_state": "source__lr_0.0001__seed_29__epoch_01",
+      "original_predictions_sha256": "62903e1189d184653f33b9ae79c9881e9983e21c3a8201f3d479501aa5f210d5",
+      "original_state": "clip_seed_29"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "572c78733cc696cdf668f8a5b7d33bfd4c57e7ea1cd04377ca9820d859c1664d",
+      "followup_state": "source__lr_0.0001__seed_29__epoch_01",
+      "original_predictions_sha256": "572c78733cc696cdf668f8a5b7d33bfd4c57e7ea1cd04377ca9820d859c1664d",
+      "original_state": "clip_seed_29"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "0d0ea5ea9ef8348ef9010d310722c5ac15ba2c64b76601cd7191ee895a8fad9e",
+      "followup_state": "source__lr_0.0001__seed_29__epoch_01",
+      "original_predictions_sha256": "c791dd1b1b540de1faa23a88735eaff1c147376ffd65d2a73e7ed07d3729a14e",
+      "original_state": "clip_seed_29"
+    },
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "c1e210f2069039d6116b98b9da443bb41beac149bffe88015f1aeee35176b26d",
+      "followup_state": "source__lr_0.0001__seed_43__epoch_03",
+      "original_predictions_sha256": "c1e210f2069039d6116b98b9da443bb41beac149bffe88015f1aeee35176b26d",
+      "original_state": "clip_seed_43"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "809c5a3ae2adaf3a9f085170b25e0ca8b79fc9546f86def394fd4ff507d037f6",
+      "followup_state": "source__lr_0.0001__seed_43__epoch_03",
+      "original_predictions_sha256": "809c5a3ae2adaf3a9f085170b25e0ca8b79fc9546f86def394fd4ff507d037f6",
+      "original_state": "clip_seed_43"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "b8adff2b41ff75bf1f260fce852a851d359694a86a3034d45523ef9e1993e518",
+      "followup_state": "source__lr_0.0001__seed_43__epoch_03",
+      "original_predictions_sha256": "b8adff2b41ff75bf1f260fce852a851d359694a86a3034d45523ef9e1993e518",
+      "original_state": "clip_seed_43"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "beb21353baf529d1f159de0dd19e40145ced18db1b0e37ba9640b4300ad2382c",
+      "followup_state": "source__lr_0.0001__seed_43__epoch_03",
+      "original_predictions_sha256": "d100b27a0765ef1072f630c4e52f56aaaa367d9af9031bc3fd24ac54d572f3fb",
+      "original_state": "clip_seed_43"
+    },
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "fbfe50daedd3ddf5156c86eb85bf519e7e012523c6ad4919ac32f08b29b57607",
+      "followup_state": "supported__lr_0.0003__seed_17__epoch_05",
+      "original_predictions_sha256": "fbfe50daedd3ddf5156c86eb85bf519e7e012523c6ad4919ac32f08b29b57607",
+      "original_state": "multipositive_seed_17"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "54f09f0d92fdfa74350aa3dadce95d609c30228ecd556675aeea3600d27a4094",
+      "followup_state": "supported__lr_0.0003__seed_17__epoch_05",
+      "original_predictions_sha256": "54f09f0d92fdfa74350aa3dadce95d609c30228ecd556675aeea3600d27a4094",
+      "original_state": "multipositive_seed_17"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "72c86cb00a695a67542a719e04906d182672a6980c5083268f71706041685c43",
+      "followup_state": "supported__lr_0.0003__seed_17__epoch_05",
+      "original_predictions_sha256": "72c86cb00a695a67542a719e04906d182672a6980c5083268f71706041685c43",
+      "original_state": "multipositive_seed_17"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "2d67e1d9f43526756af0b4171d1c97a7cdfc40a9c736d1c3f251c410b96c735c",
+      "followup_state": "supported__lr_0.0003__seed_17__epoch_05",
+      "original_predictions_sha256": "6d5318f989476bf73aa5d9d707fbcc3bd3799795e5bdccedfdf5be42a26f6f57",
+      "original_state": "multipositive_seed_17"
+    },
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "f29a0cdb63ee646dceee27a06326bdb25a59fefc833304da71edc751f1de07d7",
+      "followup_state": "supported__lr_0.0003__seed_29__epoch_10",
+      "original_predictions_sha256": "f29a0cdb63ee646dceee27a06326bdb25a59fefc833304da71edc751f1de07d7",
+      "original_state": "multipositive_seed_29"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "0fe9e432c80380304d096067e77952451d176a880e207a1f23f1afd5f2bc97aa",
+      "followup_state": "supported__lr_0.0003__seed_29__epoch_10",
+      "original_predictions_sha256": "0fe9e432c80380304d096067e77952451d176a880e207a1f23f1afd5f2bc97aa",
+      "original_state": "multipositive_seed_29"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "d529cd1e2708bf8bb69801dff19a17a609cbde2c529f16d4d1e3f385d800c7ea",
+      "followup_state": "supported__lr_0.0003__seed_29__epoch_10",
+      "original_predictions_sha256": "d529cd1e2708bf8bb69801dff19a17a609cbde2c529f16d4d1e3f385d800c7ea",
+      "original_state": "multipositive_seed_29"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "b90e1cb3a2c72138be277cea2dd1cbbd313cb8fdeddb3f752dd8fc306d661436",
+      "followup_state": "supported__lr_0.0003__seed_29__epoch_10",
+      "original_predictions_sha256": "8ea81f3d5230db7b5d7db2f612e537b9936d839f329c08ed9f4b63049206d9c8",
+      "original_state": "multipositive_seed_29"
+    },
+    {
+      "arrays_compared": 7,
+      "dataset": "visual_entailment",
+      "followup_predictions_sha256": "5fb8ecac54f40b9c882deb855476fabad9366600115896d0d0b91e99091f4506",
+      "followup_state": "supported__lr_0.0003__seed_43__epoch_05",
+      "original_predictions_sha256": "5fb8ecac54f40b9c882deb855476fabad9366600115896d0d0b91e99091f4506",
+      "original_state": "multipositive_seed_43"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "sugarcrepe",
+      "followup_predictions_sha256": "b3434c65fa31f14441064d40243cd398e34042ce9f574997c9d942bff8345de6",
+      "followup_state": "supported__lr_0.0003__seed_43__epoch_05",
+      "original_predictions_sha256": "b3434c65fa31f14441064d40243cd398e34042ce9f574997c9d942bff8345de6",
+      "original_state": "multipositive_seed_43"
+    },
+    {
+      "arrays_compared": 12,
+      "dataset": "sugarcrepe_pp",
+      "followup_predictions_sha256": "8830da7e36a02798302af6f833829de27b9caadb341c927a67a17594ffc69f5d",
+      "followup_state": "supported__lr_0.0003__seed_43__epoch_05",
+      "original_predictions_sha256": "8830da7e36a02798302af6f833829de27b9caadb341c927a67a17594ffc69f5d",
+      "original_state": "multipositive_seed_43"
+    },
+    {
+      "arrays_compared": 9,
+      "dataset": "coco_karpathy",
+      "followup_predictions_sha256": "7f19cb28b0b6cb8ed404a228a2db88666574dc2c1402cb7b756ab62a1afdaca4",
+      "followup_state": "supported__lr_0.0003__seed_43__epoch_05",
+      "original_predictions_sha256": "b0258c545ac1874d0b4024c01f6ab11617fc4993246b0a064d35eeb0fa441455",
+      "original_state": "multipositive_seed_43"
+    }
+  ],
+  "dataset_pairs": 28,
+  "scope": "Frozen and six native-selected source/supported states compared against unchanged original predictions. Every retained array checked; omitted top-k fields not required.",
+  "state_pairs": 7,
+  "status": "passed"
+}

@@ -1,0 +1,4726 @@
+{
+  "datasets": [
+    "e_vil_test1000",
+    "visual_entailment",
+    "sugarcrepe",
+    "sugarcrepe_pp",
+    "coco_karpathy"
+  ],
+  "evidence_type": "review_followup_new_execution",
+  "normalization": "final float32 L2 normalization for adapted and frozen features",
+  "pair_tie_policy": "relation ranking: half credit; SugarCrepe/SugarCrepe++: zero credit",
+  "prescore_receipt": "results/review_followup/evaluation/selected_prescore_receipt.json",
+  "prescore_receipt_sha256": "9d2ab41011e283f519ffc9aea80844723634a9e0987188a345a9596fb71f167a",
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "retrieval_tie_policy": "descending float64 dot product, then ascending candidate manifest index",
+  "run_count": 33,
+  "runs": [
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "condition": "frozen",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/frozen/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/frozen/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/frozen/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/frozen/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/frozen/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/frozen/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/frozen/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/frozen/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/frozen/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/frozen/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": null,
+      "method": "frozen",
+      "run_id": "frozen",
+      "seed": null,
+      "state_id": "frozen"
+    },
+    {
+      "assignment_seed": 101,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_0/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "f93b98719b0c5fcc3381082ea0d5e22c137036525ba36402123cd6e3671bb4b4",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "run_id": "count_only_draw_0__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "count_only_draw_0__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 211,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_1/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "a4530f49a2bb14f94c0aa0ab844afae4cd5e61cd1d2eb5e17b73a3a38462bb5f",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "run_id": "count_only_draw_1__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "count_only_draw_1__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_2/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "6b06b3126abaee4b3ba91823d3b558333bca356e6309b3a009304bce6acb2802",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "run_id": "count_only_draw_2__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "count_only_draw_2__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 101,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_0/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "91e4ba2c92e2d07d1d09194a0fe635c414ac28e736265eec26a43d1b80a65c24",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "run_id": "count_only_draw_0__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "count_only_draw_0__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 211,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_1/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "5cb61050c1e7dc16a4bc5782853f47bb29c466e006fd6263b16dc5568ba96e8d",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "run_id": "count_only_draw_1__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "count_only_draw_1__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_2/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "8f67c1c26c45790c9bcd8c157ea51b9bcc450e43448a402d2db91579518917b8",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "run_id": "count_only_draw_2__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "count_only_draw_2__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 101,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_0/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "f017e367e0c917dd59d8c1ae1bdee7800c2b1b26fb09081ed65bddd821b1090b",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_0__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "run_id": "count_only_draw_0__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "count_only_draw_0__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 211,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_1/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "3e2c90785a99baf69610436eb769c8e722d18195ea11741e4a3bdd3783203292",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_1__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "run_id": "count_only_draw_1__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "count_only_draw_1__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/count_only_draw_2/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "e1ba99b8111781798a2682439c92e73a2c7aa99dbceef1e4f4332fa0d76ab8bd",
+      "condition": "count_only",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/count_only_draw_2__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "run_id": "count_only_draw_2__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "count_only_draw_2__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 101,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_0/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "2dbbf5a65c84506ee5efe54181df38d1bebd8bbd90a9112d11f6290bb5c654d6",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "run_id": "score_stratified_draw_0__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 211,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_1/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "a5f1f2ae778955eee2d7eb1440463c9119fc01f1a05f3fcbc7a8e3fc46629525",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "run_id": "score_stratified_draw_1__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_2/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "2bd2c5b3ae16dadd76f53e650dd3ce28ba42352eb9f1717079e0321b8969bc65",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_2",
+      "run_id": "score_stratified_draw_2__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "score_stratified_draw_2__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 101,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_0/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "d1cda47a244ea9452529daa7a03de0afc599c72b35f5e190168cd756482a39e6",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "run_id": "score_stratified_draw_0__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 211,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_1/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "52787c80087e366d7a584bd73556aa6ecc2c801250297e8bb7bcfa42f3d0fb2f",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "run_id": "score_stratified_draw_1__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_2/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "75429709989be9e376731a37130b9113dedff05dd5ea9e55d0961b5f77f9867d",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_2",
+      "run_id": "score_stratified_draw_2__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "score_stratified_draw_2__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 101,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_0/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "61182eaf58dd182cbeac13418905dcac4d22a74ce8380671b0774217beaa160c",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_0__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "run_id": "score_stratified_draw_0__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 211,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_1/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "f7137644ba3cf2e195bd70d26566d21f37bf77b574caaee4938fc604ce894ed6",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_1__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "run_id": "score_stratified_draw_1__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_2/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "4dd6e994570ffa1dd4aaf99f741847f2f57a310125593f65a1c1d57bd60b30dd",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_2",
+      "run_id": "score_stratified_draw_2__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "score_stratified_draw_2__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_2/lr_0.0003/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "3868e998ec39f1707b07eef91e2edf3c6e0cdeb6d735972a25053c8fc2a2376f",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "method": "score_stratified_draw_2",
+      "run_id": "score_stratified_draw_2__lr_0.0003__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "score_stratified_draw_2__lr_0.0003__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_2/lr_0.0003/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "e825514895192cdd685246d1f7c73006b57a8ffe0954a8244806e3cf1471c3b8",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "method": "score_stratified_draw_2",
+      "run_id": "score_stratified_draw_2__lr_0.0003__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "score_stratified_draw_2__lr_0.0003__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/supported/lr_0.0001/seed_17/epochs/epoch_00.pt",
+      "checkpoint_sha256": "074c756284f5496061d77ebd34b2ddf5288e2425eb8c644dba14cb4759a1d8ae",
+      "condition": "supported",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_17__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "run_id": "supported__lr_0.0001__seed_17__epoch_00",
+      "seed": 17,
+      "state_id": "supported__lr_0.0001__seed_17__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/supported/lr_0.0001/seed_29/epochs/epoch_00.pt",
+      "checkpoint_sha256": "8333489e2e132bcacc893d7d4c428d2fb8e6918ca72c5a614176538103351a36",
+      "condition": "supported",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_29__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "run_id": "supported__lr_0.0001__seed_29__epoch_00",
+      "seed": 29,
+      "state_id": "supported__lr_0.0001__seed_29__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/supported/lr_0.0001/seed_43/epochs/epoch_00.pt",
+      "checkpoint_sha256": "cad7642cb79fd63992515feab7ec05ef81c05e79240254d86d5aab42b3b2e326",
+      "condition": "supported",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47834,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/coco_karpathy.npz",
+          "predictions_sha256": "84c03671fac7893a85655137be34864cd47b77c3f96e9b5459af3d3cb2033b67"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.743,
+              "median_rank": 1.0,
+              "r1": 0.845,
+              "r10": 0.985,
+              "r5": 0.96
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7713,
+            "t2i": {
+              "mean_rank": 4.6174,
+              "median_rank": 1.0,
+              "r1": 0.6976,
+              "r10": 0.9376,
+              "r5": 0.8968
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/e_vil_test1000.npz",
+          "predictions_sha256": "5268984793d7f93d8a73b39c9d7de409d311779417f0e4d447dc63b957ca079b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0001__seed_43__epoch_00/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "run_id": "supported__lr_0.0001__seed_43__epoch_00",
+      "seed": 43,
+      "state_id": "supported__lr_0.0001__seed_43__epoch_00",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8290378870061561,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395189435030781,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.766,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.682,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/source/lr_0.0001/seed_17/epochs/epoch_01.pt",
+      "checkpoint_sha256": "1c24ab04ff51335daa49657dfc137cd6b72861900d57f3794d14bbf740f4ff3e",
+      "condition": "source",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.2566,
+              "median_rank": 1.0,
+              "r1": 0.5628,
+              "r10": 0.8692,
+              "r5": 0.8
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47966,
+            "t2i": {
+              "mean_rank": 17.51824,
+              "median_rank": 2.0,
+              "r1": 0.39652,
+              "r10": 0.7592,
+              "r5": 0.65768
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/coco_karpathy.npz",
+          "predictions_sha256": "bd7b70dfa727e84e6a37088a67bd8a44e7f51b29c1730ea02dbceb627dac33c7"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.854,
+              "median_rank": 1.0,
+              "r1": 0.849,
+              "r10": 0.983,
+              "r5": 0.956
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7728999999999999,
+            "t2i": {
+              "mean_rank": 4.3248,
+              "median_rank": 1.0,
+              "r1": 0.6968,
+              "r10": 0.944,
+              "r5": 0.9032
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/e_vil_test1000.npz",
+          "predictions_sha256": "01b7ee48b4f8545280009cfc28f344ff0365b884f2597e637fcdfd593023d515"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8343762481693516,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8343762481693516
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/sugarcrepe.npz",
+          "predictions_sha256": "c5447d76d0fd1b0bcc9f4254bcf4bf6a30082811a0ac8f4ae3e155d972cfe311"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6764767710742065,
+            "both_accuracy": 0.6764767710742065,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8093336136220307,
+            "positive2_accuracy": 0.7286104687828463
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/sugarcrepe_pp.npz",
+          "predictions_sha256": "6e125616255e868db4a8862f2debf056771c92c59e0a34ed17bb1e861cd042f5"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8134782160321419,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_17__epoch_01/visual_entailment.npz",
+          "predictions_sha256": "9516089f58bfe71cd9055b27f0456af4e0ee15d73a92aae1c300cc50a64c6cb1"
+        }
+      },
+      "draw_id": null,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "run_id": "source__lr_0.0001__seed_17__epoch_01",
+      "seed": 17,
+      "state_id": "source__lr_0.0001__seed_17__epoch_01",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.88,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8509693329640445,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8654846664820223,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.8511111111111112,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7692222222222223,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6873333333333334,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/source/lr_0.0001/seed_29/epochs/epoch_01.pt",
+      "checkpoint_sha256": "70bfa022da8f23f5ffbed6843e1f337beaf98181c131d941d782d1571868ffcb",
+      "condition": "source",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.244,
+              "median_rank": 1.0,
+              "r1": 0.5602,
+              "r10": 0.869,
+              "r5": 0.7996
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47738,
+            "t2i": {
+              "mean_rank": 17.52904,
+              "median_rank": 2.0,
+              "r1": 0.39456,
+              "r10": 0.7596,
+              "r5": 0.65776
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/coco_karpathy.npz",
+          "predictions_sha256": "0d0ea5ea9ef8348ef9010d310722c5ac15ba2c64b76601cd7191ee895a8fad9e"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.832,
+              "median_rank": 1.0,
+              "r1": 0.85,
+              "r10": 0.98,
+              "r5": 0.956
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7737,
+            "t2i": {
+              "mean_rank": 4.3744,
+              "median_rank": 1.0,
+              "r1": 0.6974,
+              "r10": 0.9436,
+              "r5": 0.9028
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/e_vil_test1000.npz",
+          "predictions_sha256": "850cfc773342a4f90c668340c4ebda4f1535ab4d420efcc1f4b8d58e8611c132"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.834243110105179,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.834243110105179
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/sugarcrepe.npz",
+          "predictions_sha256": "62903e1189d184653f33b9ae79c9881e9983e21c3a8201f3d479501aa5f210d5"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6808913180575993,
+            "both_accuracy": 0.6808913180575993,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8095438301450494,
+            "positive2_accuracy": 0.7319739331511457
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/sugarcrepe_pp.npz",
+          "predictions_sha256": "572c78733cc696cdf668f8a5b7d33bfd4c57e7ea1cd04377ca9820d859c1664d"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8108819729489444,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_01/visual_entailment.npz",
+          "predictions_sha256": "7478523431ca5912fd05fdf17f94ce66a06881fc95817d1261389ca9bdf52ecd"
+        }
+      },
+      "draw_id": null,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "run_id": "source__lr_0.0001__seed_29__epoch_01",
+      "seed": 29,
+      "state_id": "source__lr_0.0001__seed_29__epoch_01",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.88,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8500369821951552,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8650184910975776,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.8455555555555555,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7667777777777778,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.688,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/source/lr_0.0001/seed_29/epochs/epoch_02.pt",
+      "checkpoint_sha256": "7a1737aac92f10cf001121aa8aad788e9509a9574838ed4365f374bdcb671251",
+      "condition": "source",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.3966,
+              "median_rank": 1.0,
+              "r1": 0.5604,
+              "r10": 0.8698,
+              "r5": 0.795
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.4782,
+            "t2i": {
+              "mean_rank": 17.40432,
+              "median_rank": 2.0,
+              "r1": 0.396,
+              "r10": 0.7598,
+              "r5": 0.65748
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/coco_karpathy.npz",
+          "predictions_sha256": "3dec9f2b0ab01041d95490e6350161c9f85a2ba2938b6d4ceeb96767e50ce621"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.862,
+              "median_rank": 1.0,
+              "r1": 0.849,
+              "r10": 0.979,
+              "r5": 0.958
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7726999999999999,
+            "t2i": {
+              "mean_rank": 4.3608,
+              "median_rank": 1.0,
+              "r1": 0.6964,
+              "r10": 0.944,
+              "r5": 0.905
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/e_vil_test1000.npz",
+          "predictions_sha256": "1b936a6380525fc42a178fad0f16803298f3a6a045b7fb82ec2fa84254955762"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8329117294634536,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8329117294634536
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/sugarcrepe.npz",
+          "predictions_sha256": "3bf3a4408a9070d840a96497950cc0e44031a97c78c2990bac49ccfd2fa56db6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6705907084296826,
+            "both_accuracy": 0.6705907084296826,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8097540466680682,
+            "positive2_accuracy": 0.7189405087239857
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/sugarcrepe_pp.npz",
+          "predictions_sha256": "bda2bf8443ee48ac700908ecc20d0d70d5cce6deb32c89a19222c46bd42a42ca"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8096223993382656,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_29__epoch_02/visual_entailment.npz",
+          "predictions_sha256": "49f13be595a60add16eaaca05ed8fac4aefa542aba27386f075189ad6576b998"
+        }
+      },
+      "draw_id": null,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "run_id": "source__lr_0.0001__seed_29__epoch_02",
+      "seed": 29,
+      "state_id": "source__lr_0.0001__seed_29__epoch_02",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.87,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8502472962400845,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8601236481200423,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.8477777777777777,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7674444444444444,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6871111111111111,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/source/lr_0.0001/seed_43/epochs/epoch_02.pt",
+      "checkpoint_sha256": "849a56d20e28843b79638bcb7c89a35014e8142a01b2aaff5255ac9cc6823a51",
+      "condition": "source",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.3038,
+              "median_rank": 1.0,
+              "r1": 0.5594,
+              "r10": 0.8702,
+              "r5": 0.7954
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47672000000000003,
+            "t2i": {
+              "mean_rank": 17.43416,
+              "median_rank": 2.0,
+              "r1": 0.39404,
+              "r10": 0.76128,
+              "r5": 0.65868
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/coco_karpathy.npz",
+          "predictions_sha256": "f156fca04a7ea51b4af7388a656888cbde7407c2c230adc01e69fba566d1dc13"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.815,
+              "median_rank": 1.0,
+              "r1": 0.847,
+              "r10": 0.982,
+              "r5": 0.959
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7724,
+            "t2i": {
+              "mean_rank": 4.3,
+              "median_rank": 1.0,
+              "r1": 0.6978,
+              "r10": 0.9446,
+              "r5": 0.9054
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/e_vil_test1000.npz",
+          "predictions_sha256": "0f17eba9a88f6818ff9688ffb2c0b236e9024d2c4526c3f33f7756d8159287cd"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8314472107575556,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8314472107575556
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/sugarcrepe.npz",
+          "predictions_sha256": "b19df2e7f495239d3eede10cfaf9359342a16a435e72b10ae45e9da525f1d8fc"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6708009249527013,
+            "both_accuracy": 0.6708009249527013,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8082825310069371,
+            "positive2_accuracy": 0.7199915913390793
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/sugarcrepe_pp.npz",
+          "predictions_sha256": "f6280e4832417083cd551136b09b147170fb6adf3b5b7dbba30595fbe1f0e648"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8115062351407348,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_02/visual_entailment.npz",
+          "predictions_sha256": "60d7a0df1b204e0091daffda38e37d9af5a3b68a1e3b78017b4abe322396cb11"
+        }
+      },
+      "draw_id": null,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "run_id": "source__lr_0.0001__seed_43__epoch_02",
+      "seed": 43,
+      "state_id": "source__lr_0.0001__seed_43__epoch_02",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8506213041765927,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8503106520882964,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.85,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7675555555555555,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6851111111111111,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/source/lr_0.0001/seed_43/epochs/epoch_03.pt",
+      "checkpoint_sha256": "cd77613e7bd9ff08f59f196f5777327fe0222c6e08a87f80e2ccad79fb3ca842",
+      "condition": "source",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.6096,
+              "median_rank": 1.0,
+              "r1": 0.5526,
+              "r10": 0.8698,
+              "r5": 0.7882
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.47141999999999995,
+            "t2i": {
+              "mean_rank": 17.64224,
+              "median_rank": 2.0,
+              "r1": 0.39024,
+              "r10": 0.75852,
+              "r5": 0.65468
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/coco_karpathy.npz",
+          "predictions_sha256": "beb21353baf529d1f159de0dd19e40145ced18db1b0e37ba9640b4300ad2382c"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 1.917,
+              "median_rank": 1.0,
+              "r1": 0.842,
+              "r10": 0.981,
+              "r5": 0.955
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7642,
+            "t2i": {
+              "mean_rank": 4.4126,
+              "median_rank": 1.0,
+              "r1": 0.6864,
+              "r10": 0.9422,
+              "r5": 0.904
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/e_vil_test1000.npz",
+          "predictions_sha256": "1205d1406a0ba4d132bf3e23ccb89fe2b11d676a2757d189ae653b280df04d5f"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8290507256024497,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8290507256024497
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/sugarcrepe.npz",
+          "predictions_sha256": "809c5a3ae2adaf3a9f085170b25e0ca8b79fc9546f86def394fd4ff507d037f6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6647046457851588,
+            "both_accuracy": 0.6647046457851588,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8044986335926004,
+            "positive2_accuracy": 0.7138953121715367
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/sugarcrepe_pp.npz",
+          "predictions_sha256": "b8adff2b41ff75bf1f260fce852a851d359694a86a3034d45523ef9e1993e518"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8111799339625242,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/source__lr_0.0001__seed_43__epoch_03/visual_entailment.npz",
+          "predictions_sha256": "c1e210f2069039d6116b98b9da443bb41beac149bffe88015f1aeee35176b26d"
+        }
+      },
+      "draw_id": null,
+      "epoch": 3,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "run_id": "source__lr_0.0001__seed_43__epoch_03",
+      "seed": 43,
+      "state_id": "source__lr_0.0001__seed_43__epoch_03",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.87,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8525186460441266,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8612593230220633,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.8488888888888889,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7657777777777778,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6826666666666666,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/supported/lr_0.0003/seed_17/epochs/epoch_05.pt",
+      "checkpoint_sha256": "30c10109863d59ef87bf2df13754540c24cd1b3e68d7637133fe3fe2786359ee",
+      "condition": "supported",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.4012,
+              "median_rank": 2.0,
+              "r1": 0.4836,
+              "r10": 0.817,
+              "r5": 0.7288
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.41879999999999995,
+            "t2i": {
+              "mean_rank": 20.3324,
+              "median_rank": 3.0,
+              "r1": 0.354,
+              "r10": 0.7204,
+              "r5": 0.61276
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/coco_karpathy.npz",
+          "predictions_sha256": "2d67e1d9f43526756af0b4171d1c97a7cdfc40a9c736d1c3f251c410b96c735c"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 2.68,
+              "median_rank": 1.0,
+              "r1": 0.782,
+              "r10": 0.968,
+              "r5": 0.933
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7091000000000001,
+            "t2i": {
+              "mean_rank": 5.5918,
+              "median_rank": 1.0,
+              "r1": 0.6362,
+              "r10": 0.9228,
+              "r5": 0.8708
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/e_vil_test1000.npz",
+          "predictions_sha256": "2a5854f76e53f2064ac5c510ab2be432cc45c13c4951d88f7bbbcfbbe5bc6c35"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8338436959126614,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8338436959126614
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/sugarcrepe.npz",
+          "predictions_sha256": "54f09f0d92fdfa74350aa3dadce95d609c30228ecd556675aeea3600d27a4094"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6758461215051503,
+            "both_accuracy": 0.6758461215051503,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7977717048560017,
+            "positive2_accuracy": 0.7344965314273701
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/sugarcrepe_pp.npz",
+          "predictions_sha256": "72c86cb00a695a67542a719e04906d182672a6980c5083268f71706041685c43"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8674634171551022,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_17__epoch_05/visual_entailment.npz",
+          "predictions_sha256": "fbfe50daedd3ddf5156c86eb85bf519e7e012523c6ad4919ac32f08b29b57607"
+        }
+      },
+      "draw_id": null,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "run_id": "supported__lr_0.0003__seed_17__epoch_05",
+      "seed": 17,
+      "state_id": "supported__lr_0.0003__seed_17__epoch_05",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.82,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.900915066877567,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8604575334387834,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.7966666666666666,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7165555555555556,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6364444444444445,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/supported/lr_0.0003/seed_43/epochs/epoch_05.pt",
+      "checkpoint_sha256": "d5f439ff3da2a2ffab06e5ca156acd7bfe68f67db1a2c55f5e33f43025d38b4d",
+      "condition": "supported",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.3506,
+              "median_rank": 2.0,
+              "r1": 0.4828,
+              "r10": 0.8146,
+              "r5": 0.725
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.4179,
+            "t2i": {
+              "mean_rank": 20.32956,
+              "median_rank": 3.0,
+              "r1": 0.353,
+              "r10": 0.72052,
+              "r5": 0.6138
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/coco_karpathy.npz",
+          "predictions_sha256": "7f19cb28b0b6cb8ed404a228a2db88666574dc2c1402cb7b756ab62a1afdaca4"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 2.804,
+              "median_rank": 1.0,
+              "r1": 0.784,
+              "r10": 0.968,
+              "r5": 0.94
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.7126,
+            "t2i": {
+              "mean_rank": 5.602,
+              "median_rank": 1.0,
+              "r1": 0.6412,
+              "r10": 0.9258,
+              "r5": 0.8714
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/e_vil_test1000.npz",
+          "predictions_sha256": "1fdb9d3fbcc721fda122e3c3fda35912c920081db2b200b38a51ea815db0a620"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8325123152709359,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8325123152709359
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/sugarcrepe.npz",
+          "predictions_sha256": "b3434c65fa31f14441064d40243cd398e34042ce9f574997c9d942bff8345de6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6718520075677948,
+            "both_accuracy": 0.6718520075677948,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7969308387639269,
+            "positive2_accuracy": 0.7265083035526593
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/sugarcrepe_pp.npz",
+          "predictions_sha256": "8830da7e36a02798302af6f833829de27b9caadb341c927a67a17594ffc69f5d"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.87455147676391,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_43__epoch_05/visual_entailment.npz",
+          "predictions_sha256": "5fb8ecac54f40b9c882deb855476fabad9366600115896d0d0b91e99091f4506"
+        }
+      },
+      "draw_id": null,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "run_id": "supported__lr_0.0003__seed_43__epoch_05",
+      "seed": 43,
+      "state_id": "supported__lr_0.0003__seed_43__epoch_05",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.84,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.9000659606952877,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8700329803476439,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.7922222222222223,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7122222222222223,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6322222222222222,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": 307,
+      "checkpoint": "results/review_followup/candidates/score_stratified_draw_2/lr_0.0003/seed_17/epochs/epoch_07.pt",
+      "checkpoint_sha256": "8c1b542f84adde41fa9398a37e573e0de92785b1efb793e944f09ea96668a5c3",
+      "condition": "score_stratified",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.6958,
+              "median_rank": 2.0,
+              "r1": 0.4836,
+              "r10": 0.8164,
+              "r5": 0.7318
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.41034,
+            "t2i": {
+              "mean_rank": 23.57244,
+              "median_rank": 3.0,
+              "r1": 0.33708,
+              "r10": 0.69924,
+              "r5": 0.59064
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/coco_karpathy.npz",
+          "predictions_sha256": "c927f9ded377a3b7d872475e64c2c53692554d73ca3afc7c5343c78a742c6eaf"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 2.656,
+              "median_rank": 1.0,
+              "r1": 0.783,
+              "r10": 0.967,
+              "r5": 0.923
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.6957,
+            "t2i": {
+              "mean_rank": 6.8908,
+              "median_rank": 1.0,
+              "r1": 0.6084,
+              "r10": 0.9048,
+              "r5": 0.845
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/e_vil_test1000.npz",
+          "predictions_sha256": "f2075c2aaf55e520c1c714484d125b04b9ac6560b48569c206f122ed9bc78813"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8209293036879244,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8209293036879244
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/sugarcrepe.npz",
+          "predictions_sha256": "ca5b0f95f9a2d6281c0a4fc6363bee155ee9ca07d97bf52c8e0ddb99a23b3e7e"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.649989489173849,
+            "both_accuracy": 0.649989489173849,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7920958587344965,
+            "positive2_accuracy": 0.7035947025436199
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/sugarcrepe_pp.npz",
+          "predictions_sha256": "cc2b63721f5939472df28d2ca59d793f171d4545c62f2f2d3892f0ad146deeb8"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8011228099649478,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/score_stratified_draw_2__lr_0.0003__seed_17__epoch_07/visual_entailment.npz",
+          "predictions_sha256": "2caecdb194d123a03316daf06552eff421201dc980239ef264b0e9bd610f9d4c"
+        }
+      },
+      "draw_id": 2,
+      "epoch": 7,
+      "learning_rate": 0.0003,
+      "method": "score_stratified_draw_2",
+      "run_id": "score_stratified_draw_2__lr_0.0003__seed_17__epoch_07",
+      "seed": 17,
+      "state_id": "score_stratified_draw_2__lr_0.0003__seed_17__epoch_07",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.8291659787328056,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8395829893664029,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.7911111111111111,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.7021111111111111,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6131111111111112,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    },
+    {
+      "assignment_seed": null,
+      "checkpoint": "results/review_followup/candidates/supported/lr_0.0003/seed_29/epochs/epoch_10.pt",
+      "checkpoint_sha256": "bdd039bbde80936198b53af5fda83bd6a55004fb9c358f1c363dda8a39915136",
+      "condition": "supported",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 11.8738,
+              "median_rank": 2.0,
+              "r1": 0.4524,
+              "r10": 0.7952,
+              "r5": 0.693
+            },
+            "images": 5000,
+            "mean_bidirectional_r1": 0.39528,
+            "t2i": {
+              "mean_rank": 22.03412,
+              "median_rank": 3.0,
+              "r1": 0.33816,
+              "r10": 0.7042,
+              "r5": 0.59668
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/coco_karpathy.npz",
+          "predictions_sha256": "b90e1cb3a2c72138be277cea2dd1cbbd313cb8fdeddb3f752dd8fc306d661436"
+        },
+        "e_vil_test1000": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/e_vil_test1000.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 3.006,
+              "median_rank": 1.0,
+              "r1": 0.744,
+              "r10": 0.966,
+              "r5": 0.931
+            },
+            "images": 1000,
+            "mean_bidirectional_r1": 0.6828000000000001,
+            "t2i": {
+              "mean_rank": 6.303,
+              "median_rank": 1.0,
+              "r1": 0.6216,
+              "r10": 0.9148,
+              "r5": 0.8568
+            },
+            "texts": 5000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/e_vil_test1000.npz",
+          "predictions_sha256": "f1ce595f9d54de378d44c356ac689acd0413e4970c0c3c02cd1ae0f3c825be71"
+        },
+        "sugarcrepe": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.835441352682732,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.835441352682732
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/sugarcrepe.npz",
+          "predictions_sha256": "0fe9e432c80380304d096067e77952451d176a880e207a1f23f1afd5f2bc97aa"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6691191927685516,
+            "both_accuracy": 0.6691191927685516,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7956695396258145,
+            "positive2_accuracy": 0.7256674374605844
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/sugarcrepe_pp.npz",
+          "predictions_sha256": "d529cd1e2708bf8bb69801dff19a17a609cbde2c529f16d4d1e3f385d800c7ea"
+        },
+        "visual_entailment": {
+          "metadata": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8678764225516133,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/review_followup/evaluation/predictions/supported__lr_0.0003__seed_29__epoch_10/visual_entailment.npz",
+          "predictions_sha256": "f29a0cdb63ee646dceee27a06326bdb25a59fefc833304da71edc751f1de07d7"
+        }
+      },
+      "draw_id": null,
+      "epoch": 10,
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "run_id": "supported__lr_0.0003__seed_29__epoch_10",
+      "seed": 29,
+      "state_id": "supported__lr_0.0003__seed_29__epoch_10",
+      "validation": {
+        "native": {
+          "image_count": 100,
+          "known_positive_i2t_r1": 0.85,
+          "positive_relations": [
+            "source",
+            "supported"
+          ],
+          "relation_accuracy": 0.9033011447953756,
+          "relation_eligible_images": 100,
+          "relation_tie_credit": 0.5,
+          "retrieval_tie_rule": "lowest_manifest_text_index",
+          "score": 0.8766505723976878,
+          "text_count": 1875
+        },
+        "source_retrieval": {
+          "i2t_r1": 0.7466666666666667,
+          "image_count": 900,
+          "relevance": "source_caption_ownership",
+          "score": 0.6847777777777778,
+          "score_accumulation": "float64",
+          "t2i_r1": 0.6228888888888889,
+          "text_count": 4500,
+          "tie_rule": "first_candidate_in_manifest_order"
+        }
+      }
+    }
+  ],
+  "schema_version": 1,
+  "score_precision": "unscaled float64 dot products",
+  "selections": [
+    {
+      "assignment_seed": null,
+      "condition": "source",
+      "draw_id": null,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "source__lr_0.0001__seed_17__epoch_01"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "source",
+      "draw_id": null,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "source__lr_0.0001__seed_29__epoch_01"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "source",
+      "draw_id": null,
+      "epoch": 3,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "source__lr_0.0001__seed_43__epoch_03"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "supported",
+      "draw_id": null,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "supported__lr_0.0003__seed_17__epoch_05"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "supported",
+      "draw_id": null,
+      "epoch": 10,
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "supported__lr_0.0003__seed_29__epoch_10"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "supported",
+      "draw_id": null,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "supported__lr_0.0003__seed_43__epoch_05"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "count_only",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "count_only_draw_0__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "count_only",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "count_only_draw_0__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "count_only",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "count_only_draw_0__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "count_only",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "count_only_draw_1__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "count_only",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "count_only_draw_1__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "count_only",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "count_only_draw_1__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "count_only",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "count_only_draw_2__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "count_only",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "count_only_draw_2__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "count_only",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "count_only_draw_2__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "score_stratified",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "score_stratified",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "score_stratified",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "score_stratified",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "score_stratified",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "score_stratified",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "score_stratified",
+      "draw_id": 2,
+      "epoch": 7,
+      "learning_rate": 0.0003,
+      "method": "score_stratified_draw_2",
+      "seed": 17,
+      "selector": "native",
+      "state_id": "score_stratified_draw_2__lr_0.0003__seed_17__epoch_07"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "score_stratified",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "method": "score_stratified_draw_2",
+      "seed": 29,
+      "selector": "native",
+      "state_id": "score_stratified_draw_2__lr_0.0003__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "score_stratified",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "method": "score_stratified_draw_2",
+      "seed": 43,
+      "selector": "native",
+      "state_id": "score_stratified_draw_2__lr_0.0003__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "source",
+      "draw_id": null,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "source__lr_0.0001__seed_17__epoch_01"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "source",
+      "draw_id": null,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "source__lr_0.0001__seed_29__epoch_02"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "source",
+      "draw_id": null,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "source",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "source__lr_0.0001__seed_43__epoch_02"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "supported",
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "supported__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "supported",
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "supported__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": null,
+      "condition": "supported",
+      "draw_id": null,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "supported__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "count_only",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_0__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "count_only",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_0__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "count_only",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_0",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_0__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "count_only",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_1__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "count_only",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_1__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "count_only",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_1",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_1__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "count_only",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_2__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "count_only",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_2__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "count_only",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "count_only_draw_2",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "count_only_draw_2__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "score_stratified",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "score_stratified",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 101,
+      "condition": "score_stratified",
+      "draw_id": 0,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_0",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_0__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "score_stratified",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "score_stratified",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 211,
+      "condition": "score_stratified",
+      "draw_id": 1,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_1",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_1__lr_0.0001__seed_43__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "score_stratified",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_2",
+      "seed": 17,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_2__lr_0.0001__seed_17__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "score_stratified",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_2",
+      "seed": 29,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_2__lr_0.0001__seed_29__epoch_00"
+    },
+    {
+      "assignment_seed": 307,
+      "condition": "score_stratified",
+      "draw_id": 2,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "score_stratified_draw_2",
+      "seed": 43,
+      "selector": "source_retrieval",
+      "state_id": "score_stratified_draw_2__lr_0.0001__seed_43__epoch_00"
+    }
+  ],
+  "source_hashes": {
+    "scripts/analyze_review_followup.py": "063b1667b814b981c1cd91d188841ec7e400fdb046c1306b815833a8da92ee2e",
+    "scripts/analyze_study.py": "8db66e76f5d9ab9affa959822bfa427d6da9d3381d6f6af3faeda2142ee94c84",
+    "scripts/evaluate_review_followup.py": "9b5a846486aa348efc43e54fed585cb6fd6d3d8547583c56db6e11bca5f1a349",
+    "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+    "src/gcr/adapters.py": "eb042d632c22f69f2addbf6883489822948d9df301a34ba06ca85ed6d827b891",
+    "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+  },
+  "state_manifest_sha256": "541400527fb764f54b7f2436955aa0a6a3e6a295713b75e343bf2bac813c6e36",
+  "status": "complete",
+  "suite": "selected"
+}

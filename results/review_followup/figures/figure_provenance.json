@@ -1,0 +1,55 @@
+{
+  "dataset_hashes": {
+    "coco_karpathy": {
+      "features_sha256": "98648b2797dea805d8b54e7fd0606be7ebb89c4e6d12cefc8d59b6f7434818c8",
+      "manifest_sha256": "fca7a265ea104e06acd8b7dc074664ca898ac9c0fb207c8805e097c0f29801dd",
+      "metadata_sha256": "2e521c6c35a9023690c90b21cc0a4092135a989e1e6d87ac11ec370458fd18b0"
+    },
+    "e_vil_test1000": {
+      "features_sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+      "manifest_sha256": "8de6f0b0e9d0d497f79897074a16bc31337013cbf0b00535446f2f8674d18248",
+      "metadata_sha256": "ea49c9c5fb7925ef26571b3cbe7aa4fbe30445da716f7c29355b5ab02fd5fc4f"
+    },
+    "sugarcrepe": {
+      "features_sha256": "d5adf64ab19568de44a948ab023629cfa031e5a47f5c6ef3e6da7d23dd64b216",
+      "manifest_sha256": "5f05226c5245301b6c095084cf21326ac4c7d1332bd93663ef5309a36dce1228",
+      "metadata_sha256": "eb25e5925da84200c4c31baeb1378113a119b022b04fc055a5bf0770914afc7f"
+    },
+    "sugarcrepe_pp": {
+      "features_sha256": "68c2d484c3f129a758e51a7589aa91ff53892fdd559f8c09306c40f5f26428ca",
+      "manifest_sha256": "647a38462268209583df513fc7dab7a4ad787ca976b6d9b4e4a6a9a6f9178466",
+      "metadata_sha256": "66a5700bbb78ca4e673fb318378339e429d5906d5e7904594b5481aa86ba6907"
+    },
+    "visual_entailment": {
+      "features_sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+      "metadata_sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7"
+    }
+  },
+  "input_hashes": {
+    "docs/REVIEW_FOLLOWUP_PROTOCOL.json": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+    "results/review_followup/analysis/analysis_audit.json": "a9c820d7405b205e177f02acc1488ba63e656cdbd69df820d5053264d3f2574c",
+    "results/review_followup/analysis/fixed_epoch_metrics.json": "9bb57cc4dbc77814686e8dfc76aee112e205c62e5e4039342919cbcc54328848",
+    "results/review_followup/analysis/preanalysis_receipt.json": "676cdcad932330f5adb10e0e3957ebe52f540c43e4294e86771ea802a71e3f5f",
+    "results/review_followup/analysis/primary_contrasts.json": "3b0e9e8ab84a659f9503f0c0d31acb2ce41d86be9a09d3422ef3350ef4c8eac2",
+    "results/review_followup/state_manifest.json": "541400527fb764f54b7f2436955aa0a6a3e6a295713b75e343bf2bac813c6e36"
+  },
+  "matplotlib_version": "3.10.8",
+  "numpy_version": "2.3.5",
+  "output_hashes": {
+    "results/review_followup/figures/fixed_trajectories.pdf": "ed2f11df93172d39bccf45981f5dac4e91dfcaa89223fd86df01fe510a082fed",
+    "results/review_followup/figures/fixed_trajectories.png": "065715e39c2a85e4c5c849a89d391da33aecb882cb604182960060231d4dc172",
+    "results/review_followup/figures/fixed_trajectory_data.csv": "f9e0aff8d3bf1ae2f36db8df94b75631b29b080dc3dee84af3d7c3744707708b",
+    "results/review_followup/figures/primary_effects.pdf": "d5c2ab36cb4f734bd27d727bfb5eff1bdc16c66fab76a309c7280a1f305d476f",
+    "results/review_followup/figures/primary_effects.png": "fe57834c467c467b9f62676f115e081ef8160ab66b6848f0a6cd68c4f70f4175",
+    "results/review_followup/figures/primary_effects_data.csv": "a451e37c83d38a2b05ca45ec3e863a93cd62acf2d5e1dec1d94c6c2faea2a787",
+    "results/review_followup/figures/primary_effects_paper.pdf": "433fc68f61aa8c9fdb0ee2498d987b1fa3f15fdfb0bded3197b9ad0b3286fa9f",
+    "results/review_followup/figures/primary_effects_paper.png": "3d95aa2f8e216f439b7e28eea2ae81a791ed88bb2cfd0a8b0ec1bc5b26e482d8"
+  },
+  "plotting_source": "scripts/plot_review_followup_results.py",
+  "plotting_source_sha256": "8577a743f0fe5c0e0f7f431bfd7006b928ba5bb4e0f3b1f7db1920d39c3d82f0",
+  "primary_interval_source": "frozen analysis values, no recomputation or new tests",
+  "schema_version": 1,
+  "significance_stars": false,
+  "trajectory_status": "descriptive; all planned learning rates/epochs/conditions retained"
+}

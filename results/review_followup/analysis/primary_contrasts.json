@@ -1,0 +1,1105 @@
+{
+  "confidence": 0.9972222222222222,
+  "contrasts": [
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.09037083333333332,
+      "ci_percentage_points": [
+        -9.037083333333332,
+        -3.0629166666666907
+      ],
+      "ci_upper": -0.03062916666666691,
+      "comparator_draw_by_seed_values": [
+        [
+          0.849,
+          0.846,
+          0.846
+        ]
+      ],
+      "comparator_draw_methods": [
+        "source"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.06,
+      "difference_percentage_points": -6.0,
+      "effect_id": "supported_minus_source__lr_0.0001__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.0001,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "source",
+      "seed_difference_std": 0.005000000000000001,
+      "seed_differences": [
+        -0.065,
+        -0.055,
+        -0.06
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.784,
+        0.791,
+        0.786
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.010866666666666665,
+      "ci_percentage_points": [
+        -1.0866666666666664,
+        1.3222499999999855
+      ],
+      "ci_upper": 0.013222499999999854,
+      "comparator_draw_by_seed_values": [
+        [
+          0.6574,
+          0.6612,
+          0.6606
+        ]
+      ],
+      "comparator_draw_methods": [
+        "source"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.0011999999999999997,
+      "difference_percentage_points": 0.11999999999999997,
+      "effect_id": "supported_minus_source__lr_0.0001__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.0001,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "source",
+      "seed_difference_std": 0.001,
+      "seed_differences": [
+        0.0022,
+        0.0002,
+        0.0012
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.6596,
+        0.6614,
+        0.6618
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.03388888888888888,
+      "ci_percentage_points": [
+        -3.388888888888888,
+        1.37902777777777
+      ],
+      "ci_upper": 0.0137902777777777,
+      "comparator_draw_by_seed_values": [
+        [
+          0.792,
+          0.794,
+          0.801
+        ],
+        [
+          0.799,
+          0.783,
+          0.797
+        ],
+        [
+          0.798,
+          0.806,
+          0.801
+        ]
+      ],
+      "comparator_draw_methods": [
+        "count_only_draw_0",
+        "count_only_draw_1",
+        "count_only_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.009777777777777776,
+      "difference_percentage_points": -0.9777777777777776,
+      "effect_id": "supported_minus_count_only__lr_0.0001__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.0001,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "count_only",
+      "seed_difference_std": 0.005620728831085217,
+      "seed_differences": [
+        -0.012333333333333328,
+        -0.0033333333333333275,
+        -0.01366666666666666
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.784,
+        0.791,
+        0.786
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.006308611111111115,
+      "ci_percentage_points": [
+        0.6308611111111114,
+        2.9945833333333254
+      ],
+      "ci_upper": 0.029945833333333255,
+      "comparator_draw_by_seed_values": [
+        [
+          0.6414,
+          0.6456,
+          0.6454
+        ],
+        [
+          0.6398,
+          0.6452,
+          0.6428
+        ],
+        [
+          0.6418,
+          0.6414,
+          0.642
+        ]
+      ],
+      "comparator_draw_methods": [
+        "count_only_draw_0",
+        "count_only_draw_1",
+        "count_only_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.018111111111111113,
+      "difference_percentage_points": 1.8111111111111113,
+      "effect_id": "supported_minus_count_only__lr_0.0001__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.0001,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "count_only",
+      "seed_difference_std": 0.0006809579309353158,
+      "seed_differences": [
+        0.018600000000000005,
+        0.017333333333333336,
+        0.018400000000000007
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.6596,
+        0.6614,
+        0.6618
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.030012499999999994,
+      "ci_percentage_points": [
+        -3.0012499999999993,
+        1.4358333333333175
+      ],
+      "ci_upper": 0.014358333333333176,
+      "comparator_draw_by_seed_values": [
+        [
+          0.789,
+          0.789,
+          0.789
+        ],
+        [
+          0.799,
+          0.795,
+          0.801
+        ],
+        [
+          0.794,
+          0.799,
+          0.795
+        ]
+      ],
+      "comparator_draw_methods": [
+        "score_stratified_draw_0",
+        "score_stratified_draw_1",
+        "score_stratified_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.007444444444444439,
+      "difference_percentage_points": -0.7444444444444439,
+      "effect_id": "supported_minus_score_stratified__lr_0.0001__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.0001,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "score_stratified",
+      "seed_difference_std": 0.003595264374969651,
+      "seed_differences": [
+        -0.009999999999999995,
+        -0.0033333333333333296,
+        -0.008999999999999994
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.784,
+        0.791,
+        0.786
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.005039444444444446,
+      "ci_percentage_points": [
+        0.5039444444444446,
+        2.583222222222216
+      ],
+      "ci_upper": 0.02583222222222216,
+      "comparator_draw_by_seed_values": [
+        [
+          0.6444,
+          0.6452,
+          0.6464
+        ],
+        [
+          0.6472,
+          0.6478,
+          0.6446
+        ],
+        [
+          0.6454,
+          0.6454,
+          0.6434
+        ]
+      ],
+      "comparator_draw_methods": [
+        "score_stratified_draw_0",
+        "score_stratified_draw_1",
+        "score_stratified_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.015400000000000002,
+      "difference_percentage_points": 1.5400000000000003,
+      "effect_id": "supported_minus_score_stratified__lr_0.0001__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.0001,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "score_stratified",
+      "seed_difference_std": 0.001537675012622773,
+      "seed_differences": [
+        0.013933333333333337,
+        0.015266666666666675,
+        0.017000000000000005
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.6596,
+        0.6614,
+        0.6618
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.10366666666666666,
+      "ci_percentage_points": [
+        -10.366666666666665,
+        -3.796250000000024
+      ],
+      "ci_upper": -0.03796250000000024,
+      "comparator_draw_by_seed_values": [
+        [
+          0.802,
+          0.823,
+          0.821
+        ]
+      ],
+      "comparator_draw_methods": [
+        "source"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.07133333333333333,
+      "difference_percentage_points": -7.133333333333333,
+      "effect_id": "supported_minus_source__lr_0.0003__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.0003,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "source",
+      "seed_difference_std": 0.015947831618540916,
+      "seed_differences": [
+        -0.053,
+        -0.079,
+        -0.082
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.749,
+        0.744,
+        0.739
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.029548333333333333,
+      "ci_percentage_points": [
+        -2.954833333333333,
+        0.38149999999999046
+      ],
+      "ci_upper": 0.003814999999999905,
+      "comparator_draw_by_seed_values": [
+        [
+          0.6262,
+          0.63,
+          0.6332
+        ]
+      ],
+      "comparator_draw_methods": [
+        "source"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.0132,
+      "difference_percentage_points": -1.32,
+      "effect_id": "supported_minus_source__lr_0.0003__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.0003,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "source",
+      "seed_difference_std": 0.004161730409336963,
+      "seed_differences": [
+        -0.0154,
+        -0.0084,
+        -0.0158
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.6108,
+        0.6216,
+        0.6174
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.01729722222222221,
+      "ci_percentage_points": [
+        -1.729722222222221,
+        4.113611111111096
+      ],
+      "ci_upper": 0.04113611111111096,
+      "comparator_draw_by_seed_values": [
+        [
+          0.721,
+          0.724,
+          0.733
+        ],
+        [
+          0.721,
+          0.734,
+          0.728
+        ],
+        [
+          0.734,
+          0.74,
+          0.742
+        ]
+      ],
+      "comparator_draw_methods": [
+        "count_only_draw_0",
+        "count_only_draw_1",
+        "count_only_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.013222222222222232,
+      "difference_percentage_points": 1.3222222222222233,
+      "effect_id": "supported_minus_count_only__lr_0.0003__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.0003,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "count_only",
+      "seed_difference_std": 0.009639809434108432,
+      "seed_differences": [
+        0.02366666666666668,
+        0.011333333333333345,
+        0.004666666666666678
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.749,
+        0.744,
+        0.739
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.03331555555555557,
+      "ci_percentage_points": [
+        3.331555555555557,
+        6.376305555555552
+      ],
+      "ci_upper": 0.06376305555555552,
+      "comparator_draw_by_seed_values": [
+        [
+          0.5652,
+          0.5628,
+          0.5654
+        ],
+        [
+          0.5684,
+          0.5666,
+          0.5684
+        ],
+        [
+          0.5728,
+          0.5696,
+          0.5748
+        ]
+      ],
+      "comparator_draw_methods": [
+        "count_only_draw_0",
+        "count_only_draw_1",
+        "count_only_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.04837777777777779,
+      "difference_percentage_points": 4.837777777777779,
+      "effect_id": "supported_minus_count_only__lr_0.0003__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.0003,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "count_only",
+      "seed_difference_std": 0.006648085215837491,
+      "seed_differences": [
+        0.04200000000000001,
+        0.05526666666666667,
+        0.047866666666666675
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.6108,
+        0.6216,
+        0.6174
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.02659305555555555,
+      "ci_percentage_points": [
+        -2.659305555555555,
+        2.8148611111110875
+      ],
+      "ci_upper": 0.028148611111110874,
+      "comparator_draw_by_seed_values": [
+        [
+          0.74,
+          0.723,
+          0.741
+        ],
+        [
+          0.736,
+          0.753,
+          0.738
+        ],
+        [
+          0.748,
+          0.743,
+          0.763
+        ]
+      ],
+      "comparator_draw_methods": [
+        "score_stratified_draw_0",
+        "score_stratified_draw_1",
+        "score_stratified_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.00122222222222223,
+      "difference_percentage_points": 0.122222222222223,
+      "effect_id": "supported_minus_score_stratified__lr_0.0003__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.0003,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "score_stratified",
+      "seed_difference_std": 0.008441519961432256,
+      "seed_differences": [
+        0.007666666666666676,
+        0.004333333333333344,
+        -0.008333333333333323
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.749,
+        0.744,
+        0.739
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.024120833333333345,
+      "ci_percentage_points": [
+        2.4120833333333347,
+        5.1977777777777785
+      ],
+      "ci_upper": 0.05197777777777778,
+      "comparator_draw_by_seed_values": [
+        [
+          0.5764,
+          0.5822,
+          0.5852
+        ],
+        [
+          0.5772,
+          0.5718,
+          0.5858
+        ],
+        [
+          0.576,
+          0.5764,
+          0.5746
+        ]
+      ],
+      "comparator_draw_methods": [
+        "score_stratified_draw_0",
+        "score_stratified_draw_1",
+        "score_stratified_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.038200000000000005,
+      "difference_percentage_points": 3.8200000000000003,
+      "effect_id": "supported_minus_score_stratified__lr_0.0003__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.0003,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "score_stratified",
+      "seed_difference_std": 0.005750748743521243,
+      "seed_differences": [
+        0.034266666666666674,
+        0.04480000000000001,
+        0.03553333333333334
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.6108,
+        0.6216,
+        0.6174
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.1434083333333333,
+      "ci_percentage_points": [
+        -14.34083333333333,
+        -7.329583333333358
+      ],
+      "ci_upper": -0.07329583333333357,
+      "comparator_draw_by_seed_values": [
+        [
+          0.763,
+          0.759,
+          0.757
+        ]
+      ],
+      "comparator_draw_methods": [
+        "source"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.10833333333333334,
+      "difference_percentage_points": -10.833333333333334,
+      "effect_id": "supported_minus_source__lr_0.001__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.001,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "source",
+      "seed_difference_std": 0.005507570547286107,
+      "seed_differences": [
+        -0.111,
+        -0.102,
+        -0.112
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.652,
+        0.657,
+        0.645
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.039615000000000004,
+      "ci_percentage_points": [
+        -3.9615000000000005,
+        0.1481666666666571
+      ],
+      "ci_upper": 0.0014816666666665709,
+      "comparator_draw_by_seed_values": [
+        [
+          0.5272,
+          0.5488,
+          0.5472
+        ]
+      ],
+      "comparator_draw_methods": [
+        "source"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": -0.019,
+      "difference_percentage_points": -1.9,
+      "effect_id": "supported_minus_source__lr_0.001__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.001,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "source",
+      "seed_difference_std": 0.00510294032886923,
+      "seed_differences": [
+        -0.0138,
+        -0.0192,
+        -0.024
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.5134,
+        0.5296,
+        0.5232
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.007172222222222234,
+      "ci_percentage_points": [
+        0.7172222222222234,
+        6.9222222222222225
+      ],
+      "ci_upper": 0.06922222222222223,
+      "comparator_draw_by_seed_values": [
+        [
+          0.612,
+          0.6,
+          0.637
+        ],
+        [
+          0.59,
+          0.621,
+          0.616
+        ],
+        [
+          0.617,
+          0.619,
+          0.609
+        ]
+      ],
+      "comparator_draw_methods": [
+        "count_only_draw_0",
+        "count_only_draw_1",
+        "count_only_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.0378888888888889,
+      "difference_percentage_points": 3.78888888888889,
+      "effect_id": "supported_minus_count_only__lr_0.001__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.001,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "count_only",
+      "seed_difference_std": 0.011781969903832502,
+      "seed_differences": [
+        0.04566666666666669,
+        0.04366666666666669,
+        0.024333333333333353
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.652,
+        0.657,
+        0.645
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.05163194444444446,
+      "ci_percentage_points": [
+        5.1631944444444455,
+        8.831666666666635
+      ],
+      "ci_upper": 0.08831666666666635,
+      "comparator_draw_by_seed_values": [
+        [
+          0.4512,
+          0.436,
+          0.4396
+        ],
+        [
+          0.4436,
+          0.4524,
+          0.4522
+        ],
+        [
+          0.4616,
+          0.4686,
+          0.46
+        ]
+      ],
+      "comparator_draw_methods": [
+        "count_only_draw_0",
+        "count_only_draw_1",
+        "count_only_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.07037777777777779,
+      "difference_percentage_points": 7.037777777777779,
+      "effect_id": "supported_minus_count_only__lr_0.001__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.001,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "count_only",
+      "seed_difference_std": 0.008228226036254945,
+      "seed_differences": [
+        0.061266666666666685,
+        0.07726666666666669,
+        0.07260000000000003
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.5134,
+        0.5296,
+        0.5232
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": -0.02591388888888888,
+      "ci_percentage_points": [
+        -2.591388888888888,
+        3.0247222222222074
+      ],
+      "ci_upper": 0.030247222222222075,
+      "comparator_draw_by_seed_values": [
+        [
+          0.652,
+          0.637,
+          0.635
+        ],
+        [
+          0.648,
+          0.667,
+          0.652
+        ],
+        [
+          0.637,
+          0.663,
+          0.651
+        ]
+      ],
+      "comparator_draw_methods": [
+        "score_stratified_draw_0",
+        "score_stratified_draw_1",
+        "score_stratified_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.002222222222222234,
+      "difference_percentage_points": 0.2222222222222234,
+      "effect_id": "supported_minus_score_stratified__lr_0.001__i2t_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 1000,
+      "learning_rate": 0.001,
+      "left": "supported",
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "score_stratified",
+      "seed_difference_std": 0.003746603400019415,
+      "seed_differences": [
+        0.006333333333333351,
+        0.0013333333333333522,
+        -0.000999999999999984
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.652,
+        0.657,
+        0.645
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "ci_lower": 0.0242638888888889,
+      "ci_percentage_points": [
+        2.4263888888888903,
+        5.803749999999977
+      ],
+      "ci_upper": 0.05803749999999977,
+      "comparator_draw_by_seed_values": [
+        [
+          0.4586,
+          0.4974,
+          0.4722
+        ],
+        [
+          0.4782,
+          0.4952,
+          0.484
+        ],
+        [
+          0.476,
+          0.487,
+          0.4824
+        ]
+      ],
+      "comparator_draw_methods": [
+        "score_stratified_draw_0",
+        "score_stratified_draw_1",
+        "score_stratified_draw_2"
+      ],
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9972222222222222,
+      "dataset": "e_vil_test1000",
+      "difference": 0.040844444444444454,
+      "difference_percentage_points": 4.084444444444445,
+      "effect_id": "supported_minus_score_stratified__lr_0.001__t2i_r1",
+      "epoch": 10,
+      "family_size": 18,
+      "images": 1000,
+      "interpretation": "conditional on the fitted training seeds and fixed assignment draws; neither is resampled",
+      "items": 5000,
+      "learning_rate": 0.001,
+      "left": "supported",
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "right": "score_stratified",
+      "seed_difference_std": 0.003895486467030125,
+      "seed_differences": [
+        0.04246666666666669,
+        0.03640000000000001,
+        0.04366666666666668
+      ],
+      "seed_ids": [
+        17,
+        29,
+        43
+      ],
+      "supported_seed_values": [
+        0.5134,
+        0.5296,
+        0.5232
+      ],
+      "training_seeds": 3
+    }
+  ],
+  "family": "3 contrasts \u00d7 3 learning rates \u00d7 2 source-only Flickr retrieval endpoints",
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34"
+}

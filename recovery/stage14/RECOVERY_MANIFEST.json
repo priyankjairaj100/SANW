@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "checkpoint": "stage14_completed_evaluation_analysis_summary",
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "scope": "Stage 14 incremental completed-evaluation/analysis summary. Includes all three indices/pre-score receipts, training/evaluation/analysis audits, all completed analysis/bootstrap outputs, figures/plot CSVs/captions/provenance, report/digest, scientific scripts/test, protocol/freeze/reproduction/story/design-not-run docs, and raw-prediction archive manifest/restorer/roundtrip receipt. Separately download all 24 prediction ZIP parts or clone Git to restore 1080 exact NPZ files plus 1080 paired JSON files. This summary ZIP excludes raw prediction payloads, checkpoint weights, prior feature caches, raw images/models, and the later v3 manuscript. See project/docs/STAGE14_RECOVERY_README.md.",
+  "source_file_count": 43,
+  "source_bytes": 6195708,
+  "separate_prediction_parts": 24,
+  "separate_prediction_files": 2160,
+  "files": [
+    {
+      "path": "PACKAGE_SCOPE.txt",
+      "bytes": 693,
+      "sha256": "32c98bf68e60c6ad65c0248e70cd48861a81a19b0c25cc3304c6c3b0ce40049c"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_ALLOCATION_DESIGN_NOT_RUN.md",
+      "bytes": 14371,
+      "sha256": "1a850391d3823f8edf96fd927679f8c8afb6613d11ba1be7374cee9717532fbb",
+      "git_blob_sha1": "3153566fb1bad89cf813f0d8fdbce3a8fb9a273f"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_PROTOCOL.json",
+      "bytes": 13796,
+      "sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+      "git_blob_sha1": "391cc540287f058e74498151e09fc81f6cad115b"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_PROTOCOL_FREEZE.json",
+      "bytes": 515,
+      "sha256": "2a0110d1baf632ef6a7f442ab6778fde7ce316c5557345470b1b77da5f033394",
+      "git_blob_sha1": "1062b6b5a0ba501a29609fdbbb357488de7bec8f"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_README.md",
+      "bytes": 14496,
+      "sha256": "ed2afbcf3c8b507642674a89caf60fdb47e84b04ea7b08e4dc3bb9ff7306b16b",
+      "git_blob_sha1": "b7aad4f9a9647662c3460ba3283df2337d5da70f"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_STORY_ASSESSMENT.md",
+      "bytes": 9881,
+      "sha256": "cd4facd8efaf4eb58ed106ec4ef4c1205b99f199e4f0fa383625a3d5fae5718b",
+      "git_blob_sha1": "73de446947fd996242b817e2bd6c07ea748edbb0"
+    },
+    {
+      "path": "project/docs/STAGE14_RECOVERY_README.md",
+      "bytes": 8033,
+      "sha256": "56bc3caed2b82118cdad7c52319cf7c232d9813c636adce6e87b3f8b44a95e87",
+      "git_blob_sha1": "c28657dc22625fb9d90e95a0eeca73fc5a6e9c77"
+    },
+    {
+      "path": "project/recovery/stage14/PREDICTION_ARCHIVES.json",
+      "bytes": 675232,
+      "sha256": "b87cd467141e6f62c64e56953d587b9d102bc3d16e32423efabec6e5210e7dbb",
+      "git_blob_sha1": "4069035ca38276ac2127b93af89fceb84447df24"
+    },
+    {
+      "path": "project/recovery/stage14/restore_predictions.py",
+      "bytes": 7598,
+      "sha256": "5fc3a20bc96ae2de9ee75e37e309bace1a3a6def07ce595d23be1f71b9d44b41",
+      "git_blob_sha1": "7fee0b43acaa48fe3e5f94c646406114596a9a72"
+    },
+    {
+      "path": "project/recovery/stage14/restore_verification_receipt.json",
+      "bytes": 670,
+      "sha256": "2854e6c176da2aef9ef53e75b6fd834202594527adf9b3834b2b750782d8d376",
+      "git_blob_sha1": "6f09ab4a042193becd48d23ebb12236bf5d3925c"
+    },
+    {
+      "path": "project/results/review_followup/COMPLETE_RESULTS.md",
+      "bytes": 3692,
+      "sha256": "a96106817e961d0408892a159d0f064384391b3db6f15822d7274105ad2836b5",
+      "git_blob_sha1": "d9dddf7a040a7450b4e6819d0797c2e1c1c279e8"
+    },
+    {
+      "path": "project/results/review_followup/analysis/all_state_metrics.csv",
+      "bytes": 717667,
+      "sha256": "ba1b219f255c12b4fbbda807361e81725ac1a6e9b9921f15add0ac5dd8bf9e22",
+      "git_blob_sha1": "6d9e57422cd14649ccaf9eb46755da1758bd50ad"
+    },
+    {
+      "path": "project/results/review_followup/analysis/analysis_audit.json",
+      "bytes": 455,
+      "sha256": "a9c820d7405b205e177f02acc1488ba63e656cdbd69df820d5053264d3f2574c",
+      "git_blob_sha1": "9661eaff0ff8a5b4f57fd74e516ba28d294e74e0"
+    },
+    {
+      "path": "project/results/review_followup/analysis/e_vil_query_subgroups.json",
+      "bytes": 325918,
+      "sha256": "cd4bcfa599f9501de888ae4ce5a635a64f3a73941afe86712ce30fb11ac596aa",
+      "git_blob_sha1": "a16e0fa24022269feccf7416eddfeed20b4fdeca"
+    },
+    {
+      "path": "project/results/review_followup/analysis/fixed_epoch_metrics.json",
+      "bytes": 905448,
+      "sha256": "9bb57cc4dbc77814686e8dfc76aee112e205c62e5e4039342919cbcc54328848",
+      "git_blob_sha1": "42a903b7611862de8498f183a69ae65ec111e7e7"
+    },
+    {
+      "path": "project/results/review_followup/analysis/independent_primary_audit.json",
+      "bytes": 76879,
+      "sha256": "1c25c6899fdbd5da59a0cf0885fbcae7bc794eb276f2f59dbb49a27b51d36ab5",
+      "git_blob_sha1": "6a873bd1bb67b1d540099e16b11edd78a9178d2e"
+    },
+    {
+      "path": "project/results/review_followup/analysis/preanalysis_receipt.json",
+      "bytes": 2736,
+      "sha256": "676cdcad932330f5adb10e0e3957ebe52f540c43e4294e86771ea802a71e3f5f",
+      "git_blob_sha1": "546fb2e89d914bfc1eb05fb2625a2b2e29efde83"
+    },
+    {
+      "path": "project/results/review_followup/analysis/primary_bootstrap_samples.npz",
+      "bytes": 441725,
+      "sha256": "6993ce6c4b8ee7aa2420625e3781df787d4d29cf3854daa9082b4b307316c856",
+      "git_blob_sha1": "429a7cb43bbbf1b4548f986d7914b4ce63a50d1a"
+    },
+    {
+      "path": "project/results/review_followup/analysis/primary_contrasts.json",
+      "bytes": 29378,
+      "sha256": "3b0e9e8ab84a659f9503f0c0d31acb2ce41d86be9a09d3422ef3350ef4c8eac2",
+      "git_blob_sha1": "9c07a821f5e7587ab033eee01aabae43d7ca04c9"
+    },
+    {
+      "path": "project/results/review_followup/analysis/selected_strategy_metrics.json",
+      "bytes": 252682,
+      "sha256": "1363a4ca8e78042114feaa303028d57aa1fd36354628a7478f10249687f38a4d",
+      "git_blob_sha1": "cbee328feb5683cae503a2b8531577b302740206"
+    },
+    {
+      "path": "project/results/review_followup/complete_results_digest.json",
+      "bytes": 6217,
+      "sha256": "d45030eb1996a2ba97a55bce7e0e22d35523970b4e84ca6cc08c6e74e6302b03",
+      "git_blob_sha1": "cb214a02444cdcfce6d316b2482a7d7d83554755"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/native_replay_prediction_audit.json",
+      "bytes": 11183,
+      "sha256": "797589c9527f6897f3c4852739b72ecae4033b3b4d61652e3a5ea5179af68b69",
+      "git_blob_sha1": "ec26535e80dd57681c7777668d9bae125528fde7"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/selected_index.json",
+      "bytes": 193400,
+      "sha256": "c51850c31383305057c40d09b52b5a7f794e51056df54ba9607018d7bf416052",
+      "git_blob_sha1": "4c05f0b1fc9e68effd3d6c5a61029c5bf24e5476"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/selected_prescore_receipt.json",
+      "bytes": 59382,
+      "sha256": "9d2ab41011e283f519ffc9aea80844723634a9e0987188a345a9596fb71f167a",
+      "git_blob_sha1": "0e94e5903fac0d4ed5f7faa45bb1a18c2535548b"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/terminal_index.json",
+      "bytes": 412622,
+      "sha256": "2629609c886a2344981facd409dfc5555a822a27f350bbb6020e1cae75f0a048",
+      "git_blob_sha1": "50d809c7071745cab9a27d688bbc2f4ca660226f"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/terminal_prescore_receipt.json",
+      "bytes": 113525,
+      "sha256": "9404e3d57bab50a779771f2cc047b3c2636295435a83e5c96e35830b6c3d3e02",
+      "git_blob_sha1": "405e1ad297f4fc1b18c95412b1d6a15853854cb4"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/trajectory_index.json",
+      "bytes": 972156,
+      "sha256": "8fb92d491d7263d312eed79de54ca8e7ec5894e3a990161e5dfb026c09dddd51",
+      "git_blob_sha1": "5f7d85599fdd9a642167249e1ba72c3aac0e50ed"
+    },
+    {
+      "path": "project/results/review_followup/evaluation/trajectory_prescore_receipt.json",
+      "bytes": 305076,
+      "sha256": "543c33a1667d13e26e389a3823fb84fb2f4d145d025e78b76719920beb24a36b",
+      "git_blob_sha1": "6e016cb0cdc6d890ad1a6a1745b91be4bc59d24a"
+    },
+    {
+      "path": "project/results/review_followup/figures/captions.md",
+      "bytes": 1045,
+      "sha256": "62da46835caaa768ce0ea5d8ba3b421ea0c2ce22ef5fec36b8e4822577ee2719",
+      "git_blob_sha1": "2140b833625fbca43690e8dd0e32029bcc1b6a1c"
+    },
+    {
+      "path": "project/results/review_followup/figures/figure_provenance.json",
+      "bytes": 3874,
+      "sha256": "f2c0eb2b79bd059ef3fa5b1167754763ec985172f3328ca018274f25e0c9c96d",
+      "git_blob_sha1": "c86c7892c867596018bb4b0f949e912d70da4b26"
+    },
+    {
+      "path": "project/results/review_followup/figures/fixed_trajectories.pdf",
+      "bytes": 23643,
+      "sha256": "ed2f11df93172d39bccf45981f5dac4e91dfcaa89223fd86df01fe510a082fed",
+      "git_blob_sha1": "61a0821bf7500a7308169cb5c1f53cdc57e9dd80"
+    },
+    {
+      "path": "project/results/review_followup/figures/fixed_trajectories.png",
+      "bytes": 244782,
+      "sha256": "065715e39c2a85e4c5c849a89d391da33aecb882cb604182960060231d4dc172",
+      "git_blob_sha1": "db5d9d9c5a187526ab743c5f32bd77012f9386ef"
+    },
+    {
+      "path": "project/results/review_followup/figures/fixed_trajectory_data.csv",
+      "bytes": 8291,
+      "sha256": "f9e0aff8d3bf1ae2f36db8df94b75631b29b080dc3dee84af3d7c3744707708b",
+      "git_blob_sha1": "2292c91911adbdaa0bd419f8b7463675a064ffc8"
+    },
+    {
+      "path": "project/results/review_followup/figures/primary_effects.pdf",
+      "bytes": 18176,
+      "sha256": "d5c2ab36cb4f734bd27d727bfb5eff1bdc16c66fab76a309c7280a1f305d476f",
+      "git_blob_sha1": "ed38715fb0077e8bea4f7d55f7b082781c051370"
+    },
+    {
+      "path": "project/results/review_followup/figures/primary_effects.png",
+      "bytes": 136631,
+      "sha256": "fe57834c467c467b9f62676f115e081ef8160ab66b6848f0a6cd68c4f70f4175",
+      "git_blob_sha1": "4f2943d0ba3f4cf9177f902bf17efde6fbae32c2"
+    },
+    {
+      "path": "project/results/review_followup/figures/primary_effects_data.csv",
+      "bytes": 3149,
+      "sha256": "a451e37c83d38a2b05ca45ec3e863a93cd62acf2d5e1dec1d94c6c2faea2a787",
+      "git_blob_sha1": "e29025b78160551be261a5abe34ea17bb5deb4b3"
+    },
+    {
+      "path": "project/results/review_followup/figures/primary_effects_paper.pdf",
+      "bytes": 15721,
+      "sha256": "433fc68f61aa8c9fdb0ee2498d987b1fa3f15fdfb0bded3197b9ad0b3286fa9f",
+      "git_blob_sha1": "3f1fd2a1623e6dfbd10ff3b0920a51e0b52490e7"
+    },
+    {
+      "path": "project/results/review_followup/figures/primary_effects_paper.png",
+      "bytes": 81074,
+      "sha256": "3d95aa2f8e216f439b7e28eea2ae81a791ed88bb2cfd0a8b0ec1bc5b26e482d8",
+      "git_blob_sha1": "095b6e5203f93d696bfd32fe91bec2bf98b20e51"
+    },
+    {
+      "path": "project/results/review_followup/training_final_audit.json",
+      "bytes": 5355,
+      "sha256": "b503c03b4749ac288b5818bf1f2192a35e9a06741167fa7526d181e49b36fc1a",
+      "git_blob_sha1": "5eac48cef5c91cbfab9cfb24f428e723bdc3f7e8"
+    },
+    {
+      "path": "project/scripts/analyze_review_followup.py",
+      "bytes": 20221,
+      "sha256": "063b1667b814b981c1cd91d188841ec7e400fdb046c1306b815833a8da92ee2e",
+      "git_blob_sha1": "1fb394e2a8411ad93859d1c4a6dae5fde14def9d"
+    },
+    {
+      "path": "project/scripts/audit_review_primary_independent.py",
+      "bytes": 11789,
+      "sha256": "067069805468d7c08f2068708e6674c757ac6d5e849bc1c27f24ddd586123175",
+      "git_blob_sha1": "937c06b7d522a1d9521c6de4dc34b7a5285a6356"
+    },
+    {
+      "path": "project/scripts/evaluate_review_followup.py",
+      "bytes": 21158,
+      "sha256": "9b5a846486aa348efc43e54fed585cb6fd6d3d8547583c56db6e11bca5f1a349",
+      "git_blob_sha1": "0d87b5353004627035e3ee80ded112bad0d289ee"
+    },
+    {
+      "path": "project/scripts/plot_review_followup_results.py",
+      "bytes": 17235,
+      "sha256": "8577a743f0fe5c0e0f7f431bfd7006b928ba5bb4e0f3b1f7db1920d39c3d82f0",
+      "git_blob_sha1": "2f158a9acc9224b2f09e8ed6b4c0920fe7c2ea26"
+    },
+    {
+      "path": "project/tests/test_review_followup_evaluation.py",
+      "bytes": 8831,
+      "sha256": "049d44bfca6c09ca50f9d7e32d2801c59de8c1cdac456a1acdf394647537cbda",
+      "git_blob_sha1": "da95a17e523d36060de9d552cb6b3697af331eaf"
+    },
+    {
+      "path": "verify_recovery.py",
+      "bytes": 7657,
+      "sha256": "ac4cf2a88a4c121bcdf267a4b54868bbc68d24985d9bab6b078416dc9efe6568"
+    }
+  ]
+}

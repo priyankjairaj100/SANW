@@ -1,0 +1,41 @@
+{
+  "archive": "checkpoint-14-completed-evaluation-analysis-summary.zip",
+  "bytes": 1416448,
+  "sha256": "f30684148641a03362e31ce63123ef87226e8895feb7939f0b5db2f7c92ce0f9",
+  "payload_files": 45,
+  "total_zip_entries": 46,
+  "project_files": 43,
+  "project_bytes": 6195708,
+  "prediction_parts_separate": 24,
+  "prediction_part_bytes": 189700260,
+  "prediction_files": 2160,
+  "prediction_npz_files": 1080,
+  "prediction_metadata_json_files": 1080,
+  "prediction_raw_bytes": 188485090,
+  "prediction_archive_manifest_sha256": "b87cd467141e6f62c64e56953d587b9d102bc3d16e32423efabec6e5210e7dbb",
+  "zip_crc_verified": true,
+  "all_payload_sha256_verified": true,
+  "source_copy_verified": true,
+  "complete_prediction_restore_verified": true,
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "rebuild": {
+    "script": "recovery/stage14/rebuild_summary.py",
+    "manifest": "recovery/stage14/RECOVERY_MANIFEST.json",
+    "scope": "recovery/stage14/PACKAGE_SCOPE.txt",
+    "verifier_source": "scripts/verify_recovery.py",
+    "compression": "ZIP_DEFLATED",
+    "compression_level": 9,
+    "entry_timestamp": [
+      2026,
+      10,
+      3,
+      0,
+      0,
+      0
+    ],
+    "entry_external_attr": 27525120,
+    "create_system": 3,
+    "original_zlib_version": "1.3.2",
+    "note": "Payload verification is independent of container reproducibility; a different zlib version may change compressed bytes."
+  }
+}
