@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "original_v2_scientific_files_byte_unchanged": 729,
+  "query_rank_metric_recomputations": 222,
+  "epoch_zero_states_identical_to_frozen_including_reference": 6,
+  "ranks_checked_runs": 37,
+  "reference_snapshot_commit": "a04cd20194ea7d376da8ff2fecc1667ffd05ec54"
+}

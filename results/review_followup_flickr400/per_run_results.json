@@ -1,0 +1,1920 @@
+{
+  "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+  "runs": [
+    {
+      "run_id": "frozen",
+      "method": "frozen",
+      "seed": null,
+      "epoch": 0,
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.91,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.8015,
+          "r5": 0.943,
+          "r10": 0.967,
+          "mean_rank": 2.6155,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/frozen_ranks.npz",
+      "predictions_sha256": "9d80caff56bfc56fd175232cd2baf702680a5bbb5bb5041708b668b26d03d6d3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      }
+    },
+    {
+      "run_id": "clip_seed_17",
+      "method": "clip",
+      "seed": 17,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/clip/seed_17.pt",
+      "checkpoint_sha256": "1f5f55e9d8a5c28dd5c6cc6e75d0ad69a2d7faea15e4b434bf964023adc69661",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9025,
+          "r5": 0.975,
+          "r10": 0.99,
+          "mean_rank": 1.375,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.799,
+          "r5": 0.943,
+          "r10": 0.9705,
+          "mean_rank": 2.4775,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/clip_seed_17_ranks.npz",
+      "predictions_sha256": "ff5701307110392d3401194c238afd255e2fde78e6fb7bdd429a9a619648333b",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -0.7500000000000062,
+        "i2t.r5": -0.2500000000000058,
+        "i2t.r10": -0.2500000000000058,
+        "t2i.r1": -0.24999999999999467,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.35000000000000586
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      }
+    },
+    {
+      "run_id": "clip_seed_29",
+      "method": "clip",
+      "seed": 29,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/clip/seed_29.pt",
+      "checkpoint_sha256": "1861472c4ebaed211a845a00df85ba5d8f1e5ca03e99774ac26946343b9126ba",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9025,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.3575,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.801,
+          "r5": 0.943,
+          "r10": 0.97,
+          "mean_rank": 2.493,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/clip_seed_29_ranks.npz",
+      "predictions_sha256": "7376a17c04aebfc6c91a625285b95dba16d14183e2ceb88d18e18bcd6ba57d0a",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -0.7500000000000062,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": -0.04999999999999449,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.30000000000000027
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      }
+    },
+    {
+      "run_id": "clip_seed_43",
+      "method": "clip",
+      "seed": 43,
+      "epoch": 3,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/clip/seed_43.pt",
+      "checkpoint_sha256": "9e51cc68512f462fcdaccd35c17d3061803cafc4aa02707ced5a15418e6ca904",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9,
+          "r5": 0.9725,
+          "r10": 0.99,
+          "mean_rank": 1.4875,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.784,
+          "r5": 0.9405,
+          "r10": 0.9695,
+          "mean_rank": 2.5085,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/clip_seed_43_ranks.npz",
+      "predictions_sha256": "2c6bcef323c9d5a1b0ee822e7b905c9d3c88ffa41e757f6f540375e111452df5",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -1.0000000000000009,
+        "i2t.r5": -0.5000000000000004,
+        "i2t.r10": -0.2500000000000058,
+        "t2i.r1": -1.749999999999996,
+        "t2i.r5": -0.24999999999999467,
+        "t2i.r10": 0.2500000000000058
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      }
+    },
+    {
+      "run_id": "constant_seed_17",
+      "method": "constant",
+      "seed": 17,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/constant/seed_17.pt",
+      "checkpoint_sha256": "66a7341efc9cf3ddc61f28c5b19b31dbb8a5f8824d51fd9b2ecb353e14f00c13",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9,
+          "r5": 0.9725,
+          "r10": 0.9875,
+          "mean_rank": 1.4025,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.798,
+          "r5": 0.9435,
+          "r10": 0.969,
+          "mean_rank": 2.4975,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/constant_seed_17_ranks.npz",
+      "predictions_sha256": "e362934171a518f2142be6215232f338e2f21674e1aa2c5d653414ae14488a53",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -1.0000000000000009,
+        "i2t.r5": -0.5000000000000004,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -0.34999999999999476,
+        "t2i.r5": 0.050000000000005596,
+        "t2i.r10": 0.20000000000000018
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -0.24999999999999467,
+        "i2t.r5": -0.24999999999999467,
+        "i2t.r10": -0.24999999999999467,
+        "t2i.r1": -0.10000000000000009,
+        "t2i.r5": 0.050000000000005596,
+        "t2i.r10": -0.15000000000000568
+      }
+    },
+    {
+      "run_id": "constant_seed_29",
+      "method": "constant",
+      "seed": 29,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/constant/seed_29.pt",
+      "checkpoint_sha256": "df94357ad15ba48b9a2b24729b8c6e93de8bbab9ae5357c659c7aed7e4a6636a",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.895,
+          "r5": 0.9775,
+          "r10": 0.99,
+          "mean_rank": 1.3825,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7985,
+          "r5": 0.9425,
+          "r10": 0.969,
+          "mean_rank": 2.513,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/constant_seed_29_ranks.npz",
+      "predictions_sha256": "53fa6d014a914ed09c8c0ceaa07bb6240ab38259e8d599948b6e0ea29831510b",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -1.5000000000000013,
+        "i2t.r5": 0.0,
+        "i2t.r10": -0.2500000000000058,
+        "t2i.r1": -0.30000000000000027,
+        "t2i.r5": -0.04999999999999449,
+        "t2i.r10": 0.20000000000000018
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -0.7499999999999951,
+        "i2t.r5": 0.0,
+        "i2t.r10": -0.2500000000000058,
+        "t2i.r1": -0.2500000000000058,
+        "t2i.r5": -0.04999999999999449,
+        "t2i.r10": -0.10000000000000009
+      }
+    },
+    {
+      "run_id": "constant_seed_43",
+      "method": "constant",
+      "seed": 43,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/constant/seed_43.pt",
+      "checkpoint_sha256": "239dc9cb084ba6c75f43ee95046614187c2508323455294f550b41d37d8ce575",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9,
+          "r5": 0.9725,
+          "r10": 0.99,
+          "mean_rank": 1.44,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7955,
+          "r5": 0.9425,
+          "r10": 0.971,
+          "mean_rank": 2.4785,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/constant_seed_43_ranks.npz",
+      "predictions_sha256": "d789fdab6d93e59b7d2d8611f4bdc701361fb6885b8111a88429f4a6e26694cf",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -1.0000000000000009,
+        "i2t.r5": -0.5000000000000004,
+        "i2t.r10": -0.2500000000000058,
+        "t2i.r1": -0.6000000000000005,
+        "t2i.r5": -0.04999999999999449,
+        "t2i.r10": 0.40000000000000036
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 1.1499999999999955,
+        "t2i.r5": 0.20000000000000018,
+        "t2i.r10": 0.14999999999999458
+      }
+    },
+    {
+      "run_id": "grounded_seed_17",
+      "method": "grounded",
+      "seed": 17,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded/seed_17.pt",
+      "checkpoint_sha256": "6613e4a7d845959518ea0c4ae8a32dc841ec6a1370fe48e55c113f73b7e5ca62",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.83,
+          "r5": 0.9525,
+          "r10": 0.9825,
+          "mean_rank": 1.955,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.737,
+          "r5": 0.926,
+          "r10": 0.9635,
+          "mean_rank": 3.15,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_seed_17_ranks.npz",
+      "predictions_sha256": "f0ffdee7debf17340fa55d7d926d0fef6710423589acd4df889d78353c916632",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -8.000000000000007,
+        "i2t.r5": -2.500000000000002,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -6.45,
+        "t2i.r5": -1.6999999999999904,
+        "t2i.r10": -0.34999999999999476
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -7.250000000000001,
+        "i2t.r5": -2.2499999999999964,
+        "i2t.r10": -0.7499999999999951,
+        "t2i.r1": -6.2000000000000055,
+        "t2i.r5": -1.6999999999999904,
+        "t2i.r10": -0.7000000000000006
+      }
+    },
+    {
+      "run_id": "grounded_seed_29",
+      "method": "grounded",
+      "seed": 29,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded/seed_29.pt",
+      "checkpoint_sha256": "24b1769178fe8bbb4406f67505dd43f7b5e400751364c9666414e50e979e2fd1",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8375,
+          "r5": 0.9575,
+          "r10": 0.9875,
+          "mean_rank": 1.845,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.733,
+          "r5": 0.922,
+          "r10": 0.9625,
+          "mean_rank": 3.1205,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_seed_29_ranks.npz",
+      "predictions_sha256": "ce6ff4bb7cef7ad5a87f6a66b8f23ce617ee5b4c41025f903e0c370da38464ba",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -7.250000000000001,
+        "i2t.r5": -2.0000000000000018,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.8500000000000005,
+        "t2i.r5": -2.0999999999999908,
+        "t2i.r10": -0.44999999999999485
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -6.499999999999995,
+        "i2t.r5": -2.0000000000000018,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.800000000000006,
+        "t2i.r5": -2.0999999999999908,
+        "t2i.r10": -0.7499999999999951
+      }
+    },
+    {
+      "run_id": "grounded_seed_43",
+      "method": "grounded",
+      "seed": 43,
+      "epoch": 7,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded/seed_43.pt",
+      "checkpoint_sha256": "1157dfb659998292c1db8c0d79884a77e6722e6d4670732f3f1cd25fab10166b",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8475,
+          "r5": 0.9375,
+          "r10": 0.98,
+          "mean_rank": 2.1375,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7265,
+          "r5": 0.9225,
+          "r10": 0.9615,
+          "mean_rank": 3.112,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_seed_43_ranks.npz",
+      "predictions_sha256": "b3446d4e64b992850fd5571556aa04f583e0e75694e7850bc54c2884b6fdb820",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -6.25,
+        "i2t.r5": -4.0000000000000036,
+        "i2t.r10": -1.2500000000000067,
+        "t2i.r1": -7.499999999999996,
+        "t2i.r5": -2.0499999999999963,
+        "t2i.r10": -0.5499999999999949
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -5.249999999999999,
+        "i2t.r5": -3.500000000000003,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -5.75,
+        "t2i.r5": -1.8000000000000016,
+        "t2i.r10": -0.8000000000000007
+      }
+    },
+    {
+      "run_id": "grounded_no_abstention_seed_17",
+      "method": "grounded_no_abstention",
+      "seed": 17,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded_no_abstention/seed_17.pt",
+      "checkpoint_sha256": "07e2ea3e779f79201547296e60ad2c06091fdba927d9dfc26aef6ab810372be1",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8375,
+          "r5": 0.95,
+          "r10": 0.985,
+          "mean_rank": 1.9325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7375,
+          "r5": 0.926,
+          "r10": 0.965,
+          "mean_rank": 3.1575,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_no_abstention_seed_17_ranks.npz",
+      "predictions_sha256": "f630e4bc203192afc72ce28824d073eaf7d6cc6ec55913fa96a6f8d581f1b995",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -7.250000000000001,
+        "i2t.r5": -2.750000000000008,
+        "i2t.r10": -0.7500000000000062,
+        "t2i.r1": -6.399999999999995,
+        "t2i.r5": -1.6999999999999904,
+        "t2i.r10": -0.20000000000000018
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -6.499999999999995,
+        "i2t.r5": -2.500000000000002,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.15,
+        "t2i.r5": -1.6999999999999904,
+        "t2i.r10": -0.550000000000006
+      }
+    },
+    {
+      "run_id": "grounded_no_abstention_seed_29",
+      "method": "grounded_no_abstention",
+      "seed": 29,
+      "epoch": 10,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded_no_abstention/seed_29.pt",
+      "checkpoint_sha256": "2a33a935ad2401d516a69735b91ca609fc4a348ea7faef0566dc154b160349e5",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.83,
+          "r5": 0.945,
+          "r10": 0.975,
+          "mean_rank": 2.3225,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.722,
+          "r5": 0.9105,
+          "r10": 0.953,
+          "mean_rank": 3.5035,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_no_abstention_seed_29_ranks.npz",
+      "predictions_sha256": "b0b0f0c71d8733cafae4b9d730d02fbfcbaf57ed46d7690a16a7228e332855f4",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -8.000000000000007,
+        "i2t.r5": -3.2500000000000084,
+        "i2t.r10": -1.750000000000007,
+        "t2i.r1": -7.950000000000001,
+        "t2i.r5": -3.2499999999999973,
+        "t2i.r10": -1.4000000000000012
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -7.250000000000001,
+        "i2t.r5": -3.2500000000000084,
+        "i2t.r10": -1.750000000000007,
+        "t2i.r1": -7.9000000000000075,
+        "t2i.r5": -3.2499999999999973,
+        "t2i.r10": -1.7000000000000015
+      }
+    },
+    {
+      "run_id": "grounded_no_abstention_seed_43",
+      "method": "grounded_no_abstention",
+      "seed": 43,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded_no_abstention/seed_43.pt",
+      "checkpoint_sha256": "c94f36f0c8c7d3977f90bd728e764843726cb8a0a2f54778152a187a841da35b",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.855,
+          "r5": 0.9525,
+          "r10": 0.9825,
+          "mean_rank": 2.07,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.737,
+          "r5": 0.927,
+          "r10": 0.962,
+          "mean_rank": 3.057,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_no_abstention_seed_43_ranks.npz",
+      "predictions_sha256": "fe9f55919fb5ff2442e09b78a6ddf607226c64ff623f402db5533d4e1736ad4b",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -5.500000000000005,
+        "i2t.r5": -2.500000000000002,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -6.45,
+        "t2i.r5": -1.5999999999999903,
+        "t2i.r10": -0.5000000000000004
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -4.5000000000000036,
+        "i2t.r5": -2.0000000000000018,
+        "i2t.r10": -0.7499999999999951,
+        "t2i.r1": -4.700000000000005,
+        "t2i.r5": -1.3499999999999956,
+        "t2i.r10": -0.7500000000000062
+      }
+    },
+    {
+      "run_id": "grounded_no_hardening_seed_17",
+      "method": "grounded_no_hardening",
+      "seed": 17,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_17.pt",
+      "checkpoint_sha256": "db3d53b66f68f036fe88dfa10549485ee075fdd7093067414b17c3d03c3742ec",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8375,
+          "r5": 0.9525,
+          "r10": 0.9825,
+          "mean_rank": 1.9425,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7385,
+          "r5": 0.927,
+          "r10": 0.964,
+          "mean_rank": 3.141,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_no_hardening_seed_17_ranks.npz",
+      "predictions_sha256": "a1581af92ee7eeb6a02e42a1831b5c02d7ce377547be3414850b0d0f54a548ad",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -7.250000000000001,
+        "i2t.r5": -2.500000000000002,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -6.2999999999999945,
+        "t2i.r5": -1.5999999999999903,
+        "t2i.r10": -0.30000000000000027
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -6.499999999999995,
+        "i2t.r5": -2.2499999999999964,
+        "i2t.r10": -0.7499999999999951,
+        "t2i.r1": -6.05,
+        "t2i.r5": -1.5999999999999903,
+        "t2i.r10": -0.6500000000000061
+      }
+    },
+    {
+      "run_id": "grounded_no_hardening_seed_29",
+      "method": "grounded_no_hardening",
+      "seed": 29,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_29.pt",
+      "checkpoint_sha256": "f77f55ecf4ff3a32fa234b718e0afd6edc17ef4532028a3d7c79907c12262972",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8425,
+          "r5": 0.9625,
+          "r10": 0.9875,
+          "mean_rank": 1.83,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7325,
+          "r5": 0.922,
+          "r10": 0.9625,
+          "mean_rank": 3.1195,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_no_hardening_seed_29_ranks.npz",
+      "predictions_sha256": "79e4adcba8bef7eb6d0465bab9b9f2291dec6d8869577333405b15b72eb72436",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -6.75,
+        "i2t.r5": -1.5000000000000013,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.899999999999995,
+        "t2i.r5": -2.0999999999999908,
+        "t2i.r10": -0.44999999999999485
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -5.999999999999995,
+        "i2t.r5": -1.5000000000000013,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.8500000000000005,
+        "t2i.r5": -2.0999999999999908,
+        "t2i.r10": -0.7499999999999951
+      }
+    },
+    {
+      "run_id": "grounded_no_hardening_seed_43",
+      "method": "grounded_no_hardening",
+      "seed": 43,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_43.pt",
+      "checkpoint_sha256": "4e4e11775995b191e66006e370794f2be727f07b14d323ae4277f0b3d50065ae",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.85,
+          "r5": 0.95,
+          "r10": 0.9825,
+          "mean_rank": 2.015,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7425,
+          "r5": 0.925,
+          "r10": 0.961,
+          "mean_rank": 3.058,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/grounded_no_hardening_seed_43_ranks.npz",
+      "predictions_sha256": "5d0e1f07b6618e79fb0ed33af99731aa215d00300783955b3f7f03ae5080c795",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -6.000000000000005,
+        "i2t.r5": -2.750000000000008,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -5.899999999999994,
+        "t2i.r5": -1.7999999999999905,
+        "t2i.r10": -0.6000000000000005
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -5.000000000000004,
+        "i2t.r5": -2.2500000000000075,
+        "i2t.r10": -0.7499999999999951,
+        "t2i.r1": -4.149999999999999,
+        "t2i.r5": -1.5499999999999958,
+        "t2i.r10": -0.8500000000000063
+      }
+    },
+    {
+      "run_id": "multipositive_seed_17",
+      "method": "multipositive",
+      "seed": 17,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/multipositive/seed_17.pt",
+      "checkpoint_sha256": "63c4ede1732b5ca5fa594b45992af33a2f59e2b38ae6f83a9ca4957ab966fec0",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.835,
+          "r5": 0.9475,
+          "r10": 0.985,
+          "mean_rank": 1.92,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7375,
+          "r5": 0.926,
+          "r10": 0.966,
+          "mean_rank": 3.161,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/multipositive_seed_17_ranks.npz",
+      "predictions_sha256": "1fdd81166563482c9fdcfe5958c50edeb0f8e9e251f05c9ddbf63e2c21cfec5c",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -7.500000000000007,
+        "i2t.r5": -3.0000000000000027,
+        "i2t.r10": -0.7500000000000062,
+        "t2i.r1": -6.399999999999995,
+        "t2i.r5": -1.6999999999999904,
+        "t2i.r10": -0.10000000000000009
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -6.75,
+        "i2t.r5": -2.749999999999997,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.15,
+        "t2i.r5": -1.6999999999999904,
+        "t2i.r10": -0.45000000000000595
+      }
+    },
+    {
+      "run_id": "multipositive_seed_29",
+      "method": "multipositive",
+      "seed": 29,
+      "epoch": 10,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/multipositive/seed_29.pt",
+      "checkpoint_sha256": "1f3d78ee3da3d76127a3cd77a57c294745ca0b2ed48f9c99fc1ff9fd3bdbbf6b",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.835,
+          "r5": 0.9475,
+          "r10": 0.9775,
+          "mean_rank": 2.2975,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.721,
+          "r5": 0.91,
+          "r10": 0.953,
+          "mean_rank": 3.504,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/multipositive_seed_29_ranks.npz",
+      "predictions_sha256": "dede392c4eb9cf7002caae52919bd2c26c90d2db4042ce1839f906e0c6a1e167",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -7.500000000000007,
+        "i2t.r5": -3.0000000000000027,
+        "i2t.r10": -1.5000000000000013,
+        "t2i.r1": -8.05,
+        "t2i.r5": -3.299999999999992,
+        "t2i.r10": -1.4000000000000012
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -6.75,
+        "i2t.r5": -3.0000000000000027,
+        "i2t.r10": -1.5000000000000013,
+        "t2i.r1": -8.000000000000007,
+        "t2i.r5": -3.299999999999992,
+        "t2i.r10": -1.7000000000000015
+      }
+    },
+    {
+      "run_id": "multipositive_seed_43",
+      "method": "multipositive",
+      "seed": 43,
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/multipositive/seed_43.pt",
+      "checkpoint_sha256": "b075b41ededf0a051090e40f1bd3e27164ce4f7ff5387075c7729e1ec84664e4",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.85,
+          "r5": 0.955,
+          "r10": 0.9825,
+          "mean_rank": 2.08,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7375,
+          "r5": 0.928,
+          "r10": 0.962,
+          "mean_rank": 3.0525,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/multipositive_seed_43_ranks.npz",
+      "predictions_sha256": "209a2ac548992ba5478d1a2894c761f3bbfa69dd524bc392efd93958a0242a71",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -6.000000000000005,
+        "i2t.r5": -2.2500000000000075,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -6.399999999999995,
+        "t2i.r5": -1.4999999999999902,
+        "t2i.r10": -0.5000000000000004
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -5.000000000000004,
+        "i2t.r5": -1.750000000000007,
+        "i2t.r10": -0.7499999999999951,
+        "t2i.r1": -4.649999999999999,
+        "t2i.r5": -1.2499999999999956,
+        "t2i.r10": -0.7500000000000062
+      }
+    },
+    {
+      "run_id": "pairwise_rank_seed_17",
+      "method": "pairwise_rank",
+      "seed": 17,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/pairwise_rank/seed_17.pt",
+      "checkpoint_sha256": "f3b5b74b22bf0da13e9476a2787426e468a55e4009446fd07f2bd32ee95c6afd",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.91,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.8015,
+          "r5": 0.943,
+          "r10": 0.967,
+          "mean_rank": 2.6155,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/pairwise_rank_seed_17_ranks.npz",
+      "predictions_sha256": "9d80caff56bfc56fd175232cd2baf702680a5bbb5bb5041708b668b26d03d6d3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.7500000000000062,
+        "i2t.r5": 0.2500000000000058,
+        "i2t.r10": 0.2500000000000058,
+        "t2i.r1": 0.24999999999999467,
+        "t2i.r5": 0.0,
+        "t2i.r10": -0.35000000000000586
+      }
+    },
+    {
+      "run_id": "pairwise_rank_seed_29",
+      "method": "pairwise_rank",
+      "seed": 29,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/pairwise_rank/seed_29.pt",
+      "checkpoint_sha256": "941f8bf7f7b5140317ed1e00c919c45ce28247de5b2197f2ce5f5378aab2d5ad",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.91,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.8015,
+          "r5": 0.943,
+          "r10": 0.967,
+          "mean_rank": 2.6155,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/pairwise_rank_seed_29_ranks.npz",
+      "predictions_sha256": "9d80caff56bfc56fd175232cd2baf702680a5bbb5bb5041708b668b26d03d6d3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.7500000000000062,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.04999999999999449,
+        "t2i.r5": 0.0,
+        "t2i.r10": -0.30000000000000027
+      }
+    },
+    {
+      "run_id": "pairwise_rank_seed_43",
+      "method": "pairwise_rank",
+      "seed": 43,
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/pairwise_rank/seed_43.pt",
+      "checkpoint_sha256": "11598c3a128d3e3f5c543c90e134252494d255f836fe226423baf3c0075da22a",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.91,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.8015,
+          "r5": 0.943,
+          "r10": 0.967,
+          "mean_rank": 2.6155,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/pairwise_rank_seed_43_ranks.npz",
+      "predictions_sha256": "9d80caff56bfc56fd175232cd2baf702680a5bbb5bb5041708b668b26d03d6d3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 1.0000000000000009,
+        "i2t.r5": 0.5000000000000004,
+        "i2t.r10": 0.2500000000000058,
+        "t2i.r1": 1.749999999999996,
+        "t2i.r5": 0.24999999999999467,
+        "t2i.r10": -0.2500000000000058
+      }
+    },
+    {
+      "run_id": "random_exclusion_seed_17",
+      "method": "random_exclusion",
+      "seed": 17,
+      "epoch": 3,
+      "learning_rate": 0.001,
+      "checkpoint": "results/study/selected/random_exclusion/seed_17.pt",
+      "checkpoint_sha256": "67b7061c0f458783b5a46cc590e102502864095b4bc7504cb08a12144a37ccf3",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8325,
+          "r5": 0.9425,
+          "r10": 0.9725,
+          "mean_rank": 2.5675,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.64,
+          "r5": 0.876,
+          "r10": 0.927,
+          "mean_rank": 4.3185,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/random_exclusion_seed_17_ranks.npz",
+      "predictions_sha256": "9698d5e3f026c1974d90b7e678df328886bfde88db63c483840e2ef654d6d006",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -7.750000000000002,
+        "i2t.r5": -3.500000000000003,
+        "i2t.r10": -2.0000000000000018,
+        "t2i.r1": -16.15,
+        "t2i.r5": -6.699999999999995,
+        "t2i.r10": -3.9999999999999925
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -6.999999999999995,
+        "i2t.r5": -3.2499999999999973,
+        "i2t.r10": -1.749999999999996,
+        "t2i.r1": -15.900000000000002,
+        "t2i.r5": -6.699999999999995,
+        "t2i.r10": -4.349999999999998
+      }
+    },
+    {
+      "run_id": "random_exclusion_seed_29",
+      "method": "random_exclusion",
+      "seed": 29,
+      "epoch": 5,
+      "learning_rate": 0.001,
+      "checkpoint": "results/study/selected/random_exclusion/seed_29.pt",
+      "checkpoint_sha256": "c9b53eafcedcc4869153682619d1e2b49ab0bd70c4f870cf9165ad3d220d21ef",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.82,
+          "r5": 0.955,
+          "r10": 0.965,
+          "mean_rank": 2.6975,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.6585,
+          "r5": 0.883,
+          "r10": 0.9385,
+          "mean_rank": 4.042,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/random_exclusion_seed_29_ranks.npz",
+      "predictions_sha256": "6fae8fcbb5b472d7def0760aed81f6e2b69ed86166feb1ae49a975ae85d21aff",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -9.000000000000007,
+        "i2t.r5": -2.2500000000000075,
+        "i2t.r10": -2.750000000000008,
+        "t2i.r1": -14.3,
+        "t2i.r5": -5.999999999999995,
+        "t2i.r10": -2.849999999999997
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -8.250000000000002,
+        "i2t.r5": -2.2500000000000075,
+        "i2t.r10": -2.750000000000008,
+        "t2i.r1": -14.250000000000007,
+        "t2i.r5": -5.999999999999995,
+        "t2i.r10": -3.1499999999999972
+      }
+    },
+    {
+      "run_id": "random_exclusion_seed_43",
+      "method": "random_exclusion",
+      "seed": 43,
+      "epoch": 3,
+      "learning_rate": 0.001,
+      "checkpoint": "results/study/selected/random_exclusion/seed_43.pt",
+      "checkpoint_sha256": "c67508b411fd7b8c4333196a90bad5a894877bf8e7fe8e61a8f0736dd9bb28d2",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.805,
+          "r5": 0.94,
+          "r10": 0.9675,
+          "mean_rank": 2.1625,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.663,
+          "r5": 0.886,
+          "r10": 0.938,
+          "mean_rank": 4.1115,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/random_exclusion_seed_43_ranks.npz",
+      "predictions_sha256": "8d65cc48eff59e2911521378b2d10bb403ad5dbb0459470dd84318e9dbc48e5a",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -10.499999999999998,
+        "i2t.r5": -3.750000000000009,
+        "i2t.r10": -2.500000000000002,
+        "t2i.r1": -13.849999999999996,
+        "t2i.r5": -5.699999999999994,
+        "t2i.r10": -2.9000000000000026
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -9.499999999999996,
+        "i2t.r5": -3.2500000000000084,
+        "i2t.r10": -2.2499999999999964,
+        "t2i.r1": -12.1,
+        "t2i.r5": -5.449999999999999,
+        "t2i.r10": -3.1500000000000083
+      }
+    },
+    {
+      "run_id": "sanw_fixed_seed_17",
+      "method": "sanw_fixed",
+      "seed": 17,
+      "epoch": 6,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/sanw_fixed/seed_17.pt",
+      "checkpoint_sha256": "7616dd73a2a61bbffd78d4db6a7d6f7b14032ba6e881cc6a336271ae410a4256",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8675,
+          "r5": 0.9575,
+          "r10": 0.985,
+          "mean_rank": 1.62,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.6905,
+          "r5": 0.9025,
+          "r10": 0.945,
+          "mean_rank": 3.7845,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/sanw_fixed_seed_17_ranks.npz",
+      "predictions_sha256": "27202d7007c25e8df95bfed66209e4ae588cb7eaa26cbb34b1237de91ec483e3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -4.249999999999998,
+        "i2t.r5": -2.0000000000000018,
+        "i2t.r10": -0.7500000000000062,
+        "t2i.r1": -11.099999999999998,
+        "t2i.r5": -4.049999999999998,
+        "t2i.r10": -2.200000000000002
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -3.499999999999992,
+        "i2t.r5": -1.749999999999996,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -10.850000000000005,
+        "t2i.r5": -4.049999999999998,
+        "t2i.r10": -2.550000000000008
+      }
+    },
+    {
+      "run_id": "sanw_fixed_seed_29",
+      "method": "sanw_fixed",
+      "seed": 29,
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/sanw_fixed/seed_29.pt",
+      "checkpoint_sha256": "2ae7ac8bffa5260358a42f36669da139a00d3a5fb5cd94704be19c44a0e1c37e",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.91,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.8015,
+          "r5": 0.943,
+          "r10": 0.967,
+          "mean_rank": 2.6155,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/sanw_fixed_seed_29_ranks.npz",
+      "predictions_sha256": "9d80caff56bfc56fd175232cd2baf702680a5bbb5bb5041708b668b26d03d6d3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.7500000000000062,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.04999999999999449,
+        "t2i.r5": 0.0,
+        "t2i.r10": -0.30000000000000027
+      }
+    },
+    {
+      "run_id": "sanw_fixed_seed_43",
+      "method": "sanw_fixed",
+      "seed": 43,
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/sanw_fixed/seed_43.pt",
+      "checkpoint_sha256": "aa21f5bf9adf25f3f344848b80a1b29445041ba2a6c2ecbb4fc1e615ee172c96",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.91,
+          "r5": 0.9775,
+          "r10": 0.9925,
+          "mean_rank": 1.325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.8015,
+          "r5": 0.943,
+          "r10": 0.967,
+          "mean_rank": 2.6155,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/sanw_fixed_seed_43_ranks.npz",
+      "predictions_sha256": "9d80caff56bfc56fd175232cd2baf702680a5bbb5bb5041708b668b26d03d6d3",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.0,
+        "i2t.r5": 0.0,
+        "i2t.r10": 0.0,
+        "t2i.r1": 0.0,
+        "t2i.r5": 0.0,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 1.0000000000000009,
+        "i2t.r5": 0.5000000000000004,
+        "i2t.r10": 0.2500000000000058,
+        "t2i.r1": 1.749999999999996,
+        "t2i.r5": 0.24999999999999467,
+        "t2i.r10": -0.2500000000000058
+      }
+    },
+    {
+      "run_id": "sanw_median_seed_17",
+      "method": "sanw_median",
+      "seed": 17,
+      "epoch": 3,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/sanw_median/seed_17.pt",
+      "checkpoint_sha256": "a2a07c82d1185d6f4e757b629a4086b7be2887835c6b73533c5e43e406800879",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.89,
+          "r5": 0.965,
+          "r10": 0.99,
+          "mean_rank": 1.5075,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7855,
+          "r5": 0.942,
+          "r10": 0.969,
+          "mean_rank": 2.495,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/sanw_median_seed_17_ranks.npz",
+      "predictions_sha256": "d63048db026bf22e02d8cccaf8614a0fe015d9675c94455d37e7d242176fd08d",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -2.0000000000000018,
+        "i2t.r5": -1.2500000000000067,
+        "i2t.r10": -0.2500000000000058,
+        "t2i.r1": -1.6000000000000014,
+        "t2i.r5": -0.10000000000000009,
+        "t2i.r10": 0.20000000000000018
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -1.2499999999999956,
+        "i2t.r5": -1.0000000000000009,
+        "i2t.r10": 0.0,
+        "t2i.r1": -1.3500000000000068,
+        "t2i.r5": -0.10000000000000009,
+        "t2i.r10": -0.15000000000000568
+      }
+    },
+    {
+      "run_id": "sanw_median_seed_29",
+      "method": "sanw_median",
+      "seed": 29,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/sanw_median/seed_29.pt",
+      "checkpoint_sha256": "2de17af7edf8859eb8bc14f25df2e6e467fbc7b25ee9c3d5912b53c96015529a",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.895,
+          "r5": 0.9675,
+          "r10": 0.985,
+          "mean_rank": 1.475,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7935,
+          "r5": 0.9415,
+          "r10": 0.9715,
+          "mean_rank": 2.509,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/sanw_median_seed_29_ranks.npz",
+      "predictions_sha256": "2a1b2a072e786d3d48e8176202507cd4a97e1cbfc9e847003df45679169a6c1b",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -1.5000000000000013,
+        "i2t.r5": -1.0000000000000009,
+        "i2t.r10": -0.7500000000000062,
+        "t2i.r1": -0.8000000000000007,
+        "t2i.r5": -0.14999999999999458,
+        "t2i.r10": 0.45000000000000595
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -0.7499999999999951,
+        "i2t.r5": -1.0000000000000009,
+        "i2t.r10": -0.7500000000000062,
+        "t2i.r1": -0.7500000000000062,
+        "t2i.r5": -0.14999999999999458,
+        "t2i.r10": 0.15000000000000568
+      }
+    },
+    {
+      "run_id": "sanw_median_seed_43",
+      "method": "sanw_median",
+      "seed": 43,
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/sanw_median/seed_43.pt",
+      "checkpoint_sha256": "cb6910edfeea88498f16332b8eec42f5693ba5c7e3c31e4d331d8bc791585160",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.89,
+          "r5": 0.9725,
+          "r10": 0.9875,
+          "mean_rank": 1.485,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.795,
+          "r5": 0.9415,
+          "r10": 0.9705,
+          "mean_rank": 2.4715,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/sanw_median_seed_43_ranks.npz",
+      "predictions_sha256": "91a430a73b36992cfc36f8aa289ac7d5c6cb5a9374ccd98909ba6704ecf9fc69",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -2.0000000000000018,
+        "i2t.r5": -0.5000000000000004,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -0.649999999999995,
+        "t2i.r5": -0.14999999999999458,
+        "t2i.r10": 0.35000000000000586
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -1.0000000000000009,
+        "i2t.r5": 0.0,
+        "i2t.r10": -0.24999999999999467,
+        "t2i.r1": 1.100000000000001,
+        "t2i.r5": 0.10000000000000009,
+        "t2i.r10": 0.10000000000000009
+      }
+    },
+    {
+      "run_id": "shuffled_seed_17",
+      "method": "shuffled",
+      "seed": 17,
+      "epoch": 1,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/shuffled/seed_17.pt",
+      "checkpoint_sha256": "bcd2ad4480844d9e0907f5e29638a0e1b4839dab15b4eabacc7f260cf1a34169",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8725,
+          "r5": 0.9675,
+          "r10": 0.9775,
+          "mean_rank": 1.65,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.768,
+          "r5": 0.9335,
+          "r10": 0.967,
+          "mean_rank": 2.6475,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/shuffled_seed_17_ranks.npz",
+      "predictions_sha256": "36719fd907273e5cc99e00f3d87326ea2b040d0263869a07b0d448eae753ba2f",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -3.749999999999998,
+        "i2t.r5": -1.0000000000000009,
+        "i2t.r10": -1.5000000000000013,
+        "t2i.r1": -3.3499999999999974,
+        "t2i.r5": -0.9499999999999953,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -2.9999999999999916,
+        "i2t.r5": -0.7499999999999951,
+        "i2t.r10": -1.2499999999999956,
+        "t2i.r1": -3.1000000000000028,
+        "t2i.r5": -0.9499999999999953,
+        "t2i.r10": -0.35000000000000586
+      }
+    },
+    {
+      "run_id": "shuffled_seed_29",
+      "method": "shuffled",
+      "seed": 29,
+      "epoch": 1,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/shuffled/seed_29.pt",
+      "checkpoint_sha256": "edcb1244960cbc8de1ea268a9ad4f4cf163e158a000a1311c0be24935e2d25f2",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.8625,
+          "r5": 0.9625,
+          "r10": 0.9825,
+          "mean_rank": 1.6325,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.771,
+          "r5": 0.9335,
+          "r10": 0.967,
+          "mean_rank": 2.6805,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/shuffled_seed_29_ranks.npz",
+      "predictions_sha256": "662094481e794c40f24e72deb864b2f5ddbe47a81ad7cbae2109595176eb3659",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -4.749999999999998,
+        "i2t.r5": -1.5000000000000013,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -3.049999999999997,
+        "t2i.r5": -0.9499999999999953,
+        "t2i.r10": 0.0
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -3.9999999999999925,
+        "i2t.r5": -1.5000000000000013,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -3.0000000000000027,
+        "t2i.r5": -0.9499999999999953,
+        "t2i.r10": -0.30000000000000027
+      }
+    },
+    {
+      "run_id": "shuffled_seed_43",
+      "method": "shuffled",
+      "seed": 43,
+      "epoch": 1,
+      "learning_rate": 0.0003,
+      "checkpoint": "results/study/selected/shuffled/seed_43.pt",
+      "checkpoint_sha256": "74357f1ce7d9847d0ee43879822d95b7f08874a00c5b3526249ed2bf22f089f2",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.865,
+          "r5": 0.97,
+          "r10": 0.98,
+          "mean_rank": 1.595,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.777,
+          "r5": 0.9355,
+          "r10": 0.9645,
+          "mean_rank": 2.6325,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/shuffled_seed_43_ranks.npz",
+      "predictions_sha256": "107cb6166dc17c674207de42949c4192c73915c0d90fde822fd9cb7acd089799",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -4.5000000000000036,
+        "i2t.r5": -0.7500000000000062,
+        "i2t.r10": -1.2500000000000067,
+        "t2i.r1": -2.4499999999999966,
+        "t2i.r5": -0.7499999999999951,
+        "t2i.r10": -0.24999999999999467
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -3.500000000000003,
+        "i2t.r5": -0.2500000000000058,
+        "i2t.r10": -1.0000000000000009,
+        "t2i.r1": -0.7000000000000006,
+        "t2i.r5": -0.5000000000000004,
+        "t2i.r10": -0.5000000000000004
+      }
+    },
+    {
+      "run_id": "smoothing_seed_17",
+      "method": "smoothing",
+      "seed": 17,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/smoothing/seed_17.pt",
+      "checkpoint_sha256": "73161d8b8c52adfaf52a0fb5a579315859b2109ca779a848542632a2d985dfcf",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9125,
+          "r5": 0.98,
+          "r10": 0.9875,
+          "mean_rank": 1.385,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.7935,
+          "r5": 0.9415,
+          "r10": 0.9685,
+          "mean_rank": 2.55,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/smoothing_seed_17_ranks.npz",
+      "predictions_sha256": "376ffd1e7400a03ffba9d4530fd6c59f24bcb8cbde0c7de7f399912bec0d5fe7",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": 0.24999999999999467,
+        "i2t.r5": 0.24999999999999467,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -0.8000000000000007,
+        "t2i.r5": -0.14999999999999458,
+        "t2i.r10": 0.15000000000000568
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 1.0000000000000009,
+        "i2t.r5": 0.5000000000000004,
+        "i2t.r10": -0.24999999999999467,
+        "t2i.r1": -0.550000000000006,
+        "t2i.r5": -0.14999999999999458,
+        "t2i.r10": -0.20000000000000018
+      }
+    },
+    {
+      "run_id": "smoothing_seed_29",
+      "method": "smoothing",
+      "seed": 29,
+      "epoch": 10,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/smoothing/seed_29.pt",
+      "checkpoint_sha256": "369b3cb03b6edd06e7c5ed402174049d709040da9df63a51f5b72ff0bf785cd3",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.87,
+          "r5": 0.9725,
+          "r10": 0.9875,
+          "mean_rank": 1.5225,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.734,
+          "r5": 0.917,
+          "r10": 0.949,
+          "mean_rank": 3.694,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/smoothing_seed_29_ranks.npz",
+      "predictions_sha256": "95041270568ae092b88251fac54501c10e716823700fc1bbe637d7993180edaa",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -4.0000000000000036,
+        "i2t.r5": -0.5000000000000004,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.75,
+        "t2i.r5": -2.599999999999991,
+        "t2i.r10": -1.8000000000000016
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": -3.2499999999999973,
+        "i2t.r5": -0.5000000000000004,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -6.700000000000006,
+        "t2i.r5": -2.599999999999991,
+        "t2i.r10": -2.100000000000002
+      }
+    },
+    {
+      "run_id": "smoothing_seed_43",
+      "method": "smoothing",
+      "seed": 43,
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "checkpoint": "results/study/selected/smoothing/seed_43.pt",
+      "checkpoint_sha256": "f507985bcbdb4b68cf70a33b795de208e09086433a884c579ebfeaee4b2f4716",
+      "metrics": {
+        "images": 400,
+        "texts": 2000,
+        "i2t": {
+          "r1": 0.9025,
+          "r5": 0.9775,
+          "r10": 0.9875,
+          "mean_rank": 1.3675,
+          "median_rank": 1.0
+        },
+        "t2i": {
+          "r1": 0.796,
+          "r5": 0.941,
+          "r10": 0.9665,
+          "mean_rank": 2.555,
+          "median_rank": 1.0
+        },
+        "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+      },
+      "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+      "predictions": "results/review_followup_flickr400/smoothing_seed_43_ranks.npz",
+      "predictions_sha256": "3fe9b2e478ced7c8611389ebf6d4f8572b08d5e57a5274c057a1ac03e61b3958",
+      "query_ids": "protocol.json candidate orders; i2t follows image IDs, t2i follows text IDs",
+      "independent_full_sort_queries_verified": {
+        "i2t": 11,
+        "t2i": 11
+      },
+      "differences_vs_frozen_pp": {
+        "i2t.r1": -0.7500000000000062,
+        "i2t.r5": 0.0,
+        "i2t.r10": -0.5000000000000004,
+        "t2i.r1": -0.5499999999999949,
+        "t2i.r5": -0.20000000000000018,
+        "t2i.r10": -0.04999999999999449
+      },
+      "differences_vs_same_seed_clip_pp": {
+        "i2t.r1": 0.24999999999999467,
+        "i2t.r5": 0.5000000000000004,
+        "i2t.r10": -0.24999999999999467,
+        "t2i.r1": 1.200000000000001,
+        "t2i.r5": 0.04999999999999449,
+        "t2i.r10": -0.30000000000000027
+      }
+    }
+  ]
+}

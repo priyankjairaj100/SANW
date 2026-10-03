@@ -1,0 +1,413 @@
+{
+  "caption_comparison_to_karpathy_raw": {
+    "aggressive_normalization_note": "HTML unescape, removal of all non-word characters, and lowercase are a diagnostic only; no caption or feature inputs were normalized or changed. All 1,900 comparable current-test captions match under this diagnostic; 20 current-test images are absent from the local Karpathy JSON.",
+    "claim_limit": "Existing features encode marker-stripped, token-spaced Flickr30k Entities captions. Do not describe those strings as exact Karpathy raw captions.",
+    "comparison": {
+      "calibration": {
+        "caption_pairs_compared": 480,
+        "caption_pairs_exact": 6,
+        "caption_pairs_html_unescaped_punctuation_removed_lowercase": 480,
+        "caption_pairs_whitespace_normalized": 6,
+        "images_absent_from_karpathy_json": 4,
+        "images_compared": 96,
+        "images_exact_multiset": 0,
+        "images_exact_ordered": 0,
+        "images_whitespace_normalized_multiset": 0,
+        "images_whitespace_normalized_ordered": 0
+      },
+      "test": {
+        "caption_pairs_compared": 1900,
+        "caption_pairs_exact": 57,
+        "caption_pairs_html_unescaped_punctuation_removed_lowercase": 1900,
+        "caption_pairs_whitespace_normalized": 57,
+        "images_absent_from_karpathy_json": 20,
+        "images_compared": 380,
+        "images_exact_multiset": 0,
+        "images_exact_ordered": 0,
+        "images_whitespace_normalized_multiset": 0,
+        "images_whitespace_normalized_ordered": 0
+      },
+      "train": {
+        "caption_pairs_compared": 5845,
+        "caption_pairs_exact": 168,
+        "caption_pairs_html_unescaped_punctuation_removed_lowercase": 5845,
+        "caption_pairs_whitespace_normalized": 168,
+        "images_absent_from_karpathy_json": 31,
+        "images_compared": 1169,
+        "images_exact_multiset": 0,
+        "images_exact_ordered": 0,
+        "images_whitespace_normalized_multiset": 0,
+        "images_whitespace_normalized_ordered": 0
+      },
+      "validation": {
+        "caption_pairs_compared": 480,
+        "caption_pairs_exact": 18,
+        "caption_pairs_html_unescaped_punctuation_removed_lowercase": 480,
+        "caption_pairs_whitespace_normalized": 18,
+        "images_absent_from_karpathy_json": 4,
+        "images_compared": 96,
+        "images_exact_multiset": 0,
+        "images_exact_ordered": 0,
+        "images_whitespace_normalized_multiset": 0,
+        "images_whitespace_normalized_ordered": 0
+      }
+    },
+    "examples": [
+      {
+        "caption_index": 0,
+        "image": "101262930.jpg",
+        "karpathy_raw_text": "Two asian or spanish people, a woman and a man, sitting together in front of a glass window as cars pass.",
+        "manifest_entities_text": "Two asian or spanish people , a woman and a man , sitting together in front of a glass window as cars pass ."
+      },
+      {
+        "caption_index": 1,
+        "image": "101262930.jpg",
+        "karpathy_raw_text": "A man in sunglasses puts his arm around a woman in a black and white blouse.",
+        "manifest_entities_text": "A man in sunglasses puts his arm around a woman in a black and white blouse ."
+      },
+      {
+        "caption_index": 3,
+        "image": "2324804923.jpg",
+        "karpathy_raw_text": "A man known as Deleon speaks at a Q&amp;A.",
+        "manifest_entities_text": "A man known as Deleon speaks at a Q&A ."
+      },
+      {
+        "caption_index": 2,
+        "image": "415604639.jpg",
+        "karpathy_raw_text": "Celebrating St. Patrick's Day at 2:10 pm &amp; an police officer is going inside a room.",
+        "manifest_entities_text": "Celebrating St. Patrick 's Day at 2:10 pm & an police officer is going inside a room ."
+      },
+      {
+        "caption_index": 3,
+        "image": "4893545292.jpg",
+        "karpathy_raw_text": "Girl in sandals &amp; blue jeans is taking a picture.",
+        "manifest_entities_text": "Girl in sandals & blue jeans is taking a picture ."
+      }
+    ],
+    "whitespace_normalization": "Collapse whitespace runs and strip leading/trailing whitespace only; punctuation spacing remains different."
+  },
+  "current_400_source_retrieval": {
+    "duplicate_source_text_strings": 1,
+    "image_count": 400,
+    "image_features": 400,
+    "karpathy_test_intersection": 4,
+    "label": "400-image e-SNLI-VE/e-ViL held-out subset with Flickr30k Entities source captions; descriptive post-review source-only retrieval, not standard Flickr30k Karpathy 1k retrieval.",
+    "local_images": 400,
+    "source_caption_ids": 2000,
+    "source_caption_pairs": 2000,
+    "source_captions_per_image_counts": {
+      "5": 400
+    },
+    "source_text_features": 2000
+  },
+  "full_e_vil_test_expansion": {
+    "additional_test_images": 600,
+    "can_build_without_changing_training_splits": true,
+    "clean_relative_to_selected_adaptation_and_selection_splits": true,
+    "current_test_images": 400,
+    "image_count": 1000,
+    "images_with_entities_source_files": 1000,
+    "images_with_five_entities_caption_lines": 1000,
+    "karpathy_test_intersection": 25,
+    "local_images_missing": 600,
+    "local_images_present": 400,
+    "manifest_source_captions_present": 2000,
+    "manifest_source_captions_to_add": 3000,
+    "overlap_selected_calibration": 0,
+    "overlap_selected_train": 0,
+    "overlap_selected_validation": 0,
+    "packaged_image_features_missing": 600,
+    "packaged_image_features_present": 400,
+    "packaged_source_text_features_missing": 3000,
+    "packaged_source_text_features_present": 2000,
+    "raw_source_captions_missing": 0,
+    "recommended_label": "Full 1,000-image e-SNLI-VE/e-ViL test-pool source-caption retrieval on Flickr30k images.",
+    "requires_additional_image_acquisition_and_frozen_feature_encoding": true,
+    "source_caption_count": 5000,
+    "standard_karpathy_flickr1k_benchmark": false
+  },
+  "image_identity_rule": "Exact Flickr image filename including .jpg; caption identity uses source:<image stem>:0..4.",
+  "inputs": {
+    "e_vil_sources": {
+      "dev": {
+        "bytes": 2266354,
+        "matches_recorded_sha256": true,
+        "path": "data/visual_entailment/raw/esnlive_dev.csv",
+        "revision": "94f17f5c189573c9d1087f82eb27db37690fc810",
+        "sha256": "30ee4b326dc1c9276f82a9e3ada73639c67c2d54ee61e90795c405c8809a29a3",
+        "url": "https://raw.githubusercontent.com/maximek3/e-ViL/94f17f5c189573c9d1087f82eb27db37690fc810/data/esnlive_dev.csv"
+      },
+      "test": {
+        "bytes": 2320988,
+        "matches_recorded_sha256": true,
+        "path": "data/visual_entailment/raw/esnlive_test.csv",
+        "revision": "94f17f5c189573c9d1087f82eb27db37690fc810",
+        "sha256": "56cc45b747a2bcec759e5b2cf16fb9731625e2697594892392e76c84226fa19d",
+        "url": "https://raw.githubusercontent.com/maximek3/e-ViL/94f17f5c189573c9d1087f82eb27db37690fc810/data/esnlive_test.csv"
+      },
+      "train": {
+        "bytes": 62565577,
+        "matches_recorded_sha256": true,
+        "path": "data/visual_entailment/raw/esnlive_train.csv",
+        "revision": "94f17f5c189573c9d1087f82eb27db37690fc810",
+        "sha256": "61ad4a26ec8e2b9c5fc69e52a4870d972f7fab92f448b8d069eb9793dba3aeb1",
+        "url": "https://raw.githubusercontent.com/maximek3/e-ViL/94f17f5c189573c9d1087f82eb27db37690fc810/data/esnlive_train.csv"
+      }
+    },
+    "entities_captions": {
+      "bytes": 29284070,
+      "matches_recorded_sha256": true,
+      "path": "data/visual_entailment/raw/flickr30k_entities_annotations.zip",
+      "revision": "68b3d6f12d1d710f96233f6bd2b6de799d6f4e5b",
+      "sentence_files": 31783,
+      "sha256": "1bdde439e41fa936e31e6d72898f1886d49bb4298f2abcdb50771de4f516b026",
+      "url": "https://raw.githubusercontent.com/BryanPlummer/flickr30k_entities/68b3d6f12d1d710f96233f6bd2b6de799d6f4e5b/annotations.zip"
+    },
+    "features": {
+      "bytes": 68016891,
+      "image_ids": 1800,
+      "matches_recorded_sha256": true,
+      "metadata": {
+        "bytes": 1511,
+        "path": "results/features/visual_entailment/metadata.json",
+        "sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7"
+      },
+      "model_repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+      "model_revision": "1a25a446712ba5ee05982a381eed697ef9b435cf",
+      "path": "results/features/visual_entailment/features.npz",
+      "sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "text_ids": 33859
+    },
+    "karpathy_flickr_json": {
+      "archive_member": "dataset_flickr30k.json",
+      "bytes": 38318553,
+      "exactly_matches_source_archive_member": true,
+      "path": "data/visual_entailment/raw/dataset_flickr30k.json",
+      "sha256": "db779ee2c5df40c25ff0eebeca464f6124b620cc4a9398650aea71fd1b53d4af",
+      "source_archive": {
+        "bytes": 36745453,
+        "matches_recorded_sha256": true,
+        "path": "data/coco_karpathy/source/caption_datasets.zip",
+        "revision": null,
+        "revision_note": "No repository revision in the local source receipt; archive pinned by SHA-256.",
+        "sha256": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817",
+        "url": "https://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip"
+      }
+    },
+    "manifest": {
+      "bytes": 8843993,
+      "path": "data/visual_entailment/manifest.json",
+      "sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495"
+    },
+    "selection": {
+      "bytes": 43279,
+      "path": "data/visual_entailment/selection.json",
+      "sha256": "9eb65c77f9166d9c464aee525485bcd3f4fdf5ca9308265e50dc8704de227da8"
+    }
+  },
+  "intersections": {
+    "e_vil_absent_from_karpathy_json": {
+      "dev": 27,
+      "test": 38,
+      "train": 704
+    },
+    "e_vil_by_karpathy": {
+      "dev": {
+        "test": 39,
+        "train": 899,
+        "val": 35
+      },
+      "test": {
+        "test": 25,
+        "train": 903,
+        "val": 34
+      },
+      "train": {
+        "test": 936,
+        "train": 27198,
+        "val": 945
+      }
+    },
+    "e_vil_pairwise": {
+      "dev:test": 0,
+      "train:dev": 0,
+      "train:test": 0
+    },
+    "selected_absent_from_karpathy_json": {
+      "calibration": 4,
+      "test": 20,
+      "train": 31,
+      "validation": 4
+    },
+    "selected_by_e_vil": {
+      "calibration": {
+        "dev": 100,
+        "test": 0,
+        "train": 0
+      },
+      "test": {
+        "dev": 0,
+        "test": 400,
+        "train": 0
+      },
+      "train": {
+        "dev": 0,
+        "test": 0,
+        "train": 1200
+      },
+      "validation": {
+        "dev": 100,
+        "test": 0,
+        "train": 0
+      }
+    },
+    "selected_by_karpathy": {
+      "calibration": {
+        "test": 0,
+        "train": 92,
+        "val": 4
+      },
+      "test": {
+        "test": 4,
+        "train": 361,
+        "val": 15
+      },
+      "train": {
+        "test": 42,
+        "train": 1099,
+        "val": 28
+      },
+      "validation": {
+        "test": 3,
+        "train": 91,
+        "val": 2
+      }
+    },
+    "selected_pairwise": {
+      "calibration:test": 0,
+      "calibration:validation": 0,
+      "train:calibration": 0,
+      "train:test": 0,
+      "train:validation": 0,
+      "validation:test": 0
+    }
+  },
+  "purpose": "Post-review local split and asset audit for source-only retrieval; no downloads, encoding, training, scoring, or modification of existing inputs performed by this audit.",
+  "schema_version": 1,
+  "split_sizes": {
+    "e_vil": {
+      "dev": {
+        "annotation_rows": 14339,
+        "images": 1000,
+        "labels": {
+          "contradiction": 5643,
+          "entailment": 5254,
+          "neutral": 3442
+        }
+      },
+      "test": {
+        "annotation_rows": 14740,
+        "images": 1000,
+        "labels": {
+          "contradiction": 5721,
+          "entailment": 5218,
+          "neutral": 3801
+        }
+      },
+      "train": {
+        "annotation_rows": 401717,
+        "images": 29783,
+        "labels": {
+          "contradiction": 144792,
+          "entailment": 131023,
+          "neutral": 125902
+        }
+      }
+    },
+    "karpathy": {
+      "test": 1000,
+      "train": 29000,
+      "val": 1014
+    },
+    "selected": {
+      "calibration": 100,
+      "test": 400,
+      "train": 1200,
+      "validation": 100
+    }
+  },
+  "standard_karpathy_test_warning": {
+    "all_selected_overlap": 49,
+    "can_claim_clean_standard_1000_image_benchmark_for_existing_adapters": false,
+    "caption_count": 5000,
+    "image_count": 1000,
+    "local_images_missing": 951,
+    "local_images_present": 49,
+    "locally_available_uncontaminated_images": 4,
+    "overlap_ids_by_selected_split": {
+      "calibration": [],
+      "test": [
+        "3449846784.jpg",
+        "4494095559.jpg",
+        "4751250311.jpg",
+        "4971580248.jpg"
+      ],
+      "train": [
+        "1089059626.jpg",
+        "110671448.jpg",
+        "1144865997.jpg",
+        "1159381599.jpg",
+        "1489286545.jpg",
+        "2165461920.jpg",
+        "2255338013.jpg",
+        "2424250856.jpg",
+        "2679382388.jpg",
+        "2729685399.jpg",
+        "2763465196.jpg",
+        "2863539038.jpg",
+        "2904997007.jpg",
+        "2923386532.jpg",
+        "3023339840.jpg",
+        "3083847439.jpg",
+        "3339751521.jpg",
+        "3424605029.jpg",
+        "3425756814.jpg",
+        "3443404125.jpg",
+        "3495349745.jpg",
+        "3539612893.jpg",
+        "3558267192.jpg",
+        "3712574653.jpg",
+        "3827298104.jpg",
+        "4146886427.jpg",
+        "4148908583.jpg",
+        "4282691555.jpg",
+        "442983801.jpg",
+        "4434578571.jpg",
+        "4510809964.jpg",
+        "4587837067.jpg",
+        "4592269543.jpg",
+        "4604969760.jpg",
+        "474581065.jpg",
+        "4780620826.jpg",
+        "5126446040.jpg",
+        "530507000.jpg",
+        "5615068475.jpg",
+        "5646792433.jpg",
+        "7694340978.jpg",
+        "97233789.jpg"
+      ],
+      "validation": [
+        "3790208395.jpg",
+        "462879289.jpg",
+        "6147735412.jpg"
+      ]
+    },
+    "packaged_image_features_present": 49,
+    "selected_calibration_overlap": 0,
+    "selected_test_overlap": 4,
+    "selected_train_overlap": 42,
+    "selected_validation_overlap": 3,
+    "uncontaminated_relative_to_train_calibration_validation": 955,
+    "warning": "The standard Karpathy test images are not held out from this reconstruction: 42 occur in adaptation training and 3 in validation. Removing these 45 creates a 955-image nonstandard subset. A clean standard 1k evaluation of adapted models requires retraining/reselection under a protocol that excludes the Karpathy test images."
+  }
+}

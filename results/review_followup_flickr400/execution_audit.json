@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "protocol_sha256": "dac691d52e3cf24414658a075937fed1f2209c059e9076332ed2972c60aa8917",
+  "run_count": 37,
+  "original_inputs_unchanged": true,
+  "checkpoint_hashes_unchanged": true,
+  "independent_sorted_queries": 814,
+  "protocol_unchanged": true,
+  "ranking_files_valid": true
+}
