@@ -1,5 +1,8 @@
-# SANW research recovery
+# SANW research project
 
-This repository preserves the reconstructed relation-label study and its final ACL short-paper rewrite.
+The final ACL short-paper rewrite is available now:
 
-The project snapshot contains the paper, flat Overleaf source, scientific code, result records, and reproduction instructions. Large raw datasets, pretrained weights, feature matrices, and adapter checkpoints are handled separately and documented in the recovery guide.
+- [Paper PDF](output/pdf/acl27_relation_labels_final_rewrite_v2.pdf)
+- [Flat Overleaf source ZIP](output/acl27-overleaf-final-rewrite-v2.zip)
+
+The complete source-and-results snapshot is being uploaded to this branch. The large raw datasets and model assets are outside the Git snapshot; recovery instructions will accompany the source commit.
