@@ -1,0 +1,162 @@
+STUDY SPECIFICATION AND RECOVERED EVIDENCE RECORD
+
+Everything in this file is retained conversation context, not a fresh reading
+of the original raw experiment files. The old files are currently missing.
+
+CENTRAL STORY
+The strongest completed-evidence story was a controlled audit of what semantic
+relation labels add beyond extra positive targets. The comparison fixes the
+candidate pool, adapter capacity and tuning budget. It separates positive
+expansion, contradiction weighting and neutral exclusion, and evaluates valid
+alternative captions and full-pool retrieval.
+
+Extra positives improve the supervised supported-versus-contradicted task.
+The combined relation policy does not beat positive expansion. Its transfer
+gain over source-positive adaptation is concentrated in added objects and
+attributes. The combined replacement/swap group declines. Similarity weights
+closely track shuffled or constant controls. These observations describe the
+tested selected training procedures, not all relation-learning methods.
+
+Generic compositionality/retention tension and the insufficiency of ordinary
+extra positives were already established by close prior work. The novel
+positioning therefore depended on the specific controlled intervention audit.
+
+IMPLEMENTATION AND SCOPE
+Frozen OpenCLIP ViT-B/32, laion2b_s34b_b79k; normalized 512-dimensional features.
+Two zero-initialized 512-by-512 linear residual maps; 524,288 trained parameters.
+Both encoders and score scale fixed. No full-encoder fine-tuning.
+
+Image-disjoint e-SNLI-VE split: 1,200 training, 100 calibration, 100 validation,
+400 test images. Five original source captions are positives for every
+contrastive policy. The source-positive baseline also includes hypothesis
+candidates as negatives, including supported hypotheses. Positive expansion
+promotes supported hypotheses already in the pool. Contradiction weighting
+uses weight 2. Neutral exclusion uses weight 0. Unannotated cross-image pairs
+remain negatives with weight 1.
+
+Twelve configurations:
+clip, sanw_fixed, sanw_median, constant, shuffled, multipositive, grounded,
+grounded_no_hardening, grounded_no_abstention, pairwise_rank,
+random_exclusion, smoothing.
+
+Each configuration: three learning rates, seeds 17/29/43, ten epochs, epoch
+zero eligible. This gives 108 candidate runs. One learning rate is selected
+per configuration by mean validation performance over seeds; each seed keeps
+its best epoch at that rate. Validation averages known-positive image-to-text
+R@1 and supported-versus-contradicted hypothesis accuracy. Evaluation uses 36
+selected checkpoints and the frozen reference. Six selected checkpoints are
+epoch zero, giving 31 unique parameter states including frozen.
+
+EXACT LOSS CONVENTION
+Image-row loss: log(sum_j w_ij exp(s_ij)) - mean_{j in P_i}(s_ij).
+Uniform targets over positives. Positive candidate weights are one. Weights
+and masks are detached. The text direction transposes the relation matrix,
+uses its own positive normalization, and skips anchors without a positive.
+Pairwise ranking averages softplus(s_contradicted - s_supported) over all
+supported-by-contradicted pairs within an eligible image, then over images.
+Target smoothing: 0.9 uniform(P) + 0.1 uniform(candidates).
+Constant negative weight: 0.25. Random exclusion matches exclusion count.
+
+EVALUATION
+e-SNLI-VE: 400 held-out images; supported-versus-contradicted ranking, averaged
+by image, ties receive half credit.
+SugarCrepe: all 7,511 official pairs from 1,560 images, strict positive > foil.
+SugarCrepe++: 4,757 triplets from 1,542 images, both valid captions > foil.
+COCO Karpathy: 5,000 images, 25,000 captions, both retrieval directions over
+the full pool. First five captions in source order; the source has 25,010.
+
+Six planned primary contrasts: grounded against multipositive,
+grounded_no_hardening, and grounded_no_abstention, each on two primary tasks.
+10,000 paired image bootstrap replicates, bootstrap seed 20261002,
+Bonferroni family size six; 99.1667% intervals condition on selected runs.
+Other benchmark and control differences are secondary/descriptive.
+
+SELECTED NUMERICAL RESULTS
+Grounded minus multipositive:
+  e-SNLI-VE: -2.67 percentage points, adjusted interval [-3.23, -2.12].
+  SugarCrepe: -0.98 points, adjusted interval [-1.42, -0.52].
+  e-SNLI per-seed differences: -1.01, -0.19, -6.81 points. Last seed frozen.
+
+Multipositive minus source positives:
+  SugarCrepe +0.940842 percentage points.
+  COCO image-to-text R@1 -7.526667 points.
+  Net extra failed image queries per 5,000: 316, 336, 477; mean 376.333.
+  Lost previous successes: 539, 550, 742; new successes: 223, 214, 265.
+  Net extra failed text queries per 25,000: 692, 630, 1,364; mean 895.333.
+
+SugarCrepe++ relative to frozen:
+  Multipositive original-positive accuracy 79.46 -> 80.12 percent.
+  Alternative-positive accuracy 75.01 -> 73.05 percent.
+  All 30 nonzero selected adapters decline on alternative positives and
+  COCO text-to-image R@1. Original positives improve in 27 of these 30.
+  Multipositive does not uniquely worsen the alternative-positive metric
+  versus source positives: 73.05 versus 72.99 percent.
+
+SugarCrepe grouping was a post hoc descriptive aggregation of saved scores,
+not a new test family or checkpoint-selection criterion. Addition gains by
+seed: +4.0305, +3.6674, +2.6144 points. Combined replacement/swap changes:
+-0.3784, -0.3574, -0.7778. Some individual swap categories improve; do not
+claim every replacement and swap category declines. SugarCrepe++ first-
+positive scores must not substitute for SugarCrepe category scores.
+
+Fixed-threshold and shuffled weights select the same rates and epochs in
+every seed; median-threshold and constant controls do so too. Close scores
+are not a statistical equivalence claim.
+
+SEPARATE CLASSIFIER DIAGNOSTIC
+Three-way logistic relation classifiers: multimodal macro-F1 66.28,
+text-only 61.15, image-only 33.08. Calibration accepts 635/6,040 candidate
+contradictions, of which 612 match the reference: precision 96.38%, coverage
+10.51%. No accepted-positive branch. These predictions did not train the
+primary adapters. Reference labels partly inherit text-inference judgments.
+
+EARLIER DEVELOPMENT
+27 synthetic runs; a 192-image COCO acquisition/pipeline pilot; a two-pair
+SmolVLM inference smoke test. These are not primary natural-image evidence.
+Original CIKM results were author reports only and were not reproduced or
+pooled with the newly executed adapter study.
+
+HISTORICAL VERIFICATION, NOT RE-RUN NOW
+105 passing tests recorded in the old study.
+Independent raw-prediction statistics audit discrepancy below 6e-16.
+40 constructed algebra rows; maximum finite-difference error below 4e-10.
+Final PDF: 19 pages, main content four pages, abstract 145 words. Official
+ACL style unchanged, fonts embedded, no undefined citations or overfull boxes.
+
+FROZEN FILE HASHES
+REAL_STUDY_PREREGISTRATION.md:
+d99f47d2ce48782f3c4908adfc03fe7da7445c09bdb306d4eae7d501faa8fd27
+REAL_STUDY_SUPPLEMENT.md:
+cda5c6564cdc8939e857fed70ed072b59abf5f39ebd9c76d85f45ffb2d510fe9
+
+PRETRAINED MODEL PINS
+laion/CLIP-ViT-B-32-laion2B-s34B-b79K
+revision 1a25a446712ba5ee05982a381eed697ef9b435cf
+open_clip_model.safetensors SHA256:
+ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6
+
+HuggingFaceTB/SmolVLM2-500M-Video-Instruct (historical smoke test only)
+revision 7b375e1b73b11138ff12fe22c8f2822d8fe03467
+model.safetensors SHA256:
+b9bfd456c9472c0acd5719d6e514c4b859891af205ee1a736552fd3497b8b0c3
+
+PRIMARY LITERATURE LOCATIONS RETAINED FROM THE AUDIT
+Kamath et al., The Hard Positive Truth about Vision-Language Compositionality,
+ECCV 2024: https://arxiv.org/abs/2409.17958
+FSC-CLIP, EMNLP 2024: https://aclanthology.org/2024.emnlp-main.1062/
+CLIC: https://arxiv.org/abs/2505.24424
+SugarCrepe++: https://arxiv.org/abs/2406.11171
+MAFA: https://arxiv.org/abs/2312.06112
+SupCon: https://proceedings.neurips.cc/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html
+These citations were inspected in the earlier work; they are not freshly
+retrieved in this recovery operation.
+
+UNEXECUTED IDEAS RETAINED
+Second backbone; full-encoder adaptation; larger data; new image-adjudicated
+relations; extra training seeds; common-final-epoch causal contrasts;
+denominator-matched or exact gradient-mass-matched natural-image training;
+hardness-matched exclusion; summed-positive probability objective;
+adapter training with calibrated predicted relations; inverse-multiplicity
+weighting; retention-constrained adaptation or feature distillation;
+independent corrected many-to-many retrieval relevance; natural deployment.
+None may be described as a completed experiment based on this record.

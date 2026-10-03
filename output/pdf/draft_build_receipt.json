@@ -1,0 +1,36 @@
+{
+  "status": "compiled_draft",
+  "output": "output/pdf/paper-draft.pdf",
+  "sha256": "bc578ce689a01e2cb2af6371e0e54d138bef8d4cf98dd1451c2637d99803e0dc",
+  "bytes": 457499,
+  "pending_files": [],
+  "tex_warnings": [],
+  "source_hashes": {
+    "abstract.tex": "336eb8af17af7669e844173aae68ebcde7140cafafe683bf52484633979ae389",
+    "appendix.tex": "abf70cd15214504b397a5d5c69608f2bc27bb5753dff5b965370d2dbf333b8b1",
+    "appendix_math.tex": "2837d994dbde09d1b98e100698680cb80d182d45f2ae499ed8e38b1590b9ba7a",
+    "data_provenance.tex": "ee3289a9c653b622937ebbcab88f8ad68322c5ac5d863450b9a72ec305027f30",
+    "diagnostic.tex": "ff4aceafae7847d03f934354efe753624d18da67ec304ad42852d4a8b70e2527",
+    "diagnostic_results.tex": "eb086cf01a3c4b888c97a917df9afb2dc8135144910c00eb33e0503cda58aa1d",
+    "edit_groups_table.tex": "11a81b43b776979e3552edbe09fd9a53de12fbf3b2c5fe68af45fddc2f158b8a",
+    "implications.tex": "39899f84670785f013eab137c84b369872a515671ae2eca5d35c2f20d507feb7",
+    "main.tex": "6f669c599a162bdcd0fea9213b8cd4ef63ec26e8d9991911d91d45cdee2295aa",
+    "main_results_table.tex": "edffd8f3975ab04c713d0640da30007945fb02a3176000799b127995eafb8698",
+    "numbers.tex": "fb040b172767e32eddbb0d7a19867234619677524b04309aeea026c18c63d1b8",
+    "results_appendix.tex": "a6a730c17ced084d63d0d191e022d2f175f8f49f6b32f71ce3d43ac5dc66c499",
+    "results_main.tex": "3de89b8f8f8b72106bf2eb307e448af3b426641a88cd03af63cc85d8ff58fec2",
+    "results_weights.tex": "fb6af4250cfdbbec3e4d938c115ab90210ba1c3754c50e04aea03a6b0dc370db",
+    "retrieval_example.tex": "8f3c806fb9ba3d8f48d99c80b181bc2f7557bb0766ac53d6064ed0b7dfc008c3",
+    "retrieval_example_provenance.tex": "b2b28e30079734ba68ff617f8e634cd684608730e9e1bc851c90251c6a0bb859",
+    "split_counts_table.tex": "1d430e6c151f9a72b0fbd0bde18702c69111e6eab1c619fdc394f7c4959b84da",
+    "training_details.tex": "860a9503f59efcac1afa92e6c2d0b1b855aaaba7a455fbe9480594dfdc1f3885",
+    "training_summary.tex": "9da312e6b3fb0420b92c7942c00a641fa0509c0345f798f8b02479c66a2c35b0",
+    "validation_figure.tex": "d4b8612568486f552a01ee9c54535a88515ec207d26a01270494a2e18d9430d6",
+    "weight_controls_table.tex": "6e637fdec5e91e0e07988e2bd50b6bde24130ccb2c65c32292d6b12eb3da83b6"
+  },
+  "pages": 16,
+  "limitations_pages": [
+    5
+  ],
+  "type3_fonts": []
+}

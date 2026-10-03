@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{url}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\pending}[1]{\textbf{[Pending fresh execution: #1]}}
+\newcommand{\R}{\mathbb{R}}
+\title{What Do Relation Labels Add to Image--Text Retrieval?}
+\author{Anonymous ACL submission}
+\begin{document}
+\lefthyphenmin=2
+\righthyphenmin=3
+\input{numbers.tex}
+\maketitle
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+
+\section{Introduction}
+An image search system must distinguish an incorrect description from a different correct description. Consider a photo of a child holding a red ball. Both ``a child with a red ball'' and ``a red ball held by a child'' can retrieve it. ``A child with a blue ball'' should not. A statement such as ``the child owns the ball'' is unresolved by the image. These distinctions motivate three caption labels: \emph{supported}, \emph{contradicted}, and \emph{neutral}.
+
+CLIP learns image and text vectors by scoring associated image--caption pairs above other candidates \citep{radford2021clip}. Training calls the associated captions \emph{positives} and the competing candidates \emph{negatives}. A negative in this objective need not be a false description. It may be another valid caption, or one that the image cannot resolve. Relation labels offer a direct way to distinguish these cases. A natural policy adds supported captions to the positive set, penalizes contradicted captions more strongly, and omits neutral pairs.
+
+The practical question is what each use of the label buys. Extra supported captions change which descriptions the model is rewarded for matching. Contradiction weights change how strongly it separates incorrect descriptions. Neutral exclusion changes which candidates compete at all. A comparison with ordinary adaptation combines these effects. To identify the value of the relation-specific decisions, the candidate pool and the training budget must stay fixed while these operations are varied separately.
+
+\input{related_work.tex}
+
+We study that decision with one annotated caption pool and twelve training policies. The encoders stay fixed; every policy learns small corrections to the image and text vectors. We evaluate the complete selected procedures on the annotated distinction, edited captions, valid alternative wordings, and full-pool retrieval. This connects a controlled decomposition of label use to the two outcomes needed by a search system: reject a wrong description and still rank a correct match first.
+
+\section{A Matched Study of Label Use}
+\label{sec:study}
+\paragraph{Same candidates, different training roles.}
+Every image has five original source captions and annotated statements from e-SNLI-VE \citep{kayser2021evil}. A batch contains its images and all their source captions and statements. \emph{Source positives} uses the original captions as positive targets. All statements, including supported statements, are competing negatives. \emph{Positive expansion} promotes the supported statements already in this pool. It changes their training role while keeping the images and caption strings fixed.
+
+Starting from the expanded positive set, \emph{contradiction weighting} doubles the weight of annotated contradictions. \emph{Neutral exclusion} assigns zero weight to annotated neutral pairs. \emph{Both} applies these changes together. An unannotated image--caption pair remains an eligible negative. In particular, a caption belonging to another image in the batch is not automatically neutral. The zero weight removes a known neutral pair from the objective rather than treating it as a weak positive.
+
+\paragraph{Controls for the label-specific choices.}
+Count-matched random exclusion tests whether removing specifically neutral pairs helps beyond removing the same number of negatives. Constant weighting assigns every negative weight $0.25$, testing a general reduction in competition without choosing individual pairs. Two text-similarity policies use either a fixed or a batch-median threshold on frozen source-caption features; a shuffled control breaks the pair-to-weight assignments. Target smoothing and within-image supported--contradicted ranking complete the twelve policies. The comparison holds model capacity and tuning budget fixed. Appendix~\ref{app:policies} defines each rule.
+
+\paragraph{Training and selection.}
+\input{training_summary.tex}
+
+\paragraph{Measure the annotation benefit and the search outcome.}
+The e-SNLI-VE test measures how often a supported statement scores above a contradicted one, averaged by image. SugarCrepe tests an original correct caption against an edited wrong caption, or \emph{foil}, on all \SugarPairCount{} official pairs \citep{hsieh2023sugarcrepe}. These are the two primary discrimination endpoints. Six planned contrasts compare the combined policy with positive expansion and with each component removed. We use 10,000 paired image resamples and a six-comparison Bonferroni adjustment.
+
+Two further tests measure retained matching ability. SugarCrepe++ provides two valid captions and one foil for each of \SugarPpTripletCount{} triplets. Success requires both positives to beat the foil \citep{dumpala2024sugarcrepepp}. COCO retrieval searches all \CocoTextCount{} captions for each of \CocoImageCount{} images, and all images for each caption. Recall at rank one (R@1) is the percentage of queries whose top candidate is an annotated match. We report image-to-text (I$\to$T) and text-to-image (T$\to$I) separately. These measurements distinguish performance on a few designed alternatives from returning a correct result in a larger pool.
+
+\section{What the Labels Buy}
+\label{sec:results}
+\input{results_main.tex}
+
+\section{Why More Positives Change the Target}
+\label{sec:theory}
+The contrastive policies with uniform positive targets use a common objective. For image $i$ and caption $j$, let $s_{ij}$ be their scaled cosine score. Let $P_i$ be the nonempty set of positive captions and $w_{ij}\geq0$ the candidate weight. Positive weights are one; a zero weight omits a pair. For the unsmoothed policies, the image-row loss is
+\begin{equation}
+\ell_i=\log\!\left(\sum_jw_{ij}e^{s_{ij}}\right)-\frac{1}{|P_i|}\sum_{j\in P_i}s_{ij}.
+\label{eq:row}
+\end{equation}
+We average it with the corresponding text-to-image loss over captions having a positive image. This mean-log-probability form gives equal target probability to every positive \citep{khosla2020supervised}. The exact reverse-direction normalization, smoothing, and separate ranking loss appear in Appendix~\ref{app:policies}.
+
+Positive expansion redistributes that fixed probability budget. Suppose there are $K$ original positives and $M$ already-present candidates become additional positives. Use the unsmoothed objective and hold the scores, finite candidate set, and unit weights fixed. For any original positive $p$, the derivative changes by
+\begin{equation}
+\frac{\partial\ell_{\rm expanded}}{\partial s_{ip}}-\frac{\partial\ell_{\rm source}}{\partial s_{ip}}=\frac{M}{K(K+M)}.
+\label{eq:expansion}
+\end{equation}
+For example, adding five supported captions to five original positives halves each original target from $0.2$ to $0.1$. The denominator has not changed because the candidates were already present. Each added positive gains target mass; each original positive loses some. Thus correct labels can change how the objective distributes attraction among correct captions.
+
+For each candidate, dividing its weighted exponential score by the sum inside the logarithm in Equation~\ref{eq:row} gives its normalized probability. With two positives and one negative, probabilities $(0.8,0.1,0.1)$ give the first positive derivative $0.8-0.5=0.3$. An independent gradient descent step on that score would lower it even though the caption is correct. Equal targets put downward pressure on this stronger match and upward pressure on the positive below its target. Appendix~\ref{app:math} gives the derivations, the change in text-to-image averaging, and the summed-positive alternative. Target redistribution motivates retaining the source-positive comparison when evaluating extra labels.
+
+\paragraph{Pair assignments and overall competition.}
+\input{weight_controls_table.tex}
+The weighting controls separate a semantic assignment from a general change in competition (Table~\ref{tab:weights}). Shuffling the fixed-threshold weights improves both primary endpoints. Median weighting is close to constant suppression on edited captions, while constant suppression retains more retrieval accuracy. The score of the weighting rule therefore depends on more than whether its weights use text similarity. Appendix~\ref{app:math} formalizes the distinction with a row-specific constant that preserves total negative mass while changing its allocation.
+
+\section{Implications for Search Evaluation}
+\input{implications.tex}
+
+\clearpage
+\section*{Limitations}
+This study concerns one frozen OpenCLIP checkpoint and linear residual adaptation on a subset of e-SNLI-VE. It does not establish the behavior of full-encoder training, other data scales, or other model families. The relation labels partly inherit text-inference judgments; the release does not provide independent visual verification for every pair. Caption ownership also supplies incomplete retrieval relevance.
+
+The multi-positive objective averages positive log probabilities. The summed-positive alternative in Appendix~\ref{app:math} is an analytical comparison. Independent policy selection changes the learning rate and retained epoch, so the comparisons estimate selected training procedures. Image-bootstrap intervals condition on three seeds and do not quantify uncertainty over new training runs. SugarCrepe++, retrieval, weighting controls, and edit-group summaries are secondary or descriptive. COCO-derived benchmarks overlap, so they measure different capabilities rather than independent replications. Appendix~\ref{app:provenance} records source and execution details.
+
+\section*{Ethical Considerations and Assistance}
+We use existing public datasets under their source terms and collect no new human judgments. Captions and pretrained features may reflect source biases. Generative AI assisted planning, implementation, analysis, literature discovery, and drafting. The authors are responsible for checking the released computations and manuscript.
+
+\bibliography{references}
+\appendix
+\input{appendix.tex}
+\input{appendix_math.tex}
+\end{document}

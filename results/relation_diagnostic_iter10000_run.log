@@ -1,0 +1,63 @@
+FIT relation diagnostic image: 512 features
+  logistic C=0.01; training rows=16192
+  logistic C=0.1; training rows=16192
+  logistic C=1; training rows=16192
+  logistic C=10; training rows=16192
+  logistic C=0.01; training rows=10919
+  logistic C=0.1; training rows=10919
+  logistic C=1; training rows=10919
+  logistic C=10; training rows=10919
+COMPLETE image crossfit fold 0
+  logistic C=0.01; training rows=10774
+  logistic C=0.1; training rows=10774
+  logistic C=1; training rows=10774
+  logistic C=10; training rows=10774
+COMPLETE image crossfit fold 1
+  logistic C=0.01; training rows=10691
+  logistic C=0.1; training rows=10691
+  logistic C=1; training rows=10691
+  logistic C=10; training rows=10691
+COMPLETE image crossfit fold 2
+COMPLETE relation diagnostic image; test macro-F1=0.340574
+FIT relation diagnostic text: 512 features
+  logistic C=0.01; training rows=16192
+  logistic C=0.1; training rows=16192
+  logistic C=1; training rows=16192
+  logistic C=10; training rows=16192
+  logistic C=0.01; training rows=10919
+  logistic C=0.1; training rows=10919
+  logistic C=1; training rows=10919
+  logistic C=10; training rows=10919
+COMPLETE text crossfit fold 0
+  logistic C=0.01; training rows=10774
+  logistic C=0.1; training rows=10774
+  logistic C=1; training rows=10774
+  logistic C=10; training rows=10774
+COMPLETE text crossfit fold 1
+  logistic C=0.01; training rows=10691
+  logistic C=0.1; training rows=10691
+  logistic C=1; training rows=10691
+  logistic C=10; training rows=10691
+COMPLETE text crossfit fold 2
+COMPLETE relation diagnostic text; test macro-F1=0.613838
+FIT relation diagnostic multimodal: 2048 features
+  logistic C=0.01; training rows=16192
+  logistic C=0.1; training rows=16192
+  logistic C=1; training rows=16192
+  logistic C=10; training rows=16192
+  logistic C=0.01; training rows=10919
+  logistic C=0.1; training rows=10919
+  logistic C=1; training rows=10919
+  logistic C=10; training rows=10919
+COMPLETE multimodal crossfit fold 0
+  logistic C=0.01; training rows=10774
+  logistic C=0.1; training rows=10774
+  logistic C=1; training rows=10774
+  logistic C=10; training rows=10774
+COMPLETE multimodal crossfit fold 1
+  logistic C=0.01; training rows=10691
+  logistic C=0.1; training rows=10691
+  logistic C=1; training rows=10691
+  logistic C=10; training rows=10691
+COMPLETE multimodal crossfit fold 2
+COMPLETE relation diagnostic multimodal; test macro-F1=0.649585

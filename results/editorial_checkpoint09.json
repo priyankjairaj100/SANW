@@ -1,0 +1,11 @@
+{
+  "path": "/workspace/scratch/3eec744c3d5e/deliveries/checkpoint-09-context-and-editorial-audit.zip",
+  "bytes": 21923620,
+  "sha256": "25e7bba73d8a287d3b9c203d904219a4119886a84af66357bdd7840063e0f80f",
+  "files": 6849,
+  "crc_verified": true,
+  "saved_successfully": true,
+  "post_save_sha256": "25e7bba73d8a287d3b9c203d904219a4119886a84af66357bdd7840063e0f80f",
+  "post_save_bytes": 21923620,
+  "scope": "Interim context/editorial audit checkpoint, including prior delivered paper source; no raw images, model weights, or feature arrays."
+}

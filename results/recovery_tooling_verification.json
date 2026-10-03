@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-10-03T05:04:09.441427+00:00",
+  "command": "python -m unittest discover -s tests -p 'test_*recovery*.py' -v",
+  "passed_tests": 8,
+  "failed_tests": 0,
+  "source_sha256": {
+    "scripts/package_asset_part.py": "1caf1ee913ff0e7f3ca066197591af15c433d8d9d71866a060113eac195457f0",
+    "scripts/restore_assets.py": "94eeaf33f92eecbe0b7aef1a83b2c1898f82bfe2a75053da248d63563e0008ae",
+    "scripts/verify_recovery.py": "ac4cf2a88a4c121bcdf267a4b54868bbc68d24985d9bab6b078416dc9efe6568",
+    "scripts/inventory_recovery.py": "9f087264a8d78e7889969e9c738b82153054d87c9faa199868e52959ef99b8a9",
+    "tests/test_asset_recovery.py": "b923dd0f38188a43367c7754388ac45ad4503b79cae759a2123d9fd811ac2144",
+    "tests/test_recovery_verifier.py": "06fe0919c4c9c1c3411561c7032ed4041a40a1d4a0ade9b9e57bb5e05ab4fb74",
+    "docs/RECOVERY_README.md": "56b1d1323c7bf5e10deae2a835d5db94d3e719e86baa2d7aa5584752d91748ed",
+    "requirements-reproduction.txt": "b9c29ef23ffb42314061c6de80cbfe86884843d46c8948b944013b969a649572"
+  },
+  "actual_asset_roundtrip_receipt": "results/asset_roundtrip_checkpoint05.json",
+  "feature_bank_redundancy_receipt": "results/feature_bank_redundancy.json",
+  "checks": [
+    "Exact random-file recovery through three real ZIP parts and standalone helper",
+    "Missing part reports incomplete and creates no target",
+    "Corrupt part creates no target and preserves existing target",
+    "Existing different file requires explicit overwrite",
+    "Multiple assets and conflicting target versions",
+    "Unsafe source/descriptor paths rejected",
+    "Immutable output paths and deterministic archive bytes",
+    "35 MiB cap enforced before ZIP publication",
+    "Final ZIP manifest byte/hash/missing/unlisted verification",
+    "Extracted-directory hash verification"
+  ]
+}

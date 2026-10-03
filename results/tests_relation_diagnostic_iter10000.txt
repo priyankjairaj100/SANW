@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0 -- /workspace/scratch/3eec744c3d5e/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun
+configfile: pyproject.toml
+collecting ... collected 15 items
+
+tests/test_relation_diagnostic.py::test_calibration_halves_are_reproducible_and_image_disjoint PASSED [  6%]
+tests/test_relation_diagnostic.py::test_crossfit_never_splits_images_and_covers_every_row_once PASSED [ 13%]
+tests/test_relation_diagnostic.py::test_multimodal_feature_definition_is_exact PASSED [ 20%]
+tests/test_relation_diagnostic.py::test_standardization_fits_training_data_only_and_selection_is_validation_only PASSED [ 26%]
+tests/test_relation_diagnostic.py::test_temperature_fit_uses_scalar_nll_and_never_worsens_its_fit_objective PASSED [ 33%]
+tests/test_relation_diagnostic.py::test_wilson_gate_requires_enough_evidence_even_for_perfect_predictions PASSED [ 40%]
+tests/test_relation_diagnostic.py::test_gate_maximizes_coverage_and_does_not_use_probability_of_other_predictions PASSED [ 46%]
+tests/test_relation_diagnostic.py::test_threshold_selection_cannot_break_confidence_ties_to_hide_errors PASSED [ 53%]
+tests/test_relation_diagnostic.py::test_gate_coverage_and_precision_use_different_denominators PASSED [ 60%]
+tests/test_relation_diagnostic.py::test_metrics_match_perfect_and_uniform_probability_calculations PASSED [ 66%]
+tests/test_relation_diagnostic.py::test_precision_bootstrap_resamples_image_clusters_not_individual_pairs PASSED [ 73%]
+tests/test_relation_diagnostic.py::test_crossfit_predictions_are_invariant_to_held_out_image_labels PASSED [ 80%]
+tests/test_relation_diagnostic.py::test_saved_numeric_model_reconstructs_predictions_without_pickle PASSED [ 86%]
+tests/test_relation_diagnostic.py::test_feature_loader_excludes_source_pairs_and_binds_manifest_hash PASSED [ 93%]
+tests/test_relation_diagnostic.py::test_small_complete_execution_saves_reusable_auditable_outputs PASSED [100%]
+
+============================== 15 passed in 3.76s ==============================

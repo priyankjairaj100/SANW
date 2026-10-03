@@ -1,0 +1,47 @@
+# Rebuildable runtimes and local development state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.cache/
+.venv/
+venv/
+*.egg-info/
+pytest-of-root/
+tmp/
+/tmp*/
+.DS_Store
+.env
+.env.*
+*.lock
+*.part
+*.partial
+*.incomplete
+*.tmp
+
+# Local manuscript compilation resources
+manuscript/build/
+manuscript/tex-runtime/
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Reacquirable large inputs; manifests and source pins remain tracked
+data/coco_images/
+data/*/images/
+data/*/raw/
+data/*/source/
+*.safetensors
+data/model/.open_clip_model.safetensors.*
+
+# Recomputed features, checkpoints, and full COCO ranking arrays
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+results/features/**/*.npz
+*.pt
+results/evaluation/**/coco_karpathy.npz
+checkpoints/
+runs/
+results/reproduction-*/

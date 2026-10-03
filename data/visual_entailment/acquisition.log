@@ -1,0 +1,65 @@
+Selection complete: {'train': 1200, 'calibration': 100, 'validation': 100, 'test': 400}
+Verified 100/1800 images
+Verified 200/1800 images
+Verified 300/1800 images
+Verified 400/1800 images
+Verified 500/1800 images
+Verified 600/1800 images
+Verified 700/1800 images
+Verified 800/1800 images
+Verified 900/1800 images
+Verified 1000/1800 images
+Verified 1100/1800 images
+Verified 1200/1800 images
+Verified 1300/1800 images
+Verified 1400/1800 images
+Verified 1500/1800 images
+Verified 1600/1800 images
+Verified 1700/1800 images
+Verified 1800/1800 images
+{
+  "status": "complete",
+  "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+  "statistics": {
+    "train": {
+      "images": 1200,
+      "pairs": {
+        "source": 6000,
+        "supported": 5319,
+        "contradicted": 5846,
+        "neutral": 5027
+      },
+      "texts": 22192
+    },
+    "calibration": {
+      "images": 100,
+      "pairs": {
+        "source": 500,
+        "supported": 522,
+        "contradicted": 554,
+        "neutral": 355
+      },
+      "texts": 1931
+    },
+    "validation": {
+      "images": 100,
+      "pairs": {
+        "source": 500,
+        "supported": 502,
+        "contradicted": 534,
+        "neutral": 339
+      },
+      "texts": 1875
+    },
+    "test": {
+      "images": 400,
+      "pairs": {
+        "source": 2000,
+        "supported": 2088,
+        "contradicted": 2278,
+        "neutral": 1495
+      },
+      "texts": 7861
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "actual_candidate_caption_counts_may_differ": true,
+  "captions_per_image": 35,
+  "dimension": 512,
+  "estimate_excludes": [
+    "validation",
+    "checkpoint and history writes",
+    "feature loading",
+    "contention from concurrent workers"
+  ],
+  "images_per_batch": 32,
+  "methods": [
+    {
+      "finite": true,
+      "method": "clip",
+      "seconds_per_batch": 0.02666434279999521
+    },
+    {
+      "finite": true,
+      "method": "sanw_fixed",
+      "seconds_per_batch": 0.022870339599649014
+    },
+    {
+      "finite": true,
+      "method": "sanw_median",
+      "seconds_per_batch": 0.02674012940005923
+    },
+    {
+      "finite": true,
+      "method": "constant",
+      "seconds_per_batch": 0.020969870800036004
+    },
+    {
+      "finite": true,
+      "method": "shuffled",
+      "seconds_per_batch": 0.027332881599795654
+    },
+    {
+      "finite": true,
+      "method": "multipositive",
+      "seconds_per_batch": 0.025609162799810292
+    },
+    {
+      "finite": true,
+      "method": "grounded",
+      "seconds_per_batch": 0.02621011040009762
+    },
+    {
+      "finite": true,
+      "method": "grounded_no_hardening",
+      "seconds_per_batch": 0.029918530600116355
+    },
+    {
+      "finite": true,
+      "method": "grounded_no_abstention",
+      "seconds_per_batch": 0.022631226399971636
+    },
+    {
+      "finite": true,
+      "method": "pairwise_rank",
+      "seconds_per_batch": 0.019693476599968562
+    },
+    {
+      "finite": true,
+      "method": "random_exclusion",
+      "seconds_per_batch": 0.02233423799971206
+    },
+    {
+      "finite": true,
+      "method": "smoothing",
+      "seconds_per_batch": 0.024659609199989063
+    }
+  ],
+  "natural_image_study_runs": 0,
+  "sequential_108_candidate_training_seconds_estimate": 1011.0680002412664,
+  "synthetic_only": true,
+  "threads": 2,
+  "timed_steps_per_method": 5
+}

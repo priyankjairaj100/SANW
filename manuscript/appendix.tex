@@ -1,0 +1,99 @@
+\section{Complete Policy Definitions}
+\label{app:policies}
+A batch has $B$ unique image rows and $T$ text columns, containing all selected source and hypothesis captions for its images. The relation matrix $R\in\{0,1,2,3,4\}^{B\times T}$ uses codes for unannotated, source, supported, contradicted, and neutral pairs, respectively. Relations apply only to their annotated image--text pair. An absent cross-image annotation is an eligible negative, not a neutral label.
+
+Let $J$ denote the candidate set for a row or column, $P\subseteq J$ its positive set, and $P_{ij}$ the binary positive mask. Every contrastive policy includes source captions. Expanded policies additionally include supported hypotheses. Candidate weights start at one and are changed according to Table~\ref{tab:policies}; all positive weights are then forced to one. The scalar loss averages eligible image rows and eligible text columns independently, with weight $1/2$ on each direction. The reverse direction transposes the same mask and weight matrices. Columns without a positive image are omitted from the reverse average. These rules preserve the meaning of rectangular batches with several captions per image.
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lll}
+\toprule
+Archive name & Positive set & Weight or target rule\\
+\midrule
+\texttt{clip} & Source & All weights one\\
+\texttt{multipositive} & Source + supported & All weights one\\
+\texttt{grounded} & Source + supported & Contradictions: $2$; neutrals: $0$\\
+\texttt{grounded\_no\_hardening} & Source + supported & Neutrals: $0$\\
+\texttt{grounded\_no\_abstention} & Source + supported & Contradictions: $2$\\
+\texttt{random\_exclusion} & Source + supported & Count-matched random exclusions\\
+\texttt{smoothing} & Source & $0.9\operatorname{Unif}(P)+0.1\operatorname{Unif}(J)$\\
+\texttt{constant} & Source & All negatives: $0.25$\\
+\texttt{sanw\_fixed} & Source & Similarity kernel, threshold $0.5$\\
+\texttt{sanw\_median} & Source & Similarity kernel, batch median threshold\\
+\texttt{shuffled} & Source & Permuted fixed-threshold negative weights\\
+\texttt{pairwise\_rank} & Supported/contradicted & Image-balanced pairwise softplus\\
+\bottomrule
+\end{tabular}
+\caption{All twelve trainable policies. A weight of zero exactly excludes a pair. The frozen reference has no trained parameters.}
+\label{tab:policies}
+\end{table*}
+
+\paragraph{Detached similarity weights.}
+Let $t_j$ be the unit frozen text feature for candidate $j$, and $C_i$ the source-caption indices of image $i$. Define
+\begin{equation}
+a_{ij}=\frac{1+|C_i|^{-1}\sum_{k\in C_i}t_k^\top t_j}{2}.
+\end{equation}
+The average of source features is not renormalized. The negative weight is
+\begin{equation}
+w_{ij}=\operatorname{sigmoid}\!\left(\frac{\tau-a_{ij}}{0.05}\right).
+\end{equation}
+The fixed rule sets $\tau=0.5$. The median rule uses the statistical median of $a_{ij}$ over nonpositive cells of the current batch, averaging the two central values for an even count. Positive weights remain one. All features, thresholds, and weights in this calculation are detached from the training graph. The kernel never uses adapted features.
+
+\paragraph{Shuffling and random exclusion.}
+The shuffled rule permutes the complete batch-wide multiset of negative weights from the fixed-threshold rule, leaving positive weights intact. It preserves the weight distribution but need not preserve each row's weighted mass. Random exclusion samples nonpositive cells without replacement within each image row, matching that image's number of neutral annotations. Because the reverse direction uses a transpose, its per-text exclusion counts need not match the neutral rule. Both randomizations use a seeded generator whose state advances through batches and epochs.
+
+\paragraph{Smoothing and ranking.}
+Smoothing uses source-positive targets and unit weights. Its row target is $0.9\operatorname{Unif}(P)+0.1\operatorname{Unif}(J)$, where $J$ contains every candidate. For ranking, let $E_i$ and $C_i'$ denote supported and contradicted hypotheses of image $i$. The eligible-image loss is
+\begin{equation}
+\ell_i^{\rm rank}=\frac{\sum_{e\in E_i}\sum_{c\in C_i'}\operatorname{softplus}(s_{ic}-s_{ie})}{|E_i|\,|C_i'|}.
+\end{equation}
+We average over images with both sets nonempty. Ranking has no reverse direction and does not train on source, neutral, or unannotated pairs.
+
+\section{Data, Provenance, and Reconstruction}
+\label{app:provenance}
+The current execution was reconstructed from retained methods and proof text after the earlier workspace became unavailable. Historical aggregate tables are kept in a separate context directory and are not inputs to training, evaluation, or paper tables. The exact old similarity kernel and the base target set for smoothing were not recoverable. The explicit definitions in Appendix~\ref{app:policies} were fixed before the new runs and are documented in the reconstruction record. The present study is a new execution under those recorded choices.
+
+\input{data_provenance.tex}
+
+\section{Training and Checkpoint Selection}
+\label{app:training}
+Let $x,z\in\R^{512}$ be unit frozen image and text features. The trainable maps are
+\begin{equation}
+\widehat x=\frac{x+A_Ix}{\|x+A_Ix\|_2},\qquad
+\widehat z=\frac{z+A_Tz}{\|z+A_Tz\|_2}.
+\end{equation}
+Both $512\times512$ matrices start at zero and have no bias. Their total parameter count is $2\cdot512^2=524{,}288$. The score is $s_{ij}=\alpha\widehat x_i^\top\widehat z_j$, where $\alpha>0$ is the pretrained checkpoint's fixed scale. Feature extraction and source hashes identify the exact encoder and input order.
+
+\input{training_details.tex}
+
+\section{Metrics and Statistical Comparisons}
+\label{app:metrics}
+For e-SNLI-VE, compare every supported hypothesis against every contradicted hypothesis within an image. A larger supported score receives one point and an exact tie receives half a point. Average pairs within each eligible image, then average images. This gives each image equal weight despite different numbers of annotated statements.
+
+SugarCrepe uses a strict positive-score comparison against its foil. SugarCrepe++ reports each positive separately and their conjunction against the same foil. The conjunction is one only if both scores are strictly greater. Per-category results retain official labels. The addition group pools added objects and attributes; the combined replacement/swap group pools the remaining categories. Grouped scores use item counts as weights, not an unweighted mean of category percentages.
+
+COCO image-to-text R@1 counts an image query as correct when its highest-scoring caption belongs to the image's annotated caption set. Text-to-image R@1 requires the source image at rank one. All candidates remain in the full pool during scoring. Source-caption ownership is the operational relevance label.
+
+The six primary contrasts compare the combined relation policy against positive expansion, neutral exclusion alone, and contradiction weighting alone, on e-SNLI-VE and SugarCrepe. For each contrast, average the paired outcomes across the three selected seeds before sampling images. Each bootstrap draw samples images with replacement and retains all associated items. With 10,000 replicates, seed 20261003, and family size six, two-sided percentile bounds use tail probability $0.05/(2\cdot6)$, yielding $99.1667\%$ intervals. They condition on the selected runs and data images. Secondary metrics and category groupings are descriptive.
+
+\section{Retention Across Selected Adapters}
+\label{app:retention}
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{caption_retention.pdf}
+\caption{Changes on the same SugarCrepe++ triplets relative to frozen. Each point is one selected nonzero-epoch adapter. All \NonzeroAdapterCount{} lose accuracy on the alternative valid caption; \OriginalImproveCount{} improve on the first. The \ZeroAdapterCount{} epoch-zero selections are omitted.}\label{fig:retention}
+\end{figure}
+The first-positive and alternative-positive scores use the same triplets and foil. The decline in alternative-caption accuracy is relative to frozen and is not specific to positive expansion. Positive expansion has slightly higher alternative-caption accuracy than source-positive adaptation. Full per-policy and per-seed values follow below.
+
+\section{Full Fresh Results and Execution Checks}
+\label{app:results}
+\input{results_appendix.tex}
+\input{retrieval_example_provenance.tex}
+\input{validation_figure.tex}
+
+\input{diagnostic.tex}
+
+\section{Reproducibility and Extensions}
+The archive separates source acquisition, normalized feature extraction, fit/selection, held-out prediction, statistical analysis, and manuscript generation. Manifests give stable IDs and input hashes. Candidate checkpoints and validation histories establish which states were eligible for selection. Selected predictions support metric reconstruction without rerunning training. Result tables are generated from the fresh analysis artifact rather than entered from the historical manuscript.
+
+Extensions retained for future work include a second backbone, full-encoder training, more training data and seeds, independently image-adjudicated relations, shared-final-epoch contrasts, denominator-matched and exact gradient-mass-matched training controls, hardness-matched exclusion, the summed-positive objective, predicted relations, inverse-multiplicity weighting, retention-constrained selection, feature distillation, many-to-many retrieval relevance, natural deployment queries, and frozen retrieval followed by relation-adapter reranking. A reranker can change the top result even when its candidate generator is fixed. Matching controls must specify the image and text directions separately. These are distinct from the completed comparisons reported in the fresh results.

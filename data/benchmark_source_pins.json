@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-03",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/add_att.json",
+      "path": "data/sugarcrepe/source/add_att.json",
+      "sha256": "012d88d729693d193760e6f3393b06a1cf874380a9db0062e937201199fe044d",
+      "bytes": 158863,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/add_obj.json",
+      "path": "data/sugarcrepe/source/add_obj.json",
+      "sha256": "1b9d76b93139a937b8dc1ada92a4f05ecc821bb3c291d752428bafadd4bb0682",
+      "bytes": 484593,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/replace_att.json",
+      "path": "data/sugarcrepe/source/replace_att.json",
+      "sha256": "9fe55fd4c0a9ad1f85d486d9f6d0215b41f867eb025026e7f7b5ce44352545ee",
+      "bytes": 176843,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/replace_obj.json",
+      "path": "data/sugarcrepe/source/replace_obj.json",
+      "sha256": "9d299600639947e9d15281a9ded1382b376cf4ea088a8d08a1314bfe76e81898",
+      "bytes": 361126,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/replace_rel.json",
+      "path": "data/sugarcrepe/source/replace_rel.json",
+      "sha256": "356bcc2fc4c6aed3f4d9fd50acc58489bb1fe70c28791f9368d4cbf9ea39cdc9",
+      "bytes": 312629,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/swap_att.json",
+      "path": "data/sugarcrepe/source/swap_att.json",
+      "sha256": "7a7ce04e5c4c80412b48c6f0c1347fb1a2f5d54c0be6aa429b64d390e442f8d0",
+      "bytes": 154665,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/RAIVNLab/sugar-crepe/0047054b243992f0fad63d6f64f7544862daf846/data/swap_obj.json",
+      "path": "data/sugarcrepe/source/swap_obj.json",
+      "sha256": "073cdb8e253d053614e80710834d9773b09dbc1dd0a412f6f9492262caa1dcad",
+      "bytes": 57569,
+      "revision": "0047054b243992f0fad63d6f64f7544862daf846"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sri-Harsha/scpp/c083bbf039a5ca215acaf25e7ee736d2ea6f3864/data/replace_att.json",
+      "path": "data/sugarcrepe_pp/source/replace_att.json",
+      "sha256": "6826413592894754eeca02aeebbcbbc8b95a7456998abcc714e71c033ce6fe87",
+      "bytes": 226275,
+      "revision": "c083bbf039a5ca215acaf25e7ee736d2ea6f3864"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sri-Harsha/scpp/c083bbf039a5ca215acaf25e7ee736d2ea6f3864/data/replace_obj.json",
+      "path": "data/sugarcrepe_pp/source/replace_obj.json",
+      "sha256": "5c6dc499ec8f511a8aa4ec1b7b5eb0eca90317488abe36ec39573355e2d361ab",
+      "bytes": 456601,
+      "revision": "c083bbf039a5ca215acaf25e7ee736d2ea6f3864"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sri-Harsha/scpp/c083bbf039a5ca215acaf25e7ee736d2ea6f3864/data/replace_rel.json",
+      "path": "data/sugarcrepe_pp/source/replace_rel.json",
+      "sha256": "040fb95d3f0619bf515db60879e99709a87a5e9b4f524ec3403b127243480fd4",
+      "bytes": 392738,
+      "revision": "c083bbf039a5ca215acaf25e7ee736d2ea6f3864"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sri-Harsha/scpp/c083bbf039a5ca215acaf25e7ee736d2ea6f3864/data/swap_att.json",
+      "path": "data/sugarcrepe_pp/source/swap_att.json",
+      "sha256": "450d0fd9fcad3e6f44950dc634e7f901ab1c6d9c60a569ade5ae8ffb3d203ad8",
+      "bytes": 198206,
+      "revision": "c083bbf039a5ca215acaf25e7ee736d2ea6f3864"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Sri-Harsha/scpp/c083bbf039a5ca215acaf25e7ee736d2ea6f3864/data/swap_obj.json",
+      "path": "data/sugarcrepe_pp/source/swap_obj.json",
+      "sha256": "5f33cae824de431a7ecd3c5de6301f689815f9497aa36d96b154bbaf117b201b",
+      "bytes": 74611,
+      "revision": "c083bbf039a5ca215acaf25e7ee736d2ea6f3864"
+    },
+    {
+      "url": "https://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip",
+      "path": "data/coco_karpathy/source/caption_datasets.zip",
+      "sha256": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817",
+      "bytes": 36745453
+    }
+  ],
+  "derived_files": {
+    "data/coco_karpathy/source/dataset_coco.json": "2fd999220673258012acfb411a4e7e66af7d488050b2519b0badcc49b7600b8d"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "classifier.npz": {
+    "bytes": 24922,
+    "sha256": "2c152d792280838b67255fd9ff710b655a9fbec3b46d096800caca70ff12903d"
+  },
+  "crossfit_0_classifier.npz": {
+    "bytes": 24932,
+    "sha256": "84b63d59eb788c01bb73b5681267835b0949a6831c13b6f730bdf1883621aa47"
+  },
+  "crossfit_0_predictions.npz": {
+    "bytes": 282987,
+    "sha256": "92e597ef36d1349da0cc9ae4d200b9ac06d8bc436410d56b67f2ce049e1bf11e"
+  },
+  "crossfit_1_classifier.npz": {
+    "bytes": 24922,
+    "sha256": "4e8a7af04666512683f16bd98c8e4ae48437ea5d1212932f3781230083bb4be3"
+  },
+  "crossfit_1_predictions.npz": {
+    "bytes": 290526,
+    "sha256": "e0aed1c93e347c8ae3834b54351400dc6680fa5f5d6574981d886fd3218576ae"
+  },
+  "crossfit_2_classifier.npz": {
+    "bytes": 24943,
+    "sha256": "fdbb33a08d85407a2339a6eed8ab6dab0bb3474f9d65126ad34020c804c469dd"
+  },
+  "crossfit_2_predictions.npz": {
+    "bytes": 294877,
+    "sha256": "6236fb8b364aee51f1f5b27c8a71ca5ce8c820003a98dab72bcfd4ecd78151f4"
+  },
+  "gate_selection_predictions.npz": {
+    "bytes": 40083,
+    "sha256": "d9276ad0450ad487433dd5b2ee0f8b7cf86f1fe86fe70ef0701bc5ea3023905f"
+  },
+  "summary.json": {
+    "bytes": 180872,
+    "sha256": "311bf0ed77d1ada838efbfc081e65e18f382c1f84d32805517f4561fce57999f"
+  },
+  "temperature_fit_predictions.npz": {
+    "bytes": 41442,
+    "sha256": "dd5a25fafae382db36f322d8c2900ce1895f7b2028673d574dd29673becabcdd"
+  },
+  "test_predictions.npz": {
+    "bytes": 313727,
+    "sha256": "36a647da0c031bc65f17e171537f5b3e59ecd5c6ce89942e442951fa9dea044c"
+  },
+  "train_out_of_fold_predictions.npz": {
+    "bytes": 866824,
+    "sha256": "b4f6511e2ce10eb25c8d32cfadcd298c53d7ad995feefcda124ab0581aac38e9"
+  },
+  "validation_predictions.npz": {
+    "bytes": 75656,
+    "sha256": "9649279b68d9d68225f1d61966b8a4a949178ce4f2a2e7aa9fdd27c6e3782e96"
+  }
+}

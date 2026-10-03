@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "verified_utc": "2026-10-03T04:58:41.919117+00:00",
+  "status": "passed",
+  "archive_count": 5,
+  "archives": [
+    {
+      "name": "checkpoint-05-coco_karpathy-part-01-of-02.zip",
+      "bytes": 33572780,
+      "sha256": "a83b1cbc7e13c153bf25e3fddcc60cd6a69a9c490ffb0d0cd120a9057a1153dc",
+      "extracted_with_crc_checks": true
+    },
+    {
+      "name": "checkpoint-05-coco_karpathy-part-02-of-02.zip",
+      "bytes": 23736023,
+      "sha256": "e46cb969a0317937abac55f164cc21b0cbfaae9a2ccc8114f847d5aac4131ffc",
+      "extracted_with_crc_checks": true
+    },
+    {
+      "name": "checkpoint-05-visual_entailment-part-01-of-03.zip",
+      "bytes": 33572773,
+      "sha256": "7d7827fd1cfaf24a6f22807d6bda00b39f3e608fa8d2a0a998c8748b9dec58eb",
+      "extracted_with_crc_checks": true
+    },
+    {
+      "name": "checkpoint-05-visual_entailment-part-02-of-03.zip",
+      "bytes": 33572773,
+      "sha256": "50fb5f9af34fe4a98ee6bc62afeb3838c53c4acf4fe6be01ab156d0c182d631a",
+      "extracted_with_crc_checks": true
+    },
+    {
+      "name": "checkpoint-05-visual_entailment-part-03-of-03.zip",
+      "bytes": 926366,
+      "sha256": "c5fc3e98747e7276f0fbc3eb68e4a0eb21b2ebb3cfc066fe34a7f2adf8978973",
+      "extracted_with_crc_checks": true
+    }
+  ],
+  "assets": [
+    {
+      "relative_target": "results/features/coco_karpathy/features.npz",
+      "bytes": 57272107,
+      "source_sha256": "98648b2797dea805d8b54e7fd0606be7ebb89c4e6d12cefc8d59b6f7434818c8",
+      "restored_sha256": "98648b2797dea805d8b54e7fd0606be7ebb89c4e6d12cefc8d59b6f7434818c8",
+      "metadata_sha256_match": true,
+      "exact_container_bytes_restored": true
+    },
+    {
+      "relative_target": "results/features/visual_entailment/features.npz",
+      "bytes": 68016891,
+      "source_sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "restored_sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "metadata_sha256_match": true,
+      "exact_container_bytes_restored": true
+    }
+  ],
+  "restorer_report": {
+    "schema_version": 1,
+    "complete": true,
+    "assets": [
+      {
+        "asset_id": "a2c6891b0dd15316794f5c8f02cd3f5a30386272b7e2357ac2041dea7ee9c456",
+        "relative_target": "results/features/coco_karpathy/features.npz",
+        "bytes": 57272107,
+        "sha256": "98648b2797dea805d8b54e7fd0606be7ebb89c4e6d12cefc8d59b6f7434818c8",
+        "status": "restored"
+      },
+      {
+        "asset_id": "95b6c08c90e20d120b5b4586c16324ac4582208f4f672407eb7d68cb601680c6",
+        "relative_target": "results/features/visual_entailment/features.npz",
+        "bytes": 68016891,
+        "sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+        "status": "restored"
+      }
+    ],
+    "counts": {
+      "restored": 2
+    }
+  },
+  "temporary_restoration_removed": true,
+  "original_files_preserved": true
+}

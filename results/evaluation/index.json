@@ -1,0 +1,2657 @@
+{
+  "complete_selected_study": true,
+  "environment": {
+    "blas_thread_environment": {
+      "MKL_NUM_THREADS": "2",
+      "OMP_NUM_THREADS": "2",
+      "OPENBLAS_NUM_THREADS": "2"
+    },
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "torch": "2.7.1+cpu",
+    "torch_threads": 2
+  },
+  "evidence_type": "new_execution",
+  "frozen_normalization": "same final float32 L2 normalization as the zero-initialized adapter",
+  "pair_tie_policy": "relation ranking: half credit; SugarCrepe/SugarCrepe++: zero credit",
+  "retrieval_tie_policy": "descending float64 dot product, then ascending candidate manifest index",
+  "run_count": 37,
+  "runs": [
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/frozen/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/frozen/coco_karpathy.npz",
+          "predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/frozen/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/evaluation/frozen/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/frozen/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/evaluation/frozen/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/frozen/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/frozen/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "epoch": 0,
+      "method": "frozen",
+      "run_id": "frozen",
+      "seed": null
+    },
+    {
+      "checkpoint": "results/study/selected/clip/seed_17.pt",
+      "checkpoint_sha256": "1f5f55e9d8a5c28dd5c6cc6e75d0ad69a2d7faea15e4b434bf964023adc69661",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/clip_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.2566,
+              "median_rank": 1.0,
+              "r1": 0.5628,
+              "r10": 0.8692,
+              "r5": 0.8
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.51824,
+              "median_rank": 2.0,
+              "r1": 0.39652,
+              "r10": 0.7592,
+              "r5": 0.65768
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/clip_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "03dbe73a7669d87ba27194c277db95e581b24c045fc0c55c97fcdde8edb49d3d"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/clip_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8343762481693516,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8343762481693516
+          },
+          "predictions": "results/evaluation/clip_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "c5447d76d0fd1b0bcc9f4254bcf4bf6a30082811a0ac8f4ae3e155d972cfe311"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/clip_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6764767710742065,
+            "both_accuracy": 0.6764767710742065,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8093336136220307,
+            "positive2_accuracy": 0.7286104687828463
+          },
+          "predictions": "results/evaluation/clip_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "6e125616255e868db4a8862f2debf056771c92c59e0a34ed17bb1e861cd042f5"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/clip_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8134782160321419,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/clip_seed_17/visual_entailment.npz",
+          "predictions_sha256": "9516089f58bfe71cd9055b27f0456af4e0ee15d73a92aae1c300cc50a64c6cb1"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "clip",
+      "run_id": "clip_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/clip/seed_29.pt",
+      "checkpoint_sha256": "1861472c4ebaed211a845a00df85ba5d8f1e5ca03e99774ac26946343b9126ba",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/clip_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.244,
+              "median_rank": 1.0,
+              "r1": 0.5602,
+              "r10": 0.869,
+              "r5": 0.7996
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.52904,
+              "median_rank": 2.0,
+              "r1": 0.39456,
+              "r10": 0.7596,
+              "r5": 0.65776
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/clip_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "c791dd1b1b540de1faa23a88735eaff1c147376ffd65d2a73e7ed07d3729a14e"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/clip_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.834243110105179,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.834243110105179
+          },
+          "predictions": "results/evaluation/clip_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "62903e1189d184653f33b9ae79c9881e9983e21c3a8201f3d479501aa5f210d5"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/clip_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6808913180575993,
+            "both_accuracy": 0.6808913180575993,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8095438301450494,
+            "positive2_accuracy": 0.7319739331511457
+          },
+          "predictions": "results/evaluation/clip_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "572c78733cc696cdf668f8a5b7d33bfd4c57e7ea1cd04377ca9820d859c1664d"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/clip_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8108819729489444,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/clip_seed_29/visual_entailment.npz",
+          "predictions_sha256": "7478523431ca5912fd05fdf17f94ce66a06881fc95817d1261389ca9bdf52ecd"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "clip",
+      "run_id": "clip_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/clip/seed_43.pt",
+      "checkpoint_sha256": "9e51cc68512f462fcdaccd35c17d3061803cafc4aa02707ced5a15418e6ca904",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/clip_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.6096,
+              "median_rank": 1.0,
+              "r1": 0.5526,
+              "r10": 0.8698,
+              "r5": 0.7882
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.64224,
+              "median_rank": 2.0,
+              "r1": 0.39024,
+              "r10": 0.75852,
+              "r5": 0.65468
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/clip_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "d100b27a0765ef1072f630c4e52f56aaaa367d9af9031bc3fd24ac54d572f3fb"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/clip_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8290507256024497,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8290507256024497
+          },
+          "predictions": "results/evaluation/clip_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "809c5a3ae2adaf3a9f085170b25e0ca8b79fc9546f86def394fd4ff507d037f6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/clip_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6647046457851588,
+            "both_accuracy": 0.6647046457851588,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8044986335926004,
+            "positive2_accuracy": 0.7138953121715367
+          },
+          "predictions": "results/evaluation/clip_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "b8adff2b41ff75bf1f260fce852a851d359694a86a3034d45523ef9e1993e518"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/clip_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8111799339625242,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/clip_seed_43/visual_entailment.npz",
+          "predictions_sha256": "c1e210f2069039d6116b98b9da443bb41beac149bffe88015f1aeee35176b26d"
+        }
+      },
+      "epoch": 3,
+      "learning_rate": 0.0001,
+      "method": "clip",
+      "run_id": "clip_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/constant/seed_17.pt",
+      "checkpoint_sha256": "66a7341efc9cf3ddc61f28c5b19b31dbb8a5f8824d51fd9b2ecb353e14f00c13",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/constant_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.517,
+              "median_rank": 1.0,
+              "r1": 0.5536,
+              "r10": 0.8652,
+              "r5": 0.7886
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.68816,
+              "median_rank": 2.0,
+              "r1": 0.39484,
+              "r10": 0.7578,
+              "r5": 0.65664
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/constant_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "51a8b2d84ef28b0dca76d523d310523ffd6276e987d97dcea97f94567e15280e"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/constant_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8387698042870456,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8387698042870456
+          },
+          "predictions": "results/evaluation/constant_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "f76a7992e264482438a4ee025bea02d626b2c53532e73ed72165c640c5fd4b6a"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/constant_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6859365146100483,
+            "both_accuracy": 0.6859365146100483,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8101744797141055,
+            "positive2_accuracy": 0.738280428841707
+          },
+          "predictions": "results/evaluation/constant_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "f08ec31129b3e3485a355e90de748b37f1a868662bd5e1d7b981d0373bc4ad9f"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/constant_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.820017578334625,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/constant_seed_17/visual_entailment.npz",
+          "predictions_sha256": "9cd7f56e07568a774a979eb4e51da531efeb2ed344c95a97482816d17475d10f"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "constant",
+      "run_id": "constant_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/constant/seed_29.pt",
+      "checkpoint_sha256": "df94357ad15ba48b9a2b24729b8c6e93de8bbab9ae5357c659c7aed7e4a6636a",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/constant_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.4968,
+              "median_rank": 1.0,
+              "r1": 0.551,
+              "r10": 0.8662,
+              "r5": 0.7902
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.6798,
+              "median_rank": 2.0,
+              "r1": 0.39392,
+              "r10": 0.7588,
+              "r5": 0.65652
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/constant_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "949baca1c705cfcd489c99729e4f2f8a42ea4cc43b49eaa44e251b64c81524f5"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/constant_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8365064571961124,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8365064571961124
+          },
+          "predictions": "results/evaluation/constant_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "1cf32df24e2d6cdc35feb7a2a9e9f484550f157904f76b0f455de9ba28a1c4d7"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/constant_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6869875972251419,
+            "both_accuracy": 0.6869875972251419,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8080723144839185,
+            "positive2_accuracy": 0.740382594071894
+          },
+          "predictions": "results/evaluation/constant_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "ff20c7b432f7327944ecdb2993c349735aba9797ce2958b4a450d1b782475fcc"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/constant_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8203017158593287,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/constant_seed_29/visual_entailment.npz",
+          "predictions_sha256": "9dad92c6c07873f2b6d5cdb63bc81b0cbca1ff227d1c7fcbaf77cab13e20d12c"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "constant",
+      "run_id": "constant_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/constant/seed_43.pt",
+      "checkpoint_sha256": "239dc9cb084ba6c75f43ee95046614187c2508323455294f550b41d37d8ce575",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/constant_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.561,
+              "median_rank": 1.0,
+              "r1": 0.5516,
+              "r10": 0.865,
+              "r5": 0.7868
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.6146,
+              "median_rank": 2.0,
+              "r1": 0.39308,
+              "r10": 0.75884,
+              "r5": 0.65548
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/constant_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "52efb601bcf098d1087b58b3a3a8a57af9391c1380b206d99257a86d57d84225"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/constant_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8347756623618693,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8347756623618693
+          },
+          "predictions": "results/evaluation/constant_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "5c09d33465d6dea56cff506ff10957ec02fa310cc452dcc3231e063dbc54883b"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/constant_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6781585032583561,
+            "both_accuracy": 0.6781585032583561,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8070212318688249,
+            "positive2_accuracy": 0.7294513348749212
+          },
+          "predictions": "results/evaluation/constant_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "57970572a37766e39c41d6b19ddf15b4d219d3c210cdfc7bfe40aaab211916b7"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/constant_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8242528781585343,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/constant_seed_43/visual_entailment.npz",
+          "predictions_sha256": "e596d5340bb85a5b6958f9e0d16f30ff9289507d84fa8e7737620c08d723d5ae"
+        }
+      },
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "constant",
+      "run_id": "constant_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/grounded/seed_17.pt",
+      "checkpoint_sha256": "6613e4a7d845959518ea0c4ae8a32dc841ec6a1370fe48e55c113f73b7e5ca62",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.4152,
+              "median_rank": 2.0,
+              "r1": 0.4804,
+              "r10": 0.817,
+              "r5": 0.7254
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.34724,
+              "median_rank": 3.0,
+              "r1": 0.35532,
+              "r10": 0.72168,
+              "r5": 0.61316
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "111909161659d0f698f382560a3fe5c76a437d84732b734d89317082995a1cd7"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8346425242976967,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8346425242976967
+          },
+          "predictions": "results/evaluation/grounded_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "e4d493d3e0678018feb5bf16ad59a4db1fd4a65e3469a9919d6258c4424fb4b3"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6808913180575993,
+            "both_accuracy": 0.6808913180575993,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.797561488332983,
+            "positive2_accuracy": 0.7437460584401934
+          },
+          "predictions": "results/evaluation/grounded_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "12e667cd4defacc1703e6eb09ea4ef50a1c09859638083ea4013372f0d5ac34c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8663777000328611,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_seed_17/visual_entailment.npz",
+          "predictions_sha256": "64ef697fc3f699f14ab115bd9cdb89e642fe3c07bba269c7389eda33030a2390"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded",
+      "run_id": "grounded_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/grounded/seed_29.pt",
+      "checkpoint_sha256": "24b1769178fe8bbb4406f67505dd43f7b5e400751364c9666414e50e979e2fd1",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.2452,
+              "median_rank": 2.0,
+              "r1": 0.4782,
+              "r10": 0.819,
+              "r5": 0.7254
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.17688,
+              "median_rank": 3.0,
+              "r1": 0.35512,
+              "r10": 0.72408,
+              "r5": 0.6196
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "7020ece62a02ab291bad022fd01a923486a50c43fc59f32f9523b337ff0f3f57"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8337105578484889,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8337105578484889
+          },
+          "predictions": "results/evaluation/grounded_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "921f6ac8a92ec4680110c021201438ba115bc5bc3cc08a98845af9f6c80f0fe2"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6718520075677948,
+            "both_accuracy": 0.6718520075677948,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7977717048560017,
+            "positive2_accuracy": 0.7298717679209585
+          },
+          "predictions": "results/evaluation/grounded_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "443bb900728223794253f4868c2e0528be9ba77f8688a7066b0cef3b7e31efbf"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8665019054105891,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_seed_29/visual_entailment.npz",
+          "predictions_sha256": "8d52595902f21ad857f41cfed18422b2f37c8dabe06f2ae5e9c837f54e424ec0"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded",
+      "run_id": "grounded_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/grounded/seed_43.pt",
+      "checkpoint_sha256": "1157dfb659998292c1db8c0d79884a77e6722e6d4670732f3f1cd25fab10166b",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 11.238,
+              "median_rank": 2.0,
+              "r1": 0.4592,
+              "r10": 0.804,
+              "r5": 0.7072
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.9814,
+              "median_rank": 3.0,
+              "r1": 0.34768,
+              "r10": 0.71588,
+              "r5": 0.60812
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "aea29cc4f58ac471bf13afc56befbc048b634836d6b69a84527f9d5a26c0ecf0"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8287844494741047,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8287844494741047
+          },
+          "predictions": "results/evaluation/grounded_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "b44a59e0f6a884bff6ca6d74988631ff392a7860ba1182db59122168f05eab02"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6756359049821316,
+            "both_accuracy": 0.6756359049821316,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7914652091654404,
+            "positive2_accuracy": 0.7355476140424637
+          },
+          "predictions": "results/evaluation/grounded_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "8c39b946d04ead350f4a9d04365533284c66943b547c3509969dfcef8d8563ee"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8693509430574019,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_seed_43/visual_entailment.npz",
+          "predictions_sha256": "87e65450c467b1473ff98dab8f52d478c6e2ad86b5ad401ab8d782dbc022f805"
+        }
+      },
+      "epoch": 7,
+      "learning_rate": 0.0003,
+      "method": "grounded",
+      "run_id": "grounded_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/grounded_no_abstention/seed_17.pt",
+      "checkpoint_sha256": "07e2ea3e779f79201547296e60ad2c06091fdba927d9dfc26aef6ab810372be1",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.4338,
+              "median_rank": 2.0,
+              "r1": 0.4846,
+              "r10": 0.8156,
+              "r5": 0.729
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.33364,
+              "median_rank": 3.0,
+              "r1": 0.3548,
+              "r10": 0.72068,
+              "r5": 0.61296
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "880c091fdc6d5ed1bd351be744e1eb9ef5ecf46a4c8760add50b0579c9ed7d43"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8333111436559713,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8333111436559713
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "09d6319189902c02c327b48d6e3bdb15be364fa31a754122415436974145a284"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6758461215051503,
+            "both_accuracy": 0.6758461215051503,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7990330039941139,
+            "positive2_accuracy": 0.7347067479503889
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "6bee2c5492b6aa4dce586380979e633accd9f8cc7e5900d9636beb2943538087"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8703538929048119,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_17/visual_entailment.npz",
+          "predictions_sha256": "1f22ec1c2e68e918ac0ed9b25338c1e94d6cfae247a82c2e7f36626beb19c40a"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_abstention",
+      "run_id": "grounded_no_abstention_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/grounded_no_abstention/seed_29.pt",
+      "checkpoint_sha256": "2a33a935ad2401d516a69735b91ca609fc4a348ea7faef0566dc154b160349e5",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 11.9128,
+              "median_rank": 2.0,
+              "r1": 0.4502,
+              "r10": 0.7934,
+              "r5": 0.6942
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 22.05492,
+              "median_rank": 3.0,
+              "r1": 0.33756,
+              "r10": 0.70336,
+              "r5": 0.59668
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "7da7fa26d7e4e7ae08c5dc52b5cf0f7fcc2291f4bec9ef76d48a64c39f57b76e"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8349088004260418,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8349088004260418
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "9a8eb30373dae144f16cfb5e4487bb128a55712aece9e2926eef974341195504"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6701702753836452,
+            "both_accuracy": 0.6701702753836452,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7967206222409081,
+            "positive2_accuracy": 0.725247004414547
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "e5bc5d7dbc9e4568a6158523ff19330717686d9a432c5a9f05aab1d54c15e237"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8713404297678282,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_29/visual_entailment.npz",
+          "predictions_sha256": "93cc4c41f5bfef674a57d58d8be2aaea8285adc622e6e27441b4ee62ebbfd3f1"
+        }
+      },
+      "epoch": 10,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_abstention",
+      "run_id": "grounded_no_abstention_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/grounded_no_abstention/seed_43.pt",
+      "checkpoint_sha256": "c94f36f0c8c7d3977f90bd728e764843726cb8a0a2f54778152a187a841da35b",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.3974,
+              "median_rank": 2.0,
+              "r1": 0.4828,
+              "r10": 0.8172,
+              "r5": 0.725
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.32788,
+              "median_rank": 3.0,
+              "r1": 0.35184,
+              "r10": 0.71984,
+              "r5": 0.61376
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "f9365d5996be054f259f8f24a967be0828f138d70ec041bdf11a485dde1e5b48"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8317134868859006,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8317134868859006
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "6f1046776307473296a7f5fc61047bfd53e3edd6627c893394424b8f06c74e3a"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6731133067059071,
+            "both_accuracy": 0.6731133067059071,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7958797561488333,
+            "positive2_accuracy": 0.7277696026907715
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "324633657ddc7aafde78f6fa9181d9a40f8225de3e48bbdb5f467cedfd98c69e"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_no_abstention_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8765800979217133,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_no_abstention_seed_43/visual_entailment.npz",
+          "predictions_sha256": "e90c303398bcf3cf97f72b56865bebbf83e2680f70ad07f37a50530256479c83"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_abstention",
+      "run_id": "grounded_no_abstention_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_17.pt",
+      "checkpoint_sha256": "db3d53b66f68f036fe88dfa10549485ee075fdd7093067414b17c3d03c3742ec",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.3578,
+              "median_rank": 2.0,
+              "r1": 0.481,
+              "r10": 0.817,
+              "r5": 0.7282
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.35096,
+              "median_rank": 3.0,
+              "r1": 0.3554,
+              "r10": 0.72152,
+              "r5": 0.61292
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "fbed005a05d35960d140241d40be492384e3592ceef564260c83d216b2ef0ce3"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8359739049394221,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8359739049394221
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "a0afdf3beeec6a2f056b8bff0492b511217313c2ae81500785d1ae623265a8b6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.682573050241749,
+            "both_accuracy": 0.682573050241749,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7992432205171327,
+            "positive2_accuracy": 0.7441664914862308
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "3f79ef659044f22415fa79709488dce5d27f49e427b4873bda2db154c7163676"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8641627909731447,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_17/visual_entailment.npz",
+          "predictions_sha256": "f98676be12a30c1a19602ff9e34612b7f263f48f3f821f776789d1e2a7f98566"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_hardening",
+      "run_id": "grounded_no_hardening_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_29.pt",
+      "checkpoint_sha256": "f77f55ecf4ff3a32fa234b718e0afd6edc17ef4532028a3d7c79907c12262972",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.1768,
+              "median_rank": 2.0,
+              "r1": 0.4784,
+              "r10": 0.8188,
+              "r5": 0.7252
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.1682,
+              "median_rank": 3.0,
+              "r1": 0.35504,
+              "r10": 0.72392,
+              "r5": 0.61936
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "dd0b88e4b814ecc1b69ffb0800234d2a04e575d0955e342591ec37ce6cc11346"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8349088004260418,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8349088004260418
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "8be833d6524f618d355a609784f08efe353c509f741e0ddb38a3f7bbfcbae25f"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6735337397519445,
+            "both_accuracy": 0.6735337397519445,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7990330039941139,
+            "positive2_accuracy": 0.731763716628127
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "ddd36caa43ea56a124828fc385164b157eecc266e0dce7c41f5e22d63b83568a"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8639698041694598,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_29/visual_entailment.npz",
+          "predictions_sha256": "1e7c5f54b84c800e958eb37baae254c7c1fe4b0997e3ae9b202dddfa35e68372"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_hardening",
+      "run_id": "grounded_no_hardening_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_43.pt",
+      "checkpoint_sha256": "4e4e11775995b191e66006e370794f2be727f07b14d323ae4277f0b3d50065ae",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.3868,
+              "median_rank": 2.0,
+              "r1": 0.481,
+              "r10": 0.818,
+              "r5": 0.724
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.3638,
+              "median_rank": 3.0,
+              "r1": 0.3512,
+              "r10": 0.72016,
+              "r5": 0.6146
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "cce2413a739d65b755085e91e501d3ad5d695eb6e07677ce592eef85447e40f9"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8309146585008654,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8309146585008654
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "002b3c753381337f5d585db6d5a610423d7b961e8453cb7b2b6682d10e7148bb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6737439562749632,
+            "both_accuracy": 0.6737439562749632,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7933571578726087,
+            "positive2_accuracy": 0.7332352322892579
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "492d6d43cc586e15f6d8a1625295449d83e3c1d984089289f5b0d75124e6d1c7"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/grounded_no_hardening_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8716539813857112,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/grounded_no_hardening_seed_43/visual_entailment.npz",
+          "predictions_sha256": "d7096f87b5f4e557c5ea4883dfc33b775a3e26386c88271c9e280f03a7f6e611"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_hardening",
+      "run_id": "grounded_no_hardening_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/multipositive/seed_17.pt",
+      "checkpoint_sha256": "63c4ede1732b5ca5fa594b45992af33a2f59e2b38ae6f83a9ca4957ab966fec0",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/multipositive_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.4012,
+              "median_rank": 2.0,
+              "r1": 0.4836,
+              "r10": 0.817,
+              "r5": 0.7288
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.3324,
+              "median_rank": 3.0,
+              "r1": 0.354,
+              "r10": 0.7204,
+              "r5": 0.61276
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/multipositive_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "6d5318f989476bf73aa5d9d707fbcc3bd3799795e5bdccedfdf5be42a26f6f57"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/multipositive_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8338436959126614,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8338436959126614
+          },
+          "predictions": "results/evaluation/multipositive_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "54f09f0d92fdfa74350aa3dadce95d609c30228ecd556675aeea3600d27a4094"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/multipositive_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6758461215051503,
+            "both_accuracy": 0.6758461215051503,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7977717048560017,
+            "positive2_accuracy": 0.7344965314273701
+          },
+          "predictions": "results/evaluation/multipositive_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "72c86cb00a695a67542a719e04906d182672a6980c5083268f71706041685c43"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/multipositive_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8674634171551022,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/multipositive_seed_17/visual_entailment.npz",
+          "predictions_sha256": "fbfe50daedd3ddf5156c86eb85bf519e7e012523c6ad4919ac32f08b29b57607"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "multipositive",
+      "run_id": "multipositive_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/multipositive/seed_29.pt",
+      "checkpoint_sha256": "1f3d78ee3da3d76127a3cd77a57c294745ca0b2ed48f9c99fc1ff9fd3bdbbf6b",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/multipositive_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 11.8738,
+              "median_rank": 2.0,
+              "r1": 0.4524,
+              "r10": 0.7952,
+              "r5": 0.693
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 22.03412,
+              "median_rank": 3.0,
+              "r1": 0.33816,
+              "r10": 0.7042,
+              "r5": 0.59668
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/multipositive_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "8ea81f3d5230db7b5d7db2f612e537b9936d839f329c08ed9f4b63049206d9c8"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/multipositive_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.835441352682732,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.835441352682732
+          },
+          "predictions": "results/evaluation/multipositive_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "0fe9e432c80380304d096067e77952451d176a880e207a1f23f1afd5f2bc97aa"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/multipositive_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6691191927685516,
+            "both_accuracy": 0.6691191927685516,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7956695396258145,
+            "positive2_accuracy": 0.7256674374605844
+          },
+          "predictions": "results/evaluation/multipositive_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "d529cd1e2708bf8bb69801dff19a17a609cbde2c529f16d4d1e3f385d800c7ea"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/multipositive_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8678764225516133,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/multipositive_seed_29/visual_entailment.npz",
+          "predictions_sha256": "f29a0cdb63ee646dceee27a06326bdb25a59fefc833304da71edc751f1de07d7"
+        }
+      },
+      "epoch": 10,
+      "learning_rate": 0.0003,
+      "method": "multipositive",
+      "run_id": "multipositive_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/multipositive/seed_43.pt",
+      "checkpoint_sha256": "b075b41ededf0a051090e40f1bd3e27164ce4f7ff5387075c7729e1ec84664e4",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/multipositive_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 10.3506,
+              "median_rank": 2.0,
+              "r1": 0.4828,
+              "r10": 0.8146,
+              "r5": 0.725
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 20.32956,
+              "median_rank": 3.0,
+              "r1": 0.353,
+              "r10": 0.72052,
+              "r5": 0.6138
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/multipositive_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "b0258c545ac1874d0b4024c01f6ab11617fc4993246b0a064d35eeb0fa441455"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/multipositive_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8325123152709359,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8325123152709359
+          },
+          "predictions": "results/evaluation/multipositive_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "b3434c65fa31f14441064d40243cd398e34042ce9f574997c9d942bff8345de6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/multipositive_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6718520075677948,
+            "both_accuracy": 0.6718520075677948,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7969308387639269,
+            "positive2_accuracy": 0.7265083035526593
+          },
+          "predictions": "results/evaluation/multipositive_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "8830da7e36a02798302af6f833829de27b9caadb341c927a67a17594ffc69f5d"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/multipositive_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.87455147676391,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/multipositive_seed_43/visual_entailment.npz",
+          "predictions_sha256": "5fb8ecac54f40b9c882deb855476fabad9366600115896d0d0b91e99091f4506"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "multipositive",
+      "run_id": "multipositive_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/pairwise_rank/seed_17.pt",
+      "checkpoint_sha256": "f3b5b74b22bf0da13e9476a2787426e468a55e4009446fd07f2bd32ee95c6afd",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/pairwise_rank_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/pairwise_rank_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/pairwise_rank_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/pairwise_rank_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_17/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "pairwise_rank",
+      "run_id": "pairwise_rank_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/pairwise_rank/seed_29.pt",
+      "checkpoint_sha256": "941f8bf7f7b5140317ed1e00c919c45ce28247de5b2197f2ce5f5378aab2d5ad",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/pairwise_rank_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/pairwise_rank_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/pairwise_rank_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/pairwise_rank_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_29/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "pairwise_rank",
+      "run_id": "pairwise_rank_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/pairwise_rank/seed_43.pt",
+      "checkpoint_sha256": "11598c3a128d3e3f5c543c90e134252494d255f836fe226423baf3c0075da22a",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/pairwise_rank_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/pairwise_rank_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/pairwise_rank_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/pairwise_rank_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/pairwise_rank_seed_43/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "epoch": 0,
+      "learning_rate": 0.0001,
+      "method": "pairwise_rank",
+      "run_id": "pairwise_rank_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/random_exclusion/seed_17.pt",
+      "checkpoint_sha256": "67b7061c0f458783b5a46cc590e102502864095b4bc7504cb08a12144a37ccf3",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/random_exclusion_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 12.2862,
+              "median_rank": 2.0,
+              "r1": 0.4484,
+              "r10": 0.7862,
+              "r5": 0.6872
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 26.48516,
+              "median_rank": 4.0,
+              "r1": 0.29328,
+              "r10": 0.66224,
+              "r5": 0.54508
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "ab50d25f99698bce9b537d2500e4f624aa4cda51266c346993328d09c2901908"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/random_exclusion_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8096125682332579,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8096125682332579
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "f21bba40f87b053602ee777ff9ac95ae7681af44ff33ab20531aaf2783972e36"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/random_exclusion_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6548244692032794,
+            "both_accuracy": 0.6548244692032794,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7773807021231869,
+            "positive2_accuracy": 0.717258776539836
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "05b60d0fed04e40d7acf545d8c398fb8abf5cef9045408f2d2e7e6b9a1c40d70"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/random_exclusion_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8603898148998451,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_17/visual_entailment.npz",
+          "predictions_sha256": "7278d5b01e4c6dd73005988b13c379ced1855c33bb6873be8ae4c7f727d2b0aa"
+        }
+      },
+      "epoch": 3,
+      "learning_rate": 0.001,
+      "method": "random_exclusion",
+      "run_id": "random_exclusion_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/random_exclusion/seed_29.pt",
+      "checkpoint_sha256": "c9b53eafcedcc4869153682619d1e2b49ab0bd70c4f870cf9165ad3d220d21ef",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/random_exclusion_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 13.999,
+              "median_rank": 2.0,
+              "r1": 0.428,
+              "r10": 0.7694,
+              "r5": 0.6754
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 26.48256,
+              "median_rank": 4.0,
+              "r1": 0.30616,
+              "r10": 0.6734,
+              "r5": 0.5616
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "f4f92285497b523ea361f909a9c255a90f381dafbf1ccffe0da8d09cee0ddb44"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/random_exclusion_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8154706430568499,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8154706430568499
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "53ad777bc41caf15424e40420c8af8e610bc1035573c0a2c0cc455ad11de97b6"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/random_exclusion_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6657557284002522,
+            "both_accuracy": 0.6657557284002522,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7799033003994114,
+            "positive2_accuracy": 0.7256674374605844
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "3ba35f787e64e1459a7908c7c47f216b87b5fa50c6c5283cb17ce4a754eedf80"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/random_exclusion_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8616699384449936,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_29/visual_entailment.npz",
+          "predictions_sha256": "8fe2e5823d3fe3e5e2aed29882480060d240176e8042a210c44dbbcd62d4694c"
+        }
+      },
+      "epoch": 5,
+      "learning_rate": 0.001,
+      "method": "random_exclusion",
+      "run_id": "random_exclusion_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/random_exclusion/seed_43.pt",
+      "checkpoint_sha256": "c67508b411fd7b8c4333196a90bad5a894877bf8e7fe8e61a8f0736dd9bb28d2",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/random_exclusion_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 13.6818,
+              "median_rank": 2.0,
+              "r1": 0.4264,
+              "r10": 0.7786,
+              "r5": 0.6726
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 26.05248,
+              "median_rank": 4.0,
+              "r1": 0.29904,
+              "r10": 0.66268,
+              "r5": 0.55168
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "5627d5b08c2fd0a1751098092dc7be2ce8e09bf24ef7f18ca6a8b7c0c8b15843"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/random_exclusion_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8235920649713753,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8235920649713753
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "d93aa97dcac061ceee42d6290938a37e7d0ba96ca9e224a6ed34effd0327dddd"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/random_exclusion_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6573470674795039,
+            "both_accuracy": 0.6573470674795039,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7805339499684675,
+            "positive2_accuracy": 0.7183098591549296
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "8cdeb64eececd1da30a67193e81932ce196cece0686afc2aaa43cf1be98ffc04"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/random_exclusion_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8658023613161734,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/random_exclusion_seed_43/visual_entailment.npz",
+          "predictions_sha256": "702f4cef01fd918c19fd88fde5e46558dfc74c4bbfd1e3a997e5ca6e7f34cbba"
+        }
+      },
+      "epoch": 3,
+      "learning_rate": 0.001,
+      "method": "random_exclusion",
+      "run_id": "random_exclusion_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/sanw_fixed/seed_17.pt",
+      "checkpoint_sha256": "7616dd73a2a61bbffd78d4db6a7d6f7b14032ba6e881cc6a336271ae410a4256",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/sanw_fixed_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 9.292,
+              "median_rank": 1.0,
+              "r1": 0.5034,
+              "r10": 0.83,
+              "r5": 0.7384
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 25.8358,
+              "median_rank": 4.0,
+              "r1": 0.31884,
+              "r10": 0.68344,
+              "r5": 0.57184
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "3197930023f5269ae74120aa1481d37ab4447747cb65697c6875fb522fb58113"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/sanw_fixed_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8297164159233125,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8297164159233125
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "2d24f74d4688340f75fe6de6345b2fe55aca4fb08cc07d8131542b34a874a351"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/sanw_fixed_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6609207483708219,
+            "both_accuracy": 0.6609207483708219,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8000840866092075,
+            "positive2_accuracy": 0.712213579987387
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "b895bdd4d8e508c8c7fb037019f71ffacbc851877e943b2a8e9a6558349e268a"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/sanw_fixed_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7973989037147103,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_17/visual_entailment.npz",
+          "predictions_sha256": "57cf3071654c7eac778361bc1bc67eefb08f04853a3cb6b544e7b1db9d28efeb"
+        }
+      },
+      "epoch": 6,
+      "learning_rate": 0.0003,
+      "method": "sanw_fixed",
+      "run_id": "sanw_fixed_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/sanw_fixed/seed_29.pt",
+      "checkpoint_sha256": "2ae7ac8bffa5260358a42f36669da139a00d3a5fb5cd94704be19c44a0e1c37e",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/sanw_fixed_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/sanw_fixed_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/sanw_fixed_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/sanw_fixed_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_29/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "method": "sanw_fixed",
+      "run_id": "sanw_fixed_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/sanw_fixed/seed_43.pt",
+      "checkpoint_sha256": "aa21f5bf9adf25f3f344848b80a1b29445041ba2a6c2ecbb4fc1e615ee172c96",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/sanw_fixed_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 6.9402,
+              "median_rank": 1.0,
+              "r1": 0.5632,
+              "r10": 0.8712,
+              "r5": 0.7982
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.9344,
+              "median_rank": 2.0,
+              "r1": 0.39348,
+              "r10": 0.7562,
+              "r5": 0.65404
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "08323acb2869515c3ddf0d8a7fda23b75786af324ff542021dff25250662bc77"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/sanw_fixed_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8121421914525363,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8121421914525363
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "edda4a9d13946fd1ae290c53976228924e3edf91e145b43b6aef8594b9d5dabb"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/sanw_fixed_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6895101955013664,
+            "both_accuracy": 0.6895101955013664,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7946184570107211,
+            "positive2_accuracy": 0.7500525541307547
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d6c7366b987b9be6d2f72706e09b5e34fe4927a7fb229136e1020ca4f1d8d8c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/sanw_fixed_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.7947273164639607,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/sanw_fixed_seed_43/visual_entailment.npz",
+          "predictions_sha256": "b4731787a92acc7cf69360541c9a3490281448f010e456a20cedb64f7f8b9737"
+        }
+      },
+      "epoch": 0,
+      "learning_rate": 0.0003,
+      "method": "sanw_fixed",
+      "run_id": "sanw_fixed_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/sanw_median/seed_17.pt",
+      "checkpoint_sha256": "a2a07c82d1185d6f4e757b629a4086b7be2887835c6b73533c5e43e406800879",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/sanw_median_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 8.1452,
+              "median_rank": 1.0,
+              "r1": 0.5364,
+              "r10": 0.853,
+              "r5": 0.7758
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.92616,
+              "median_rank": 2.0,
+              "r1": 0.389,
+              "r10": 0.75392,
+              "r5": 0.65168
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/sanw_median_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "7bd52922bd119edb8d92f585191baf4ed5424417dba26336ea8ef1b5fcf9eb1a"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/sanw_median_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.835441352682732,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.835441352682732
+          },
+          "predictions": "results/evaluation/sanw_median_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "24e4866f76dcde6606a2adf953c3210dbc40d94dff2b378aa9e0f3efbc559a4a"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/sanw_median_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.679630018919487,
+            "both_accuracy": 0.679630018919487,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8030271179314694,
+            "positive2_accuracy": 0.7344965314273701
+          },
+          "predictions": "results/evaluation/sanw_median_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "4d42a59fe8453487e5c3bed6ccb0e4d93694049a44def775247f774005aba73c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/sanw_median_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8276199414980249,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/sanw_median_seed_17/visual_entailment.npz",
+          "predictions_sha256": "d30387705190a37e638824cc72dc07c60232933c393d610de5a28c6f66d85302"
+        }
+      },
+      "epoch": 3,
+      "learning_rate": 0.0001,
+      "method": "sanw_median",
+      "run_id": "sanw_median_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/sanw_median/seed_29.pt",
+      "checkpoint_sha256": "2de17af7edf8859eb8bc14f25df2e6e467fbc7b25ee9c3d5912b53c96015529a",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/sanw_median_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.9098,
+              "median_rank": 1.0,
+              "r1": 0.5442,
+              "r10": 0.8626,
+              "r5": 0.7822
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.66076,
+              "median_rank": 2.0,
+              "r1": 0.3942,
+              "r10": 0.75812,
+              "r5": 0.6556
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/sanw_median_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "df08d6345f4a5c16bbb4914535935632e582733203ced9592d4e3601d75390a7"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/sanw_median_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8374384236453202,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8374384236453202
+          },
+          "predictions": "results/evaluation/sanw_median_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "78f7dd34b5da34526479a69f6ffc8da13636d71edc7aeb6ca93b73c1e4095184"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/sanw_median_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.679630018919487,
+            "both_accuracy": 0.679630018919487,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8053394996846752,
+            "positive2_accuracy": 0.7326045827202018
+          },
+          "predictions": "results/evaluation/sanw_median_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "046f36ee556a208181055c39ba1cbcb5883791b3c89e9c3d301e29fcba00daa5"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/sanw_median_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8243586239805342,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/sanw_median_seed_29/visual_entailment.npz",
+          "predictions_sha256": "895fa87e01467119e08aa8be8feec2e3f946a3dd1bd9e1d30b3369da47794bcf"
+        }
+      },
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "sanw_median",
+      "run_id": "sanw_median_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/sanw_median/seed_43.pt",
+      "checkpoint_sha256": "cb6910edfeea88498f16332b8eec42f5693ba5c7e3c31e4d331d8bc791585160",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/sanw_median_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.8346,
+              "median_rank": 1.0,
+              "r1": 0.5386,
+              "r10": 0.8594,
+              "r5": 0.78
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.66224,
+              "median_rank": 2.0,
+              "r1": 0.39304,
+              "r10": 0.75764,
+              "r5": 0.65524
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/sanw_median_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "b282de10e101aeb26dbaf97032c033ae5d997d83431477ebda5dd72ef59388a1"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/sanw_median_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8389029423512182,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8389029423512182
+          },
+          "predictions": "results/evaluation/sanw_median_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "e2ceadb6b7fe96a287a213996d6030f321bdc074eb6ca7c847dde74b20ea8610"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/sanw_median_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6808913180575993,
+            "both_accuracy": 0.6808913180575993,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8066007988227875,
+            "positive2_accuracy": 0.733865881858314
+          },
+          "predictions": "results/evaluation/sanw_median_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "d39c70e66c6d0f04638f06ac963af1ee5e44d9baf7908681dfd9992f189934c0"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/sanw_median_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8278111679559692,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/sanw_median_seed_43/visual_entailment.npz",
+          "predictions_sha256": "e162cce6a388b1d357e771ae3bb5d25be30590da96254bef3488aeab80e4befe"
+        }
+      },
+      "epoch": 2,
+      "learning_rate": 0.0001,
+      "method": "sanw_median",
+      "run_id": "sanw_median_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/shuffled/seed_17.pt",
+      "checkpoint_sha256": "bcd2ad4480844d9e0907f5e29638a0e1b4839dab15b4eabacc7f260cf1a34169",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/shuffled_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 8.5664,
+              "median_rank": 1.0,
+              "r1": 0.526,
+              "r10": 0.8538,
+              "r5": 0.7726
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 18.82784,
+              "median_rank": 3.0,
+              "r1": 0.38096,
+              "r10": 0.74376,
+              "r5": 0.6418
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/shuffled_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "f50b42348ba21efe6bb46557fb6e6f8a957741ae469a605cf786881a83fc3e43"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/shuffled_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8310477965650379,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8310477965650379
+          },
+          "predictions": "results/evaluation/shuffled_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "53972fa55c4ec0dbd4c91198c424db423f2b74acf798423bb80b56e12d3941ee"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/shuffled_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6663863779693084,
+            "both_accuracy": 0.6663863779693084,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.7977717048560017,
+            "positive2_accuracy": 0.7225141896153038
+          },
+          "predictions": "results/evaluation/shuffled_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "3f5f144c01cc4eb8b78e01c329034df47b649a8fb672ea499676189b40b208cc"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/shuffled_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8285317514821093,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/shuffled_seed_17/visual_entailment.npz",
+          "predictions_sha256": "556f2da63d42f71a2f377fec26463c4da0560ddeb202a204d6c767adf58ccf5e"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0003,
+      "method": "shuffled",
+      "run_id": "shuffled_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/shuffled/seed_29.pt",
+      "checkpoint_sha256": "edcb1244960cbc8de1ea268a9ad4f4cf163e158a000a1311c0be24935e2d25f2",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/shuffled_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 9.092,
+              "median_rank": 1.0,
+              "r1": 0.5214,
+              "r10": 0.8416,
+              "r5": 0.76
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 18.55756,
+              "median_rank": 3.0,
+              "r1": 0.38144,
+              "r10": 0.74608,
+              "r5": 0.645
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/shuffled_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "48241823c949cb7f1a5c68db28e66ff838a6033ded8c6b1197fe4ba45335a009"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/shuffled_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8381041139661829,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8381041139661829
+          },
+          "predictions": "results/evaluation/shuffled_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "3a328f2088ffeb2e0384f25e7d3c611ec89d06ccc9eeb2ed561b38d0c5c7a7bf"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/shuffled_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6689089762455329,
+            "both_accuracy": 0.6689089762455329,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8038679840235442,
+            "positive2_accuracy": 0.7218835400462477
+          },
+          "predictions": "results/evaluation/shuffled_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "ca4539d39a2acc6940ac41376b5be8cceb2056f15be7ff3c6215c4afbde67057"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/shuffled_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8396894685843338,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/shuffled_seed_29/visual_entailment.npz",
+          "predictions_sha256": "803f0881a7b0eec163b8d8f981082ea5ff1601bc5d315f63be96f54e60b6a2fc"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0003,
+      "method": "shuffled",
+      "run_id": "shuffled_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/shuffled/seed_43.pt",
+      "checkpoint_sha256": "74357f1ce7d9847d0ee43879822d95b7f08874a00c5b3526249ed2bf22f089f2",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/shuffled_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 8.5736,
+              "median_rank": 1.0,
+              "r1": 0.5206,
+              "r10": 0.8496,
+              "r5": 0.7664
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 18.41696,
+              "median_rank": 3.0,
+              "r1": 0.38328,
+              "r10": 0.74744,
+              "r5": 0.6456
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/shuffled_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "9b09d6836402a95807778cb98cd672d09a88eb60920daa9d9b5c72f6e59a1175"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/shuffled_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.835441352682732,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.835441352682732
+          },
+          "predictions": "results/evaluation/shuffled_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "ca8441b7fd96eb8d52b045cfbfc0ef1e137a4062f0732c94265a03d08fa77f81"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/shuffled_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6716417910447762,
+            "both_accuracy": 0.6716417910447762,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8017658187933572,
+            "positive2_accuracy": 0.7248265713685096
+          },
+          "predictions": "results/evaluation/shuffled_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "36c40a62c9f59138537ccabcb3ace018dc6954f7a642c55017c222389e4b2a5b"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/shuffled_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8319568549128212,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/shuffled_seed_43/visual_entailment.npz",
+          "predictions_sha256": "7955b0b20afda04982cb420e698766b97fae334ee832c13fb63a7894375bd485"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0003,
+      "method": "shuffled",
+      "run_id": "shuffled_seed_43",
+      "seed": 43
+    },
+    {
+      "checkpoint": "results/study/selected/smoothing/seed_17.pt",
+      "checkpoint_sha256": "73161d8b8c52adfaf52a0fb5a579315859b2109ca779a848542632a2d985dfcf",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/smoothing_seed_17/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.4414,
+              "median_rank": 1.0,
+              "r1": 0.5526,
+              "r10": 0.8686,
+              "r5": 0.79
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.98452,
+              "median_rank": 2.0,
+              "r1": 0.38992,
+              "r10": 0.75364,
+              "r5": 0.65384
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/smoothing_seed_17/coco_karpathy.npz",
+          "predictions_sha256": "8e2db0136f19a1cc25d29caa0f42c937638c1d85db8cb8d628a0ef37dc43809e"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/smoothing_seed_17/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8361070430035947,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8361070430035947
+          },
+          "predictions": "results/evaluation/smoothing_seed_17/sugarcrepe.npz",
+          "predictions_sha256": "5aa54a866fdfcfb4c8447397890d4151fcfcb244bfe8f333833b24754b60d76a"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/smoothing_seed_17/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6859365146100483,
+            "both_accuracy": 0.6859365146100483,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8103846962371243,
+            "positive2_accuracy": 0.7374395627496321
+          },
+          "predictions": "results/evaluation/smoothing_seed_17/sugarcrepe_pp.npz",
+          "predictions_sha256": "dc747e4d1b41fed02d362dd6ab59b0814580a3fa4d907825855c044373f2e33e"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/smoothing_seed_17/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8204103703710792,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/smoothing_seed_17/visual_entailment.npz",
+          "predictions_sha256": "bae92a3030bed87b91c604a082bb9ffb567226bf5079819598006315dec75006"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "smoothing",
+      "run_id": "smoothing_seed_17",
+      "seed": 17
+    },
+    {
+      "checkpoint": "results/study/selected/smoothing/seed_29.pt",
+      "checkpoint_sha256": "369b3cb03b6edd06e7c5ed402174049d709040da9df63a51f5b72ff0bf785cd3",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/smoothing_seed_29/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 8.9918,
+              "median_rank": 1.0,
+              "r1": 0.5092,
+              "r10": 0.8372,
+              "r5": 0.7576
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 23.56916,
+              "median_rank": 3.0,
+              "r1": 0.33448,
+              "r10": 0.7036,
+              "r5": 0.59588
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/smoothing_seed_29/coco_karpathy.npz",
+          "predictions_sha256": "8f36febc7ee9fbad731dd7e04edeb9532b2b239ecab14860fa020368730b411b"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/smoothing_seed_29/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.7976301424577287,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.7976301424577287
+          },
+          "predictions": "results/evaluation/smoothing_seed_29/sugarcrepe.npz",
+          "predictions_sha256": "7e5a97b4e18856fd20ce004646362440e50e66265d097e46fcfe516b20671579"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/smoothing_seed_29/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.606684885431995,
+            "both_accuracy": 0.606684885431995,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8068110153458061,
+            "positive2_accuracy": 0.641370611730082
+          },
+          "predictions": "results/evaluation/smoothing_seed_29/sugarcrepe_pp.npz",
+          "predictions_sha256": "9cf5e1015113c6eb6acdc7507c8d6f90d4883ef3ccc0bedccb18dcbb197ea80c"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/smoothing_seed_29/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.736303428715826,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/smoothing_seed_29/visual_entailment.npz",
+          "predictions_sha256": "26c782253d1688d70be40918a7cb9c66a4c3a09228dcc3df54213ea3430a808a"
+        }
+      },
+      "epoch": 10,
+      "learning_rate": 0.0001,
+      "method": "smoothing",
+      "run_id": "smoothing_seed_29",
+      "seed": 29
+    },
+    {
+      "checkpoint": "results/study/selected/smoothing/seed_43.pt",
+      "checkpoint_sha256": "f507985bcbdb4b68cf70a33b795de208e09086433a884c579ebfeaee4b2f4716",
+      "datasets": {
+        "coco_karpathy": {
+          "metadata": "results/evaluation/smoothing_seed_43/coco_karpathy.json",
+          "metrics": {
+            "i2t": {
+              "mean_rank": 7.4356,
+              "median_rank": 1.0,
+              "r1": 0.5536,
+              "r10": 0.8656,
+              "r5": 0.7906
+            },
+            "images": 5000,
+            "t2i": {
+              "mean_rank": 17.99628,
+              "median_rank": 2.0,
+              "r1": 0.38808,
+              "r10": 0.7544,
+              "r5": 0.65452
+            },
+            "texts": 25000,
+            "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+          },
+          "predictions": "results/evaluation/smoothing_seed_43/coco_karpathy.npz",
+          "predictions_sha256": "614b571e60672299f2bc6b2991dcb522666605b44f3e12c45973fe1ab6e6a329"
+        },
+        "sugarcrepe": {
+          "metadata": "results/evaluation/smoothing_seed_43/sugarcrepe.json",
+          "metrics": {
+            "accuracy": 0.8347756623618693,
+            "images": 1560,
+            "items": 7511,
+            "positive1_accuracy": 0.8347756623618693
+          },
+          "predictions": "results/evaluation/smoothing_seed_43/sugarcrepe.npz",
+          "predictions_sha256": "897ca84a400219899d329b346acc742c11e72e3a967d73cfd87dda1620edc517"
+        },
+        "sugarcrepe_pp": {
+          "metadata": "results/evaluation/smoothing_seed_43/sugarcrepe_pp.json",
+          "metrics": {
+            "accuracy": 0.6863569476560858,
+            "both_accuracy": 0.6863569476560858,
+            "images": 1542,
+            "items": 4757,
+            "positive1_accuracy": 0.8093336136220307,
+            "positive2_accuracy": 0.7378599957956695
+          },
+          "predictions": "results/evaluation/smoothing_seed_43/sugarcrepe_pp.npz",
+          "predictions_sha256": "4f1cf9867aaf15395acfc977de6a2fbeb416bb0acbb6e7e6f7f32aae98d3a830"
+        },
+        "visual_entailment": {
+          "metadata": "results/evaluation/smoothing_seed_43/visual_entailment.json",
+          "metrics": {
+            "accuracy": 0.8202573507154569,
+            "comparison_count": 13844,
+            "eligible_images": 400,
+            "excluded_images": [],
+            "manifest_images": 400
+          },
+          "predictions": "results/evaluation/smoothing_seed_43/visual_entailment.npz",
+          "predictions_sha256": "d7a9c2182c54c7303063453bb7070acf27752dd7ee080f3ff3dbb406406c365d"
+        }
+      },
+      "epoch": 1,
+      "learning_rate": 0.0001,
+      "method": "smoothing",
+      "run_id": "smoothing_seed_43",
+      "seed": 43
+    }
+  ],
+  "schema_version": 1,
+  "score_scale": "unscaled float64 dot product; positive fixed CLIP scale does not affect these rank metrics",
+  "selection_ledger_sha256": "3eb474e7ba81a348f58462398b1010f7c7c0c3b6b1715743cb6e336e17ddbd51",
+  "selection_sha256": "04950c8627a54e0dbd060768d5725c882746e74c71365bf3f1fa81518b4e649e",
+  "source_hashes": {
+    "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+    "src/gcr/adapters.py": "eb042d632c22f69f2addbf6883489822948d9df301a34ba06ca85ed6d827b891",
+    "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+  },
+  "status": "complete"
+}

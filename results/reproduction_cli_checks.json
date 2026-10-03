@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "command": "python SCRIPT --help",
+  "checks": [
+    {
+      "script": "scripts/prepare_visual_entailment.py",
+      "exit_code": 0,
+      "source_sha256": "05dd2853420e102a6d6a58108a24fe5d1a9e6ef2ccadb499dd38f8f848cfcdcf",
+      "usage_first_line": "usage: prepare_visual_entailment.py [-h] [--repo REPO] [--workers WORKERS]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/prepare_benchmarks.py",
+      "exit_code": 0,
+      "source_sha256": "c8a98d243626ef1a097b0b58b7995dc72302c5a03bc6d375f8f9d074c61a5f7c",
+      "usage_first_line": "usage: prepare_benchmarks.py [-h] [--workers WORKERS] [--metadata-only]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/prepare_model.py",
+      "exit_code": 0,
+      "source_sha256": "1c5f774ca6788cfeff56e808399741b996e0318fab281f4541d1e85d9b23f5d1",
+      "usage_first_line": "usage: prepare_model.py [-h] [--verify] [--model-dir MODEL_DIR]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/audit_inputs.py",
+      "exit_code": 0,
+      "source_sha256": "06d7c03574253217905d07d6d7729e4b749e2d2ee39a0883109bf6b172bb7ce3",
+      "usage_first_line": "usage: audit_inputs.py [-h] [--repo REPO] [--output OUTPUT]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/extract_features.py",
+      "exit_code": 0,
+      "source_sha256": "bddd51416f2723b92baeb03e76d410a2340e3afcf4642ee75a3c6d4863d93f29",
+      "usage_first_line": "usage: extract_features.py [-h] --dataset DATASET [--threads THREADS]",
+      "stderr": "Error in cpuinfo: failed to parse processor information from /proc/cpuinfo\n"
+    },
+    {
+      "script": "scripts/run_study.py",
+      "exit_code": 0,
+      "source_sha256": "fed94eb8a631aa220a83b141a04905ee1505a5e14c0ba409f4ccf6612b8a11c6",
+      "usage_first_line": "usage: run_study.py [-h] [--manifest MANIFEST] [--features FEATURES]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/evaluate_study.py",
+      "exit_code": 0,
+      "source_sha256": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+      "usage_first_line": "usage: evaluate_study.py [-h] [--selection SELECTION] [--output OUTPUT]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/analyze_study.py",
+      "exit_code": 0,
+      "source_sha256": "8db66e76f5d9ab9affa959822bfa427d6da9d3381d6f6af3faeda2142ee94c84",
+      "usage_first_line": "usage: analyze_study.py [-h] [--index INDEX] [--output OUTPUT]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/relation_diagnostic.py",
+      "exit_code": 0,
+      "source_sha256": "491a5d2b047656012e1f8f0cefc61357d0efaf6a544236aaa7c1c0cd72071f26",
+      "usage_first_line": "usage: relation_diagnostic.py [-h] [--manifest MANIFEST] [--features FEATURES]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/build_paper.py",
+      "exit_code": 0,
+      "source_sha256": "9c28c15feca67421a1d12d6cbdeceb14b6384878f7770e293b296e1dcbee0223",
+      "usage_first_line": "usage: build_paper.py [-h] [--draft] [--check-only]",
+      "stderr": ""
+    },
+    {
+      "script": "scripts/generate_paper_results.py",
+      "exit_code": 0,
+      "source_sha256": "f1647fc638e95d7afa183cc5edcbd0870417cc3a92e5abe76d765bb3ba159360",
+      "usage_first_line": "usage: generate_paper_results.py [-h] [--analysis-dir ANALYSIS_DIR]",
+      "stderr": "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/generate_paper_results.py:277: SyntaxWarning: invalid escape sequence '\\%'\n  dchunks.append(table(['Input','Gate','Accept','Correct','Coverage','Precision','95\\% interval'],rows,\n"
+    }
+  ]
+}

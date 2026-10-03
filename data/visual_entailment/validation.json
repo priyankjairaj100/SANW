@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "images": 1800,
+  "texts": 33859,
+  "pairs": 33859,
+  "retained_official_hypotheses": 24859,
+  "five_source_captions_per_image": true,
+  "unique_image_and_text_ids": true,
+  "official_hypothesis_texts_unchanged": true,
+  "split_counts": {
+    "train": 1200,
+    "calibration": 100,
+    "validation": 100,
+    "test": 400
+  },
+  "identical_image_file_hash_groups": [],
+  "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+  "all_selected_images_fully_decoded": true,
+  "image_bytes": 249871934,
+  "script_sha256": "05dd2853420e102a6d6a58108a24fe5d1a9e6ef2ccadb499dd38f8f848cfcdcf"
+}

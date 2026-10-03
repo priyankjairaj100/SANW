@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "dataset": "sugarcrepe",
+  "manifest_sha256": "5f05226c5245301b6c095084cf21326ac4c7d1332bd93663ef5309a36dce1228",
+  "model_repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+  "model_revision": "1a25a446712ba5ee05982a381eed697ef9b435cf",
+  "weights_sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6",
+  "logit_scale": 100.00000762939453,
+  "image_count": 1560,
+  "text_count": 15022,
+  "dimension": 512,
+  "dtype": "float32",
+  "normalization": "L2",
+  "preprocess_config": {
+    "mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ]
+  },
+  "preprocess_repr": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_to_rgb at 0x7f0ea48b31a0>\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+  "open_clip_version": "2.32.0",
+  "torch_version": "2.7.1+cpu",
+  "text_encoding": "causally_trimmed_after_last_eot",
+  "causal_padding_parity": [
+    {
+      "dataset": "sugarcrepe",
+      "examples": 22,
+      "max_abs_error": 2.60770320892334e-07,
+      "tolerance": 2e-06
+    }
+  ],
+  "source_sha256": "435f274405d7442a9fdfa26ce051c6183ffbd83cf092686cbc23dc1a462cc702",
+  "features_sha256": "d5adf64ab19568de44a948ab023629cfa031e5a47f5c6ef3e6da7d23dd64b216",
+  "elapsed_seconds": 179.24941139900056
+}

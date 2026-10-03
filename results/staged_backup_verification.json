@@ -1,0 +1,68 @@
+{
+  "archives": [
+    {
+      "archive": "checkpoint-01-protocol-and-code.zip",
+      "bytes": 18414649,
+      "sha256": "07ca55f782d8903e298431580c52fb2f654b932005ba8c9a7682132d42386000",
+      "files": 4209,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-02-verified-data-and-implementation.zip",
+      "bytes": 23971408,
+      "sha256": "f48798af5bc1aea0066f1d38d98a8bdaa8722ce507958004a64f6d961565a5a5",
+      "files": 6504,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-03a-sugarcrepe-features.zip",
+      "bytes": 32200502,
+      "sha256": "3c5ed47dd07f211a2dfcc52325c270f20532bc6c48ad90204e888edda8794794",
+      "files": 5,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-03b-sugarcrepepp-features.zip",
+      "bytes": 30670331,
+      "sha256": "799613dce8b3c4b7ed8620616d70f20c154fadaa4f4723481adea4de3072e2c9",
+      "files": 5,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-04-completed-training-and-selection.zip",
+      "bytes": 26980405,
+      "sha256": "cfd1220f8b8141fe1504b618e21e42965345652cd6f1e2109bd1c759d801fe8d",
+      "files": 6769,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-06-primary-selected-models-repaired.zip",
+      "bytes": 29380261,
+      "sha256": "aa8f3246d23b7dbec3c47972f29a682b6a34d374558ca1cca8af9dac5877dccd",
+      "files": 27,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-07-fresh-results-and-statistical-audit.zip",
+      "bytes": 13812509,
+      "sha256": "b079c99af36c3383e3f2125317600b831af897fcdb1f2aff1c30b44f595c0522",
+      "files": 280,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    },
+    {
+      "archive": "checkpoint-08-control-models-and-relation-diagnostic.zip",
+      "bytes": 37390194,
+      "sha256": "5049e3ec05eae20a66cf6686c1831af7941e32300bbc43d594cabd0233538e3b",
+      "files": 88,
+      "all_member_hashes_verified": true,
+      "crc_verified": true
+    }
+  ]
+}

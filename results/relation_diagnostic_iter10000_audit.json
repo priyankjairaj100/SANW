@@ -1,0 +1,132 @@
+{
+  "modes": {
+    "image": {
+      "checks": {
+        "fold_0": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5273
+        },
+        "fold_1": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5418
+        },
+        "fold_2": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5501
+        },
+        "gate_selection": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 705
+        },
+        "temperature_fit": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 726
+        },
+        "test": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5861
+        },
+        "validation": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 1375
+        }
+      },
+      "max_solver_iterations": 1332,
+      "out_of_fold_images": 1200,
+      "out_of_fold_rows": 16192
+    },
+    "multimodal": {
+      "checks": {
+        "fold_0": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5273
+        },
+        "fold_1": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5418
+        },
+        "fold_2": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5501
+        },
+        "gate_selection": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 705
+        },
+        "temperature_fit": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 726
+        },
+        "test": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5861
+        },
+        "validation": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 1375
+        }
+      },
+      "max_solver_iterations": 2505,
+      "out_of_fold_images": 1200,
+      "out_of_fold_rows": 16192
+    },
+    "text": {
+      "checks": {
+        "fold_0": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5273
+        },
+        "fold_1": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5418
+        },
+        "fold_2": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5501
+        },
+        "gate_selection": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 705
+        },
+        "temperature_fit": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 726
+        },
+        "test": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 5861
+        },
+        "validation": {
+          "max_logit_error": 0.0,
+          "max_probability_error": 0.0,
+          "rows": 1375
+        }
+      },
+      "max_solver_iterations": 2318,
+      "out_of_fold_images": 1200,
+      "out_of_fold_rows": 16192
+    }
+  },
+  "receipt_files_verified": 42,
+  "status": "passed"
+}

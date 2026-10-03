@@ -1,0 +1,90 @@
+RECOVERED ANALYTICAL STATEMENTS
+
+These proofs can be checked directly. They do not recreate lost experiment
+outputs or establish why a learned representation changed.
+
+1. COMMON ROW GRADIENT
+Let P be a nonempty positive set, s_j finite logits, and w_j >= 0 fixed for
+differentiation, with w_j = 1 on P. Define
+  D = sum_j w_j exp(s_j), q_j = w_j exp(s_j)/D,
+  y_j = 1[j in P]/|P|,
+  ell = log D - sum_j y_j s_j.
+Since P is nonempty, D > 0. Direct differentiation gives
+  d ell/d s_j = q_j - y_j.
+An individual positive gradient need not be negative when |P| > 1.
+For q=(0.8,0.1,0.1) with the first two entries positive, gradients are
+(0.3,-0.4,0.1). The total positive gradient remains nonpositive.
+
+2. POSITIVE EXPANSION REDISTRIBUTES TARGET MASS
+Assume all candidate weights are one. Fix scores and the candidate set.
+Let K >= 1 original candidates be positive. Relabel M >= 0 already-present,
+disjoint candidates as additional positives. The denominator and q stay
+fixed. For an original positive p,
+  g_expanded,p - g_original,p
+    = (q_p - 1/(K+M)) - (q_p - 1/K)
+    = M/[K(K+M)].
+Each newly positive candidate changes by -1/(K+M); all others are unchanged.
+This is a direct logit-gradient identity. It does not imply the same change
+in actual scores after an optimizer step through shared model parameters.
+In symmetric training the expanded set also changes eligible text anchors.
+
+3. A CONSTANT CAN MATCH THE WEIGHTED NORMALIZER
+For the same fixed positive set, let N be a nonempty set of nonpositive
+candidates. Define
+  c* = [sum_{j in N} w_j exp(s_j)]/[sum_{j in N} exp(s_j)].
+The denominator defining c* is strictly positive. Replace every nonpositive
+weight by c*, and hold c* fixed during differentiation. The total negative
+exponential mass, D, row loss, every positive probability and positive
+gradient, and sum of negative gradients are identical. Individual negative
+gradients generally change because their allocation changes.
+The executed empirical constant control used 0.25; it did not calculate c*.
+
+4. TOTAL NEGATIVE MASS DOES NOT BOUND EVERY GROUP
+For one positive and detached 0 <= w_j <= 1 on negatives, write unweighted
+normalizer S and weighted normalizer D. Then D <= S and q_+ >= p_+.
+Thus total negative gradient is 1-q_+ <= 1-p_+. This says nothing comparable
+about each negative group. Let exponential masses be 1 for the positive,
+1 for a chosen negative group, and 100 for other negatives. Give the chosen
+group weight 0.5 and others 0.001. Its probability increases from
+1/102 = 0.0098039 to 0.5/(1+0.5+0.1) = 0.3125.
+Weights 2 used for contradiction hardening violate the <=1 premise.
+
+5. SUMMED-POSITIVE PROBABILITY IS A DIFFERENT LOSS
+For A = sum_{p in P} exp(s_p), define ell_set = log D - log A.
+Its positive derivative is q_p - exp(s_p)/A <= 0 because D >= A.
+This objective allocates positive attraction differently from uniform-target
+cross-entropy. It was not trained in the completed study.
+
+6. WEIGHTS THAT DEPEND ON PARAMETERS
+When positive weights remain one and nonzero weights depend on theta,
+  d ell/d theta = sum_j(q_j-y_j) d s_j/d theta
+                 + sum_{j:w_j>0} q_j d log(w_j)/d theta.
+The second term disappears for detached weights. Fixed-weight identities do
+not establish bounds on this extra derivative or on the full encoder update.
+
+7. ORIGINAL SINGLE-POSITIVE IDENTITIES AND CORRECTIONS
+Original Lemma 2.1: ordinary softmax gradient p_j - 1[j=+]. Valid.
+Original Theorem 2.2: a group of m negatives at common logit a and weight w
+has gradient mass m*w*exp(a)/D. Valid identity; denominator also changes.
+Original Theorem 2.3: let R=sum_negative(1-w_j)exp(s_j), 0<=w_j<=1.
+Then D=S-R>0, and
+  log q_+ - log p_+ = -log(1-R/S) >= R/S >= 0.
+This changes a normalizer at fixed logits, not a raw retrieval score margin.
+Original Corollary 2.4: a suppressed equal-weight group gives
+R >= m(1-w)exp(a). A bound with denominator A+m exp(a) saturates as m grows;
+it is not an unbounded linear scaling law.
+Original Theorem 2.5: total negative mass and the magnitude of the positive
+gradient do not increase under detached suppression. No training-stability
+or parameter-gradient-norm guarantee follows.
+Original Theorem 2.6: at equal logits, a smaller weight gives smaller q_j.
+It does not establish semantic correctness of the weighting.
+Original Proposition 2.7: weights approaching one recover ordinary loss by
+continuity. Uniform negative weights below one do not recover it if the
+positive weight remains one.
+Shifted-logit form: weighted normalization equals ordinary normalization of
+s_j+log(w_j), with zero weights represented by minus infinity. This is not
+label smoothing, which changes targets.
+
+The original 'safe by default' or 'cannot harm' interpretation was retired.
+These identities leave scores fixed and cannot prove better rankings,
+generalization, optimization stability, or a superior representation.

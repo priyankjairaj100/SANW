@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "case": "mismatched_existing_file",
+      "exit_code": 1,
+      "bytes_preserved": true,
+      "no_receipt_or_download_created": true
+    },
+    {
+      "case": "missing_file_offline",
+      "exit_code": 1,
+      "no_download_or_output_created": true
+    }
+  ]
+}

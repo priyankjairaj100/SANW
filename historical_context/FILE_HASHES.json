@@ -1,0 +1,30 @@
+{
+  "READ_ME_FIRST.txt": {
+    "bytes": 2479,
+    "sha256": "9c9ed587b2fd3d2ecd621f924966ac9c5da4390943cca56804a5813ff335221a"
+  },
+  "manuscript_main_recovered.txt": {
+    "bytes": 17848,
+    "sha256": "67c32bc6b124a855e8007eb6b195a101e95e14e45d385f20d3856d0d07d577a6"
+  },
+  "reported_edit_groups.csv": {
+    "bytes": 264,
+    "sha256": "ef2bd1201bce5c822054462165daf8bdae76a2ca60b7a0fe4e0c538689ed21a8"
+  },
+  "reported_main_results.csv": {
+    "bytes": 600,
+    "sha256": "9098b67b5ea9c54792a9dd2c54f53dd4f652c2daa1987f5d84119b04e8100a08"
+  },
+  "reported_weight_controls.csv": {
+    "bytes": 242,
+    "sha256": "5b5d95f0931aa1320a11f5a22deac718bf9ef3eaeb5d3e56298c0cf1513d2dc8"
+  },
+  "study_and_recovery_record.txt": {
+    "bytes": 8673,
+    "sha256": "e9c842f0b8ebc2ac9c2770267929dc85d3b3878ed48b671c08a9107d286656ef"
+  },
+  "theory_recovered.txt": {
+    "bytes": 4886,
+    "sha256": "f661acf658c4e764d60e72a78c3641900ea1cc594fb1fd1a18d8c35dc7ac6af9"
+  }
+}

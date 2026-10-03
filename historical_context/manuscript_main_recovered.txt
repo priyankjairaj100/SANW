@@ -1,0 +1,320 @@
+What Do Relation Labels Add to Image–Text Adaptation?
+
+RECOVERY NOTE: This is a transcription of the main-paper text visible in the
+retained conversation. It is not the original PDF or a complete Overleaf
+project. Citation keys and mathematical notation are retained. The separate
+BibTeX file, complete appendix, and original figure data are missing.
+
+ABSTRACT
+
+An image search system should reject a wrong description and still recognize
+different correct descriptions. Training labels can mark a caption as
+supported, contradicted, or unresolved by an image. We ask whether using all
+three relations helps more than adding supported captions as correct
+examples. We compare twelve training rules over one pretrained model's fixed
+image and text features, with equal tuning budgets and three runs per setting.
+Extra correct examples improve the distinction between supported and
+contradicted statements. Gains on edited captions concentrate on added
+objects and attributes. Penalizing contradictions more strongly and omitting
+unresolved pairs does not improve on the simpler rule. Similarity-based
+weights also closely track shuffled or constant weights. The gains come with
+lower retrieval accuracy and weaker recognition of valid rewordings. This
+comparison tests whether improvements from relation labels carry through
+to the task of returning a correct search result.
+
+1. INTRODUCTION
+
+A person searching a photo collection may describe the same scene in several
+ways. A photo of a child holding a red ball can match both "a child with a
+red ball" and "a red ball held by a child." It should not match
+"a child with a blue ball." A useful image–text model must recognize valid
+descriptions while distinguishing small changes that make them incorrect.
+
+CLIP learns image and text vectors by scoring associated image–caption pairs
+above other candidates [radford2021clip]. Those other captions are not
+necessarily wrong. Some describe the image correctly, while others mention
+details the image cannot establish. This motivates three relation labels:
+supported, contradicted, and neutral. Here, neutral means
+that the image leaves the statement unresolved. Such labels suggest a natural
+training policy: add supported captions to the positive targets, increase the
+penalty on contradictions, and omit neutral pairs.
+
+Each operation also changes the learning problem. Adding positives changes
+the target distribution. Weighting negatives changes their relative and total
+gradient contributions. Omitting pairs removes competition from the loss.
+An improvement over ordinary training therefore need not come from the
+specific semantic distinction that motivates a policy. The relevant question
+is: what do relation labels add beyond extra positive targets, under
+the same data, model, and selection budget?
+
+Prior work gives both the motivation and the necessary comparisons.
+Similarity regulation and softened targets address false negatives
+[jiang2023regulation, gao2024softclip]; semantic triage and grounded
+filtering separate useful from ambiguous pairs
+[liu2023sat, byun2024mafa]. On the evaluation side,
+Kamath et al. [kamath2024hardpositive] show that gains against difficult wrong
+captions can hide sensitivity to valid rewordings, including after generic
+positive augmentation. FSC-CLIP studies preservation of broader multimodal
+capabilities [oh2024fsc], and CLIC evaluates efficient adaptation on
+both discrimination and retrieval [peleg2025clic]. These findings make
+retention a necessary outcome of a relation-supervision study.
+
+We reuse one annotated caption pool to compare positive expansion,
+contradiction weighting, neutral exclusion, and their controls. All policies
+train the same small adapters over frozen CLIP features. This design connects
+an intervention-level comparison to three practical tests: rejecting wrong
+captions, accepting alternative valid captions, and retrieving a match from
+a large candidate pool. The contribution is a controlled account of what
+the relation policy adds, supported by complete per-seed results and an
+analytical description of how its targets change the update.
+
+2. A CONTROLLED STUDY OF RELATION LABELS
+
+One candidate pool, three interventions.
+Every training image has its original source captions and a set of statements
+with relation labels from e-SNLI-VE [kayser2021evil]. All contrastive
+policies use the same candidate pool. Source positives treats the
+five original captions as positive targets and all statement candidates,
+including supported ones, as negatives. Positive expansion treats every
+label-supported statement as a positive. Starting from that expanded set,
+contradiction weighting doubles the weight of labeled contradictions
+in the loss, and neutral exclusion removes labeled neutral pairs.
+Both combines those two changes. Unannotated cross-image pairs stay
+eligible negatives. Neutrality is a relation label, not a model confidence
+estimate.
+
+We include count-matched random exclusion, target smoothing, and supervised
+pairwise ranking. Four additional policies test text-similarity weighting:
+a fixed threshold, its shuffled-weight control, a batch-median threshold,
+and a constant negative weight. The shuffle preserves the batch-wide weight
+distribution while breaking its association with individual pairs. There
+are twelve trainable configurations in total. Appendix A
+gives their exact rules and archive names.
+
+Common objective.
+Let s_ij be the scaled cosine score of image i and caption j.
+For image i, let P_i be its positive-caption set and w_ij a
+nonnegative candidate weight. Positive weights are one; zero omits a pair.
+The image-to-text loss is
+
+  ell_i = log(sum_j w_ij exp(s_ij)) - (1/|P_i|) sum_{j in P_i} s_ij.   (1)
+
+It gives equal target probability to each positive, following the
+mean-log-probability form of multi-positive learning
+[khosla2020supervised]. We average it with the corresponding
+text-to-image loss over captions having a positive image. The ranking control
+uses supported–contradicted pairs instead. Full definitions, including
+rectangular batches and the smoothing target, appear in Appendix A.
+
+Training and selection.
+We use frozen OpenCLIP ViT-B/32 features from the LAION-2B checkpoint. Two
+zero-initialized linear residual maps contain 524,288 trainable parameters;
+the encoders and score scale remain fixed. The image-disjoint split contains
+1,200 training, 100 calibration, 100 validation, and 400 test images.
+Labels follow the released e-SNLI-VE annotation protocol
+[do2021esnlive]; provenance is detailed in Appendix B.
+
+Each configuration runs for ten epochs at three learning rates and three
+seeds, giving 108 runs. A fixed validation score averages known-positive
+image-to-text recall at rank one and supported-versus-contradicted statement
+accuracy. Selection includes epoch zero. One learning rate per policy is
+chosen across all three seeds, and each seed retains its best validation
+epoch. We then evaluate the resulting 36 checkpoints and the frozen
+reference. The selection rule and primary contrasts were recorded before
+the held-out comparisons.
+
+Four complementary measurements.
+On e-SNLI-VE, we measure the fraction of supported statements ranked above
+contradicted statements, averaged by image. SugarCrepe tests whether the
+original correct caption outranks an edited wrong caption, or foil,
+over all 7,511 official pairs [hsieh2023sugarcrepe]. SugarCrepe++ adds a
+second valid caption and requires both positives to beat the foil over
+4,757 triplets [dumpala2024sugarcrepepp]. Finally, COCO retrieval uses
+5,000 images and 25,000 captions. Recall at rank one (R@1) is the percentage
+of queries whose highest-scoring candidate is an annotated match.
+We evaluate both retrieval directions on the full pool. The two discrimination
+measures are primary; retention measures are secondary. Primary intervals use
+10,000 paired resamples of images with a Bonferroni adjustment for six planned
+contrasts.
+
+3. WHAT THE CONTROLS REVEAL
+
+[Table 1: relation interventions and outcomes. The recovered mean values are
+in reported_main_results.csv. The original table additionally showed seed
+standard deviations for the two discrimination measures.]
+
+Positive expansion mainly improves the supervised distinction.
+Table 1 separates the four treatments of contradictions and
+neutral pairs while keeping the expanded positive set fixed. Doubling
+contradiction weights with neutral pairs retained changes little relative to
+positive expansion. Excluding neutral pairs has lower selected-policy means
+with either contradiction weight. The combined policy trails positive
+expansion by 2.67 percentage points on e-SNLI-VE and 0.98 on SugarCrepe.
+The respective 99.17% image-bootstrap intervals are
+[-3.23,-2.12] and [-1.42,-0.52].
+
+The intervals condition on the three selected runs. The combined policy
+retains epoch zero for one seed, so the comparison evaluates complete
+training and selection procedures.
+
+The transfer gain concentrates in added facts.
+SugarCrepe edits either add content, replace it, or swap its assignment.
+The aggregate score mixes these different tests. Grouping the saved results
+by edit type shows where positive expansion helps (Table 2).
+Its improvement comes from rejecting captions with added objects or
+attributes. The mean falls on the combined replacement/swap group, which
+tests changes to existing content or its assignment. Both directions hold
+in every seed. The seven-category results are in Appendix D.
+
+[Table 2: where the SugarCrepe gain occurs. The recovered values are in
+reported_edit_groups.csv. Add combines objects and attributes; replace/swap
+combines the other five categories.]
+
+The exclusion and weighting controls matter.
+Neutral exclusion without contradiction weighting also trails equally
+frequent random exclusion by 2.44 points on e-SNLI-VE and 0.86 on SugarCrepe.
+This makes a benefit from selecting specifically neutral pairs difficult to
+attribute in this setting. Smoothing and pairwise ranking provide additional
+simple comparisons in Appendix D.
+
+Discrimination gains have a measurable retrieval cost.
+The source-positive adapter already improves SugarCrepe while staying close
+to frozen retrieval. Relative to that adapter, positive expansion adds
+0.94 points on SugarCrepe but loses 7.53 points in image-to-text R@1.
+On the fixed 5,000-image pool, that is about 376 fewer image queries returning
+a correct caption first, averaged across the three seeds. Text-to-image
+retrieval falls as well. This comparison gives the cost of changing the
+positive targets under the tested selection policy.
+
+[Figure 1 caption recovered; the actual figure data are missing:
+Changes on the same SugarCrepe++ triplets relative to the frozen
+model. Each point is one selected, nonzero-epoch adapter. The original
+positive improves in 27 of 30 runs, while the alternative positive declines
+in all 30. The six epoch-zero selections remain at the origin and are omitted
+from the plot.]
+
+The loss is visible within the same images.
+Figure 1 compares the two positive captions against the same
+foil. For positive expansion, first-positive accuracy rises from 79.46% to
+80.12%, while alternative-positive accuracy falls from 75.01% to 73.05%.
+The pattern extends across policies, including source-positive adaptation.
+These paired-caption tests locate a failure that
+the original-positive score alone misses.
+
+4. WHAT THE OBJECTIVE CHANGES
+
+Positive labels redistribute a fixed target budget.
+Equation 1 distributes one unit of target probability across
+the positive set. Suppose K captions are positive and M already-present
+candidates become additional positives. Hold the scores, candidate set,
+and unit weights fixed. For any original positive p, the loss
+derivative changes by
+
+  d ell_expanded/d s_ip - d ell_source/d s_ip = M/[K(K+M)].             (2)
+
+At the logit level, expansion reduces each original positive's target
+pressure by this amount. The new positives gain target mass at the
+originals' expense. This is a property of the uniform-target
+loss, even when every added label is correct. Appendix I
+derives the identity, contrasts summed-positive probability, and examines
+what negative weights preserve. It supplies an objective-level explanation
+for measuring retention alongside discrimination; the learned representation
+also depends on shared parameters and checkpoint selection.
+
+Negative weights mix strength and allocation.
+The weighting controls address a different ambiguity. For weights held fixed
+when differentiating, let the nonempty set N_i contain image i's
+nonpositive candidates. At fixed scores and a fixed positive set, define
+
+  c_i* = [sum_{j in N_i} w_ij exp(s_ij)]/[sum_{j in N_i} exp(s_ij)].    (3)
+
+Replacing every negative weight by c_i* leaves the denominator in
+Equation 1 unchanged. It therefore preserves the row loss and,
+holding c_i* fixed during differentiation, the total gradient on
+nonpositive scores. It also preserves every positive score gradient.
+Only the allocation of negative gradients changes. A lower weighted loss
+can thus reflect weaker overall competition without demonstrating useful
+pair-specific semantic assignments. Appendix I gives the proof
+and a counterexample showing why a bound on total negative gradient does
+not bound each negative group.
+
+This identity defines an analytical reference. Our empirical constant
+control instead fixes every negative weight at 0.25. The shuffled control
+retains the full batch-wide distribution of similarity weights. These
+controls ask whether identifying which pair gets which weight improves
+performance beyond nonspecific suppression.
+
+[Table 3: similarity-weighted policies and nonsemantic controls. Values are
+in reported_weight_controls.csv. All use source positives.]
+
+Table 3 shows closely tracking scores on both discrimination
+tasks and on retrieval. Fixed-threshold weighting and its shuffle select
+the same learning rates and epochs in all seeds, as do median-threshold
+and constant weighting. The remaining small score differences offer little
+evidence of a benefit from pair-specific similarity information here.
+Together, the two identities distinguish two changes often grouped under
+semantic supervision: assigning target probability and reallocating
+competition. Their effects require different controls.
+
+5. IMPLICATIONS FOR IMAGE SEARCH
+
+Relation annotation should be evaluated by the capability it buys. For
+the tested adapters, the strongest improvement is on the supervised statement
+distinction. The additional gain on edited-caption discrimination is much
+smaller, and a large-pool search test exposes a retrieval cost. A practical
+evaluation should therefore compare against source-positive adaptation,
+include more than one valid wording, and evaluate the candidate pool in which
+the model will be used.
+
+Our selection score already includes retrieval, but on the 100-image
+e-SNLI-VE validation pool. That term does not ensure retention on a larger
+pool from another source. A useful deployment-oriented comparison would
+choose checkpoints on a development set representative of the intended
+images and queries, then report discrimination and retrieval separately.
+This would expose whether a gain fits an application's acceptable retrieval
+loss, rather than allowing one metric to compensate silently for the other
+in an average. The two objectives can then be compared at a fixed retention
+requirement. Retention-aware objectives and richer encoders can be tested
+against the same controls. The accompanying configurations, selected states,
+and item-level scores support that next comparison.
+
+LIMITATIONS
+
+This study concerns one frozen OpenCLIP checkpoint and linear residual
+adaptation on a subset of e-SNLI-VE. It does not establish the behavior of
+full-encoder training, other data scales, or other model families. The labels
+partly inherit text-inference judgments; the source release does not provide
+independent visual verification for every pair. Original caption ownership
+also supplies incomplete retrieval relevance.
+
+The tested multi-positive objective averages positive log probabilities.
+The summed-positive alternative in Appendix I was not trained.
+Independent policy selection changes both the learning rate and retained
+epoch; six selections retain the frozen state. The comparisons estimate
+selected training procedures. Image-bootstrap intervals condition on three
+seeds and do not quantify uncertainty over new training runs. Full
+SugarCrepe++, COCO retrieval, and weighting-control differences are secondary
+or descriptive outcomes. The added-content versus replacement/swap grouping
+is a descriptive summary of saved category scores. SugarCrepe++ shares images
+with SugarCrepe, and COCO overlaps other COCO-derived pools. These evaluations
+measure different capabilities rather than independent replications. Detailed
+overlaps, annotation provenance, source defects, and analysis choices are
+recorded in the appendix. No evaluation measures live search users or a new
+deployment domain.
+
+ETHICAL CONSIDERATIONS AND ASSISTANCE
+
+We use existing public datasets under their source terms. The study does not
+collect new human judgments. Image captions and pretrained features may
+reflect source biases. Generative AI assisted research planning, code,
+analysis, literature discovery, and manuscript drafting. Claims are tied to
+the archived computations and cited sources; assistance does not replace
+author responsibility for verification.
+
+END OF RECOVERED MAIN TEXT
+
+Recovery note: statements in this historical manuscript about accompanying
+artifacts describe the original completed project. Those artifacts are now
+missing and are not supplied by this partial recovery. Appendix cross-
+references and citation keys are retained as restoration targets, not as
+claims that those files exist in this package.

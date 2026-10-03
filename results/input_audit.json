@@ -1,0 +1,282 @@
+{
+  "status": "passed",
+  "errors": [],
+  "scope": "Input-only audit. No model scores read. No examples filtered or labels modified.",
+  "comparison_rules": {
+    "image_identity": "SHA256 of actual file bytes",
+    "text_identity": "Exact string equality, without normalization",
+    "conflict": "Distinct positive/neutral/contradicted categories; source and supported are both positive."
+  },
+  "unique_image_files_hashed": 8177,
+  "actual_image_bytes_hashed": 1290694874,
+  "datasets": {
+    "visual_entailment": {
+      "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+      "images": 1800,
+      "texts": 33859,
+      "pairs": 33859,
+      "triplets": 0,
+      "relations": {
+        "source": 9000,
+        "contradicted": 9212,
+        "neutral": 7216,
+        "supported": 8431
+      },
+      "split_image_counts": {
+        "train": 1200,
+        "calibration": 100,
+        "validation": 100,
+        "test": 400
+      },
+      "image_byte_receipts_checked": 1800,
+      "identical_file_groups": [],
+      "five_source_captions_per_image": true,
+      "all_pair_and_triplet_references_valid": true,
+      "exact_image_text_duplicates": {
+        "unique_image_text_groups": 33811,
+        "repeated_groups": 48,
+        "rows_in_repeated_groups": 96,
+        "duplicate_rows_beyond_first": 48,
+        "relation_conflict_groups": 0,
+        "rows_in_relation_conflict_groups": 0,
+        "relation_conflict_images": 0,
+        "conflict_relation_patterns": {},
+        "conflicts": []
+      },
+      "exact_image_hypothesis_duplicates": {
+        "unique_image_text_groups": 24813,
+        "repeated_groups": 46,
+        "rows_in_repeated_groups": 92,
+        "duplicate_rows_beyond_first": 46,
+        "relation_conflict_groups": 0,
+        "rows_in_relation_conflict_groups": 0,
+        "relation_conflict_images": 0,
+        "conflict_relation_patterns": {},
+        "conflicts": []
+      },
+      "triplet_exact_text_equalities": {}
+    },
+    "coco_karpathy": {
+      "manifest_sha256": "fca7a265ea104e06acd8b7dc074664ca898ac9c0fb207c8805e097c0f29801dd",
+      "images": 5000,
+      "texts": 25000,
+      "pairs": 25000,
+      "triplets": 0,
+      "relations": {
+        "source": 25000
+      },
+      "split_image_counts": {
+        "test": 5000
+      },
+      "image_byte_receipts_checked": 5000,
+      "identical_file_groups": [],
+      "five_source_captions_per_image": true,
+      "all_pair_and_triplet_references_valid": true,
+      "exact_image_text_duplicates": {
+        "unique_image_text_groups": 24997,
+        "repeated_groups": 3,
+        "rows_in_repeated_groups": 6,
+        "duplicate_rows_beyond_first": 3,
+        "relation_conflict_groups": 0,
+        "rows_in_relation_conflict_groups": 0,
+        "relation_conflict_images": 0,
+        "conflict_relation_patterns": {},
+        "conflicts": []
+      },
+      "exact_image_hypothesis_duplicates": {
+        "unique_image_text_groups": 0,
+        "repeated_groups": 0,
+        "rows_in_repeated_groups": 0,
+        "duplicate_rows_beyond_first": 0,
+        "relation_conflict_groups": 0,
+        "rows_in_relation_conflict_groups": 0,
+        "relation_conflict_images": 0,
+        "conflict_relation_patterns": {},
+        "conflicts": []
+      },
+      "triplet_exact_text_equalities": {}
+    },
+    "sugarcrepe": {
+      "manifest_sha256": "5f05226c5245301b6c095084cf21326ac4c7d1332bd93663ef5309a36dce1228",
+      "images": 1560,
+      "texts": 15022,
+      "pairs": 15022,
+      "triplets": 7511,
+      "relations": {
+        "supported": 7511,
+        "contradicted": 7511
+      },
+      "split_image_counts": {
+        "test": 1560
+      },
+      "image_byte_receipts_checked": 1560,
+      "identical_file_groups": [],
+      "five_source_captions_per_image": null,
+      "all_pair_and_triplet_references_valid": true,
+      "exact_image_text_duplicates": {
+        "unique_image_text_groups": 11860,
+        "repeated_groups": 2100,
+        "rows_in_repeated_groups": 5262,
+        "duplicate_rows_beyond_first": 3162,
+        "relation_conflict_groups": 0,
+        "rows_in_relation_conflict_groups": 0,
+        "relation_conflict_images": 0,
+        "conflict_relation_patterns": {},
+        "conflicts": []
+      },
+      "exact_image_hypothesis_duplicates": {
+        "unique_image_text_groups": 11860,
+        "repeated_groups": 2100,
+        "rows_in_repeated_groups": 5262,
+        "duplicate_rows_beyond_first": 3162,
+        "relation_conflict_groups": 0,
+        "rows_in_relation_conflict_groups": 0,
+        "relation_conflict_images": 0,
+        "conflict_relation_patterns": {},
+        "conflicts": []
+      },
+      "triplet_exact_text_equalities": {
+        "positive1_id=negative_id": 0
+      }
+    },
+    "sugarcrepe_pp": {
+      "manifest_sha256": "647a38462268209583df513fc7dab7a4ad787ca976b6d9b4e4a6a9a6f9178466",
+      "images": 1542,
+      "texts": 14271,
+      "pairs": 14271,
+      "triplets": 4757,
+      "relations": {
+        "supported": 9514,
+        "contradicted": 4757
+      },
+      "split_image_counts": {
+        "test": 1542
+      },
+      "image_byte_receipts_checked": 1542,
+      "identical_file_groups": [],
+      "five_source_captions_per_image": null,
+      "all_pair_and_triplet_references_valid": true,
+      "exact_image_text_duplicates": {
+        "unique_image_text_groups": 13200,
+        "repeated_groups": 916,
+        "rows_in_repeated_groups": 1987,
+        "duplicate_rows_beyond_first": 1071,
+        "relation_conflict_groups": 2,
+        "rows_in_relation_conflict_groups": 4,
+        "relation_conflict_images": 2,
+        "conflict_relation_patterns": {
+          "contradicted+supported": 2
+        },
+        "conflicts": [
+          {
+            "image_id": "coco:287347",
+            "text": "A person prepares a pizza while a person watches.",
+            "relations": {
+              "supported": 1,
+              "contradicted": 1
+            },
+            "text_ids": [
+              "sugarcrepe_pp:swap_obj:2:positive1",
+              "sugarcrepe_pp:swap_obj:2:negative"
+            ]
+          },
+          {
+            "image_id": "coco:489764",
+            "text": "A person holding a game controller with a person looking on.",
+            "relations": {
+              "supported": 1,
+              "contradicted": 1
+            },
+            "text_ids": [
+              "sugarcrepe_pp:swap_obj:8:positive1",
+              "sugarcrepe_pp:swap_obj:8:negative"
+            ]
+          }
+        ]
+      },
+      "exact_image_hypothesis_duplicates": {
+        "unique_image_text_groups": 13200,
+        "repeated_groups": 916,
+        "rows_in_repeated_groups": 1987,
+        "duplicate_rows_beyond_first": 1071,
+        "relation_conflict_groups": 2,
+        "rows_in_relation_conflict_groups": 4,
+        "relation_conflict_images": 2,
+        "conflict_relation_patterns": {
+          "contradicted+supported": 2
+        },
+        "conflicts": [
+          {
+            "image_id": "coco:287347",
+            "text": "A person prepares a pizza while a person watches.",
+            "relations": {
+              "supported": 1,
+              "contradicted": 1
+            },
+            "text_ids": [
+              "sugarcrepe_pp:swap_obj:2:positive1",
+              "sugarcrepe_pp:swap_obj:2:negative"
+            ]
+          },
+          {
+            "image_id": "coco:489764",
+            "text": "A person holding a game controller with a person looking on.",
+            "relations": {
+              "supported": 1,
+              "contradicted": 1
+            },
+            "text_ids": [
+              "sugarcrepe_pp:swap_obj:8:positive1",
+              "sugarcrepe_pp:swap_obj:8:negative"
+            ]
+          }
+        ]
+      },
+      "triplet_exact_text_equalities": {
+        "positive1_id=negative_id": 2,
+        "positive1_id=positive2_id": 1,
+        "negative_id=positive2_id": 0
+      }
+    }
+  },
+  "cross_dataset_image_overlap": {
+    "visual_entailment:coco_karpathy": {
+      "image_id_overlap": 0,
+      "actual_image_sha256_overlap": 0
+    },
+    "visual_entailment:sugarcrepe": {
+      "image_id_overlap": 0,
+      "actual_image_sha256_overlap": 0
+    },
+    "visual_entailment:sugarcrepe_pp": {
+      "image_id_overlap": 0,
+      "actual_image_sha256_overlap": 0
+    },
+    "coco_karpathy:sugarcrepe": {
+      "image_id_overlap": 183,
+      "actual_image_sha256_overlap": 183
+    },
+    "coco_karpathy:sugarcrepe_pp": {
+      "image_id_overlap": 182,
+      "actual_image_sha256_overlap": 182
+    },
+    "sugarcrepe:sugarcrepe_pp": {
+      "image_id_overlap": 1542,
+      "actual_image_sha256_overlap": 1542
+    }
+  },
+  "visual_entailment_cross_split_actual_sha256_overlap": {
+    "calibration:test": 0,
+    "calibration:train": 0,
+    "calibration:validation": 0,
+    "test:train": 0,
+    "test:validation": 0,
+    "train:validation": 0
+  },
+  "cross_dataset_exact_image_text": {
+    "shared_groups": 6831,
+    "relation_conflict_groups": 0,
+    "conflicts": []
+  },
+  "script_sha256": "06d7c03574253217905d07d6d7729e4b749e2d2ee39a0883109bf6b172bb7ce3"
+}

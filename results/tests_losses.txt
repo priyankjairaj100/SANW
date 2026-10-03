@@ -1,0 +1,40 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-8.4.2, pluggy-1.6.0 -- /workspace/scratch/3eec744c3d5e/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun
+configfile: pyproject.toml
+collecting ... collected 31 items
+
+tests/test_losses.py::test_single_positive_loss_matches_cross_entropy_and_transpose PASSED [  3%]
+tests/test_losses.py::test_rectangular_loss_normalizes_each_direction_and_skips_unanchored_texts PASSED [  6%]
+tests/test_losses.py::test_weighted_gradient_matches_closed_form_and_finite_difference PASSED [  9%]
+tests/test_losses.py::test_stability_with_extreme_logits_and_exact_zero_mask PASSED [ 12%]
+tests/test_losses.py::test_positive_expansion_changes_target_without_changing_denominator PASSED [ 16%]
+tests/test_losses.py::test_normalizer_matched_constant_preserves_positive_and_total_negative_gradients PASSED [ 19%]
+tests/test_losses.py::test_policy_positive_sets_and_relation_interventions PASSED [ 22%]
+tests/test_losses.py::test_random_exclusion_matches_per_image_count_and_preserves_positives PASSED [ 25%]
+tests/test_losses.py::test_similarity_kernel_has_exact_reconstructed_mean_cosine_definition PASSED [ 29%]
+tests/test_losses.py::test_shuffling_preserves_global_negative_weight_multiset_and_positive_set PASSED [ 32%]
+tests/test_losses.py::test_smoothing_is_candidate_uniform_in_both_directions PASSED [ 35%]
+tests/test_losses.py::test_pairwise_ranking_averages_images_not_number_of_pairs PASSED [ 38%]
+tests/test_losses.py::test_no_eligible_ranking_image_produces_zero_gradient PASSED [ 41%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[clip] PASSED [ 45%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[sanw_fixed] PASSED [ 48%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[sanw_median] PASSED [ 51%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[constant] PASSED [ 54%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[shuffled] PASSED [ 58%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[multipositive] PASSED [ 61%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[grounded] PASSED [ 64%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[grounded_no_hardening] PASSED [ 67%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[grounded_no_abstention] PASSED [ 70%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[pairwise_rank] PASSED [ 74%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[random_exclusion] PASSED [ 77%]
+tests/test_losses.py::test_all_methods_backpropagate_to_adapters_but_not_semantics_or_scale[smoothing] PASSED [ 80%]
+tests/test_losses.py::test_adapter_zero_initialization_identity_and_parameter_count PASSED [ 83%]
+tests/test_losses.py::test_invalid_inputs_fail_clearly PASSED            [ 87%]
+tests/test_losses.py::test_median_threshold_uses_only_negative_cells_and_actual_batch_median PASSED [ 90%]
+tests/test_losses.py::test_empty_positive_rows_are_skipped_in_mean_and_receive_zero_gradient PASSED [ 93%]
+tests/test_losses.py::test_policy_weights_are_detached_even_when_semantic_features_require_grad PASSED [ 96%]
+tests/test_losses.py::test_seeded_random_exclusion_is_a_random_assignment_not_neutral_mask PASSED [100%]
+
+============================== 31 passed in 1.13s ==============================

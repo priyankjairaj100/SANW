@@ -1,0 +1,46 @@
+{
+  "train": {
+    "images": 1200,
+    "hypotheses": 16192,
+    "labels": {
+      "contradiction": 5846,
+      "neutral": 5027,
+      "entailment": 5319
+    },
+    "ranking_eligible_images": 1192,
+    "source_captions": 6000
+  },
+  "calibration": {
+    "images": 100,
+    "hypotheses": 1431,
+    "labels": {
+      "entailment": 522,
+      "contradiction": 554,
+      "neutral": 355
+    },
+    "ranking_eligible_images": 100,
+    "source_captions": 500
+  },
+  "validation": {
+    "images": 100,
+    "hypotheses": 1375,
+    "labels": {
+      "contradiction": 534,
+      "entailment": 502,
+      "neutral": 339
+    },
+    "ranking_eligible_images": 100,
+    "source_captions": 500
+  },
+  "test": {
+    "images": 400,
+    "hypotheses": 5861,
+    "labels": {
+      "contradiction": 2278,
+      "entailment": 2088,
+      "neutral": 1495
+    },
+    "ranking_eligible_images": 400,
+    "source_captions": 2000
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "official_repository": "https://github.com/maximek3/e-ViL",
+  "revision": "94f17f5c189573c9d1087f82eb27db37690fc810",
+  "counts": {
+    "train": {
+      "rows": 401717,
+      "images": 29783,
+      "labels": {
+        "contradiction": 144792,
+        "entailment": 131023,
+        "neutral": 125902
+      }
+    },
+    "dev": {
+      "rows": 14339,
+      "images": 1000,
+      "labels": {
+        "contradiction": 5643,
+        "neutral": 3442,
+        "entailment": 5254
+      }
+    },
+    "test": {
+      "rows": 14740,
+      "images": 1000,
+      "labels": {
+        "contradiction": 5721,
+        "entailment": 5218,
+        "neutral": 3801
+      }
+    }
+  },
+  "pairwise_overlap": {
+    "train:dev": {
+      "images": 0,
+      "pair_ids": 0
+    },
+    "train:test": {
+      "images": 0,
+      "pair_ids": 0
+    },
+    "dev:test": {
+      "images": 0,
+      "pair_ids": 0
+    }
+  },
+  "decision": "Use these intact official image-disjoint splits. Sample images before any model score evaluation.",
+  "complete_source_caption_images": 31783,
+  "complete_image_archive_images": 31783,
+  "excluded_incomplete_caption_source_images": 31014
+}

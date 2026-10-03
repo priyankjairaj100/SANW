@@ -1,0 +1,5 @@
+policy,archive_name,esnli_percent,sugarcrepe_percent,coco_i2t_r1_percent
+Fixed threshold,sanw_fixed,80.91,83.14,53.05
+Shuffled,shuffled,80.88,83.11,53.13
+Median threshold,sanw_median,82.03,83.71,53.57
+Constant 0.25,constant,82.18,83.75,53.44

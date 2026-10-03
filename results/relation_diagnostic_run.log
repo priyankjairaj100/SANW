@@ -1,0 +1,30 @@
+FIT relation diagnostic image: 512 features
+COMPLETE image crossfit fold 0
+COMPLETE image crossfit fold 1
+COMPLETE image crossfit fold 2
+COMPLETE relation diagnostic image; test macro-F1=0.340574
+FIT relation diagnostic text: 512 features
+Traceback (most recent call last):
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/relation_diagnostic.py", line 487, in <module>
+    main()
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/relation_diagnostic.py", line 483, in main
+    run(args)
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/relation_diagnostic.py", line 421, in run
+    model, selection, temperature, gates = fit_calibrated(x, data, train, validation, temperature_rows, gate_rows)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/relation_diagnostic.py", line 360, in fit_calibrated
+    model, selection = fit_select(x, data.labels, train, validation, data.image_ids, c_grid)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/relation_diagnostic.py", line 201, in fit_select
+    model = fit_logistic(x[train], y[train], float(c), seed)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/relation_diagnostic.py", line 191, in fit_logistic
+    raise RuntimeError("Logistic regression did not converge: " + "; ".join(failures))
+RuntimeError: Logistic regression did not converge: lbfgs failed to converge after 2000 iteration(s) (status=1):
+STOP: TOTAL NO. OF ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=2000).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression

@@ -1,0 +1,132 @@
+\section{Analytical Identities and Their Scope}
+\label{app:math}
+This appendix collects the positive-target identity in the main text and the complete negative-weight analysis. Unless an alternative is specified, the statements concern the unsmoothed uniform-positive objective at specified scores. Their proofs do not depend on experimental outcomes.
+
+\subsection{Notation and the common gradient}
+Let $J$ be a finite candidate set, $P\subseteq J$ a nonempty positive set, and $N=J\setminus P$. Each score $s_j\in\R$ is finite. Weights $w_j\geq0$ are fixed for differentiation and satisfy $w_p=1$ for $p\in P$. Define
+\begin{align}
+D&=\sum_{j\in J}w_je^{s_j},& q_j&=\frac{w_je^{s_j}}{D},\\
+y_j&=\frac{\mathbf1\{j\in P\}}{|P|},& \ell&=\log D-\sum_jy_js_j.
+\end{align}
+Since $P$ is nonempty and scores are finite, $D>0$. A zero weight removes a candidate from the denominator, while its target is also zero.
+
+\begin{lemma}[Fixed-weight row gradient]
+For each $j\in J$, $\partial\ell/\partial s_j=q_j-y_j$.
+\end{lemma}
+\begin{proof}
+Differentiating the finite sum gives $\partial D/\partial s_j=w_je^{s_j}$. The logarithm contributes $w_je^{s_j}/D=q_j$, and the linear target term contributes $-y_j$.
+\end{proof}
+An individual positive derivative need not be negative. If $P=\{1,2\}$ and $q=(0.8,0.1,0.1)$, the gradient is $(0.3,-0.4,0.1)$. However,
+\begin{equation}
+\sum_{p\in P}\frac{\partial\ell}{\partial s_p}=-\sum_{n\in N}q_n\leq0.
+\end{equation}
+Thus claims about total positive attraction do not imply a sign for every positive score.
+
+\subsection{Expansion of the positive set}
+\begin{proposition}[Target redistribution]
+Assume unit weights on every candidate and fixed scores. Let $P$ contain $K\geq1$ positives. Relabel a disjoint set $A\subseteq J\setminus P$ of $M\geq0$ already-present candidates as positive, yielding $P'=P\cup A$. For $p\in P$,
+\begin{equation}
+\frac{\partial\ell'}{\partial s_p}-\frac{\partial\ell}{\partial s_p}=\frac{M}{K(K+M)}.
+\end{equation}
+For $a\in A$, the difference is $-1/(K+M)$. For the remaining candidates, it is zero.
+\end{proposition}
+\begin{proof}
+The scores, candidates, and weights are unchanged, so $D$ and all $q_j$ remain fixed. For an original positive, subtracting the two derivatives gives
+\begin{equation}
+(q_p-1/(K+M))-(q_p-1/K)=\frac{M}{K(K+M)}.
+\end{equation}
+A newly positive candidate changes target probability from zero to $1/(K+M)$. The remaining targets stay zero. The original positives jointly lose $M/(K+M)$ target probability, precisely the amount assigned to the new positives.
+\end{proof}
+The premise that candidates are already present matters: adding new candidates changes the denominator as well. Likewise, changing weights changes $q$. The following identity separately accounts for a change in the eligible text anchors of symmetric training.
+
+\paragraph{Reverse-anchor averaging.}
+Hold the candidate images, caption columns, scores, and unit weights fixed. Let $C_0$ be the text columns with a positive image before expansion and $H$ the additional eligible columns afterward. Assume that the new eligible set is the disjoint union $C_0\cup H$ and that positive sets for columns in $C_0$ are unchanged. This holds for source-caption columns when supported hypothesis columns acquire their first positive image. Define $T_0=|C_0|>0$, and let $L_{\rm rev}$ be the original mean text-to-image loss. Then
+\begin{equation}
+L'_{\rm rev}=\frac{T_0L_{\rm rev}+\sum_{j\in H}\ell'_j}{T_0+|H|}.
+\end{equation}
+Every old column retains its loss. Splitting the new average into old and new columns proves the identity. It also holds for empty $H$. Original text anchors retain fraction $T_0/(T_0+|H|)$ of the reverse average. This change in anchor averaging is separate from target redistribution within an image row. The complete symmetric loss gives each direction weight $1/2$.
+
+\subsection{A constant matching the normalizer}
+\begin{proposition}[Matched negative mass]
+Let $N$ be nonempty under the common assumptions. Define
+\begin{equation}
+c^*=\frac{\sum_{n\in N}w_ne^{s_n}}{\sum_{n\in N}e^{s_n}}.
+\end{equation}
+Compute $c^*$ at the specified scores and hold it fixed for differentiation. Replace $w_n$ by this constant for each $n\in N$, keeping positive weights one. At these scores, the new normalizer, loss, each positive probability and derivative, and total negative derivative equal their original values.
+\end{proposition}
+\begin{proof}
+The denominator defining $c^*$ is positive because $N$ is nonempty and every exponential is positive. Therefore $c^*$ exists, is nonnegative, and satisfies
+\begin{equation}
+\sum_{n\in N}c^*e^{s_n}=\sum_{n\in N}w_ne^{s_n}.
+\end{equation}
+The positive exponential mass is unchanged. Adding it to both sides proves equality of the normalizers. The target term also stays fixed, giving equal losses. Each positive probability is $e^{s_p}/D$, so its probability and derivative are equal. Finally, the total negative derivative is the negative exponential mass divided by $D$ in each case.
+\end{proof}
+Individual negative derivatives are generally unequal: they are $w_ne^{s_n}/D$ and $c^*e^{s_n}/D$. Matching preserves the total amount of competition, while changing its allocation. This is a row-specific analytical construction; a single global constant need not match every row. If instead $c^*(s)$ is recomputed differentiably, the new normalizer equals the original normalizer as a function of scores. Differentiating that equality restores the original individual negative derivatives. The allocation comparison therefore requires detachment.
+
+\paragraph{The transpose need not preserve the match.}
+Row-specific matching does not generally preserve the normalizers of the transposed text-to-image objective. For example, take two images, three captions, all scores zero, positive pairs $(1,1)$ and $(2,2)$, and weights
+\begin{equation}
+W=\begin{pmatrix}1&0.2&0.8\\0.6&1&0.4\end{pmatrix}.
+\end{equation}
+Both row constants are $0.5$ and both image-row losses remain $\log2$. The two eligible text-column normalizers change from $1.6,1.2$ to $1.5,1.5$. Consequently the full symmetric loss increases by
+\begin{equation}
+\frac14\log\frac{1.5^2}{1.6\cdot1.2}\approx0.0396513.
+\end{equation}
+A symmetric matched control therefore requires additional constraints. The executed fixed constant $0.25$ is not a $c^*$-matched experiment.
+
+\subsection{Suppression does not control every negative group}
+For one positive, let all negative weights lie in $[0,1]$. Write
+\begin{equation}
+S=\sum_je^{s_j},\quad D=e^{s_+}+\sum_{n\in N}w_ne^{s_n}.
+\end{equation}
+The inequality $D\leq S$ implies $q_+=e^{s_+}/D\geq p_+=e^{s_+}/S$. Hence total negative derivative satisfies
+\begin{equation}
+\sum_{n\in N}q_n=1-q_+\leq1-p_+.
+\end{equation}
+This bound does not hold for every subset of negatives. Consider exponential masses $1$ for the positive, $1$ for a chosen negative group, and $100$ for other negatives. Weight the chosen group by $0.5$ and the others by $0.001$. The chosen group's probability changes from
+\begin{equation}
+\frac{1}{102}\approx0.009804\quad\text{to}\quad\frac{0.5}{1+0.5+0.1}=0.3125.
+\end{equation}
+The total negative mass decreases, but that group's mass increases. Contradiction weighting by two also lies outside the premise $w_n\leq1$.
+
+\subsection{Summed-positive probability}
+Let $A=\sum_{p\in P}e^{s_p}$. A different objective is
+\begin{equation}
+\ell_{\rm set}=\log D-\log A.
+\end{equation}
+For $p\in P$, direct differentiation gives
+\begin{equation}
+\frac{\partial\ell_{\rm set}}{\partial s_p}=q_p-\frac{e^{s_p}}{A}\leq0,
+\end{equation}
+because $D\geq A$. The attraction is allocated according to the positive scores, rather than equally across positives. This permits the highest-scoring positives to dominate the target distribution. The identity describes a distinct objective, not an equivalent implementation of Equation~\ref{eq:row}.
+
+\subsection{Parameter-dependent weights and score updates}
+Let $J_+$ be a fixed nonzero-support set containing $P$. For $j\in J_+$, assume that $w_j(\theta)>0$ is locally differentiable, with $w_p(\theta)\equiv1$ on positives. All other weights are fixed at zero. With fixed targets and differentiable parameter-dependent scores,
+\begin{align}
+\nabla_\theta\ell
+={}&\sum_{j\in J_+}(q_j-y_j)\nabla_\theta s_j\nonumber\\
+&+\sum_{j\in J_+}q_j\nabla_\theta\log w_j.
+\end{align}
+The second term vanishes for detached weights. No logarithmic derivative is taken at a zero weight; the identity does not describe a change of support through zero. Even with detached weights, a parameter update combines the score Jacobians across every candidate and batch. A sign or magnitude bound for an individual score derivative is not a corresponding bound on the parameter-gradient norm or on the score after optimization.
+
+\subsection{Other fixed-score identities}
+The following facts collect the single-positive special cases behind similarity suppression. Let $0\leq w_n\leq1$ for negatives, $w_+=1$, and
+\begin{equation}
+R=\sum_{n\in N}(1-w_n)e^{s_n},\qquad D=S-R.
+\end{equation}
+Since $0\leq R<S$,
+\begin{equation}
+\log q_+-\log p_+=-\log(1-R/S)\geq R/S\geq0.
+\end{equation}
+The logarithm inequality follows by integrating $1/(1-x)\geq1$ over $[0,R/S]$. It compares probabilities at fixed scores and does not change their raw ranking. For a group of $m$ negatives at common score $a$ and common weight $w$, its gradient mass is
+\begin{equation}
+G=\frac{mw e^a}{D}.
+\end{equation}
+The denominator also depends on the group. Let $A$ be the unweighted exponential mass outside that group, so $S=A+me^a$. Nonnegative suppression elsewhere gives
+\begin{equation}
+R\geq m(1-w)e^a,\qquad
+\frac{R}{S}\geq\frac{m(1-w)e^a}{A+me^a}.
+\end{equation}
+This rational lower bound tends to $1-w$ as $m$ grows with $A,a,w$ fixed. The actual log-probability gain need not saturate; with $w=0$ and no other suppressed candidates, it can grow without bound as $m$ increases. At equal scores, a smaller weight gives smaller normalized probability within the same denominator. This says nothing about whether the weighting identifies a correct semantic relation.
+
+As every weight tends to one, the weighted loss converges to the corresponding unweighted uniform-positive loss by continuity. A common negative weight below one does not yield the ordinary loss while the positive weight remains one. Finally, weighted normalization is ordinary softmax normalization on shifted scores $s_j+\log w_j$, with $\log0=-\infty$. It is not label smoothing, which changes the targets.

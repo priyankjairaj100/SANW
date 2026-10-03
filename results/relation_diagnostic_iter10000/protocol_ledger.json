@@ -1,0 +1,70 @@
+{
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scikit_learn": "1.8.0",
+    "scipy": "1.17.0",
+    "threads": 2
+  },
+  "inputs": {
+    "features": {
+      "path": "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/features/visual_entailment/features.npz",
+      "sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec"
+    },
+    "manifest": {
+      "path": "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/data/visual_entailment/manifest.json",
+      "sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495"
+    },
+    "metadata": {
+      "path": "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/features/visual_entailment/metadata.json",
+      "sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7"
+    }
+  },
+  "protocol": {
+    "C_grid": [
+      0.01,
+      0.1,
+      1.0,
+      10.0
+    ],
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261003,
+    "bootstrap_unit": "image",
+    "brier_definition": "mean sum over three class squared errors",
+    "calibration_split": "equal image halves: temperature then gates",
+    "calibration_split_seed": 0,
+    "class_weight": null,
+    "classes": [
+      "supported",
+      "contradicted",
+      "neutral"
+    ],
+    "classifier_seed": 17,
+    "crossfit_folds": 3,
+    "crossfit_seed": 17,
+    "crossfit_selection": "reselect C and recalibrate separately within every fold",
+    "ece_bins": 10,
+    "feature_modes": [
+      "image",
+      "text",
+      "multimodal"
+    ],
+    "gate_min_count": 20,
+    "gate_selection": "maximum accepted count over whole confidence-tie groups",
+    "gate_wilson_confidence": 0.95,
+    "gate_wilson_lower": 0.9,
+    "max_iter": 10000,
+    "reconstruction": "newly specified diagnostic hyperparameters; original implementation was unavailable",
+    "schema_version": 1,
+    "scope": "appendix-only relation diagnostic; never used for adapter training",
+    "selection": "validation macro-F1; lower C breaks exact ties",
+    "solver": "lbfgs",
+    "standardization": "fit on classifier training rows only",
+    "temperature_bounds": [
+      0.05,
+      20.0
+    ],
+    "tol": 1e-06
+  },
+  "source_sha256": "491a5d2b047656012e1f8f0cefc61357d0efaf6a544236aaa7c1c0cd72071f26"
+}

@@ -1,0 +1,12 @@
+{
+  "image_id": "coco:60623",
+  "seed": 17,
+  "selection": "First COCO manifest-order image correct under source positives in all three seeds, incorrect under positive expansion in all three seeds, and outside the top five under positive expansion in seed 17. Illustrative post hoc example; no statistical test.",
+  "source_caption": "A young girl is preparing to blow out her candle.",
+  "expanded_caption": "a woman is making some food in a bowl",
+  "source_caption_id": "coco_karpathy:60623:1",
+  "expanded_caption_id": "coco_karpathy:487349:0",
+  "source_rank": 1,
+  "expanded_rank": 6,
+  "image_sha256": "2fcf19f0230097a736040aaa73807e9b2d44fc77c33d540737cd149b572bcfaa"
+}

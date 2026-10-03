@@ -1,0 +1,2 @@
+Error in cpuinfo: failed to parse processor information from /proc/cpuinfo
+{"phase": "select", "selected_checkpoint_count": 36, "selection": "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/study/selection.json"}

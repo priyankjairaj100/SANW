@@ -1,0 +1,29 @@
+Error in cpuinfo: failed to parse processor information from /proc/cpuinfo
+visual_entailment image: 1800 new / 1800 total
+visual_entailment image: encoded 32/1800 elapsed 3.4s
+visual_entailment image: encoded 352/1800 elapsed 18.7s
+visual_entailment image: encoded 672/1800 elapsed 33.5s
+visual_entailment image: encoded 992/1800 elapsed 48.7s
+visual_entailment image: encoded 1312/1800 elapsed 65.3s
+visual_entailment image: encoded 1632/1800 elapsed 80.4s
+visual_entailment image: encoded 1800/1800 elapsed 88.2s
+visual_entailment text: 32954 new / 33859 total
+visual_entailment text: encoded 128/32954 elapsed 88.9s
+visual_entailment text: encoded 1408/32954 elapsed 93.9s
+visual_entailment text: encoded 2688/32954 elapsed 99.0s
+visual_entailment text: encoded 3968/32954 elapsed 103.8s
+visual_entailment text: encoded 5248/32954 elapsed 109.1s
+visual_entailment text: encoded 6528/32954 elapsed 114.6s
+visual_entailment text: encoded 7808/32954 elapsed 120.2s
+visual_entailment text: encoded 9088/32954 elapsed 126.2s
+visual_entailment text: encoded 10368/32954 elapsed 132.1s
+visual_entailment text: encoded 11648/32954 elapsed 138.5s
+visual_entailment text: encoded 12928/32954 elapsed 145.4s
+visual_entailment text: encoded 14208/32954 elapsed 151.7s
+Traceback (most recent call last):
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/extract_features.py", line 136, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/scripts/extract_features.py", line 113, in main
+    db.executemany('INSERT INTO features VALUES (?,?,?)',[(kind,key,value.tobytes()) for (key,_),value in zip(batch,values)])
+sqlite3.IntegrityError: UNIQUE constraint failed: features.kind, features.key

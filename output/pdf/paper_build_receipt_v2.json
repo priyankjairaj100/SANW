@@ -1,0 +1,43 @@
+{
+  "status": "compiled_requires_visual_review",
+  "output": "output/pdf/acl27_relation_labels_final_rewrite_v2.pdf",
+  "sha256": "565ce8899915a01f30ff6bf1c5995ad16cb36123d3e070d74a9b868eadbc7be4",
+  "bytes": 470861,
+  "pending_files": [],
+  "tex_warnings": [],
+  "source_hashes": {
+    "abstract.tex": "ad5fe1d334bb32f14780e2abc28821458ffd38a72bdc81fadacc5398c4df9db0",
+    "appendix.tex": "8a24f3b8bfb7467ac7137790f8be291a759639fa1da1d975196ea09b05cea001",
+    "appendix_math.tex": "8fcc8e6809183d4470d942bbfa5e5129e9a8cd4f8125faf92236fc69bfa2cc79",
+    "data_provenance.tex": "ee3289a9c653b622937ebbcab88f8ad68322c5ac5d863450b9a72ec305027f30",
+    "diagnostic.tex": "ff4aceafae7847d03f934354efe753624d18da67ec304ad42852d4a8b70e2527",
+    "diagnostic_results.tex": "eb086cf01a3c4b888c97a917df9afb2dc8135144910c00eb33e0503cda58aa1d",
+    "edit_groups_table.tex": "11a81b43b776979e3552edbe09fd9a53de12fbf3b2c5fe68af45fddc2f158b8a",
+    "implications.tex": "d34df0440703ae11ddcfcec83886b5951fab97b0256a1e04005efd0ceb73aee7",
+    "main.tex": "c90f8e62a9dc5a97297aa28351eafc65c71e910399dc66938c87c2ae11a9ebc9",
+    "main_results_table.tex": "de64f948b965c80bd93d18824e73f22c03a8854521c87da5ed289addd521df02",
+    "numbers.tex": "c35be4921e24567625f1e0ab1b4a36ef60a7b8bc2870e697f778aa0b5ad93d29",
+    "related_work.tex": "34f3193a94dc93c439aeffc2fbc4a58b5aa1fd2a53c8bc1f0272801caa38e45b",
+    "results_appendix.tex": "a6a730c17ced084d63d0d191e022d2f175f8f49f6b32f71ce3d43ac5dc66c499",
+    "results_main.tex": "6747a925fa34a5049de71ef3e4fc25e81951a019762d4813847b93db186253aa",
+    "results_weights.tex": "fb6af4250cfdbbec3e4d938c115ab90210ba1c3754c50e04aea03a6b0dc370db",
+    "retrieval_example.tex": "8f3c806fb9ba3d8f48d99c80b181bc2f7557bb0766ac53d6064ed0b7dfc008c3",
+    "retrieval_example_provenance.tex": "b2b28e30079734ba68ff617f8e634cd684608730e9e1bc851c90251c6a0bb859",
+    "split_counts_table.tex": "1d430e6c151f9a72b0fbd0bde18702c69111e6eab1c619fdc394f7c4959b84da",
+    "training_details.tex": "860a9503f59efcac1afa92e6c2d0b1b855aaaba7a455fbe9480594dfdc1f3885",
+    "training_summary.tex": "78ea2f8a09b9399eea1c249537a8fb223e778650f2d23669b98b61c12ab37d6b",
+    "validation_figure.tex": "d4b8612568486f552a01ee9c54535a88515ec207d26a01270494a2e18d9430d6",
+    "weight_controls_table.tex": "cbae959ca913d6c7f8455b8b3522fa4bf06c20ded2928d0922555e1869207947"
+  },
+  "supporting_source_hashes": {
+    "references.bib": "06246a64a127b1008fa57f650cf40f0140040b00a0b9056d629a7e53c29da7a9",
+    "acl.sty": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+    "acl_natbib.bst": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e"
+  },
+  "build_script_sha256": "3b893fc43e226c35565276298b61942d7277856fc631efc9877fd22c0ee972ff",
+  "pages": 17,
+  "limitations_pages": [
+    5
+  ],
+  "type3_fonts": []
+}

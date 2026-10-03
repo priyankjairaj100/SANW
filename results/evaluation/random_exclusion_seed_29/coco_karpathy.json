@@ -1,0 +1,62 @@
+{
+  "metrics": {
+    "i2t": {
+      "mean_rank": 13.999,
+      "median_rank": 2.0,
+      "r1": 0.428,
+      "r10": 0.7694,
+      "r5": 0.6754
+    },
+    "images": 5000,
+    "t2i": {
+      "mean_rank": 26.48256,
+      "median_rank": 4.0,
+      "r1": 0.30616,
+      "r10": 0.6734,
+      "r5": 0.5616
+    },
+    "texts": 25000,
+    "tie_policy": "descending float64 dot product, then ascending candidate manifest index"
+  },
+  "predictions_sha256": "f4f92285497b523ea361f909a9c255a90f381dafbf1ccffe0da8d09cee0ddb44",
+  "provenance": {
+    "adaptation_dtype": "float32",
+    "dataset": "coco_karpathy",
+    "environment": {
+      "blas_thread_environment": {
+        "MKL_NUM_THREADS": "2",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2"
+      },
+      "numpy": "2.3.5",
+      "python": "3.12.14",
+      "torch": "2.7.1+cpu",
+      "torch_threads": 2
+    },
+    "evidence_type": "new_execution",
+    "input_hashes": {
+      "features_sha256": "98648b2797dea805d8b54e7fd0606be7ebb89c4e6d12cefc8d59b6f7434818c8",
+      "manifest_sha256": "fca7a265ea104e06acd8b7dc074664ca898ac9c0fb207c8805e097c0f29801dd",
+      "metadata_sha256": "2e521c6c35a9023690c90b21cc0a4092135a989e1e6d87ac11ec370458fd18b0"
+    },
+    "pair_tie_policy": "relation ranking: half credit; SugarCrepe/SugarCrepe++: zero credit",
+    "retrieval_tie_policy": "descending float64 dot product, then ascending candidate manifest index",
+    "run": {
+      "checkpoint": "results/study/selected/random_exclusion/seed_29.pt",
+      "checkpoint_sha256": "c9b53eafcedcc4869153682619d1e2b49ab0bd70c4f870cf9165ad3d220d21ef",
+      "epoch": 5,
+      "learning_rate": 0.001,
+      "method": "random_exclusion",
+      "run_id": "random_exclusion_seed_29",
+      "seed": 29
+    },
+    "score_dtype": "float64",
+    "selection_sha256": "04950c8627a54e0dbd060768d5725c882746e74c71365bf3f1fa81518b4e649e",
+    "source_hashes": {
+      "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+      "src/gcr/adapters.py": "eb042d632c22f69f2addbf6883489822948d9df301a34ba06ca85ed6d827b891",
+      "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+    }
+  },
+  "seconds": 6.696467904999736
+}

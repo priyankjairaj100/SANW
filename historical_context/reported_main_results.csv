@@ -1,0 +1,7 @@
+policy,archive_name,esnli_percent,sugarcrepe_percent,sugarcrepepp_both_percent,coco_i2t_r1_percent,coco_t2i_r1_percent,frozen_seed_selections
+Frozen reference,frozen,81.32,81.21,68.95,56.34,39.35,0
+Source positives,clip,81.07,83.01,67.86,56.08,38.89,0
+Positive expansion,multipositive,88.19,83.95,67.51,48.55,35.31,0
+Positive expansion plus contradiction weighting,grounded_no_abstention,88.37,83.94,67.52,48.63,35.32,0
+Positive expansion plus neutral exclusion,grounded_no_hardening,83.44,82.28,68.86,54.13,38.44,2
+Positive expansion plus both interventions,grounded,85.52,82.98,68.63,51.77,37.31,1

@@ -1,0 +1,14 @@
+{
+  "status": "stopped_before_accepting_nonconverged_fit",
+  "mode": "text",
+  "phase": "full_training_C_grid",
+  "failure": "LBFGS reached max_iter=2000",
+  "C_at_failure": "not emitted by original diagnostic log",
+  "completed_modes": [
+    "image"
+  ],
+  "completed_modes_integrity_receipt": "image/FILE_HASHES.json",
+  "log_file": "results/relation_diagnostic_run.log",
+  "log_sha256": "3b78ce36154f474554cfb492424bf00c9c7f7ff3ccc3038e7d19c09d76038f9e",
+  "change_status": "Awaiting parent direction; no protocol or source changes made."
+}

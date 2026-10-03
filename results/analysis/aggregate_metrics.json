@@ -1,0 +1,2298 @@
+{
+  "methods": {
+    "clip": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 7.370066666666666,
+          "seed_std": 0.20753759498783222,
+          "seed_values": [
+            7.2566,
+            7.244,
+            7.6096
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5585333333333333,
+          "seed_std": 0.005300314456080258,
+          "seed_values": [
+            0.5628,
+            0.5602,
+            0.5526
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8693333333333334,
+          "seed_std": 0.0004163331998932429,
+          "seed_values": [
+            0.8692,
+            0.869,
+            0.8698
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7959333333333335,
+          "seed_std": 0.0067002487516011925,
+          "seed_values": [
+            0.8,
+            0.7996,
+            0.7882
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 17.563173333333335,
+          "seed_std": 0.06868634022375575,
+          "seed_values": [
+            17.51824,
+            17.52904,
+            17.64224
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.3937733333333333,
+          "seed_std": 0.003213056696252556,
+          "seed_values": [
+            0.39652,
+            0.39456,
+            0.39024
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7591066666666667,
+          "seed_std": 0.0005460158727851916,
+          "seed_values": [
+            0.7592,
+            0.7596,
+            0.75852
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6567066666666667,
+          "seed_std": 0.0017556005620109907,
+          "seed_values": [
+            0.65768,
+            0.65776,
+            0.65468
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8325566946256601,
+          "seed_std": 0.003036987904127384,
+          "seed_values": [
+            0.8343762481693516,
+            0.834243110105179,
+            0.8290507256024497
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8325566946256601,
+          "seed_std": 0.003036987904127384,
+          "seed_values": [
+            0.8343762481693516,
+            0.834243110105179,
+            0.8290507256024497
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6740242449723214,
+          "seed_std": 0.008367392247538597,
+          "seed_values": [
+            0.6764767710742065,
+            0.6808913180575993,
+            0.6647046457851588
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6740242449723214,
+          "seed_std": 0.008367392247538597,
+          "seed_values": [
+            0.6764767710742065,
+            0.6808913180575993,
+            0.6647046457851588
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.8077920257865602,
+          "seed_std": 0.0028540973799195683,
+          "seed_values": [
+            0.8093336136220307,
+            0.8095438301450494,
+            0.8044986335926004
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7248265713685096,
+          "seed_std": 0.009614964579381343,
+          "seed_values": [
+            0.7286104687828463,
+            0.7319739331511457,
+            0.7138953121715367
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8118467076478701,
+          "seed_std": 0.001420760323687605,
+          "seed_values": [
+            0.8134782160321418,
+            0.8108819729489444,
+            0.8111799339625242
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "1f5f55e9d8a5c28dd5c6cc6e75d0ad69a2d7faea15e4b434bf964023adc69661",
+          "epoch": 1,
+          "learning_rate": 0.0001,
+          "run_id": "clip_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "1861472c4ebaed211a845a00df85ba5d8f1e5ca03e99774ac26946343b9126ba",
+          "epoch": 1,
+          "learning_rate": 0.0001,
+          "run_id": "clip_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "9e51cc68512f462fcdaccd35c17d3061803cafc4aa02707ced5a15418e6ca904",
+          "epoch": 3,
+          "learning_rate": 0.0001,
+          "run_id": "clip_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "constant": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 7.524933333333333,
+          "seed_std": 0.032827021389905585,
+          "seed_values": [
+            7.517,
+            7.4968,
+            7.561
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5520666666666667,
+          "seed_std": 0.0013613718571107841,
+          "seed_values": [
+            0.5536,
+            0.551,
+            0.5516
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8654666666666667,
+          "seed_std": 0.0006429100507328562,
+          "seed_values": [
+            0.8652,
+            0.8662,
+            0.865
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7885333333333334,
+          "seed_std": 0.0017009801096230545,
+          "seed_values": [
+            0.7886,
+            0.7902,
+            0.7868
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 17.660853333333332,
+          "seed_std": 0.040274067752505,
+          "seed_values": [
+            17.68816,
+            17.6798,
+            17.6146
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.39394666666666667,
+          "seed_std": 0.00088030297814637,
+          "seed_values": [
+            0.39484,
+            0.39392,
+            0.39308
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7584799999999999,
+          "seed_std": 0.0005892367945062282,
+          "seed_values": [
+            0.7578,
+            0.7588,
+            0.75884
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6562133333333332,
+          "seed_std": 0.0006379132647416631,
+          "seed_values": [
+            0.65664,
+            0.65652,
+            0.65548
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8366839746150091,
+          "seed_std": 0.002002979469470827,
+          "seed_values": [
+            0.8387698042870456,
+            0.8365064571961124,
+            0.8347756623618693
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8366839746150091,
+          "seed_std": 0.002002979469470827,
+          "seed_values": [
+            0.8387698042870456,
+            0.8365064571961124,
+            0.8347756623618693
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6836942050311822,
+          "seed_std": 0.0048227781676321805,
+          "seed_values": [
+            0.6859365146100483,
+            0.6869875972251419,
+            0.6781585032583561
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6836942050311822,
+          "seed_std": 0.0048227781676321805,
+          "seed_values": [
+            0.6859365146100483,
+            0.6869875972251419,
+            0.6781585032583561
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.8084226753556162,
+          "seed_std": 0.001605555215106076,
+          "seed_values": [
+            0.8101744797141055,
+            0.8080723144839185,
+            0.8070212318688249
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7360381192628407,
+          "seed_std": 0.005800350945715017,
+          "seed_values": [
+            0.738280428841707,
+            0.740382594071894,
+            0.7294513348749212
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8215240574508292,
+          "seed_std": 0.002367494535228314,
+          "seed_values": [
+            0.820017578334625,
+            0.8203017158593287,
+            0.8242528781585343
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "66a7341efc9cf3ddc61f28c5b19b31dbb8a5f8824d51fd9b2ecb353e14f00c13",
+          "epoch": 1,
+          "learning_rate": 0.0001,
+          "run_id": "constant_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "df94357ad15ba48b9a2b24729b8c6e93de8bbab9ae5357c659c7aed7e4a6636a",
+          "epoch": 1,
+          "learning_rate": 0.0001,
+          "run_id": "constant_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "239dc9cb084ba6c75f43ee95046614187c2508323455294f550b41d37d8ce575",
+          "epoch": 2,
+          "learning_rate": 0.0001,
+          "run_id": "constant_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "frozen": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 6.9402,
+          "seed_std": null,
+          "seed_values": [
+            6.9402
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": null,
+          "seed_values": [
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5632,
+          "seed_std": null,
+          "seed_values": [
+            0.5632
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8712,
+          "seed_std": null,
+          "seed_values": [
+            0.8712
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7982,
+          "seed_std": null,
+          "seed_values": [
+            0.7982
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 17.9344,
+          "seed_std": null,
+          "seed_values": [
+            17.9344
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.0,
+          "seed_std": null,
+          "seed_values": [
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.39348,
+          "seed_std": null,
+          "seed_values": [
+            0.39348
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7562,
+          "seed_std": null,
+          "seed_values": [
+            0.7562
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.65404,
+          "seed_std": null,
+          "seed_values": [
+            0.65404
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8121421914525363,
+          "seed_std": null,
+          "seed_values": [
+            0.8121421914525363
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8121421914525363,
+          "seed_std": null,
+          "seed_values": [
+            0.8121421914525363
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6895101955013664,
+          "seed_std": null,
+          "seed_values": [
+            0.6895101955013664
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6895101955013664,
+          "seed_std": null,
+          "seed_values": [
+            0.6895101955013664
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7946184570107211,
+          "seed_std": null,
+          "seed_values": [
+            0.7946184570107211
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7500525541307547,
+          "seed_std": null,
+          "seed_values": [
+            0.7500525541307547
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.7947273164639607,
+          "seed_std": null,
+          "seed_values": [
+            0.7947273164639607
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": null,
+          "epoch": 0,
+          "learning_rate": null,
+          "run_id": "frozen",
+          "seed": null
+        }
+      ]
+    },
+    "grounded": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 10.632800000000001,
+          "seed_std": 0.5309663642830865,
+          "seed_values": [
+            10.4152,
+            10.2452,
+            11.238
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.47259999999999996,
+          "seed_std": 0.011656757696718246,
+          "seed_values": [
+            0.4804,
+            0.4782,
+            0.4592
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8133333333333334,
+          "seed_std": 0.008144527815247021,
+          "seed_values": [
+            0.817,
+            0.819,
+            0.804
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7193333333333335,
+          "seed_std": 0.010507774899251185,
+          "seed_values": [
+            0.7254,
+            0.7254,
+            0.7072
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 20.501839999999998,
+          "seed_std": 0.423956339261486,
+          "seed_values": [
+            20.34724,
+            20.17688,
+            20.9814
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 3.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.35270666666666667,
+          "seed_std": 0.0043543694530130805,
+          "seed_values": [
+            0.35532,
+            0.35512,
+            0.34768
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7205466666666666,
+          "seed_std": 0.004215843134336632,
+          "seed_values": [
+            0.72168,
+            0.72408,
+            0.71588
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6136266666666667,
+          "seed_std": 0.005754210052938073,
+          "seed_values": [
+            0.61316,
+            0.6196,
+            0.60812
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8323791772067635,
+          "seed_std": 0.0031478073272631665,
+          "seed_values": [
+            0.8346425242976967,
+            0.8337105578484889,
+            0.8287844494741047
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8323791772067635,
+          "seed_std": 0.0031478073272631665,
+          "seed_values": [
+            0.8346425242976967,
+            0.8337105578484889,
+            0.8287844494741047
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6761264102025085,
+          "seed_std": 0.004539573775277254,
+          "seed_values": [
+            0.6808913180575993,
+            0.6718520075677948,
+            0.6756359049821316
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6761264102025085,
+          "seed_std": 0.004539573775277254,
+          "seed_values": [
+            0.6808913180575993,
+            0.6718520075677948,
+            0.6756359049821316
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.795599467451475,
+          "seed_std": 0.0035819151900027013,
+          "seed_values": [
+            0.797561488332983,
+            0.7977717048560017,
+            0.7914652091654404
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7363884801345385,
+          "seed_std": 0.006975261729256708,
+          "seed_values": [
+            0.7437460584401934,
+            0.7298717679209585,
+            0.7355476140424637
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8674101828336173,
+          "seed_std": 0.001681894594982744,
+          "seed_values": [
+            0.8663777000328611,
+            0.866501905410589,
+            0.8693509430574018
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "6613e4a7d845959518ea0c4ae8a32dc841ec6a1370fe48e55c113f73b7e5ca62",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "24b1769178fe8bbb4406f67505dd43f7b5e400751364c9666414e50e979e2fd1",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "1157dfb659998292c1db8c0d79884a77e6722e6d4670732f3f1cd25fab10166b",
+          "epoch": 7,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "grounded_no_abstention": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 10.914666666666667,
+          "seed_std": 0.8646004009560339,
+          "seed_values": [
+            10.4338,
+            11.9128,
+            10.3974
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.4725333333333333,
+          "seed_std": 0.01936216241366995,
+          "seed_values": [
+            0.4846,
+            0.4502,
+            0.4828
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8087333333333334,
+          "seed_std": 0.01330313246319579,
+          "seed_values": [
+            0.8156,
+            0.7934,
+            0.8172
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7160666666666667,
+          "seed_std": 0.019042408811212202,
+          "seed_values": [
+            0.729,
+            0.6942,
+            0.725
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 20.90548,
+          "seed_std": 0.9954484062973828,
+          "seed_values": [
+            20.33364,
+            22.05492,
+            20.32788
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 3.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.3480666666666667,
+          "seed_std": 0.009218618840874864,
+          "seed_values": [
+            0.3548,
+            0.33756,
+            0.35184
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7146266666666667,
+          "seed_std": 0.009766254826356601,
+          "seed_values": [
+            0.72068,
+            0.70336,
+            0.71984
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6078,
+          "seed_std": 0.009638506108313658,
+          "seed_values": [
+            0.61296,
+            0.59668,
+            0.61376
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8333111436559713,
+          "seed_std": 0.0015976567700705657,
+          "seed_values": [
+            0.8333111436559713,
+            0.8349088004260418,
+            0.8317134868859006
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8333111436559713,
+          "seed_std": 0.0015976567700705657,
+          "seed_values": [
+            0.8333111436559713,
+            0.8349088004260418,
+            0.8317134868859006
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6730432345315674,
+          "seed_std": 0.0028385718030312095,
+          "seed_values": [
+            0.6758461215051503,
+            0.6701702753836452,
+            0.6731133067059071
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6730432345315674,
+          "seed_std": 0.0028385718030312095,
+          "seed_values": [
+            0.6758461215051503,
+            0.6701702753836452,
+            0.6731133067059071
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7972111274612851,
+          "seed_std": 0.001632847060154287,
+          "seed_values": [
+            0.7990330039941139,
+            0.7967206222409081,
+            0.7958797561488333
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7292411183519025,
+          "seed_std": 0.004898541180462906,
+          "seed_values": [
+            0.7347067479503889,
+            0.725247004414547,
+            0.7277696026907715
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8727581401981178,
+          "seed_std": 0.0033464659532462648,
+          "seed_values": [
+            0.8703538929048119,
+            0.8713404297678282,
+            0.8765800979217134
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "07e2ea3e779f79201547296e60ad2c06091fdba927d9dfc26aef6ab810372be1",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_no_abstention_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "2a33a935ad2401d516a69735b91ca609fc4a348ea7faef0566dc154b160349e5",
+          "epoch": 10,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_no_abstention_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "c94f36f0c8c7d3977f90bd728e764843726cb8a0a2f54778152a187a841da35b",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_no_abstention_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "grounded_no_hardening": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 10.307133333333333,
+          "seed_std": 0.1137995313405693,
+          "seed_values": [
+            10.3578,
+            10.1768,
+            10.3868
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.4801333333333333,
+          "seed_std": 0.001501110699893022,
+          "seed_values": [
+            0.481,
+            0.4784,
+            0.481
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8179333333333333,
+          "seed_std": 0.0009018499505645904,
+          "seed_values": [
+            0.817,
+            0.8188,
+            0.818
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7257999999999999,
+          "seed_std": 0.0021633307652783864,
+          "seed_values": [
+            0.7282,
+            0.7252,
+            0.724
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 20.29432,
+          "seed_std": 0.10941164106254998,
+          "seed_values": [
+            20.35096,
+            20.1682,
+            20.3638
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 3.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.35388,
+          "seed_std": 0.0023279175243122304,
+          "seed_values": [
+            0.3554,
+            0.35504,
+            0.3512
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7218666666666667,
+          "seed_std": 0.0019038207198508199,
+          "seed_values": [
+            0.72152,
+            0.72392,
+            0.72016
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6156266666666667,
+          "seed_std": 0.0033404989647256773,
+          "seed_values": [
+            0.61292,
+            0.61936,
+            0.6146
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8339324546221097,
+          "seed_std": 0.0026671955267947418,
+          "seed_values": [
+            0.8359739049394221,
+            0.8349088004260418,
+            0.8309146585008654
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8339324546221097,
+          "seed_std": 0.0026671955267947418,
+          "seed_values": [
+            0.8359739049394221,
+            0.8349088004260418,
+            0.8309146585008654
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6766169154228856,
+          "seed_std": 0.005159234849470924,
+          "seed_values": [
+            0.682573050241749,
+            0.6735337397519445,
+            0.6737439562749632
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6766169154228856,
+          "seed_std": 0.005159234849470924,
+          "seed_values": [
+            0.682573050241749,
+            0.6735337397519445,
+            0.6737439562749632
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7972111274612851,
+          "seed_std": 0.003339290184974842,
+          "seed_values": [
+            0.7992432205171327,
+            0.7990330039941139,
+            0.7933571578726087
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7363884801345385,
+          "seed_std": 0.0067760191134270285,
+          "seed_values": [
+            0.7441664914862308,
+            0.731763716628127,
+            0.7332352322892579
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8665955255094385,
+          "seed_std": 0.0043818138784921775,
+          "seed_values": [
+            0.8641627909731447,
+            0.8639698041694598,
+            0.8716539813857112
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "db3d53b66f68f036fe88dfa10549485ee075fdd7093067414b17c3d03c3742ec",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_no_hardening_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "f77f55ecf4ff3a32fa234b718e0afd6edc17ef4532028a3d7c79907c12262972",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_no_hardening_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "4e4e11775995b191e66006e370794f2be727f07b14d323ae4277f0b3d50065ae",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "grounded_no_hardening_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "multipositive": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 10.8752,
+          "seed_std": 0.8651829633089174,
+          "seed_values": [
+            10.4012,
+            11.8738,
+            10.3506
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.47293333333333337,
+          "seed_std": 0.017786886555362428,
+          "seed_values": [
+            0.4836,
+            0.4524,
+            0.4828
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8089333333333334,
+          "seed_std": 0.011953799953710645,
+          "seed_values": [
+            0.817,
+            0.7952,
+            0.8146
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7155999999999999,
+          "seed_std": 0.019664180633832698,
+          "seed_values": [
+            0.7288,
+            0.693,
+            0.725
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 20.898693333333334,
+          "seed_std": 0.983309362781284,
+          "seed_values": [
+            20.3324,
+            22.03412,
+            20.32956
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 3.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.3483866666666667,
+          "seed_std": 0.008870655744269021,
+          "seed_values": [
+            0.354,
+            0.33816,
+            0.353
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7150400000000001,
+          "seed_std": 0.009387907115007048,
+          "seed_values": [
+            0.7204,
+            0.7042,
+            0.72052
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6077466666666665,
+          "seed_std": 0.009598110925246352,
+          "seed_values": [
+            0.61276,
+            0.59668,
+            0.6138
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8339324546221097,
+          "seed_std": 0.0014665345619188303,
+          "seed_values": [
+            0.8338436959126614,
+            0.835441352682732,
+            0.8325123152709359
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8339324546221097,
+          "seed_std": 0.0014665345619188303,
+          "seed_values": [
+            0.8338436959126614,
+            0.835441352682732,
+            0.8325123152709359
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6722724406138322,
+          "seed_std": 0.003383114765489005,
+          "seed_values": [
+            0.6758461215051503,
+            0.6691191927685516,
+            0.6718520075677948
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6722724406138322,
+          "seed_std": 0.003383114765489005,
+          "seed_values": [
+            0.6758461215051503,
+            0.6691191927685516,
+            0.6718520075677948
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7967906944152476,
+          "seed_std": 0.0010580666295663848,
+          "seed_values": [
+            0.7977717048560017,
+            0.7956695396258145,
+            0.7969308387639269
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7288907574802046,
+          "seed_std": 0.004872913923541062,
+          "seed_values": [
+            0.7344965314273701,
+            0.7256674374605844,
+            0.7265083035526593
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8699637721568751,
+          "seed_std": 0.003978431667811208,
+          "seed_values": [
+            0.8674634171551022,
+            0.8678764225516133,
+            0.87455147676391
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "63c4ede1732b5ca5fa594b45992af33a2f59e2b38ae6f83a9ca4957ab966fec0",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "multipositive_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "1f3d78ee3da3d76127a3cd77a57c294745ca0b2ed48f9c99fc1ff9fd3bdbbf6b",
+          "epoch": 10,
+          "learning_rate": 0.0003,
+          "run_id": "multipositive_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "b075b41ededf0a051090e40f1bd3e27164ce4f7ff5387075c7729e1ec84664e4",
+          "epoch": 5,
+          "learning_rate": 0.0003,
+          "run_id": "multipositive_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "pairwise_rank": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 6.9402,
+          "seed_std": 0.0,
+          "seed_values": [
+            6.9402,
+            6.9402,
+            6.9402
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5632,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.5632,
+            0.5632,
+            0.5632
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8712,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.8712,
+            0.8712,
+            0.8712
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7982,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.7982,
+            0.7982,
+            0.7982
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 17.9344,
+          "seed_std": 0.0,
+          "seed_values": [
+            17.9344,
+            17.9344,
+            17.9344
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.39348,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.39348,
+            0.39348,
+            0.39348
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7562000000000001,
+          "seed_std": 1.3597399555105182e-16,
+          "seed_values": [
+            0.7562,
+            0.7562,
+            0.7562
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.65404,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.65404,
+            0.65404,
+            0.65404
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8121421914525363,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.8121421914525363,
+            0.8121421914525363,
+            0.8121421914525363
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8121421914525363,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.8121421914525363,
+            0.8121421914525363,
+            0.8121421914525363
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6895101955013664,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.6895101955013664,
+            0.6895101955013664,
+            0.6895101955013664
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6895101955013664,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.6895101955013664,
+            0.6895101955013664,
+            0.6895101955013664
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7946184570107211,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.7946184570107211,
+            0.7946184570107211,
+            0.7946184570107211
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7500525541307547,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.7500525541307547,
+            0.7500525541307547,
+            0.7500525541307547
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.7947273164639607,
+          "seed_std": 0.0,
+          "seed_values": [
+            0.7947273164639607,
+            0.7947273164639607,
+            0.7947273164639607
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "f3b5b74b22bf0da13e9476a2787426e468a55e4009446fd07f2bd32ee95c6afd",
+          "epoch": 0,
+          "learning_rate": 0.0001,
+          "run_id": "pairwise_rank_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "941f8bf7f7b5140317ed1e00c919c45ce28247de5b2197f2ce5f5378aab2d5ad",
+          "epoch": 0,
+          "learning_rate": 0.0001,
+          "run_id": "pairwise_rank_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "11598c3a128d3e3f5c543c90e134252494d255f836fe226423baf3c0075da22a",
+          "epoch": 0,
+          "learning_rate": 0.0001,
+          "run_id": "pairwise_rank_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "random_exclusion": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 13.322333333333333,
+          "seed_std": 0.9112261921901361,
+          "seed_values": [
+            12.2862,
+            13.999,
+            13.6818
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.43426666666666663,
+          "seed_std": 0.012265942007580733,
+          "seed_values": [
+            0.4484,
+            0.428,
+            0.4264
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.7780666666666667,
+          "seed_std": 0.008412688828985274,
+          "seed_values": [
+            0.7862,
+            0.7694,
+            0.7786
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.6784,
+          "seed_std": 0.007748548251124234,
+          "seed_values": [
+            0.6872,
+            0.6754,
+            0.6726
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 26.34006666666667,
+          "seed_std": 0.24906075189265278,
+          "seed_values": [
+            26.48516,
+            26.48256,
+            26.05248
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 4.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            4.0,
+            4.0,
+            4.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.29949333333333333,
+          "seed_std": 0.006451955775835213,
+          "seed_values": [
+            0.29328,
+            0.30616,
+            0.29904
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.6661066666666667,
+          "seed_std": 0.006320042193951949,
+          "seed_values": [
+            0.66224,
+            0.6734,
+            0.66268
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.5527866666666666,
+          "seed_std": 0.008315415403534162,
+          "seed_values": [
+            0.54508,
+            0.5616,
+            0.55168
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8162250920871609,
+          "seed_std": 0.007020219175158398,
+          "seed_values": [
+            0.8096125682332579,
+            0.8154706430568499,
+            0.8235920649713753
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8162250920871609,
+          "seed_std": 0.007020219175158398,
+          "seed_values": [
+            0.8096125682332579,
+            0.8154706430568499,
+            0.8235920649713753
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6593090883610119,
+          "seed_std": 0.005723657166747107,
+          "seed_values": [
+            0.6548244692032794,
+            0.6657557284002522,
+            0.6573470674795039
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6593090883610119,
+          "seed_std": 0.005723657166747107,
+          "seed_values": [
+            0.6548244692032794,
+            0.6657557284002522,
+            0.6573470674795039
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7792726508303552,
+          "seed_std": 0.001668541924152545,
+          "seed_values": [
+            0.7773807021231869,
+            0.7799033003994114,
+            0.7805339499684675
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7204120243851166,
+          "seed_std": 0.0045815629005051955,
+          "seed_values": [
+            0.717258776539836,
+            0.7256674374605844,
+            0.7183098591549296
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.862620704887004,
+          "seed_std": 0.0028287598515369257,
+          "seed_values": [
+            0.8603898148998451,
+            0.8616699384449936,
+            0.8658023613161735
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "67b7061c0f458783b5a46cc590e102502864095b4bc7504cb08a12144a37ccf3",
+          "epoch": 3,
+          "learning_rate": 0.001,
+          "run_id": "random_exclusion_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "c9b53eafcedcc4869153682619d1e2b49ab0bd70c4f870cf9165ad3d220d21ef",
+          "epoch": 5,
+          "learning_rate": 0.001,
+          "run_id": "random_exclusion_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "c67508b411fd7b8c4333196a90bad5a894877bf8e7fe8e61a8f0736dd9bb28d2",
+          "epoch": 3,
+          "learning_rate": 0.001,
+          "run_id": "random_exclusion_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "sanw_fixed": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 7.7241333333333335,
+          "seed_std": 1.3578123630801617,
+          "seed_values": [
+            9.292,
+            6.9402,
+            6.9402
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5432666666666667,
+          "seed_std": 0.03452554609753966,
+          "seed_values": [
+            0.5034,
+            0.5632,
+            0.5632
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8574666666666667,
+          "seed_std": 0.02378683109061259,
+          "seed_values": [
+            0.83,
+            0.8712,
+            0.8712
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7782666666666667,
+          "seed_std": 0.03452554609753966,
+          "seed_values": [
+            0.7384,
+            0.7982,
+            0.7982
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 20.5682,
+          "seed_std": 4.5618754169749085,
+          "seed_values": [
+            25.8358,
+            17.9344,
+            17.9344
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.6666666666666665,
+          "seed_std": 1.1547005383792515,
+          "seed_values": [
+            4.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.36860000000000004,
+          "seed_std": 0.04309342409231366,
+          "seed_values": [
+            0.31884,
+            0.39348,
+            0.39348
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7319466666666666,
+          "seed_std": 0.042008005586237136,
+          "seed_values": [
+            0.68344,
+            0.7562,
+            0.7562
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.62664,
+          "seed_std": 0.0474581921273872,
+          "seed_values": [
+            0.57184,
+            0.65404,
+            0.65404
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8180002662761283,
+          "seed_std": 0.010146483229001529,
+          "seed_values": [
+            0.8297164159233125,
+            0.8121421914525363,
+            0.8121421914525363
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8180002662761283,
+          "seed_std": 0.010146483229001529,
+          "seed_values": [
+            0.8297164159233125,
+            0.8121421914525363,
+            0.8121421914525363
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6799803797911849,
+          "seed_std": 0.016506124996802415,
+          "seed_values": [
+            0.6609207483708219,
+            0.6895101955013664,
+            0.6895101955013664
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6799803797911849,
+          "seed_std": 0.016506124996802415,
+          "seed_values": [
+            0.6609207483708219,
+            0.6895101955013664,
+            0.6895101955013664
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.7964403335435498,
+          "seed_std": 0.0031555827199769085,
+          "seed_values": [
+            0.8000840866092075,
+            0.7946184570107211,
+            0.7946184570107211
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7374395627496321,
+          "seed_std": 0.021846341907532617,
+          "seed_values": [
+            0.712213579987387,
+            0.7500525541307547,
+            0.7500525541307547
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.7956178455475439,
+          "seed_std": 0.0015424416183838967,
+          "seed_values": [
+            0.7973989037147103,
+            0.7947273164639607,
+            0.7947273164639607
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "7616dd73a2a61bbffd78d4db6a7d6f7b14032ba6e881cc6a336271ae410a4256",
+          "epoch": 6,
+          "learning_rate": 0.0003,
+          "run_id": "sanw_fixed_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "2ae7ac8bffa5260358a42f36669da139a00d3a5fb5cd94704be19c44a0e1c37e",
+          "epoch": 0,
+          "learning_rate": 0.0003,
+          "run_id": "sanw_fixed_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "aa21f5bf9adf25f3f344848b80a1b29445041ba2a6c2ecbb4fc1e615ee172c96",
+          "epoch": 0,
+          "learning_rate": 0.0003,
+          "run_id": "sanw_fixed_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "sanw_median": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 7.9632000000000005,
+          "seed_std": 0.16203937793018144,
+          "seed_values": [
+            8.1452,
+            7.9098,
+            7.8346
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5397333333333333,
+          "seed_std": 0.004021608301828198,
+          "seed_values": [
+            0.5364,
+            0.5442,
+            0.5386
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8583333333333334,
+          "seed_std": 0.00488808074128626,
+          "seed_values": [
+            0.853,
+            0.8626,
+            0.8594
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7793333333333333,
+          "seed_std": 0.003251666239535234,
+          "seed_values": [
+            0.7758,
+            0.7822,
+            0.78
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 17.74972,
+          "seed_std": 0.15280331410018522,
+          "seed_values": [
+            17.92616,
+            17.66076,
+            17.66224
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.39208,
+          "seed_std": 0.0027296886269316417,
+          "seed_values": [
+            0.389,
+            0.3942,
+            0.39304
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.75656,
+          "seed_std": 0.002298869287280143,
+          "seed_values": [
+            0.75392,
+            0.75812,
+            0.75764
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6541733333333334,
+          "seed_std": 0.002166779484242278,
+          "seed_values": [
+            0.65168,
+            0.6556,
+            0.65524
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8372609062264234,
+          "seed_std": 0.0017376090134870413,
+          "seed_values": [
+            0.835441352682732,
+            0.8374384236453202,
+            0.8389029423512182
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8372609062264234,
+          "seed_std": 0.0017376090134870413,
+          "seed_values": [
+            0.835441352682732,
+            0.8374384236453202,
+            0.8389029423512182
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6800504519655245,
+          "seed_std": 0.0007282113969177432,
+          "seed_values": [
+            0.679630018919487,
+            0.679630018919487,
+            0.6808913180575993
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6800504519655245,
+          "seed_std": 0.0007282113969177432,
+          "seed_values": [
+            0.679630018919487,
+            0.679630018919487,
+            0.6808913180575993
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.8049891388129774,
+          "seed_std": 0.0018124191936623247,
+          "seed_values": [
+            0.8030271179314694,
+            0.8053394996846752,
+            0.8066007988227875
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7336556653352954,
+          "seed_std": 0.000963333129063648,
+          "seed_values": [
+            0.7344965314273701,
+            0.7326045827202018,
+            0.733865881858314
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8265965778115093,
+          "seed_std": 0.0019404818735914038,
+          "seed_values": [
+            0.8276199414980249,
+            0.8243586239805342,
+            0.827811167955969
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "a2a07c82d1185d6f4e757b629a4086b7be2887835c6b73533c5e43e406800879",
+          "epoch": 3,
+          "learning_rate": 0.0001,
+          "run_id": "sanw_median_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "2de17af7edf8859eb8bc14f25df2e6e467fbc7b25ee9c3d5912b53c96015529a",
+          "epoch": 2,
+          "learning_rate": 0.0001,
+          "run_id": "sanw_median_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "cb6910edfeea88498f16332b8eec42f5693ba5c7e3c31e4d331d8bc791585160",
+          "epoch": 2,
+          "learning_rate": 0.0001,
+          "run_id": "sanw_median_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "shuffled": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 8.744,
+          "seed_std": 0.30139834107041813,
+          "seed_values": [
+            8.5664,
+            9.092,
+            8.5736
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5226666666666667,
+          "seed_std": 0.002914332399252622,
+          "seed_values": [
+            0.526,
+            0.5214,
+            0.5206
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8483333333333333,
+          "seed_std": 0.006197849089267443,
+          "seed_values": [
+            0.8538,
+            0.8416,
+            0.8496
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7663333333333333,
+          "seed_std": 0.006300264544710245,
+          "seed_values": [
+            0.7726,
+            0.76,
+            0.7664
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 18.600786666666664,
+          "seed_std": 0.2088228965734675,
+          "seed_values": [
+            18.82784,
+            18.55756,
+            18.41696
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 3.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            3.0,
+            3.0,
+            3.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.38189333333333336,
+          "seed_std": 0.0012246360003418675,
+          "seed_values": [
+            0.38096,
+            0.38144,
+            0.38328
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7457600000000001,
+          "seed_std": 0.0018607525359380878,
+          "seed_values": [
+            0.74376,
+            0.74608,
+            0.74744
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6441333333333333,
+          "seed_std": 0.0020428737928059066,
+          "seed_values": [
+            0.6418,
+            0.645,
+            0.6456
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8348644210713175,
+          "seed_std": 0.0035633609667857524,
+          "seed_values": [
+            0.8310477965650379,
+            0.8381041139661829,
+            0.835441352682732
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8348644210713175,
+          "seed_std": 0.0035633609667857524,
+          "seed_values": [
+            0.8310477965650379,
+            0.8381041139661829,
+            0.835441352682732
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6689790484198724,
+          "seed_std": 0.0026284071660726016,
+          "seed_values": [
+            0.6663863779693084,
+            0.6689089762455329,
+            0.6716417910447762
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6689790484198724,
+          "seed_std": 0.0026284071660726016,
+          "seed_values": [
+            0.6663863779693084,
+            0.6689089762455329,
+            0.6716417910447762
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.8011351692243011,
+          "seed_std": 0.003096682754394815,
+          "seed_values": [
+            0.7977717048560017,
+            0.8038679840235442,
+            0.8017658187933572
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7230747670100204,
+          "seed_std": 0.0015495301231515633,
+          "seed_values": [
+            0.7225141896153038,
+            0.7218835400462477,
+            0.7248265713685096
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.8333926916597547,
+          "seed_std": 0.005715757439412638,
+          "seed_values": [
+            0.8285317514821093,
+            0.8396894685843337,
+            0.8319568549128212
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "bcd2ad4480844d9e0907f5e29638a0e1b4839dab15b4eabacc7f260cf1a34169",
+          "epoch": 1,
+          "learning_rate": 0.0003,
+          "run_id": "shuffled_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "edcb1244960cbc8de1ea268a9ad4f4cf163e158a000a1311c0be24935e2d25f2",
+          "epoch": 1,
+          "learning_rate": 0.0003,
+          "run_id": "shuffled_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "74357f1ce7d9847d0ee43879822d95b7f08874a00c5b3526249ed2bf22f089f2",
+          "epoch": 1,
+          "learning_rate": 0.0003,
+          "run_id": "shuffled_seed_43",
+          "seed": 43
+        }
+      ]
+    },
+    "smoothing": {
+      "metrics": {
+        "coco_karpathy.i2t.mean_rank": {
+          "mean": 7.956266666666667,
+          "seed_std": 0.8968028620233841,
+          "seed_values": [
+            7.4414,
+            8.9918,
+            7.4356
+          ]
+        },
+        "coco_karpathy.i2t.median_rank": {
+          "mean": 1.0,
+          "seed_std": 0.0,
+          "seed_values": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "coco_karpathy.i2t.r1": {
+          "mean": 0.5384666666666665,
+          "seed_std": 0.02535060814523654,
+          "seed_values": [
+            0.5526,
+            0.5092,
+            0.5536
+          ]
+        },
+        "coco_karpathy.i2t.r10": {
+          "mean": 0.8571333333333334,
+          "seed_std": 0.017327819635872627,
+          "seed_values": [
+            0.8686,
+            0.8372,
+            0.8656
+          ]
+        },
+        "coco_karpathy.i2t.r5": {
+          "mean": 0.7794,
+          "seed_std": 0.018881737208212568,
+          "seed_values": [
+            0.79,
+            0.7576,
+            0.7906
+          ]
+        },
+        "coco_karpathy.t2i.mean_rank": {
+          "mean": 19.849986666666666,
+          "seed_std": 3.220903954937703,
+          "seed_values": [
+            17.98452,
+            23.56916,
+            17.99628
+          ]
+        },
+        "coco_karpathy.t2i.median_rank": {
+          "mean": 2.3333333333333335,
+          "seed_std": 0.5773502691896258,
+          "seed_values": [
+            2.0,
+            3.0,
+            2.0
+          ]
+        },
+        "coco_karpathy.t2i.r1": {
+          "mean": 0.37082666666666664,
+          "seed_std": 0.03149057848521257,
+          "seed_values": [
+            0.38992,
+            0.33448,
+            0.38808
+          ]
+        },
+        "coco_karpathy.t2i.r10": {
+          "mean": 0.7372133333333334,
+          "seed_std": 0.029112480714177075,
+          "seed_values": [
+            0.75364,
+            0.7036,
+            0.7544
+          ]
+        },
+        "coco_karpathy.t2i.r5": {
+          "mean": 0.6347466666666667,
+          "seed_std": 0.03366123784612405,
+          "seed_values": [
+            0.65384,
+            0.59588,
+            0.65452
+          ]
+        },
+        "sugarcrepe.accuracy": {
+          "mean": 0.8228376159410642,
+          "seed_std": 0.02184045977453518,
+          "seed_values": [
+            0.8361070430035947,
+            0.7976301424577287,
+            0.8347756623618693
+          ]
+        },
+        "sugarcrepe.positive1_accuracy": {
+          "mean": 0.8228376159410642,
+          "seed_std": 0.02184045977453518,
+          "seed_values": [
+            0.8361070430035947,
+            0.7976301424577287,
+            0.8347756623618693
+          ]
+        },
+        "sugarcrepe_pp.accuracy": {
+          "mean": 0.6596594492327097,
+          "seed_std": 0.04587779962458474,
+          "seed_values": [
+            0.6859365146100483,
+            0.606684885431995,
+            0.6863569476560858
+          ]
+        },
+        "sugarcrepe_pp.both_accuracy": {
+          "mean": 0.6596594492327097,
+          "seed_std": 0.04587779962458474,
+          "seed_values": [
+            0.6859365146100483,
+            0.606684885431995,
+            0.6863569476560858
+          ]
+        },
+        "sugarcrepe_pp.positive1_accuracy": {
+          "mean": 0.8088431084016537,
+          "seed_std": 0.0018366396779597109,
+          "seed_values": [
+            0.8103846962371243,
+            0.8068110153458061,
+            0.8093336136220307
+          ]
+        },
+        "sugarcrepe_pp.positive2_accuracy": {
+          "mean": 0.7055567234251279,
+          "seed_std": 0.05558720079193794,
+          "seed_values": [
+            0.7374395627496321,
+            0.641370611730082,
+            0.7378599957956695
+          ]
+        },
+        "visual_entailment.accuracy": {
+          "mean": 0.7923237166007874,
+          "seed_std": 0.04851505276498434,
+          "seed_values": [
+            0.8204103703710792,
+            0.736303428715826,
+            0.8202573507154569
+          ]
+        }
+      },
+      "runs": [
+        {
+          "checkpoint_sha256": "73161d8b8c52adfaf52a0fb5a579315859b2109ca779a848542632a2d985dfcf",
+          "epoch": 1,
+          "learning_rate": 0.0001,
+          "run_id": "smoothing_seed_17",
+          "seed": 17
+        },
+        {
+          "checkpoint_sha256": "369b3cb03b6edd06e7c5ed402174049d709040da9df63a51f5b72ff0bf785cd3",
+          "epoch": 10,
+          "learning_rate": 0.0001,
+          "run_id": "smoothing_seed_29",
+          "seed": 29
+        },
+        {
+          "checkpoint_sha256": "f507985bcbdb4b68cf70a33b795de208e09086433a884c579ebfeaee4b2f4716",
+          "epoch": 1,
+          "learning_rate": 0.0001,
+          "run_id": "smoothing_seed_43",
+          "seed": 43
+        }
+      ]
+    }
+  },
+  "source_index_sha256": "824d199791ee7d97362c1053a0e2cfea4220ba2278bd4d210def1ec82c79a5a5",
+  "units": "accuracy and recall as fractions; rank one-based"
+}

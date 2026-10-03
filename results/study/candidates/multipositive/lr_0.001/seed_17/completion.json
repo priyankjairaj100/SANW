@@ -1,0 +1,15 @@
+{
+  "artifacts_sha256": {
+    "best.pt": "01c58882f9f1db298917afebd79363ef959b95228b95821a165af2ecaaf165f9",
+    "history.json": "197234794c5378b3cb2dfcc7ad21e321dd9bb061cdf9306945007f4cb76ffc0b"
+  },
+  "best_epoch": 3,
+  "best_validation_score": 0.8507962508645202,
+  "epochs_completed": 10,
+  "learning_rate": 0.001,
+  "ledger_sha256": "3eb474e7ba81a348f58462398b1010f7c7c0c3b6b1715743cb6e336e17ddbd51",
+  "method": "multipositive",
+  "schema_version": 1,
+  "seconds": 5.434547566000219,
+  "seed": 17
+}

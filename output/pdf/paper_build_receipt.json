@@ -1,0 +1,47 @@
+{
+  "status": "compiled_requires_visual_review",
+  "output": "output/pdf/acl27_relation_labels_short.pdf",
+  "sha256": "2ed8c4706ad4eb0bfcd1fe4a7ccbb642f922f582557d20ab1b5c09664e378019",
+  "bytes": 459436,
+  "pending_files": [],
+  "tex_warnings": [],
+  "source_hashes": {
+    "abstract.tex": "336eb8af17af7669e844173aae68ebcde7140cafafe683bf52484633979ae389",
+    "appendix.tex": "14a9bbdb613fc36d79f48e6d85ce8a66c44055b8a80b1785f268abb0bab8df47",
+    "appendix_math.tex": "2837d994dbde09d1b98e100698680cb80d182d45f2ae499ed8e38b1590b9ba7a",
+    "data_provenance.tex": "ee3289a9c653b622937ebbcab88f8ad68322c5ac5d863450b9a72ec305027f30",
+    "diagnostic.tex": "ff4aceafae7847d03f934354efe753624d18da67ec304ad42852d4a8b70e2527",
+    "diagnostic_results.tex": "eb086cf01a3c4b888c97a917df9afb2dc8135144910c00eb33e0503cda58aa1d",
+    "edit_groups_table.tex": "11a81b43b776979e3552edbe09fd9a53de12fbf3b2c5fe68af45fddc2f158b8a",
+    "implications.tex": "3392d63b7133a4063db8979169669246e2ba523a1ea754b2d8775a3445e8f49b",
+    "main.tex": "e7294bb3ec4d18733515d0df9d4bab9a5287cff114b87f5417cd6d889c4ba48d",
+    "main_results_table.tex": "edffd8f3975ab04c713d0640da30007945fb02a3176000799b127995eafb8698",
+    "numbers.tex": "b306521ece97afb5d6a2fe5f39a920ee5b2649c0f24cdf390958a073a3c03d18",
+    "results_appendix.tex": "a6a730c17ced084d63d0d191e022d2f175f8f49f6b32f71ce3d43ac5dc66c499",
+    "results_main.tex": "070d35349985ac18063c33171055b198587df927e42f68d9a78d6be41dc43d90",
+    "results_weights.tex": "fb6af4250cfdbbec3e4d938c115ab90210ba1c3754c50e04aea03a6b0dc370db",
+    "retrieval_example.tex": "8f3c806fb9ba3d8f48d99c80b181bc2f7557bb0766ac53d6064ed0b7dfc008c3",
+    "retrieval_example_provenance.tex": "b2b28e30079734ba68ff617f8e634cd684608730e9e1bc851c90251c6a0bb859",
+    "split_counts_table.tex": "1d430e6c151f9a72b0fbd0bde18702c69111e6eab1c619fdc394f7c4959b84da",
+    "training_details.tex": "860a9503f59efcac1afa92e6c2d0b1b855aaaba7a455fbe9480594dfdc1f3885",
+    "training_summary.tex": "78ea2f8a09b9399eea1c249537a8fb223e778650f2d23669b98b61c12ab37d6b",
+    "validation_figure.tex": "d4b8612568486f552a01ee9c54535a88515ec207d26a01270494a2e18d9430d6",
+    "weight_controls_table.tex": "dd83f9a7c72d02527962b572024fae7bed420d2b0da1775ec9b23ca9d444d71c"
+  },
+  "pages": 16,
+  "limitations_pages": [
+    5
+  ],
+  "type3_fonts": [],
+  "visual_review": "All 16 pages reviewed; first four individually and appendix contact sheets. No overlap, clipping, or unreadable tables.",
+  "main_content_pages": 4,
+  "limitations_begins_page": 5,
+  "official_style_unchanged": true,
+  "english_hyphenation_minima": [
+    2,
+    3
+  ],
+  "missing_glyphs": false,
+  "pending_results": false,
+  "abstract_word_count_tex": 144
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "identity": {
+    "repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+    "revision": "1a25a446712ba5ee05982a381eed697ef9b435cf",
+    "protocol_sha256": "066670370c8d0311a5bbeff8cfb37ab5e74f4d6dfcdbc898176bbeabfe54e847",
+    "files": {
+      "open_clip_config.json": {
+        "bytes": 604,
+        "sha256": "4302a891b495ad0966d1e7eeff102b5f34a3f1e647e57a9198933f862d5f8ba7"
+      },
+      "README.md": {
+        "bytes": 7464,
+        "sha256": "d0600101ba66849bd84eeae14e0b1ccd56cd962ea94aec5d60c415d9ce4e5f28"
+      },
+      "open_clip_model.safetensors": {
+        "bytes": 605143316,
+        "sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6"
+      }
+    }
+  },
+  "source_urls": {
+    "open_clip_config.json": "https://huggingface.co/laion/CLIP-ViT-B-32-laion2B-s34B-b79K/resolve/1a25a446712ba5ee05982a381eed697ef9b435cf/open_clip_config.json",
+    "README.md": "https://huggingface.co/laion/CLIP-ViT-B-32-laion2B-s34B-b79K/resolve/1a25a446712ba5ee05982a381eed697ef9b435cf/README.md",
+    "open_clip_model.safetensors": "https://huggingface.co/laion/CLIP-ViT-B-32-laion2B-s34B-b79K/resolve/1a25a446712ba5ee05982a381eed697ef9b435cf/open_clip_model.safetensors"
+  },
+  "first_receipt_operation": "verify_existing_files_offline",
+  "downloaded_by_first_receipt_operation": [],
+  "huggingface_hub_version": "0.36.0",
+  "script_sha256": "1c5f774ca6788cfeff56e808399741b996e0318fab281f4541d1e85d9b23f5d1",
+  "preservation": "Existing mismatched files are never overwritten. Downloaded bytes and atomic local copies both require pinned size and SHA256."
+}

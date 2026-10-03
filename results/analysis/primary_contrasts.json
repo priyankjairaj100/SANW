@@ -1,0 +1,211 @@
+{
+  "contrasts": [
+    {
+      "bootstrap_seed": 20261003,
+      "ci_lower": -0.0060457536183135645,
+      "ci_percentage_points": [
+        -0.6045753618313564,
+        0.06549715324459031
+      ],
+      "ci_upper": 0.0006549715324459031,
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9916666666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.0025535893232577845,
+      "difference_percentage_points": -0.25535893232577844,
+      "effect_id": "grounded_minus_multipositive__visual_entailment",
+      "family_size": 6,
+      "images": 400,
+      "items": 400,
+      "method_a": "grounded",
+      "method_b": "multipositive",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "seed_difference_std": 0.0022968646648698033,
+      "seed_differences": [
+        -0.0010857171222411225,
+        -0.0013745171410241542,
+        -0.005200533706508077
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261003,
+      "ci_lower": -0.005086389277751881,
+      "ci_percentage_points": [
+        -0.508638927775188,
+        0.20943369108407175
+      ],
+      "ci_upper": 0.0020943369108407175,
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9916666666666667,
+      "dataset": "sugarcrepe",
+      "difference": -0.0015532774153463808,
+      "difference_percentage_points": -0.15532774153463808,
+      "effect_id": "grounded_minus_multipositive__sugarcrepe",
+      "family_size": 6,
+      "images": 1560,
+      "items": 7511,
+      "method_a": "grounded",
+      "method_b": "multipositive",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "seed_difference_std": 0.002268562183310177,
+      "seed_differences": [
+        0.0007988283850352816,
+        -0.00173079483424311,
+        -0.003727865796831314
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261003,
+      "ci_lower": -0.0009962706808109708,
+      "ci_percentage_points": [
+        -0.09962706808109709,
+        0.2730189453959766
+      ],
+      "ci_upper": 0.002730189453959766,
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9916666666666667,
+      "dataset": "visual_entailment",
+      "difference": 0.0008146573241787241,
+      "difference_percentage_points": 0.08146573241787242,
+      "effect_id": "grounded_minus_grounded_no_hardening__visual_entailment",
+      "family_size": 6,
+      "images": 400,
+      "items": 400,
+      "method_a": "grounded",
+      "method_b": "grounded_no_hardening",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "seed_difference_std": 0.0027046575302882704,
+      "seed_differences": [
+        0.0022149090597163913,
+        0.0025321012411292187,
+        -0.0023030383283094377
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261003,
+      "ci_lower": -0.0037130138779785282,
+      "ci_percentage_points": [
+        -0.3713013877978528,
+        0.05581162652845299
+      ],
+      "ci_upper": 0.0005581162652845299,
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9916666666666667,
+      "dataset": "sugarcrepe",
+      "difference": -0.0015532774153463806,
+      "difference_percentage_points": -0.15532774153463805,
+      "effect_id": "grounded_minus_grounded_no_hardening__sugarcrepe",
+      "family_size": 6,
+      "images": 1560,
+      "items": 7511,
+      "method_a": "grounded",
+      "method_b": "grounded_no_hardening",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "seed_difference_std": 0.0005040525758487794,
+      "seed_differences": [
+        -0.0013313806417254693,
+        -0.0011982425775529223,
+        -0.002130209026760751
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261003,
+      "ci_lower": -0.008899076916631691,
+      "ci_percentage_points": [
+        -0.8899076916631691,
+        -0.19300684940885282
+      ],
+      "ci_upper": -0.0019300684940885282,
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9916666666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.005347957364500524,
+      "difference_percentage_points": -0.5347957364500524,
+      "effect_id": "grounded_minus_grounded_no_abstention__visual_entailment",
+      "family_size": 6,
+      "images": 400,
+      "items": 400,
+      "method_a": "grounded",
+      "method_b": "grounded_no_abstention",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "seed_difference_std": 0.0016852542605201534,
+      "seed_differences": [
+        -0.003976192871950894,
+        -0.004838524357239114,
+        -0.007229154864311565
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261003,
+      "ci_lower": -0.0044162832677319295,
+      "ci_percentage_points": [
+        -0.44162832677319297,
+        0.26072052047498767
+      ],
+      "ci_upper": 0.002607205204749877,
+      "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
+      "confidence": 0.9916666666666667,
+      "dataset": "sugarcrepe",
+      "difference": -0.0009319664492078286,
+      "difference_percentage_points": -0.09319664492078286,
+      "effect_id": "grounded_minus_grounded_no_abstention__sugarcrepe",
+      "family_size": 6,
+      "images": 1560,
+      "items": 7511,
+      "method_a": "grounded",
+      "method_b": "grounded_no_abstention",
+      "quantile_method": "linear",
+      "replicates": 10000,
+      "seed_difference_std": 0.0021426543655213796,
+      "seed_differences": [
+        0.0013313806417254693,
+        -0.0011982425775529223,
+        -0.0029290374117960324
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "training_seeds": 3
+    }
+  ],
+  "family": "six fixed contrasts across two primary endpoints",
+  "selection_uncertainty": "not included",
+  "source_index_sha256": "824d199791ee7d97362c1053a0e2cfea4220ba2278bd4d210def1ec82c79a5a5"
+}

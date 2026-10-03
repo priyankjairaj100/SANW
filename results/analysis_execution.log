@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "source_index_sha256": "824d199791ee7d97362c1053a0e2cfea4220ba2278bd4d210def1ec82c79a5a5",
+  "analysis_source_sha256": "8db66e76f5d9ab9affa959822bfa427d6da9d3381d6f6af3faeda2142ee94c84",
+  "run_count": 37,
+  "dataset_count": 4,
+  "aggregate_checks": 629,
+  "maximum_raw_prediction_recomputation_difference": 2.220446049250313e-16,
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 20261003,
+  "historical_aggregates_used": false
+}

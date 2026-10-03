@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grounded-contrastive-rerun"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = ["numpy", "torch", "torchvision", "open_clip_torch", "huggingface_hub", "safetensors", "Pillow", "scipy", "scikit-learn", "matplotlib", "requests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

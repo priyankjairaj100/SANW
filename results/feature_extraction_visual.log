@@ -1,0 +1,19 @@
+Error in cpuinfo: failed to parse processor information from /proc/cpuinfo
+visual_entailment image: 0 new / 1800 total
+visual_entailment text: 17593 new / 33859 total
+visual_entailment text: encoded 128/17593 elapsed 1.9s
+visual_entailment text: encoded 1408/17593 elapsed 9.0s
+visual_entailment text: encoded 2688/17593 elapsed 16.0s
+visual_entailment text: encoded 3968/17593 elapsed 22.9s
+visual_entailment text: encoded 5248/17593 elapsed 30.3s
+visual_entailment text: encoded 6528/17593 elapsed 38.0s
+visual_entailment text: encoded 7808/17593 elapsed 46.1s
+visual_entailment text: encoded 9088/17593 elapsed 54.8s
+visual_entailment text: encoded 10368/17593 elapsed 64.8s
+visual_entailment text: encoded 11648/17593 elapsed 74.5s
+visual_entailment text: encoded 12928/17593 elapsed 84.7s
+visual_entailment text: encoded 14208/17593 elapsed 95.2s
+visual_entailment text: encoded 15488/17593 elapsed 107.0s
+visual_entailment text: encoded 16768/17593 elapsed 119.7s
+visual_entailment text: encoded 17593/17593 elapsed 131.1s
+COMPLETE visual_entailment: /workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/features/visual_entailment

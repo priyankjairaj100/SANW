@@ -1,0 +1,51 @@
+{
+  "metrics": {
+    "accuracy": 0.6737439562749632,
+    "both_accuracy": 0.6737439562749632,
+    "images": 1542,
+    "items": 4757,
+    "positive1_accuracy": 0.7933571578726087,
+    "positive2_accuracy": 0.7332352322892579
+  },
+  "predictions_sha256": "492d6d43cc586e15f6d8a1625295449d83e3c1d984089289f5b0d75124e6d1c7",
+  "provenance": {
+    "adaptation_dtype": "float32",
+    "dataset": "sugarcrepe_pp",
+    "environment": {
+      "blas_thread_environment": {
+        "MKL_NUM_THREADS": "2",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2"
+      },
+      "numpy": "2.3.5",
+      "python": "3.12.14",
+      "torch": "2.7.1+cpu",
+      "torch_threads": 2
+    },
+    "evidence_type": "new_execution",
+    "input_hashes": {
+      "features_sha256": "68c2d484c3f129a758e51a7589aa91ff53892fdd559f8c09306c40f5f26428ca",
+      "manifest_sha256": "647a38462268209583df513fc7dab7a4ad787ca976b6d9b4e4a6a9a6f9178466",
+      "metadata_sha256": "66a5700bbb78ca4e673fb318378339e429d5906d5e7904594b5481aa86ba6907"
+    },
+    "pair_tie_policy": "relation ranking: half credit; SugarCrepe/SugarCrepe++: zero credit",
+    "retrieval_tie_policy": "descending float64 dot product, then ascending candidate manifest index",
+    "run": {
+      "checkpoint": "results/study/selected/grounded_no_hardening/seed_43.pt",
+      "checkpoint_sha256": "4e4e11775995b191e66006e370794f2be727f07b14d323ae4277f0b3d50065ae",
+      "epoch": 5,
+      "learning_rate": 0.0003,
+      "method": "grounded_no_hardening",
+      "run_id": "grounded_no_hardening_seed_43",
+      "seed": 43
+    },
+    "score_dtype": "float64",
+    "selection_sha256": "04950c8627a54e0dbd060768d5725c882746e74c71365bf3f1fa81518b4e649e",
+    "source_hashes": {
+      "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+      "src/gcr/adapters.py": "eb042d632c22f69f2addbf6883489822948d9df301a34ba06ca85ed6d827b891",
+      "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+    }
+  },
+  "seconds": 0.13327892400047858
+}

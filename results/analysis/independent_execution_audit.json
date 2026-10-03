@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "source_index_sha256": "824d199791ee7d97362c1053a0e2cfea4220ba2278bd4d210def1ec82c79a5a5",
+  "audit_source_sha256": "00c3d5e3aadbcf4dac0984bbfa5d6a85f8f3674e2b9d4ccb32ce290ce922a734",
+  "bootstrap_effects": [
+    {
+      "effect_id": "grounded_minus_multipositive__visual_entailment",
+      "point_error": 0.0,
+      "replicate_max_error": 2.6020852139652106e-18,
+      "interval_max_error": 3.2526065174565133e-19
+    },
+    {
+      "effect_id": "grounded_minus_multipositive__sugarcrepe",
+      "point_error": 0.0,
+      "replicate_max_error": 3.469446951953614e-18,
+      "interval_max_error": 8.673617379884035e-19
+    },
+    {
+      "effect_id": "grounded_minus_grounded_no_hardening__visual_entailment",
+      "point_error": 0.0,
+      "replicate_max_error": 1.3010426069826053e-18,
+      "interval_max_error": 4.336808689942018e-19
+    },
+    {
+      "effect_id": "grounded_minus_grounded_no_hardening__sugarcrepe",
+      "point_error": 2.168404344971009e-19,
+      "replicate_max_error": 1.734723475976807e-18,
+      "interval_max_error": 2.168404344971009e-19
+    },
+    {
+      "effect_id": "grounded_minus_grounded_no_abstention__visual_entailment",
+      "point_error": 0.0,
+      "replicate_max_error": 3.469446951953614e-18,
+      "interval_max_error": 2.168404344971009e-19
+    },
+    {
+      "effect_id": "grounded_minus_grounded_no_abstention__sugarcrepe",
+      "point_error": 1.0842021724855044e-19,
+      "replicate_max_error": 3.0357660829594124e-18,
+      "interval_max_error": 8.673617379884035e-19
+    }
+  ],
+  "epoch_zero_states_bitwise_equal_to_frozen": [
+    "pairwise_rank_seed_17",
+    "pairwise_rank_seed_29",
+    "pairwise_rank_seed_43",
+    "sanw_fixed_seed_29",
+    "sanw_fixed_seed_43"
+  ],
+  "full_pool_retrieval_rescoring": [
+    {
+      "run_id": "frozen",
+      "direction": "i2t",
+      "full_pool_queries_checked": 64,
+      "candidates_per_query": 25000
+    },
+    {
+      "run_id": "frozen",
+      "direction": "t2i",
+      "full_pool_queries_checked": 64,
+      "candidates_per_query": 5000
+    },
+    {
+      "run_id": "grounded_seed_17",
+      "direction": "i2t",
+      "full_pool_queries_checked": 64,
+      "candidates_per_query": 25000
+    },
+    {
+      "run_id": "grounded_seed_17",
+      "direction": "t2i",
+      "full_pool_queries_checked": 64,
+      "candidates_per_query": 5000
+    },
+    {
+      "run_id": "multipositive_seed_17",
+      "direction": "i2t",
+      "full_pool_queries_checked": 64,
+      "candidates_per_query": 25000
+    },
+    {
+      "run_id": "multipositive_seed_17",
+      "direction": "t2i",
+      "full_pool_queries_checked": 64,
+      "candidates_per_query": 5000
+    }
+  ],
+  "historical_aggregates_read": false
+}

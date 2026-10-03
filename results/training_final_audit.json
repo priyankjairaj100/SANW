@@ -1,0 +1,273 @@
+{
+  "audit_scope": "New reconstructed training artifacts only; no historical scores or held-out outcomes read",
+  "auditor_source_sha256": "17a394dfab8f16cdd146b6f8471314a76168a77b83258d4c9d4876c4f8deea22",
+  "checks": [
+    {
+      "check": "ledger_identity_digest",
+      "passed": true,
+      "sha256": "3eb474e7ba81a348f58462398b1010f7c7c0c3b6b1715743cb6e336e17ddbd51"
+    },
+    {
+      "check": "frozen_protocol_unchanged",
+      "passed": true,
+      "sha256": "066670370c8d0311a5bbeff8cfb37ab5e74f4d6dfcdbc898176bbeabfe54e847"
+    },
+    {
+      "check": "frozen_source_unchanged",
+      "passed": true,
+      "path": "scripts/run_study.py",
+      "sha256": "fed94eb8a631aa220a83b141a04905ee1505a5e14c0ba409f4ccf6612b8a11c6"
+    },
+    {
+      "check": "frozen_source_unchanged",
+      "passed": true,
+      "path": "src/gcr/adapters.py",
+      "sha256": "eb042d632c22f69f2addbf6883489822948d9df301a34ba06ca85ed6d827b891"
+    },
+    {
+      "check": "frozen_source_unchanged",
+      "passed": true,
+      "path": "src/gcr/losses.py",
+      "sha256": "2e3a06a0c22d94b44ae29dbed9b6e44a2c2737ac6fe71afc4c2a23495dc51c35"
+    },
+    {
+      "check": "frozen_source_unchanged",
+      "passed": true,
+      "path": "src/gcr/training.py",
+      "sha256": "274931e8b718549e0b320671e074e7168fe8ada0e2e3f8bffa649698100ec977"
+    },
+    {
+      "check": "input_unchanged",
+      "kind": "manifest",
+      "passed": true,
+      "sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495"
+    },
+    {
+      "check": "input_unchanged",
+      "kind": "features",
+      "passed": true,
+      "sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec"
+    },
+    {
+      "check": "input_unchanged",
+      "kind": "metadata",
+      "passed": true,
+      "sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7"
+    },
+    {
+      "check": "declared_full_grid",
+      "epochs": 10,
+      "learning_rates": [
+        0.0001,
+        0.0003,
+        0.001
+      ],
+      "methods": [
+        "clip",
+        "sanw_fixed",
+        "sanw_median",
+        "constant",
+        "shuffled",
+        "multipositive",
+        "grounded",
+        "grounded_no_hardening",
+        "grounded_no_abstention",
+        "pairwise_rank",
+        "random_exclusion",
+        "smoothing"
+      ],
+      "passed": true,
+      "seeds": [
+        17,
+        29,
+        43
+      ]
+    },
+    {
+      "check": "image_split_disjointness",
+      "counts": {
+        "calibration": 100,
+        "test": 400,
+        "train": 1200,
+        "validation": 100
+      },
+      "overlaps": {
+        "calibration/test": 0,
+        "calibration/train": 0,
+        "calibration/validation": 0,
+        "test/train": 0,
+        "test/validation": 0,
+        "train/validation": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "ledger_train_and_validation_ids",
+      "passed": true
+    },
+    {
+      "check": "epoch_zero_is_zero_residual",
+      "passed": true
+    },
+    {
+      "check": "no_heldout_scores_in_selection_rule",
+      "passed": true
+    },
+    {
+      "check": "exact_108_candidate_grid",
+      "extra": [],
+      "missing": [],
+      "observed_count": 108,
+      "passed": true
+    },
+    {
+      "check": "all_candidate_receipt_artifact_hashes",
+      "failed_artifacts": [],
+      "passed": true
+    },
+    {
+      "check": "candidate_identity_bindings",
+      "errors": [],
+      "passed": true
+    },
+    {
+      "check": "all_raw_epoch_histories",
+      "checked_epochs": 1188,
+      "errors": [],
+      "max_metric_aggregation_error": 0.0,
+      "passed": true
+    },
+    {
+      "check": "best_epoch_including_tie_rule",
+      "errors": [],
+      "passed": true
+    },
+    {
+      "check": "shared_rate_selection_and_checkpoint_copies",
+      "errors": [],
+      "passed": true,
+      "selected_count": 36
+    },
+    {
+      "check": "independent_selected_state_validation",
+      "checkpoints": 36,
+      "errors": [],
+      "max_per_image_metric_error": 0.0,
+      "passed": true,
+      "validation_images_per_checkpoint": 100
+    }
+  ],
+  "created_utc": "2026-10-03T04:52:14.862135+00:00",
+  "failure_count": 0,
+  "held_out_exclusion_evidence": {
+    "all_history_images": "validation split only",
+    "all_validation_winners": "validation candidate pool only",
+    "image_splits_disjoint": true,
+    "independent_recomputation": "36 selected states, validation features and labels only",
+    "source_review": "frozen fit uses split_indices['train']; frozen validate_adapter uses split_indices['validation']; no benchmark evaluation imports",
+    "training_id_ledger": "train split only"
+  },
+  "ledger_sha256": "3eb474e7ba81a348f58462398b1010f7c7c0c3b6b1715743cb6e336e17ddbd51",
+  "schema_version": 1,
+  "selected_epoch_zero_count": 5,
+  "selected_methods": {
+    "clip": {
+      "epochs": {
+        "17": 1,
+        "29": 1,
+        "43": 3
+      },
+      "learning_rate": 0.0001
+    },
+    "constant": {
+      "epochs": {
+        "17": 1,
+        "29": 1,
+        "43": 2
+      },
+      "learning_rate": 0.0001
+    },
+    "grounded": {
+      "epochs": {
+        "17": 5,
+        "29": 5,
+        "43": 7
+      },
+      "learning_rate": 0.0003
+    },
+    "grounded_no_abstention": {
+      "epochs": {
+        "17": 5,
+        "29": 10,
+        "43": 5
+      },
+      "learning_rate": 0.0003
+    },
+    "grounded_no_hardening": {
+      "epochs": {
+        "17": 5,
+        "29": 5,
+        "43": 5
+      },
+      "learning_rate": 0.0003
+    },
+    "multipositive": {
+      "epochs": {
+        "17": 5,
+        "29": 10,
+        "43": 5
+      },
+      "learning_rate": 0.0003
+    },
+    "pairwise_rank": {
+      "epochs": {
+        "17": 0,
+        "29": 0,
+        "43": 0
+      },
+      "learning_rate": 0.0001
+    },
+    "random_exclusion": {
+      "epochs": {
+        "17": 3,
+        "29": 5,
+        "43": 3
+      },
+      "learning_rate": 0.001
+    },
+    "sanw_fixed": {
+      "epochs": {
+        "17": 6,
+        "29": 0,
+        "43": 0
+      },
+      "learning_rate": 0.0003
+    },
+    "sanw_median": {
+      "epochs": {
+        "17": 3,
+        "29": 2,
+        "43": 2
+      },
+      "learning_rate": 0.0001
+    },
+    "shuffled": {
+      "epochs": {
+        "17": 1,
+        "29": 1,
+        "43": 1
+      },
+      "learning_rate": 0.0003
+    },
+    "smoothing": {
+      "epochs": {
+        "17": 1,
+        "29": 10,
+        "43": 1
+      },
+      "learning_rate": 0.0001
+    }
+  },
+  "selection_sha256": "04950c8627a54e0dbd060768d5725c882746e74c71365bf3f1fa81518b4e649e",
+  "status": "passed"
+}

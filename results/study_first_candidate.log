@@ -1,0 +1,2 @@
+Error in cpuinfo: failed to parse processor information from /proc/cpuinfo
+{"artifacts_sha256": {"best.pt": "1f5f55e9d8a5c28dd5c6cc6e75d0ad69a2d7faea15e4b434bf964023adc69661", "history.json": "aa21e84c0e86555f05cf89af8ab65099f725bfe13908ef5d68197dbd051edc12"}, "best_epoch": 1, "best_validation_score": 0.8654846664820223, "epochs_completed": 10, "learning_rate": 0.0001, "ledger_sha256": "3eb474e7ba81a348f58462398b1010f7c7c0c3b6b1715743cb6e336e17ddbd51", "method": "clip", "phase": "fit", "schema_version": 1, "seconds": 7.693378459000087, "seed": 17}

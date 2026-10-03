@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "execution_id": "relation-labels-reconstruction-2026-10-03",
+  "status": "fixed_before_training_and_held_out_scoring",
+  "relation_to_lost_execution": "New execution; unrecovered choices fixed explicitly, historical scores never used as new results",
+  "dataset": {
+    "annotations_repository": "https://github.com/maximek3/e-ViL",
+    "annotations_revision": "94f17f5c189573c9d1087f82eb27db37690fc810",
+    "image_source": "nlphuji/flickr30k",
+    "image_source_revision": "2b239befc81b6e3f035ce6bd52f5f4d60f5625f7",
+    "selection_seed": 42,
+    "images": {
+      "train": 1200,
+      "calibration": 100,
+      "validation": 100,
+      "test": 400
+    },
+    "selection": "Uniform deterministic sampling of sorted image IDs, official train for training, disjoint subsets of official dev for calibration/validation, official test for test; all annotations on selected images retained",
+    "source_captions": "Five original Flickr30k captions per image",
+    "superseded_source": "Deprecated virginie-do/e-SNLI-VE release rejected after source-only overlap audit, before training or held-out scoring",
+    "source_captions_repository": "https://github.com/BryanPlummer/flickr30k_entities",
+    "source_captions_revision": "68b3d6f12d1d710f96233f6bd2b6de799d6f4e5b",
+    "ranking_eligible_images": {
+      "train": 1192,
+      "validation": 100,
+      "test": 400
+    }
+  },
+  "encoder": {
+    "architecture": "ViT-B-32",
+    "repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+    "revision": "1a25a446712ba5ee05982a381eed697ef9b435cf",
+    "weight_sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6",
+    "open_clip_version": "2.32.0",
+    "torch_version": "2.7.1+cpu",
+    "feature_dim": 512,
+    "feature_dtype": "float32",
+    "feature_normalization": "unit L2",
+    "encoders_trainable": false,
+    "logit_scale": "Frozen exp(pretrained logit_scale)",
+    "text_optimization": "Discard only causal positions after batch-last EOT; require normalized-feature parity within 2e-6 against stock; record exact parity checks"
+  },
+  "adapter": {
+    "type": "independent zero-initialized bias-free linear residual image/text maps plus L2 normalization",
+    "dimension": 512,
+    "trainable_parameters": 524288
+  },
+  "training": {
+    "methods": [
+      "clip",
+      "sanw_fixed",
+      "sanw_median",
+      "constant",
+      "shuffled",
+      "multipositive",
+      "grounded",
+      "grounded_no_hardening",
+      "grounded_no_abstention",
+      "pairwise_rank",
+      "random_exclusion",
+      "smoothing"
+    ],
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "epochs": 10,
+    "image_batch_size": 32,
+    "candidate_texts": "All source captions and all annotated hypotheses belonging to images in the batch",
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "scheduler": "none",
+    "learning_rate_warmup": "none",
+    "epoch_zero_eligible": true,
+    "known_unrecovered_choices": "Learning rate grid, batch size, optimizer details and semantic kernel are explicit reconstruction choices",
+    "amsgrad": false,
+    "foreach": false,
+    "fused": false,
+    "device": "cpu"
+  },
+  "objectives": {
+    "uniform_positive_loss": "log weighted normalizer minus mean positive score; symmetric image/text mean, skip text anchors with no positive",
+    "source_positive_set": "source captions only, including for similarity/smoothing controls",
+    "expanded_positive_set": "source plus supported hypotheses",
+    "unannotated_pairs": "eligible negatives at unit weight",
+    "contradiction_weight": 2.0,
+    "neutral_exclusion_weight": 0.0,
+    "random_exclusion": "Start expanded; randomly omit same number of eligible nonpositive candidates per image row as labeled neutrals; transpose same mask",
+    "smoothing": "0.9 uniform(source positives) + 0.1 uniform(all candidates)",
+    "pairwise_ranking": "mean softplus(contradicted score - supported score) over Cartesian pairs within each eligible image, then average images",
+    "semantic_similarity": "Mean (1+cosine)/2 between each candidate text and the frozen source-caption features for its image anchor",
+    "semantic_weight": "sigmoid((threshold-similarity)/0.05); positive weights forced to one; all semantic weights detached",
+    "fixed_threshold": 0.5,
+    "median_threshold": "Median semantic similarity over all nonpositive cells in the batch",
+    "constant_negative_weight": 0.25,
+    "shuffle": "Globally permute nonpositive fixed-threshold weights, preserving their batch distribution",
+    "reverse_weights": "Transpose the identical image-text weight matrix",
+    "semantic_softness": 0.05,
+    "smoothing_coefficient": 0.1
+  },
+  "selection": {
+    "score": "Mean of validation image-to-text R@1 and image-averaged supported-versus-contradicted hypothesis accuracy",
+    "retrieval_relevance": "Source plus supported captions are correct; every validation caption/hypothesis is in the candidate pool",
+    "hypothesis_ties": 0.5,
+    "best_epoch": "Per seed, maximize score, earliest epoch wins ties",
+    "learning_rate": "Per method, maximize mean best validation score across all three seeds, lower rate wins ties",
+    "test_usage": "None before all 108 candidates and 36 selections are frozen",
+    "positive_relations": [
+      "source",
+      "supported"
+    ],
+    "retrieval_tie_rule": "lowest_manifest_text_index",
+    "tie_rule": "earlier_epoch_then_lower_learning_rate"
+  },
+  "evaluation": {
+    "esnli": "Image-averaged supported-vs-contradicted Cartesian-pair ranking on 400 test images; half-credit ties; report eligible-image denominator",
+    "sugarcrepe": "All 7511 official pairs, strict original-positive score greater than foil",
+    "sugarcrepe_revision": "0047054b243992f0fad63d6f64f7544862daf846",
+    "sugarcrepe_pp": "All 4757 official triplets, both official positive captions strictly outrank official foil; preserve source strings independently of SugarCrepe",
+    "sugarcrepe_pp_revision": "c083bbf039a5ca215acaf25e7ee736d2ea6f3864",
+    "coco": "Full Karpathy test 5000 images with first five captions per image in source order, both retrieval directions R@1/5/10 and mean/median ranks",
+    "retrieval_ties": "Stable candidate manifest index",
+    "frozen_reference": "Same final float32 normalization as zero-initialized adapter; score accumulation float64",
+    "overlaps": "Audit exact image overlaps across all pools; shared COCO-derived pools are complementary measurements, not independent replications"
+  },
+  "statistics": {
+    "primary_endpoints": [
+      "esnli",
+      "sugarcrepe"
+    ],
+    "primary_contrasts": [
+      "grounded-minus-multipositive",
+      "grounded-minus-grounded_no_hardening",
+      "grounded-minus-grounded_no_abstention"
+    ],
+    "family_size": 6,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261003,
+    "confidence_level": 0.9916666666666667,
+    "unit": "Image clusters, paired across methods, selected-seed scores averaged within each sampled image; use appropriate image/pair weighting per endpoint",
+    "training_seed_uncertainty": "Report individual seeds and sample standard deviation; image bootstrap conditions on selected runs",
+    "secondary": "All retrieval, valid-alternative, exclusion/weight controls and edit-category grouping are descriptive; no new significance labels"
+  },
+  "relation_diagnostic": {
+    "role": "Separate appendix diagnostic, never supplies primary adapter labels",
+    "inputs": [
+      "image",
+      "text",
+      "image,text,elementwise-product,absolute-difference"
+    ],
+    "source_captions_excluded": true,
+    "classifier": "Multinomial logistic regression, train-only standardization",
+    "C_grid": [
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "C_selection": "Validation macro-F1",
+    "seed": 17,
+    "crossfit": "Three image-disjoint folds for training predictions",
+    "calibration": "Image-disjoint half for temperature NLL, half for threshold choice; seed0",
+    "selective_rule": "For support and contradiction separately, choose maximum coverage among thresholds with at least20 accepted pairs and Wilson95% precision lower bound at least0.90",
+    "test": "MacroF1, accuracy, ECE10bins, Brier, NLL, class-specific selective precision/coverage; descriptive image bootstrap"
+  }
+}

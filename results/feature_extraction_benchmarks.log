@@ -1,0 +1,69 @@
+Error in cpuinfo: failed to parse processor information from /proc/cpuinfo
+sugarcrepe image: 1560 new / 1560 total
+sugarcrepe image: encoded 32/1560 elapsed 3.3s
+sugarcrepe image: encoded 352/1560 elapsed 19.1s
+sugarcrepe image: encoded 672/1560 elapsed 38.6s
+sugarcrepe image: encoded 992/1560 elapsed 55.4s
+sugarcrepe image: encoded 1312/1560 elapsed 72.3s
+sugarcrepe image: encoded 1560/1560 elapsed 85.2s
+sugarcrepe text: 11844 new / 15022 total
+sugarcrepe text: encoded 128/11844 elapsed 86.0s
+sugarcrepe text: encoded 1408/11844 elapsed 93.4s
+sugarcrepe text: encoded 2688/11844 elapsed 100.9s
+sugarcrepe text: encoded 3968/11844 elapsed 109.0s
+sugarcrepe text: encoded 5248/11844 elapsed 119.0s
+sugarcrepe text: encoded 6528/11844 elapsed 130.2s
+sugarcrepe text: encoded 7808/11844 elapsed 140.4s
+sugarcrepe text: encoded 9088/11844 elapsed 150.5s
+sugarcrepe text: encoded 10368/11844 elapsed 161.8s
+sugarcrepe text: encoded 11648/11844 elapsed 174.7s
+sugarcrepe text: encoded 11844/11844 elapsed 177.9s
+COMPLETE sugarcrepe: /workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/features/sugarcrepe
+sugarcrepe_pp image: 0 new / 1542 total
+sugarcrepe_pp text: 6528 new / 14271 total
+sugarcrepe_pp text: encoded 128/6528 elapsed 2.7s
+sugarcrepe_pp text: encoded 1408/6528 elapsed 11.9s
+sugarcrepe_pp text: encoded 2688/6528 elapsed 21.1s
+sugarcrepe_pp text: encoded 3968/6528 elapsed 30.9s
+sugarcrepe_pp text: encoded 5248/6528 elapsed 41.6s
+sugarcrepe_pp text: encoded 6528/6528 elapsed 56.6s
+COMPLETE sugarcrepe_pp: /workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/features/sugarcrepe_pp
+coco_karpathy image: 4817 new / 5000 total
+coco_karpathy image: encoded 32/4817 elapsed 3.3s
+coco_karpathy image: encoded 352/4817 elapsed 19.5s
+coco_karpathy image: encoded 672/4817 elapsed 35.2s
+coco_karpathy image: encoded 992/4817 elapsed 49.7s
+coco_karpathy image: encoded 1312/4817 elapsed 64.6s
+coco_karpathy image: encoded 1632/4817 elapsed 79.3s
+coco_karpathy image: encoded 1952/4817 elapsed 94.1s
+coco_karpathy image: encoded 2272/4817 elapsed 108.5s
+coco_karpathy image: encoded 2592/4817 elapsed 122.7s
+coco_karpathy image: encoded 2912/4817 elapsed 138.8s
+coco_karpathy image: encoded 3232/4817 elapsed 154.5s
+coco_karpathy image: encoded 3552/4817 elapsed 169.3s
+coco_karpathy image: encoded 3872/4817 elapsed 184.5s
+coco_karpathy image: encoded 4192/4817 elapsed 200.4s
+coco_karpathy image: encoded 4512/4817 elapsed 215.5s
+coco_karpathy image: encoded 4817/4817 elapsed 230.8s
+coco_karpathy text: 24303 new / 25000 total
+coco_karpathy text: encoded 128/24303 elapsed 231.8s
+coco_karpathy text: encoded 1408/24303 elapsed 238.7s
+coco_karpathy text: encoded 2688/24303 elapsed 245.8s
+coco_karpathy text: encoded 3968/24303 elapsed 252.6s
+coco_karpathy text: encoded 5248/24303 elapsed 260.7s
+coco_karpathy text: encoded 6528/24303 elapsed 268.4s
+coco_karpathy text: encoded 7808/24303 elapsed 276.6s
+coco_karpathy text: encoded 9088/24303 elapsed 283.9s
+coco_karpathy text: encoded 10368/24303 elapsed 291.8s
+coco_karpathy text: encoded 11648/24303 elapsed 299.4s
+coco_karpathy text: encoded 12928/24303 elapsed 307.1s
+coco_karpathy text: encoded 14208/24303 elapsed 314.9s
+coco_karpathy text: encoded 15488/24303 elapsed 323.4s
+coco_karpathy text: encoded 16768/24303 elapsed 332.0s
+coco_karpathy text: encoded 18048/24303 elapsed 340.4s
+coco_karpathy text: encoded 19328/24303 elapsed 349.0s
+coco_karpathy text: encoded 20608/24303 elapsed 358.2s
+coco_karpathy text: encoded 21888/24303 elapsed 367.4s
+coco_karpathy text: encoded 23168/24303 elapsed 377.4s
+coco_karpathy text: encoded 24303/24303 elapsed 389.5s
+COMPLETE coco_karpathy: /workspace/scratch/3eec744c3d5e/grounded-contrastive-rerun/results/features/coco_karpathy

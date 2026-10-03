@@ -1,0 +1,46 @@
+{
+  "alignment": "Original annotation order per category. Images match in every aligned pair; strings are compared without normalization. Official IDs need not match across datasets.",
+  "counts": [
+    {
+      "category": "replace_att",
+      "rows": 788,
+      "caption_differences": 195,
+      "negative_differences": 175,
+      "image_differences": 0,
+      "official_id_differences": 0
+    },
+    {
+      "category": "replace_obj",
+      "rows": 1652,
+      "caption_differences": 116,
+      "negative_differences": 9,
+      "image_differences": 0,
+      "official_id_differences": 0
+    },
+    {
+      "category": "replace_rel",
+      "rows": 1406,
+      "caption_differences": 571,
+      "negative_differences": 437,
+      "image_differences": 0,
+      "official_id_differences": 0
+    },
+    {
+      "category": "swap_att",
+      "rows": 666,
+      "caption_differences": 236,
+      "negative_differences": 187,
+      "image_differences": 0,
+      "official_id_differences": 0
+    },
+    {
+      "category": "swap_obj",
+      "rows": 245,
+      "caption_differences": 85,
+      "negative_differences": 70,
+      "image_differences": 0,
+      "official_id_differences": 137
+    }
+  ],
+  "warning": "SugarCrepe++ changes original positive and negative text for some rows. Its P1 accuracy is not a substitute for SugarCrepe replace/swap accuracy."
+}

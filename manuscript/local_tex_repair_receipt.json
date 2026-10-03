@@ -1,0 +1,23 @@
+{
+  "map_sha256": "227c2f0812a92bd2d4d531c91c296150781e4d4909232a6006ed21f746d31d84",
+  "mapped_base35_fonts": 18,
+  "font_files": [
+    "NimbusMonoPS-Bold.pfb",
+    "NimbusMonoPS-BoldItalic.pfb",
+    "NimbusMonoPS-Italic.pfb",
+    "NimbusMonoPS-Regular.pfb",
+    "NimbusRoman-Bold.pfb",
+    "NimbusRoman-BoldItalic.pfb",
+    "NimbusRoman-Italic.pfb",
+    "NimbusRoman-Regular.pfb",
+    "NimbusSans-Bold.pfb",
+    "NimbusSans-BoldItalic.pfb",
+    "NimbusSans-Italic.pfb",
+    "NimbusSans-Regular.pfb",
+    "NimbusSansNarrow-Bold.pfb",
+    "NimbusSansNarrow-BoldOblique.pfb",
+    "NimbusSansNarrow-Oblique.pfb",
+    "NimbusSansNarrow-Regular.pfb"
+  ],
+  "purpose": "Local font-map repair; official ACL style and document metrics unchanged."
+}

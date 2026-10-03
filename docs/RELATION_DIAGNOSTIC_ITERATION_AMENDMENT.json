@@ -1,0 +1,32 @@
+{
+  "scope": "diagnostic_only; primary protocol unchanged",
+  "amendment": "raise logistic LBFGS iteration ceiling from 2000 to 10000",
+  "reason": "text-mode full-training C grid reached max_iter=2000 and was rejected before any nonconverged fit was accepted",
+  "unchanged": [
+    "solver lbfgs",
+    "tolerance 1e-6",
+    "C grid",
+    "all image splits",
+    "feature definitions",
+    "standardization",
+    "selection",
+    "temperature",
+    "gates",
+    "cross-fitting",
+    "bootstrap"
+  ],
+  "technical_observability_change": "print each C and fitting-row count before fitting",
+  "old_source_sha256": "56902944ef00437979a55340c569c34e20a31e06cf70c2641758ab91ca56eab1",
+  "new_source_sha256": "491a5d2b047656012e1f8f0cefc61357d0efaf6a544236aaa7c1c0cd72071f26",
+  "preserved_old_source": "scripts/diagnostic_versions/relation_diagnostic_maxiter2000.py",
+  "old_output": "results/relation_diagnostic",
+  "new_output": "results/relation_diagnostic_iter10000",
+  "preexisting_status": {
+    "image": "complete, all candidates and all folds converged, integrity receipt present",
+    "text": "stopped in full-data C grid, no selected text model",
+    "multimodal": "not started"
+  },
+  "decision": "rerun all modes from scratch in a new output directory; no reuse of old estimates",
+  "approved_by": "root task authorization",
+  "created_utc": "2026-10-03T04:48:00.719863+00:00"
+}

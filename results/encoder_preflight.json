@@ -1,0 +1,7 @@
+{
+  "weight_sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6",
+  "parity_max_error": 1.8347054719924927e-07,
+  "parity_tolerance": 2e-06,
+  "passed": true,
+  "image_seconds_per_16": 0.8513154619998508
+}

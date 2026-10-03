@@ -1,0 +1,50 @@
+{
+  "metrics": {
+    "accuracy": 0.8693509430574019,
+    "comparison_count": 13844,
+    "eligible_images": 400,
+    "excluded_images": [],
+    "manifest_images": 400
+  },
+  "predictions_sha256": "87e65450c467b1473ff98dab8f52d478c6e2ad86b5ad401ab8d782dbc022f805",
+  "provenance": {
+    "adaptation_dtype": "float32",
+    "dataset": "visual_entailment",
+    "environment": {
+      "blas_thread_environment": {
+        "MKL_NUM_THREADS": "2",
+        "OMP_NUM_THREADS": "2",
+        "OPENBLAS_NUM_THREADS": "2"
+      },
+      "numpy": "2.3.5",
+      "python": "3.12.14",
+      "torch": "2.7.1+cpu",
+      "torch_threads": 2
+    },
+    "evidence_type": "new_execution",
+    "input_hashes": {
+      "features_sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+      "metadata_sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7"
+    },
+    "pair_tie_policy": "relation ranking: half credit; SugarCrepe/SugarCrepe++: zero credit",
+    "retrieval_tie_policy": "descending float64 dot product, then ascending candidate manifest index",
+    "run": {
+      "checkpoint": "results/study/selected/grounded/seed_43.pt",
+      "checkpoint_sha256": "1157dfb659998292c1db8c0d79884a77e6722e6d4670732f3f1cd25fab10166b",
+      "epoch": 7,
+      "learning_rate": 0.0003,
+      "method": "grounded",
+      "run_id": "grounded_seed_43",
+      "seed": 43
+    },
+    "score_dtype": "float64",
+    "selection_sha256": "04950c8627a54e0dbd060768d5725c882746e74c71365bf3f1fa81518b4e649e",
+    "source_hashes": {
+      "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+      "src/gcr/adapters.py": "eb042d632c22f69f2addbf6883489822948d9df301a34ba06ca85ed6d827b891",
+      "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+    }
+  },
+  "seconds": 0.21097180499964452
+}

@@ -1,0 +1,22 @@
+{
+  "esnlive_train.csv": {
+    "url": "https://raw.githubusercontent.com/maximek3/e-ViL/94f17f5c189573c9d1087f82eb27db37690fc810/data/esnlive_train.csv",
+    "size_bytes": 62565577,
+    "sha256": "61ad4a26ec8e2b9c5fc69e52a4870d972f7fab92f448b8d069eb9793dba3aeb1"
+  },
+  "esnlive_dev.csv": {
+    "url": "https://raw.githubusercontent.com/maximek3/e-ViL/94f17f5c189573c9d1087f82eb27db37690fc810/data/esnlive_dev.csv",
+    "size_bytes": 2266354,
+    "sha256": "30ee4b326dc1c9276f82a9e3ada73639c67c2d54ee61e90795c405c8809a29a3"
+  },
+  "esnlive_test.csv": {
+    "url": "https://raw.githubusercontent.com/maximek3/e-ViL/94f17f5c189573c9d1087f82eb27db37690fc810/data/esnlive_test.csv",
+    "size_bytes": 2320988,
+    "sha256": "56cc45b747a2bcec759e5b2cf16fb9731625e2697594892392e76c84226fa19d"
+  },
+  "flickr30k_entities_annotations.zip": {
+    "url": "https://raw.githubusercontent.com/BryanPlummer/flickr30k_entities/68b3d6f12d1d710f96233f6bd2b6de799d6f4e5b/annotations.zip",
+    "size_bytes": 29284070,
+    "sha256": "1bdde439e41fa936e31e6d72898f1886d49bb4298f2abcdb50771de4f516b026"
+  }
+}
