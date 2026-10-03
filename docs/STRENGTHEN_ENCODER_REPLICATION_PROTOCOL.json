@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "execution_id": "second-encoder-rn50-linear-replication-20261003",
+  "status": "fixed_before_new_training_and_scoring",
+  "question": "Do caption-assignment benefits and source-retrieval costs replicate with the independently pretrained OpenAI RN50 encoder and linear adapters?",
+  "training": {
+    "policies": [
+      "source",
+      "supported",
+      "score_stratified_draw_0",
+      "score_stratified_draw_1",
+      "score_stratified_draw_2"
+    ],
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "epochs": 10,
+    "primary_epoch": 10,
+    "architecture": "Independent image and text bias-free1024x1024 linear residual maps,zero initialized,output L2 normalized.2097152 learned parameters.",
+    "choice_rationale": "OpenAI RN50 changes pretrained image architecture from transformer to convolutional encoder,pretraining source,and jointembeddingdimension. Original linear adaptation family retained at encoder dimension.",
+    "base_hyperparameters": "Inherit originalLRgrid,seeds,batches,AdamW,weightdecay,gradientclipping,10epochs. Use RN50ownfixedlogitscale. Batch-orderRNGpairedacrosspolicies.",
+    "data": "Same original1200 training images and all source and hypothesis candidates,encoded by official OpenAI RN50. Recompute3score-stratified assignments from RN50frozen training cosines with seeds101,211,307 and originaltwo-bin algorithm;do notreuseViTassignments.",
+    "checkpoint_retention": "Record all11 epoch metrics,development predictions,and serialized checkpoint digests. Retain only best(native),best(source retrieval),and epoch10 weights per fit. Others deterministically regenerable."
+  },
+  "selection": {
+    "criteria": [
+      "native",
+      "source_retrieval"
+    ],
+    "native": "Unchanged100-image original development source-or-supported retrieval and relation criterion.",
+    "source_retrieval": "Mean image-to-text and text-to-image R1 on full dev900/4500 source-caption pool.",
+    "epoch": "Best per seed,epochs0..10;earliest ties.",
+    "learning_rate": "Best mean selected score across seeds per policy/draw;lower rate ties.",
+    "draws": "Each random draw selected separately;all3 averaged,no best-draw selection.",
+    "held_out_use": "None. All choices fixed before running this replication."
+  },
+  "evaluation": {
+    "states": "Frozen reference,all45 epoch10 states,and unique nonzero states selected by both development criteria.",
+    "datasets": [
+      "e_vil_test1000",
+      "visual_entailment",
+      "sugarcrepe",
+      "sugarcrepe_pp",
+      "coco_karpathy"
+    ],
+    "numerics": "Original evaluator:float32 forward normalization,float64 similarities,stable manifest-index rank ties,relation half-credit,strict triplet comparisons.",
+    "provenance": "Bind protocol,code,inputs,assignments,checkpoints,and selected states before scoring. Save raw per-query ranks or item correctness/scores."
+  },
+  "primary_analysis": {
+    "epoch": 10,
+    "contrasts": [
+      "supported-minus-source",
+      "supported-minus-score-stratified"
+    ],
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "endpoints": [
+      "i2t.r1",
+      "t2i.r1"
+    ],
+    "dataset": "e_vil_test1000",
+    "family_size": 12,
+    "alpha": 0.05,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261014,
+    "aggregation": "Average all3 score draws within optimizer seed,then average3 seeds within image. Cluster all5text queries by owningimage.",
+    "intervals": "Two-sided paired image-cluster percentile bootstrap with Bonferroni family12;conditional on fitted seeds,draws,and gallery.",
+    "secondary": "All other datasets,selected strategies,rank cutoffs,and cross-architecture comparisons descriptive;report allcells."
+  },
+  "relationship_to_existing_results": "New post-review replication informed by original linearViTresults. Protocol fixed before newnonlinearViTandRN50testscoring. Reuses existing previously evaluated testimagepools,notnewheldoutdata. Independentpretrainedencoder,originaltrainingcorpusandsplit,linearadaptationfamily.",
+  "encoder": {
+    "name": "OpenAI RN50",
+    "weights_sha256": "afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762",
+    "dimension": 1024,
+    "features_root": "results/strengthen_second_encoder/features",
+    "extractor": "scripts/strengthen_extract_second_encoder.py"
+  }
+}

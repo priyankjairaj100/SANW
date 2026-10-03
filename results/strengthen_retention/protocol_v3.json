@@ -1,0 +1,165 @@
+{
+  "base": "results/review_followup/ledger.json",
+  "created_utc": "2026-10-03",
+  "encoders": [
+    "ViT-B/32 LAION2B (existing frozen features)",
+    "OpenAI RN50 (new independently extracted features, dimension1024)"
+  ],
+  "evaluation": {
+    "alpha": 0.05,
+    "bootstrap": "100000 paired image-cluster resamples after averaging selected seed predictions; all captions/benchmark rows from one image resampled together; same draws across paired effects",
+    "bootstrap_seed": 20261005,
+    "datasets": [
+      "e_vil_test1000",
+      "visual_entailment",
+      "sugarcrepe",
+      "sugarcrepe_pp",
+      "coco_karpathy"
+    ],
+    "fixed_epoch_datasets": [
+      "e_vil_test1000",
+      "visual_entailment",
+      "sugarcrepe",
+      "sugarcrepe_pp",
+      "coco_karpathy"
+    ],
+    "inference": "Bonferroni-adjusted two-sided intervals conditional on fitted seeds and fixed candidate gallery",
+    "mechanism_factorial": {
+      "across_encoders": "18perencoder,36jointly corrected",
+      "bootstrap_seed": 20261006,
+      "contrasts": {
+        "image_main_effect": ".5*(source+image_source_only-supported-reverse_source_only)",
+        "interaction": "source-image_source_only-reverse_source_only+supported",
+        "reverse_main_effect": ".5*(source+reverse_source_only-supported-image_source_only)"
+      },
+      "endpoints": [
+        "e_vil_test1000.i2t.r1",
+        "e_vil_test1000.t2i.r1"
+      ],
+      "epoch": 10,
+      "family_size": 36,
+      "interpretation": "Intervention changes target allocations only, with supported text contents and candidate matrix fixed. Does not establish allocation as sole cause of differences from source training.",
+      "learning_rates": [
+        0.0001,
+        0.0003,
+        0.001
+      ],
+      "seeds": [
+        17,
+        29,
+        43
+      ]
+    },
+    "metrics": "same definitions and exact float64 accumulation as frozen original evaluator",
+    "no_test_based_revision": true,
+    "practical_retention": "report both point differences and adjusted confidence intervals; <=1pp point decline is a point estimate criterion, statistically supported noninferiority additionally requires lower adjusted bound > -1pp",
+    "primary_contrasts": "Within each encoder: 7 selected families versus frozen x4 endpoints (28); distilled versus allocation and WiSE-FT x4 endpoints (8); supported-distilled versus mean of3matched score-stratified-distilled draws x4 endpoints (4). All80 contrasts jointly corrected across2encoders.",
+    "primary_family_per_encoder": 40,
+    "primary_family_size": 80,
+    "primary_tolerance": "1pp selector",
+    "selected_sensitivity_certificate": "For each selected checkpoint save direct source-column logits drift and applicable KL-to-probability/margin stability certificate using mechanism implementation on held-out retrieval pools, without altering selection.",
+    "sensitivity": "0pp development-selector results reported descriptively with same full endpoints",
+    "success_criterion": "For each encoder: all3selected checkpoints have nonzero learned matrices after scaling; lower jointly adjusted confidence bounds > -0.01 for BOTH in-domain retrieval-direction differences versus frozen, AND lower jointly adjusted confidence bound >0 for SugarCrepe++both-accuracy difference versus frozen. Cross-encoder success requires this gate in both encoders. All failed gates reported."
+  },
+  "kind": "prospective_retention_followup_after_observed_baseline_failures",
+  "question": "Can source-retrieval distillation preserve both retrieval directions while learning supported-caption discrimination, beyond target allocation and weight interpolation?",
+  "schema_version": 3,
+  "selection": {
+    "families": [
+      "source",
+      "supported",
+      "allocation",
+      "distilled",
+      "wise_ft",
+      "image_source_only",
+      "reverse_source_only"
+    ],
+    "feasibility": "each seed's checkpoint must have both source-retrieval directions >= frozen development recall minus tolerance; absolute floating tolerance 1e-12",
+    "freeze_before_test": true,
+    "per_candidate": "maximize validation supported-versus-contradicted accuracy among epochs 0 through 10 satisfying both constraints; ties earliest epoch",
+    "primary_tolerance_pp": 1.0,
+    "relation_pool": "original 100-image validation split",
+    "retrieval_pool": "data/review_followup/e_vil_dev900/manifest.json",
+    "sensitivity_tolerance_pp": 0.0,
+    "shared_hyperparameters": "within each method family and tolerance choose common learning rate and method parameter across three seeds maximizing mean of their feasible-epoch relation accuracies",
+    "shared_ties": "lower learning rate then lower beta, source_mix, or alpha as applicable",
+    "test_used": false,
+    "wise_ft": "alpha is shared across seeds and selected jointly with learning rate; per-seed epochs remain validation-selected"
+  },
+  "supersedes": {
+    "path": "results/strengthen_retention/protocol_v2.json",
+    "reason": "Added direct method baselines, matched label control, independent encoder replication, and joint inference before any fitting or evaluation.",
+    "sha256": "cc6c2262a6337502356c2c28b23fdda18bb6456b3ae17d77a16edcf63df39983"
+  },
+  "training": {
+    "adapter": "independent_zero_initialized_linear_residual_image_and_text",
+    "allocation_loss": "lambda L_source + (1-lambda) L_supported",
+    "allocation_source_mix": [
+      0.5,
+      0.8
+    ],
+    "checkpoints": "final and running best feasible for each alpha and tolerance; all epoch validation metrics retained",
+    "directional_factorial": {
+      "all_candidates_fixed": true,
+      "image_source_only": "image source target distribution; reverse supported/source anchor mean",
+      "reverse_source_only": "image supported/source target distribution; reverse source anchors only",
+      "source": "image source; reverse source",
+      "supported": "image supported; reverse supported"
+    },
+    "distillation_beta": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "distillation_image_candidates": "source-caption columns only within the training image batch",
+    "distillation_loss": "L_supported + beta T^2 (KL_image + KL_text)/2",
+    "distillation_teacher": "detached frozen image/text scores at frozen native logit scale, divided by T",
+    "distillation_temperature": 2.0,
+    "distillation_text_anchors": "source-caption columns only, each distribution over the images in that batch",
+    "epochs": 10,
+    "fits_per_encoder": 81,
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "matched_distilled_control": {
+      "additional_runs_per_encoder": 9,
+      "aggregation": "average three draws within seed before averaging paired training seeds",
+      "assignment": "all three frozen score-stratified assignments from the corresponding encoder; use that encoder frozen similarities",
+      "estimand": "caption identity conditional on the development-selected supported-distillation hyperparameters and per-seed schedule",
+      "selection": "none; no random-control epoch or hyperparameter selection",
+      "shared_hyperparameters": "copy beta and learning rate selected for supported distillation by primary1pp development selector",
+      "training_schedule": "for each training seed, train each of three assignment draws through that seed supported-distillation selected epoch; epoch0 requires no optimization"
+    },
+    "new_or_replayed_fits": 81,
+    "other_settings": "exact_original_StudyConfig",
+    "policies": [
+      "source",
+      "supported",
+      "allocation_0.5",
+      "allocation_0.8",
+      "distilled_1",
+      "distilled_4",
+      "distilled_16",
+      "image_source_only",
+      "reverse_source_only"
+    ],
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "source_loss": "original source-only-positive symmetric loss with all hypotheses retained as candidates",
+    "supported_loss": "original source-plus-supported symmetric uniform-positive loss",
+    "wise_ft": "multiply both learned residual matrices of ordinary supported training by alpha; frozen weights correspond to alpha zero",
+    "wise_ft_alpha": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  }
+}

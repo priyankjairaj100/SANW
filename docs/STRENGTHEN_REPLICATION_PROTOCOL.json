@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "execution_id": "nonlinear-adapter-replication-20261003",
+  "status": "fixed_before_new_training_and_scoring",
+  "question": "Do caption-assignment benefits and source-retrieval costs replicate under a nonlinear bottleneck adaptation family?",
+  "training": {
+    "policies": ["source", "supported", "score_stratified_draw_0", "score_stratified_draw_1", "score_stratified_draw_2"],
+    "learning_rates": [0.0001, 0.0003, 0.001],
+    "seeds": [17, 29, 43],
+    "epochs": 10,
+    "primary_epoch": 10,
+    "bottleneck": 128,
+    "activation": "ReLU",
+    "architecture": "Independent image and text bias-free dim->128->dim residual branches. First projection seeded PyTorch Linear initialization, final projection zero. Output L2 normalized. 262144 learned parameters for dim512.",
+    "choice_rationale": "ReLU creates input-dependent gates even for small normalized-feature preactivations. This changes both capacity and functional class relative to the original linear adapter.",
+    "base_hyperparameters": "Inherit unchanged original learning rates,seeds,batches,AdamW,weight decay,gradient clipping,10 epochs,and frozen logit scale. Batch-order RNG is paired across policies.",
+    "data": "Same original1200 training images and all own source and hypothesis candidates. Existing cached features; fixed original score-stratified assignments reused verbatim.",
+    "checkpoint_retention": "Record all11 epoch metrics,development predictions,and serialized checkpoint digests. Retain only best(native),best(source retrieval),and epoch10 weights per fit. Others deterministically regenerable."
+  },
+  "selection": {
+    "criteria": ["native", "source_retrieval"],
+    "native": "Unchanged100-image original development source-or-supported retrieval and relation criterion.",
+    "source_retrieval": "Mean image-to-text and text-to-image R1 on full dev900/4500 source-caption pool.",
+    "epoch": "Best per seed,epochs0..10;earliest ties.",
+    "learning_rate": "Best mean selected score across seeds per policy/draw;lower rate ties.",
+    "draws": "Each random draw selected separately;all3 averaged,no best-draw selection.",
+    "held_out_use": "None. All choices fixed before running this replication."
+  },
+  "evaluation": {
+    "states": "Frozen reference,all45 epoch10 states,and unique nonzero states selected by both development criteria.",
+    "datasets": ["e_vil_test1000", "visual_entailment", "sugarcrepe", "sugarcrepe_pp", "coco_karpathy"],
+    "numerics": "Original evaluator:float32 forward normalization,float64 similarities,stable manifest-index rank ties,relation half-credit,strict triplet comparisons.",
+    "provenance": "Bind protocol,code,inputs,assignments,checkpoints,and selected states before scoring. Save raw per-query ranks or item correctness/scores."
+  },
+  "primary_analysis": {
+    "epoch": 10,
+    "contrasts": ["supported-minus-source", "supported-minus-score-stratified"],
+    "learning_rates": [0.0001, 0.0003, 0.001],
+    "endpoints": ["i2t.r1", "t2i.r1"],
+    "dataset": "e_vil_test1000",
+    "family_size": 12,
+    "alpha": 0.05,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261013,
+    "aggregation": "Average all3 score draws within optimizer seed,then average3 seeds within image. Cluster all5text queries by owningimage.",
+    "intervals": "Two-sided paired image-cluster percentile bootstrap with Bonferroni family12;conditional on fitted seeds,draws,and gallery.",
+    "secondary": "All other datasets,selected strategies,rank cutoffs,and cross-architecture comparisons descriptive;report allcells."
+  },
+  "relationship_to_existing_results": "New post-review replication informed by completed linear results. Original study unchanged. This changes adaptation family,not pretrained encoder or training corpus."
+}
