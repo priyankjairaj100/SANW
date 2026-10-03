@@ -1,0 +1,50 @@
+[
+  {
+    "policy_completed": "source",
+    "completed_candidates": 9,
+    "seconds": 71.46572486500008,
+    "free_disk_bytes": 4278132736
+  },
+  {
+    "policy_completed": "supported",
+    "completed_candidates": 18,
+    "seconds": 79.80396404299972,
+    "free_disk_bytes": 4062322688
+  },
+  {
+    "policy_completed": "count_only_draw_0",
+    "completed_candidates": 27,
+    "seconds": 90.98644400899866,
+    "free_disk_bytes": 3849613312
+  },
+  {
+    "policy_completed": "count_only_draw_1",
+    "completed_candidates": 36,
+    "seconds": 90.85807115499847,
+    "free_disk_bytes": 3523993600
+  },
+  {
+    "policy_completed": "count_only_draw_2",
+    "completed_candidates": 45,
+    "seconds": 89.54412517699893,
+    "free_disk_bytes": 3306520576
+  },
+  {
+    "policy_completed": "score_stratified_draw_0",
+    "completed_candidates": 54,
+    "seconds": 89.57640189399899,
+    "free_disk_bytes": 3089190912
+  },
+  {
+    "policy_completed": "score_stratified_draw_1",
+    "completed_candidates": 63,
+    "seconds": 88.49515539800268,
+    "free_disk_bytes": 2863710208
+  },
+  {
+    "policy_completed": "score_stratified_draw_2",
+    "completed_candidates": 72,
+    "seconds": 89.37403742600145,
+    "free_disk_bytes": 2647187456
+  }
+]

@@ -1,0 +1,280 @@
+{
+  "best_states_verified_exactly": 18,
+  "ledger_sha256": "2ac7376a3212155099a987e6f73f63f0f9917a36846872afb71ba22d75b34f4c",
+  "native_epoch_histories_verified": 198,
+  "original_replayed_candidates": 18,
+  "passed": true,
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "records": [
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.0001/seed_17/completion.json",
+      "completion_sha256": "669d3128bb614c31ccfb1962ad4744d030ecfe2f86017f0f41cc5abb50f077e2",
+      "learning_rate": 0.0001,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 17
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.0001/seed_29/completion.json",
+      "completion_sha256": "156eb8866b6825748b4e8847ab89ade9b289f558c26ad885d6c9e08c01f02172",
+      "learning_rate": 0.0001,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 29
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.0001/seed_43/completion.json",
+      "completion_sha256": "96dc0ff75c380cdeb4d8bf7a91efc6cf35cbf16aeb45da50f4ea58b576a265b4",
+      "learning_rate": 0.0001,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 43
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.0003/seed_17/completion.json",
+      "completion_sha256": "aa783e27ba7880a5f7311343ab543ec64901c14975a117dba2bb9b74cd444a32",
+      "learning_rate": 0.0003,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 17
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.0003/seed_29/completion.json",
+      "completion_sha256": "aa6052eac98c7543d008c7d845e493d042524be7df32db2b035d06864d006c47",
+      "learning_rate": 0.0003,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 29
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.0003/seed_43/completion.json",
+      "completion_sha256": "487de2762d508e1c1eb8efff22f12cbda71b26e539ae09a4b3845acfa557f2d3",
+      "learning_rate": 0.0003,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 43
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.001/seed_17/completion.json",
+      "completion_sha256": "6beea29544a097dab6584b67e2ea009a009549f84ef985b19799678d41bcad4f",
+      "learning_rate": 0.001,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 17
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.001/seed_29/completion.json",
+      "completion_sha256": "b41e8be0e3aec55ad7cfdaf3226d3613583a6aa3ffce55c909885b2ac7ab9f03",
+      "learning_rate": 0.001,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 29
+    },
+    {
+      "completion": "results/review_followup/candidates/source/lr_0.001/seed_43/completion.json",
+      "completion_sha256": "1d6133f5653d89ebcdf235bea35ece5058f7baf0addc8b14d963226a3046a193",
+      "learning_rate": 0.001,
+      "method": "source",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 43
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.0001/seed_17/completion.json",
+      "completion_sha256": "b8c9d70258fb38911176b294ee0d239f0717ea39d720cbc6273011f882280182",
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 17
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.0001/seed_29/completion.json",
+      "completion_sha256": "c7a3f4481855f3a1a4835a5e3e549d2c5ece26f01d6cfe8917cb6a5c5f2c0203",
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 29
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.0001/seed_43/completion.json",
+      "completion_sha256": "41ddb1f7ad24d0d29d502e5fba86398085a4b197d2b31c9c76ab63f80bd30e19",
+      "learning_rate": 0.0001,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 43
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.0003/seed_17/completion.json",
+      "completion_sha256": "cf107b4cf8ebafa83f0e1bebcc7479c8d140d922739bc6ad8ccc4182872a8a68",
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 17
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.0003/seed_29/completion.json",
+      "completion_sha256": "9eeb53bea3166fbb3808f0c02d25799a2c996c841b23b91d77dc2180e929e320",
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 29
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.0003/seed_43/completion.json",
+      "completion_sha256": "0dd3f9982894b22219e5b0ce8f23ce7a2afe1ba7d1e803e86c01b4ed7c6f930f",
+      "learning_rate": 0.0003,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 43
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.001/seed_17/completion.json",
+      "completion_sha256": "b90fb0086b21f551170b3497e4bd62a6491ee0ac824927cd3ae2736c8aa446fa",
+      "learning_rate": 0.001,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 17
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.001/seed_29/completion.json",
+      "completion_sha256": "7214025ace02d9d79c19fb64decdc8e39c236e624fb728f92fe3e05ddb29ef19",
+      "learning_rate": 0.001,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 29
+    },
+    {
+      "completion": "results/review_followup/candidates/supported/lr_0.001/seed_43/completion.json",
+      "completion_sha256": "07b1937846a2e3bd539e530f91ddeea9004b7193c5fdc154606340df7614dddb",
+      "learning_rate": 0.001,
+      "method": "supported",
+      "parity": {
+        "best_state_exact": true,
+        "checked_epochs": 11,
+        "max_best_parameter_error": 0.0,
+        "native_validation_exact": true,
+        "required": true,
+        "training_loss_exact": true
+      },
+      "seed": 43
+    }
+  ]
+}
