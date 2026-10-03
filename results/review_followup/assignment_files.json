@@ -1,0 +1,35 @@
+{
+  "assignments": {
+    "count_only_draw_0": {
+      "bytes": 8506463,
+      "path": "results/review_followup/assignments/count_only_draw_0.json",
+      "sha256": "005572b09f4eddedd31852406b530091eb5223bd54aa0b3d5255c16fcdd735fb"
+    },
+    "count_only_draw_1": {
+      "bytes": 8506650,
+      "path": "results/review_followup/assignments/count_only_draw_1.json",
+      "sha256": "5a31dfb0441d3bc731de90cd1a0a58eeded121cbb5d79d174334a4dbf25d982a"
+    },
+    "count_only_draw_2": {
+      "bytes": 8506273,
+      "path": "results/review_followup/assignments/count_only_draw_2.json",
+      "sha256": "10be294e791c523bbce27a4a206af183975d16fe65743f2e2656b863779c6659"
+    },
+    "score_stratified_draw_0": {
+      "bytes": 8682097,
+      "path": "results/review_followup/assignments/score_stratified_draw_0.json",
+      "sha256": "c8ab4f8860dcaa47711ccf0ff274fb0e51219a5875945edfac894b3bc368f649"
+    },
+    "score_stratified_draw_1": {
+      "bytes": 8681803,
+      "path": "results/review_followup/assignments/score_stratified_draw_1.json",
+      "sha256": "77ed16f43b31261558969f393384b0d8bfb738854e1b7af853b6a5eee1239a16"
+    },
+    "score_stratified_draw_2": {
+      "bytes": 8682442,
+      "path": "results/review_followup/assignments/score_stratified_draw_2.json",
+      "sha256": "837c7e37aa9f968e5974f249bee445bc627a2b8eabc967185800a1cc52251184"
+    }
+  },
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34"
+}

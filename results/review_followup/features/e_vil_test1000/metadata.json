@@ -1,0 +1,71 @@
+{
+  "causal_padding_parity": [
+    {
+      "examples": 22,
+      "max_abs_error": 1.7136335372924805e-07,
+      "pool": "e_vil_dev900",
+      "tolerance": 2e-06
+    },
+    {
+      "examples": 22,
+      "max_abs_error": 3.129243850708008e-07,
+      "pool": "e_vil_test1000",
+      "tolerance": 2e-06
+    }
+  ],
+  "dataset": "e_vil_test1000",
+  "dimension": 512,
+  "dtype": "float32",
+  "features_sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+  "image_count": 1000,
+  "input_order": "Exact manifest image/text order",
+  "logit_scale": 100.00000762939453,
+  "manifest_sha256": "8de6f0b0e9d0d497f79897074a16bc31337013cbf0b00535446f2f8674d18248",
+  "model_repository": "laion/CLIP-ViT-B-32-laion2B-s34B-b79K",
+  "model_revision": "1a25a446712ba5ee05982a381eed697ef9b435cf",
+  "no_adapter_applied": true,
+  "no_retrieval_scoring_performed": true,
+  "normalization": "L2",
+  "open_clip_version": "2.32.0",
+  "original_npz_rows_byte_exact_verified": {
+    "image": 400,
+    "text": 2000
+  },
+  "preprocess_config": {
+    "mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ]
+  },
+  "reuse_counts": {
+    "image": {
+      "new_encoding": 600,
+      "original_npz_exact": 400,
+      "readonly_bank_exact": 0,
+      "reused_identical_content": 0
+    },
+    "text": {
+      "new_encoding": 2997,
+      "original_npz_exact": 2000,
+      "readonly_bank_exact": 2,
+      "reused_identical_content": 1
+    }
+  },
+  "schema_version": 1,
+  "source_feature_metadata_sha256": "d6c408f3efb152951ffc628e2f0747b298e2bd43bf56220e52ba64022e52e5f7",
+  "source_sha256": "9af45943f4b5b3782c603ac89acca6261ddbc0be25a1af541acc68c6854770a4",
+  "split_audit": {
+    "path": "results/review_followup/data_audit/split_disjointness.json",
+    "sha256": "cabfa6d4a2f18169a8b0ba513490169f977de26cfac8195c51730d21a2a05021"
+  },
+  "text_count": 5000,
+  "text_encoding": "causally_trimmed_after_last_eot",
+  "torch_version": "2.7.1+cpu",
+  "weights_sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6"
+}

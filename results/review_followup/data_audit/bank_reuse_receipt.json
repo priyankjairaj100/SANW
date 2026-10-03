@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "bank_path": "results/features/bank.sqlite",
+  "bank_bytes": 351617024,
+  "bank_sha256": "e02c9750bd78abd93848ec6372a4071de7d15bd2d2cc20bf6cf734ecee0099dd",
+  "opened_read_only_by_builder": true,
+  "matches_existing_verified_redundancy_proof": true,
+  "redundancy_proof_path": "results/feature_bank_redundancy.json",
+  "redundancy_proof_sha256": "9129b73b6bff69aa4c9a6790ec23b254a8b4c27120fea2bc86e0fd89efcbd8ee",
+  "reuse_rule": "Reuse exact float32 vectors by image-byte SHA256 or exact source-text UTF-8 SHA256, only after matching encoder signature. Original visual_entailment NPZ IDs take priority and are checked byte-exact before publication."
+}

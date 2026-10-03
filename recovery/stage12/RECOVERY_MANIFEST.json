@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "checkpoint": "stage12_review_followup_inputs_source_features",
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "scope": "Stage 12 is an incremental follow-up input/source checkpoint, not a complete project or completed-results release. It contains new code, tests, docs, frozen protocol/receipt, all six assignment JSONs and ledger, dev900/test1000 source-only manifests/provenance/audits, and both exact feature NPZs with metadata. It excludes raw images, original baseline assets, model weights, SQLite bank, and live training/evaluation outputs. Apply the project/ tree to the earlier recovered project. See project/docs/STAGE12_RECOVERY_README.md.",
+  "source_file_count": 36,
+  "source_bytes": 79869964,
+  "files": [
+    {
+      "path": "PACKAGE_SCOPE.txt",
+      "bytes": 531,
+      "sha256": "bef084dfa36fa05364c5f53b07b5cc40d7de85fbd926d5edeecee89733910231"
+    },
+    {
+      "path": "project/data/review_followup/e_vil_dev900/manifest.json",
+      "bytes": 1381095,
+      "sha256": "8bee3b0a22b74dda3ff56b1b54f9af42d7fbbd65f9c08a2a31d0900fa69738a3",
+      "git_blob_sha1": "46f50d01da314336ed1821c64a90bc384cb38ffa"
+    },
+    {
+      "path": "project/data/review_followup/e_vil_dev900/provenance.json",
+      "bytes": 361484,
+      "sha256": "0a86465d2fbed9607ef5b7795deb8c73c8883cb7e5f8fca86662e804e0f5c12a",
+      "git_blob_sha1": "6661086d28ff6ea32ae181995bd04906f9f00c1e"
+    },
+    {
+      "path": "project/data/review_followup/e_vil_test1000/manifest.json",
+      "bytes": 1519841,
+      "sha256": "8de6f0b0e9d0d497f79897074a16bc31337013cbf0b00535446f2f8674d18248",
+      "git_blob_sha1": "5cb5b1fc09191704bc5b9cd90c59950de077518c"
+    },
+    {
+      "path": "project/data/review_followup/e_vil_test1000/provenance.json",
+      "bytes": 396893,
+      "sha256": "c5dbc90f33ae439c65b144fed432ea03f336bf09f6d5d9794dee5e6f517be88c",
+      "git_blob_sha1": "2a854fafeb90da9cdff5e17f685ee1a5417a53f7"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_PROTOCOL.json",
+      "bytes": 13796,
+      "sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+      "git_blob_sha1": "391cc540287f058e74498151e09fc81f6cad115b"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_PROTOCOL_FREEZE.json",
+      "bytes": 515,
+      "sha256": "2a0110d1baf632ef6a7f442ab6778fde7ce316c5557345470b1b77da5f033394",
+      "git_blob_sha1": "1062b6b5a0ba501a29609fdbbb357488de7bec8f"
+    },
+    {
+      "path": "project/docs/REVIEW_FOLLOWUP_README.md",
+      "bytes": 14496,
+      "sha256": "ed2afbcf3c8b507642674a89caf60fdb47e84b04ea7b08e4dc3bb9ff7306b16b",
+      "git_blob_sha1": "b7aad4f9a9647662c3460ba3283df2337d5da70f"
+    },
+    {
+      "path": "project/docs/REVIEW_GAP_AUDIT_20261003.md",
+      "bytes": 12665,
+      "sha256": "273cf4fe634425dc07524e5ac527b90cedb10364ba70b71c8f18a2dfd4a9d9e1",
+      "git_blob_sha1": "041c33bf485c4645ec97456a08a8b3736a6d52b9"
+    },
+    {
+      "path": "project/docs/STAGE12_RECOVERY_README.md",
+      "bytes": 4736,
+      "sha256": "560f13498a3e07219fdabe484768ca224f900fd1b5838079674bda95e03fb185",
+      "git_blob_sha1": "d0790e0902628011aeabb216de7ce3785cba9f5d"
+    },
+    {
+      "path": "project/results/review_followup/assignment_files.json",
+      "bytes": 1453,
+      "sha256": "3cd3292e794b1e0e34c778c4f6f663551bc35f23e71a93f433aefe00f6854d08",
+      "git_blob_sha1": "fc4f6693b7a8157127a84fa7106b4477c65a21ea"
+    },
+    {
+      "path": "project/results/review_followup/assignments/count_only_draw_0.json",
+      "bytes": 8506463,
+      "sha256": "005572b09f4eddedd31852406b530091eb5223bd54aa0b3d5255c16fcdd735fb",
+      "git_blob_sha1": "26d3a18582b28ea19730d6b3875ab10908bdddcc"
+    },
+    {
+      "path": "project/results/review_followup/assignments/count_only_draw_1.json",
+      "bytes": 8506650,
+      "sha256": "5a31dfb0441d3bc731de90cd1a0a58eeded121cbb5d79d174334a4dbf25d982a",
+      "git_blob_sha1": "aa48b88c452a96052e3d73c9aed20b7f08682bf0"
+    },
+    {
+      "path": "project/results/review_followup/assignments/count_only_draw_2.json",
+      "bytes": 8506273,
+      "sha256": "10be294e791c523bbce27a4a206af183975d16fe65743f2e2656b863779c6659",
+      "git_blob_sha1": "99efb7ec549f3ebee4fe66d7cc464a89a918c535"
+    },
+    {
+      "path": "project/results/review_followup/assignments/score_stratified_draw_0.json",
+      "bytes": 8682097,
+      "sha256": "c8ab4f8860dcaa47711ccf0ff274fb0e51219a5875945edfac894b3bc368f649",
+      "git_blob_sha1": "ca83a4fe6a3a99a579d474c5c3109bd058797a47"
+    },
+    {
+      "path": "project/results/review_followup/assignments/score_stratified_draw_1.json",
+      "bytes": 8681803,
+      "sha256": "77ed16f43b31261558969f393384b0d8bfb738854e1b7af853b6a5eee1239a16",
+      "git_blob_sha1": "ac3518d233111bb86713ef8cc0fb2e65e3af6b8a"
+    },
+    {
+      "path": "project/results/review_followup/assignments/score_stratified_draw_2.json",
+      "bytes": 8682442,
+      "sha256": "837c7e37aa9f968e5974f249bee445bc627a2b8eabc967185800a1cc52251184",
+      "git_blob_sha1": "f108da7770d79126650f00805817d290b12166fb"
+    },
+    {
+      "path": "project/results/review_followup/data_audit/bank_reuse_receipt.json",
+      "bytes": 680,
+      "sha256": "cc6c7e609341fb301e028a29b269c14e78cb86e9d477e8c547a33bb568852930",
+      "git_blob_sha1": "8537106b1317a2943e90af8cc46bc2913fd8f406"
+    },
+    {
+      "path": "project/results/review_followup/data_audit/construction_audit.json",
+      "bytes": 1725,
+      "sha256": "d060171090a40c392443e321fa9c0faf2935d31e6df6d82aebaa36d016648689",
+      "git_blob_sha1": "b1c01c1a0e99692e1be7618d1a7634c225474c0b"
+    },
+    {
+      "path": "project/results/review_followup/data_audit/split_disjointness.json",
+      "bytes": 56945,
+      "sha256": "cabfa6d4a2f18169a8b0ba513490169f977de26cfac8195c51730d21a2a05021",
+      "git_blob_sha1": "4ff4b8b531ec765613db8cacf80f56f6b54d72e2"
+    },
+    {
+      "path": "project/results/review_followup/execution_plan.json",
+      "bytes": 1322315,
+      "sha256": "a1eb28852d4884eecb4bd5e77569a074d24684660bf4bfccf984c8df8869dff6",
+      "git_blob_sha1": "b3f2a1fc8e6f3ce5c85af65a1b9a58554500cf98"
+    },
+    {
+      "path": "project/results/review_followup/features/e_vil_dev900/features.npz",
+      "bytes": 10312233,
+      "sha256": "9e8496edf7598c31e4388f0845c0022fc580acb638a3531715867f7c24a4d601",
+      "git_blob_sha1": "2de0dcacd27aefd754679c82df4af984ebafe38d"
+    },
+    {
+      "path": "project/results/review_followup/features/e_vil_dev900/metadata.json",
+      "bytes": 2100,
+      "sha256": "38122db9fd225660f03f4c82afb587695af72f1ed665819b79500d145943684e",
+      "git_blob_sha1": "186868aa61d4d5e1961150843089a1f95f5b4a3e"
+    },
+    {
+      "path": "project/results/review_followup/features/e_vil_test1000/features.npz",
+      "bytes": 11458864,
+      "sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+      "git_blob_sha1": "7e9f57f6ad0f35d366aedebef449b20bf1659ac0"
+    },
+    {
+      "path": "project/results/review_followup/features/e_vil_test1000/metadata.json",
+      "bytes": 2105,
+      "sha256": "ea49c9c5fb7925ef26571b3cbe7aa4fbe30445da716f7c29355b5ab02fd5fc4f",
+      "git_blob_sha1": "e4c36f521e81cacd7407a50bd5761d5b86d4a147"
+    },
+    {
+      "path": "project/results/review_followup/ledger.json",
+      "bytes": 1259771,
+      "sha256": "8247e4e9d2b43541bb39066b64344eb04f5a3a752077ee36c998ead2eaaf8505",
+      "git_blob_sha1": "667a5e77ca7caa6682209e9d400b5579eb9594bf"
+    },
+    {
+      "path": "project/results/review_followup/tests_training_controls.txt",
+      "bytes": 99,
+      "sha256": "03bbd7c47ed1ec54ddc8b2e208760e386056f7def708f80029127bb9f7a130f2",
+      "git_blob_sha1": "1324e3780b197710fa173210e6cf9f35ea1d8aa6"
+    },
+    {
+      "path": "project/scripts/analyze_review_followup.py",
+      "bytes": 20221,
+      "sha256": "063b1667b814b981c1cd91d188841ec7e400fdb046c1306b815833a8da92ee2e",
+      "git_blob_sha1": "1fb394e2a8411ad93859d1c4a6dae5fde14def9d"
+    },
+    {
+      "path": "project/scripts/evaluate_flickr_source_pool.py",
+      "bytes": 15810,
+      "sha256": "bc2b11d6c35ece897110221b24f3d8f05a26fca8e6e9a5fd10a34e284f85c9b8",
+      "git_blob_sha1": "fbe53e444c5061e9ed2e2f146da9833fa9e0d2c0"
+    },
+    {
+      "path": "project/scripts/evaluate_review_followup.py",
+      "bytes": 21158,
+      "sha256": "9b5a846486aa348efc43e54fed585cb6fd6d3d8547583c56db6e11bca5f1a349",
+      "git_blob_sha1": "0d87b5353004627035e3ee80ded112bad0d289ee"
+    },
+    {
+      "path": "project/scripts/review_followup_prepare_flickr_pools.py",
+      "bytes": 22822,
+      "sha256": "9af45943f4b5b3782c603ac89acca6261ddbc0be25a1af541acc68c6854770a4",
+      "git_blob_sha1": "82fa50226639723e8464a138112acaed7ca0f260"
+    },
+    {
+      "path": "project/scripts/run_review_followup.py",
+      "bytes": 3466,
+      "sha256": "06358a34b11107290efa106c621be826fbbb92678abb5d4c4b553e8450ef2762",
+      "git_blob_sha1": "70dfae675da917e8fa7a2642ebbe8f4719dfc2f3"
+    },
+    {
+      "path": "project/src/gcr/review_controls.py",
+      "bytes": 27528,
+      "sha256": "41c82f3f7250172794d7833c3726e015bca9e3473971f3b3ea29604d28f317e6",
+      "git_blob_sha1": "23238eb2f48e0c281d5d4757b83a0efd009e0cc8"
+    },
+    {
+      "path": "project/src/gcr/review_training.py",
+      "bytes": 35024,
+      "sha256": "862990a85060ddeccb2d685aedc26535dd1948741d1e5cc39bfc96e891aeeaf4",
+      "git_blob_sha1": "19cf163f539227b68b8f925acb63c9b362420c61"
+    },
+    {
+      "path": "project/tests/test_review_controls.py",
+      "bytes": 15520,
+      "sha256": "4c75a20e5830f0e8c119e44bfea50f423fae7cddb211d15aa4d57d721c1eff54",
+      "git_blob_sha1": "04629ad49120d042e110c30f592530444f1c7acd"
+    },
+    {
+      "path": "project/tests/test_review_followup_evaluation.py",
+      "bytes": 8831,
+      "sha256": "049d44bfca6c09ca50f9d7e32d2801c59de8c1cdac456a1acdf394647537cbda",
+      "git_blob_sha1": "da95a17e523d36060de9d552cb6b3697af331eaf"
+    },
+    {
+      "path": "project/tests/test_review_training.py",
+      "bytes": 10045,
+      "sha256": "91d5fd6957e95568ee645bde97d3248eaeaab7e501038bf9011fd9968ee5a136",
+      "git_blob_sha1": "3ad6dc25003808499b6cbe709f7d0c587d3868d8"
+    },
+    {
+      "path": "verify_recovery.py",
+      "bytes": 7657,
+      "sha256": "ac4cf2a88a4c121bcdf267a4b54868bbc68d24985d9bab6b078416dc9efe6568"
+    }
+  ]
+}

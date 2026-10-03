@@ -1,0 +1,36 @@
+{
+  "feature_pools": {
+    "e_vil_dev900": {
+      "features_sha256": "9e8496edf7598c31e4388f0845c0022fc580acb638a3531715867f7c24a4d601",
+      "manifest_sha256": "8bee3b0a22b74dda3ff56b1b54f9af42d7fbbd65f9c08a2a31d0900fa69738a3",
+      "metadata_sha256": "38122db9fd225660f03f4c82afb587695af72f1ed665819b79500d145943684e"
+    },
+    "e_vil_test1000": {
+      "features_sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+      "manifest_sha256": "8de6f0b0e9d0d497f79897074a16bc31337013cbf0b00535446f2f8674d18248",
+      "metadata_sha256": "ea49c9c5fb7925ef26571b3cbe7aa4fbe30445da716f7c29355b5ab02fd5fc4f"
+    }
+  },
+  "new_unique_image_encodings": 1400,
+  "new_unique_text_encodings": 6992,
+  "no_adapter_applied": true,
+  "no_retrieval_scoring_performed": true,
+  "original_inputs_unchanged": {
+    "data/model/open_clip_config.json": true,
+    "data/model/open_clip_model.safetensors": true,
+    "data/visual_entailment/manifest.json": true,
+    "data/visual_entailment/provenance.json": true,
+    "data/visual_entailment/raw/esnlive_dev.csv": true,
+    "data/visual_entailment/raw/esnlive_test.csv": true,
+    "data/visual_entailment/raw/flickr30k_entities_annotations.zip": true,
+    "data/visual_entailment/raw/flickr30k_zip_selected_index.json": true,
+    "data/visual_entailment/selection.json": true,
+    "results/features/visual_entailment/features.npz": true,
+    "results/features/visual_entailment/metadata.json": true,
+    "scripts/extract_features.py": true,
+    "scripts/prepare_visual_entailment.py": true,
+    "scripts/review_followup_prepare_flickr_pools.py": true
+  },
+  "source_sha256": "9af45943f4b5b3782c603ac89acca6261ddbc0be25a1af541acc68c6854770a4",
+  "status": "passed"
+}
