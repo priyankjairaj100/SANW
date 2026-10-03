@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "execution_id": "review-followup-relation-assignment-20261003",
+  "status": "post_review_choices_fixed_before_followup_training_and_scoring",
+  "relationship_to_prior_study": "New follow-up informed by the v2 results and reviewer critique; original protocol, artifacts and statistical family remain unchanged.",
+  "base": {
+    "protocol": "docs/RERUN_PROTOCOL.json",
+    "protocol_sha256": "066670370c8d0311a5bbeff8cfb37ab5e74f4d6dfcdbc898176bbeabfe54e847",
+    "ledger": "results/study/ledger.json",
+    "ledger_identity_sha256": "3eb474e7ba81a348f58462398b1010f7c7c0c3b6b1715743cb6e336e17ddbd51",
+    "selection": "results/study/selection.json",
+    "selection_sha256": "04950c8627a54e0dbd060768d5725c882746e74c71365bf3f1fa81518b4e649e",
+    "git_snapshot": "197960c92276d4a906561ca8bda24784f4ca4771"
+  },
+  "question": "What does label-informed positive assignment contribute beyond promotion count, coarse frozen-score difficulty, and training schedule?",
+  "estimands": {
+    "matched_schedule": "Supported promotion minus source-only targets or randomized positive assignment, at each common learning rate, epoch and training seed.",
+    "selected_procedures": "Complete condition-specific learning-rate and checkpoint selection strategies. Native and source-retrieval selection differ in criterion, relevance, candidate pool, direction balance and development set size.",
+    "not_identified": "This study does not identify target redistribution as the cause of retrieval loss, independently visually adjudicated semantic truth, or the value of relation-label method families outside the specified adapter and objectives."
+  },
+  "training": {
+    "policies": [
+      "source",
+      "supported",
+      "count_only_draw_0",
+      "count_only_draw_1",
+      "count_only_draw_2",
+      "score_stratified_draw_0",
+      "score_stratified_draw_1",
+      "score_stratified_draw_2"
+    ],
+    "assignment_seeds": [
+      101,
+      211,
+      307
+    ],
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "epochs": 10,
+    "primary_epoch": 10,
+    "trajectory_epochs": [
+      1,
+      5,
+      10
+    ],
+    "candidate_count": 72,
+    "epoch_records": 792,
+    "inherit_exact_base_hyperparameters": true,
+    "optimizer_and_adapter": "Use the original ledger's complete hyperparameters, frozen encoder/features and score scale, zero-initialized independent 512-dimensional linear residual maps, AdamW and original normalization.",
+    "image_batch_size": 32,
+    "threads": 2,
+    "device": "cpu",
+    "batch_order": "Reuse original per-training-seed batch-order generator identically across every policy and assignment draw. Assignment randomization is independent.",
+    "save_epochs": "Save weights at all epochs 0 through 10. Selected records reference saved files; do not copy weights unnecessarily.",
+    "training_data": "Original 1200 training images and all their original source captions and hypotheses only.",
+    "test_use": "No held-out outcomes enter fitting, selection, randomization design or hyperparameter choice.",
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "gradient_clip_norm": 1.0,
+    "amsgrad": false,
+    "foreach": false,
+    "fused": false,
+    "scheduler": "none",
+    "feature_dim": 512
+  },
+  "controls": {
+    "source": "Original clip objective: only source captions positive; all hypotheses remain competing candidates at unit weight.",
+    "supported": "Original multipositive objective: source and supported hypotheses positive; all weights one.",
+    "count_only": "For each training image, uniformly choose exactly its original supported count from all its own annotated hypotheses. Five source captions remain positive.",
+    "score_stratified": "Within each image sort all own hypotheses by frozen cosine score, tie-break by global manifest text index. Split with numpy.array_split into two bins; lower-score bin gets the extra item if odd. Uniformly choose exactly the observed supported count within each bin.",
+    "similarity": "Cosine calculated in float64 from cached frozen image/text vectors with explicit L2 normalization. Bin membership does not use relation labels; supported-count quotas do.",
+    "rng": "numpy PCG64/default_rng for each independent assignment seed; process training images in original manifest order. Freeze each draw across all training seeds, learning rates and epochs.",
+    "assignment_seeds": [
+      101,
+      211,
+      307
+    ],
+    "assignment_draws": 3,
+    "ownership": "Assert each hypothesis text ID has exactly one owning image. Preserve positive count per row, eligible reverse-anchor count, candidate strings, and weights within every paired batch.",
+    "permutation_diagnostics": [
+      "supported/promoted overlap",
+      "changed assignments and images",
+      "bin sizes and supported quotas",
+      "exchangeable versus forced bins and rows",
+      "promoted frozen-score mean and distribution imbalance",
+      "exact positive and reverse-anchor count checks",
+      "identity-level versus exact-string-level changed positive assignments",
+      "exact similarity tie counts"
+    ],
+    "interpretation": "Label-derived quotas make these identification controls, not annotation-free deployed alternatives. Naturally unchanged assignments are retained; do not condition sampling on obtaining a change.",
+    "target_budget": "Uniform positive targets and original symmetric mean-log-probability objective for all four policy families. No alternative target-budget objective in this execution.",
+    "preserve_original_labels": "Store promotion assignments separately. Never alter evaluation labels or original manifest. Score bins and random assignments affect training only."
+  },
+  "data": {
+    "train": "Unchanged original manifest and features; only original train split is fitted.",
+    "native_validation": "Unchanged original100 validation images and all1875 validation caption/hypothesis IDs.",
+    "source_validation": {
+      "name": "e_vil_dev900",
+      "image_count": 900,
+      "source_caption_count": 4500,
+      "selection": "All1000 official e-ViL dev image IDs except the100 original calibration IDs; includes original100 validation images.",
+      "manifest": "data/review_followup/e_vil_dev900/manifest.json",
+      "features": "results/review_followup/features/e_vil_dev900/features.npz",
+      "relevance": "Exactly five source captions per image, source ownership only; no hypotheses in candidate pool."
+    },
+    "source_test": {
+      "name": "e_vil_test1000",
+      "image_count": 1000,
+      "source_caption_count": 5000,
+      "selection": "All1000 official e-ViL test image IDs; includes original400 test images.",
+      "manifest": "data/review_followup/e_vil_test1000/manifest.json",
+      "features": "results/review_followup/features/e_vil_test1000/features.npz",
+      "relevance": "Exactly five source captions per image, source ownership only; no hypotheses in candidate pool.",
+      "prior_exposure": "Retain subgroup IDs for the original400 evaluated test images and the600 additional images. Full1000 is the declared endpoint; subgroup query summaries are descriptive and use the same complete candidate pool."
+    },
+    "source_revisions": "Use the unchanged pinned e-ViL, Flickr image, Flickr30k Entities and encoder revisions from the base protocol. Reuse identical cached features by exact IDs/strings and model provenance.",
+    "disjointness": "Verify image ID and image-file SHA256 disjointness across train, calibration, dev900 and test1000. Record source-caption provenance, duplicate strings and any string overlap.",
+    "benchmark_name": "e-ViL test-pool Flickr source-caption retrieval. Never label it standard Karpathy Flickr1k; that split overlaps the original training/validation data.",
+    "other_test_sets": "Original VE400 relation test, SugarCrepe7511, SugarCrepe++4757 and COCO5000/25000 unchanged."
+  },
+  "selection": {
+    "criteria": [
+      "native",
+      "source_retrieval"
+    ],
+    "native": "Exactly original mean(validation source+supported I2T R1, image-balanced supported-vs-contradicted accuracy).",
+    "source_retrieval": "Mean of source-only e_vil_dev900 image-to-text R1 and text-to-image R1, both exact full pools.",
+    "best_epoch": "Per training seed maximize criterion over epochs0..10; earliest epoch wins ties.",
+    "learning_rate": "Per policy AND assignment draw maximize mean best score across three training seeds; lowest learning rate wins ties.",
+    "random_draws": "Select each draw separately and average the three draws equally. Never select a best assignment draw.",
+    "frozen_reference": "Eligible epoch0 uses the same initial state and normalization as the base study.",
+    "output": "state_manifest.json holds all792 state references; selection references their hashes without duplicating state files.",
+    "native_code": "original_mean_known_positive_i2t_and_relation_accuracy",
+    "source_retrieval_code": "mean_i2t_t2i_r1",
+    "epoch_zero_eligible": true,
+    "epoch_ties": "earliest",
+    "learning_rate_ties": "lower",
+    "random_draw_selection": "separate_no_winner_draw"
+  },
+  "evaluation": {
+    "primary_epoch": 10,
+    "trajectory_epochs": [
+      1,
+      5,
+      10
+    ],
+    "source_test": "Score full e_vil_test1000 on primary, trajectory and both selected-strategy states, plus frozen.",
+    "relation_and_composition": "Score unchanged VE400, SugarCrepe and SugarCrepe++ on primary, trajectory and both selected-strategy states, plus frozen.",
+    "coco": "Score COCO only on all epoch10 states and unique states selected by native or source_retrieval, plus frozen. No requirement for additional epoch1/5 COCO trajectory states.",
+    "deduplication": "Score identical checkpoint state references once; never count reused selected/trajectory states as independent replication.",
+    "numerics": "Original float32 adapter forward/final normalization, float64 similarity accumulation, stable candidate-manifest-index retrieval tie-breaking; original relation half-credit and triplet strict comparison.",
+    "artifacts": "Bind protocol, code, manifests, feature and checkpoint hashes before scoring. Retain per-query ranks and best-relevant indices/scores, full relation/triplet item scores and correctness; top-k retrieval lists may be omitted.",
+    "reporting": "Report each LR and all specified cells. Do not pick an LR, epoch, draw, direction or selection strategy using test outcomes."
+  },
+  "primary_analysis": {
+    "epoch": 10,
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "contrasts": [
+      {
+        "id": "supported-minus-source",
+        "left_conditions": [
+          "supported"
+        ],
+        "right_conditions": [
+          "source"
+        ]
+      },
+      {
+        "id": "supported-minus-count-only",
+        "left_conditions": [
+          "supported"
+        ],
+        "right_conditions": [
+          "count_only_draw_0",
+          "count_only_draw_1",
+          "count_only_draw_2"
+        ]
+      },
+      {
+        "id": "supported-minus-score-stratified",
+        "left_conditions": [
+          "supported"
+        ],
+        "right_conditions": [
+          "score_stratified_draw_0",
+          "score_stratified_draw_1",
+          "score_stratified_draw_2"
+        ]
+      }
+    ],
+    "endpoints": [
+      {
+        "dataset": "e_vil_test1000",
+        "metric": "i2t.r1"
+      },
+      {
+        "dataset": "e_vil_test1000",
+        "metric": "t2i.r1"
+      }
+    ],
+    "family_size": 18,
+    "alpha": 0.05,
+    "confidence_level": 0.9972222222222222,
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 20261004,
+    "aggregation": "Average assignment draws equally within training seed, then average the three seeds within each query. Reuse the three actual supported fits; do not pretend they are nine independent fits.",
+    "bootstrap_unit": "Paired image clusters. For text-to-image, retain all five source-caption queries in their owning image cluster.",
+    "interval_scope": "Image-bootstrap intervals condition on the trained seeds and assignment draws. They do not quantify population uncertainty over new training runs or label randomizations.",
+    "uncertainty_reporting": "Report all training-seed and assignment-draw cells, per-draw means and per-seed means, alongside conditional image intervals.",
+    "secondary": "All COCO, VE, SugarCrepe, SugarCrepe++, non-R1 source metrics, trajectories and selected-strategy contrasts are descriptive. No extra confirmatory labels or equivalence claims."
+  },
+  "verification": {
+    "implementation": "Meaningful control invariance tests and matched original source/support replay checks before publication of new results.",
+    "replay": "All18 source/supported fits must reproduce original training losses/native validation histories and best-state tensors exactly at their original best epochs, or stop and explain any discrepancy before using matched results.",
+    "before_training": "Bind original inputs, completed dev900 features, protocol, assignments, new implementation and original imported source hashes in an immutable execution ledger.",
+    "before_evaluation": "Bind complete test inputs and all planned checkpoint references in an immutable scoring receipt.",
+    "preservation": "Do not overwrite frozen base artifacts. Save small code/protocol/results checkpoints and push coherent follow-up updates to a dedicated GitHub branch."
+  },
+  "future_work": "Target-budget interventions, negative-weight sensitivity and a second model/adapter are not executed in this protocol. Their necessity will be assessed after the planned controls."
+}

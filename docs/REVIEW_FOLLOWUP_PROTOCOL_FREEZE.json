@@ -1,0 +1,9 @@
+{
+  "protocol_path": "docs/REVIEW_FOLLOWUP_PROTOCOL.json",
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "frozen_at_utc": "2026-10-03T08:31:00.817903+00:00",
+  "status": "scientific_choices_frozen_before_followup_fitting_and_scoring",
+  "candidate_count": 72,
+  "primary_family_size": 18,
+  "note": "Training execution ledger will additionally bind completed dev900 features, assignments and implementation hashes. No new model fitting or held-out scoring has begun."
+}
