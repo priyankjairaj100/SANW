@@ -1,0 +1,131 @@
+\documentclass[11pt]{article}
+\usepackage[review]{acl}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{url}
+\AtBeginEnvironment{table}{\nolinenumbers}
+\AtBeginEnvironment{table*}{\nolinenumbers}
+\AtBeginEnvironment{figure}{\nolinenumbers}
+\AtBeginEnvironment{figure*}{\nolinenumbers}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\R}{\mathbb{R}}
+\title{Which Captions Should Be Positive for Image--Text Retrieval?}
+\author{Anonymous ACL submission}
+\begin{document}
+\lefthyphenmin=2
+\righthyphenmin=3
+\input{numbers.tex}
+\input{followup_numbers.tex}
+\maketitle
+\begin{abstract}
+\input{abstract.tex}
+\end{abstract}
+
+\section{Introduction}
+A photo of a child holding a red ball supports several descriptions. ``A child with a red ball'' describes a specific scene. ``Someone is outdoors'' may also be correct, but apply to many images. An image search model must learn from such valid descriptions while still finding the intended match among thousands of candidates. This raises a practical question: which additional descriptions should training reward?
+
+Contrastive image--text models assign a score to each image and caption. Training marks associated captions as \emph{positives} and rewards their scores relative to competing candidates \citep{radford2021clip}. A competing caption need not be false. It may be another valid description of the image. Relation annotations distinguish statements supported by an image from contradicted or unresolved statements. Promoting the supported statements to positives is a natural use of those labels.
+
+That intervention changes more than correctness. It increases the number of positive targets per image and the number of captions trained to retrieve an image. It can also change which learning rate or epoch performs best on development data. To determine what the supported labels contribute, we need comparisons that separate caption identity from these changes.
+
+Prior work shows that better rejection of edited wrong captions can coexist with worse handling of valid rewordings \citep{kamath2024hardpositive}. FSC-CLIP studies retention of broader capabilities, while CLIC and concept-centric learning improve compositional and retained performance together \citep{oh2024fsc,peleg2025clic,pham2026nohard}. Related methods convert false negatives into positives, regulate negative weights, or divide candidates into positive, negative, and neutral groups \citep{byun2024mafa,jiang2023regulation,liu2023sat}. Our question concerns the assignment of \emph{additional positive captions} within an unchanged candidate pool.
+
+We study one frozen image--text encoder with small trainable corrections. Supported promotion is compared with source-positive training and two randomized promotion controls. The controls preserve positive counts; one also preserves counts within coarse initial-similarity groups. We compare every learning rate at the same epoch, then separately evaluate two development-selection strategies. Both retrieval directions use the complete, disjoint source-caption test pool. This design connects the value of the annotation to the actual search task.
+
+\section{A Controlled Positive-Assignment Study}
+\label{sec:study}
+\paragraph{The candidate captions never change.}
+Each training image has five original source captions and hypotheses from e-SNLI-VE \citep{kayser2021evil}. The hypotheses carry supported, contradicted, or neutral labels. A batch contains its images and all their source captions and hypotheses. Every policy scores exactly these candidates. A caption that is not positive remains a competitor, including supported hypotheses under the source baseline.
+
+\emph{Source} makes only the five source captions positive. \emph{Supported} additionally promotes every supported hypothesis for its annotated image. \emph{Count-only} instead selects the same number of that image's hypotheses uniformly at random. \emph{Score-stratified} ranks the image's hypotheses by frozen image--text similarity, divides them into two nearly equal groups, and randomly selects the supported count within each group. It matches coarse initial difficulty as well as count. The controls use three independent assignments each, fixed throughout fitting. These are label-informed controls because their counts come from the supported annotations.
+
+All promoted captions have one owning image. Thus the three expanded policies have the same positive count for each image and the same number of captions that serve as text-to-image training queries. They differ in \emph{which} hypotheses are positive. No contradiction penalty or neutral exclusion is applied in this study. The precise assignment rule and its invariants appear in Appendix~\ref{app:followupcontrols}.
+
+\paragraph{Matched model and training schedules.}
+The encoder is OpenCLIP ViT-B/32, pretrained on LAION-2B \citep{cherti2023reproducible}. Its image and text features stay fixed. Two zero-initialized linear corrections, one for each feature type, learn 524,288 parameters. Corrected features are normalized and scored by scaled cosine similarity. The symmetric contrastive objective gives equal target probability to each positive, averaging image-query and eligible caption-query losses \citep{khosla2020supervised}.
+
+The same \FuTrainImages{} training images, image order, optimizer, and ten-epoch schedule are used for every condition. Two deterministic policies and six randomized assignments are crossed with three learning rates ($10^{-4}$, $3\times10^{-4}$, $10^{-3}$) and three training seeds. This yields \FuFits{} fits. Our primary comparison uses epoch ten at each rate; it never chooses a rate using test performance. Early epochs and all individual runs are retained. Appendix~\ref{app:followuptraining} specifies the optimizer and exact replay checks against the prior source and supported fits.
+
+\paragraph{Search the complete source pool.}
+For an image query, the task is to find one of its five original captions: image-to-text retrieval (I$\to$T). For a caption query, the task is to find its owning image: text-to-image retrieval (T$\to$I). Recall at rank one (R@1) is the percentage of queries whose highest-scoring candidate is a relevant match.
+
+We use all \FuTestImages{} official e-ViL test images and their \FuTestCaptions{} source captions, with no training, calibration, or development image overlap. Both directions search the full pool. The hypotheses used for relation evaluation do not enter this retrieval gallery. This source-domain test adds 600 images to the 400-image relation-test subset retained from the prior study. Appendix~\ref{app:followuppools} records the split and byte-level overlap audits.
+
+\paragraph{Inference and complementary tasks.}
+The primary family contains all supported-minus-comparator contrasts at three rates in both retrieval directions: \FuPrimaryFamily{} effects. Random controls average three assignment draws within each training seed, then the three paired seed differences. We use 10,000 paired image-cluster resamples with an eighteen-comparison adjustment. Figure~\ref{fig:followupprimary} shows every effect and its conditional \FuConfidence{}\% interval; all five caption queries stay with their image cluster.
+
+Descriptive tests assess what the additional labels teach beyond source retrieval. Relation accuracy measures supported-versus-contradicted ranking on the original 400 images. SugarCrepe tests a correct caption against an edited wrong caption, called a \emph{foil} \citep{hsieh2023sugarcrepe}. SugarCrepe++ requires two valid captions to \emph{both} score above the same foil \citep{dumpala2024sugarcrepepp}. We also retain full-pool COCO retrieval. All endpoints, trajectories, and draw-level results appear in Appendix~\ref{app:furesults}.
+
+\input{followup_primary_figure.tex}
+
+\section{What Caption Identity Contributes}
+\label{sec:results}
+\paragraph{A text-to-image benefit beyond random promotion.}
+Supported labels outperform both randomized controls on T$\to$I retrieval at every learning rate. All six adjusted intervals lie above zero. The advantage holds in each assignment-draw and training-seed comparison, not just after averaging. The score-stratified control is the stronger attribution comparison: it keeps both the number of promoted captions and their coarse frozen-score distribution. Thus the supported-label assignment helps source captions retrieve their owning images beyond these two matching constraints.
+
+The I$\to$T comparison has a different evidence pattern. Against score-stratified promotion, the three effects are \FuStrataImageEffectOne{}, \FuStrataImageEffectTwo{}, and \FuStrataImageEffectThree{} points, and their intervals cross zero. Against count-only promotion, a positive effect is detected only at the largest learning rate. The observed supported-label advantage is clearest for using captions to find images. Figure~\ref{fig:followupprimary} keeps the endpoint and comparator visible in every comparison.
+
+\paragraph{The source-caption cost persists under matched schedules.}
+Supported promotion reduces I$\to$T recall relative to Source at all three learning rates; every adjusted interval lies below zero. Averaged over training seeds, this means \FuAdditionalFailuresLow{} to \FuAdditionalFailuresHigh{} extra failed image queries in the \FuTestImages{}-image pool. Each failure returns a top caption outside the image's five source captions. The difference is present within the source domain and with identical epoch and learning rate. It therefore persists after removing the schedule and cross-dataset changes of an independently selected comparison. The T$\to$I supported-minus-source intervals cross zero at all three rates.
+
+\input{followup_secondary_table.tex}
+\paragraph{Better caption discrimination accompanies the retrieval cost.}
+Table~\ref{tab:secondary} reports the matched source and supported models alongside frozen initialization. Supported promotion improves relation accuracy, edited-caption discrimination, and the two-valid-caption endpoint over Source at every rate. The SugarCrepe gains grow from \FuSugarGainOne{} to \FuSugarGainThree{} points. Both valid captions also fare better than under source-positive adaptation. The frozen row supplies the absolute reference for these matched gains. These tests reward rejecting a specified foil; full retrieval requires placing a source match above every gallery competitor.
+
+\paragraph{The retrieval pattern extends to COCO.}
+The separate full COCO pool contains 5,000 images and 25,000 captions. At the three matched learning rates, supported-minus-source I$\to$T differences are \FuCocoImageDifferenceOne{}, \FuCocoImageDifferenceTwo{}, and \FuCocoImageDifferenceThree{} points. The corresponding T$\to$I differences are \FuCocoTextDifferenceOne{}, \FuCocoTextDifferenceTwo{}, and \FuCocoTextDifferenceThree{} points. These descriptive outcomes extend the source-pool image-query cost to a second image collection. Reporting every rate keeps this comparison aligned with the primary schedule. Appendix~\ref{app:furesults} also gives all declared early-epoch results, including both valid captions separately.
+
+\section{Selection Can Reject the Learned Expansion}
+\label{sec:selection}
+The matched terminal comparison describes the intervention at a fixed schedule. A deployed model also depends on which state development data selects. We evaluate two complete selection strategies over the same saved states, including epoch zero.
+
+The \emph{native} strategy averages relation accuracy with image-to-text retrieval on the prior 100-image validation pool, where either a source or supported caption counts as relevant. The \emph{source-retrieval} strategy averages both retrieval directions on \FuDevImages{} development images and \FuDevCaptions{} original captions, excluding the calibration images. For each condition, learning rate, and training seed, a strategy selects an epoch; it then selects a shared learning rate across seeds. Random assignment draws are selected separately and receive equal reporting weight.
+
+\input{followup_selection_table.tex}
+Table~\ref{tab:selection} shows the source and supported outcomes. Native selection retains trained expansion states. Source-retrieval selection chooses epoch zero for Supported and for all six randomized assignments: all \FuExpansionZeroSelections{} expanded selections return frozen initialization. It retains nonzero epochs for Source. The retrieval-oriented procedure therefore does not produce a trained expansion model that keeps its discrimination gains. It chooses not to use those learned corrections.
+
+These are complete strategies with different relevance definitions, development pools, and direction balances. Their selected models answer a different question from the matched epoch-ten experiment. Reporting both prevents a selected procedure from standing in for the effect of positive assignment itself.
+
+\section{Why the Counts Must Be Matched}
+\label{sec:countstructure}
+The controls preserve two quantities because the training objective averages over two different kinds of queries. To make this precise, let $s_{ij}$ be the score of image $i$ and caption $j$. Let $P_i$ be the nonempty set of its positive captions. With unit candidate weights, the image-query loss is
+\begin{equation}
+\ell_i=\log\sum_j e^{s_{ij}}-\frac{1}{|P_i|}\sum_{j\in P_i}s_{ij}.
+\label{eq:followuprow}
+\end{equation}
+The sum inside the logarithm contains every batch caption. The model probability for caption $j$ is $p_{ij}=e^{s_{ij}}/\sum_k e^{s_{ik}}$. Differentiating gives $p_{ij}-1/|P_i|$ on a positive caption. The target is shared equally, rather than added independently for each positive.
+
+Suppose an image has $K$ source positives and $M$ hypotheses are promoted. Holding scores and candidates fixed, each source target changes from $1/K$ to $1/(K+M)$. With five source captions and five promoted hypotheses, it falls from $0.2$ to $0.1$. A caption can remain positive while receiving less target probability. This change is identical for Supported, Count-only, and Score-stratified because they promote the same number for that image.
+
+The reverse objective averages over captions with a positive image. Each existing source caption keeps its target on its owning image, but receives a smaller share of the enlarged caption average. Equal promotion counts also match this average's size across the expanded policies. At fixed scores, their full symmetric score gradients on every original source-caption column are therefore identical. Appendix~\ref{app:followupinvariants} gives the exact identity and proof.
+
+The policies differ on hypothesis columns, whose gradients also update the shared image and text corrections. The controls isolate that assignment difference while matching the source-column gradients at common scores. This is the precise role of the count constraints. The observed trained retrieval effects are the empirical part of the comparison.
+
+\paragraph{Implication for retrieval studies.}
+Supported descriptions and retrieval relevance serve different purposes. One states that an image supports a caption; the other asks whether a candidate is an annotated match in a large gallery. Positive-assignment comparisons should name their reference policy and report the two retrieval directions separately. A selected model adds another decision, which the matched-schedule result cannot stand in for.
+
+\clearpage
+\section*{Limitations}
+This study uses one frozen OpenCLIP checkpoint, linear residual adaptation, and 1,200 training images. It does not establish behavior under full-encoder training, other objectives, larger data scales, or other backbones. The supported annotations partly inherit text-inference judgments and are not independent visual adjudications of every statement. Source-caption ownership supplies incomplete retrieval relevance. Coarse score strata do not remove every semantic or difficulty difference between assignments.
+
+Primary intervals condition on the three fitted seeds, three assignment draws, and fixed gallery. They resample query-image clusters, not new fitted models or galleries. They do not establish equivalence when spanning zero. The secondary tasks, selected-strategy comparisons, trajectories, and original 400-image and additional 600-image subgroups are descriptive. COCO-derived benchmarks overlap. The two development selectors change several choices jointly, so their contrast does not isolate the score formula alone. Fixed-score algebra describes the objective and matched controls; it is not a causal explanation of learned retrieval losses. The separate allocation experiment described in Appendix~\ref{app:followupnotrun} was not run.
+
+\section*{Ethical Considerations and Assistance}
+We use existing public datasets under their source terms and collect no new human judgments. Captions and pretrained features may reflect source biases. Generative AI assisted planning, implementation, analysis, literature discovery, and drafting. The authors are responsible for checking the released computations and manuscript.
+
+\bibliography{references}
+\appendix
+\raggedbottom
+\input{followup_methods_appendix.tex}
+\input{followup_results_appendix.tex}
+\input{prior_study_front.tex}
+\input{appendix.tex}
+\input{appendix_math.tex}
+\end{document}

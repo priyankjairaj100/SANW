@@ -1,0 +1,89 @@
+{
+  "archive": "checkpoint-15-review-manuscript-v3.zip",
+  "bytes": 2565270,
+  "sha256": "d5eb0d9dee44df3dd71ef59d52cda25e159ff94d3725406f65a7aeb6ad1639da",
+  "payload_files": 68,
+  "total_zip_entries": 69,
+  "project_files": 66,
+  "project_bytes": 2862848,
+  "git_only_legacy_supplement": [
+    {
+      "path": "data/coco_images/000000060623.jpg",
+      "bytes": 165131,
+      "sha256": "2fcf19f0230097a736040aaa73807e9b2d44fc77c33d540737cd149b572bcfaa",
+      "git_blob_sha1": "df5f5860f9e9f90074f4b2be6b3f34d8190a0803"
+    },
+    {
+      "path": "results/evaluation/clip_seed_17/coco_karpathy.npz",
+      "bytes": 3249727,
+      "sha256": "03dbe73a7669d87ba27194c277db95e581b24c045fc0c55c97fcdde8edb49d3d",
+      "git_blob_sha1": "0b530251218a547df3a5bb827d2414a6ffa967d2"
+    },
+    {
+      "path": "results/evaluation/clip_seed_29/coco_karpathy.npz",
+      "bytes": 3249440,
+      "sha256": "c791dd1b1b540de1faa23a88735eaff1c147376ffd65d2a73e7ed07d3729a14e",
+      "git_blob_sha1": "109eced2084211dbbca71ac4f29614f8d0b0cb5a"
+    },
+    {
+      "path": "results/evaluation/clip_seed_43/coco_karpathy.npz",
+      "bytes": 3244766,
+      "sha256": "d100b27a0765ef1072f630c4e52f56aaaa367d9af9031bc3fd24ac54d572f3fb",
+      "git_blob_sha1": "16333adaeb0bdb1556e83971e7719e137f8216b2"
+    },
+    {
+      "path": "results/evaluation/multipositive_seed_17/coco_karpathy.npz",
+      "bytes": 3238377,
+      "sha256": "6d5318f989476bf73aa5d9d707fbcc3bd3799795e5bdccedfdf5be42a26f6f57",
+      "git_blob_sha1": "42adaa5fe95ccbac86ded1fb5ad0e07a04fdb7b3"
+    },
+    {
+      "path": "results/evaluation/multipositive_seed_29/coco_karpathy.npz",
+      "bytes": 3242587,
+      "sha256": "8ea81f3d5230db7b5d7db2f612e537b9936d839f329c08ed9f4b63049206d9c8",
+      "git_blob_sha1": "ec40f97c602e339e8e796c3178b3b96bd53fe0c4"
+    },
+    {
+      "path": "results/evaluation/multipositive_seed_43/coco_karpathy.npz",
+      "bytes": 3235541,
+      "sha256": "b0258c545ac1874d0b4024c01f6ab11617fc4993246b0a064d35eeb0fa441455",
+      "git_blob_sha1": "521e29409ca47d3666a1af57af0de1c33384c008"
+    }
+  ],
+  "git_only_legacy_supplement_bytes": 19625569,
+  "paper_pdf": {
+    "path": "output/pdf/acl27_review_followup_v3.pdf",
+    "bytes": 582796,
+    "sha256": "330b0be3c46041e295dcbf48577d8a26d0dd508f49ad69d128aca8f5ad806137"
+  },
+  "flat_overleaf_zip": {
+    "path": "output/acl27-overleaf-review-followup-v3.zip",
+    "bytes": 980671,
+    "sha256": "d13d02a3eec30e88895b0085a3388e1572059cf6b35700f7fd342332b3d4b116",
+    "crc_verified": true
+  },
+  "zip_crc_verified": true,
+  "all_payload_sha256_verified": true,
+  "source_copy_verified": true,
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "rebuild": {
+    "script": "recovery/stage15/rebuild_checkpoint.py",
+    "manifest": "recovery/stage15/RECOVERY_MANIFEST.json",
+    "scope": "recovery/stage15/PACKAGE_SCOPE.txt",
+    "verifier_source": "scripts/verify_recovery.py",
+    "compression": "ZIP_DEFLATED",
+    "compression_level": 9,
+    "entry_timestamp": [
+      2026,
+      10,
+      3,
+      0,
+      0,
+      0
+    ],
+    "entry_external_attr": 27525120,
+    "create_system": 3,
+    "original_zlib_version": "1.3.2",
+    "note": "Payload verification is independent of container reproducibility; a different zlib version may change compressed bytes."
+  }
+}

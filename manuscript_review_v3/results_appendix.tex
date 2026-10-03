@@ -1,0 +1,207 @@
+% Generated from audited fresh results. Do not edit numeric content.
+Tables~\ref{tab:all-discrimination}--\ref{tab:retrieval-full} give all selected-policy means, seed outcomes, primary intervals, category scores, and retrieval transitions. Five selected states retain epoch zero: all three ranking runs and fixed-similarity seeds 29 and 43. Those states have predictions identical to the frozen reference.
+
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrr}
+\toprule
+Policy & e-SNLI-VE & SugarCrepe & SC++ both\\
+\midrule
+Frozen & 79.47 & 81.21 & 68.95\\
+Source & $81.18_{\pm 0.14}$ & $83.26_{\pm 0.30}$ & $67.40_{\pm 0.84}$\\
+Expanded & $87.00_{\pm 0.40}$ & $83.39_{\pm 0.15}$ & $67.23_{\pm 0.34}$\\
+Contradiction & $87.28_{\pm 0.33}$ & $83.33_{\pm 0.16}$ & $67.30_{\pm 0.28}$\\
+Neutral & $86.66_{\pm 0.44}$ & $83.39_{\pm 0.27}$ & $67.66_{\pm 0.52}$\\
+Combined & $86.74_{\pm 0.17}$ & $83.24_{\pm 0.31}$ & $67.61_{\pm 0.45}$\\
+Random & $86.26_{\pm 0.28}$ & $81.62_{\pm 0.70}$ & $65.93_{\pm 0.57}$\\
+Smoothing & $79.23_{\pm 4.85}$ & $82.28_{\pm 2.18}$ & $65.97_{\pm 4.59}$\\
+Ranking & $79.47_{\pm 0.00}$ & $81.21_{\pm 0.00}$ & $68.95_{\pm 0.00}$\\
+Fixed & $79.56_{\pm 0.15}$ & $81.80_{\pm 1.01}$ & $68.00_{\pm 1.65}$\\
+Shuffled & $83.34_{\pm 0.57}$ & $83.49_{\pm 0.36}$ & $66.90_{\pm 0.26}$\\
+Median & $82.66_{\pm 0.19}$ & $83.73_{\pm 0.17}$ & $68.01_{\pm 0.07}$\\
+Constant & $82.15_{\pm 0.24}$ & $83.67_{\pm 0.20}$ & $68.37_{\pm 0.48}$\\
+\bottomrule
+\end{tabular}
+\caption{All selected policies on the three discrimination endpoints. Entries are percentages with sample seed standard deviations. Source, Expanded, Contradiction, Neutral, and Combined correspond to the first five trainable policies in Table~\ref{tab:main}. Other names follow Table~\ref{tab:policies}.}
+\label{tab:all-discrimination}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrr}
+\toprule
+Policy & SC++ first & SC++ alternative & COCO I$\to$T & COCO T$\to$I\\
+\midrule
+Frozen & 79.46 & 75.01 & 56.32 & 39.35\\
+Source & $80.78_{\pm 0.29}$ & $72.48_{\pm 0.96}$ & $55.85_{\pm 0.53}$ & $39.38_{\pm 0.32}$\\
+Expanded & $79.68_{\pm 0.11}$ & $72.89_{\pm 0.49}$ & $47.29_{\pm 1.78}$ & $34.84_{\pm 0.89}$\\
+Contradiction & $79.72_{\pm 0.16}$ & $72.92_{\pm 0.49}$ & $47.25_{\pm 1.94}$ & $34.81_{\pm 0.92}$\\
+Neutral & $79.72_{\pm 0.33}$ & $73.64_{\pm 0.68}$ & $48.01_{\pm 0.15}$ & $35.39_{\pm 0.23}$\\
+Combined & $79.56_{\pm 0.36}$ & $73.64_{\pm 0.70}$ & $47.26_{\pm 1.17}$ & $35.27_{\pm 0.44}$\\
+Random & $77.93_{\pm 0.17}$ & $72.04_{\pm 0.46}$ & $43.43_{\pm 1.23}$ & $29.95_{\pm 0.65}$\\
+Smoothing & $80.88_{\pm 0.18}$ & $70.56_{\pm 5.56}$ & $53.85_{\pm 2.54}$ & $37.08_{\pm 3.15}$\\
+Ranking & $79.46_{\pm 0.00}$ & $75.01_{\pm 0.00}$ & $56.32_{\pm 0.00}$ & $39.35_{\pm 0.00}$\\
+Fixed & $79.64_{\pm 0.32}$ & $73.74_{\pm 2.18}$ & $54.33_{\pm 3.45}$ & $36.86_{\pm 4.31}$\\
+Shuffled & $80.11_{\pm 0.31}$ & $72.31_{\pm 0.15}$ & $52.27_{\pm 0.29}$ & $38.19_{\pm 0.12}$\\
+Median & $80.50_{\pm 0.18}$ & $73.37_{\pm 0.10}$ & $53.97_{\pm 0.40}$ & $39.21_{\pm 0.27}$\\
+Constant & $80.84_{\pm 0.16}$ & $73.60_{\pm 0.58}$ & $55.21_{\pm 0.14}$ & $39.39_{\pm 0.09}$\\
+\bottomrule
+\end{tabular}
+\caption{Valid-caption and retrieval retention. Entries are percentages with sample seed standard deviations.}
+\label{tab:all-retention}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Policy & Seed & Rate & Epoch & e-SNLI & Sugar & SC++ & I$\to$T & T$\to$I\\
+\midrule
+Source & 17 & 0.0001 & 1 & 81.35 & 83.44 & 67.65 & 56.28 & 39.65\\
+Source & 29 & 0.0001 & 1 & 81.09 & 83.42 & 68.09 & 56.02 & 39.46\\
+Source & 43 & 0.0001 & 3 & 81.12 & 82.91 & 66.47 & 55.26 & 39.02\\
+Expanded & 17 & 0.0003 & 5 & 86.75 & 83.38 & 67.58 & 48.36 & 35.40\\
+Expanded & 29 & 0.0003 & 10 & 86.79 & 83.54 & 66.91 & 45.24 & 33.82\\
+Expanded & 43 & 0.0003 & 5 & 87.46 & 83.25 & 67.19 & 48.28 & 35.30\\
+Contradiction & 17 & 0.0003 & 5 & 87.04 & 83.33 & 67.58 & 48.46 & 35.48\\
+Contradiction & 29 & 0.0003 & 10 & 87.13 & 83.49 & 67.02 & 45.02 & 33.76\\
+Contradiction & 43 & 0.0003 & 5 & 87.66 & 83.17 & 67.31 & 48.28 & 35.18\\
+Neutral & 17 & 0.0003 & 5 & 86.42 & 83.60 & 68.26 & 48.10 & 35.54\\
+Neutral & 29 & 0.0003 & 5 & 86.40 & 83.49 & 67.35 & 47.84 & 35.50\\
+Neutral & 43 & 0.0003 & 5 & 87.17 & 83.09 & 67.37 & 48.10 & 35.12\\
+Combined & 17 & 0.0003 & 5 & 86.64 & 83.46 & 68.09 & 48.04 & 35.53\\
+Combined & 29 & 0.0003 & 5 & 86.65 & 83.37 & 67.19 & 47.82 & 35.51\\
+Combined & 43 & 0.0003 & 7 & 86.94 & 82.88 & 67.56 & 45.92 & 34.77\\
+Random & 17 & 0.001 & 3 & 86.04 & 80.96 & 65.48 & 44.84 & 29.33\\
+Random & 29 & 0.001 & 5 & 86.17 & 81.55 & 66.58 & 42.80 & 30.62\\
+Random & 43 & 0.001 & 3 & 86.58 & 82.36 & 65.73 & 42.64 & 29.90\\
+\bottomrule
+\end{tabular}
+\caption{Individual selected checkpoints. SC++ requires both positives to beat the foil; retrieval columns are full-pool R@1. All metric entries are percentages.}
+\label{tab:seeds-1}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Policy & Seed & Rate & Epoch & e-SNLI & Sugar & SC++ & I$\to$T & T$\to$I\\
+\midrule
+Smoothing & 17 & 0.0001 & 1 & 82.04 & 83.61 & 68.59 & 55.26 & 38.99\\
+Smoothing & 29 & 0.0001 & 10 & 73.63 & 79.76 & 60.67 & 50.92 & 33.45\\
+Smoothing & 43 & 0.0001 & 1 & 82.03 & 83.48 & 68.64 & 55.36 & 38.81\\
+Ranking & 17 & 0.0001 & 0 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+Ranking & 29 & 0.0001 & 0 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+Ranking & 43 & 0.0001 & 0 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+Fixed & 17 & 0.0003 & 6 & 79.74 & 82.97 & 66.09 & 50.34 & 31.88\\
+Fixed & 29 & 0.0003 & 0 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+Fixed & 43 & 0.0003 & 0 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+Shuffled & 17 & 0.0003 & 1 & 82.85 & 83.10 & 66.64 & 52.60 & 38.10\\
+Shuffled & 29 & 0.0003 & 1 & 83.97 & 83.81 & 66.89 & 52.14 & 38.14\\
+Shuffled & 43 & 0.0003 & 1 & 83.20 & 83.54 & 67.16 & 52.06 & 38.33\\
+Median & 17 & 0.0001 & 3 & 82.76 & 83.54 & 67.96 & 53.64 & 38.90\\
+Median & 29 & 0.0001 & 2 & 82.44 & 83.74 & 67.96 & 54.42 & 39.42\\
+Median & 43 & 0.0001 & 2 & 82.78 & 83.89 & 68.09 & 53.86 & 39.30\\
+Constant & 17 & 0.0001 & 1 & 82.00 & 83.88 & 68.59 & 55.36 & 39.48\\
+Constant & 29 & 0.0001 & 1 & 82.03 & 83.65 & 68.70 & 55.10 & 39.39\\
+Constant & 43 & 0.0001 & 2 & 82.43 & 83.48 & 67.82 & 55.16 & 39.31\\
+\bottomrule
+\end{tabular}
+\caption{Individual selected checkpoints. SC++ requires both positives to beat the foil; retrieval columns are full-pool R@1. All metric entries are percentages.}
+\label{tab:seeds-7}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Comparator & Endpoint & $\Delta$ & 99.17\% interval & Seed 17 & Seed 29 & Seed 43\\
+\midrule
+Expanded & e-SNLI-VE & -0.255 & [-0.605, +0.065] & -0.109 & -0.137 & -0.520\\
+Expanded & SugarCrepe & -0.155 & [-0.509, +0.209] & +0.080 & -0.173 & -0.373\\
+Neutral & e-SNLI-VE & +0.081 & [-0.100, +0.273] & +0.221 & +0.253 & -0.230\\
+Neutral & SugarCrepe & -0.155 & [-0.371, +0.056] & -0.133 & -0.120 & -0.213\\
+Contradiction & e-SNLI-VE & -0.535 & [-0.890, -0.193] & -0.398 & -0.484 & -0.723\\
+Contradiction & SugarCrepe & -0.093 & [-0.442, +0.261] & +0.133 & -0.120 & -0.293\\
+\bottomrule
+\end{tabular}
+\caption{Six primary contrasts: Combined minus the comparator, in percentage points. Intervals use paired image-cluster resampling and the fixed six-comparison Bonferroni family.}
+\label{tab:primary}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Policy & Add A & Add O & Repl. A & Repl. O & Repl. R & Swap A & Swap O\\
+\midrule
+Frozen & 77.89 & 87.15 & 82.49 & 93.77 & 68.92 & 67.42 & 60.00\\
+Source & 83.24 & 89.72 & 83.76 & 94.09 & 72.00 & 67.47 & 61.77\\
+Expanded & 87.86 & 90.74 & 82.91 & 93.02 & 72.00 & 65.12 & 60.68\\
+Contradiction & 88.05 & 90.59 & 83.04 & 92.88 & 72.02 & 64.96 & 60.27\\
+Neutral & 87.91 & 90.98 & 82.91 & 93.18 & 71.46 & 65.17 & 60.41\\
+Combined & 87.91 & 90.74 & 83.04 & 93.20 & 71.08 & 65.27 & 59.05\\
+Random & 86.85 & 89.19 & 81.09 & 92.39 & 68.66 & 63.06 & 57.14\\
+Smoothing & 80.54 & 87.20 & 83.46 & 93.48 & 72.43 & 67.62 & 62.99\\
+Ranking & 77.89 & 87.15 & 82.49 & 93.77 & 68.92 & 67.42 & 60.00\\
+Fixed & 80.11 & 87.86 & 82.66 & 93.79 & 69.77 & 66.97 & 61.36\\
+Shuffled & 86.37 & 90.88 & 83.08 & 93.68 & 70.63 & 68.07 & 61.36\\
+Median & 85.12 & 91.21 & 83.71 & 94.05 & 71.03 & 68.22 & 62.31\\
+Constant & 84.20 & 90.80 & 83.46 & 94.23 & 72.00 & 67.57 & 62.31\\
+\bottomrule
+\end{tabular}
+\caption{SugarCrepe category means (percent). A, O, and R denote attribute, object, and relation. Category denominators are listed in Appendix~\ref{app:provenance}.}
+\label{tab:categories}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Seed & Queries & Pool & Lost & New & Net loss\\
+\midrule
+17 & I$\to$T & 5,000 & 649 & 253 & 396\\
+17 & T$\to$I & 25,000 & 2,195 & 1,132 & 1,063\\
+29 & I$\to$T & 5,000 & 832 & 293 & 539\\
+29 & T$\to$I & 25,000 & 2,651 & 1,241 & 1,410\\
+43 & I$\to$T & 5,000 & 597 & 248 & 349\\
+43 & T$\to$I & 25,000 & 1,976 & 1,045 & 931\\
+\bottomrule
+\end{tabular}
+\caption{Retrieval success transitions from source positives to positive expansion. Lost and new count changed rank-one successes on the identical query pool.}
+\label{tab:transitions}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Policy & I$\to$T R1 & R5 & R10 & T$\to$I R1 & R5 & R10\\
+\midrule
+Frozen & 56.32 & 79.82 & 87.12 & 39.35 & 65.40 & 75.62\\
+Source & 55.85 & 79.59 & 86.93 & 39.38 & 65.67 & 75.91\\
+Expanded & 47.29 & 71.56 & 80.89 & 34.84 & 60.77 & 71.50\\
+Contradiction & 47.25 & 71.61 & 80.87 & 34.81 & 60.78 & 71.46\\
+Neutral & 48.01 & 72.58 & 81.79 & 35.39 & 61.56 & 72.19\\
+Combined & 47.26 & 71.93 & 81.33 & 35.27 & 61.36 & 72.05\\
+Random & 43.43 & 67.84 & 77.81 & 29.95 & 55.28 & 66.61\\
+Smoothing & 53.85 & 77.94 & 85.71 & 37.08 & 63.47 & 73.72\\
+Ranking & 56.32 & 79.82 & 87.12 & 39.35 & 65.40 & 75.62\\
+Fixed & 54.33 & 77.83 & 85.75 & 36.86 & 62.66 & 73.19\\
+Shuffled & 52.27 & 76.63 & 84.83 & 38.19 & 64.41 & 74.58\\
+Median & 53.97 & 77.93 & 85.83 & 39.21 & 65.42 & 75.66\\
+Constant & 55.21 & 78.85 & 86.55 & 39.39 & 65.62 & 75.85\\
+\bottomrule
+\end{tabular}
+\caption{Full-pool COCO recall at ranks one, five, and ten, averaged across selected seeds (percent).}
+\label{tab:retrieval-full}
+\end{table*}

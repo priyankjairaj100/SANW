@@ -1,0 +1,462 @@
+{
+  "schema_version": 1,
+  "checkpoint": "stage15_review_manuscript_v3",
+  "protocol_sha256": "3edeae2f741842f6f23f19722b5aff892991457cc13e20e1b36179ed4db0bb34",
+  "scope": "Stage 15 incremental paper checkpoint. Includes the frozen new v3 PDF, actual flat Overleaf source ZIP, all approved manuscript sources/figures/tables/macros/appendices, supported generation/build/audit scripts and build provenance, plus the final project recovery index. Excludes TeX runtimes, rendered page previews, build scratch, one-time editorial patch helpers, earlier dataset/model/checkpoint/prediction assets already covered by prior stages. Seven exact legacy builder inputs are additionally persisted as flat Git files outside this ZIP; their hashes are listed in the manifest. Original manuscript and scientific outputs remain unchanged. See project/RECOVERY_INDEX.md.",
+  "source_file_count": 66,
+  "source_bytes": 2862848,
+  "paper_pdf": "output/pdf/acl27_review_followup_v3.pdf",
+  "overleaf_zip": "output/acl27-overleaf-review-followup-v3.zip",
+  "git_only_legacy_supplement": [
+    {
+      "path": "data/coco_images/000000060623.jpg",
+      "bytes": 165131,
+      "sha256": "2fcf19f0230097a736040aaa73807e9b2d44fc77c33d540737cd149b572bcfaa",
+      "git_blob_sha1": "df5f5860f9e9f90074f4b2be6b3f34d8190a0803"
+    },
+    {
+      "path": "results/evaluation/clip_seed_17/coco_karpathy.npz",
+      "bytes": 3249727,
+      "sha256": "03dbe73a7669d87ba27194c277db95e581b24c045fc0c55c97fcdde8edb49d3d",
+      "git_blob_sha1": "0b530251218a547df3a5bb827d2414a6ffa967d2"
+    },
+    {
+      "path": "results/evaluation/clip_seed_29/coco_karpathy.npz",
+      "bytes": 3249440,
+      "sha256": "c791dd1b1b540de1faa23a88735eaff1c147376ffd65d2a73e7ed07d3729a14e",
+      "git_blob_sha1": "109eced2084211dbbca71ac4f29614f8d0b0cb5a"
+    },
+    {
+      "path": "results/evaluation/clip_seed_43/coco_karpathy.npz",
+      "bytes": 3244766,
+      "sha256": "d100b27a0765ef1072f630c4e52f56aaaa367d9af9031bc3fd24ac54d572f3fb",
+      "git_blob_sha1": "16333adaeb0bdb1556e83971e7719e137f8216b2"
+    },
+    {
+      "path": "results/evaluation/multipositive_seed_17/coco_karpathy.npz",
+      "bytes": 3238377,
+      "sha256": "6d5318f989476bf73aa5d9d707fbcc3bd3799795e5bdccedfdf5be42a26f6f57",
+      "git_blob_sha1": "42adaa5fe95ccbac86ded1fb5ad0e07a04fdb7b3"
+    },
+    {
+      "path": "results/evaluation/multipositive_seed_29/coco_karpathy.npz",
+      "bytes": 3242587,
+      "sha256": "8ea81f3d5230db7b5d7db2f612e537b9936d839f329c08ed9f4b63049206d9c8",
+      "git_blob_sha1": "ec40f97c602e339e8e796c3178b3b96bd53fe0c4"
+    },
+    {
+      "path": "results/evaluation/multipositive_seed_43/coco_karpathy.npz",
+      "bytes": 3235541,
+      "sha256": "b0258c545ac1874d0b4024c01f6ab11617fc4993246b0a064d35eeb0fa441455",
+      "git_blob_sha1": "521e29409ca47d3666a1af57af0de1c33384c008"
+    }
+  ],
+  "files": [
+    {
+      "path": "PACKAGE_SCOPE.txt",
+      "bytes": 682,
+      "sha256": "e381d7094391321c553604fc2c88b9ad436ed5ebbc915b854bbbbe24f989a779"
+    },
+    {
+      "path": "project/RECOVERY_INDEX.md",
+      "bytes": 10871,
+      "sha256": "5e38aca428379f3bbc664997c8d7c0de795fd491c9b6a5f9ae5b997fddef7ff6",
+      "git_blob_sha1": "c7d8833d365197ed8be199abbba8b052067b9528"
+    },
+    {
+      "path": "project/docs/PAPER_V3_GIT_RECOVERY_AUDIT.json",
+      "bytes": 53123,
+      "sha256": "88d0d36098a6626167b44b5ca943fb99c67e35573fff9a4c405ecbb9cb4fea6a",
+      "git_blob_sha1": "908eb3efa3f65bd5276b9706bdc73a638711b3b1"
+    },
+    {
+      "path": "project/manuscript_review_v3/OVERLEAF_README.txt",
+      "bytes": 1904,
+      "sha256": "a7dd006e60415cce6f81d27d2dc4b8a257cdbc9b343c10dcccb5bc255bfad386",
+      "git_blob_sha1": "d0d96bcc3cad3248b593ed92618f88741c11b2a4"
+    },
+    {
+      "path": "project/manuscript_review_v3/abstract.tex",
+      "bytes": 1059,
+      "sha256": "2ee4ffe701f10daa70298eeac05dc001de8f240e943c4651af6b02026988fdd4",
+      "git_blob_sha1": "33b5c3f3a259fe01c1201287e7e8ae20be10b0f7"
+    },
+    {
+      "path": "project/manuscript_review_v3/acl.sty",
+      "bytes": 11615,
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "git_blob_sha1": "d9b74d0e6d1ea7a41929ff30111a112e1d23f959"
+    },
+    {
+      "path": "project/manuscript_review_v3/acl_natbib.bst",
+      "bytes": 45442,
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+      "git_blob_sha1": "086cb0bc745cf1120aef9c99aa295ccdba3e736c"
+    },
+    {
+      "path": "project/manuscript_review_v3/acl_style_provenance.json",
+      "bytes": 1144,
+      "sha256": "e93e4ade1599a5cd59d7dc9efd59d6c15c34e87efe9170b254fc0dc29b6930fb",
+      "git_blob_sha1": "d79fd0148b993c2468ee22ae163cfff1eda18c55"
+    },
+    {
+      "path": "project/manuscript_review_v3/appendix.tex",
+      "bytes": 10034,
+      "sha256": "b662a4c7f9d161195c7f821819c23abda1a50b789093ce08a6f144e95e4372cd",
+      "git_blob_sha1": "9c3a2067667c1e0aa938e8a51d1bd8198bd641ad"
+    },
+    {
+      "path": "project/manuscript_review_v3/appendix_math.tex",
+      "bytes": 9624,
+      "sha256": "ee2ec53dac363a01ec96a3e8451991420f685c3382ea6e4f427d14da92950c40",
+      "git_blob_sha1": "8a55895c6609e447f81980c34a7ff5e6c7b35cf8"
+    },
+    {
+      "path": "project/manuscript_review_v3/caption_retention.pdf",
+      "bytes": 16984,
+      "sha256": "88ac73b8c6f033ea5ed0de7a7e51cd856067240d9a148560d43de695c229b3fe",
+      "git_blob_sha1": "f15864ee748d642cea5f5b21a9f5c48b80412845"
+    },
+    {
+      "path": "project/manuscript_review_v3/caption_retention.png",
+      "bytes": 40649,
+      "sha256": "9d9129b61e452ac1cacfca6802e7ceaeed225da370c7d1ebfd590aa0fb1859b7",
+      "git_blob_sha1": "a02953a86ca1b4727b68cc5490398b97254e8981"
+    },
+    {
+      "path": "project/manuscript_review_v3/citation_verification.json",
+      "bytes": 2247,
+      "sha256": "5c4f53555077155f7f499a8d86aa04a638a7728ba32ab4f0bc6bf31527fed6f0",
+      "git_blob_sha1": "e10e3a097427fa1f2c492b79e128be9825cd924a"
+    },
+    {
+      "path": "project/manuscript_review_v3/data_provenance.tex",
+      "bytes": 5279,
+      "sha256": "ee3289a9c653b622937ebbcab88f8ad68322c5ac5d863450b9a72ec305027f30",
+      "git_blob_sha1": "ace7b0e89dc1881d98451a7d1c7f54b02cedaea9"
+    },
+    {
+      "path": "project/manuscript_review_v3/diagnostic.tex",
+      "bytes": 3610,
+      "sha256": "ff4aceafae7847d03f934354efe753624d18da67ec304ad42852d4a8b70e2527",
+      "git_blob_sha1": "275b99010aac7d68785b2345f6da4858cb96879e"
+    },
+    {
+      "path": "project/manuscript_review_v3/diagnostic_results.tex",
+      "bytes": 2007,
+      "sha256": "eb086cf01a3c4b888c97a917df9afb2dc8135144910c00eb33e0503cda58aa1d",
+      "git_blob_sha1": "dbec308843e2a8c299bb10cc68c2079a1e5d1468"
+    },
+    {
+      "path": "project/manuscript_review_v3/edit_groups_table.tex",
+      "bytes": 573,
+      "sha256": "11a81b43b776979e3552edbe09fd9a53de12fbf3b2c5fe68af45fddc2f158b8a",
+      "git_blob_sha1": "0fab394c1d85b18f911cf7a7d77079d58c60ead3"
+    },
+    {
+      "path": "project/manuscript_review_v3/figure_data.json",
+      "bytes": 10906,
+      "sha256": "b5f52eb53884a2798df6d9b93d255e741885b71c74b0b0e2a2878f43ac9f4a18",
+      "git_blob_sha1": "82bca7cf74a13a98f3678ef918f58c4a3a819eee"
+    },
+    {
+      "path": "project/manuscript_review_v3/final_layout_receipt_v3.json",
+      "bytes": 4022,
+      "sha256": "7e7df81f6069b464e2fdbe2e112f5326484f49dbc89c112961f34390fa067786",
+      "git_blob_sha1": "a2776993e301c817c0acd98f5a92a2a6a473bf10"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_methods_appendix.tex",
+      "bytes": 13166,
+      "sha256": "6f28dd2c59d957461a5291ad15449be32933035e218b0a2b1438e095dcb203a4",
+      "git_blob_sha1": "bcabad76d07416a4e7806ba8122ef510662b34fe"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_numbers.tex",
+      "bytes": 1926,
+      "sha256": "5c7ac40fbd3e3dd753a6a5403f8a7739a45195ea7374e804799b9d47ceb6f2ab",
+      "git_blob_sha1": "251009e21618108b49f559dfcde08b50f2387ded"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_primary.pdf",
+      "bytes": 15721,
+      "sha256": "433fc68f61aa8c9fdb0ee2498d987b1fa3f15fdfb0bded3197b9ad0b3286fa9f",
+      "git_blob_sha1": "3f1fd2a1623e6dfbd10ff3b0920a51e0b52490e7"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_primary.png",
+      "bytes": 81074,
+      "sha256": "3d95aa2f8e216f439b7e28eea2ae81a791ed88bb2cfd0a8b0ec1bc5b26e482d8",
+      "git_blob_sha1": "095b6e5203f93d696bfd32fe91bec2bf98b20e51"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_primary_figure.tex",
+      "bytes": 543,
+      "sha256": "921afd52e159211c4968206f2a7993f0eaf56420070cac3890abaea0af307a08",
+      "git_blob_sha1": "53f3b2cee1b6b814f21bd624a2f820fe1bfe84f1"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_results_appendix.tex",
+      "bytes": 19654,
+      "sha256": "3c9b2e7cc14444cc7410622c166df2153f9cd2983002e936e8fd419aa317be8c",
+      "git_blob_sha1": "43dcf9d39d7a81a050faef9ea5f1554211a70b30"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_secondary_table.tex",
+      "bytes": 810,
+      "sha256": "c3d2228cf7dd1353dd1a71751a2a689cc00fe9e55a72ed2c85e6060def95375e",
+      "git_blob_sha1": "8c17569f9f6f95e16b961d0c5dea0e184c5dec95"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_selection_table.tex",
+      "bytes": 696,
+      "sha256": "66970fffae20e22a4add8aac65766b4dd7896920fb3d3fc15f55b2c47b2fca75",
+      "git_blob_sha1": "acab81ba6d40cbf9c55aedbbc92fd240317b29b0"
+    },
+    {
+      "path": "project/manuscript_review_v3/followup_trajectories.pdf",
+      "bytes": 23643,
+      "sha256": "ed2f11df93172d39bccf45981f5dac4e91dfcaa89223fd86df01fe510a082fed",
+      "git_blob_sha1": "61a0821bf7500a7308169cb5c1f53cdc57e9dd80"
+    },
+    {
+      "path": "project/manuscript_review_v3/implications.tex",
+      "bytes": 577,
+      "sha256": "d34df0440703ae11ddcfcec83886b5951fab97b0256a1e04005efd0ceb73aee7",
+      "git_blob_sha1": "e6bf6a947495647bc0571bf7ab31965584bf7c2e"
+    },
+    {
+      "path": "project/manuscript_review_v3/local_tex_repair_receipt.json",
+      "bytes": 742,
+      "sha256": "f01ecd431aa6561072978a52da9d8d233d0e6fdf5055ea4574f5829b9e2fa98c",
+      "git_blob_sha1": "066088d350b79df9dffefc380c8cb061d85bbd19"
+    },
+    {
+      "path": "project/manuscript_review_v3/main.tex",
+      "bytes": 17501,
+      "sha256": "1874ee66e8a7a043c8e2a5d364f11852ffffdc1a13ccbd2f5e31ad8e5f030659",
+      "git_blob_sha1": "cd68f93b0085bef08075b033b43a33af0d873471"
+    },
+    {
+      "path": "project/manuscript_review_v3/main_results_table.tex",
+      "bytes": 1205,
+      "sha256": "de64f948b965c80bd93d18824e73f22c03a8854521c87da5ed289addd521df02",
+      "git_blob_sha1": "994a0f7ba54d58619b6fc9124c30b8203287eb43"
+    },
+    {
+      "path": "project/manuscript_review_v3/number_binding_audit.json",
+      "bytes": 1358,
+      "sha256": "c4706f844c714ab6d57b474b0eab4b267be6196d0d940ed58514fc873523967a",
+      "git_blob_sha1": "2e64505b1daec57f653f3336a18c865c82bbb670"
+    },
+    {
+      "path": "project/manuscript_review_v3/numbers.tex",
+      "bytes": 2019,
+      "sha256": "c35be4921e24567625f1e0ab1b4a36ef60a7b8bc2870e697f778aa0b5ad93d29",
+      "git_blob_sha1": "5ccfcef3e8f3b68cd701c7520f979c8e3270c368"
+    },
+    {
+      "path": "project/manuscript_review_v3/official_style_README.md",
+      "bytes": 2417,
+      "sha256": "f5e4fe5096e8bc045b586a2351409f29ce6d55e0268a434602a06011f571d882",
+      "git_blob_sha1": "b45103ecf864a7ad5595ba542c0a2ceb0945f183"
+    },
+    {
+      "path": "project/manuscript_review_v3/official_template_example.tex",
+      "bytes": 14533,
+      "sha256": "339c9ee9705c1767d44ef24b85365c0bb8619ecc3fcf66172bf1356292389614",
+      "git_blob_sha1": "2eba2f17011dcd0e99bc9e127e12bccf422fc7d3"
+    },
+    {
+      "path": "project/manuscript_review_v3/original_manuscript_preservation.json",
+      "bytes": 3845,
+      "sha256": "9d9c3c7e058e1332d7e4d1c5f787ddc227413b40a36e1e8e054978aa9b50b86e",
+      "git_blob_sha1": "0ed8030e738c08c2ca535d2490cf4c7506f5bb85"
+    },
+    {
+      "path": "project/manuscript_review_v3/paper.pdf",
+      "bytes": 582796,
+      "sha256": "330b0be3c46041e295dcbf48577d8a26d0dd508f49ad69d128aca8f5ad806137",
+      "git_blob_sha1": "b6c79539966617b55b0268d448180b86ebd2da62"
+    },
+    {
+      "path": "project/manuscript_review_v3/paper_build_receipt_v3.json",
+      "bytes": 3530,
+      "sha256": "6a5c7a73d76a8f71b4a9a772d7430e8a2ccb85010d368c0fa72a3e44b3882fb2",
+      "git_blob_sha1": "79faec94b2dec5438b268a981813bd234b7f85f8"
+    },
+    {
+      "path": "project/manuscript_review_v3/paper_results_receipt.json",
+      "bytes": 13550,
+      "sha256": "3cfc4b9a525135768044ca843c2a633a84b2ffd38ea51abd3ad95dd81c513414",
+      "git_blob_sha1": "ac9b8abda07264b5de834ea13315fe0438941cbd"
+    },
+    {
+      "path": "project/manuscript_review_v3/prior_study_front.tex",
+      "bytes": 1141,
+      "sha256": "29f5a15b8301484c4bc4e1ce6a3fba1dff9e56ccaeb70f019e3482a32d09ba66",
+      "git_blob_sha1": "bcf078395f3499d619580dbcd7da71fbb3f9962d"
+    },
+    {
+      "path": "project/manuscript_review_v3/references.bib",
+      "bytes": 5699,
+      "sha256": "a1ad209e6e5252bc89016f1380d4a2a36deab8b9779460c13a572327222bfee1",
+      "git_blob_sha1": "1fe4d7c9198c8b97c5d956b87954a066770b85ed"
+    },
+    {
+      "path": "project/manuscript_review_v3/related_work.tex",
+      "bytes": 1156,
+      "sha256": "34f3193a94dc93c439aeffc2fbc4a58b5aa1fd2a53c8bc1f0272801caa38e45b",
+      "git_blob_sha1": "6e4da7cf4aecb17056c31182ca37a8f99505eed8"
+    },
+    {
+      "path": "project/manuscript_review_v3/repair_tex_runtime.py",
+      "bytes": 4139,
+      "sha256": "eb06ca87f4ed3c6d264c0cc5973299493974cf5bd069ae676d014ee3a91d3e7c",
+      "git_blob_sha1": "c2f571f2d62d76129c035a870077eee3eeec1b98"
+    },
+    {
+      "path": "project/manuscript_review_v3/results_appendix.tex",
+      "bytes": 10528,
+      "sha256": "a6a730c17ced084d63d0d191e022d2f175f8f49f6b32f71ce3d43ac5dc66c499",
+      "git_blob_sha1": "109542fb38c8d7fcc6dbc9ef35804847789d6e61"
+    },
+    {
+      "path": "project/manuscript_review_v3/results_main.tex",
+      "bytes": 3623,
+      "sha256": "6747a925fa34a5049de71ef3e4fc25e81951a019762d4813847b93db186253aa",
+      "git_blob_sha1": "19a3778999b733f44cc56923f7c29b518cd0400d"
+    },
+    {
+      "path": "project/manuscript_review_v3/results_weights.tex",
+      "bytes": 512,
+      "sha256": "fb6af4250cfdbbec3e4d938c115ab90210ba1c3754c50e04aea03a6b0dc370db",
+      "git_blob_sha1": "9bfbc407719547aeebf0f7a1e763cfacc4845705"
+    },
+    {
+      "path": "project/manuscript_review_v3/retrieval_example.tex",
+      "bytes": 512,
+      "sha256": "8f3c806fb9ba3d8f48d99c80b181bc2f7557bb0766ac53d6064ed0b7dfc008c3",
+      "git_blob_sha1": "e58c5c6d7e8e59c192b3aecf453a337245093506"
+    },
+    {
+      "path": "project/manuscript_review_v3/retrieval_example_data.json",
+      "bytes": 678,
+      "sha256": "fd5d6b58648bb41e2e43bbea93828954b663e9c741665e62c2c0e028a5f11072",
+      "git_blob_sha1": "aca8a03af87ce91f921f7a0176b04e15ffce2394"
+    },
+    {
+      "path": "project/manuscript_review_v3/retrieval_example_provenance.tex",
+      "bytes": 551,
+      "sha256": "b2b28e30079734ba68ff617f8e634cd684608730e9e1bc851c90251c6a0bb859",
+      "git_blob_sha1": "5ae2f0d06546b9179cf5e54490ce3d354efe555a"
+    },
+    {
+      "path": "project/manuscript_review_v3/retrieval_query.jpg",
+      "bytes": 165131,
+      "sha256": "2fcf19f0230097a736040aaa73807e9b2d44fc77c33d540737cd149b572bcfaa",
+      "git_blob_sha1": "df5f5860f9e9f90074f4b2be6b3f34d8190a0803"
+    },
+    {
+      "path": "project/manuscript_review_v3/split_counts_table.tex",
+      "bytes": 635,
+      "sha256": "1d430e6c151f9a72b0fbd0bde18702c69111e6eab1c619fdc394f7c4959b84da",
+      "git_blob_sha1": "7cced5b5a85bedc53a512f4f7f97d0387b1ac63b"
+    },
+    {
+      "path": "project/manuscript_review_v3/training_details.tex",
+      "bytes": 2110,
+      "sha256": "860a9503f59efcac1afa92e6c2d0b1b855aaaba7a455fbe9480594dfdc1f3885",
+      "git_blob_sha1": "62369892658951ae43344dbcebfe13fc84c0719f"
+    },
+    {
+      "path": "project/manuscript_review_v3/training_summary.tex",
+      "bytes": 898,
+      "sha256": "78ea2f8a09b9399eea1c249537a8fb223e778650f2d23669b98b61c12ab37d6b",
+      "git_blob_sha1": "4977912450f69b089342d1ea1db0c657dd24081d"
+    },
+    {
+      "path": "project/manuscript_review_v3/v3_results_receipt.json",
+      "bytes": 3636,
+      "sha256": "183a1cee6b080070c1cfeb36087222d7eb32405411707806e68d6ab8a2e25bfd",
+      "git_blob_sha1": "4e366c481ea2efec66fff5b4914d554f38af3382"
+    },
+    {
+      "path": "project/manuscript_review_v3/validation_figure.tex",
+      "bytes": 421,
+      "sha256": "d4b8612568486f552a01ee9c54535a88515ec207d26a01270494a2e18d9430d6",
+      "git_blob_sha1": "c3403f95e1f10a73a51799fb4e374f4c7da9ed66"
+    },
+    {
+      "path": "project/manuscript_review_v3/validation_trajectories.pdf",
+      "bytes": 25789,
+      "sha256": "0011e7d648431a418462b490628e1e16b4e5b119e47d329597482629f533fc3f",
+      "git_blob_sha1": "37ae4e2b35ba560065b224730f6395c45685d221"
+    },
+    {
+      "path": "project/manuscript_review_v3/weight_controls_table.tex",
+      "bytes": 590,
+      "sha256": "cbae959ca913d6c7f8455b8b3522fa4bf06c20ded2928d0922555e1869207947",
+      "git_blob_sha1": "658a23e32b94ca9341a85c83f952777d97a16ecc"
+    },
+    {
+      "path": "project/output/acl27-overleaf-review-followup-v3.zip",
+      "bytes": 980671,
+      "sha256": "d13d02a3eec30e88895b0085a3388e1572059cf6b35700f7fd342332b3d4b116",
+      "git_blob_sha1": "518ed1f3add33eebf2f5f158f59468cb8c7953bf"
+    },
+    {
+      "path": "project/output/pdf/acl27_review_followup_v3.pdf",
+      "bytes": 582796,
+      "sha256": "330b0be3c46041e295dcbf48577d8a26d0dd508f49ad69d128aca8f5ad806137",
+      "git_blob_sha1": "b6c79539966617b55b0268d448180b86ebd2da62"
+    },
+    {
+      "path": "project/output/pdf/paper_build_receipt_v3.json",
+      "bytes": 3530,
+      "sha256": "6a5c7a73d76a8f71b4a9a772d7430e8a2ccb85010d368c0fa72a3e44b3882fb2",
+      "git_blob_sha1": "79faec94b2dec5438b268a981813bd234b7f85f8"
+    },
+    {
+      "path": "project/output/review_followup_v3_delivery_receipt.json",
+      "bytes": 6262,
+      "sha256": "82c026417c2eb0b158a9d6a6c7635aa1eca64fdadee3e780f53dec30fdc8d371",
+      "git_blob_sha1": "fb3d3e3acf56bd3951722efa50fce4a70bc0754d"
+    },
+    {
+      "path": "project/requirements-paper-v3.txt",
+      "bytes": 177,
+      "sha256": "4d1191f07fd86c330ea98c6d5634abd5c494704536f1bed566f267ce87243db0",
+      "git_blob_sha1": "130e33ff0770a780fdf32113dd8f355455a02015"
+    },
+    {
+      "path": "project/scripts/audit_review_paper.py",
+      "bytes": 6461,
+      "sha256": "c6a40687a108b15cf1698faf9ec36f46f01b31a7973a636cbab165deb00c995d",
+      "git_blob_sha1": "a04edf70420cb2168e61b62c4e32ed6471bda27b"
+    },
+    {
+      "path": "project/scripts/build_review_paper.py",
+      "bytes": 6776,
+      "sha256": "0200350b0322b4cb0e1e7052c9a00cca73ece4f7cb3fdb56e3d5a5f7f7d8536f",
+      "git_blob_sha1": "22d2ff26ea0bbdd0d11a015855b05f383f59baec"
+    },
+    {
+      "path": "project/scripts/generate_review_paper_results.py",
+      "bytes": 12375,
+      "sha256": "86bc177a1e52646237f5ab8ecbf39a75616bd68b2a7a40f4db9bb5baafbe5d86",
+      "git_blob_sha1": "694f5f89be2123728f34195b9cf77ed7dd9beda4"
+    },
+    {
+      "path": "project/scripts/package_review_paper.py",
+      "bytes": 3652,
+      "sha256": "b12ca9b60d25bb6be35fc43d0e8510d458b4bdc22979d94b40f0e41be4c616b0",
+      "git_blob_sha1": "573614962a2e9bcd6c1e42f53b0229a9b6742e67"
+    },
+    {
+      "path": "verify_recovery.py",
+      "bytes": 7657,
+      "sha256": "ac4cf2a88a4c121bcdf267a4b54868bbc68d24985d9bab6b078416dc9efe6568"
+    }
+  ]
+}

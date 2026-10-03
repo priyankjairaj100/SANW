@@ -1,0 +1,3 @@
+# Verified paper build/packaging dependency, matching requirements-reproduction.txt.
+# The generator and number audit otherwise use the Python standard library.
+PyMuPDF==1.26.6

@@ -1,0 +1,71 @@
+\section{Matched Assignment Study: Complete Methods}
+\label{app:followupmethods}
+
+\subsection{Protocol and comparison}
+\label{app:followupscope}
+The matched assignment study follows the earlier twelve-policy experiment. Its scientific choices were frozen before its own fitting and scoring in \path{docs/REVIEW_FOLLOWUP_PROTOCOL.json}. It asks what label-informed positive assignment contributes beyond positive count, coarse frozen-score difficulty, and training schedule. The earlier protocol, outcomes, and inferential family remain separate. All four policy families use the same source captions and hypotheses, unit candidate weights, uniform positive targets, and the original symmetric mean-log-probability loss. The source policy makes only original captions positive. Supported promotion adds hypotheses labeled supported. The two randomized controls replace this added set, as defined below. Hypotheses that are not promoted remain candidates; they are not removed from the denominator. Original labels and evaluation targets are never overwritten.
+
+\subsection{Fixed promotion assignments}
+\label{app:followupcontrols}
+For training image $i$, let $Q_i$ contain all its annotated hypotheses, $S_i$ its source captions, and $H_i\subseteq Q_i$ its supported hypotheses. Write $K_i=|S_i|$ and $M_i=|H_i|$. The count-only control samples an $M_i$-element subset of $Q_i$ uniformly without replacement. The score-stratified control first computes the cosine between each hypothesis and its owning image from cached frozen features, using explicit L2 normalization and float64 arithmetic. It orders hypotheses by increasing cosine, breaking exact ties by global manifest text index, and splits the ordered list into two bins with \texttt{numpy.array\_split}; the lower-score bin receives the extra element for an odd count. In each bin, it uniformly samples exactly the number of hypotheses labeled supported originally in that bin. Thus the strata do not use labels, but their quotas do.
+
+Each control has three independent assignment draws, seeded 101, 211, and 307 using NumPy PCG64. Images are processed in manifest order. Each complete draw is fixed across all training seeds, learning rates, batches, and epochs. Empty and fully selected groups are retained. Naturally unchanged assignments are not redrawn. Distinct text IDs remain distinct candidates even when their strings coincide. Assignment records retain original labels, sampled IDs, label overlap, identity-level and exact-string changes, bin quotas, forced versus exchangeable groups, exact score ties, and frozen-score imbalance. Two bins match coarse score strata, not exact caption scores. Because their counts are label-derived, these controls are identification devices rather than annotation-free alternatives.
+
+\subsection{What the matched controls preserve}
+\label{app:followupinvariants}
+For any paired batch, all three expanded policies retain the same images, candidate IDs and strings, source positives, unit denominator weights, and $K_i+M_i$ positives per image. Each annotated text ID has exactly one owning image. Hence they also have the same number of eligible reverse anchors,
+\begin{equation}
+T_+=\sum_{i=1}^{B}(K_i+M_i),
+\end{equation}
+where $B$ is the number of batch images. The identities of promoted hypothesis anchors can differ; their total count cannot. This holds for every batch, including the final partial batch.
+
+A stronger fixed-score invariant follows. Let $z_{ij}$ be the scaled image--text score, $p_{ij}=e^{z_{ij}}/\sum_k e^{z_{ik}}$ the image-row softmax, and $r_{ij}=e^{z_{ij}}/\sum_h e^{z_{hj}}$ the text-column softmax. Both sums use the unchanged complete candidate pools. Let $P_i$ be the chosen positive captions for image $i$, $E$ the eligible caption anchors, and $o(j)$ the owning image of eligible caption $j$. The full symmetric loss has derivative
+\begin{align}
+\frac{\partial L}{\partial z_{ij}}
+={}&\frac{1}{2B}\left(p_{ij}-\frac{\mathbf1\{j\in P_i\}}{K_i+M_i}\right)\nonumber\\
+&+\frac{\mathbf1\{j\in E\}}{2T_+}
+\left(r_{ij}-\mathbf1\{i=o(j)\}\right),
+\label{eq:followupgradient}
+\end{align}
+where the second term is defined as zero for $j\notin E$. For any source-caption column, every quantity on the right is identical across supported, count-only, and score-stratified promotion at common logits. Their entire source-column score gradients therefore agree. The proof uses the unchanged source indicators, equal row-positive counts, equal reverse-anchor counts, and unchanged softmax distributions. Gradients on other columns can differ. Shared adapter parameters combine all columns, so this identity does not imply identical parameter updates or source scores after training. It also does not compare expanded policies with source-only training, whose positive and reverse-anchor counts differ.
+
+\paragraph{Expansion changes both directions.}
+Within an image row, source targets change from $1/K_i$ to $1/(K_i+M_i)$. The reverse direction changes differently. Let $T_0$ be the number of original source-caption anchors, $H$ the disjoint set of newly eligible hypothesis anchors, and $\ell_j^T$ a caption's loss against the unchanged image pool. Each old caption retains its positive-image target and its individual loss at fixed scores, but
+\begin{equation}
+L_T^{\rm expanded}
+=\frac{T_0L_T^{\rm source}+\sum_{j\in H}\ell_j^T}{T_0+|H|}.
+\label{eq:followupreverse}
+\end{equation}
+Thus original anchors retain fraction $T_0/(T_0+|H|)$ of the reverse average. This is not an undiluted reverse objective. The fixed-score identities describe distinct task structures; they do not establish which change causes a trained model's directional retrieval outcome.
+
+\subsection{Crossed fitting grid and replay}
+\label{app:followuptraining}
+The original 1,200 training images and all their source captions and hypotheses are unchanged. Two deterministic policies and six randomized policy draws form eight fitting conditions. Crossing these with learning rates $10^{-4},3\times10^{-4},10^{-3}$ and training seeds 17, 29, and 43 yields 72 fits. Assignment draws and training seeds are separate factors. Every condition uses the same image order for a given training seed, with batches of 32 images and ten epochs. Epochs 0 through 10 are retained, giving 792 state references. Epoch 10 defines the primary matched-schedule comparison; epochs 1 and 5 provide descriptive trajectories.
+
+The frozen encoder, pretrained score scale, and zero-initialized independent $512\times512$ residual maps are inherited from the original study. AdamW uses weight decay $.01$, coefficients $(.9,.999)$, epsilon $10^{-8}$, gradient-norm clipping at one, and no scheduler; AMSGrad, fused, and foreach updates are disabled. Fitting uses deterministic CPU operations with two threads. Source and supported fitting call the unchanged original loss implementations. The randomized masks call that same multipositive implementation after changing only training-positive assignments. All 18 source/supported candidates must reproduce the original training losses and native validation histories exactly, together with exact tensors at their original best epochs; a discrepancy stops execution. Immutable ledgers bind the protocol, original sources, features, six assignment files, and new code before fitting. Completion receipts bind every retained epoch state and validation artifact.
+
+\subsection{Source-caption retrieval pools}
+\label{app:followuppools}
+Source-only development retrieval uses the official e-ViL development image pool after excluding the original 100 calibration images: 900 images and 4,500 source captions. It includes the original 100 native-validation images. The test pool contains all 1,000 official e-ViL test images and their 5,000 source captions. Each image has five relevant source captions, and each caption has one relevant owning image. Hypotheses are absent from these evaluation candidate pools. Both directions search their complete pools. These are e-ViL-pool Flickr source-caption measurements, not the standard Karpathy Flickr1k split, which overlaps the original fitting and validation data.
+
+Image IDs and image-file SHA256 values are checked for forbidden overlap across training, calibration, source development, and source test. The intentional inclusion of native validation within the development pool and of the original 400 relation-test images within the 1,000-image test pool is recorded. Source-caption provenance, repeated strings, and string overlap are audited separately. Cached features are reused only under matching IDs or exact content and encoder provenance. The original 400 test images and additional 600 images are reported as descriptive query subgroups using the same full candidate pool, not as separately selected benchmarks. The original VE400, SugarCrepe, SugarCrepe++, and COCO pools remain unchanged.
+
+\subsection{Two development selectors}
+\label{app:followupselection}
+The native selector exactly reuses the earlier criterion: the mean of source-or-supported image-to-text R@1 and image-balanced supported-versus-contradicted accuracy on the original 100 validation images and 1,875 caption IDs. Relation ties receive half credit. The source-retrieval selector averages image-to-text and text-to-image R@1 on the source-only development pool above. For each policy or assignment draw and each learning rate, it chooses the best epoch separately for each training seed, including epoch 0; exact ties retain the earliest epoch. It then chooses one learning rate by the mean best score across the three training seeds, breaking ties toward the lower rate.
+
+Each randomized draw is selected separately and the three draws receive equal weight in reporting. No best draw is selected. The two selectors define complete selection procedures: they differ in criterion, relevance, candidate pool, direction balance, and development-set size. Their comparison does not isolate the criterion alone. Selection references existing epoch states instead of duplicating weights. Reused states are scored once, and test outcomes do not enter checkpoint or learning-rate choice.
+
+\subsection{Evaluation and uncertainty}
+\label{app:followupuncertainty}
+The primary family contains supported-minus-source, supported-minus-count-only, and supported-minus-score-stratified contrasts at each of three learning rates and in each source-retrieval R@1 direction, all at epoch 10: 18 effects. For a randomized comparator, first average its three assignment draws within each training seed and query, then average the paired seed differences. The three supported fits are reused as three fits, not treated as nine independent replications.
+
+We use 10,000 paired image-cluster bootstrap resamples with seed 20261004 and Bonferroni-adjusted percentile intervals at nominal confidence $1-.05/18=99.7222\%$ per contrast. Text-to-image resampling retains all five source-caption queries in their owning image cluster. These intervals condition on the fitted training seeds and assignment draws; neither factor is resampled. Query clusters are resampled against their original fixed retrieval gallery; gallery candidates are not regenerated. Per-seed and per-draw cells, their means, and all declared learning rates accompany the conditional image intervals. An interval spanning zero does not establish equivalence.
+
+COCO, relation and composition tests, source metrics other than R@1, trajectories, subgroup summaries, and selected-procedure comparisons are descriptive. Source retrieval, VE400, SugarCrepe, and SugarCrepe++ cover the declared trajectory and selected states. COCO covers all epoch-10 states and unique selected states, without requiring additional epoch-1 or epoch-5 scoring. Adapter forward computation and normalization remain float32; similarities accumulate in float64. Retrieval ties use candidate-manifest order, relation ties receive half credit, and composition triplets retain the original strict comparisons. Pre-score receipts bind code, input manifests and features, and checkpoint hashes. Per-query retrieval ranks and relevance indices, relation comparisons, and composition scores are retained for independent recomputation.
+
+\subsection{Interpretation and an unexecuted allocation design}
+\label{app:followupnotrun}
+The randomized controls test label-informed assignment beyond fixed counts and, for stratification, coarse frozen-score difficulty. They do not independently adjudicate visual truth. The directional outcomes establish behavior under the specified model and schedules; neither these outcomes nor Equation~\ref{eq:followupreverse} identifies target redistribution as the cause of every earlier retrieval loss.
+
+The archive also contains a separate, design-only allocation factorial. It proposes holding true positive identities fixed while changing source-versus-support image target mass and reverse-anchor group weights independently, with normalized total loss weight. This would test allocation directly. It has no implementation, fitted models, or results in this study and is outside the frozen protocol. The executed controls use only the original uniform-positive objective.

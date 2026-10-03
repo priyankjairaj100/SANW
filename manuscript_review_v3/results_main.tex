@@ -1,0 +1,22 @@
+\input{main_results_table.tex}
+\paragraph{The largest benefit is on the annotated distinction.}
+Positive expansion improves e-SNLI-VE by \PositiveRelationGain{} percentage points over source positives. Its SugarCrepe gain is \PositiveSugarGain{} points. Table~\ref{tab:main} separates the two negative-pair interventions on top of that expanded set. The combined policy differs from positive expansion by \CombinedRelationDelta{} points on e-SNLI-VE and \CombinedSugarDelta{} on SugarCrepe. Their adjusted 99.17\% image-bootstrap intervals are $\CombinedRelationInterval$ and $\CombinedSugarInterval$.
+
+\paragraph{The edited-caption gain targets added content.}
+SugarCrepe mixes edits that add objects or attributes with edits that replace content or swap its assignment. The aggregate score hides opposite effects. Positive expansion improves the added-content group and reduces accuracy on the combined replacement/swap group (Table~\ref{tab:edits}). Both directions hold in every seed. Appendix~\ref{app:results} reports the seven original categories.
+\input{edit_groups_table.tex}
+
+\paragraph{Full-pool retrieval exposes the practical cost.}
+Positive expansion loses \PositiveRetrievalLoss{} points of image-to-text R@1 relative to source positives. On the fixed pool, that is \ExtraFailedImageQueries{} fewer image queries returning an annotated correct caption first per 5,000 queries, averaged across seeds. Every seed loses retrieval accuracy. Text-to-image R@1 falls by \PositiveTextRetrievalLoss{} points as well. These tests keep all candidate captions and images in the pool, so the loss concerns the rank of a usable match rather than a binary choice against one designed foil.
+\input{retrieval_example.tex}
+
+Figure~\ref{fig:query} shows a changed top result for the same image and caption pool. A lower score for a deliberately edited foil would not detect this change in the match returned to the user.
+
+\paragraph{A simple control preserves a different set of capabilities.}
+Constant negative weighting retains \ConstantExpandedRetrievalGain{} points more image-to-text R@1 than positive expansion. It also scores higher on edited captions, while its annotated statement accuracy is lower (Table~\ref{tab:main}). This control weakens all negative competition without deciding which pairs are contradicted or neutral. The selected means expose the application choice: improving the annotation distinction is different from preserving edited-caption and retrieval performance. Table~\ref{tab:weights} later compares the similarity-based weighting rules.
+
+\paragraph{The use of neutral labels has a conditional benefit.}
+Neutral exclusion beats count-matched random removal by \NeutralRandomRelationGain{} points on e-SNLI-VE and \NeutralRandomSugarGain{} on SugarCrepe. However, when contradiction weighting is retained, adding neutral exclusion changes e-SNLI-VE by \NeutralUnderHardeningDelta{} points, with adjusted interval $\NeutralUnderHardeningInterval$. Selecting neutral pairs is therefore useful relative to random removal, but it does not improve the combined selected procedure over contradiction weighting alone.
+
+\paragraph{Alternative wordings test a separate requirement.}
+All \NonzeroAdapterCount{} nonzero-epoch adapters reduce accuracy on the alternative valid SugarCrepe++ caption relative to the frozen model. This occurs across policies, including source positives. Table~\ref{tab:main} reports the stricter score that requires both valid captions to beat the foil. Appendix~\ref{app:retention} shows the paired first-caption and alternative-caption outcomes for every selected adapter.
