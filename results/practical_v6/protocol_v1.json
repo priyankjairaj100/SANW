@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "study": "practical_goal_v6_bounded_pairwise_correction",
+  "date": "2026-10-04",
+  "status": "development_protocol_before_new_test_scoring",
+  "prior_checkpoint": "bdb1040ee4f955da2abd1f55873ebd5236bda1da",
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "goal": "One genuinely trained scoring family improves both-positive SugarCrepe++ while retaining both full-gallery e-ViL retrieval directions on both encoders.",
+  "encoders": [
+    "vit_b32",
+    "rn50"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "model": {
+    "family": "bounded_pairwise_correction",
+    "base": "float64 cosine over float32-normalized frozen image and text features",
+    "residual": "epsilon*tanh(MLP(centered image-text Hadamard product, low-rank interaction, frozen cosine))",
+    "hidden": 128,
+    "rank": 64,
+    "centering": "training image/text rows only",
+    "initialization": "zero final residual projection",
+    "routing": "same score for every image-text pair, without task labels or gallery-dependent policy"
+  },
+  "development": {
+    "fit_split": "visual_entailment train only (1200 images)",
+    "relation_split": "visual_entailment validation only (100 images)",
+    "retrieval_split": "e_vil_dev900 (900 images,4500 source captions)",
+    "initial_grid": {
+      "epsilon": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "retention_weight": [
+        0.25,
+        1.0
+      ],
+      "epochs": 12,
+      "pilot_seed": 17
+    },
+    "composition_objective": "For each source-supported-contradicted triplet, logsumexp of zero and the two negative-minus-positive margin violations. Average triplets within image, then average images; neither positive is treated as equivalent to the other.",
+    "neutral_policy": "Never label neutral hypotheses as contradictions.",
+    "retrieval_objective": "Source-caption-only bidirectional retrieval plus preservation of positive frozen margins against training hard negatives.",
+    "selection": "Require genuinely nonzero training and no development R1 loss in either direction; maximize image-averaged fraction of source-supported-contradicted triplets where both positives beat the contradiction. Final seed/configuration selection is frozen before new test scoring.",
+    "escalation": "If no development gain survives retention, stop broad pooled-feature sweeps and examine token-level text adaptation. Record any amendment before new test scoring.",
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index; same rule as the prior primary endpoint."
+  },
+  "test_lock": {
+    "required": "Both encoders and all three selected seeds, exact checkpoint hashes, model/source/input hashes, and the selection rule are bound before any new test scoring.",
+    "current_test_outcomes_used_for_selection": false,
+    "historical_test_use": "Prior study test results informed this new scientific hypothesis; current evaluations cannot be called pristine confirmatory tests."
+  },
+  "practical_gate": {
+    "primary_retrieval": "e_vil_test1000 full galleries, both directions",
+    "caption_endpoint": "SugarCrepe++ both positive captions strictly outrank negative",
+    "secondary_retrieval": "COCO Karpathy5k full galleries, both directions",
+    "minimum_nonzero_trained_seeds": 3,
+    "retrieval_adjusted_lower_bound_strictly_greater_than": -0.01,
+    "caption_adjusted_gain_lower_bound_strictly_greater_than": 0.0,
+    "same_family_must_pass_both_encoders": true,
+    "bootstrap_replicates": 100000,
+    "bootstrap_unit": "paired image clusters, averaging the three fitted seeds",
+    "multiplicity_family_size": 80,
+    "familywise_alpha": 0.05,
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index",
+    "caption_ties": "Failure on equality",
+    "success_cannot_be_inferred_from": [
+      "relation accuracy",
+      "frozen or effectively zero outputs",
+      "development results",
+      "uncorrected test intervals"
+    ]
+  }
+}
