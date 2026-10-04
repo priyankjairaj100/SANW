@@ -2,9 +2,10 @@
 
 Date: 2026-10-04.
 
-Status: both new replications and the AD study passed independent verification.
-The AD study establishes no practical success.
-Original-retention and directional outcomes remain pending.
+Status: both replications and both preservation studies passed independent verification.
+Neither preservation study establishes practical success.
+The certificate audit also passed.
+The final build, complete visual review, and flat source packaging also passed.
 
 ## Central response
 
@@ -49,7 +50,9 @@ They test caption identity under the selected preservation schedule.
 **Verified nonlinear extension.** Supported exceeds stratified promotion by 0.94, 0.51, and 2.69 caption-to-image points across increasing rates.
 The smallest and largest rates have positive adjusted lower bounds.
 The middle adjusted interval includes zero.
-This pattern supports caption-assignment value at two tested nonlinear learning rates.
+The nonlinear image-to-caption effects against stratified promotion are negative at the two smaller rates.
+They are -2.28 [-4.08, -0.51] and -2.68 [-4.62, -0.88] points.
+This pattern supports caption-assignment value for the reverse endpoint at two tested nonlinear learning rates.
 It does not support a uniform advantage across rates.
 
 **Verified RN50 extension.** Supported exceeds stratified promotion by 2.10, 5.39, and 4.63 caption-to-image points.
@@ -98,7 +101,7 @@ Comparisons between independently selected procedures answer a separate practica
 All three adjusted intervals lie below zero.
 The retrieval cost therefore recurs after changing adaptation capacity.
 
-**Verified RN50 extension.** Supported loses 5.00, 6.17, and 7.27 image-to-caption points against Source.
+**Verified RN50 extension.** Supported changes image-to-caption accuracy by -5.00, -6.17, and -7.27 points against Source.
 The adjusted intervals are [-8.17, -1.69], [-9.43, -2.80], and [-10.67, -3.73] points.
 These comparisons retain the same terminal epoch, learning rate, and paired seeds.
 All six new Source comparisons therefore retain negative adjusted intervals.
@@ -108,7 +111,12 @@ The AD-selected decomposition is complete.
 Allocation and distillation each improve both retrieval directions on both encoders at those matched schedules.
 All eight adjusted main-effect intervals lie above zero.
 No adjusted interaction interval has a positive lower bound.
-The original directional comparison remains pending.
+The original directional comparison also passed its independent audit.
+Source-only image targets improve image-to-caption retrieval at every tested rate for both encoders.
+ViT effects are 5.83, 6.28, and 9.52 points; RN50 effects are 4.92, 5.68, and 7.27 points.
+All six adjusted intervals exclude zero.
+Reverse-anchor image-to-caption effects and every directional interaction include zero.
+Caption-to-image effects vary across rates and encoders.
 
 ### 3. Clean full-pool retrieval within the source domain was absent
 
@@ -131,7 +139,8 @@ The evaluator binds feature archives, manifests, selected checkpoints, and scori
 
 **Status.** The original evaluation gap is resolved.
 Both replication evaluations and the AD evaluation passed their content and aggregate checks.
-The original-retention evaluation remains pending.
+The original-retention evaluation also passed its independent audit.
+Its 155 states supply 775 prediction archives and 6,200 reconstructed aggregate endpoints.
 
 ### 4. One adaptation setting and fixed weights supported broad advice
 
@@ -221,8 +230,32 @@ The AD decomposition establishes positive allocation and distillation main effec
 Distillation also improves SugarCrepe++ by 2.17 [1.18, 3.17] and 3.43 [2.26, 4.59] points.
 Those effects use the separate 24-effect adjustment and the AD-selected schedule.
 They do not compare each selected procedure against frozen initialization.
+Allocation also reduces relation accuracy at this matched schedule.
+For ViT, separately selected AD changes caption-to-image accuracy by -1.93 [-3.04, -0.83] points against D.
+The RN50 change is -1.73 [-2.89, -0.59] points.
+Neither result contradicts the conditional matched main effect.
 No positive interaction is established.
-The original directional effects and certificate coverage remain pending.
+The original directional effects are complete and independently verified.
+The independent certificate audit passed both encoders.
+It checked 63 distinct selected states, 126 archives, and 2,268,000 state-query observations.
+Forty-two states contain nonzero updates; twenty-one retain unchanged parameters.
+Each selected state appears once, even when several selection rules choose it.
+Different states reuse the same queries.
+These counts do not represent independent test examples.
+
+| Encoder | Gallery | Trained-state KL coverage, image-to-caption | Trained-state KL coverage, caption-to-image |
+|---|---|---|---|
+| ViT | e-ViL | 45.11% | 67.72% |
+| ViT | COCO | 29.67% | 55.31% |
+| RN50 | e-ViL | 7.09% | 35.57% |
+| RN50 | COCO | 2.85% | 18.43% |
+
+Coverage denominators contain teacher-correct state-query observations.
+Unchanged selections have 100% coverage and remain separate from trained selections.
+The appendix reports exact denominators, actual retained counts, score certificates, and certificate unions.
+No checked certificate contradicts the corresponding observed rank.
+Floating-point verification does not provide interval-arithmetic guarantees near decision boundaries.
+Coverage cannot substitute for the declared practical criterion.
 
 ### Practical improvement
 
@@ -257,7 +290,7 @@ Supported selects epoch zero for all seeds on both encoders.
 RN50 allocation also includes one epoch-zero seed.
 AD trains all three seeds on both encoders, but fails both adjusted retrieval requirements and SugarCrepe++ improvement.
 Only ViT AD caption-to-image retrieval has an adjusted interval wholly below zero among these retrieval comparisons.
-Its loss is 1.47 [-2.91, -0.02] points.
+Its change is -1.47 [-2.91, -0.02] points.
 The other failed retrieval requirements reflect intervals that extend across the one-point tolerance.
 Those failures do not establish large retrieval losses.
 
@@ -287,7 +320,18 @@ Its largest bootstrap difference was below $1.3\times10^{-16}$.
 The intervals remain conditional on the fixed training seeds, assignment draws, and galleries.
 Failure to establish noninferiority does not prove that the true retrieval loss exceeds one point.
 Practical improvement remains unsolved.
-The original retention study still requires completion.
+The original retention study also fails all fourteen encoder-family practical gates.
+Every selected family fails its adjusted SugarCrepe++ improvement requirement.
+Supported and reverse-source-only choose frozen initialization for every seed.
+No original-retention retrieval interval against frozen initialization lies wholly below zero.
+Those failed retention tests reflect uncertainty, rather than an established retrieval decline.
+Source, allocation, and image-source-only nevertheless have established SugarCrepe++ losses for both encoders.
+Distillation gains 0.36 [-0.58, 1.34] and 0.90 [-0.65, 2.44] SugarCrepe++ points.
+Neither interval establishes the required improvement.
+The independent audit reproduced 116 effects and all 11.6 million bootstrap values.
+Its maximum bootstrap discrepancy was below $1.9\times10^{-16}$.
+The two studies share several baseline families.
+Their twenty-six failed encoder-family gates do not represent twenty-six independent methods.
 
 ## The omitted A+D comparison
 
@@ -327,7 +371,11 @@ The manuscript owner corrected all four issues.
 The independent reviewer reran all thirteen rank-retention test groups.
 All passed, including numerical projection checks and the corrected multiple-positive example.
 The main structure now separates assignment evidence, preservation evidence, and mathematical scope.
-The final page balance and empirical claims require another review after results are inserted.
+The final claim review checked every main conclusion against the passed analyses.
+It also checked historical recovery boundaries and certificate denominators.
+All identified wording issues were corrected.
+The final build has four main pages, no unresolved TeX warnings, and no Type 3 fonts.
+All 47 pages passed visual review for the exact final PDF.
 
 ## Evidence and completion record
 
@@ -341,20 +389,38 @@ The final page balance and empirical claims require another review after results
 | New AD implementation | [Independent design audit](ALLOCATION_DISTILLATION_DESIGN_AUDIT_20261004.md) | Training and evaluation checks passed |
 | Nonlinear replication findings | [Independent audit](../recovery/current_turn_audit/nonlinear_replication_independent_audit.json) | Passed: twelve effects and 120,000 bootstrap samples |
 | RN50 replication findings | [Independent audit](../recovery/current_turn_audit/rn50_replication_independent_audit.json) | Passed: twelve effects and 120,000 bootstrap samples |
-| Restored directional and retention findings | Original frozen protocols and new raw predictions | Pending |
+| Restored directional and retention findings | [Independent audit](../recovery/current_turn_audit/strengthen_retention_independent_audit.json) | Passed: 116 effects and 11.6 million bootstrap values |
 | New AD findings | [Independent audit](../recovery/current_turn_audit/allocation_distillation_independent_audit.json) | Passed: 104 effects and 10.4 million bootstrap values |
-| New practical findings | [Declared success gates](../results/allocation_distillation/analysis/practical_success_gates.json) | No selected family passes on either encoder |
-| Four-page manuscript | [Main source](../manuscript_strengthened_v5/main.tex) | Structure complete; results pending |
+| New practical findings | [AD gates](../results/allocation_distillation/analysis/practical_success_gates.json) and [original-retention gates](../results/strengthen_retention/analysis_recovered/practical_success_gates.json) | Neither study yields a passing family on either encoder |
+| Full-gallery certificate diagnostics | [Independent audit](../recovery/current_turn_audit/retention_certificates_independent_audit.json) | Passed: 63 states, 126 archives, and 2,268,000 state-query observations |
+| Four-page manuscript | [Main source](../manuscript_strengthened_v5/main.tex) | Complete: four main pages and all 47 pages visually checked |
 
 Protocol SHA256:
 `f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd`.
 
-## Final update checklist
+The historical v3 manuscript, aggregate results, and original audit receipts remain preserved.
+Its raw prediction archives are unavailable in the recovered workspace.
+Current strengthening audits use newly saved artifacts, rather than reconstructed historical predictions.
 
-- Insert only independently verified new results.
-- Update each pending status from the corresponding raw evidence.
-- Distinguish completed evaluation from a passed practical criterion.
-- Preserve all failed methods and frozen selections.
-- Check every abstract and conclusion claim against the recorded comparison.
-- Render four readable main pages and retain the complete appendices.
-- Record the final paper, source archive, and recovery checkpoint.
+## Final completion record
+
+All declared training, evaluation, analysis, and certificate tasks are complete.
+Both replication studies extend the evidence beyond the original adaptation setting.
+Directional effects, matched preservation effects, and exact rank geometry strengthen the diagnostic contribution.
+Neither preservation study meets the practical requirement.
+That scientific requirement remains unsolved despite complete execution.
+
+The final PDF has four main pages and 47 pages overall.
+Limitations starts on page five.
+The build has no unresolved TeX warnings or Type 3 fonts.
+All 47 pages passed visual review.
+All 55 original v3 files remain unchanged.
+The archive includes every active appendix, figure, and bound numerical evidence file.
+
+- [Final paper](../output/pdf/acl27_strengthened_v5.pdf).
+- [Flat Overleaf source](../output/acl27-overleaf-strengthened-v5.zip).
+- [Build receipt](../output/pdf/v5_build_receipt.json).
+- [Delivery receipt](../output/strengthened_v5_delivery_receipt.json).
+
+PDF SHA256: `47e022af0017b94e3d44aab2058e418543cce6fb4e6ac90d28abb19651fb387d`.
+Overleaf SHA256: `5a6b3e230e9e6e7f22e14715416a2c32477032585b8e7de4578cd4a360bb4a88`.

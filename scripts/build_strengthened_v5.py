@@ -38,6 +38,19 @@ def active_sources():
     return sorted(seen)
 
 
+def active_graphics(sources):
+    assets = set()
+    for source in sources:
+        for name in re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", source.read_text()):
+            path = SOURCE / name
+            candidates = [path] if path.suffix else [path.with_suffix(suffix) for suffix in (".pdf", ".png", ".jpg", ".jpeg")]
+            matches = [candidate for candidate in candidates if candidate.is_file()]
+            if not matches:
+                raise SystemExit(f"Missing figure asset: {source.name}: {name}")
+            assets.add(matches[0])
+    return sorted(assets)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--draft", action="store_true")
@@ -52,6 +65,7 @@ def main():
         if sha(SOURCE / name) != style["files"][name]["sha256"]:
             raise SystemExit(f"Official style changed: {name}")
     sources = active_sources()
+    graphics = active_graphics(sources)
     pending = [p.name for p in sources if re.search(r"\\pending\{", p.read_text())]
     # The pending command's definition is not an unresolved content marker.
     pending = [name for name in pending if name != "main.tex"]
@@ -114,7 +128,8 @@ def main():
         "pdf": str(pdf.relative_to(ROOT)), "sha256": sha(pdf), "pages": len(document),
         "limitations_pages": limitations, "type3_fonts": fonts, "tex_warnings": warnings,
         "pending": pending, "source_hashes": {p.name: sha(p) for p in sources},
-        "supporting_source_hashes": {n: sha(SOURCE / n) for n in ("references.bib", "acl.sty", "acl_natbib.bst")},
+        "supporting_source_hashes": {p.name: sha(p) for p in
+                                     [SOURCE / n for n in ("references.bib", "acl.sty", "acl_natbib.bst")] + graphics},
         "original_v3_unchanged": True,
     }
     (out / ("v5_draft_build_receipt.json" if args.draft else "v5_build_receipt.json")).write_text(json.dumps(receipt, indent=2) + "\n")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Continue an archive in a fresh namespace, with a separate upload process.
+"""Start or continue an archive, with a separate upload process.
 
-init -> create-next -> ROOT PREPARED UPLOAD -> finish-upload.
+init-fresh (or init) -> create-next -> ROOT PREPARED UPLOAD -> finish-upload.
 This helper never uploads files. It never retries or overwrites an upload result.
 """
 import argparse
@@ -39,11 +39,17 @@ def locations(plan, number):
             'upload': private / (prefix + '_upload_record.json')}
 
 
-def initialize(args):
+def initialize(args, *, fresh=False):
     root = args.repository.resolve()
     archive.require(re.fullmatch(r'[A-Za-z0-9_-]+', args.prefix), 'Unsafe fresh prefix')
-    archive.require(args.prefix != args.prior_prefix, 'Continuation requires a fresh prefix')
-    archive.require(1 <= args.batch_size <= 19 and args.prior_batches > 0, 'Invalid batch schedule')
+    archive.require(1 <= args.batch_size <= 19, 'Invalid batch schedule')
+    if fresh:
+        archive.require(all(getattr(args, key, None) is None for key in
+                            ('prior_prefix', 'prior_output', 'prior_private', 'prior_batches')),
+                        'A fresh campaign cannot exclude prior batches')
+    else:
+        archive.require(args.prefix != args.prior_prefix, 'Continuation requires a fresh prefix')
+        archive.require(args.prior_batches > 0, 'Invalid batch schedule')
     grid = archive.safe_path(root, args.grid_root, exists=False)
     keep_path = archive.safe_path(root, args.retained_manifest)
     keep_record = archive.record(root, keep_path, args.retained_manifest_sha256)
@@ -61,11 +67,31 @@ def initialize(args):
             candidates.append(path.parent.relative_to(grid).as_posix())
     output, private = args.output_root.resolve(), args.private_output.resolve()
     archive.require(output.is_relative_to(root) and not output.is_relative_to(grid), 'Unsafe continuation output directory')
-    archive.require(output != args.prior_output.resolve() and private != args.prior_private.resolve(),
-                    'Continuation must use fresh output and private directories')
+    archive.require(output != private, 'Archive and private directories must differ')
+    if not fresh:
+        archive.require(output != args.prior_output.resolve() and private != args.prior_private.resolve(),
+                        'Continuation must use fresh output and private directories')
     archive.require(not output.exists() and not private.exists(), 'Continuation directories already exist')
     excluded, prior_records, protected = set(), [], []
-    for number in range(1, args.prior_batches + 1):
+    initial_bounds = None
+    if fresh:
+        # A new campaign has no preservation evidence for missing originals.
+        # Verify every candidate now, without writing an archive or deleting bytes.
+        with archive.candidate_locks(root, args.grid_root, candidates):
+            snapshot = archive.inspect_candidates(root, args.grid_root, candidates,
+                                                  args.retained_manifest, args.retained_manifest_sha256)
+        protected.extend(snapshot['protected_files'])
+        bounds = [archive.zip_upper_bound(item['members']) for item in snapshot['candidates']]
+        archive.require(bounds and all(item['members'] for item in snapshot['candidates']),
+                        'A fresh candidate has no unretained checkpoints')
+        archive.require(max(bounds) <= archive.PART_LIMIT, 'One candidate exceeds the part limit')
+        batch_bounds = [sum(bounds[i:i + args.batch_size]) for i in range(0, len(bounds), args.batch_size)]
+        archive.require(max(batch_bounds) <= 512 * 1024 * 1024, 'Fresh batch exceeds the resident archive bound')
+        initial_bounds = {'member_count': len(snapshot['members']),
+                          'original_bytes': sum(item['bytes'] for item in snapshot['members']),
+                          'maximum_part_upper_bound_bytes': max(bounds),
+                          'maximum_batch_upper_bound_bytes': max(batch_bounds)}
+    for number in range(1, (0 if fresh else args.prior_batches) + 1):
         prefix = f'{args.prior_prefix}_batch_{number:03d}'
         manifest = args.prior_output.resolve() / (prefix + '_MANIFEST.json')
         upload = args.prior_private.resolve() / (prefix + '_upload_record.json')
@@ -82,12 +108,15 @@ def initialize(args):
             'upload_record': archive.file_receipt(upload), 'prune_receipt': pruned['prune_receipt'],
             'candidates': names})
     plan = {'schema_version': 1, 'purpose': PURPOSE, 'repository': str(root),
+            'campaign_mode': 'fresh' if fresh else 'continuation',
             'grid_root': args.grid_root, 'retained_manifest': keep_record,
             'expected_completions': args.expected_completions, 'prefix': args.prefix,
             'output_root': str(output), 'private_output': str(private), 'batch_size': args.batch_size,
             'all_archive_candidates': candidates, 'excluded_candidates': sorted(excluded),
             'remaining_candidates': [name for name in candidates if name not in excluded],
             'prior_verified_batches': prior_records, 'protected_files': archive.exact_records(protected)}
+    if initial_bounds is not None:
+        plan['initial_archive_bounds'] = initial_bounds
     archive.require(plan['remaining_candidates'], 'There are no remaining candidates')
     output.mkdir(parents=True)
     private.mkdir(parents=True)
@@ -96,6 +125,10 @@ def initialize(args):
     return {'plan': archive.file_receipt(path), 'verified_prior_batches': len(prior_records),
             'excluded_candidates': len(excluded), 'remaining_candidates': len(plan['remaining_candidates']),
             'new_batches': batch_count(plan)}
+
+
+def initialize_fresh(args):
+    return initialize(args, fresh=True)
 
 
 def load_plan(args):
@@ -233,15 +266,20 @@ def finish_upload(args):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='phase', required=True)
-    init = sub.add_parser('init')
-    init.add_argument('--repository', type=Path, default=Path(__file__).resolve().parents[1])
-    for name in ('grid-root', 'prefix', 'retained-manifest', 'retained-manifest-sha256', 'prior-prefix'):
-        init.add_argument('--' + name, required=True)
-    for name in ('output-root', 'private-output', 'prior-output', 'prior-private'):
-        init.add_argument('--' + name, type=Path, required=True)
-    init.add_argument('--prior-batches', type=int, required=True)
-    init.add_argument('--expected-completions', type=int, required=True)
-    init.add_argument('--batch-size', type=int, default=3)
+    for phase in ('init', 'init-fresh'):
+        init = sub.add_parser(phase)
+        init.add_argument('--repository', type=Path, default=Path(__file__).resolve().parents[1])
+        for name in ('grid-root', 'prefix', 'retained-manifest', 'retained-manifest-sha256'):
+            init.add_argument('--' + name, required=True)
+        for name in ('output-root', 'private-output'):
+            init.add_argument('--' + name, type=Path, required=True)
+        if phase == 'init':
+            init.add_argument('--prior-prefix', required=True)
+            for name in ('prior-output', 'prior-private'):
+                init.add_argument('--' + name, type=Path, required=True)
+            init.add_argument('--prior-batches', type=int, required=True)
+        init.add_argument('--expected-completions', type=int, required=True)
+        init.add_argument('--batch-size', type=int, default=3)
     for name in ('create-next', 'finish-upload'):
         command = sub.add_parser(name)
         command.add_argument('--plan', type=Path, required=True)
@@ -249,7 +287,8 @@ def main():
         if name == 'finish-upload':
             command.add_argument('--batch', type=int, required=True)
     args = parser.parse_args()
-    result = {'init': initialize, 'create-next': create_next, 'finish-upload': finish_upload}[args.phase](args)
+    result = {'init': initialize, 'init-fresh': initialize_fresh,
+              'create-next': create_next, 'finish-upload': finish_upload}[args.phase](args)
     print(json.dumps(result, sort_keys=True, indent=2))
 
 

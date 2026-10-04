@@ -1,6 +1,6 @@
 \input{preservation_table_v5.tex}
 \paragraph{No selected procedure meets the practical criterion.}
-None of the six families passes the joint criterion on either encoder.
+Neither study produces a passing family on either encoder: seven original-retention families and six AD-study families.
 AD produces nonzero updates for all six selected seeds.
 Its relation-accuracy gains over frozen initialization are $+6.67$ and $+9.02$ points for ViT and RN50.
 Both adjusted intervals exclude zero.
@@ -10,3 +10,7 @@ The other three AD retrieval intervals include zero but extend below the one-poi
 Those intervals do not establish retention or prove a large retrieval loss.
 Thus relation learning does not establish the requested caption improvement with retained retrieval.
 Appendix Table~\ref{tab:newgates} reports every criterion and lower bound.
+The original-retention retrieval intervals show no established decline against frozen initialization.
+However, Source, A, and image-source-only training reduce SugarCrepe++ accuracy for both encoders.
+U and reverse-source-only select frozen initialization throughout.
+Appendix Table~\ref{tab:originalgates} retains all original-retention failures.

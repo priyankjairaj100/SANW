@@ -11,8 +11,6 @@ Thus the intervention changes positive assignment without changing the available
 \emph{Supported}, denoted U, also promotes supported hypotheses for their annotated image.
 The \emph{score-stratified} control promotes the same number within each of two frozen-similarity groups.
 It draws assignments independently three times and keeps each assignment fixed during training.
-The encoder-specific similarities determine the groups.
-The original linear study also includes a count-only random control.
 
 \paragraph{Two effects of positive expansion.}
 Let $s_{ij}$ score image $i$ against caption $j$.
@@ -43,7 +41,6 @@ L_{\lambda,\beta}
 Here $\lambda$ controls source allocation and $\beta$ controls preservation.
 $D_S$ is the mean teacher-to-student KL divergence on source-caption columns in both directions.
 The frozen encoder supplies the teacher probabilities at temperature $T=2$.
-The student uses the same candidate domains and temperature.
 Hypotheses receive supervised gradients but do not enter the distillation target.
 
 The four cells separate the two interventions:
@@ -52,15 +49,12 @@ A uses $(\lambda,0)$;
 D uses $(0,\beta)$;
 AD uses $(\lambda,\beta)$.
 Allocation mixes complete objectives.
-It does not assign every image the same source probability.
 For example, the image-row source mass becomes $\lambda+(1-\lambda)K/(K+M)$.
 
 \paragraph{Fair preservation controls.}
 We also evaluate Source and WiSE-FT interpolation of Supported weights \citep{wortsman2022wise}.
 All procedures receive the same development objective and epoch choices.
 AD receives a score-stratified randomized control with identical coefficients, learning rate, and selected epochs.
-This control tests caption identity under the selected preservation schedule.
-It does not receive an independent search for a favorable random assignment.
 
 The paired four-cell analysis uses the AD-selected schedule for U, A, D, and AD.
 For any outcome $Y$, its interaction is
@@ -69,4 +63,3 @@ For any outcome $Y$, its interaction is
 \label{eq:interaction}
 \end{equation}
 An independently selected AD-versus-D comparison instead evaluates complete procedures.
-Reporting both separates an interaction from changes in the selected training schedule.

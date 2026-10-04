@@ -4,10 +4,10 @@ We separate the effects of caption identity, positive-target allocation, and pre
 Matched randomized controls keep the candidate captions, positive counts, and initial similarity groups fixed.
 We test linear and nonlinear adaptation, then repeat the study with a different pretrained encoder.
 We also combine source-target allocation with source-gallery distillation.
-Development data selects every model under the same retrieval constraint.
+Development data selects preservation models under the same retrieval constraint.
 Both new settings reproduce the image-to-caption cost against source-only training at every tested rate.
 Caption identity improves caption-to-image retrieval, although the nonlinear evidence varies across rates.
-Allocation and distillation each improve retrieval at matched schedules.
-However, none of six selected families meets the joint retrieval and SugarCrepe++ criterion on either encoder.
+At matched schedules chosen for their combination, allocation and distillation each improve retrieval.
+No selected family meets the joint retrieval and SugarCrepe++ criterion in either preservation study.
 An exact distance to ranking failure explains what distribution preservation can certify on a fixed gallery.
 These results separate gains from additional supervision from successful retrieval preservation.

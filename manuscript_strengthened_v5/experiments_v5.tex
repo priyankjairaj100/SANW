@@ -10,7 +10,6 @@ Both encoders remain frozen.
 Each replication crosses Source, Supported, and three stratified draws with three rates and three seeds: 45 fits.
 Rates are $10^{-4}$, $3\times10^{-4}$, and $10^{-3}$; seeds are 17, 29, and 43.
 Primary comparisons use epoch ten and identical rates.
-The original linear study contributes 72 fits, including count-only controls.
 
 \paragraph{A separate preservation study.}
 The AD study uses linear adapters and the same 1,200 training images for both encoders.
@@ -28,7 +27,6 @@ Each candidate and seed selects the most accurate epoch that satisfies both retr
 Each direction can lose at most one percentage point against frozen initialization.
 Shared coefficients and a shared rate maximize mean selected accuracy across seeds.
 Fixed tie rules favor earlier epochs, lower rates, and lower coefficients.
-Zero-loss selection supplies a separate descriptive sensitivity analysis.
 
 \paragraph{Search and caption discrimination.}
 Image queries retrieve one of five source captions: I$\to$T.
@@ -37,7 +35,8 @@ R@1 counts queries whose highest-scoring candidate is relevant.
 The clean e-ViL pool contains 1,000 test images and 5,000 source captions.
 Both directions search the complete pool.
 SugarCrepe++ requires both valid captions to outrank an incorrect caption \citep{dumpala2024sugarcrepepp}.
-Secondary results include SugarCrepe \citep{hsieh2023sugarcrepe}, relation accuracy on 400 images, and COCO retrieval over 5,000 images and 25,000 captions.
+Secondary endpoints cover SugarCrepe, relation accuracy, and COCO retrieval.
+Appendix~\ref{app:newmethods} specifies their pools \citep{hsieh2023sugarcrepe}.
 
 \paragraph{A joint practical criterion.}
 All three selected seeds must contain nonzero updates.

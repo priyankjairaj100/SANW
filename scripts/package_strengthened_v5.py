@@ -28,15 +28,26 @@ def main():
     for name, expected in (build["source_hashes"] | build["supporting_source_hashes"]).items():
         if sha(M / name) != expected:
             raise SystemExit("Source changed after the checked build: " + name)
-    for p in M.glob("*.tex"):
-        if p.name.startswith("historical_") or p.name == "official_template_example.tex":
-            continue
+    for name in build["source_hashes"]:
+        p = M / name
         for group in re.findall(r"\\input\{([^}]+)\}|\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", p.read_text()):
             name = next(x for x in group if x)
             if "/" in name or not (M / name).is_file():
                 raise SystemExit(f"Non-flat dependency: {p.name}: {name}")
-    allowed = {".tex", ".bib", ".bst", ".sty", ".pdf", ".png", ".jpg", ".json", ".txt", ".md", ".py"}
-    files = sorted(p for p in M.iterdir() if p.is_file() and p.suffix in allowed)
+    results = json.loads((M / "v5_results_receipt.json").read_text())
+    for item in results["analysis_inputs"] + results["generated_outputs"]:
+        if sha(ROOT / item["path"]) != item["sha256"]:
+            raise SystemExit("A bound empirical artifact changed: " + item["path"])
+    names = set(build["source_hashes"]) | set(build["supporting_source_hashes"])
+    names.update({"v5_results_receipt.json", "visual_review_v5.json", "v3_preservation.json",
+                  "acl_style_provenance.json", "citation_verification.json", "OVERLEAF_README.txt"})
+    for item in results["generated_outputs"]:
+        path = ROOT / item["path"]
+        if path.parent == M and path.suffix == ".json":
+            names.add(path.name)
+    files = sorted(M / name for name in names)
+    if any(not path.is_file() for path in files):
+        raise SystemExit("A required final-package artifact is missing.")
     archive = OUT / "acl27-overleaf-strengthened-v5.zip"
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         for p in files:

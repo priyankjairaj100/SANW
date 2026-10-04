@@ -49,11 +49,28 @@ def require_audit(audits: list[dict], files: list[Path], **scope) -> dict:
     return matches[0]
 
 
+def validate_duplicate_audit(audit: dict) -> None:
+    expected = {"status": "passed", "duplicate_terminal_fits": 126,
+                "rn50_replication_duplicate_terminal_fits": 18,
+                "total_pairwise_duplicate_comparisons": 144,
+                "identical_trajectory_rows": 1386,
+                "rn50_replication_identical_common_trajectory_rows": 198}
+    if any(audit.get(key) != value for key, value in expected.items()):
+        raise SystemExit("The duplicate audit does not cover all 144 declared comparisons.")
+    if len(audit.get("ledger_file_sha256", {})) != 5:
+        raise SystemExit("The duplicate audit lacks the five execution ledgers.")
+    for field in ("ledger_file_sha256", "source_sha256"):
+        for name, expected_hash in audit[field].items():
+            if digest(root_path(name)) != expected_hash:
+                raise SystemExit("A duplicate-audit input changed: " + name)
+
+
 def selection_values(state: dict) -> str:
     """Use the actual analysis schema; missing numeric fields must never become zero."""
+    coefficient = lambda value: "--" if value is None else f"{value:g}"
     return (f"{state['seed']} & {state['draw_id'] if state['draw_id'] is not None else '--'} & "
             f"{state['learning_rate']:g} & {state['epoch']} & "
-            f"{state['source_mix']:g} & {state['beta']:g} & {state['alpha']:g} & "
+            f"{coefficient(state['source_mix'])} & {coefficient(state['beta'])} & {coefficient(state['alpha'])} & "
             f"{state['update_norm']:.4g}")
 
 
@@ -135,6 +152,8 @@ def certificate_report(indices: list[tuple[Path, dict]], audits: list[dict]) -> 
         "The pooled denominator therefore counts state-query observations, not independent test examples.",
         "The complete artifact retains each selected state's selection roles and all query-level certificate masks.",
         "These descriptive counts do not add statistical hypotheses or imply an unseen-gallery guarantee.",
+        "Computed KL values and thresholds use floating-point arithmetic.",
+        "The audit checks numerical agreement and observed rank consistency, rather than interval-arithmetic guarantees near boundaries.",
         table(rows, "llllrrrrrr", r"Encoder & Pool & Direction & Group & States & Teacher & Retained & KL & Score & Union",
               caption, "tab:certificates", font="scriptsize"),
     ])
@@ -255,7 +274,10 @@ def main() -> None:
                         help="Complete original-retention certificate indices for both encoders.")
     parser.add_argument("--certificate-audits", nargs="+", type=Path,
                         help="Independent receipts that bind both certificate indices.")
-    parser.add_argument("--preservation-units", choices=("fractions", "percentage_points"))
+    parser.add_argument("--duplicate-audit", type=Path,
+                        help="The complete 144-pair audit of repeated deterministic fits.")
+    parser.add_argument("--preservation-units", choices=("fractions",),
+                        help="The audited retention and AD analyses store fractional metrics.")
     parser.add_argument("--protocol", type=Path)
     parser.add_argument("--protocol-sha256")
     args = parser.parse_args()
@@ -286,7 +308,7 @@ def main() -> None:
         prepare_nonlinear(args.nonlinear, read, inputs, args.nonlinear_audit)
         return
     required = ("rn50", "preservation", "retention", "audits", "preservation_units", "protocol", "protocol_sha256",
-                "certificates", "certificate_audits")
+                "certificates", "certificate_audits", "duplicate_audit")
     for name in required:
         if getattr(args, name) is None:
             parser.error("A complete generation requires --" + name.replace("_", "-"))
@@ -295,6 +317,8 @@ def main() -> None:
     if digest(protocol_path) != args.protocol_sha256:
         raise SystemExit("The preservation protocol hash does not match.")
     read(protocol_path)
+    duplicate_audit = read(args.duplicate_audit)
+    validate_duplicate_audit(duplicate_audit)
     audit_data = [read(path) for path in args.audits]
     for audit in audit_data:
         validate_audit(audit)
@@ -376,10 +400,9 @@ def main() -> None:
     write("preservation_table_v5.tex", table(main_rows, "lrrrrrr",
         r"& \multicolumn{3}{c}{ViT} & \multicolumn{3}{c}{RN50}\\"
         r"Family & I$\to$T & T$\to$I & Both & I$\to$T & T$\to$I & Both",
-        "Development-selected procedures under the one-point retrieval tolerance. "
-        "Entries are percentages averaged across the fixed training seeds. "
-        "Both denotes SugarCrepe++ accuracy for both valid captions. "
-        "AD random averages three matched assignment draws within each seed.",
+        "Selected AD-study procedures. Entries are percentages. Both denotes SugarCrepe++ both-caption accuracy. "
+        "U is frozen for both encoders. RN50 A includes one frozen seed. "
+        "None of six selected families passes the joint criterion.",
         "tab:newpreservation", wide=False, font="footnotesize"))
 
     gate_header = r"Encoder & Family & Trained & I$\to$T lower & T$\to$I lower & Both lower & Joint"
@@ -395,7 +418,11 @@ def main() -> None:
     appendix = [r"\section{Replication and Preservation: Complete Results}",
                 r"\label{app:newresults}",
                 "All differences below use percentage points.",
-                "Intervals use the separately declared comparison families.", gate_table, old_gate_table]
+                "Intervals use the separately declared comparison families.",
+                "A separate audit verified 144 pairwise comparisons of repeated fits and 1,584 matched trajectory rows.",
+                "The terminal parameter tensors agree in every comparison.",
+                "These deterministic duplicate executions do not add independent training seeds.",
+                gate_table, old_gate_table]
     for setting, contrasts in replications:
         rows = []
         for contrast in contrasts:
@@ -461,8 +488,9 @@ def main() -> None:
             appendix.append(table(selection_rows[start:start + 20], "llrrrrrrrr",
                 r"Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm",
                 f"{stage_name} study selected states. Family parentheses give the development tolerance in percentage points. "
-                "Norm denotes the recorded parameter update norm.",
+                "Norm denotes the recorded parameter update norm. Dashes denote inapplicable recorded coefficients.",
                 f"tab:{stage_name.lower()}selected{start}", font="scriptsize"))
+    appendix.append(r"\clearpage")
     appendix.append(certificate_text)
     write("results_appendix_v5.tex", "\n\n".join(appendix) + "\n")
     write("certificate_diagnostics_v5.json", json.dumps(certificate_data, indent=2) + "\n")
@@ -476,6 +504,7 @@ def main() -> None:
                        ("original_retention_factorial_v5.json", old_factorial),
                        ("original_retention_selected_v5.json", old_strategies),
                        ("original_retention_gates_v5.json", old_gates),
+                       ("duplicate_execution_audit_v5.json", duplicate_audit),
                        ("replication_contrasts_v5.json", dict(replications))):
         write(name, json.dumps(data, indent=2) + "\n")
 
@@ -490,6 +519,7 @@ def main() -> None:
         "generator_sha256": digest(Path(__file__)),
         "independent_audit_files": [str(p) for p in args.audits],
         "independent_certificate_audit_files": [str(p) for p in args.certificate_audits],
+        "duplicate_execution_audit_file": str(args.duplicate_audit),
     }
     (DEST / "v5_results_receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps({"status": receipt["status"], "generated_files": len(outputs)}, indent=2))
@@ -728,7 +758,7 @@ def prepare_ad(args, read, inputs: list[dict]) -> None:
         appendix.append(table(selection_rows[start:start+20], "llrrrrrrrr",
             r"Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm",
             "AD-study selected states. Family parentheses give the development tolerance in percentage points. "
-            "Norm denotes the recorded parameter update norm.", f"tab:adselected{start}", font="scriptsize"))
+            "Norm denotes the recorded parameter update norm. Dashes denote inapplicable recorded coefficients.", f"tab:adselected{start}", font="scriptsize"))
     appendix.append(r"\pending{Original retention, directional effects, and certificate diagnostics remain pending.}")
     write("ad_results_appendix_v5.tex", "\n\n".join(appendix) + "\n")
     existing = (DEST / "results_appendix_v5.tex").read_text()
