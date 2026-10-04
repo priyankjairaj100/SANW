@@ -69,8 +69,8 @@ The [v3 reproduction guide](REVIEW_FOLLOWUP_README.md) records the completed fol
 
 | Requirement | Exact source | Evidence needed | Current status |
 |---|---|---|---|
-| Broader evidence | Message 768; line 882: “The evidence comes from one adaptation setting.” | Repeat Source, Supported, and score-stratified promotion in materially different settings. | New results require recovery or fresh execution before independent verification. |
-| Stronger conceptual contribution | Message 768; line 883: “The conceptual advance is limited.” | Connect substantive theory or controlled interventions to useful empirical conclusions. | The restored theory and design require evidence checks against recovered or fresh outputs. |
+| Broader evidence | Message 768; line 882: “The evidence comes from one adaptation setting.” | Repeat Source, Supported, and score-stratified promotion in materially different settings. | Nonlinear and RN50 results passed independent verification. |
+| Stronger conceptual contribution | Message 768; line 883: “The conceptual advance is limited.” | Connect substantive theory or controlled interventions to useful empirical conclusions. | Exact rank-retention derivations and numerical checks are complete. Directional effects and certificate coverage still require verified results. |
 | Practical improvement | Message 768; line 884: “Practical relevance is diagnostic.” | Show a trained model that preserves retrieval and improves caption discrimination. | This scientific requirement remains open. |
 
 The explicit next recommendation was “one independent replication in a materially different adaptation setting.”
@@ -111,6 +111,7 @@ The [design audit](STRENGTHENING_DESIGN_AUDIT.md) states this distinction.
 | Nonlinear replication | [STRENGTHEN_REPLICATION_PROTOCOL.json](STRENGTHEN_REPLICATION_PROTOCOL.json) | `3d1d651ebe9ddfd7a1bd71f403eb0497a46ebb16227c25e206bf21e92431d920` |
 | Encoder replication | [STRENGTHEN_ENCODER_REPLICATION_PROTOCOL.json](STRENGTHEN_ENCODER_REPLICATION_PROTOCOL.json) | `53a8df510903144faf995b6935bd1049c804664d3e794a7e2ab9589b884de85e` |
 | Retention and directional interventions | [protocol_v3.json](../results/strengthen_retention/protocol_v3.json) | `5624342a20dd33b4f235264f57599a8bad0486d70fa587a6d9269371ea00b5d4` |
+| Allocation-plus-distillation extension | [protocol_v1.json](../results/allocation_distillation/protocol_v1.json) | `f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd` |
 
 The retention predecessors remain design history: `protocol.json` and `protocol_v2.json`.
 Do not overwrite frozen protocols when adding experiments.
@@ -140,10 +141,13 @@ Retention protocols v1–v3 omit the A+D cell.
 No identified revision withdraws the four-cell recommendation.
 Separate failures of A and D do not establish their interaction.
 
-**Completion status: pending.**
-A new exploratory protocol must define the missing comparison before affected fitting and scoring.
-Its present planning scope is 126 fits per encoder, or 252 fits across both encoders.
-That scope remains provisional until protocol freeze.
+**Design status: complete and frozen before affected fitting.**
+The new exploratory protocol defines the missing comparison and all analysis families.
+Its fixed scope is 126 fits per encoder, or 252 fits across both encoders.
+The [freeze receipt](../results/allocation_distillation/protocol_freeze.json) binds the protocol and implementation.
+Its primary comparison family contains 80 effects across both encoders.
+Its separate matched decomposition contains 24 effects.
+Scientific conclusions remain pending evaluation and independent audits.
 
 The new stage must preserve the completed v3 evidence and earlier frozen protocols.
 Its analysis must distinguish prior evidence from new exploratory findings.
@@ -157,14 +161,68 @@ The prior conversation reported completion of 270 strengthening fits and a revis
 It also reported independent audits and a final local checkpoint.
 Those reports remain historical context.
 
-The corresponding raw outputs are not currently recovered for independent verification.
-This statement describes the present recovery status.
-It does not establish permanent loss.
+Those historical raw outputs were not recovered for independent verification.
+The current program therefore executes the frozen designs again.
+These fresh outputs supply the current tables.
+The paper does not reconstruct numerical results from remembered historical claims.
 
 The current recovery restored remote commit `72cba41209e622fb2a5fdf0e3a3570c10501a48d`.
 The original v3 evidence remains available in that restored repository.
 Do not populate new tables from remembered strengthening results.
 Use restored raw outputs or clearly identified fresh executions.
+
+### Verified progress after the user resumed work
+
+Both replication training grids completed 45 fits.
+The nonlinear evaluation contains 60 states and 300 prediction archives.
+The independent nonlinear audit passed all twelve effects and 120,000 bootstrap samples.
+It checked 2,400 numeric aggregates.
+The largest bootstrap difference was `1.5265566588595902e-16`.
+The audit reconstructs results from saved ranks and score-derived correctness.
+It excludes independent feature extraction and complete dot-product reconstruction.
+
+| Nonlinear endpoint | Increasing-rate effects, in percentage points | Adjusted interval result |
+|---|---|---|
+| Supported minus Source, image-to-caption R@1 | -3.03, -3.43, -8.37 | All three intervals lie below zero. |
+| Supported minus stratified promotion, caption-to-image R@1 | +0.94, +0.51, +2.69 | The smallest and largest rates exclude zero. The middle interval includes zero. |
+
+The rates are `0.0001`, `0.0003`, and `0.001`.
+The [independent receipt](../recovery/current_turn_audit/nonlinear_replication_independent_audit.json) binds these results.
+The evidence extends the retrieval tradeoff to nonlinear adaptation.
+It does not establish successful preservation.
+
+The RN50 evaluation contains 62 states and 310 prediction archives.
+Its independent audit passed all twelve effects and 120,000 bootstrap samples.
+It checked 2,480 numeric aggregates.
+The largest bootstrap difference was `1.8041124150158794e-16`.
+Its scope has the same feature-extraction and dot-product exclusions.
+
+| RN50 endpoint | Increasing-rate effects, in percentage points | Adjusted interval result |
+|---|---|---|
+| Supported minus Source, image-to-caption R@1 | -5.00, -6.17, -7.27 | All three intervals lie below zero. |
+| Supported minus stratified promotion, caption-to-image R@1 | +2.10, +5.39, +4.63 | All three intervals lie above zero. |
+
+The [independent RN50 receipt](../recovery/current_turn_audit/rn50_replication_independent_audit.json) binds these results.
+Every RN50 image-to-caption interval against stratified promotion includes zero.
+Both replications retain the defined directional caption-assignment benefit and source-retrieval cost.
+Neither establishes the independent practical criterion.
+
+The primary contrast hashes remain unchanged:
+
+- Nonlinear: `ebf63d3947fef079b914fcadee611def09ad12757cfe484c45b469e4f5a2d538`.
+- RN50: `88e2fc0bb1e0f1f7d6058f16cd079cd0f510b82da797c8b814b10d85818bd83b`.
+
+At the restart checkpoint, the new ViT AD grid had completed all 126 fits.
+The RN50 AD grid had completed 60 fits.
+The original RN50 retention grid had completed 16 fits.
+The original ViT retention grid had not started.
+These are historical restart counts, not a live execution report.
+Repeated baseline executions do not add independent training seeds.
+
+The manuscript now includes both independently verified replication families.
+An interim draft places Limitations on page five.
+Its remaining empirical claims stay marked pending.
+The final generator requires exact independent audit bindings for every new result family and certificate index.
 
 The restored [resume record](RESUME_20261004.md) describes an earlier recovery stage.
 Read it as historical provenance alongside this current ledger.

@@ -1,0 +1,37 @@
+{
+  "status": "prepared_independently_verified",
+  "analysis_inputs": [
+    {
+      "path": "results/strengthen_replication/analysis_recovered/primary_contrasts.json",
+      "sha256": "ebf63d3947fef079b914fcadee611def09ad12757cfe484c45b469e4f5a2d538"
+    },
+    {
+      "path": "results/strengthen_replication/analysis_recovered/selected_strategy_metrics.json",
+      "sha256": "35ad939698df60b77a2f7caed65fee491f1232aca75a8cead50a6be3bd25a0cc"
+    },
+    {
+      "path": "results/strengthen_replication/analysis_recovered/analysis_audit.json",
+      "sha256": "ea3033898a4eab1ba1ef15f03c9e113d0eea16d32423e040e56c3fb0bd89576f"
+    },
+    {
+      "path": "recovery/current_turn_audit/nonlinear_replication_independent_audit.json",
+      "sha256": "74190572d5cdf4ff05d698e098092fe8f0bba28c9214fd5f463469e4b51e56e8"
+    }
+  ],
+  "generated_outputs": [
+    {
+      "path": "manuscript_strengthened_v5/nonlinear_results_table_v5.tex",
+      "sha256": "4a86b031408093e9ba28e36f415aff0c652130d29d4f8724df8d2b8372f6b839"
+    },
+    {
+      "path": "manuscript_strengthened_v5/replication_results_v5.tex",
+      "sha256": "a0aacca37e1c911f52a87f3d67e02542cbbe1d1e6f665713a8a16957dfe5ee8f"
+    },
+    {
+      "path": "manuscript_strengthened_v5/results_appendix_v5.tex",
+      "sha256": "9a9610885da67ca3ad477f2832e0f90d3967b86ccc8b1701413a4ff1a3e2aaa7"
+    }
+  ],
+  "generator_sha256": "0f3955b508f698aa1250e9e4dbad4c3c644312d449b850d7f57a378b47ab0d6d",
+  "final_build_permitted": false
+}

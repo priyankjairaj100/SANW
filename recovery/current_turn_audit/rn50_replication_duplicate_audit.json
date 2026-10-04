@@ -1,0 +1,216 @@
+{
+  "duplicate_terminal_fits": 18,
+  "identical_common_trajectory_rows": 198,
+  "interpretation": "These are deterministic duplicate executions of the same three seeds, not additional independent replicates.",
+  "ledger_file_sha256": {
+    "results/allocation_distillation/rn50/ledger.json": "da420c26d344e33fea0e01be1afd5c3a8d7292f4c349df87ab454ded66f7878f",
+    "results/strengthen_second_encoder/ledger.json": "fe2c12667c333371289f54a771d0764fa9ea842a64d9b55178156edee8cb7dbf"
+  },
+  "records": [
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.0001/seed_17/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "28a3d7ad0c635dd05a6ae448438c2247eb89dfa5765d0f245b37f21f478ad198",
+      "encoder": "rn50",
+      "learning_rate": 0.0001,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.0001/seed_17/epochs/epoch_10.pt",
+      "seed": 17,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.0001/seed_29/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "3ddb47cd25946f4a34c8482245091c93d4ef2068a416e3c60606fe9aac2af555",
+      "encoder": "rn50",
+      "learning_rate": 0.0001,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.0001/seed_29/epochs/epoch_10.pt",
+      "seed": 29,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.0001/seed_43/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "6180278e502a84659371a4847162b3b1b7eb0993dd0e826abc928ec69bdac3b4",
+      "encoder": "rn50",
+      "learning_rate": 0.0001,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.0001/seed_43/epochs/epoch_10.pt",
+      "seed": 43,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.0003/seed_17/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "268d1cb9a42a8feb4b30bce618a7f6654481370057a526e9e2c43bc40215c420",
+      "encoder": "rn50",
+      "learning_rate": 0.0003,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.0003/seed_17/epochs/epoch_10.pt",
+      "seed": 17,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.0003/seed_29/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "fc31a425b10a7ba778529c484e92cbf3f8cd366cf121cebfb344307fe978f024",
+      "encoder": "rn50",
+      "learning_rate": 0.0003,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.0003/seed_29/epochs/epoch_10.pt",
+      "seed": 29,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.0003/seed_43/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "94a7e3be57c4172de585dc850c8088042df8425d7df9d9d9b8f38d6630fd93c8",
+      "encoder": "rn50",
+      "learning_rate": 0.0003,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.0003/seed_43/epochs/epoch_10.pt",
+      "seed": 43,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.001/seed_17/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "2080bed2de9de40e49c7bad4b541e0e1a3289310c6aae840f979f00369525f4f",
+      "encoder": "rn50",
+      "learning_rate": 0.001,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.001/seed_17/epochs/epoch_10.pt",
+      "seed": 17,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.001/seed_29/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "9ffdf2b34b948f84bc286d4f0b168553560d6c432aec34d9d2c03cae936b56d5",
+      "encoder": "rn50",
+      "learning_rate": 0.001,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.001/seed_29/epochs/epoch_10.pt",
+      "seed": 29,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/source/lr_0.001/seed_43/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "89876ae793fda33d6b46292953146c2f7521b36c7f1e604000b22c555eff3ceb",
+      "encoder": "rn50",
+      "learning_rate": 0.001,
+      "policy": "source",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/source/lr_0.001/seed_43/epochs/epoch_10.pt",
+      "seed": 43,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.0001/seed_17/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "2fc63daaf41bbb47a27885b89543086d2a3810a714cf2c4e4dfe69dce753e36f",
+      "encoder": "rn50",
+      "learning_rate": 0.0001,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.0001/seed_17/epochs/epoch_10.pt",
+      "seed": 17,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.0001/seed_29/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "b3e9d21ae7236b4c0950fb5e8b1569c59c1c984172f295b69f7bd9cf47aa2cea",
+      "encoder": "rn50",
+      "learning_rate": 0.0001,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.0001/seed_29/epochs/epoch_10.pt",
+      "seed": 29,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.0001/seed_43/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "bf6471cfffa34ff22326f3e2fe131baa891a634266ddcf04ef64e8bb542d994f",
+      "encoder": "rn50",
+      "learning_rate": 0.0001,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.0001/seed_43/epochs/epoch_10.pt",
+      "seed": 43,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.0003/seed_17/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "7e3b01b98bf41ca3c2b52ddcd332614eb0aed97165704e003c886fffab92c126",
+      "encoder": "rn50",
+      "learning_rate": 0.0003,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.0003/seed_17/epochs/epoch_10.pt",
+      "seed": 17,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.0003/seed_29/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "9e5a21688631dd32995d16db9e22a08b0ce98f1e6c4dc44832554972484693ef",
+      "encoder": "rn50",
+      "learning_rate": 0.0003,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.0003/seed_29/epochs/epoch_10.pt",
+      "seed": 29,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.0003/seed_43/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "e1a62e13da5b2de8884c697b30f404a65fe0dd41ad48027345419cbb4f3045fb",
+      "encoder": "rn50",
+      "learning_rate": 0.0003,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.0003/seed_43/epochs/epoch_10.pt",
+      "seed": 43,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.001/seed_17/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "44d8c5d6764d5b7bd97d29a31af32616ba47fa7e429e8a32a45806ec10f8d280",
+      "encoder": "rn50",
+      "learning_rate": 0.001,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.001/seed_17/epochs/epoch_10.pt",
+      "seed": 17,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.001/seed_29/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "6d4c35c0c14cd87830e3733cb958f0af2736036ca568af6caab53bc887c30c4d",
+      "encoder": "rn50",
+      "learning_rate": 0.001,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.001/seed_29/epochs/epoch_10.pt",
+      "seed": 29,
+      "terminal_epoch": 10
+    },
+    {
+      "ad_checkpoint": "results/allocation_distillation/rn50/candidates/supported/lr_0.001/seed_43/epochs/epoch_10.pt",
+      "all_eleven_common_training_and_development_rows_identical": true,
+      "canonical_parameters_sha256": "d0aadeae96bc9025cb0d9b83def1b2e671f677bc3c079fc54f234cbd833cb9ab",
+      "encoder": "rn50",
+      "learning_rate": 0.001,
+      "policy": "supported",
+      "replication_checkpoint": "results/strengthen_second_encoder/candidates/supported/lr_0.001/seed_43/epochs/epoch_10.pt",
+      "seed": 43,
+      "terminal_epoch": 10
+    }
+  ],
+  "schema_version": 1,
+  "scope": "RN50 Source/U duplicate executions only; full AD-retention comparison remains pending",
+  "source_sha256": {
+    "scripts/audit_allocation_distillation_independent.py": "2b205a3e4a924c80b229cd995e97dc29188210f83ff0365c895b3fb014fa4cc9",
+    "scripts/audit_duplicate_retention_fits.py": "3595670113e498c530c2439c042be962ca1600ad342c6a115edc767581d67983"
+  },
+  "status": "passed"
+}

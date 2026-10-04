@@ -1,0 +1,200 @@
+[
+  {
+    "setting": "ViT linear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.0001,
+    "difference_pp": -6.0,
+    "interval_pp": [
+      -9.037083333333332,
+      -3.0629166666666907
+    ]
+  },
+  {
+    "setting": "ViT linear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.0003,
+    "difference_pp": -7.133333333333333,
+    "interval_pp": [
+      -10.366666666666665,
+      -3.796250000000024
+    ]
+  },
+  {
+    "setting": "ViT linear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.001,
+    "difference_pp": -10.833333333333334,
+    "interval_pp": [
+      -14.34083333333333,
+      -7.329583333333358
+    ]
+  },
+  {
+    "setting": "ViT nonlinear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.0001,
+    "difference_pp": -3.033333333333333,
+    "interval_pp": [
+      -5.544583333333334,
+      -0.5943749999999756
+    ]
+  },
+  {
+    "setting": "ViT nonlinear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.0003,
+    "difference_pp": -3.4333333333333336,
+    "interval_pp": [
+      -5.766666666666667,
+      -1.161041666666642
+    ]
+  },
+  {
+    "setting": "ViT nonlinear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.001,
+    "difference_pp": -8.366666666666665,
+    "interval_pp": [
+      -11.3,
+      -5.5943749999999755
+    ]
+  },
+  {
+    "setting": "RN50 linear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.0001,
+    "difference_pp": -5.0,
+    "interval_pp": [
+      -8.172291666666666,
+      -1.6943749999999753
+    ]
+  },
+  {
+    "setting": "RN50 linear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.0003,
+    "difference_pp": -6.166666666666665,
+    "interval_pp": [
+      -9.433333333333332,
+      -2.8000000000000003
+    ]
+  },
+  {
+    "setting": "RN50 linear",
+    "right": "source",
+    "metric": "i2t.r1",
+    "learning_rate": 0.001,
+    "difference_pp": -7.266666666666666,
+    "interval_pp": [
+      -10.666666666666666,
+      -3.7277083333333088
+    ]
+  },
+  {
+    "setting": "ViT linear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.0001,
+    "difference_pp": 1.5400000000000003,
+    "interval_pp": [
+      0.5039444444444446,
+      2.583222222222216
+    ]
+  },
+  {
+    "setting": "ViT linear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.0003,
+    "difference_pp": 3.8200000000000003,
+    "interval_pp": [
+      2.4120833333333347,
+      5.1977777777777785
+    ]
+  },
+  {
+    "setting": "ViT linear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.001,
+    "difference_pp": 4.084444444444445,
+    "interval_pp": [
+      2.4263888888888903,
+      5.803749999999977
+    ]
+  },
+  {
+    "setting": "ViT nonlinear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.0001,
+    "difference_pp": 0.9422222222222223,
+    "interval_pp": [
+      0.18516666666666687,
+      1.736305555555559
+    ]
+  },
+  {
+    "setting": "ViT nonlinear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.0003,
+    "difference_pp": 0.5088888888888893,
+    "interval_pp": [
+      -0.3448194444444441,
+      1.3496388888888924
+    ]
+  },
+  {
+    "setting": "ViT nonlinear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.001,
+    "difference_pp": 2.693333333333334,
+    "interval_pp": [
+      1.4666666666666675,
+      3.9778055555555665
+    ]
+  },
+  {
+    "setting": "RN50 linear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.0001,
+    "difference_pp": 2.1000000000000005,
+    "interval_pp": [
+      0.873333333333334,
+      3.3003750000000025
+    ]
+  },
+  {
+    "setting": "RN50 linear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.0003,
+    "difference_pp": 5.388888888888889,
+    "interval_pp": [
+      3.8370000000000006,
+      6.92372222222223
+    ]
+  },
+  {
+    "setting": "RN50 linear",
+    "right": "score_stratified",
+    "metric": "t2i.r1",
+    "learning_rate": 0.001,
+    "difference_pp": 4.633333333333335,
+    "interval_pp": [
+      2.9284861111111122,
+      6.30556944444445
+    ]
+  }
+]

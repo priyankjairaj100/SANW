@@ -1,0 +1,64 @@
+\section{Experimental Design}
+\label{sec:newexperiments}
+\paragraph{Three adaptation settings.}
+The starting encoder is OpenCLIP ViT-B/32 pretrained on LAION-2B \citep{cherti2023reproducible}.
+Its original linear adapters have 524,288 trainable parameters.
+The nonlinear replication uses separate dimension-to-128-to-dimension ReLU branches with zero output initialization.
+The second encoder is OpenAI RN50 with separate linear adapters \citep{radford2021clip}.
+Its architecture, feature dimension, and pretraining differ from the starting encoder.
+All encoders remain frozen.
+The adapters change their normalized image and text representations.
+
+Each replication crosses five assignments, three learning rates, and three training seeds: 45 fits per setting.
+The assignments are Source, Supported, and three score-stratified draws.
+The rates are $10^{-4}$, $3\times10^{-4}$, and $10^{-3}$.
+The seeds are 17, 29, and 43.
+Epoch ten defines every primary assignment comparison.
+The original linear study contributes 72 completed fits with its additional count-only controls.
+
+\paragraph{A separate preservation study.}
+The frozen retention design adds 180 fits across the two encoders.
+It includes directional interventions, allocation, distillation, and nine matched randomized distillation controls per encoder.
+The AD study uses linear adapters for both encoders and the same 1,200 training images.
+It crosses $\lambda\in\{.5,.8\}$ and $\beta\in\{1,4,16\}$ with the declared rates and seeds.
+The complete design includes U, A, D, AD, Source, interpolation, and matched randomized AD controls.
+It requires 126 fits per encoder, including nine randomized controls.
+Each base candidate has ten epochs and an epoch-zero reference.
+Matched controls stop at the corresponding AD-selected epoch.
+Appendix~\ref{app:newmethods} specifies the full grid and selection rules.
+
+\paragraph{Development selection.}
+The development pool contains 900 images and 4,500 source captions.
+It excludes the original 100 calibration images.
+The original 100-image validation subset supplies the relation-ranking objective.
+For each candidate and seed, selection maximizes relation accuracy subject to both retrieval constraints.
+Each retrieval direction can lose at most one percentage point relative to the frozen model.
+The procedure chooses shared coefficients and a shared learning rate across seeds.
+Exact ties favor the earlier epoch, lower rate, and lower coefficient.
+We also report the separately declared zero-loss sensitivity analysis.
+
+\paragraph{Search and caption discrimination.}
+An image query must retrieve one of its five source captions: I$\to$T.
+A caption query must retrieve its owning image: T$\to$I.
+Recall at rank one, R@1, counts queries whose highest-scoring candidate is relevant.
+The test pool contains 1,000 disjoint e-ViL images and all 5,000 source captions.
+Both directions search the complete pool.
+
+SugarCrepe tests a valid caption against an edited incorrect caption \citep{hsieh2023sugarcrepe}.
+SugarCrepe++ requires two valid captions to both outrank the same incorrect caption \citep{dumpala2024sugarcrepepp}.
+We also report relation accuracy on 400 images and COCO retrieval across 5,000 images and 25,000 captions.
+Each task keeps its original relevance definition.
+
+\paragraph{A joint practical criterion.}
+Every selected seed must contain a nonzero trained update.
+Both adjusted retrieval bounds must exceed $-1$ percentage point relative to frozen initialization.
+The adjusted SugarCrepe++ gain must exceed zero.
+The same family must pass for both encoders to support a replicated practical improvement.
+
+The preservation analysis adjusts jointly over 80 primary contrasts across both encoders.
+The matched four-cell analysis has a separate 24-contrast family.
+Both use 100,000 paired image-cluster bootstrap resamples.
+The earlier retention design retains separate 80-contrast preservation and 36-contrast directional families.
+Each replication uses its own predeclared 12-contrast family.
+All five caption queries stay with their owning image during resampling.
+Intervals condition on the fitted seeds, assignment draws, and fixed galleries.

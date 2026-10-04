@@ -1,0 +1,246 @@
+\section{Exact Gallery-Level Rank-Retention Geometry}
+\label{app:ranktheory}
+This section gives an exact distance to failure for a fixed retrieval problem.
+It also gives a complementary score bound and an aggregate KL budget bound.
+None changes the empirical selection rule or primary R@1 endpoints.
+Surrogate calibration already connects surrogate losses with decision errors \citep{bartlett2003risk,pires2016calibration}.
+Here the specific result is the exact positive-set failure radius for a fixed retrieval gallery.
+The proof uses standard convex projection arguments.
+
+\subsection{Definitions}
+Fix one query and a finite gallery with $n$ candidates.
+Let $R$ be its nonempty relevant set and $N$ its irrelevant set.
+Teacher and student distributions $q,p$ lie in the same probability simplex.
+Define forward KL in nats by
+\begin{equation}
+D(q\|p)=\sum_{i=1}^n q_i\log\frac{q_i}{p_i}.
+\end{equation}
+Use $0\log(0/p)=0$.
+A positive numerator with zero denominator contributes infinity.
+For softmax probabilities, both models use the same gallery and positive temperature.
+
+For an integer $K\geq1$, define the closed failure event
+\begin{equation}
+F_K=\left\{p:\left|\{j\in N:p_j\geq\max_{i\in R}p_i\}\right|\geq K\right\}.
+\end{equation}
+Cross-relevance ties count against the relevant candidate.
+Outside $F_K$, every tie rule places a relevant item within the first $K$ positions.
+If $|N|<K$, failure is impossible.
+
+Write $a_1\geq\cdots\geq a_r$ for relevant teacher probabilities.
+Write $b_1\geq\cdots\geq b_s$ for irrelevant teacher probabilities.
+When $K\leq s$, strict teacher correctness means $a_1>b_K$.
+The exact distance to failure is
+\begin{equation}
+C_K(q,R)=\min_{p\in F_K}D(q\|p).
+\end{equation}
+
+\subsection{Exact positive-set projection}
+\begin{theorem}
+\label{thm:exactprojection}
+If $|N|<K$, then $C_K=+\infty$.
+If $a_1\leq b_K$, then $C_K=0$.
+Otherwise, let $S$ contain the $K$ largest irrelevant teacher probabilities.
+The unique threshold $t$ solves
+\begin{equation}
+\sum_{i\in R}(q_i-t)_+=\sum_{j\in S}(t-q_j)_+.
+\label{eq:poolbalance}
+\end{equation}
+Define $A=\{i\in R:q_i>t\}$ and $B=\{j\in S:q_j<t\}$.
+An attaining distribution is
+\begin{equation}
+p_i^*=\begin{cases}
+\min(q_i,t),&i\in R,\\
+\max(q_i,t),&i\in S,\\
+q_i,&i\notin R\cup S.
+\end{cases}
+\end{equation}
+Its pooling level and divergence are
+\begin{align}
+t&=\frac{\sum_{i\in A}q_i+\sum_{j\in B}q_j}{|A|+|B|},\\
+C_K&=\sum_{i\in A}q_i\log\frac{q_i}{t}
++\sum_{j\in B}q_j\log\frac{q_j}{t}.
+\label{eq:exactcost}
+\end{align}
+Coordinates equal to $t$ can join either active set without changing the result.
+Zero-probability selected candidates can receive positive mass and contribute zero directly to KL.
+\end{theorem}
+
+\begin{proof}
+For a fixed $K$-element set $S$, failure requires $p_j\geq p_i$ for all $j\in S$ and $i\in R$.
+The complete event is the union over such sets.
+
+First consider which irrelevant candidates to select.
+Suppose $u\in S$, $v\in N\setminus S$, and $q_v\geq q_u$.
+Take any feasible finite-cost distribution $p$.
+If $p_v\geq p_u$, replacing $u$ by $v$ preserves feasibility without changing $p$.
+Otherwise, swap $p_u$ and $p_v$.
+The swapped distribution is feasible for the replacement set.
+Its cost change is
+\begin{equation}
+(q_v-q_u)\log(p_v/p_u)\leq0.
+\end{equation}
+The boundary convention extends this argument to zero coordinates.
+Repeated exchanges select the $K$ largest irrelevant teacher probabilities without increasing the minimum cost.
+
+For this fixed set, introduce $t$ with constraints $p_i\leq t$ for relevant coordinates.
+Selected irrelevant coordinates satisfy $p_j\geq t$.
+Up to a constant, the objective is the convex function $-\sum_iq_i\log p_i$.
+The proposed projection preserves total mass by Equation~\ref{eq:poolbalance}.
+It also satisfies every order constraint.
+
+Use simplex multiplier one.
+For an active relevant coordinate, use multiplier $\mu_i=q_i/t-1\geq0$ on $p_i-t\leq0$.
+For an active selected irrelevant coordinate, use $\nu_j=1-q_j/t\geq0$ on $t-p_j\leq0$.
+All inactive order multipliers vanish.
+Stationarity in each positive coordinate follows directly.
+Stationarity in $t$ requires
+\begin{equation}
+\sum_{i\in A}\mu_i=\sum_{j\in B}\nu_j.
+\end{equation}
+This equality is the pooled-mean identity.
+For an unpooled zero coordinate, nonnegativity multiplier one satisfies boundary stationarity.
+Complementarity holds.
+These convex optimality conditions prove minimality.
+
+The balance function is continuous.
+It is positive at the smallest selected irrelevant value and negative at the largest relevant value.
+Between those bounds, at least one active coordinate makes it strictly decreasing.
+Thus its root exists and is unique.
+Substituting the projection into KL gives Equation~\ref{eq:exactcost}.
+\end{proof}
+
+\begin{corollary}
+If $D(q\|p)<C_K(q,R)$, the student retains a relevant item within the first $K$ positions.
+The open radius is optimal.
+\end{corollary}
+\begin{proof}
+The inequality excludes the failure set by the definition of $C_K$.
+The attaining projection reaches failure at equality under pessimistic ties.
+Strict failures can approach that projection arbitrarily closely.
+Thus no larger open KL radius works in general.
+\end{proof}
+
+\subsection{R@1 and boundary behavior}
+For $K=1$, let $b$ be the largest irrelevant teacher probability.
+Start a pool with $b$.
+Add relevant probabilities in decreasing order while the next value exceeds the current mean.
+If $m$ relevant coordinates join, then
+\begin{align}
+t&=\frac{b+\sum_{i=1}^m a_i}{m+1},\\
+C_1&=\sum_{i=1}^m a_i\log(a_i/t)+b\log(b/t).
+\end{align}
+Adding a relevant value raises the mean without exceeding that value.
+Previously active coordinates therefore remain active.
+This proves the one-pass pooling procedure.
+
+The R@1 cost is $O(n+r\log r)$.
+General $K$ first selects the top $K$ irrelevant values.
+The balance function is linear between its probability breakpoints.
+The implementation scans active sets with cost $O((r+K)^2)$ after the gallery scan.
+Relevant sets contain five captions or one image in the source retrieval tasks.
+
+For $q=(.35,.30,.25,.10)$ and $R=\{1,2,3\}$, the exact radius is approximately $.08083268$ nats.
+The two-coordinate radius is approximately $.07354844$ nats.
+This deterministic example illustrates the contribution of multiple relevant candidates.
+It is not an empirical retrieval result.
+
+Whenever failure is possible, $C_K\leq\log(K+1)$.
+To see this, select any $K$ irrelevant indices and define
+\begin{equation}
+p=\frac{q+\sum_{j\in S}e_j}{K+1}.
+\end{equation}
+Each selected irrelevant probability is at least every relevant probability.
+Also $p_i\geq q_i/(K+1)$, which bounds the divergence.
+A point mass on one relevant candidate attains the bound.
+
+\subsection{An exact score radius}
+Let $z$ and $z+d$ be teacher and student scores on the same gallery.
+Let $z_{(K,N)}$ be the $K$th largest irrelevant score.
+Define
+\begin{align}
+g_K&=\max_{i\in R}z_i-z_{(K,N)},\\
+\operatorname{osc}(d)&=\max_i d_i-\min_i d_i\\
+&=2\min_c\|d-c\mathbf1\|_\infty.\nonumber
+\end{align}
+
+\begin{theorem}
+For a strictly correct teacher, $\operatorname{osc}(d)<g_K$ preserves a relevant item within the first $K$ positions.
+The exact failure radius under the centered infinity norm is $g_K/2$.
+\end{theorem}
+\begin{proof}
+Choose a teacher-best relevant candidate $i^*$.
+Every irrelevant $j$ with $z_j\leq z_{(K,N)}$ satisfies
+\begin{equation}
+(z_{i^*}+d_{i^*})-(z_j+d_j)
+\geq g_K-\operatorname{osc}(d)>0.
+\end{equation}
+At most $K-1$ irrelevant candidates lie above that threshold.
+This proves retention.
+
+For sharpness, decrease every relevant score by $g_K/2$.
+Increase the $K$ largest irrelevant scores by $g_K/2$.
+Leave all other scores unchanged.
+The selected irrelevant candidates now tie or exceed every relevant candidate.
+The oscillation is exactly $g_K$.
+\end{proof}
+
+This radius removes harmless common score shifts.
+It improves the uncentered sufficient condition $2\|d\|_\infty<g_K$.
+Consistent temperature scaling preserves the comparison.
+
+For $q=\operatorname{softmax}(z/T)$ and $p=\operatorname{softmax}((z+d)/T)$,
+\begin{equation}
+D(q\|p)=\log\mathbb E_q e^{d/T}-\mathbb E_q[d/T].
+\end{equation}
+Hoeffding's bounded-variable inequality gives
+\begin{equation}
+D(q\|p)\leq\frac{\operatorname{osc}(d)^2}{8T^2}.
+\end{equation}
+Neither sufficient certificate dominates the other on every query.
+Their union remains a valid certificate.
+
+\subsection{A total KL budget}
+Consider teacher-correct queries with positive finite thresholds $C_i$.
+Suppose their full-gallery divergences sum to at most $B$.
+Sort thresholds increasingly as $C_{(1)}\leq\cdots\leq C_{(m)}$.
+The number of lost queries cannot exceed
+\begin{equation}
+\max\left\{h:\sum_{i=1}^hC_{(i)}\leq B\right\}.
+\end{equation}
+Each lost query costs at least its failure threshold.
+Buying the cheapest thresholds therefore gives the largest possible failure count.
+The bound is sharp when query distributions can vary independently.
+Theorem~\ref{thm:exactprojection} supplies an attaining failure distribution for every threshold.
+A shared embedding model can impose additional constraints.
+The bound remains valid there, but need not be attainable.
+
+\subsection{Scope and numerical safeguards}
+The certificate uses the actual query, candidate gallery, relevance set, and temperature.
+It cannot replace any of these with a training surrogate.
+Two counterexamples make the boundary explicit.
+
+First, take teacher scores $(2,1,0)$ with the first candidate relevant.
+Train only on candidates one and two.
+Student scores $(2,1,10)$ give zero KL on that training subgallery.
+The full gallery nevertheless retrieves the third, irrelevant candidate.
+
+Second, give 100 queries teacher probabilities $(.51,.49)$, with the first candidate relevant.
+Leave 99 unchanged and switch one student to $(.49,.51)$.
+Average KL can fall below the individual threshold while one query fails.
+An average divergence cannot replace each query's divergence in the individual certificate.
+
+The implementation rejects unsafe overflow rather than returning a passing certificate.
+It uses the conservative comparison
+\begin{equation}
+D+10^{-12}+10^{-10}|C_K|<C_K.
+\end{equation}
+These tolerances do not constitute interval arithmetic.
+The reported quantities remain floating-point diagnostics.
+Benchmark ranking can use a fixed index tie rule.
+Certificate correctness uses pessimistic ties and must remain separately labeled.
+
+Any empirical coverage report must state its denominator.
+Useful denominators include all queries, strictly correct teacher queries, and actually retained teacher-correct queries.
+Frozen states must remain visible when interpreting coverage.
+The present proofs do not assert a measured coverage gain.

@@ -1,0 +1,20 @@
+\section{Separate Relation-Estimator Diagnostic}
+\label{app:diagnostic}
+This diagnostic predicts released supported, contradicted, and neutral labels from frozen features. It does not provide labels or weights to the adapter study. Source captions and unannotated cross-image pairs are excluded. Each annotated image/hypothesis pair is one example, and each image remains entirely within its training, validation, calibration, or test split.
+
+\paragraph{Features and fitting.}
+The image-only and text-only models use the corresponding 512-dimensional features. The multimodal model concatenates image, text, their elementwise product, and their absolute difference. A standard scaler is fitted only on training rows. Multinomial logistic regression uses an intercept, L2 regularization, \texttt{lbfgs}, tolerance $10^{-6}$, no class weights, and seed 17. The grid $C\in\{0.01,0.1,1,10\}$ is selected by validation macro-F1, with smaller $C$ breaking ties. There is no refit on validation data.
+
+The original reconstruction set a 2,000-iteration cap. Text fitting reached that cap, so a separately recorded amendment raised the cap to 10,000 without changing the model, grid, splits, or tolerance. The amended run has its own ledger and output directory; the original diagnostic remains archived. This numerical-completion amendment does not alter the frozen primary-adapter protocol.
+
+\paragraph{Calibration and selection gates.}
+Sort calibration image IDs and permute them with NumPy seed zero. The first 50 images fit a positive scalar temperature by minimizing mean three-class negative log likelihood; the other 50 select gates. Temperature lies in $[0.05,20]$, optimized in log space, with one and both endpoints also considered explicitly. It preserves the classifier's argmax predictions.
+
+For supported and contradicted predictions separately, a gate requires that class to be the argmax and its calibrated probability to meet or exceed a threshold. Search complete confidence-tie groups and choose maximum coverage among thresholds accepting at least 20 calibration pairs with a two-sided 95\% Wilson lower endpoint of at least 0.90. If no threshold qualifies, the gate accepts nothing. This calibration criterion is not a simultaneous guarantee after threshold search. Final precision and coverage are measured on held-out test images. Coverage divides accepted count by all test hypotheses; precision divides correct accepted predictions by accepted count. An empty gate has undefined precision.
+
+\paragraph{Metrics and out-of-fold predictions.}
+The diagnostic reports accuracy, three-class macro-F1, 10-bin expected calibration error, Brier score, and negative log likelihood. Brier score sums squared error over the three classes before averaging examples. Calibration bins have equal width and include probability one in the last bin. Class ties follow the fixed order supported, contradicted, neutral. Nonempty gate precision receives a descriptive 95\% image-bootstrap interval from 10,000 replicates with seed 20261003. Empty-acceptance replicates are counted and omitted from the percentile calculation.
+
+For reusable training predictions, sort training image IDs, permute with seed 17, and divide them into three image-disjoint folds. Each fold trains on the other two folds, selects $C$ on the external validation split, and calibrates on the external calibration halves. Thus held-out training labels do not enter the model or selection decisions producing their predictions. These predictions are archived for future work and do not enter adapter fitting.
+
+\input{diagnostic_results.tex}

@@ -1,0 +1,72 @@
+\section{Assignment and Preservation}
+\label{sec:newmethods}
+\paragraph{A fixed candidate pool.}
+Each training image has five source captions and hypotheses from e-SNLI-VE \citep{kayser2021evil}.
+Hypotheses carry supported, contradicted, or neutral labels.
+Every batch contains the same images, source captions, and hypotheses across policies.
+Unpromoted hypotheses remain competitors.
+Thus the intervention changes positive assignment without changing the available strings.
+
+\emph{Source} uses only source captions as positives.
+\emph{Supported}, denoted U, also promotes supported hypotheses for their annotated image.
+The \emph{score-stratified} control promotes the same number within each of two frozen-similarity groups.
+It draws assignments independently three times and keeps each assignment fixed during training.
+The encoder-specific similarities determine the groups.
+The original linear study also includes a count-only random control.
+
+\paragraph{Two effects of positive expansion.}
+Let $s_{ij}$ score image $i$ against caption $j$.
+Let $P_i$ contain its positive captions.
+The image-query loss is
+\begin{equation}
+\ell_i=\log\sum_j e^{s_{ij}}-\frac{1}{|P_i|}\sum_{j\in P_i}s_{ij}.
+\label{eq:newrow}
+\end{equation}
+With $K$ source captions and $M$ promoted hypotheses, each source target falls from $1/K$ to $1/(K+M)$.
+The reverse loss averages caption queries against the image candidates.
+Expansion adds eligible hypothesis queries and reduces the source queries' share of that average.
+The symmetric loss gives each direction weight $1/2$.
+Matching promotion counts preserves both changes across supported and randomized assignments.
+Appendix~\ref{app:followupinvariants} proves the resulting source-column gradient identity at fixed scores.
+We also cross Source and Supported supervision independently in the two loss directions.
+The four cells measure each directional intervention and their interaction at matched schedules.
+
+\paragraph{Allocation and distillation as separate interventions.}
+Let $L_S$ and $L_U$ denote the complete Source and Supported losses.
+Both losses use the unchanged candidate pool.
+We compare the family
+\begin{equation}
+L_{\lambda,\beta}
+=\lambda L_S+(1-\lambda)L_U+\beta T^2D_S.
+\label{eq:adobjective}
+\end{equation}
+Here $\lambda$ controls source allocation and $\beta$ controls preservation.
+$D_S$ is the mean teacher-to-student KL divergence on source-caption columns in both directions.
+The frozen encoder supplies the teacher probabilities at temperature $T=2$.
+The student uses the same candidate domains and temperature.
+Hypotheses receive supervised gradients but do not enter the distillation target.
+
+The four cells separate the two interventions:
+U uses $(\lambda,\beta)=(0,0)$;
+A uses $(\lambda,0)$;
+D uses $(0,\beta)$;
+AD uses $(\lambda,\beta)$.
+Allocation mixes complete objectives.
+It does not assign every image the same source probability.
+For example, the image-row source mass becomes $\lambda+(1-\lambda)K/(K+M)$.
+
+\paragraph{Fair preservation controls.}
+We also evaluate Source and WiSE-FT interpolation of Supported weights \citep{wortsman2022wise}.
+All procedures receive the same development objective and epoch choices.
+AD receives a score-stratified randomized control with identical coefficients, learning rate, and selected epochs.
+This control tests caption identity under the selected preservation schedule.
+It does not receive an independent search for a favorable random assignment.
+
+The paired four-cell analysis uses the AD-selected schedule for U, A, D, and AD.
+For any outcome $Y$, its interaction is
+\begin{equation}
+\mathcal I_Y=[Y(AD)-Y(D)]-[Y(A)-Y(U)].
+\label{eq:interaction}
+\end{equation}
+An independently selected AD-versus-D comparison instead evaluates complete procedures.
+Reporting both separates an interaction from changes in the selected training schedule.

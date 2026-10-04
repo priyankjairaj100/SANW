@@ -1,0 +1,13 @@
+{
+  "aggregate_checks": 1798,
+  "bootstrap_samples": 120000,
+  "maximum_recomputation_difference": 2.220446049250313e-16,
+  "missing_prior_outcomes_used": false,
+  "preanalysis_receipt_sha256": "9171ad0e981986d3bb03eb24574664ee77999268827a0c12296594cd6a7e8c89",
+  "prediction_archives": 310,
+  "primary_effects": 12,
+  "setting": "rn50",
+  "states": 62,
+  "status": "passed",
+  "test_based_selection": false
+}

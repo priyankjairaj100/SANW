@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "pdf": "output/pdf/acl27_review_followup_v3.pdf",
+  "sha256": "330b0be3c46041e295dcbf48577d8a26d0dd508f49ad69d128aca8f5ad806137",
+  "bytes": 582796,
+  "total_pages": 26,
+  "main_pages": 4,
+  "limitations_page": 5,
+  "all_pages_rendered": true,
+  "visual_review": "All pages inspected for clipping, overlap, figure and table layout. Page 4 selection table appears after its definitions. Appendix spacing is unstretched.",
+  "style": "Official ACL review style unmodified",
+  "undefined_references": false,
+  "overfull_boxes": false,
+  "type3_fonts": false,
+  "number_binding_checks": 1569,
+  "reviewers": [
+    "manuscript agent: all-page visual and number binding",
+    "root: main pages and representative appendices",
+    "training agent: numerical/story precision",
+    "losses agent: mathematical scope and proof references"
+  ],
+  "page_renders": [
+    {
+      "page": 1,
+      "render_sha256": "b9757aaa30f40cd9777bfcec7a0559e5f500918b66ca6a9ab16f7ee3d7e7ecd1"
+    },
+    {
+      "page": 2,
+      "render_sha256": "288ae3866edf297b986dc3c08e7d7fa0999b81f713391d6ad894eac71f98d9d8"
+    },
+    {
+      "page": 3,
+      "render_sha256": "7d050964c8dd3479c7bfef600b4054ae1d1cc0d093ff9ab1c2f170cdf8b0c666"
+    },
+    {
+      "page": 4,
+      "render_sha256": "3b7f0efa373e0afb97772cd04f9e8637429b54c721384d65b710f7d19292a213"
+    },
+    {
+      "page": 5,
+      "render_sha256": "370858c74d4569fce6efc9ab4c48c8fd72aa2a11dc6da4acf1bf4bfe54a26b23"
+    },
+    {
+      "page": 6,
+      "render_sha256": "6fafe556423e3b538037d041753574b871855c6c66d4b33a131e19bf9d8e7cbb"
+    },
+    {
+      "page": 7,
+      "render_sha256": "40319d6bc3be5ab02d0584315278cc70fe8ee65aa52b7c02afbafa12c7e0764f"
+    },
+    {
+      "page": 8,
+      "render_sha256": "25d9e6c9bede77d2454c62d0ee6bd2cac447c1c89fe83ec1bbf43a69bc8b5d57"
+    },
+    {
+      "page": 9,
+      "render_sha256": "7d74700abe6110d8fbf5885f9c2289adde42b0f3cb14794ac1627bca5dfa0a89"
+    },
+    {
+      "page": 10,
+      "render_sha256": "575fa5abda155835ecf35d9e7c0e63558a3a4401fe1a34c12b3c2a2f110437fd"
+    },
+    {
+      "page": 11,
+      "render_sha256": "2466269fe14b68032eff125ef2bd5c602b9655229bd07054aa6ec5d74fdf3bc6"
+    },
+    {
+      "page": 12,
+      "render_sha256": "bdf455b6f256edd2fd02de2d3ea07cac2386e96f29c0b25c77766c0a3b458748"
+    },
+    {
+      "page": 13,
+      "render_sha256": "dcb6a9f6484bbf9a752298bb6d5bcc94f03ec95c531aca2239801f6834abf5a4"
+    },
+    {
+      "page": 14,
+      "render_sha256": "26837bbd2991e4e4c41f1bebdb550c50a7fa05bb81f02cfb1fc41b7fa6623753"
+    },
+    {
+      "page": 15,
+      "render_sha256": "7dda08c9c7671e2a9e5b09dea7b96afa002d572878607789ca500e6d90c1b7fd"
+    },
+    {
+      "page": 16,
+      "render_sha256": "8e3f298a0631f99af1115cc9b6fb87a751dde806d8362fbfc38844186f5953fa"
+    },
+    {
+      "page": 17,
+      "render_sha256": "83835186cb8be46b0a539cc7473c9f12e6e2edb990bfdbebf43f5b7e5b43bae2"
+    },
+    {
+      "page": 18,
+      "render_sha256": "6ac6c0544695488cdb5dcc88d2721d9c2341861030edca6d05f6d9c9293138c4"
+    },
+    {
+      "page": 19,
+      "render_sha256": "1e7f39430e064002b12577d8f4b42844db857197f2069b0bcecb2a5e212c9e67"
+    },
+    {
+      "page": 20,
+      "render_sha256": "7aed003d6eaed14ae0efab23df51d8783c6cb8b89a200551c0f1d42660b0ee25"
+    },
+    {
+      "page": 21,
+      "render_sha256": "d1db2e11c0a14dd5c5de3d326e572f6252b4df570d1ee9e9dddd3396b25157f8"
+    },
+    {
+      "page": 22,
+      "render_sha256": "726389883c79e292463c532dcddec165ee58222958ee532a0315f3d2d32ce8ed"
+    },
+    {
+      "page": 23,
+      "render_sha256": "5fc4b5aa9b676313298a3dec150ee64357ae8b1570d9f311c75a899e67bafde3"
+    },
+    {
+      "page": 24,
+      "render_sha256": "e77eb6a559cff1df6631d49be2cb205bd94183f433a5f1edee03f6f827e94494"
+    },
+    {
+      "page": 25,
+      "render_sha256": "f70d0a6967cb9eb14d802449594ce4026dcfad06d8f0fa6008524e0f5e82858c"
+    },
+    {
+      "page": 26,
+      "render_sha256": "4afb7d6cfd0c0e7c1e752fdf115123761d483ff612d10fdecb89b26b9b1187d7"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "checks": 1569,
+  "all_primary_effects": 18,
+  "terminal_seed_rows": 72,
+  "selected_seed_rows": 48,
+  "descriptive_trajectory_rows": 36,
+  "main_secondary_rows": 7,
+  "main_selection_rows": 4,
+  "rounding": "Exact formatted equality at displayed precision",
+  "source_sha256": {
+    "results/review_followup/analysis/fixed_epoch_metrics.json": "9bb57cc4dbc77814686e8dfc76aee112e205c62e5e4039342919cbcc54328848",
+    "results/review_followup/analysis/selected_strategy_metrics.json": "1363a4ca8e78042114feaa303028d57aa1fd36354628a7478f10249687f38a4d",
+    "results/review_followup/analysis/primary_contrasts.json": "3b0e9e8ab84a659f9503f0c0d31acb2ce41d86be9a09d3422ef3350ef4c8eac2",
+    "results/analysis/aggregate_metrics.json": "12ea908093d8b02609dcf63fffebc5a3b224e77a888f45c38c54281f33f04cd9"
+  },
+  "auditor_sha256": "c6a40687a108b15cf1698faf9ec36f46f01b31a7973a636cbab165deb00c995d",
+  "audited_table_hashes": {
+    "followup_secondary_table.tex": "c3d2228cf7dd1353dd1a71751a2a689cc00fe9e55a72ed2c85e6060def95375e",
+    "followup_selection_table.tex": "66970fffae20e22a4add8aac65766b4dd7896920fb3d3fc15f55b2c47b2fca75",
+    "followup_results_appendix.tex": "3c9b2e7cc14444cc7410622c166df2153f9cd2983002e936e8fd419aa317be8c",
+    "followup_numbers.tex": "5c7ac40fbd3e3dd753a6a5403f8a7739a45195ea7374e804799b9d47ceb6f2ab"
+  }
+}

@@ -1,0 +1,244 @@
+\section{Replication and Preservation: Complete Methods}
+\label{app:newmethods}
+\subsection{Study boundaries}
+The starting study contains 72 matched-assignment fits.
+Its full methods and results appear in Appendix~\ref{app:historicalv3}.
+The nonlinear and RN50 replications each contain 45 fits.
+Their protocols are \path{docs/STRENGTHEN_REPLICATION_PROTOCOL.json} and \path{docs/STRENGTHEN_ENCODER_REPLICATION_PROTOCOL.json}.
+The frozen retention design contributes 180 fits under \path{results/strengthen_retention/protocol_v3.json}.
+The preservation extension has its own protocol, \path{results/allocation_distillation/protocol_v1.json}.
+This extension adds the allocation-plus-distillation comparison to the earlier design.
+It uses previously examined test sets and is identified as exploratory.
+The scientific record keeps every earlier protocol separately.
+Some Source, U, A, and D configurations recur across these stages.
+Identical inputs, seeds, objectives, and schedules define repeated executions of the same seeded fit.
+Execution totals therefore do not increase the number of independent training seeds.
+Each inference family uses only its declared seed and assignment sets.
+
+The paper includes only results bound to available prediction archives and completed analysis receipts.
+Earlier reported strengthening outputs do not supply numbers for this revision.
+The repository recovery ledger records that execution boundary.
+
+\subsection{The frozen directional and retention design}
+The retention design compares seven selected families for each encoder.
+They are Source, Supported, allocation, distillation, WiSE-FT, image-source-only, and reverse-source-only.
+The underlying grid has nine configurations, three rates, and three seeds.
+This gives 81 base fits per encoder.
+Nine matched randomized distillation controls raise each encoder's total to 90.
+These controls copy D's primary selected coefficient, rate, and per-seed epoch.
+They do not copy the later AD schedule.
+
+Write $L_I^S,L_T^S$ for the source image and caption losses.
+Write $L_I^U,L_T^U$ for the corresponding expanded losses.
+The four directional cells are
+\begin{align}
+S&=\tfrac12(L_I^S+L_T^S),&
+U&=\tfrac12(L_I^U+L_T^U),\\
+I_S&=\tfrac12(L_I^S+L_T^U),&
+T_S&=\tfrac12(L_I^U+L_T^S).
+\end{align}
+All four retain the same candidate captions.
+$I_S$ restricts the image targets to source captions.
+$T_S$ restricts eligible reverse anchors to source captions.
+The reverse intervention changes which captions participate in the average.
+It is not solely a change to individual image-target probabilities.
+
+For outcome $Y$, the source-restriction main effects are
+\begin{align}
+\Delta_I&=\tfrac12[Y(S)+Y(I_S)-Y(U)-Y(T_S)],\\
+\Delta_T&=\tfrac12[Y(S)+Y(T_S)-Y(U)-Y(I_S)].
+\end{align}
+The interaction is $Y(S)-Y(I_S)-Y(T_S)+Y(U)$.
+These contrasts use epoch ten at each of the three rates.
+Three contrasts, two retrieval endpoints, three rates, and two encoders give 36 effects.
+Their 100,000 bootstrap resamples use seed 20261006.
+The adjustment covers this complete directional family.
+
+The separate selected-procedure family contains 80 contrasts.
+Seven families against frozen contribute 28 effects per encoder across four endpoints.
+D against A and WiSE-FT contributes eight.
+D against matched randomized distillation contributes four.
+The adjustment covers both encoders jointly.
+Its 100,000 bootstrap resamples use seed 20261005.
+
+Selection, coefficients, practical thresholds, and zero-loss sensitivity follow the unchanged frozen protocol.
+The later AD extension adds its missing combined cell under a separate protocol.
+Its factorial concerns allocation and distillation, not the image and reverse directional interventions.
+All inference families remain distinct.
+
+\subsection{Models and features}
+ViT-B/32 uses the OpenCLIP LAION-2B checkpoint and its native score scale.
+Its image and text features have 512 dimensions.
+RN50 uses the official OpenAI checkpoint and its own preprocessing and score scale.
+Its features have 1,024 dimensions.
+Both encoders remain fixed during adaptation.
+
+For a normalized feature $x$, a linear residual adapter returns
+\begin{equation}
+f_W(x)=\frac{x+Wx}{\|x+Wx\|_2}.
+\end{equation}
+The two modalities have independent matrices.
+Both matrices start at zero.
+The ViT adapter has 524,288 parameters; the RN50 adapter has 2,097,152 parameters.
+No projection bias is trained.
+
+The nonlinear ViT replication returns
+\begin{equation}
+f_{A,B}(x)=\frac{x+B\operatorname{ReLU}(Ax)}{\|x+B\operatorname{ReLU}(Ax)\|_2}.
+\end{equation}
+Each modality uses a 128-dimensional hidden layer.
+The output matrix $B$ starts at zero.
+The input matrix can learn after the output matrix changes.
+The two branches contain 262,144 trainable parameters in total.
+This replication changes adaptation capacity while retaining the same pretrained representation.
+
+Every feature archive carries the encoder identity, checkpoint hash, preprocessing, image order, and text order.
+Recomputed feature archives remain identified as fresh executions.
+They are not described as exact-byte recoveries.
+
+\subsection{Candidate and assignment invariants}
+Training uses 1,200 images with their five source captions and all retained hypotheses.
+Each hypothesis belongs to its annotated image.
+Both replicated policies and random controls use the same complete batch candidates.
+Unpromoted hypotheses remain competitors.
+
+The score-stratified control ranks each image's hypotheses by its own encoder's frozen cosine scores.
+Manifest index resolves exact score ties.
+The ordered list splits into two nearly equal bins.
+Each bin receives exactly its original supported count.
+Sampling uses NumPy PCG64 seeds 101, 211, and 307.
+Each assignment remains fixed across all rates, training seeds, epochs, and batches.
+Naturally unchanged assignments remain in the sample.
+The controls retain the original labels for evaluation and provenance.
+Appendix~\ref{app:followupcontrols} gives the full assignment definition.
+
+\subsection{Exact preservation objective}
+Let $Z$ contain the scaled image--text scores for a batch.
+Let $C$ contain only its source-caption columns.
+Teacher and student row distributions are
+\begin{align}
+q_i^I&=\operatorname{softmax}(Z^0_{i,C}/T),\\
+p_i^I&=\operatorname{softmax}(Z_{i,C}/T).
+\end{align}
+Column distributions $q_j^T,p_j^T$ normalize the same source submatrix over image rows.
+The preservation term is
+\begin{align}
+D_S=\frac{1}{2B}\sum_{i=1}^{B}\KL(q_i^I\|p_i^I)
+\nonumber\\
+\quad+\frac{1}{2|C|}\sum_{j\in C}\KL(q_j^T\|p_j^T).
+\label{eq:sourcekl}
+\end{align}
+Teacher probabilities do not receive gradients.
+The temperature is $T=2$.
+Equation~\ref{eq:adobjective} includes the multiplier $T^2$ outside this divergence.
+Thus $\beta\in\{1,4,16\}$ gives effective multipliers 4, 16, and 64.
+
+$L_S$ and $L_U$ each average image and eligible-caption losses with equal directional weight.
+The mixture $\lambda L_S+(1-\lambda)L_U$ therefore mixes complete symmetric objectives.
+It does not simply redistribute image-row targets while leaving the reverse loss unchanged.
+For $K$ source captions and $M$ supports, the row source mass is
+\begin{equation}
+\lambda+(1-\lambda)\frac{K}{K+M}.
+\end{equation}
+The reverse source-anchor contribution also increases with $\lambda$.
+Its precise mass depends on the current batch's eligible anchor counts.
+
+\subsection{Complete fit grid}
+Each encoder has 13 deterministic configurations.
+Source and U contribute one each.
+A contributes two allocation coefficients.
+D contributes three distillation coefficients.
+AD contributes all six coefficient pairs.
+Three learning rates and three seeds produce 117 fits per encoder.
+Nine matched randomized AD controls raise that count to 126.
+The full extension therefore contains 252 fits.
+
+Base fits use ten epochs, batches of 32 images, and the same seed-specific image order.
+The rates are $10^{-4}$, $3\times10^{-4}$, and $10^{-3}$.
+The seeds are 17, 29, and 43.
+AdamW uses weight decay $.01$, coefficients $(.9,.999)$, and epsilon $10^{-8}$.
+Gradient norms are clipped at one.
+There is no learning-rate scheduler.
+Deterministic CPU fitting uses two threads.
+The full protocol records implementation and feature hashes before fitting.
+
+WiSE-FT interpolates each Supported correction matrix with its zero initialization.
+The candidate coefficients are $\alpha\in\{0,.1,.25,.5,.75,1\}$.
+The same $\alpha$ applies to both modalities.
+Interpolation uses model parameters before feature normalization.
+It does not average normalized features or final scores.
+
+\subsection{Selection rules}
+The development retrieval pool has 900 images and 4,500 source captions.
+It excludes the original 100 calibration images.
+It includes the original 100-image validation subset used for relation accuracy.
+This overlap is intentional and does not create a second independent development sample.
+
+For each candidate and seed, an epoch is feasible when both development retrieval constraints hold.
+The primary tolerance permits a one-percentage-point loss from each frozen reference.
+Epoch zero is always available.
+Among feasible epochs, selection maximizes image-balanced supported-versus-contradicted accuracy.
+Relation ties receive half credit.
+Exact ties retain the earlier epoch.
+
+Each family then selects shared coefficients and a shared rate across the three seeds.
+Selection maximizes the mean chosen relation score.
+The protocol fixes the remaining tie order.
+The zero-percentage-point tolerance repeats the procedure as a descriptive sensitivity analysis.
+It does not introduce additional primary hypotheses.
+
+Matched randomized AD controls copy the primary AD coefficients, rate, and per-seed epoch.
+They use three assignment draws crossed with three training seeds.
+They are fitted without an independent development search.
+The fitted control run stops at the required selected epoch.
+An epoch-zero match remains explicitly frozen.
+
+\subsection{Independent selection and matched decomposition}
+The primary comparisons evaluate independently selected Source, U, A, D, AD, and WiSE-FT procedures.
+The matched random comparison evaluates caption identity under the primary AD schedule.
+The decomposition instead takes all four cells at that AD-selected schedule.
+It uses the selected allocation coefficient for A and AD.
+It uses the selected distillation coefficient for D and AD.
+
+For outcome $Y$, let $Y_{00},Y_{10},Y_{01},Y_{11}$ denote U, A, D, and AD respectively.
+The conventional allocation effect is
+\begin{equation}
+\Delta_A=\tfrac12[(Y_{10}-Y_{00})+(Y_{11}-Y_{01})].
+\end{equation}
+The conventional distillation effect is
+\begin{equation}
+\Delta_D=\tfrac12[(Y_{01}-Y_{00})+(Y_{11}-Y_{10})].
+\end{equation}
+The interaction is
+\begin{equation}
+\Delta_{AD}=Y_{11}-Y_{01}-Y_{10}+Y_{00}.
+\end{equation}
+The interaction measures departure from additivity for this outcome and selected schedule.
+It does not establish a universal mechanism across objectives or training distributions.
+
+\subsection{Evaluation and inference}
+Primary endpoints are e-ViL I$\to$T R@1, e-ViL T$\to$I R@1, relation accuracy, and SugarCrepe++ both-caption accuracy.
+The preservation family contains 80 contrasts across two encoders.
+The decomposition contains 24 contrasts: three factorial effects, four endpoints, and two encoders.
+Each family uses 100,000 paired image-cluster bootstrap resamples and its declared Bonferroni adjustment.
+The bootstrap retains each image's associated caption queries and benchmark records.
+Randomized controls average assignment draws within each training seed before seed averaging.
+The fixed seeds and draws are not themselves resampled.
+
+The practical gate uses adjusted lower bounds against frozen initialization.
+Both retrieval bounds must exceed $-1$ percentage point.
+The SugarCrepe++ bound must exceed zero.
+Each selected state must have a positive epoch and nonzero update norm.
+An across-encoder success requires the same family to pass for both encoders.
+Point estimates alone cannot establish the gate.
+Retrieval intervals can cross zero if their lower bounds exceed the declared negative tolerance.
+
+The replication families remain separate from preservation inference.
+Each has 12 contrasts at epoch ten.
+They compare Supported with Source and score-stratified promotion at every rate in both retrieval directions.
+The original linear study retains its separate 18-contrast family.
+
+All benchmark predictions retain query identities and aggregate definitions.
+Independent audits recompute reported effects from those predictions.
+Source image overlap, checkpoint selection, and protocol hashes receive separate checks.
+The complete tables below report every declared comparison.

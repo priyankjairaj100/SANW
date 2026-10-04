@@ -1,0 +1,28 @@
+\section*{Limitations}
+The experiments use frozen encoders, small residual adapters, and 1,200 training images.
+They do not establish behavior under full-encoder training or larger data scales.
+Changing to RN50 changes architecture, pretraining, and feature dimension together.
+The replication does not isolate those factors.
+
+Some supported labels inherit text-inference judgments rather than independent visual adjudication.
+Source-caption ownership also provides incomplete retrieval relevance.
+The score-stratified controls match coarse similarity groups rather than exact scores or all semantic properties.
+Their quotas depend on relation annotations.
+
+The test sets informed earlier stages and remain reused evaluation sets.
+The AD extension is exploratory relative to that prior work.
+The development pool includes the original validation subset.
+It excludes calibration images and does not overlap the test pool.
+The bootstrap conditions on fitted seeds, assignment draws, and fixed candidate galleries.
+It does not resample training runs or construct new galleries.
+
+The rank certificate applies to identical queries, galleries, relevance sets, and probability temperatures.
+Its proof does not transfer a minibatch training penalty to unseen queries.
+Frozen-teacher distillation, weight interpolation, and convex objective mixtures are established ingredients.
+The controlled comparisons determine their value in this setting.
+
+\section*{Ethical Considerations and Assistance}
+We use existing public datasets under their source terms and collect no new human judgments.
+Captions and pretrained features can reflect source biases.
+Generative AI assisted planning, implementation, analysis, literature discovery, and drafting.
+The authors are responsible for checking the released computations and manuscript.

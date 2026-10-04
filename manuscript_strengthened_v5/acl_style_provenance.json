@@ -1,0 +1,25 @@
+{
+  "commit": "d5adc823ff0f80f98c80405ca0ab66c68e684409",
+  "files": {
+    "acl.sty": {
+      "url": "https://raw.githubusercontent.com/acl-org/acl-style-files/d5adc823ff0f80f98c80405ca0ab66c68e684409/acl.sty",
+      "sha256": "19dfeddc2c0e448f3926a0bef048a9db3f3611b46265b760caabd7ada4f361de",
+      "bytes": 11615
+    },
+    "acl_natbib.bst": {
+      "url": "https://raw.githubusercontent.com/acl-org/acl-style-files/d5adc823ff0f80f98c80405ca0ab66c68e684409/acl_natbib.bst",
+      "sha256": "6fbb306202290f4b68e74ac1460a8b27398500cb6dfeb4492e74c457eae7cd1e",
+      "bytes": 45442
+    },
+    "official_template_example.tex": {
+      "url": "https://raw.githubusercontent.com/acl-org/acl-style-files/d5adc823ff0f80f98c80405ca0ab66c68e684409/acl_latex.tex",
+      "sha256": "339c9ee9705c1767d44ef24b85365c0bb8619ecc3fcf66172bf1356292389614",
+      "bytes": 14533
+    },
+    "official_style_README.md": {
+      "url": "https://raw.githubusercontent.com/acl-org/acl-style-files/d5adc823ff0f80f98c80405ca0ab66c68e684409/README.md",
+      "sha256": "f5e4fe5096e8bc045b586a2351409f29ce6d55e0268a434602a06011f571d882",
+      "bytes": 2417
+    }
+  }
+}

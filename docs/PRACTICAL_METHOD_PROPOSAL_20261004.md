@@ -56,10 +56,10 @@ Use paired image clusters when constructing uncertainty estimates.
 Freeze the new comparison family before evaluation.
 Keep the previous failure results in the research record.
 
-If A+D passes the practical criterion, add randomized promotion with the same selected schedule.
+The separate execution protocol includes randomized promotion under the selected schedule, regardless of the practical result.
+It requires all nine seed-by-draw controls for each encoder.
 This control tests whether caption identity contributes beyond preservation.
-Specify this conditional control before evaluating A+D.
-Do not choose a favorable control after test inspection.
+The separate frozen protocol takes precedence over this design assessment.
 
 ## 2. What remains if A+D fails
 

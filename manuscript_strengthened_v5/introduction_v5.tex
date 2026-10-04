@@ -1,0 +1,35 @@
+\section{Introduction}
+A photograph of a child holding a red ball supports several descriptions.
+``A child with a red ball'' describes the scene precisely.
+``Someone is outdoors'' may also be correct, but matches many images.
+An image search model must learn from both descriptions while distinguishing the intended match from thousands of candidates.
+Which descriptions should training reward, and how strongly?
+
+Contrastive image--text models reward associated captions relative to competing candidates \citep{radford2021clip}.
+We call these rewarded pairs \emph{positives}.
+A competing caption can still correctly describe the image.
+Relation annotations identify supported statements that can supply additional positives.
+However, promoting a caption changes both its training role and the distribution of supervision.
+The original captions share their target probability with more descriptions.
+The reverse loss also averages over more caption queries.
+
+This distinction matters when adapting an existing retrieval model.
+Supported descriptions can teach useful visual distinctions without identifying the exact caption assigned to an image.
+Better caption discrimination therefore need not improve source-caption retrieval.
+The practical objective combines both capabilities: learn useful distinctions while retaining reliable search.
+
+We study this objective through two linked comparisons.
+First, we test caption identity while matching positive counts, initial similarity groups, learning rates, and epochs.
+We repeat the comparison with a nonlinear adapter and a second pretrained encoder.
+Directional interventions separate image-positive expansion from reverse-anchor expansion.
+Second, we separate source-target allocation from a standard preservation penalty.
+Their combination tests whether allocation contributes beyond distillation alone.
+Every preservation procedure uses the same development rule and an explicit retrieval tolerance.
+
+Prior methods convert false negatives into positives and modify negative weights \citep{byun2024mafa,jiang2023regulation}.
+Composition studies already examine valid descriptions and retained capabilities \citep{kamath2024hardpositive,oh2024fsc,peleg2025clic}.
+CLIP-Refine combines positive supervision with teacher outputs; WiSE-FT interpolates pretrained and adapted weights \citep{yamaguchi2025refine,wortsman2022wise}.
+Our contribution concerns what caption assignment and allocation add under these preservation controls.
+Both new settings reproduce the source-retrieval cost.
+Caption assignment improves caption-to-image retrieval, with rate-dependent evidence in the nonlinear setting.
+\pending{State the audited preservation finding.}

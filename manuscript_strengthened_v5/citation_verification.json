@@ -1,0 +1,27 @@
+{
+  "checked_utc_date": "2026-10-03",
+  "sources": {
+    "radford2021clip": "https://proceedings.mlr.press/v139/radford21a.html",
+    "kamath2024hardpositive": "https://arxiv.org/html/2409.17958v1",
+    "oh2024fsc": "https://aclanthology.org/2024.emnlp-main.1062/",
+    "peleg2025clic": "https://arxiv.org/abs/2505.24424",
+    "khosla2020supervised": "https://proceedings.neurips.cc/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html",
+    "kayser2021evil": "https://arxiv.org/abs/2105.03761",
+    "hsieh2023sugarcrepe": "https://papers.nips.cc/paper_files/paper/2023/hash/63461de0b4cb760fc498e85b18a7fe81-Abstract-Datasets_and_Benchmarks.html",
+    "dumpala2024sugarcrepepp": "https://arxiv.org/abs/2406.11171",
+    "pham2026nohard": "https://openaccess.thecvf.com/content/CVPR2026/papers/Pham_No_Hard_Negatives_Required_Concept_Centric_Learning_Leads_to_Compositionality_CVPR_2026_paper.pdf",
+    "jiang2023regulation": "https://aclanthology.org/2023.acl-long.819/",
+    "liu2023sat": "https://doi.org/10.1109/TMI.2023.3294980",
+    "byun2024mafa": "https://openaccess.thecvf.com/content/CVPR2024/html/Byun_MAFA_Managing_False_Negatives_for_Vision-Language_Pre-training_CVPR_2024_paper.html",
+    "cherti2023reproducible": "https://openaccess.thecvf.com/content/CVPR2023/papers/Cherti_Reproducible_Scaling_Laws_for_Contrastive_Language-Image_Learning_CVPR_2023_paper.pdf"
+  },
+  "reference_file_sha256": "06246a64a127b1008fa57f650cf40f0140040b00a0b9056d629a7e53c29da7a9",
+  "notes": [
+    "Primary publisher/paper metadata checked. CLIC arXiv v2 records acceptance at NeurIPS 2025.",
+    "Kamath et al. Section 2 and Table 1 explicitly discuss generic positive augmentation and SVLC+Pos.",
+    "SugarCrepe++ entry is cited as its verified arXiv release; no unverified venue is supplied.",
+    "Final v2 positioning cross-checked in docs/NOVELTY_POSITIONING_FINAL_REWRITE.md against primary proceedings and author records.",
+    "SRCL metadata follows the ACL PDF and official six-author record. SAT triage description is supported by the deposited abstract; no inaccessible full-text detail is attributed.",
+    "Pham et al. venue verified by the official CVPR 2026 paper; publication pages not supplied without verification."
+  ]
+}

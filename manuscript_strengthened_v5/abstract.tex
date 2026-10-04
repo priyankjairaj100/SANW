@@ -1,0 +1,12 @@
+An image can support several correct descriptions.
+Training on those descriptions can improve caption discrimination while reducing retrieval accuracy.
+We separate the effects of caption identity, positive-target allocation, and preservation of the pretrained model.
+Matched randomized controls keep the candidate captions, positive counts, and initial similarity groups fixed.
+We test linear and nonlinear adaptation, then repeat the study with a different pretrained encoder.
+We also combine source-target allocation with source-gallery distillation.
+Development data selects every model under the same retrieval constraint.
+Both new settings reproduce the image-to-caption cost against source-only training at every tested rate.
+Caption identity improves caption-to-image retrieval, although the nonlinear evidence varies across rates.
+\pending{Insert audited preservation outcomes.}
+An exact distance to ranking failure explains what distribution preservation can certify on a fixed gallery.
+These comparisons connect additional caption supervision to the search performance that adaptation must preserve.

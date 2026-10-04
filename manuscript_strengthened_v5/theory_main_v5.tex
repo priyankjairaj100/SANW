@@ -1,0 +1,24 @@
+\section{What Preservation Can Certify}
+\label{sec:ranktheory}
+Distillation controls a probability distribution, whereas retrieval depends on the highest-ranked relevant candidate.
+The following result gives the exact connection on a fixed gallery.
+Let $q$ and $p$ denote teacher and student probabilities on that gallery.
+Let $R$ contain its relevant candidates.
+Define $C_K(q,R)$ as the smallest forward KL divergence needed to place $K$ irrelevant candidates above every relevant candidate.
+Ties count as failures.
+
+\begin{proposition}
+Assume the teacher is strictly correct and at least $K$ irrelevant candidates exist.
+Select the $K$ largest irrelevant teacher probabilities.
+Cap relevant probabilities above a level $t$ and raise selected irrelevant probabilities below $t$.
+Choose $t$ so the removed and added mass agree.
+Call the resulting distribution $p^*$.
+Then $C_K(q,R)=\KL(q\|p^*)$.
+Consequently, $\KL(q\|p)<C_K(q,R)$ guarantees a relevant candidate within the first $K$ positions.
+\end{proposition}
+
+Appendix~\ref{app:ranktheory} gives the formula, attaining projection, proof, and numerical boundary cases.
+The radius treats all valid candidates jointly.
+It can exceed a bound that protects only the teacher's best relevant candidate.
+The same-gallery requirement matters: a minibatch penalty cannot certify unseen distractors in a larger gallery.
+The empirical practical criterion therefore uses measured full-pool retrieval.

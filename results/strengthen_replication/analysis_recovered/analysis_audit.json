@@ -1,0 +1,13 @@
+{
+  "aggregate_checks": 1740,
+  "bootstrap_samples": 120000,
+  "maximum_recomputation_difference": 2.220446049250313e-16,
+  "missing_prior_outcomes_used": false,
+  "preanalysis_receipt_sha256": "f7b14261492fe92ce3e251838e41218e140d96bde1776ae7167da77f1a69c9b8",
+  "prediction_archives": 300,
+  "primary_effects": 12,
+  "setting": "nonlinear",
+  "states": 60,
+  "status": "passed",
+  "test_based_selection": false
+}
