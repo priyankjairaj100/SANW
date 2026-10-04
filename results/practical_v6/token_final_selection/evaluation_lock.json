@@ -1,0 +1,32 @@
+{
+  "bootstrap_replicates": 100000,
+  "bootstrap_seed": 20261007,
+  "encoders": {
+    "rn50": {
+      "manifest": "results/practical_v6/token_final_selection/rn50_manifest.json",
+      "manifest_sha256": "a790599a8e13b4aceb93ae328f0f443a178e4e18accc30cb792423c37a58ba2d"
+    },
+    "vit_b32": {
+      "manifest": "results/practical_v6/token_final_selection/vit_b32_manifest.json",
+      "manifest_sha256": "66a7bc4167dba56bc61bcb8dcbcf68f5ac45824ae751558f67e69e837b5d68cd"
+    }
+  },
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_token_last_block",
+  "family_size": 80,
+  "inference": "Single-caption first11 prefix and learned/reference suffix, ownEOT trim, float32, Torchthreads1; float64 pair scores.",
+  "protocol": "results/practical_v6/token_selection_protocol_v1.json",
+  "protocol_sha256": "a7ff03c49a8c77674173b839b4304f1949eb95b0d43b440955ed591dfdb49ada",
+  "schema_version": 1,
+  "source_hashes": {
+    "scripts/audit_practical_text_inference_v6.py": "d7b62ede89fe7bda12bbe07cec8b7f2506fc4432aca9658eb5fa8b962b67bb70",
+    "scripts/audit_practical_text_v6.py": "ebfaf2702f5d9a6f8a452097d07c9c729e2dfb1b107c8fc1963536aef0d25dcf",
+    "scripts/audit_practical_v6.py": "dd093f837ad1a1ce2afe6bc3a110667293e27bd48a2fc6e85ab33846d4af14e7",
+    "scripts/evaluate_practical_text_v6.py": "257c088e7a8e80eb135c1a4706d8d040fc8964455dde9445ea50ed3636c6aad8",
+    "scripts/evaluate_practical_v6.py": "4519f8cfd16ac72893861c0fd7cf98135cb3a877aad0a347f22ba68a41588a78",
+    "src/gcr/practical_text_inference_v6.py": "e4465f81c2bdd56e8d5441e6f968001969503b5b4bf96793e658010d976212b9",
+    "src/gcr/practical_text_parallel_v6.py": "30f21d408f181a1425ea367316726820a0e11f3230900f363a8bf350a5885b31",
+    "src/gcr/practical_text_training_v6.py": "7a93b7f8e196890ffaf8382ab65e0ef4f6b24c54218a28fdef8d7619b839be02",
+    "src/gcr/practical_text_v6.py": "c851ef36db42d1792a14ca80346da6aa502213967a8d2393001bde6c4467b322"
+  }
+}

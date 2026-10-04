@@ -1,0 +1,27 @@
+{
+  "current_test_outcomes_used_for_selection": false,
+  "date": "2026-10-04",
+  "encoders": [
+    "vit_b32",
+    "rn50"
+  ],
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "families": {
+    "bounded_pairwise_correction": {
+      "selection_lock": "results/practical_v6/pooled_selection/selection_lock.json",
+      "sha256": "e895dd094aa15d3452ec488f064a2b0e93144d978f87a8269d0ea7b912196f6f"
+    },
+    "bounded_token_last_block": {
+      "selection_lock": "results/practical_v6/token_final_selection/evaluation_lock.json",
+      "sha256": "0be8b10a8596e8de9f0871668bc74e4ac180e6f8c34f14c47dedf088b5b924a1"
+    }
+  },
+  "gate": "unchanged_practical_gate",
+  "schema_version": 1,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "status": "both_families_selected_before_new_heldout_scoring"
+}

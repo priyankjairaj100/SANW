@@ -1,0 +1,147 @@
+{
+  "canonical_development_completion": {
+    "path": "results/practical_v6/canonical_text_development_v1/vit_b32/completion.json",
+    "sha256": "40a16329a33a772d9a0f04859fc3a7dabf00c13358978a6caa83e8982809456f"
+  },
+  "canonical_development_snapshots": [
+    {
+      "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/snapshot.json",
+      "sha256": "cb1645edf14702ff71891068ccf1b14a584f6fb519db1cb39580f9441b9dada3"
+    },
+    {
+      "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/snapshot.json",
+      "sha256": "e8d8dbecebddcfa814ad934f8ed085b372a4226a4cb73812dfa433878934d919"
+    },
+    {
+      "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/snapshot.json",
+      "sha256": "776d8114724587195c4002ebf394685fb1aa1cfd455f858e78d2f2484324cacd"
+    }
+  ],
+  "canonical_inference_amendment": {
+    "path": "results/practical_v6/token_inference_amendment_v1.json",
+    "sha256": "fec3aceaeb934f14b40f899f71aedaeefd3e132e815eecaf8ad7d6f339be0010"
+  },
+  "current_test_outcomes_used_for_selection": false,
+  "encoder": "vit_b32",
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_token_last_block",
+  "protocol": {
+    "path": "results/practical_v6/token_selection_protocol_v1.json",
+    "sha256": "a7ff03c49a8c77674173b839b4304f1949eb95b0d43b440955ed591dfdb49ada"
+  },
+  "protocol_sha256": "a7ff03c49a8c77674173b839b4304f1949eb95b0d43b440955ed591dfdb49ada",
+  "schema": "sanw_token_evaluation_manifest_v1",
+  "source_hashes": {
+    "results/practical_v6/token_inference_amendment_v1.json": "fec3aceaeb934f14b40f899f71aedaeefd3e132e815eecaf8ad7d6f339be0010",
+    "results/practical_v6/token_selection_protocol_v1.json": "a7ff03c49a8c77674173b839b4304f1949eb95b0d43b440955ed591dfdb49ada",
+    "scripts/assemble_practical_text_selection_v6.py": "36c8548cb59dac408fed6a86bf2d7d61db2fda1e9de36170ffa491df4c9a07e0",
+    "scripts/audit_practical_text_inference_v6.py": "d7b62ede89fe7bda12bbe07cec8b7f2506fc4432aca9658eb5fa8b962b67bb70",
+    "scripts/cache_practical_text_prefix_v6.py": "0bd83f95aa351ceb73a1b8b5522520b7f641f96adcc85990b42ded3c8de62ec3",
+    "scripts/rescore_practical_text_development_v6.py": "50234c34bdd4da2951cebd3441474bc0eb20f468921cc470257de6c1f3d419f1",
+    "scripts/run_practical_text_training_v6.py": "c0d988b84d7b336c9b61f78ce597cc4bcc64aa62730c8b8b931dde19bdec64ad",
+    "src/gcr/practical_text_inference_v6.py": "e4465f81c2bdd56e8d5441e6f968001969503b5b4bf96793e658010d976212b9",
+    "src/gcr/practical_text_parallel_v6.py": "30f21d408f181a1425ea367316726820a0e11f3230900f363a8bf350a5885b31",
+    "src/gcr/practical_text_training_v6.py": "7a93b7f8e196890ffaf8382ab65e0ef4f6b24c54218a28fdef8d7619b839be02",
+    "src/gcr/practical_text_v6.py": "c851ef36db42d1792a14ca80346da6aa502213967a8d2393001bde6c4467b322",
+    "src/gcr/practical_training.py": "56a58e6055fdc1eb9f0f90e20c3ea767b603f1c0db14d15ab66f81ff52f02c6f",
+    "src/gcr/review_training.py": "862990a85060ddeccb2d685aedc26535dd1948741d1e5cc39bfc96e891aeeaf4",
+    "src/gcr/training.py": "274931e8b718549e0b320671e074e7168fe8ada0e2e3f8bffa649698100ec977"
+  },
+  "states": [
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.00685071528089945,
+        "retrieval": 0.009161037033493401
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/snapshot.json",
+        "sha256": "cb1645edf14702ff71891068ccf1b14a584f6fb519db1cb39580f9441b9dada3"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/canonical_text_features.npz",
+        "sha256": "dc396a5797ef1d36da117c7333c1f24a1e92837208a5b9fda253ad0c749299ca"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "69dfb0758c82b95598ad53910f08a618476b1551f2476917728f04e8e08ae118",
+      "development_gains": {
+        "i2t_r1_change": 0.007777777777777772,
+        "paired_joint_accuracy_gain": 0.012502037545787603,
+        "t2i_r1_change": 0.0
+      },
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 17,
+      "state_id": "token_last_block__vit_b32__seed_17__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/ledger.json",
+        "sha256": "5f579c601434692a8dac20d1dabc590cfb91ac55531910e7f77e3aeb9145ea53"
+      },
+      "update_norm": 0.4485373403803154
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.007052312396115262,
+        "retrieval": 0.009363777544585663
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/snapshot.json",
+        "sha256": "e8d8dbecebddcfa814ad934f8ed085b372a4226a4cb73812dfa433878934d919"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/canonical_text_features.npz",
+        "sha256": "9a0ebf1d742451c17451c6a0c5c001e56ba5330e292352194c9834292f7c9b19"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "298548f99514462b4af4b45cd69f97acff64209f5ea4e30c02be7208daa2b650",
+      "development_gains": {
+        "i2t_r1_change": 0.007777777777777772,
+        "paired_joint_accuracy_gain": 0.011019460293979488,
+        "t2i_r1_change": 0.0015555555555555323
+      },
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 29,
+      "state_id": "token_last_block__vit_b32__seed_29__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/ledger.json",
+        "sha256": "e8897a239deeae6710675af5779eef0d36403ae00740070be1234eda7521980a"
+      },
+      "update_norm": 0.45009273962823715
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.006866628476828832,
+        "retrieval": 0.009219551492086564
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/snapshot.json",
+        "sha256": "776d8114724587195c4002ebf394685fb1aa1cfd455f858e78d2f2484324cacd"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/canonical_text_features.npz",
+        "sha256": "36bda286e59322bb05ad0629483d58d4c1bbef1ce235ad27b09288e94d910425"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "13ad83a5ed227b10e34f03aa14ce32023857868328a0942e9c914566689efb45",
+      "development_gains": {
+        "i2t_r1_change": 0.007777777777777772,
+        "paired_joint_accuracy_gain": 0.011556601037851277,
+        "t2i_r1_change": 0.0004444444444443585
+      },
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 43,
+      "state_id": "token_last_block__vit_b32__seed_43__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/ledger.json",
+        "sha256": "e61fa794ab6eb985805de0970e38cc017bc2aa18c159b55c0af3585fd5ef9b6a"
+      },
+      "update_norm": 0.45311936359351984
+    }
+  ],
+  "test_outcomes_used_for_selection": false,
+  "training_metadata": {
+    "path": "results/resume_features/visual_entailment/metadata.json",
+    "sha256": "d4aa8dc7bcb4ab18f77b034c156ead1bde23a4232006fbd5c2abc81adc033648"
+  }
+}

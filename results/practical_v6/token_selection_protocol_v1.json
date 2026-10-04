@@ -1,0 +1,116 @@
+{
+  "canonical_inference_amendment": {
+    "path": "results/practical_v6/token_inference_amendment_v1.json",
+    "sha256": "fec3aceaeb934f14b40f899f71aedaeefd3e132e815eecaf8ad7d6f339be0010"
+  },
+  "configuration": {
+    "composition_weight": 1.0,
+    "epochs": 4,
+    "epsilon": 0.01,
+    "learning_rate": 1e-05,
+    "retention_weight": 1.0
+  },
+  "current_test_outcomes_used_for_selection": false,
+  "development_scope": {
+    "relation_images": 100,
+    "retrieval_images": 900,
+    "retrieval_source_captions": 4500
+  },
+  "encoders": [
+    "vit_b32",
+    "rn50"
+  ],
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_token_last_block",
+  "original_training_and_development_artifacts": "preserved unchanged; final epochs selected only from canonical development trajectories",
+  "parent_protocol": {
+    "path": "results/practical_v6/protocol_v1.json",
+    "sha256": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854"
+  },
+  "practical_gate": {
+    "bootstrap_replicates": 100000,
+    "bootstrap_unit": "paired image clusters, averaging the three fitted seeds",
+    "caption_adjusted_gain_lower_bound_strictly_greater_than": 0.0,
+    "caption_endpoint": "SugarCrepe++ both positive captions strictly outrank negative",
+    "caption_ties": "Failure on equality",
+    "familywise_alpha": 0.05,
+    "minimum_nonzero_trained_seeds": 3,
+    "multiplicity_family_size": 80,
+    "primary_retrieval": "e_vil_test1000 full galleries, both directions",
+    "retrieval_adjusted_lower_bound_strictly_greater_than": -0.01,
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index",
+    "same_family_must_pass_both_encoders": true,
+    "secondary_retrieval": "COCO Karpathy5k full galleries, both directions",
+    "success_cannot_be_inferred_from": [
+      "relation accuracy",
+      "frozen or effectively zero outputs",
+      "development results",
+      "uncorrected test intervals"
+    ]
+  },
+  "recorded_utc": "2026-10-04T16:37:36.409680+00:00",
+  "required_epochs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "schema": "sanw_token_selection_protocol_v1",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "selection": {
+    "all_three_nonzero_seeds_required_per_encoder": true,
+    "candidate_eligibility": "positive optimizer steps, positive parameter update norm, non-negligible canonical development score residual, and both source-ownership development R1 counts at least the unchanged epoch-zero baseline",
+    "epoch_rule_implementation": {
+      "function": "select_development_epoch",
+      "path": "src/gcr/practical_training.py",
+      "sha256": "56a58e6055fdc1eb9f0f90e20c3ea767b603f1c0db14d15ab66f81ff52f02c6f"
+    },
+    "fallback_if_no_eligible_epoch": "report no eligible trained state; do not substitute frozen model",
+    "frozen_epoch_eligible": false,
+    "incomplete_trajectories_eligible": false,
+    "non_negligible_residual_rms_threshold": 1e-10,
+    "objective": "maximum image-averaged joint source-supported-contradicted accuracy gain",
+    "ties": [
+      "larger image-averaged joint triplet margin",
+      "earlier epoch"
+    ]
+  },
+  "status": "recorded_before_final_token_selection_and_new_heldout_scoring",
+  "test_lock": {
+    "current_test_outcomes_used_for_selection": false,
+    "historical_test_use": "Prior study test results informed this new scientific hypothesis; current evaluations cannot be called pristine confirmatory tests.",
+    "required": "Both encoders and all three selected seeds, exact checkpoint hashes, model/source/input hashes, and the selection rule are bound before any new test scoring."
+  },
+  "test_outcomes_used_for_selection": false,
+  "token_training_protocols": [
+    {
+      "path": "results/practical_v6/token_protocol_v1.json",
+      "sha256": "bf5bcb9f6e4d04e19ca474846e4947f30848d1a661a94bcc14616ffc06c2e1ef"
+    },
+    {
+      "path": "results/practical_v6/token_protocol_v2_rn50.json",
+      "sha256": "b7e97297e8c6a4b23b6d43f74846314dfdd1e087eb6f3fc0a5d983d22aa69ffb"
+    },
+    {
+      "path": "results/practical_v6/token_protocol_v3_vit_b32_seed29.json",
+      "sha256": "03b77f5c302e911c7d4924c8303ffce3b03a64ae746534829b35bbd1da140ba2"
+    },
+    {
+      "path": "results/practical_v6/token_protocol_v4_vit_b32_seed43.json",
+      "sha256": "aea9aa5c94382a2a182d536371af5ee65d8cc4df0b05b131db63e7176015020a"
+    },
+    {
+      "path": "results/practical_v6/token_protocol_v5_rn50_seed29.json",
+      "sha256": "7bb6bc7a57bda057bdfbe1ed9bd35d08c0276fa792797068d6a8d93c8f791745"
+    },
+    {
+      "path": "results/practical_v6/token_protocol_v6_rn50_seed43.json",
+      "sha256": "9bff68f931eae6ea1b4717426a2fc23d8a624c690141a2bc8494a0d9e0e21f83"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "canonical_rule": "Each caption uses a float32 batch-one prefix and learned/reference suffix, truncated at its own end-of-text position. Torch uses one thread. Pair scoring uses float64 dot products and the same bounded residual on every dataset.",
+  "current_test_outcomes_used_for_selection": false,
+  "date": "2026-10-04",
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_token_last_block",
+  "gate_unchanged": true,
+  "parallelism": "Independent caption partitions may run in separate one-thread workers. No worker changes a model call shape, and duplicate token sequences receive identical outputs.",
+  "parent_protocol": {
+    "path": "results/practical_v6/token_protocol_v1.json",
+    "sha256": "bf5bcb9f6e4d04e19ca474846e4947f30848d1a661a94bcc14616ffc06c2e1ef"
+  },
+  "reason": "Synthetic duplicate-caption checks require gallery-independent floating-point inference. Batched training histories are retained as screening evidence; final epochs use canonical rescoring.",
+  "record_timing": "Canonical prefix preparation had started before this written amendment. No token final selection lock or new heldout evaluation existed.",
+  "schema_version": 1,
+  "selection": "Rescore all epochs 0 through 4 for all six token trajectories. Require positive training update and no loss in either development retrieval direction. Maximize image-averaged joint source-supported-contradicted correctness, then mean triplet margin, then earliest epoch.",
+  "selection_evidence": "Original development histories remain immutable. Complete canonical trajectories and source/checkpoint/cache hashes are bound into final manifests.",
+  "source_hashes": {
+    "scripts/audit_practical_text_inference_v6.py": "d7b62ede89fe7bda12bbe07cec8b7f2506fc4432aca9658eb5fa8b962b67bb70",
+    "scripts/rescore_practical_text_development_v6.py": "50234c34bdd4da2951cebd3441474bc0eb20f468921cc470257de6c1f3d419f1",
+    "src/gcr/practical_text_inference_v6.py": "e4465f81c2bdd56e8d5441e6f968001969503b5b4bf96793e658010d976212b9",
+    "src/gcr/practical_text_parallel_v6.py": "30f21d408f181a1425ea367316726820a0e11f3230900f363a8bf350a5885b31"
+  },
+  "status": "recorded_before_final_token_selection_and_new_heldout_scoring",
+  "training_unchanged": true
+}

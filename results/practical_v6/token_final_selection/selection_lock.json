@@ -1,0 +1,235 @@
+{
+  "current_test_outcomes_used_for_selection": false,
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_token_last_block",
+  "manifests": [
+    {
+      "path": "results/practical_v6/token_final_selection/vit_b32_manifest.json",
+      "sha256": "66a7bc4167dba56bc61bcb8dcbcf68f5ac45824ae751558f67e69e837b5d68cd"
+    },
+    {
+      "path": "results/practical_v6/token_final_selection/rn50_manifest.json",
+      "sha256": "a790599a8e13b4aceb93ae328f0f443a178e4e18accc30cb792423c37a58ba2d"
+    }
+  ],
+  "practical_gate": {
+    "bootstrap_replicates": 100000,
+    "bootstrap_unit": "paired image clusters, averaging the three fitted seeds",
+    "caption_adjusted_gain_lower_bound_strictly_greater_than": 0.0,
+    "caption_endpoint": "SugarCrepe++ both positive captions strictly outrank negative",
+    "caption_ties": "Failure on equality",
+    "familywise_alpha": 0.05,
+    "minimum_nonzero_trained_seeds": 3,
+    "multiplicity_family_size": 80,
+    "primary_retrieval": "e_vil_test1000 full galleries, both directions",
+    "retrieval_adjusted_lower_bound_strictly_greater_than": -0.01,
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index",
+    "same_family_must_pass_both_encoders": true,
+    "secondary_retrieval": "COCO Karpathy5k full galleries, both directions",
+    "success_cannot_be_inferred_from": [
+      "relation accuracy",
+      "frozen or effectively zero outputs",
+      "development results",
+      "uncorrected test intervals"
+    ]
+  },
+  "protocol": {
+    "path": "results/practical_v6/token_selection_protocol_v1.json",
+    "sha256": "a7ff03c49a8c77674173b839b4304f1949eb95b0d43b440955ed591dfdb49ada"
+  },
+  "schema": "sanw_token_final_selection_lock_v1",
+  "selected_states": [
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.00685071528089945,
+        "retrieval": 0.009161037033493401
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/snapshot.json",
+        "sha256": "cb1645edf14702ff71891068ccf1b14a584f6fb519db1cb39580f9441b9dada3"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/canonical_text_features.npz",
+        "sha256": "dc396a5797ef1d36da117c7333c1f24a1e92837208a5b9fda253ad0c749299ca"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "69dfb0758c82b95598ad53910f08a618476b1551f2476917728f04e8e08ae118",
+      "development_gains": {
+        "i2t_r1_change": 0.007777777777777772,
+        "paired_joint_accuracy_gain": 0.012502037545787603,
+        "t2i_r1_change": 0.0
+      },
+      "encoder": "vit_b32",
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 17,
+      "state_id": "token_last_block__vit_b32__seed_17__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed17_4epochs/ledger.json",
+        "sha256": "5f579c601434692a8dac20d1dabc590cfb91ac55531910e7f77e3aeb9145ea53"
+      },
+      "update_norm": 0.4485373403803154
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.007052312396115262,
+        "retrieval": 0.009363777544585663
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/snapshot.json",
+        "sha256": "e8d8dbecebddcfa814ad934f8ed085b372a4226a4cb73812dfa433878934d919"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/canonical_text_features.npz",
+        "sha256": "9a0ebf1d742451c17451c6a0c5c001e56ba5330e292352194c9834292f7c9b19"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "298548f99514462b4af4b45cd69f97acff64209f5ea4e30c02be7208daa2b650",
+      "development_gains": {
+        "i2t_r1_change": 0.007777777777777772,
+        "paired_joint_accuracy_gain": 0.011019460293979488,
+        "t2i_r1_change": 0.0015555555555555323
+      },
+      "encoder": "vit_b32",
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 29,
+      "state_id": "token_last_block__vit_b32__seed_29__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed29_4epochs/ledger.json",
+        "sha256": "e8897a239deeae6710675af5779eef0d36403ae00740070be1234eda7521980a"
+      },
+      "update_norm": 0.45009273962823715
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.006866628476828832,
+        "retrieval": 0.009219551492086564
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/snapshot.json",
+        "sha256": "776d8114724587195c4002ebf394685fb1aa1cfd455f858e78d2f2484324cacd"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/vit_b32/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/canonical_text_features.npz",
+        "sha256": "36bda286e59322bb05ad0629483d58d4c1bbef1ce235ad27b09288e94d910425"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "13ad83a5ed227b10e34f03aa14ce32023857868328a0942e9c914566689efb45",
+      "development_gains": {
+        "i2t_r1_change": 0.007777777777777772,
+        "paired_joint_accuracy_gain": 0.011556601037851277,
+        "t2i_r1_change": 0.0004444444444443585
+      },
+      "encoder": "vit_b32",
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 43,
+      "state_id": "token_last_block__vit_b32__seed_43__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/vit_b32_eps0.01_ret1_lr1e-5_seed43_4epochs/ledger.json",
+        "sha256": "e61fa794ab6eb985805de0970e38cc017bc2aa18c159b55c0af3585fd5ef9b6a"
+      },
+      "update_norm": 0.45311936359351984
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.006300891337876395,
+        "retrieval": 0.006031156360229447
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/rn50/rn50_eps0.01_ret1_lr1e-5_seed17_4epochs/snapshot.json",
+        "sha256": "d667331524b9e06b7ecc0621e997c36d2b8c55ceb9c24f36bebc5ce1118be970"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/rn50/rn50_eps0.01_ret1_lr1e-5_seed17_4epochs/canonical_text_features.npz",
+        "sha256": "05eb43d3442b350cef160d198865dce8f13769fb118df773f87c67844fccfc26"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/rn50_eps0.01_ret1_lr1e-5_seed17_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "99b786ba5187b59aa014929cda3b19c97027015680e442780822eb347d49971e",
+      "development_gains": {
+        "i2t_r1_change": 0.011111111111111183,
+        "paired_joint_accuracy_gain": 0.028898907556118902,
+        "t2i_r1_change": 0.010888888888888948
+      },
+      "encoder": "rn50",
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 17,
+      "state_id": "token_last_block__rn50__seed_17__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/rn50_eps0.01_ret1_lr1e-5_seed17_4epochs/ledger.json",
+        "sha256": "925a06fd09bba02cf179c2e528bfbdb6a6c1bd424ee4b5d373011696f772bcc6"
+      },
+      "update_norm": 0.45778777832188705
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.006287778957416843,
+        "retrieval": 0.005957117687019524
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/rn50/rn50_eps0.01_ret1_lr1e-5_seed29_4epochs/snapshot.json",
+        "sha256": "53e36fa2f439e2d43e4c3dc7b060e8cb541dcbb1526411e25e4d1aca8bc296dd"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/rn50/rn50_eps0.01_ret1_lr1e-5_seed29_4epochs/canonical_text_features.npz",
+        "sha256": "f48585ddb039218ed859abf92dfecca6b4aa05b0da7cb79e3302b9a846a65a56"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/rn50_eps0.01_ret1_lr1e-5_seed29_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "5591a45609561ff8293c4294452192cf64c82b92a03ae44f16b99e951955cc23",
+      "development_gains": {
+        "i2t_r1_change": 0.011111111111111183,
+        "paired_joint_accuracy_gain": 0.027186407556118786,
+        "t2i_r1_change": 0.011555555555555541
+      },
+      "encoder": "rn50",
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 29,
+      "state_id": "token_last_block__rn50__seed_29__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/rn50_eps0.01_ret1_lr1e-5_seed29_4epochs/ledger.json",
+        "sha256": "fe5dd47bc5cf9fd3e80ae519b18cd103eeb4c0ae3c409719c32098fb5fce388b"
+      },
+      "update_norm": 0.4579643112279977
+    },
+    {
+      "canonical_development_residual_rms": {
+        "composition": 0.006366976018984304,
+        "retrieval": 0.005754840454044574
+      },
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_text_development_v1/rn50/rn50_eps0.01_ret1_lr1e-5_seed43_4epochs/snapshot.json",
+        "sha256": "b424fb99712b717a639931425cc3794ecf08c52f3903372d0b21d018f520de46"
+      },
+      "canonical_text_features": {
+        "path": "results/practical_v6/canonical_text_development_v1/rn50/rn50_eps0.01_ret1_lr1e-5_seed43_4epochs/canonical_text_features.npz",
+        "sha256": "b8206158c9e9cd8ba2caf55634abc472a4adc09e81320bc17cf93e28d3038020"
+      },
+      "checkpoint": "results/practical_v6/text_pilot/rn50_eps0.01_ret1_lr1e-5_seed43_4epochs/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "37cddfc8927cae126fe03207510c0a969d84e5876ef008f5825dea9fa5510a8e",
+      "development_gains": {
+        "i2t_r1_change": 0.011111111111111183,
+        "paired_joint_accuracy_gain": 0.026966963111674458,
+        "t2i_r1_change": 0.01288888888888895
+      },
+      "encoder": "rn50",
+      "epoch": 4,
+      "optimizer_steps": 152,
+      "seed": 43,
+      "state_id": "token_last_block__rn50__seed_43__epoch_04",
+      "training_ledger": {
+        "path": "results/practical_v6/text_pilot/rn50_eps0.01_ret1_lr1e-5_seed43_4epochs/ledger.json",
+        "sha256": "247dfee802aa9098736d335371a2a81ad3a900dbfad816ee68ae15dee09e66c9"
+      },
+      "update_norm": 0.4580773296686787
+    }
+  ],
+  "test_lock": {
+    "current_test_outcomes_used_for_selection": false,
+    "historical_test_use": "Prior study test results informed this new scientific hypothesis; current evaluations cannot be called pristine confirmatory tests.",
+    "required": "Both encoders and all three selected seeds, exact checkpoint hashes, model/source/input hashes, and the selection rule are bound before any new test scoring."
+  },
+  "test_outcomes_used_for_selection": false
+}
