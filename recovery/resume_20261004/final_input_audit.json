@@ -1,0 +1,12 @@
+{
+  "flickr": {
+    "unique_images": 3200,
+    "bytes": 443139210,
+    "failures": []
+  },
+  "coco": {
+    "unique_images": 6377,
+    "bytes": 1040822940,
+    "failures": []
+  }
+}

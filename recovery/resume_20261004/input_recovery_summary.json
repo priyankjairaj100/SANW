@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-04",
+  "original_files_preserved": true,
+  "new_feature_namespace": "results/resume_features",
+  "source_manifest_model_script_hashes": {
+    "data/model/open_clip_model.safetensors": {
+      "bytes": 605143316,
+      "sha256": "ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6"
+    },
+    "data/model/open_clip_config.json": {
+      "bytes": 604,
+      "sha256": "4302a891b495ad0966d1e7eeff102b5f34a3f1e647e57a9198933f862d5f8ba7"
+    },
+    "scripts/extract_features.py": {
+      "bytes": 9699,
+      "sha256": "bddd51416f2723b92baeb03e76d410a2340e3afcf4642ee75a3c6d4863d93f29"
+    },
+    "recovery/resume_20261004/encode_copy/scripts/extract_features.py": {
+      "bytes": 9699,
+      "sha256": "bddd51416f2723b92baeb03e76d410a2340e3afcf4642ee75a3c6d4863d93f29"
+    },
+    "data/visual_entailment/manifest.json": {
+      "bytes": 8843993,
+      "sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495"
+    },
+    "data/sugarcrepe/manifest.json": {
+      "bytes": 6391312,
+      "sha256": "5f05226c5245301b6c095084cf21326ac4c7d1332bd93663ef5309a36dce1228"
+    },
+    "data/sugarcrepe_pp/manifest.json": {
+      "bytes": 5972900,
+      "sha256": "647a38462268209583df513fc7dab7a4ad787ca976b6d9b4e4a6a9a6f9178466"
+    },
+    "data/coco_karpathy/manifest.json": {
+      "bytes": 8393005,
+      "sha256": "fca7a265ea104e06acd8b7dc074664ca898ac9c0fb207c8805e097c0f29801dd"
+    },
+    "data/review_followup/e_vil_dev900/manifest.json": {
+      "bytes": 1381095,
+      "sha256": "8bee3b0a22b74dda3ff56b1b54f9af42d7fbbd65f9c08a2a31d0900fa69738a3"
+    },
+    "data/review_followup/e_vil_test1000/manifest.json": {
+      "bytes": 1519841,
+      "sha256": "8de6f0b0e9d0d497f79897074a16bc31337013cbf0b00535446f2f8674d18248"
+    },
+    "data/visual_entailment/raw/esnlive_train.csv": {
+      "bytes": 62565577,
+      "sha256": "61ad4a26ec8e2b9c5fc69e52a4870d972f7fab92f448b8d069eb9793dba3aeb1"
+    },
+    "data/visual_entailment/raw/esnlive_dev.csv": {
+      "bytes": 2266354,
+      "sha256": "30ee4b326dc1c9276f82a9e3ada73639c67c2d54ee61e90795c405c8809a29a3"
+    },
+    "data/visual_entailment/raw/esnlive_test.csv": {
+      "bytes": 2320988,
+      "sha256": "56cc45b747a2bcec759e5b2cf16fb9731625e2697594892392e76c84226fa19d"
+    },
+    "data/visual_entailment/raw/flickr30k_entities_annotations.zip": {
+      "bytes": 29284070,
+      "sha256": "1bdde439e41fa936e31e6d72898f1886d49bb4298f2abcdb50771de4f516b026"
+    },
+    "data/visual_entailment/raw/flickr30k_zip_selected_index.json": {
+      "bytes": 6791181,
+      "sha256": "06729be48881a59b1985e11191b77ab55b552a368aa1b0a7ae37913ed4994260"
+    }
+  },
+  "final_image_audit": {
+    "flickr": {
+      "unique_images": 3200,
+      "bytes": 443139210,
+      "failures": []
+    },
+    "coco": {
+      "unique_images": 6377,
+      "bytes": 1040822940,
+      "failures": []
+    }
+  },
+  "cache_audit_path": "recovery/resume_20261004/reencoded_feature_audit.json",
+  "resume_command": ".venv/bin/python -u recovery/resume_20261004/run_vit_reencode.py",
+  "note": "ViT encoder temporarily interrupted after visual cache completion for CPU scheduling. Remaining datasets resume from transactional bank; no claims of byte-exact feature reconstruction.",
+  "bank_integrity": "ok",
+  "bank_completed_vector_counts": {
+    "image": 2728,
+    "text": 32954
+  }
+}

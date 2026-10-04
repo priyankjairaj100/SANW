@@ -45,3 +45,15 @@ results/evaluation/**/coco_karpathy.npz
 checkpoints/
 runs/
 results/reproduction-*/
+
+# Resumed strengthening: large caches are preserved through recovery archives
+data/model_rn50_openai/*.pt
+data/review_followup/flickr_images/
+results/resume_features/**/*.npz
+results/strengthen_second_encoder/features/**/*.npz
+recovery/resume_20261004/*.zip
+recovery/resume_20261004/.*.part*
+recovery/resume_20261004/.rsync-tmp/
+recovery/resume_20261004/encode_copy/
+recovery/resume_20261004/helpers/
+recovery/resume_20261004/library-download*.json

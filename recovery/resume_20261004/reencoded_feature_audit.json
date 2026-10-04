@@ -1,0 +1,89 @@
+{
+  "scope": "Reencoded frozen ViT inputs; original metadata preserved",
+  "datasets": {
+    "visual_entailment": {
+      "path": "results/resume_features/visual_entailment/features.npz",
+      "bytes": 68017984,
+      "sha256": "03e297aef4abdb6f8edd5fb48bb8a0f309eb339c093daf71dd98445c0e23b397",
+      "original_container_sha256": "5a51f8d3e7541bedb61b2ef329ec4e213d6d8bfb3b8661434f292ed6a20c2eec",
+      "exact_original_container_restored": false,
+      "metadata_sha256": "f07e55ab9fe27d7fad18e0a45d43f7b140fc079f5c40c3ecc62789e5bcf96b7e",
+      "manifest_sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+      "arrays": {
+        "image_features": {
+          "shape": [
+            1800,
+            512
+          ],
+          "dtype": "float32",
+          "c_order_bytes_sha256": "5b579974c6b7dbb768c5f80b2eace504dceb3c50ce9da66ae783189eeff25ef4"
+        },
+        "text_features": {
+          "shape": [
+            33859,
+            512
+          ],
+          "dtype": "float32",
+          "c_order_bytes_sha256": "294778fc9dd1d92a3f4316188b8d49a2ceacbf4f4fe8153a3f8e853f292431a3"
+        },
+        "image_ids": {
+          "shape": [
+            1800
+          ],
+          "dtype": "<U17",
+          "c_order_bytes_sha256": "46e373fe909dd2115ddaeba1f14abd75d793a085b7d378f6fc37018a3875a412"
+        },
+        "text_ids": {
+          "shape": [
+            33859
+          ],
+          "dtype": "<U36",
+          "c_order_bytes_sha256": "d99bd875748b3c8a5a54f0ceeb788634b409967e42b8da58529b63d368718cff"
+        }
+      }
+    }
+  },
+  "shared_cache_checks": [
+    {
+      "reference": "results/review_followup/features/e_vil_dev900/features.npz",
+      "reference_sha256": "9e8496edf7598c31e4388f0845c0022fc580acb638a3531715867f7c24a4d601",
+      "modality": "image",
+      "shared_rows": 100,
+      "exact_arrays": false,
+      "max_abs_error": 7.413327693939209e-07,
+      "mean_abs_error": 5.555903825893438e-08,
+      "within_2e_6": true
+    },
+    {
+      "reference": "results/review_followup/features/e_vil_dev900/features.npz",
+      "reference_sha256": "9e8496edf7598c31e4388f0845c0022fc580acb638a3531715867f7c24a4d601",
+      "modality": "text",
+      "shared_rows": 500,
+      "exact_arrays": false,
+      "max_abs_error": 7.599592208862305e-07,
+      "mean_abs_error": 4.970550904204174e-08,
+      "within_2e_6": true
+    },
+    {
+      "reference": "results/review_followup/features/e_vil_test1000/features.npz",
+      "reference_sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+      "modality": "image",
+      "shared_rows": 400,
+      "exact_arrays": false,
+      "max_abs_error": 9.853392839431763e-07,
+      "mean_abs_error": 5.637481237386055e-08,
+      "within_2e_6": true
+    },
+    {
+      "reference": "results/review_followup/features/e_vil_test1000/features.npz",
+      "reference_sha256": "d390ab1e31362c7f7a5f75f8ea200eab0b198195af2265265451e7d9c688230e",
+      "modality": "text",
+      "shared_rows": 2000,
+      "exact_arrays": false,
+      "max_abs_error": 6.854534149169922e-07,
+      "mean_abs_error": 5.009347958662147e-08,
+      "within_2e_6": true
+    }
+  ],
+  "complete": false
+}

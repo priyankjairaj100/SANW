@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "download_url": "https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt",
+  "file": "RN50.pt",
+  "sha256": "afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762",
+  "bytes": 255827503,
+  "verification": "Exact official checkpoint SHA256 and size before model load",
+  "acquired_utc": "2026-10-04",
+  "code_execution": "No downloaded source code; official pinned checkpoint loaded by installed OpenCLIP only"
+}

@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-04T06:09:44.525956+00:00",
+  "execution_constraints": [
+    "Original v3 study code remains untouched",
+    "Frozen protocol unchanged",
+    "Reconstructed ViT controls require three-draw input-bound semantic parity",
+    "Full training and held-out evaluation have not been run by implementation agent",
+    "All epoch states retained, exceeding minimum final/running-best checkpoint specification"
+  ],
+  "protocol_path": "results/strengthen_retention/protocol_v3.json",
+  "protocol_sha256": "5624342a20dd33b4f235264f57599a8bad0486d70fa587a6d9269371ea00b5d4",
+  "reconstruction": "new_execution_after_uncommitted_runtime_loss",
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "torch": "2.7.1+cpu"
+  },
+  "schema_version": 1,
+  "source_sha256": {
+    "scripts/run_strengthen_retention.py": "74e53f483328c4d6dcd44c92281d7852904b18746eb1e2008303ecbeb8b64d9c",
+    "src/gcr/retention_losses.py": "aa95ab43eea45e6ebb7e2f71f79e55c4ae8eb3691370c72b6a30930d6f65661f",
+    "src/gcr/strengthen_retention.py": "d16cf2edbc7c9c78684975fb5a9c6b33e8fe6fc68133d4ca7fe29e1cdcab9814",
+    "tests/test_strengthen_retention.py": "c014896848474cbe955dadf3812df78561d803b089067ba79740872d4e809ca6"
+  },
+  "status": "implementation_verified_no_scientific_fits_or_test_outcomes",
+  "validation": {
+    "command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 .venv/bin/python -m pytest -q tests/test_strengthen_retention.py tests/test_losses.py tests/test_training.py tests/test_review_training.py",
+    "coverage": [
+      "exact source/supported scalar and feature-gradient parity",
+      "directional factorial and unchanged image candidate denominator",
+      "source/support convex objective mixtures",
+      "source-column-only KL, detached teacher, T-squared beta scaling",
+      "pre-normalization both-parameter WiSE and alpha-zero frozen parity",
+      "two-direction development feasibility, epoch-zero selection, ties and shared hyperparameters",
+      "complete tiny 81-candidate pipeline, selected exports, selected matched9control schedules",
+      "all-epoch hashes, idempotent resume and tamper rejection",
+      "original loss/training/followup regression tests"
+    ],
+    "failed": 0,
+    "passed": 62,
+    "seconds": 4.53
+  }
+}
