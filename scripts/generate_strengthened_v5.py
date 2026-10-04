@@ -75,7 +75,7 @@ def gate_rows(gates: dict, contrasts: dict, scale: float) -> list[str]:
 
 
 def certificate_report(indices: list[tuple[Path, dict]], audits: list[dict]) -> tuple[str, dict]:
-    """Summarize unique checkpoint-query observations without inventing new query counts."""
+    """Summarize distinct selected state-query observations without inventing new query counts."""
     if len(indices) != 2 or {data["encoder"] for _, data in indices} != {"vit_b32", "rn50"}:
         raise SystemExit("Certificate reporting requires both encoder indices exactly once.")
     rows, reports = [], []
@@ -121,19 +121,19 @@ def certificate_report(indices: list[tuple[Path, dict]], audits: list[dict]) -> 
                                 + f"{counts['actually_retained']:,} & " + " & ".join(values) + r"\\")
                     reports.append({"encoder": data["encoder"], "dataset": dataset, "direction": direction,
                                     "population": population, "states": len(selected),
-                                    "denominator_unit": "unique selected checkpoint-query observation",
+                                    "denominator_unit": "distinct selected state-query observation",
                                     "counts": counts, "certified_counts": masks})
     caption = ("Full-gallery certificate diagnostics for all primary and sensitivity selections in the original retention study. "
-               "Shared checkpoints count once. Trained requires positive epoch and update norm; other states appear as Unchanged. "
-               "Teacher and Retained count checkpoint-query observations, not distinct queries. "
+               "Each selected state counts once. Trained requires positive epoch and update norm; other states appear as Unchanged. "
+               "Teacher and Retained count state-query observations, not distinct queries. "
                "KL, Score, and Union give certified percentages of teacher-correct observations under pessimistic ties.")
     text = "\n".join([
         r"\section{Full-Gallery Certificate Diagnostics}", r"\label{app:certificates}",
         "These diagnostics use the original retention selections without changing their benchmark ranks or practical criteria.",
-        "Each unique checkpoint appears once, even when several selection rules choose it.",
-        "Different checkpoints reuse the same queries.",
-        "The pooled denominator therefore counts checkpoint-query observations, not independent test examples.",
-        "The complete artifact retains each checkpoint's selection roles and all query-level certificate masks.",
+        "Each distinct selected state appears once, even when several selection rules choose it.",
+        "Different selected states reuse the same queries.",
+        "The pooled denominator therefore counts state-query observations, not independent test examples.",
+        "The complete artifact retains each selected state's selection roles and all query-level certificate masks.",
         "These descriptive counts do not add statistical hypotheses or imply an unseen-gallery guarantee.",
         table(rows, "llllrrrrrr", r"Encoder & Pool & Direction & Group & States & Teacher & Retained & KL & Score & Union",
               caption, "tab:certificates", font="scriptsize"),

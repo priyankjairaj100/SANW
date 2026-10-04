@@ -4,7 +4,8 @@ Distillation controls a probability distribution, whereas retrieval depends on t
 The following result gives the exact connection on a fixed gallery.
 Let $q$ and $p$ denote teacher and student probabilities on that gallery.
 Let $R$ contain its relevant candidates.
-Define $C_K(q,R)$ as the smallest forward KL divergence needed to place $K$ irrelevant candidates above every relevant candidate.
+Define $C_K(q,R)$ as the smallest forward KL divergence to ranking failure.
+Failure makes $K$ irrelevant candidates tie or exceed every relevant candidate.
 Ties count as failures.
 
 \begin{proposition}
