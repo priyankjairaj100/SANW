@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "extension_id": "allocation_distillation_v1",
+  "status": "exploratory_after_completed_v3",
+  "base_protocol": {
+    "path": "results/strengthen_retention/protocol_v3.json",
+    "sha256": "5624342a20dd33b4f235264f57599a8bad0486d70fa587a6d9269371ea00b5d4"
+  },
+  "training": {
+    "policies": [
+      "source",
+      "supported",
+      "allocation_0.5",
+      "allocation_0.8",
+      "distilled_1",
+      "distilled_4",
+      "distilled_16",
+      "allocation_distillation_0.5_1",
+      "allocation_distillation_0.5_4",
+      "allocation_distillation_0.5_16",
+      "allocation_distillation_0.8_1",
+      "allocation_distillation_0.8_4",
+      "allocation_distillation_0.8_16"
+    ],
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001
+    ],
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "epochs": 10,
+    "source_mix": [
+      0.5,
+      0.8
+    ],
+    "beta": [
+      1.0,
+      4.0,
+      16.0
+    ],
+    "temperature": 2.0,
+    "fits_per_encoder": 117,
+    "joint_fits_per_encoder": 54,
+    "other_settings": "exact_original_StudyConfig",
+    "objective": "lambda L_source + (1-lambda) L_supported + beta T^2 (KL_image + KL_text)/2",
+    "candidate_contents": "unchanged source captions and hypotheses",
+    "teacher_domain": "source-caption columns; each reverse row covers all batch images",
+    "checkpoints": "every epoch, including zero",
+    "wise_ft_alpha": [
+      0.0,
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "matched_controls": {
+      "fits_per_encoder": 9,
+      "assignment_seeds": [
+        101,
+        211,
+        307
+      ],
+      "policy": "score_stratified",
+      "selection": "none",
+      "schedule": "copy primary A+D source_mix, beta, learning rate, and per-seed epoch",
+      "aggregation": "mean three assignment draws within each seed, then mean seeds"
+    }
+  },
+  "selection": {
+    "families": [
+      "source",
+      "supported",
+      "allocation",
+      "distilled",
+      "allocation_distillation",
+      "wise_ft"
+    ],
+    "primary_tolerance_pp": 1.0,
+    "sensitivity_tolerance_pp": 0.0,
+    "relation_pool": "original 100-image validation split",
+    "retrieval_pool": "data/review_followup/e_vil_dev900/manifest.json",
+    "rule": "unchanged retention-v3 choose_family and feasible functions",
+    "shared_ties": "lower learning rate, then lower source_mix and beta for A+D; lower scalar parameter otherwise",
+    "test_used": false,
+    "freeze_before_test": true
+  },
+  "evaluation": {
+    "status": "frozen",
+    "prior_test_exposure": true,
+    "fresh_confirmatory_claim": false,
+    "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+    "datasets": [
+      "e_vil_test1000",
+      "visual_entailment",
+      "sugarcrepe",
+      "sugarcrepe_pp",
+      "coco_karpathy"
+    ],
+    "encoders": [
+      "vit_b32",
+      "rn50"
+    ],
+    "primary_endpoints": [
+      {
+        "dataset": "e_vil_test1000",
+        "metric": "i2t.r1"
+      },
+      {
+        "dataset": "e_vil_test1000",
+        "metric": "t2i.r1"
+      },
+      {
+        "dataset": "visual_entailment",
+        "metric": "accuracy"
+      },
+      {
+        "dataset": "sugarcrepe_pp",
+        "metric": "both_accuracy"
+      }
+    ],
+    "selected_families": [
+      "source",
+      "supported",
+      "allocation",
+      "distilled",
+      "allocation_distillation",
+      "wise_ft"
+    ],
+    "primary_tolerance_pp": 1.0,
+    "sensitivity_tolerance_pp": 0.0,
+    "sensitivity_inference": "descriptive_only",
+    "primary_contrasts": {
+      "family_size": 80,
+      "families_vs_frozen": [
+        "source",
+        "supported",
+        "allocation",
+        "distilled",
+        "allocation_distillation",
+        "wise_ft"
+      ],
+      "joint_vs": [
+        "distilled",
+        "allocation",
+        "wise_ft",
+        "matched_allocation_distillation"
+      ],
+      "scope": "two encoders times four endpoints; 48 frozen contrasts plus 32 joint contrasts"
+    },
+    "decomposition": {
+      "family_size": 24,
+      "schedule": "primary AD-selected shared learning rate and per-seed epochs",
+      "cells": [
+        "supported",
+        "allocation",
+        "distilled",
+        "allocation_distillation"
+      ],
+      "parameters": "A uses AD lambda; D uses AD beta; all cells share AD schedule",
+      "allocation_main": "0.5*((A-U)+(AD-D))",
+      "distillation_main": "0.5*((D-U)+(AD-A))",
+      "interaction": "AD-A-D+U",
+      "conditioning": "conditional on AD development-selected schedule"
+    },
+    "inference": {
+      "bootstrap_replicates": 100000,
+      "bootstrap_seed": 20261004,
+      "alpha": 0.05,
+      "interval": "two-sided percentile Bonferroni within each declared family",
+      "quantile_method": "linear",
+      "unit": "paired image clusters",
+      "training_seed_treatment": "average the three seeds equally before cluster resampling; no seed resampling",
+      "random_draw_treatment": "average all three fixed assignment draws equally within each seed",
+      "triplet_weighting": "item-weighted mean, recomputed after each image-cluster resample"
+    },
+    "practical_success_gate": {
+      "all_three_nonzero_epochs_and_updates": true,
+      "i2t_adjusted_lower_bound_strictly_greater_than": -0.01,
+      "t2i_adjusted_lower_bound_strictly_greater_than": -0.01,
+      "sugarcrepe_pp_both_adjusted_lower_bound_strictly_greater_than": 0.0,
+      "confidence_family": 80,
+      "cross_encoder_rule": "the same selected family must pass every gate for both encoders"
+    },
+    "secondary": "all five datasets and selected 0pp sensitivity strategies reported descriptively",
+    "feature_paths": "explicit dataset config hashed in immutable prescore receipt",
+    "selection_lock": "both encoders' development selection hashes locked before first held-out score"
+  }
+}

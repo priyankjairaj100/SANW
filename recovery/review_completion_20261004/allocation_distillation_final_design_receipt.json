@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "targeted_training_tests": 24,
+  "targeted_evaluation_tests": 11,
+  "scope": "Synthetic checks and source inspection; no scientific training or held-out scoring",
+  "sha256": {
+    "scripts/evaluate_allocation_distillation.py": "e7bd812365a11132557af6e9a918fe8afd4e58d289f4fe21649ba4b914ee432f",
+    "scripts/analyze_allocation_distillation.py": "846b1ffe5cba2aa2dd359ff3a6a198432cd4c2bf6802620f4f83d02cd74ae597",
+    "src/gcr/allocation_distillation_analysis.py": "19131b5bcbb25c612499e05f03c12ba4f01a424353ec508ef5bb57ea0826771b",
+    "src/gcr/allocation_distillation.py": "2b0b8e5e2bbf68d74f2fa81360bbce9908fd06fd2cd45746fc88018bb14fee82",
+    "results/allocation_distillation/protocol_v1.json": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd"
+  }
+}

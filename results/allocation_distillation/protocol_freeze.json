@@ -1,0 +1,14 @@
+{
+  "protocol": "results/allocation_distillation/protocol_v1.json",
+  "sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "frozen_utc": "2026-10-04T09:41:45.067991+00:00",
+  "fitting_started": false,
+  "test_scoring_started": false,
+  "scope": "Exploratory completion of the previously omitted allocation plus distillation comparison",
+  "source_sha256": {
+    "src/gcr/allocation_distillation.py": "2b0b8e5e2bbf68d74f2fa81360bbce9908fd06fd2cd45746fc88018bb14fee82",
+    "scripts/run_allocation_distillation.py": "b8e89558225b2d3edecdfb16c2482cdfa927c7b91ad56508f7a54ea843b88f29",
+    "src/gcr/allocation_distillation_analysis.py": "19131b5bcbb25c612499e05f03c12ba4f01a424353ec508ef5bb57ea0826771b",
+    "tests/test_allocation_distillation.py": "3903ba6bbef447edbc119ba8013a1b7678be67968adf6bc5da3c876a9d810bb3"
+  }
+}

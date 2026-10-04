@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "scope": "independent objective, gradients, teacher domain, selector",
+  "scientific_training_performed": false,
+  "test_data_read": false,
+  "objective_cases": 16,
+  "largest_value_error": 1.1368683772161603e-13,
+  "largest_gradient_error": 1.2789769243681803e-13,
+  "teacher_detached": true,
+  "hypotheses_excluded_from_teacher_domain": true,
+  "selector_checks": [
+    "both directions",
+    "1pp and 0pp tolerance",
+    "earliest epoch",
+    "shared learning rate",
+    "lexicographic mixture/beta ties",
+    "mixed frozen/trained states"
+  ],
+  "source_sha256": {
+    "src/gcr/allocation_distillation.py": "2b0b8e5e2bbf68d74f2fa81360bbce9908fd06fd2cd45746fc88018bb14fee82",
+    "src/gcr/strengthen_retention.py": "d16cf2edbc7c9c78684975fb5a9c6b33e8fe6fc68133d4ca7fe29e1cdcab9814",
+    "src/gcr/retention_losses.py": "aa95ab43eea45e6ebb7e2f71f79e55c4ae8eb3691370c72b6a30930d6f65661f",
+    "src/gcr/losses.py": "2e3a06a0c22d94b44ae29dbed9b6e44a2c2737ac6fe71afc4c2a23495dc51c35"
+  }
+}
