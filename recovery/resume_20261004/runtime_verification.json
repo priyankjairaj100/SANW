@@ -1,0 +1,284 @@
+{
+  "python": "3.12.14",
+  "torch": "2.7.1+cpu",
+  "cuda_available": false,
+  "requirements": [
+    {
+      "package": "certifi",
+      "expected": "2026.7.22",
+      "actual": "2026.7.22",
+      "matches": true
+    },
+    {
+      "package": "charset-normalizer",
+      "expected": "3.4.4",
+      "actual": "3.4.4",
+      "matches": true
+    },
+    {
+      "package": "contourpy",
+      "expected": "1.3.3",
+      "actual": "1.3.3",
+      "matches": true
+    },
+    {
+      "package": "cycler",
+      "expected": "0.12.1",
+      "actual": "0.12.1",
+      "matches": true
+    },
+    {
+      "package": "filelock",
+      "expected": "3.32.3",
+      "actual": "3.32.3",
+      "matches": true
+    },
+    {
+      "package": "fonttools",
+      "expected": "4.61.1",
+      "actual": "4.61.1",
+      "matches": true
+    },
+    {
+      "package": "fsspec",
+      "expected": "2026.7.0",
+      "actual": "2026.7.0",
+      "matches": true
+    },
+    {
+      "package": "ftfy",
+      "expected": "6.3.1",
+      "actual": "6.3.1",
+      "matches": true
+    },
+    {
+      "package": "hf-xet",
+      "expected": "1.6.0",
+      "actual": "1.6.0",
+      "matches": true
+    },
+    {
+      "package": "huggingface-hub",
+      "expected": "0.36.0",
+      "actual": "0.36.0",
+      "matches": true
+    },
+    {
+      "package": "idna",
+      "expected": "3.19",
+      "actual": "3.19",
+      "matches": true
+    },
+    {
+      "package": "iniconfig",
+      "expected": "2.3.0",
+      "actual": "2.3.0",
+      "matches": true
+    },
+    {
+      "package": "Jinja2",
+      "expected": "3.1.6",
+      "actual": "3.1.6",
+      "matches": true
+    },
+    {
+      "package": "joblib",
+      "expected": "1.5.3",
+      "actual": "1.5.3",
+      "matches": true
+    },
+    {
+      "package": "kiwisolver",
+      "expected": "1.4.9",
+      "actual": "1.4.9",
+      "matches": true
+    },
+    {
+      "package": "MarkupSafe",
+      "expected": "3.0.3",
+      "actual": "3.0.3",
+      "matches": true
+    },
+    {
+      "package": "matplotlib",
+      "expected": "3.10.8",
+      "actual": "3.10.8",
+      "matches": true
+    },
+    {
+      "package": "mpmath",
+      "expected": "1.3.0",
+      "actual": "1.3.0",
+      "matches": true
+    },
+    {
+      "package": "networkx",
+      "expected": "3.6.1",
+      "actual": "3.6.1",
+      "matches": true
+    },
+    {
+      "package": "numpy",
+      "expected": "2.3.5",
+      "actual": "2.3.5",
+      "matches": true
+    },
+    {
+      "package": "open_clip_torch",
+      "expected": "2.32.0",
+      "actual": "2.32.0",
+      "matches": true
+    },
+    {
+      "package": "packaging",
+      "expected": "26.3",
+      "actual": "26.3",
+      "matches": true
+    },
+    {
+      "package": "pillow",
+      "expected": "12.3.0",
+      "actual": "12.3.0",
+      "matches": true
+    },
+    {
+      "package": "pluggy",
+      "expected": "1.6.0",
+      "actual": "1.6.0",
+      "matches": true
+    },
+    {
+      "package": "Pygments",
+      "expected": "2.21.0",
+      "actual": "2.21.0",
+      "matches": true
+    },
+    {
+      "package": "PyMuPDF",
+      "expected": "1.26.6",
+      "actual": "1.26.6",
+      "matches": true
+    },
+    {
+      "package": "pyparsing",
+      "expected": "3.3.2",
+      "actual": "3.3.2",
+      "matches": true
+    },
+    {
+      "package": "pytest",
+      "expected": "8.4.2",
+      "actual": "8.4.2",
+      "matches": true
+    },
+    {
+      "package": "python-dateutil",
+      "expected": "2.9.0.post0",
+      "actual": "2.9.0.post0",
+      "matches": true
+    },
+    {
+      "package": "PyYAML",
+      "expected": "6.0.3",
+      "actual": "6.0.3",
+      "matches": true
+    },
+    {
+      "package": "regex",
+      "expected": "2026.9.29",
+      "actual": "2026.9.29",
+      "matches": true
+    },
+    {
+      "package": "requests",
+      "expected": "2.32.5",
+      "actual": "2.32.5",
+      "matches": true
+    },
+    {
+      "package": "safetensors",
+      "expected": "0.6.2",
+      "actual": "0.6.2",
+      "matches": true
+    },
+    {
+      "package": "scikit-learn",
+      "expected": "1.8.0",
+      "actual": "1.8.0",
+      "matches": true
+    },
+    {
+      "package": "scipy",
+      "expected": "1.17.0",
+      "actual": "1.17.0",
+      "matches": true
+    },
+    {
+      "package": "setuptools",
+      "expected": "84.0.0",
+      "actual": "84.0.0",
+      "matches": true
+    },
+    {
+      "package": "six",
+      "expected": "1.17.0",
+      "actual": "1.17.0",
+      "matches": true
+    },
+    {
+      "package": "sympy",
+      "expected": "1.14.0",
+      "actual": "1.14.0",
+      "matches": true
+    },
+    {
+      "package": "threadpoolctl",
+      "expected": "3.6.0",
+      "actual": "3.6.0",
+      "matches": true
+    },
+    {
+      "package": "timm",
+      "expected": "1.0.20",
+      "actual": "1.0.20",
+      "matches": true
+    },
+    {
+      "package": "torch",
+      "expected": "2.7.1+cpu",
+      "actual": "2.7.1+cpu",
+      "matches": true
+    },
+    {
+      "package": "torchvision",
+      "expected": "0.22.1+cpu",
+      "actual": "0.22.1+cpu",
+      "matches": true
+    },
+    {
+      "package": "tqdm",
+      "expected": "4.70.1",
+      "actual": "4.70.1",
+      "matches": true
+    },
+    {
+      "package": "typing_extensions",
+      "expected": "4.16.0",
+      "actual": "4.16.0",
+      "matches": true
+    },
+    {
+      "package": "urllib3",
+      "expected": "2.8.0",
+      "actual": "2.8.0",
+      "matches": true
+    },
+    {
+      "package": "wcwidth",
+      "expected": "0.9.1",
+      "actual": "0.9.1",
+      "matches": true
+    }
+  ],
+  "all_match": true
+}
