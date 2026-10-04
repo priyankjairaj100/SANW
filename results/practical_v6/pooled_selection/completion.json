@@ -1,0 +1,17 @@
+{
+  "manifests": [
+    {
+      "path": "results/practical_v6/pooled_selection/vit_b32_manifest.json",
+      "sha256": "ccf4b1b29c77a4b53fa89cdef9048107281da22aab05008d3547acfa3a36cef4"
+    },
+    {
+      "path": "results/practical_v6/pooled_selection/rn50_manifest.json",
+      "sha256": "6434f4745df03990d75d61e69b1b1ca5705499adde944999e67239e19e2af628"
+    }
+  ],
+  "selection_lock": {
+    "path": "results/practical_v6/pooled_selection/selection_lock.json",
+    "sha256": "e895dd094aa15d3452ec488f064a2b0e93144d978f87a8269d0ea7b912196f6f"
+  },
+  "status": "six_nonzero_canonical_development_states_locked_no_heldout_scoring"
+}

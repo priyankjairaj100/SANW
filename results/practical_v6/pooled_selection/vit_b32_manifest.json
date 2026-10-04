@@ -1,0 +1,355 @@
+{
+  "all_canonical_trajectories_complete": true,
+  "configuration_selection_evidence": {
+    "mean_encoder_gain": 0.019671484706532905,
+    "minimum_encoder_gain": 0.009075496031746177,
+    "path": "results/practical_v6/pilot_grid_summary_original.json",
+    "sha256": "0f33767484c2b6eebce321b0c98c336f4b9c9057c0326c38d6d2a5357c529fe7"
+  },
+  "current_test_outcomes_used_for_selection": false,
+  "development_evidence_hashes": {
+    "data/review_followup/e_vil_dev900/manifest.json": "8bee3b0a22b74dda3ff56b1b54f9af42d7fbbd65f9c08a2a31d0900fa69738a3",
+    "data/visual_entailment/manifest.json": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495",
+    "results/practical_v6/canonical_development/shortlist_cache/vit_b32_dbd7bf713107a2c5a497432f94db33f7812eb582d0c114356b3b1ed72af2732e.json": "d2862a7dcbe4a361dead9cdc6cdf3509b46849dd3bab16d2cc097aa58d377bfb",
+    "results/practical_v6/canonical_development/shortlist_cache/vit_b32_dbd7bf713107a2c5a497432f94db33f7812eb582d0c114356b3b1ed72af2732e.npz": "290816635dd9e8d329dff07fb1d04577023eff3fafd011074f3a74800a146c9d",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_00_composition.npz": "60f03bc57e076757d12ff9729435f0a25a97e1d598c39d7a9db35d578528a837",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_00_retrieval.npz": "de82172b3880e742bbcca1ef5bad4616d8f4874b5558fb00038494d1ee8c2edc",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_01_composition.npz": "45b4b31b8af8bfdb5a4a385ef011854f5117f5e3dd9487f63e27979493a012f4",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_01_retrieval.npz": "d74dd0ebd3d6ad9d8ba1a0fbbf47085667b6bbf4cd19641290f2e04dc4ccb16b",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_02_composition.npz": "af132352e625223257b20a6130843dccf7307475c166d8fd114df1ca7d9ecfc1",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_02_retrieval.npz": "2dbe32e9e937189f4beb0a571e7031c81be48b96480c865230b35b6f6ae5f6fd",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_03_composition.npz": "0f35f126b66fd136b2ddc56ea9760b24f41fe4b10e1c36dd2197feebd578ed07",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_03_retrieval.npz": "7171c452d7bbca2edb7770f1306b8db9167e0eb455e03b9386c9c036773cd1bb",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_04_composition.npz": "e95a9f14c1917dba79e0819013f3d06d30320edb7a4898659b2d18b5a255d47a",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_04_retrieval.npz": "619fbd09c3b5fa3cfc9ac849c0591989e267b4af510362b06dd8df3fb0604452",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_05_composition.npz": "648bb58da86eb605155e1b02334d50b92aa472884a1758f80e1c4c19fefd394e",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_05_retrieval.npz": "a4e2f027a11abd50e045d80d9211bea4d7dcded8967144511612a0b53dc586d6",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_06_composition.npz": "860b7cbcb964fb395d993fb7c3a7ad2fd98eaa6591540ca67c253011b5182db0",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_06_retrieval.npz": "efd60b8f4f91f1c9cda8b150fa1ab8efd56aedf3ff776bf2285126cef3ce05ac",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_07_composition.npz": "fe2cbd6f54d93561404e56c487e9b9ed40ba03a5311fd7f3407031112ab22c14",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_07_retrieval.npz": "bc78679429d6b71c5197661fa1c93ffe619928668ed2d7c85764c1140ae0a4c1",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_08_composition.npz": "44ba4fcb979b941f10ad89d3a3c5074f835513cb3880125f3b50399899dd0355",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_08_retrieval.npz": "6eaafbc42cffbac648c6ec6eb255eb87f9fe973e48180f982600a6b196744593",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_09_composition.npz": "40210313238a7ee800c1534a39d1003a1e36434789ba028221a340c86440810c",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_09_retrieval.npz": "9b0fc7583d956fdad9312256fadd624e804c668260000992adbf888ef27609c4",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_10_composition.npz": "aa1dd68858a0f9c808f2eafb7bea644e592e70e39d878dc70213a83e252a286b",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_10_retrieval.npz": "028d7aa0e627d98ce4ca6f650c70773ca05bd0ebc1f6ab09e819970eb88dc054",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_11_composition.npz": "11c9a7a9ce710afa9aeb8c4617095667868acf2e0e132b56eab0f74c58bd7a0a",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_11_retrieval.npz": "fe0ae8c276203868da7ea56a11efc9f9cd84d521e8049f71248beb9cfccc1769",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_12_composition.npz": "415b20d24673defa2053d628f09c7bae7b44fca47319767035cb851e2de3997f",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/epoch_12_retrieval.npz": "1feedf147010d368b96e1ba42881d2eda6e1f7f2e37f4b9b932a9154acba9705",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/selection_50d8e5d1dff585e64595.json": "ac0772ecc5bf01203557c054a448827d158102daff960237dfe4d6dba2205f0f",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_00_composition.npz": "60f03bc57e076757d12ff9729435f0a25a97e1d598c39d7a9db35d578528a837",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_00_retrieval.npz": "de82172b3880e742bbcca1ef5bad4616d8f4874b5558fb00038494d1ee8c2edc",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_01_composition.npz": "b090aded365315d7a3ae8af3e7e534bc5d57a1feafd06efb36e71439b87fc909",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_01_retrieval.npz": "20851742f378b37a5f8d046f2fa8ff35bfc4af275f2a28a238b840250a9a6ec5",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_02_composition.npz": "9fabc6ce1d2805d36c843f913081c53ba3dedf7f01bdd994b4e25338efdab0de",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_02_retrieval.npz": "8e4c8e25320977c0fcdb50b3ada9c1734dfaabb0925823f79a117bfeed5cd2fe",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_03_composition.npz": "e9fc8817c32bd4e74c6702dade1f7f8db344435c6bae8b0c567675e87bfacba7",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_03_retrieval.npz": "03004149b2e1c31df64846a8444be359de74f8c94f6a5a89ec3cce7364145f0a",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_04_composition.npz": "0d74b30ae19869aed45bb1c02dccf2fd5028e20745eedb4422fa0791975054fe",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_04_retrieval.npz": "a9d529539f514d9701f5ddbce7c5e70fe5cfc2f92628a3f430e8def80fda188b",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_05_composition.npz": "73db8422475da2dd4b45c56aee90df6eb29aadaced332e3d2369ee508bacfe5b",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_05_retrieval.npz": "aa51757462cbd76f1a822ce72ea08204d0e15c72684edba053a4750d68b0f359",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_06_composition.npz": "b3f33ec6beddc29f35cc34112aaea5baeddcc2377da09f1c7838881a117bcaa4",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_06_retrieval.npz": "ad1457ad690b67971e10095d4ea49464dd758ee97693d84e040d2fd0d36068ea",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_07_composition.npz": "33061d3615de261e1434f6475f7c11bb1da094a00cea21cb3b35f756b2b76d6a",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_07_retrieval.npz": "0d2f0b61db4eda9087557b00b1b3cc0ab60062c7d644281f236d8f5fb6b179c5",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_08_composition.npz": "22e863faa407b3a0cb8893d63edb91cd461836a539fe9485fb45ff6ff270b737",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_08_retrieval.npz": "4281b07c60fc67404666597c436f2b63783347f96e041248e36907b5096a6a04",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_09_composition.npz": "e2138f01683e9cdc7470d258b3107e41504c04ce58ac40da9beba9969942d685",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_09_retrieval.npz": "d418a8efe80196de60525a16a64f3bc8885acefce8742fa00f511d5919367190",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_10_composition.npz": "bb94d274db2f1a298aad11f2d6fe9a5a875136d7985f21b2a0e9ec8f21a8718b",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_10_retrieval.npz": "2885e8fea1803397a97a7e3e0a01f70f7aca88299e2a2e15175a38da84b06873",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_11_composition.npz": "eb7928ce091f9178580323312d02cb2ca4363797e75d88d5f4429e66739eebfc",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_11_retrieval.npz": "1f701a377c06847ef1d499c64689a2669afc7376fbce4f21a9100b25e6d33257",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_12_composition.npz": "87c17e374d4a018702b3511615b8b52098621f6f80abe701f7b4a3d787c0731f",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/epoch_12_retrieval.npz": "a5ed33168119ec9cdec210af916c67a3dfac9056ec0f8755e9bf3439a847448f",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/selection_17664d790a0c9d5dfb33.json": "211adaef8c4910ff5d9ca8bf6f02393f49fc2213ffc2f7e8ff83703984094dd8",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_00_composition.npz": "60f03bc57e076757d12ff9729435f0a25a97e1d598c39d7a9db35d578528a837",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_00_retrieval.npz": "de82172b3880e742bbcca1ef5bad4616d8f4874b5558fb00038494d1ee8c2edc",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_01_composition.npz": "be8056bddd79205f561a59015804f49a908baa29e56316dd5d823944f28583d2",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_01_retrieval.npz": "ea71add58cd4860371c4e075686f061c0ad40f63df07626dad259cc8d323f408",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_02_composition.npz": "abdbf32e11d20144aa775e30e66e4e58e84277a0f51456ae1f6056fcfbdfff9a",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_02_retrieval.npz": "32fede5c26bc055d851ff4258497583c522c77e21db37c0e19f5ff6c829b91dd",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_03_composition.npz": "d17d57fdb61a565e7d20da311e8b87ab856d2e747f2574e48462f77e5ab083f0",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_03_retrieval.npz": "da13e81c37b9eb309e5c42faaf08f49f1b2612f3184b3701c1e97faba30c05c3",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_04_composition.npz": "fbf8b462c72fd1f1a95b1c856203aee95b7b7a422c2fa02232d57fb3ef353a64",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_04_retrieval.npz": "997bf842f54ff99c246b01182a5e061b3e3d9e282fc7ae77763f7d4787a247b3",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_05_composition.npz": "1f1b5337702d395a22a6bfe812ed91a5d28afafd8a32a71b66bf9284debf1c5e",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_05_retrieval.npz": "e312176eb90248137573bca055fa6909cc1e8f8314d386fc3cdd18f94928657c",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_06_composition.npz": "39292bf436d0dcb5c5826407ce87a12f900d63b201c1d6017e5d05a7a1b4940f",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_06_retrieval.npz": "db3680d3b4014b2546cfb0fd95b5161007f85984dbd340113fd25f3adec6f70d",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_07_composition.npz": "1b4df58d79542a8410a1fda592ccb1498e3824ad03dce8d9c0e2ee7ea96e8cc5",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_07_retrieval.npz": "63ff6b2eeccc203bfeed45e0a74d5f07fe4e3bd6c8d5b1ca31362b0ada48b591",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_08_composition.npz": "f5b0607c76dab01e6a479251182f5817e8b77e3a1201ee45774c397678e34ac2",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_08_retrieval.npz": "d514a0bb36bd5cbd367daf34d0dfdb9d72bc4877aa0010a86c3eb8e74b9898b0",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_09_composition.npz": "45c511eb2a236bd87649494134db720a0bd0e1fa371f059bd2f8a7df08fa8967",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_09_retrieval.npz": "a307cec366c40ce15e9748d224a2421dabc53a902ea934e9e40ed140ceacc7f0",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_10_composition.npz": "65c00967aa52511f5b73bb0beff206574f9e0d4d36274718197858c1b000bdaa",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_10_retrieval.npz": "aab3fabfae1750f0ecae6630d84ba5fcced605d8ad375f4b2e4e6697e269c21c",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_11_composition.npz": "661d412d1220943be5e80f81515ec3421773122feb050eda25dcc4b0c8e4a118",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_11_retrieval.npz": "945b4df8fe36e78fabf003a5d8f58e12b0d5ee0114d695cb051bda319c90d115",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_12_composition.npz": "f8a56f071563be40a0c1cd217e1861931758d377a985be681fd42013457d6f8d",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/epoch_12_retrieval.npz": "e808a21d8e22ea26a769f64ed67edb28f3ef6629a0e6f4bb7361c1563c3095e6",
+    "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/selection_698214c180967d45dd3e.json": "6489193456c4b4c60ff2c60e425ef575cf1fe3627292fd921de9af5e25cfe0ff",
+    "results/practical_v6/inference_amendment_v1.json": "19c6935147776560a0da5ad1c70763c02fe70d1949a3206fa59b8304577e382d",
+    "results/practical_v6/protocol_v1.json": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854",
+    "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_17/completion.json": "0ef9c6d0f6938fd8002f29fdec2e60332680dd8866c51a6ce1bcd039945b0ff0",
+    "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_17/ledger.json": "8489b496883814a2da48bb3beac47a73578a00e09c0d159eff2125ec25ab3a0c",
+    "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_29/completion.json": "0fe3d9031fcaf2c27f706bf68d3bd869e4c85eff6264f245d04d8b42091ec8f0",
+    "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_29/ledger.json": "9fc0ed10f3d8d326d5814fa4e6d82d1f1e91354af9a1584f1ad929336c612480",
+    "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_43/completion.json": "5f272a3fbe36cb87806f5c6d4575be3e9303403f8162cb76f9489ae7e324c105",
+    "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_43/ledger.json": "140115a7b2eac44c376ea94409bffb81b5598fe684f60861e7a85c3f3894d06c",
+    "results/resume_features/visual_entailment/features.npz": "03e297aef4abdb6f8edd5fb48bb8a0f309eb339c093daf71dd98445c0e23b397",
+    "results/resume_features/visual_entailment/metadata.json": "d4aa8dc7bcb4ab18f77b034c156ead1bde23a4232006fbd5c2abc81adc033648",
+    "results/review_followup/features/e_vil_dev900/features.npz": "9e8496edf7598c31e4388f0845c0022fc580acb638a3531715867f7c24a4d601",
+    "results/review_followup/features/e_vil_dev900/metadata.json": "38122db9fd225660f03f4c82afb587695af72f1ed665819b79500d145943684e"
+  },
+  "encoder": "vit_b32",
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_pairwise_correction",
+  "feature_inputs": {
+    "development_features": {
+      "path": "results/review_followup/features/e_vil_dev900/features.npz",
+      "sha256": "9e8496edf7598c31e4388f0845c0022fc580acb638a3531715867f7c24a4d601"
+    },
+    "development_manifest": {
+      "path": "data/review_followup/e_vil_dev900/manifest.json",
+      "sha256": "8bee3b0a22b74dda3ff56b1b54f9af42d7fbbd65f9c08a2a31d0900fa69738a3"
+    },
+    "development_metadata": {
+      "path": "results/review_followup/features/e_vil_dev900/metadata.json",
+      "sha256": "38122db9fd225660f03f4c82afb587695af72f1ed665819b79500d145943684e"
+    },
+    "features": {
+      "path": "results/resume_features/visual_entailment/features.npz",
+      "sha256": "03e297aef4abdb6f8edd5fb48bb8a0f309eb339c093daf71dd98445c0e23b397"
+    },
+    "manifest": {
+      "path": "data/visual_entailment/manifest.json",
+      "sha256": "85f948579c3ec2365b9e7d1ab60807c0a7ac7a012ec339da5e91e9ba7c3cf495"
+    },
+    "metadata": {
+      "path": "results/resume_features/visual_entailment/metadata.json",
+      "sha256": "d4aa8dc7bcb4ab18f77b034c156ead1bde23a4232006fbd5c2abc81adc033648"
+    }
+  },
+  "held_out_scoring_performed_by_builder": false,
+  "inference_amendment": {
+    "path": "results/practical_v6/inference_amendment_v1.json",
+    "sha256": "19c6935147776560a0da5ad1c70763c02fe70d1949a3206fa59b8304577e382d"
+  },
+  "practical_gate": {
+    "bootstrap_replicates": 100000,
+    "bootstrap_unit": "paired image clusters, averaging the three fitted seeds",
+    "caption_adjusted_gain_lower_bound_strictly_greater_than": 0.0,
+    "caption_endpoint": "SugarCrepe++ both positive captions strictly outrank negative",
+    "caption_ties": "Failure on equality",
+    "familywise_alpha": 0.05,
+    "minimum_nonzero_trained_seeds": 3,
+    "multiplicity_family_size": 80,
+    "primary_retrieval": "e_vil_test1000 full galleries, both directions",
+    "retrieval_adjusted_lower_bound_strictly_greater_than": -0.01,
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index",
+    "same_family_must_pass_both_encoders": true,
+    "secondary_retrieval": "COCO Karpathy5k full galleries, both directions",
+    "success_cannot_be_inferred_from": [
+      "relation accuracy",
+      "frozen or effectively zero outputs",
+      "development results",
+      "uncorrected test intervals"
+    ]
+  },
+  "protocol": "results/practical_v6/protocol_v1.json",
+  "protocol_sha256": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854",
+  "replication_plan": {
+    "path": "results/practical_v6/common_configuration_replication_plan.json",
+    "sha256": "da028e84604439a1d8af334f193edc675d08092983974395addf6c974ba3e20c"
+  },
+  "schema_version": 1,
+  "selection_rule": "both_R1_counts_at_least_frozen_then_max_image_averaged_joint_triplet_accuracy_gain_then_mean_triplet_margin_then_earliest_epoch",
+  "source_hashes": {
+    "scripts/audit_practical_v6.py": "dd093f837ad1a1ce2afe6bc3a110667293e27bd48a2fc6e85ab33846d4af14e7",
+    "scripts/evaluate_practical_v6.py": "4519f8cfd16ac72893861c0fd7cf98135cb3a877aad0a347f22ba68a41588a78",
+    "scripts/lock_practical_pooled_selection_v6.py": "9badcbf503a8d7c995b2b51110671fd527ca47876cc05a07484c1adfb70b3252",
+    "scripts/rescore_practical_development_v6.py": "7114e9909316fe9aa26088cb1699dba2aa14935b429cf7f606af14f648a4bbef",
+    "scripts/run_practical_training.py": "c965bb6bc3dd1356f4612975fca91e8970561343d4a61ec96a4941bf6be10e95",
+    "src/gcr/practical_scorer.py": "b4c79167ea5f01307730483a768145de5cdd06b5e6eaf5396706d03852bebbbd",
+    "src/gcr/practical_training.py": "56a58e6055fdc1eb9f0f90e20c3ea767b603f1c0db14d15ab66f81ff52f02c6f",
+    "src/gcr/review_training.py": "862990a85060ddeccb2d685aedc26535dd1948741d1e5cc39bfc96e891aeeaf4",
+    "src/gcr/training.py": "274931e8b718549e0b320671e074e7168fe8ada0e2e3f8bffa649698100ec977"
+  },
+  "states": [
+    {
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/selection_50d8e5d1dff585e64595.json",
+        "sha256": "ac0772ecc5bf01203557c054a448827d158102daff960237dfe4d6dba2205f0f"
+      },
+      "canonical_inference_binding": {
+        "path": "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_17/binding.json",
+        "sha256": "887e1a06f40003d2ceb8bab0c740f05cc960105f6a79077b9ecef1de1565b333"
+      },
+      "checkpoint": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_17/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "1f5da86e6a17189f38fa268ef3202e6c7d9fefd1771384f873b30cbd57e0f97c",
+      "development_selection": {
+        "checkpoint": {
+          "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_17/checkpoints/epoch_04.pt",
+          "sha256": "1f5da86e6a17189f38fa268ef3202e6c7d9fefd1771384f873b30cbd57e0f97c"
+        },
+        "eligible_count": 4,
+        "i2t_r1_change": 0.008888888888888946,
+        "paired_joint_accuracy_gain": 0.009075496031746177,
+        "selected_epoch": 4,
+        "status": "development_selected_not_tested",
+        "t2i_r1_change": 0.0004444444444443585
+      },
+      "epoch": 4,
+      "model_config": {
+        "dimension": 512,
+        "epsilon": 0.01,
+        "hidden": 128,
+        "rank": 64
+      },
+      "nonzero_diagnostics": {
+        "composition_max_absolute": 0.009999794363975523,
+        "composition_pairs": 1875,
+        "composition_rms": 0.006958226446578689,
+        "composition_within_image_centered_rms": 0.005975012204850864,
+        "nonconstant_numerical_tolerance": 1e-12,
+        "population": "development pairs only; no held-out data used",
+        "retrieval_max_absolute": 0.009999874234199525,
+        "retrieval_rms": 0.007215267657389486,
+        "retrieval_std": 0.006373709902226697,
+        "retrieval_union_pairs": 8736
+      },
+      "optimizer_steps": 76,
+      "seed": 17,
+      "state_id": "vit_b32_bounded_pair_seed_17_epoch_04",
+      "training_completion": {
+        "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_17/completion.json",
+        "sha256": "0ef9c6d0f6938fd8002f29fdec2e60332680dd8866c51a6ce1bcd039945b0ff0"
+      },
+      "training_ledger": {
+        "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_17/ledger.json",
+        "sha256": "8489b496883814a2da48bb3beac47a73578a00e09c0d159eff2125ec25ab3a0c"
+      },
+      "update_norm": 12.786897815411747
+    },
+    {
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/selection_17664d790a0c9d5dfb33.json",
+        "sha256": "211adaef8c4910ff5d9ca8bf6f02393f49fc2213ffc2f7e8ff83703984094dd8"
+      },
+      "canonical_inference_binding": {
+        "path": "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_29/binding.json",
+        "sha256": "96b5dd65dcf0ff88382cee5ecb87968497862bcdd701834e237d965f810f908f"
+      },
+      "checkpoint": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_29/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "9a12450b00fb02dc7b189791f3e04ceed5e63b023ed1a9e58f69816847278b5d",
+      "development_selection": {
+        "checkpoint": {
+          "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_29/checkpoints/epoch_04.pt",
+          "sha256": "9a12450b00fb02dc7b189791f3e04ceed5e63b023ed1a9e58f69816847278b5d"
+        },
+        "eligible_count": 2,
+        "i2t_r1_change": 0.0,
+        "paired_joint_accuracy_gain": 0.011482655677655829,
+        "selected_epoch": 4,
+        "status": "development_selected_not_tested",
+        "t2i_r1_change": 0.00022222222222212373
+      },
+      "epoch": 4,
+      "model_config": {
+        "dimension": 512,
+        "epsilon": 0.01,
+        "hidden": 128,
+        "rank": 64
+      },
+      "nonzero_diagnostics": {
+        "composition_max_absolute": 0.00999999821186065,
+        "composition_pairs": 1875,
+        "composition_rms": 0.007002520100182313,
+        "composition_within_image_centered_rms": 0.006063025417410249,
+        "nonconstant_numerical_tolerance": 1e-12,
+        "population": "development pairs only; no held-out data used",
+        "retrieval_max_absolute": 0.009999883770942688,
+        "retrieval_rms": 0.007318609664163053,
+        "retrieval_std": 0.006390173416320671,
+        "retrieval_union_pairs": 8736
+      },
+      "optimizer_steps": 76,
+      "seed": 29,
+      "state_id": "vit_b32_bounded_pair_seed_29_epoch_04",
+      "training_completion": {
+        "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_29/completion.json",
+        "sha256": "0fe3d9031fcaf2c27f706bf68d3bd869e4c85eff6264f245d04d8b42091ec8f0"
+      },
+      "training_ledger": {
+        "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_29/ledger.json",
+        "sha256": "9fc0ed10f3d8d326d5814fa4e6d82d1f1e91354af9a1584f1ad929336c612480"
+      },
+      "update_norm": 12.871209613729018
+    },
+    {
+      "canonical_development_snapshot": {
+        "path": "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/selection_698214c180967d45dd3e.json",
+        "sha256": "6489193456c4b4c60ff2c60e425ef575cf1fe3627292fd921de9af5e25cfe0ff"
+      },
+      "canonical_inference_binding": {
+        "path": "results/practical_v6/canonical_development/vit_b32/eps_0.01_ret_0.25_seed_43/binding.json",
+        "sha256": "0575aee58e5fcb9b78a20618695122f2e8653ec877c80cfb9f79866dbc0bc15c"
+      },
+      "checkpoint": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_43/checkpoints/epoch_04.pt",
+      "checkpoint_sha256": "b0f372010d1a1e241ef1e43610c72ada09e44c2f8c8c8174c4c6f8b505d51e65",
+      "development_selection": {
+        "checkpoint": {
+          "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_43/checkpoints/epoch_04.pt",
+          "sha256": "b0f372010d1a1e241ef1e43610c72ada09e44c2f8c8c8174c4c6f8b505d51e65"
+        },
+        "eligible_count": 4,
+        "i2t_r1_change": 0.004444444444444473,
+        "paired_joint_accuracy_gain": 0.011315514698976292,
+        "selected_epoch": 4,
+        "status": "development_selected_not_tested",
+        "t2i_r1_change": 0.0006666666666665932
+      },
+      "epoch": 4,
+      "model_config": {
+        "dimension": 512,
+        "epsilon": 0.01,
+        "hidden": 128,
+        "rank": 64
+      },
+      "nonzero_diagnostics": {
+        "composition_max_absolute": 0.009999831914901738,
+        "composition_pairs": 1875,
+        "composition_rms": 0.006840185611852028,
+        "composition_within_image_centered_rms": 0.005968579604655537,
+        "nonconstant_numerical_tolerance": 1e-12,
+        "population": "development pairs only; no held-out data used",
+        "retrieval_max_absolute": 0.00999970555305481,
+        "retrieval_rms": 0.007160002786678744,
+        "retrieval_std": 0.006346559889607956,
+        "retrieval_union_pairs": 8736
+      },
+      "optimizer_steps": 76,
+      "seed": 43,
+      "state_id": "vit_b32_bounded_pair_seed_43_epoch_04",
+      "training_completion": {
+        "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_43/completion.json",
+        "sha256": "5f272a3fbe36cb87806f5c6d4575be3e9303403f8162cb76f9489ae7e324c105"
+      },
+      "training_ledger": {
+        "path": "results/practical_v6/vit_b32/eps_0.01_ret_0.25_seed_43/ledger.json",
+        "sha256": "140115a7b2eac44c376ea94409bffb81b5598fe684f60861e7a85c3f3894d06c"
+      },
+      "update_norm": 12.607994576205902
+    }
+  ],
+  "test_outcomes_used_for_selection": false,
+  "training_metadata": {
+    "path": "results/resume_features/visual_entailment/metadata.json",
+    "sha256": "d4aa8dc7bcb4ab18f77b034c156ead1bde23a4232006fbd5c2abc81adc033648"
+  }
+}

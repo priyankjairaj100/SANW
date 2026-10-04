@@ -1,0 +1,32 @@
+{
+  "additional_seeds": [
+    29,
+    43
+  ],
+  "configuration_selection": "Maximize minimum original-development joint triplet accuracy gain across encoders among configurations having nonzero epochs with neither retrieval R1 declining. Configuration selected before any new held-out scoring.",
+  "created_utc": "2026-10-04T16:13:51.634490+00:00",
+  "encoders": [
+    "vit_b32",
+    "rn50"
+  ],
+  "epochs": 12,
+  "epsilon": 0.01,
+  "family": "bounded_pairwise_correction",
+  "final_epoch_selection": "Canonical development-only rescoring for each of the three seeds; no test-informed choice. Original development archives remain preserved.",
+  "held_out_evaluation_authorized_by_this_plan": false,
+  "pilot_seed": 17,
+  "retention_weight": 0.25,
+  "schema": "sanw_common_configuration_replication_plan_v1",
+  "selection_evidence": {
+    "mean_encoder_gain": 0.019671484706532905,
+    "minimum_encoder_gain": 0.009075496031746177,
+    "path": "results/practical_v6/pilot_grid_summary_original.json",
+    "sha256": "0f33767484c2b6eebce321b0c98c336f4b9c9057c0326c38d6d2a5357c529fe7"
+  },
+  "source_sha256": {
+    "results/practical_v6/protocol_v1.json": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854",
+    "scripts/run_practical_training.py": "c965bb6bc3dd1356f4612975fca91e8970561343d4a61ec96a4941bf6be10e95",
+    "src/gcr/practical_scorer.py": "b4c79167ea5f01307730483a768145de5cdd06b5e6eaf5396706d03852bebbbd",
+    "src/gcr/practical_training.py": "56a58e6055fdc1eb9f0f90e20c3ea767b603f1c0db14d15ab66f81ff52f02c6f"
+  }
+}

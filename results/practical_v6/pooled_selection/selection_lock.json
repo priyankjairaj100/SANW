@@ -1,0 +1,34 @@
+{
+  "bootstrap_replicates": 100000,
+  "bootstrap_seed": 20261007,
+  "encoders": {
+    "rn50": {
+      "manifest": "results/practical_v6/pooled_selection/rn50_manifest.json",
+      "manifest_sha256": "6434f4745df03990d75d61e69b1b1ca5705499adde944999e67239e19e2af628"
+    },
+    "vit_b32": {
+      "manifest": "results/practical_v6/pooled_selection/vit_b32_manifest.json",
+      "manifest_sha256": "ccf4b1b29c77a4b53fa89cdef9048107281da22aab05008d3547acfa3a36cef4"
+    }
+  },
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "family": "bounded_pairwise_correction",
+  "family_size": 80,
+  "primary_endpoints": [
+    "e_vil_test1000:i2t.r1",
+    "e_vil_test1000:t2i.r1",
+    "sugarcrepe_pp:both_accuracy"
+  ],
+  "protocol": "results/practical_v6/protocol_v1.json",
+  "protocol_sha256": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854",
+  "schema_version": 1,
+  "secondary_endpoints": [
+    "coco_karpathy:i2t.r1",
+    "coco_karpathy:t2i.r1"
+  ],
+  "source_hashes": {
+    "scripts/audit_practical_v6.py": "dd093f837ad1a1ce2afe6bc3a110667293e27bd48a2fc6e85ab33846d4af14e7",
+    "scripts/evaluate_practical_v6.py": "4519f8cfd16ac72893861c0fd7cf98135cb3a877aad0a347f22ba68a41588a78",
+    "src/gcr/practical_scorer.py": "b4c79167ea5f01307730483a768145de5cdd06b5e6eaf5396706d03852bebbbd"
+  }
+}

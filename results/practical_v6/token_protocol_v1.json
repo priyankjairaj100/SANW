@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "study": "practical_goal_v6_bounded_token_last_block",
+  "date": "2026-10-04",
+  "status": "development_pilot_before_new_test_scoring",
+  "parent_protocol": {
+    "path": "results/practical_v6/protocol_v1.json",
+    "sha256": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854"
+  },
+  "evaluation_status": "exploratory_after_historical_test_reuse",
+  "goal": "One genuinely trained scoring family improves both-positive SugarCrepe++ while retaining both full-gallery e-ViL retrieval directions on both encoders.",
+  "encoders": [
+    "vit_b32",
+    "rn50"
+  ],
+  "future_replication_seeds": [
+    17,
+    29,
+    43
+  ],
+  "model": {
+    "family": "bounded_token_last_block",
+    "trainable": "last text transformer block and final text layer normalization",
+    "trainable_parameters": 3153408,
+    "frozen": "image encoder/features, tokenizer, token embeddings, positional embeddings, first eleven text blocks, text projection, reference last block and normalization",
+    "base": "float64 dot product of original float32-normalized cached image/text features",
+    "residual": "epsilon*tanh(dot(frozen_image,normalize(learned_text)-normalize(reference_text))/epsilon)",
+    "epsilon": 0.01,
+    "initialization": "learned and reference last blocks have identical pretrained tensors; paired identical arithmetic yields an exactly zero initial correction",
+    "reference_autograd": "Reference flags match learned flags for identical CPU kernels; reference output is detached, no reference gradients flow, and reference parameters are excluded from optimizer.",
+    "routing": "same score for every image-text pair, without task labels or gallery-dependent policy",
+    "text_batch_policy": "each requested unique caption is length-sorted with cache-index tie break, encoded once in deterministic batches of64, and reused in both retrieval directions",
+    "prefix_policy": "float32 first-eleven-block activations, train/validation/dev900 only; exact pretrained weight hashes and cache member hashes are bound",
+    "visual_inputs": "existing frozen image feature archives; no new raw images"
+  },
+  "development": {
+    "fit_split": "visual_entailment train only (1200 images)",
+    "relation_split": "visual_entailment validation only (100 images)",
+    "retrieval_split": "e_vil_dev900 (900 images,4500 source captions)",
+    "composition_objective": "For each source-supported-contradicted triplet, logsumexp of zero and the two negative-minus-positive margin violations. Average triplets within image, then average images; neither positive is treated as equivalent to the other.",
+    "neutral_policy": "Never label neutral hypotheses as contradictions.",
+    "retrieval_objective": "Source-caption-only bidirectional retrieval plus preservation of positive frozen margins against training hard negatives.",
+    "selection": "Require genuinely nonzero training and no development R1 loss in either direction; maximize image-averaged fraction of source-supported-contradicted triplets where both positives beat the contradiction. Final seed/configuration selection is frozen before new test scoring.",
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index; same rule as the prior primary endpoint."
+  },
+  "pilot_config": {
+    "encoder": "vit_b32",
+    "epsilon": 0.01,
+    "retention_weight": 1.0,
+    "composition_weight": 1.0,
+    "learning_rate": 1e-05,
+    "seed": 17,
+    "epochs": 4,
+    "batch_size": 32,
+    "text_batch_size": 64,
+    "threads": 3,
+    "weight_decay": 0.01,
+    "composition_temperature": 0.02,
+    "composition_margin": 0.005,
+    "retention_margin_cap": 0.01,
+    "hard_negative_count": 4,
+    "gradient_clip": 1.0
+  },
+  "continuation_rule": "Any extension or new pilot configuration requires a distinct protocol amendment recorded before that run; no current held-out outcomes may guide this decision.",
+  "test_lock": {
+    "required": "Both encoders and all three selected seeds, exact checkpoint hashes, model/source/input hashes, and the selection rule are bound before any new test scoring.",
+    "current_test_outcomes_used_for_selection": false,
+    "historical_test_use": "Prior study test results informed this new scientific hypothesis; current evaluations cannot be called pristine confirmatory tests."
+  },
+  "practical_gate": {
+    "primary_retrieval": "e_vil_test1000 full galleries, both directions",
+    "caption_endpoint": "SugarCrepe++ both positive captions strictly outrank negative",
+    "secondary_retrieval": "COCO Karpathy5k full galleries, both directions",
+    "minimum_nonzero_trained_seeds": 3,
+    "retrieval_adjusted_lower_bound_strictly_greater_than": -0.01,
+    "caption_adjusted_gain_lower_bound_strictly_greater_than": 0.0,
+    "same_family_must_pass_both_encoders": true,
+    "bootstrap_replicates": 100000,
+    "bootstrap_unit": "paired image clusters, averaging the three fitted seeds",
+    "multiplicity_family_size": 80,
+    "familywise_alpha": 0.05,
+    "retrieval_ties": "Descending float64 score, then ascending gallery manifest index",
+    "caption_ties": "Failure on equality",
+    "success_cannot_be_inferred_from": [
+      "relation accuracy",
+      "frozen or effectively zero outputs",
+      "development results",
+      "uncorrected test intervals"
+    ]
+  },
+  "preservation": "Save epoch0 and every nonzero epoch checkpoint, optimizer state, raw development predictions, immutable ledger, history, selection, and completion receipt."
+}

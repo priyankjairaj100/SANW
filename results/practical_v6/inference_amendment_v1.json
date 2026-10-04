@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "amendment": "Canonical pair inference before selection and new test scoring",
+  "base_protocol": "results/practical_v6/protocol_v1.json",
+  "base_protocol_sha256": "59843c6af53e439bded14203bf7e4e24fe766e64ebda6bb574760e38479e4854",
+  "reason": "Synthetic duplicate inputs exposed float32 GEMM variation across batch shapes and row positions. Tiny differences can break exact duplicate-caption ties.",
+  "canonical_residual": "Evaluate each image-text pair at row zero of a one-pair batch, using one Torch CPU thread.",
+  "canonical_baseline": "Float64 dot product over the original float32-normalized cached features.",
+  "evaluator": "scripts/evaluate_practical_v6.py",
+  "evaluator_sha256": "4519f8cfd16ac72893861c0fd7cf98135cb3a877aad0a347f22ba68a41588a78",
+  "training_parameters": "Unchanged. Preserve original development outputs and checkpoint receipts.",
+  "selection": "Recompute development metrics under canonical inference before final selection. Keep recalculated predictions and selections separately.",
+  "practical_gate": "Unchanged, including 80-comparison adjustment and three nonzero fitted seeds per encoder.",
+  "current_test_outcomes_inspected": false,
+  "historical_test_reuse": "Exploratory status remains unchanged."
+}
