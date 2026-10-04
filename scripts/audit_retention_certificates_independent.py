@@ -327,6 +327,7 @@ def audit_index(audit, index_path, config_path, lock, lock_hash, block_size, max
         teachers[name] = forward_features(datasets[name][0])
         references[name] = checked_archive(audit, evaluated["frozen"]["datasets"][name])
     counts, strata = Counter(), defaultdict(Counter)
+    unchanged_reference = {}
     for run in index["runs"]:
         if set(run["datasets"]) != set(DATASETS):
             raise ValueError("Missing certificate gallery")
@@ -365,6 +366,8 @@ def audit_index(audit, index_path, config_path, lock, lock_hash, block_size, max
                     raise ValueError("Diagnostic query or gallery identities differ")
             student = forward_features(features, weights)
             teacher = teachers[name]
+            if stratum == "unchanged" and any(not np.array_equal(left, right) for left, right in zip(teacher, student, strict=True)):
+                raise ValueError("An unchanged adapter altered normalized features")
             expected_keys = set(identity) | {f"{direction}_{key}" for direction in ("i2t", "t2i") for key in BOOLS + FLOATS + ("benchmark_teacher_ranks", "benchmark_student_ranks")}
             if set(raw) != expected_keys:
                 raise ValueError("Diagnostic archive inventory differs")
@@ -372,11 +375,26 @@ def audit_index(audit, index_path, config_path, lock, lock_hash, block_size, max
                 saved = {key.removeprefix(direction + "_"): value for key, value in raw.items() if key.startswith(direction + "_")}
                 if not np.array_equal(saved["benchmark_teacher_ranks"], references[name][f"{direction}_ranks"]) or not np.array_equal(saved["benchmark_student_ranks"], benchmark[f"{direction}_ranks"]):
                     raise ValueError("Diagnostic ranks differ from benchmark ranks")
-                for start in range(0, len(teacher[d]), block_size):
-                    stop = min(start + block_size, len(teacher[d]))
-                    recomputed = independent_rows(teacher[d][start:stop] @ teacher[1 - d].T,
-                        student[d][start:stop] @ student[1 - d].T, relevance[d][start:stop], receipt["native_logit_scale"])
-                    compare_arrays(recomputed, {key: value[start:stop] for key, value in saved.items()}, maxima)
+                cache_key = name, direction
+                if stratum == "unchanged" and cache_key in unchanged_reference:
+                    # Every unchanged checkpoint has exact zero tensors and equal normalized features.
+                    # Reuse only independently reconstructed teacher-versus-teacher query arrays.
+                    compare_arrays(unchanged_reference[cache_key], saved, maxima)
+                else:
+                    pieces = defaultdict(list)
+                    for start in range(0, len(teacher[d]), block_size):
+                        stop = min(start + block_size, len(teacher[d]))
+                        teacher_scores = teacher[d][start:stop] @ teacher[1 - d].T
+                        student_scores = (teacher_scores if stratum == "unchanged" else
+                                          student[d][start:stop] @ student[1 - d].T)
+                        recomputed = independent_rows(teacher_scores, student_scores,
+                            relevance[d][start:stop], receipt["native_logit_scale"])
+                        compare_arrays(recomputed, {key: value[start:stop] for key, value in saved.items()}, maxima)
+                        if stratum == "unchanged":
+                            for key, values in recomputed.items():
+                                pieces[key].append(values)
+                    if stratum == "unchanged":
+                        unchanged_reference[cache_key] = {key: np.concatenate(values) for key, values in pieces.items()}
                 summary = independent_summary(saved)
                 published = record["summary"][direction]
                 if any(summary[key] != published[key] for key in summary):

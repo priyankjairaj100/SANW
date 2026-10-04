@@ -1,0 +1,26 @@
+{
+  "encoders": {
+    "rn50": {
+      "ledger_sha256": "bbb4b38ac35b62aafcd5b8dbc584380d52ac713e047602d56f9dd53287d65916",
+      "manifest": "results/allocation_distillation/rn50/state_manifest.json",
+      "manifest_sha256": "fe2e57e020efdf64d333cce2149f287ce6847f179f3aecd47ded6057d6f39f89",
+      "selection_sha256": {
+        "primary": "6f6298864641f3a66f5cb02a6a2f40c13963cc88167e48d02b28555cca017279",
+        "sensitivity": "d1bdd3141a2e4eb64a4b594ef9dc5c57d7f38b23b22238a948f40375621ba535"
+      }
+    },
+    "vit_b32": {
+      "ledger_sha256": "e3ad02108857fae3e03d6300c5038492cd9f330424b4d620aedee4fc082c7ebd",
+      "manifest": "results/allocation_distillation/vit_b32/state_manifest.json",
+      "manifest_sha256": "fb86cd3c4f81896fb1aea6f989d68a5b5b10eba6ad39fc4fe31d32c2b41d7c64",
+      "selection_sha256": {
+        "primary": "21634365e625e08eeab746bbcd52a23ba1ac8f0509ff61bce58642217b8c4607",
+        "sensitivity": "55b630d0f166def6d4d2bc7f95b7854f8bde390baaf51313db8865df2a416fcb"
+      }
+    }
+  },
+  "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+  "protocol_sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "purpose": "lock all development selections before any held-out scoring",
+  "schema_version": 1
+}

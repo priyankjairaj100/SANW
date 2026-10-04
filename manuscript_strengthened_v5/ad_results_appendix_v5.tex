@@ -1,0 +1,457 @@
+\subsection{Allocation and distillation: complete results}
+
+This exploratory analysis reuses previously examined test datasets.
+
+Its independent audit checked 99 states, 495 prediction archives, 104 effects, and 10.4 million bootstrap values.
+
+Every practical family fails at least one declared requirement on each encoder.
+
+Failure to establish noninferiority does not prove the true retrieval loss exceeds the tolerance.
+
+Relation accuracy and SugarCrepe++ accuracy remain separate endpoints.
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrrrl}
+\toprule
+Encoder & Family & Trained & I$\to$T lower & T$\to$I lower & Both lower & Joint\\
+\midrule
+ViT & Source & Yes & -2.800 & -2.338 & -3.502 & Fail\\
+ViT & U & No & +0.000 & +0.000 & +0.000 & Fail\\
+ViT & A & Yes & -3.533 & -2.225 & -2.779 & Fail\\
+ViT & D & Yes & -3.933 & -0.512 & -0.613 & Fail\\
+ViT & AD & Yes & -4.067 & -2.913 & -1.456 & Fail\\
+ViT & WiSE & Yes & -3.267 & -2.438 & -0.923 & Fail\\
+RN50 & Source & Yes & -1.867 & +1.195 & -4.035 & Fail\\
+RN50 & U & No & +0.000 & +0.000 & +0.000 & Fail\\
+RN50 & A & No & -1.667 & +1.027 & -2.660 & Fail\\
+RN50 & D & Yes & -3.733 & +0.653 & -0.613 & Fail\\
+RN50 & AD & Yes & -4.000 & -1.207 & -0.901 & Fail\\
+RN50 & WiSE & Yes & -4.000 & +2.135 & -1.556 & Fail\\
+\bottomrule
+\end{tabular}
+\caption{AD-study practical criteria. Trained requires three nonzero selected updates. Numbers are adjusted lower bounds against frozen initialization, in percentage points. Retrieval bounds must exceed $-1$; the SugarCrepe++ Both bound must exceed zero.}\label{tab:newgates}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+ViT & Source $-$ Frozen & I$\to$T & +0.000 & $[-2.800,+2.858]$ \\
+ViT & Source $-$ Frozen & T$\to$I & -0.800 & $[-2.338,+0.745]$ \\
+ViT & Source $-$ Frozen & Relation & +1.562 & $[+0.289,+2.814]$ \\
+ViT & Source $-$ Frozen & Both & -2.193 & $[-3.502,-0.859]$ \\
+ViT & U $-$ Frozen & I$\to$T & +0.000 & $[+0.000,+0.000]$ \\
+ViT & U $-$ Frozen & T$\to$I & +0.000 & $[+0.000,+0.000]$ \\
+ViT & U $-$ Frozen & Relation & +0.000 & $[+0.000,+0.000]$ \\
+ViT & U $-$ Frozen & Both & +0.000 & $[+0.000,+0.000]$ \\
+ViT & A $-$ Frozen & I$\to$T & -0.667 & $[-3.533,+2.233]$ \\
+ViT & A $-$ Frozen & T$\to$I & -0.727 & $[-2.225,+0.753]$ \\
+ViT & A $-$ Frozen & Relation & +4.744 & $[+3.549,+6.008]$ \\
+ViT & A $-$ Frozen & Both & -1.521 & $[-2.779,-0.254]$ \\
+ViT & D $-$ Frozen & I$\to$T & -1.400 & $[-3.933,+1.000]$ \\
+ViT & D $-$ Frozen & T$\to$I & +0.453 & $[-0.512,+1.407]$ \\
+ViT & D $-$ Frozen & Relation & +5.517 & $[+4.249,+6.797]$ \\
+ViT & D $-$ Frozen & Both & +0.357 & $[-0.613,+1.325]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study primary effects, rows 1 through 16. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adprimary0}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+ViT & AD $-$ Frozen & I$\to$T & -1.133 & $[-4.067,+1.858]$ \\
+ViT & AD $-$ Frozen & T$\to$I & -1.473 & $[-2.913,-0.017]$ \\
+ViT & AD $-$ Frozen & Relation & +6.674 & $[+5.210,+8.167]$ \\
+ViT & AD $-$ Frozen & Both & -0.126 & $[-1.456,+1.196]$ \\
+ViT & WiSE $-$ Frozen & I$\to$T & -0.700 & $[-3.267,+1.892]$ \\
+ViT & WiSE $-$ Frozen & T$\to$I & -0.893 & $[-2.438,+0.567]$ \\
+ViT & WiSE $-$ Frozen & Relation & +5.084 & $[+3.963,+6.241]$ \\
+ViT & WiSE $-$ Frozen & Both & +0.315 & $[-0.923,+1.537]$ \\
+ViT & AD $-$ D & I$\to$T & +0.267 & $[-1.700,+2.233]$ \\
+ViT & AD $-$ D & T$\to$I & -1.927 & $[-3.038,-0.833]$ \\
+ViT & AD $-$ D & Relation & +1.157 & $[+0.390,+1.948]$ \\
+ViT & AD $-$ D & Both & -0.483 & $[-1.527,+0.555]$ \\
+ViT & AD $-$ A & I$\to$T & -0.467 & $[-2.792,+1.925]$ \\
+ViT & AD $-$ A & T$\to$I & -0.747 & $[-2.167,+0.700]$ \\
+ViT & AD $-$ A & Relation & +1.930 & $[+0.956,+2.906]$ \\
+ViT & AD $-$ A & Both & +1.394 & $[+0.204,+2.622]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study primary effects, rows 17 through 32. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adprimary16}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+ViT & AD $-$ WiSE & I$\to$T & -0.433 & $[-2.267,+1.433]$ \\
+ViT & AD $-$ WiSE & T$\to$I & -0.580 & $[-1.587,+0.413]$ \\
+ViT & AD $-$ WiSE & Relation & +1.590 & $[+0.811,+2.403]$ \\
+ViT & AD $-$ WiSE & Both & -0.441 & $[-1.304,+0.391]$ \\
+ViT & AD $-$ AD random & I$\to$T & +0.133 & $[-1.467,+1.711]$ \\
+ViT & AD $-$ AD random & T$\to$I & +0.191 & $[-0.601,+0.975]$ \\
+ViT & AD $-$ AD random & Relation & +4.272 & $[+3.440,+5.167]$ \\
+ViT & AD $-$ AD random & Both & +1.100 & $[+0.284,+1.928]$ \\
+RN50 & Source $-$ Frozen & I$\to$T & +1.700 & $[-1.867,+5.233]$ \\
+RN50 & Source $-$ Frozen & T$\to$I & +3.227 & $[+1.195,+5.283]$ \\
+RN50 & Source $-$ Frozen & Relation & +1.071 & $[-0.068,+2.218]$ \\
+RN50 & Source $-$ Frozen & Both & -2.333 & $[-4.035,-0.662]$ \\
+RN50 & U $-$ Frozen & I$\to$T & +0.000 & $[+0.000,+0.000]$ \\
+RN50 & U $-$ Frozen & T$\to$I & +0.000 & $[+0.000,+0.000]$ \\
+RN50 & U $-$ Frozen & Relation & +0.000 & $[+0.000,+0.000]$ \\
+RN50 & U $-$ Frozen & Both & +0.000 & $[+0.000,+0.000]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study primary effects, rows 33 through 48. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adprimary32}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+RN50 & A $-$ Frozen & I$\to$T & +0.767 & $[-1.667,+3.233]$ \\
+RN50 & A $-$ Frozen & T$\to$I & +2.453 & $[+1.027,+3.872]$ \\
+RN50 & A $-$ Frozen & Relation & +3.141 & $[+2.243,+4.097]$ \\
+RN50 & A $-$ Frozen & Both & -1.450 & $[-2.660,-0.270]$ \\
+RN50 & D $-$ Frozen & I$\to$T & -0.367 & $[-3.733,+2.967]$ \\
+RN50 & D $-$ Frozen & T$\to$I & +2.200 & $[+0.653,+3.815]$ \\
+RN50 & D $-$ Frozen & Relation & +10.351 & $[+8.283,+12.487]$ \\
+RN50 & D $-$ Frozen & Both & +0.904 & $[-0.613,+2.431]$ \\
+RN50 & AD $-$ Frozen & I$\to$T & -0.733 & $[-4.000,+2.400]$ \\
+RN50 & AD $-$ Frozen & T$\to$I & +0.467 & $[-1.207,+2.133]$ \\
+RN50 & AD $-$ Frozen & Relation & +9.016 & $[+7.145,+10.957]$ \\
+RN50 & AD $-$ Frozen & Both & +0.617 & $[-0.901,+2.100]$ \\
+RN50 & WiSE $-$ Frozen & I$\to$T & -0.200 & $[-4.000,+3.533]$ \\
+RN50 & WiSE $-$ Frozen & T$\to$I & +4.120 & $[+2.135,+6.130]$ \\
+RN50 & WiSE $-$ Frozen & Relation & +9.171 & $[+7.518,+10.930]$ \\
+RN50 & WiSE $-$ Frozen & Both & +0.021 & $[-1.556,+1.589]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study primary effects, rows 49 through 64. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adprimary48}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+RN50 & AD $-$ D & I$\to$T & -0.367 & $[-2.400,+1.700]$ \\
+RN50 & AD $-$ D & T$\to$I & -1.733 & $[-2.893,-0.587]$ \\
+RN50 & AD $-$ D & Relation & -1.334 & $[-2.070,-0.621]$ \\
+RN50 & AD $-$ D & Both & -0.287 & $[-1.184,+0.599]$ \\
+RN50 & AD $-$ A & I$\to$T & -1.500 & $[-4.100,+1.133]$ \\
+RN50 & AD $-$ A & T$\to$I & -1.987 & $[-3.518,-0.500]$ \\
+RN50 & AD $-$ A & Relation & +5.876 & $[+4.527,+7.289]$ \\
+RN50 & AD $-$ A & Both & +2.067 & $[+0.856,+3.286]$ \\
+RN50 & AD $-$ WiSE & I$\to$T & -0.533 & $[-3.200,+2.233]$ \\
+RN50 & AD $-$ WiSE & T$\to$I & -3.653 & $[-5.213,-2.093]$ \\
+RN50 & AD $-$ WiSE & Relation & -0.155 & $[-1.050,+0.734]$ \\
+RN50 & AD $-$ WiSE & Both & +0.596 & $[-0.463,+1.630]$ \\
+RN50 & AD $-$ AD random & I$\to$T & -1.444 & $[-3.056,+0.078]$ \\
+RN50 & AD $-$ AD random & T$\to$I & -0.284 & $[-1.002,+0.466]$ \\
+RN50 & AD $-$ AD random & Relation & +4.266 & $[+3.414,+5.171]$ \\
+RN50 & AD $-$ AD random & Both & +0.107 & $[-0.650,+0.850]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study primary effects, rows 65 through 80. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adprimary64}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+ViT & Allocation & I$\to$T & +3.383 & $[+2.000,+4.817]$ \\
+ViT & Distillation & I$\to$T & +3.650 & $[+1.450,+5.833]$ \\
+ViT & Interaction & I$\to$T & -0.300 & $[-2.267,+1.667]$ \\
+ViT & Allocation & T$\to$I & +0.787 & $[+0.253,+1.320]$ \\
+ViT & Distillation & T$\to$I & +4.740 & $[+3.430,+6.096]$ \\
+ViT & Interaction & T$\to$I & -0.333 & $[-1.140,+0.460]$ \\
+ViT & Allocation & Relation & -1.047 & $[-1.507,-0.619]$ \\
+ViT & Distillation & Relation & +0.080 & $[-0.632,+0.789]$ \\
+ViT & Interaction & Relation & -0.153 & $[-0.648,+0.365]$ \\
+ViT & Allocation & Both & -0.543 & $[-1.133,+0.025]$ \\
+ViT & Distillation & Both & +2.169 & $[+1.179,+3.170]$ \\
+ViT & Interaction & Both & +0.455 & $[-0.385,+1.308]$ \\
+RN50 & Allocation & I$\to$T & +3.633 & $[+2.117,+5.183]$ \\
+RN50 & Distillation & I$\to$T & +7.000 & $[+4.200,+9.817]$ \\
+RN50 & Interaction & I$\to$T & -0.733 & $[-3.233,+1.733]$ \\
+RN50 & Allocation & T$\to$I & +0.913 & $[+0.267,+1.583]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study factorial effects, rows 1 through 16. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adfactorial0}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lllrr}
+\toprule
+Encoder & Comparison & Endpoint & Difference & Adjusted interval\\
+\midrule
+RN50 & Distillation & T$\to$I & +3.253 & $[+1.400,+5.100]$ \\
+RN50 & Interaction & T$\to$I & -0.720 & $[-1.860,+0.427]$ \\
+RN50 & Allocation & Relation & -1.256 & $[-1.707,-0.814]$ \\
+RN50 & Distillation & Relation & -0.618 & $[-1.435,+0.186]$ \\
+RN50 & Interaction & Relation & -0.850 & $[-1.507,-0.211]$ \\
+RN50 & Allocation & Both & -0.266 & $[-0.835,+0.290]$ \\
+RN50 & Distillation & Both & +3.427 & $[+2.260,+4.586]$ \\
+RN50 & Interaction & Both & -0.322 & $[-1.204,+0.569]$ \\
+\bottomrule
+\end{tabular}
+\caption{AD-study factorial effects, rows 17 through 24. Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.}\label{tab:adfactorial16}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Tol. & e I$\to$T & e T$\to$I & Rel. & SC & Both & C I$\to$T & C T$\to$I\\
+\midrule
+ViT & Source & 1 & 84.50 & 68.96 & 81.04 & 83.02 & 66.76 & 55.71 & 39.20\\
+ViT & U & 1 & 84.50 & 69.76 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+ViT & A & 1 & 83.83 & 69.03 & 84.22 & 83.47 & 67.43 & 54.75 & 39.15\\
+ViT & D & 1 & 83.10 & 70.21 & 84.99 & 82.91 & 69.31 & 54.17 & 39.54\\
+ViT & AD & 1 & 83.37 & 68.29 & 86.15 & 83.12 & 68.82 & 52.46 & 38.55\\
+ViT & WiSE & 1 & 83.80 & 68.87 & 84.56 & 83.35 & 69.27 & 53.85 & 38.98\\
+ViT & AD random & 1 & 83.23 & 68.10 & 81.87 & 82.54 & 67.72 & 53.84 & 38.45\\
+ViT & Source & 0 & 84.70 & 69.74 & 80.66 & 82.60 & 67.89 & 56.18 & 39.47\\
+ViT & U & 0 & 84.50 & 69.76 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+ViT & A & 0 & 84.50 & 69.76 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+ViT & D & 0 & 84.37 & 69.86 & 81.55 & 81.70 & 69.03 & 55.85 & 39.49\\
+ViT & AD & 0 & 84.47 & 69.49 & 86.16 & 83.22 & 68.97 & 53.91 & 39.02\\
+ViT & WiSE & 0 & 83.83 & 69.25 & 84.42 & 83.11 & 68.89 & 54.39 & 39.12\\
+ViT & Frozen & -- & 84.50 & 69.76 & 79.47 & 81.21 & 68.95 & 56.32 & 39.35\\
+RN50 & Source & 1 & 82.20 & 62.47 & 76.81 & 78.76 & 65.02 & 49.09 & 31.17\\
+RN50 & U & 1 & 80.50 & 59.24 & 75.74 & 76.70 & 67.35 & 48.90 & 28.53\\
+RN50 & A & 1 & 81.27 & 61.69 & 78.88 & 78.60 & 65.90 & 48.49 & 30.32\\
+RN50 & D & 1 & 80.13 & 61.44 & 86.09 & 80.53 & 68.26 & 46.09 & 29.56\\
+\bottomrule
+\end{tabular}
+\caption{AD selected procedures and descriptive zero-tolerance sensitivity. Values are percentages. e denotes e-ViL; C denotes COCO; Rel. denotes relation accuracy; SC denotes SugarCrepe; Both denotes SugarCrepe++.}\label{tab:admetrics0}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Tol. & e I$\to$T & e T$\to$I & Rel. & SC & Both & C I$\to$T & C T$\to$I\\
+\midrule
+RN50 & AD & 1 & 79.77 & 59.71 & 84.76 & 79.54 & 67.97 & 46.23 & 28.13\\
+RN50 & WiSE & 1 & 80.30 & 63.36 & 84.92 & 80.82 & 67.37 & 47.09 & 31.26\\
+RN50 & AD random & 1 & 81.21 & 59.99 & 80.49 & 79.21 & 67.86 & 47.58 & 28.36\\
+RN50 & Source & 0 & 81.60 & 61.36 & 76.39 & 78.01 & 65.69 & 49.09 & 30.27\\
+RN50 & U & 0 & 80.50 & 59.24 & 75.74 & 76.70 & 67.35 & 48.90 & 28.53\\
+RN50 & A & 0 & 80.77 & 60.57 & 77.35 & 77.73 & 66.62 & 48.69 & 29.45\\
+RN50 & D & 0 & 80.47 & 62.31 & 84.56 & 80.26 & 68.62 & 47.29 & 30.10\\
+RN50 & AD & 0 & 82.27 & 60.60 & 84.77 & 80.03 & 68.46 & 48.01 & 28.81\\
+RN50 & WiSE & 0 & 81.87 & 62.04 & 82.62 & 79.98 & 67.37 & 48.25 & 30.45\\
+RN50 & Frozen & -- & 80.50 & 59.24 & 75.74 & 76.70 & 67.35 & 48.90 & 28.53\\
+\bottomrule
+\end{tabular}
+\caption{AD selected procedures and descriptive zero-tolerance sensitivity. Values are percentages. e denotes e-ViL; C denotes COCO; Rel. denotes relation accuracy; SC denotes SugarCrepe; Both denotes SugarCrepe++.}\label{tab:admetrics18}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm\\
+\midrule
+ViT & Source (1) & 17 & -- & 0.0001 & 2 & 1 & 0 & 1 & 0.9537\\
+ViT & Source (1) & 29 & -- & 0.0001 & 3 & 1 & 0 & 1 & 1.331\\
+ViT & Source (1) & 43 & -- & 0.0001 & 3 & 1 & 0 & 1 & 1.332\\
+ViT & U (1) & 17 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+ViT & U (1) & 29 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+ViT & U (1) & 43 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+ViT & A (1) & 17 & -- & 0.0001 & 1 & 0.8 & 0 & 1 & 0.5879\\
+ViT & A (1) & 29 & -- & 0.0001 & 3 & 0.8 & 0 & 1 & 1.366\\
+ViT & A (1) & 43 & -- & 0.0001 & 4 & 0.8 & 0 & 1 & 1.716\\
+ViT & D (1) & 17 & -- & 0.0001 & 4 & 0 & 4 & 1 & 1.156\\
+ViT & D (1) & 29 & -- & 0.0001 & 5 & 0 & 4 & 1 & 1.325\\
+ViT & D (1) & 43 & -- & 0.0001 & 3 & 0 & 4 & 1 & 0.9607\\
+ViT & AD (1) & 17 & -- & 0.0003 & 7 & 0.5 & 1 & 1 & 3.242\\
+ViT & AD (1) & 29 & -- & 0.0003 & 7 & 0.5 & 1 & 1 & 3.239\\
+ViT & AD (1) & 43 & -- & 0.0003 & 9 & 0.5 & 1 & 1 & 3.649\\
+ViT & WiSE (1) & 17 & -- & 0.0003 & 8 & 0 & 0 & 0.5 & 2.814\\
+ViT & WiSE (1) & 29 & -- & 0.0003 & 10 & 0 & 0 & 0.5 & 3.154\\
+ViT & WiSE (1) & 43 & -- & 0.0003 & 8 & 0 & 0 & 0.5 & 2.829\\
+ViT & AD random (1) & 17 & 0 & 0.0003 & 7 & 0.5 & 1 & 1 & 3.351\\
+ViT & AD random (1) & 17 & 1 & 0.0003 & 7 & 0.5 & 1 & 1 & 3.357\\
+\bottomrule
+\end{tabular}
+\caption{AD-study selected states. Family parentheses give the development tolerance in percentage points. Norm denotes the recorded parameter update norm.}\label{tab:adselected0}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm\\
+\midrule
+ViT & AD random (1) & 17 & 2 & 0.0003 & 7 & 0.5 & 1 & 1 & 3.372\\
+ViT & AD random (1) & 29 & 0 & 0.0003 & 7 & 0.5 & 1 & 1 & 3.348\\
+ViT & AD random (1) & 29 & 1 & 0.0003 & 7 & 0.5 & 1 & 1 & 3.35\\
+ViT & AD random (1) & 29 & 2 & 0.0003 & 7 & 0.5 & 1 & 1 & 3.364\\
+ViT & AD random (1) & 43 & 0 & 0.0003 & 9 & 0.5 & 1 & 1 & 3.818\\
+ViT & AD random (1) & 43 & 1 & 0.0003 & 9 & 0.5 & 1 & 1 & 3.807\\
+ViT & AD random (1) & 43 & 2 & 0.0003 & 9 & 0.5 & 1 & 1 & 3.831\\
+ViT & Source (0) & 17 & -- & 0.0001 & 1 & 1 & 0 & 1 & 0.571\\
+ViT & Source (0) & 29 & -- & 0.0001 & 0 & 1 & 0 & 1 & 0\\
+ViT & Source (0) & 43 & -- & 0.0001 & 2 & 1 & 0 & 1 & 0.9537\\
+ViT & U (0) & 17 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+ViT & U (0) & 29 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+ViT & U (0) & 43 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+ViT & A (0) & 17 & -- & 0.0001 & 0 & 0.5 & 0 & 1 & 0\\
+ViT & A (0) & 29 & -- & 0.0001 & 0 & 0.5 & 0 & 1 & 0\\
+ViT & A (0) & 43 & -- & 0.0001 & 0 & 0.5 & 0 & 1 & 0\\
+ViT & D (0) & 17 & -- & 0.0001 & 7 & 0 & 16 & 1 & 0.8569\\
+ViT & D (0) & 29 & -- & 0.0001 & 1 & 0 & 16 & 1 & 0.4591\\
+ViT & D (0) & 43 & -- & 0.0001 & 0 & 0 & 16 & 1 & 0\\
+ViT & AD (0) & 17 & -- & 0.0001 & 10 & 0.5 & 1 & 1 & 2.522\\
+\bottomrule
+\end{tabular}
+\caption{AD-study selected states. Family parentheses give the development tolerance in percentage points. Norm denotes the recorded parameter update norm.}\label{tab:adselected20}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm\\
+\midrule
+ViT & AD (0) & 29 & -- & 0.0001 & 9 & 0.5 & 1 & 1 & 2.392\\
+ViT & AD (0) & 43 & -- & 0.0001 & 9 & 0.5 & 1 & 1 & 2.381\\
+ViT & WiSE (0) & 17 & -- & 0.0003 & 3 & 0 & 0 & 0.5 & 1.6\\
+ViT & WiSE (0) & 29 & -- & 0.0003 & 5 & 0 & 0 & 0.5 & 2.15\\
+ViT & WiSE (0) & 43 & -- & 0.0003 & 8 & 0 & 0 & 0.5 & 2.829\\
+RN50 & Source (1) & 17 & -- & 0.0001 & 2 & 1 & 0 & 1 & 1.732\\
+RN50 & Source (1) & 29 & -- & 0.0001 & 2 & 1 & 0 & 1 & 1.743\\
+RN50 & Source (1) & 43 & -- & 0.0001 & 2 & 1 & 0 & 1 & 1.719\\
+RN50 & U (1) & 17 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+RN50 & U (1) & 29 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+RN50 & U (1) & 43 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+RN50 & A (1) & 17 & -- & 0.0001 & 0 & 0.8 & 0 & 1 & 0\\
+RN50 & A (1) & 29 & -- & 0.0001 & 2 & 0.8 & 0 & 1 & 1.763\\
+RN50 & A (1) & 43 & -- & 0.0001 & 2 & 0.8 & 0 & 1 & 1.734\\
+RN50 & D (1) & 17 & -- & 0.0001 & 7 & 0 & 1 & 1 & 3.193\\
+RN50 & D (1) & 29 & -- & 0.0001 & 5 & 0 & 1 & 1 & 2.564\\
+RN50 & D (1) & 43 & -- & 0.0001 & 6 & 0 & 1 & 1 & 2.932\\
+RN50 & AD (1) & 17 & -- & 0.0003 & 9 & 0.5 & 1 & 1 & 5.189\\
+RN50 & AD (1) & 29 & -- & 0.0003 & 6 & 0.5 & 1 & 1 & 4.217\\
+RN50 & AD (1) & 43 & -- & 0.0003 & 6 & 0.5 & 1 & 1 & 4.27\\
+\bottomrule
+\end{tabular}
+\caption{AD-study selected states. Family parentheses give the development tolerance in percentage points. Norm denotes the recorded parameter update norm.}\label{tab:adselected40}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm\\
+\midrule
+RN50 & WiSE (1) & 17 & -- & 0.0001 & 5 & 0 & 0 & 0.75 & 2.572\\
+RN50 & WiSE (1) & 29 & -- & 0.0001 & 4 & 0 & 0 & 0.75 & 2.218\\
+RN50 & WiSE (1) & 43 & -- & 0.0001 & 4 & 0 & 0 & 0.75 & 2.216\\
+RN50 & AD random (1) & 17 & 0 & 0.0003 & 9 & 0.5 & 1 & 1 & 5.389\\
+RN50 & AD random (1) & 17 & 1 & 0.0003 & 9 & 0.5 & 1 & 1 & 5.376\\
+RN50 & AD random (1) & 17 & 2 & 0.0003 & 9 & 0.5 & 1 & 1 & 5.35\\
+RN50 & AD random (1) & 29 & 0 & 0.0003 & 6 & 0.5 & 1 & 1 & 4.315\\
+RN50 & AD random (1) & 29 & 1 & 0.0003 & 6 & 0.5 & 1 & 1 & 4.309\\
+RN50 & AD random (1) & 29 & 2 & 0.0003 & 6 & 0.5 & 1 & 1 & 4.305\\
+RN50 & AD random (1) & 43 & 0 & 0.0003 & 6 & 0.5 & 1 & 1 & 4.356\\
+RN50 & AD random (1) & 43 & 1 & 0.0003 & 6 & 0.5 & 1 & 1 & 4.341\\
+RN50 & AD random (1) & 43 & 2 & 0.0003 & 6 & 0.5 & 1 & 1 & 4.342\\
+RN50 & Source (0) & 17 & -- & 0.0001 & 0 & 1 & 0 & 1 & 0\\
+RN50 & Source (0) & 29 & -- & 0.0001 & 2 & 1 & 0 & 1 & 1.743\\
+RN50 & Source (0) & 43 & -- & 0.0001 & 2 & 1 & 0 & 1 & 1.719\\
+RN50 & U (0) & 17 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+RN50 & U (0) & 29 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+RN50 & U (0) & 43 & -- & 0.0001 & 0 & 0 & 0 & 1 & 0\\
+RN50 & A (0) & 17 & -- & 0.0001 & 0 & 0.8 & 0 & 1 & 0\\
+RN50 & A (0) & 29 & -- & 0.0001 & 2 & 0.8 & 0 & 1 & 1.763\\
+\bottomrule
+\end{tabular}
+\caption{AD-study selected states. Family parentheses give the development tolerance in percentage points. Norm denotes the recorded parameter update norm.}\label{tab:adselected60}
+\end{table*}
+
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm\\
+\midrule
+RN50 & A (0) & 43 & -- & 0.0001 & 0 & 0.8 & 0 & 1 & 0\\
+RN50 & D (0) & 17 & -- & 0.0001 & 3 & 0 & 1 & 1 & 1.875\\
+RN50 & D (0) & 29 & -- & 0.0001 & 1 & 0 & 1 & 1 & 1.047\\
+RN50 & D (0) & 43 & -- & 0.0001 & 2 & 0 & 1 & 1 & 1.441\\
+RN50 & AD (0) & 17 & -- & 0.0001 & 9 & 0.5 & 1 & 1 & 3.09\\
+RN50 & AD (0) & 29 & -- & 0.0001 & 10 & 0.5 & 1 & 1 & 3.27\\
+RN50 & AD (0) & 43 & -- & 0.0001 & 10 & 0.5 & 1 & 1 & 3.272\\
+RN50 & WiSE (0) & 17 & -- & 0.0003 & 4 & 0 & 0 & 0.5 & 2.91\\
+RN50 & WiSE (0) & 29 & -- & 0.0003 & 4 & 0 & 0 & 0.5 & 2.901\\
+RN50 & WiSE (0) & 43 & -- & 0.0003 & 6 & 0 & 0 & 0.5 & 3.651\\
+\bottomrule
+\end{tabular}
+\caption{AD-study selected states. Family parentheses give the development tolerance in percentage points. Norm denotes the recorded parameter update norm.}\label{tab:adselected80}
+\end{table*}
+
+
+\pending{Original retention, directional effects, and certificate diagnostics remain pending.}

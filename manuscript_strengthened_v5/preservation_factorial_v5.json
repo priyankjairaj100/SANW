@@ -1,0 +1,1138 @@
+{
+  "contrasts": [
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": 0.02,
+      "ci_upper": 0.04816666666666666,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.03383333333333333,
+      "effect": "allocation_main",
+      "effect_id": "vit_b32__allocation_main__e_vil_test1000__i2t.r1",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1000,
+      "items": 1000,
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.003617089069035117,
+      "seed_differences": [
+        0.0315,
+        0.038,
+        0.032
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": 0.0145,
+      "ci_upper": 0.05833333333333333,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.0365,
+      "effect": "distillation_main",
+      "effect_id": "vit_b32__distillation_main__e_vil_test1000__i2t.r1",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1000,
+      "items": 1000,
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0067268120235368534,
+      "seed_differences": [
+        0.0345,
+        0.031,
+        0.044
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.022666666666666665,
+      "ci_upper": 0.016666666666666663,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": -0.003,
+      "effect": "interaction",
+      "effect_id": "vit_b32__interaction__e_vil_test1000__i2t.r1",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1000,
+      "items": 1000,
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.011000000000000001,
+      "seed_differences": [
+        -0.003,
+        -0.014,
+        0.008
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": 0.0025333333333333328,
+      "ci_upper": 0.0132,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.007866666666666666,
+      "effect": "allocation_main",
+      "effect_id": "vit_b32__allocation_main__e_vil_test1000__t2i.r1",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1000,
+      "items": 5000,
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0024214320831551996,
+      "seed_differences": [
+        0.0096,
+        0.0051,
+        0.0089
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": 0.0343,
+      "ci_upper": 0.06096114583333304,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.0474,
+      "effect": "distillation_main",
+      "effect_id": "vit_b32__distillation_main__e_vil_test1000__t2i.r1",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1000,
+      "items": 5000,
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.005604462507680821,
+      "seed_differences": [
+        0.0414,
+        0.0483,
+        0.0525
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.0114,
+      "ci_upper": 0.0046,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": -0.0033333333333333327,
+      "effect": "interaction",
+      "effect_id": "vit_b32__interaction__e_vil_test1000__t2i.r1",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1000,
+      "items": 5000,
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.004129568177586288,
+      "seed_differences": [
+        -0.0052,
+        -0.0062,
+        0.0014
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.015069157396172664,
+      "ci_upper": -0.006192557083659586,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.01047311389887582,
+      "effect": "allocation_main",
+      "effect_id": "vit_b32__allocation_main__visual_entailment__accuracy",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 400,
+      "items": 400,
+      "metric": "accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0037943889999448154,
+      "seed_differences": [
+        -0.01355709404629677,
+        -0.011626339534647112,
+        -0.006235908115683577
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.006320190620656257,
+      "ci_upper": 0.007892938969134932,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "visual_entailment",
+      "difference": 0.0007958762778655068,
+      "effect": "distillation_main",
+      "effect_id": "vit_b32__distillation_main__visual_entailment__accuracy",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 400,
+      "items": 400,
+      "metric": "accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.006064601126560126,
+      "seed_differences": [
+        -0.0031521768474861846,
+        -0.0022389936660581716,
+        0.0077787993471408745
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.0064777130785542494,
+      "ci_upper": 0.003652602427941421,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.0015317766182634674,
+      "effect": "interaction",
+      "effect_id": "vit_b32__interaction__visual_entailment__accuracy",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 400,
+      "items": 400,
+      "metric": "accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0026502375069299674,
+      "seed_differences": [
+        -0.0014773107773092713,
+        0.0010908081808894527,
+        -0.0042088272583705845
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.01132646497492746,
+      "ci_upper": 0.00024583854859947397,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "sugarcrepe_pp",
+      "difference": -0.005430593511316657,
+      "effect": "allocation_main",
+      "effect_id": "vit_b32__allocation_main__sugarcrepe_pp__both_accuracy",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1542,
+      "items": 4757,
+      "metric": "both_accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0033343238744243937,
+      "seed_differences": [
+        -0.00588606264452386,
+        -0.008513769182257725,
+        -0.0018919487071683834
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": 0.011793435074233048,
+      "ci_upper": 0.03169873117279577,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "sugarcrepe_pp",
+      "difference": 0.02168733795809684,
+      "effect": "distillation_main",
+      "effect_id": "vit_b32__distillation_main__sugarcrepe_pp__both_accuracy",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1542,
+      "items": 4757,
+      "metric": "both_accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.002492491964379848,
+      "seed_differences": [
+        0.023964683624132857,
+        0.01902459533319319,
+        0.022072734916964473
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "vit_b32__allocation_0.5__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_0.5__lr_0.0003__seed_43__epoch_09"
+        ],
+        "allocation_distillation": [
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "distilled": [
+          "vit_b32__distilled_1__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__distilled_1__lr_0.0003__seed_43__epoch_09"
+        ],
+        "supported": [
+          "vit_b32__supported__lr_0.0003__seed_17__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_29__epoch_07",
+          "vit_b32__supported__lr_0.0003__seed_43__epoch_09"
+        ]
+      },
+      "ci_lower": -0.003850802631786692,
+      "ci_upper": 0.01307719265792261,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "sugarcrepe_pp",
+      "difference": 0.0045546913320720335,
+      "effect": "interaction",
+      "effect_id": "vit_b32__interaction__sugarcrepe_pp__both_accuracy",
+      "encoder": "vit_b32",
+      "family_size": 24,
+      "images": 1542,
+      "items": 4757,
+      "metric": "both_accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.00351968841843581,
+      "seed_differences": [
+        0.002522598276224511,
+        0.00861887744376708,
+        0.002522598276224511
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": 0.021166666666666663,
+      "ci_upper": 0.05183333333333333,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.03633333333333333,
+      "effect": "allocation_main",
+      "effect_id": "rn50__allocation_main__e_vil_test1000__i2t.r1",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1000,
+      "items": 1000,
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.009751068317540051,
+      "seed_differences": [
+        0.032,
+        0.0295,
+        0.0475
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": 0.042,
+      "ci_upper": 0.09816666666666667,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.07,
+      "effect": "distillation_main",
+      "effect_id": "rn50__distillation_main__e_vil_test1000__i2t.r1",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1000,
+      "items": 1000,
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.007697402159170325,
+      "seed_differences": [
+        0.068,
+        0.0785,
+        0.0635
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.03233333333333333,
+      "ci_upper": 0.017333333333333333,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": -0.0073333333333333315,
+      "effect": "interaction",
+      "effect_id": "rn50__interaction__e_vil_test1000__i2t.r1",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1000,
+      "items": 1000,
+      "metric": "i2t.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.014433756729740645,
+      "seed_differences": [
+        -0.024,
+        0.001,
+        0.001
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": 0.0026666666666666657,
+      "ci_upper": 0.01583333333333333,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.009133333333333334,
+      "effect": "allocation_main",
+      "effect_id": "rn50__allocation_main__e_vil_test1000__t2i.r1",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1000,
+      "items": 5000,
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.007881835657594831,
+      "seed_differences": [
+        0.0181,
+        0.006,
+        0.0033
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": 0.014,
+      "ci_upper": 0.051,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": 0.03253333333333333,
+      "effect": "distillation_main",
+      "effect_id": "rn50__distillation_main__e_vil_test1000__t2i.r1",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1000,
+      "items": 5000,
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.003957692930652064,
+      "seed_differences": [
+        0.0343,
+        0.028,
+        0.0353
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.0186,
+      "ci_upper": 0.004266666666666666,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "e_vil_test1000",
+      "difference": -0.0072,
+      "effect": "interaction",
+      "effect_id": "rn50__interaction__e_vil_test1000__t2i.r1",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1000,
+      "items": 5000,
+      "metric": "t2i.r1",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0033286633954186474,
+      "seed_differences": [
+        -0.0058,
+        -0.0048,
+        -0.011
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.01706997167913658,
+      "ci_upper": -0.008135331987637419,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.01255840615331003,
+      "effect": "allocation_main",
+      "effect_id": "rn50__allocation_main__visual_entailment__accuracy",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 400,
+      "items": 400,
+      "metric": "accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.0025252897981666053,
+      "seed_differences": [
+        -0.010416282220284867,
+        -0.011916118372574567,
+        -0.015342817867070657
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.014350823265469206,
+      "ci_upper": 0.0018610348372191218,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.006179269053031635,
+      "effect": "distillation_main",
+      "effect_id": "rn50__distillation_main__visual_entailment__accuracy",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 400,
+      "items": 400,
+      "metric": "accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.006097141944089969,
+      "seed_differences": [
+        0.0008510171203317834,
+        -0.010020674498624935,
+        -0.009368149780801754
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.015074769340055744,
+      "ci_upper": -0.0021077468282213394,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "visual_entailment",
+      "difference": -0.008500948516926864,
+      "effect": "interaction",
+      "effect_id": "rn50__interaction__visual_entailment__accuracy",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 400,
+      "items": 400,
+      "metric": "accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.002061875347379925,
+      "seed_differences": [
+        -0.010155154558682308,
+        -0.006190932239416129,
+        -0.00915675875268215
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.008351637581753021,
+      "ci_upper": 0.0028988807204329906,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "sugarcrepe_pp",
+      "difference": -0.002662742624903651,
+      "effect": "allocation_main",
+      "effect_id": "rn50__allocation_main__sugarcrepe_pp__both_accuracy",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1542,
+      "items": 4757,
+      "metric": "both_accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.005012609942527988,
+      "seed_differences": [
+        -0.0016817321841496743,
+        -0.008093336136220307,
+        0.0017868404456590288
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": 0.022597354745037566,
+      "ci_upper": 0.04586265195442384,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "sugarcrepe_pp",
+      "difference": 0.03426529325204961,
+      "effect": "distillation_main",
+      "effect_id": "rn50__distillation_main__sugarcrepe_pp__both_accuracy",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1542,
+      "items": 4757,
+      "metric": "both_accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.00633359045414456,
+      "seed_differences": [
+        0.039941139373554764,
+        0.035421484128652515,
+        0.02743325625394156
+      ],
+      "training_seeds": 3
+    },
+    {
+      "bootstrap_seed": 20261004,
+      "cells": {
+        "allocation": [
+          "rn50__allocation_0.5__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_0.5__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_0.5__lr_0.0003__seed_43__epoch_06"
+        ],
+        "allocation_distillation": [
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__allocation_distillation_0.5_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "distilled": [
+          "rn50__distilled_1__lr_0.0003__seed_17__epoch_09",
+          "rn50__distilled_1__lr_0.0003__seed_29__epoch_06",
+          "rn50__distilled_1__lr_0.0003__seed_43__epoch_06"
+        ],
+        "supported": [
+          "rn50__supported__lr_0.0003__seed_17__epoch_09",
+          "rn50__supported__lr_0.0003__seed_29__epoch_06",
+          "rn50__supported__lr_0.0003__seed_43__epoch_06"
+        ]
+      },
+      "ci_lower": -0.012042680283675522,
+      "ci_upper": 0.00568860436412375,
+      "conditioning": "AD development-selected learning rate, parameters, and per-seed epochs; fixed training seeds averaged before image-cluster resampling",
+      "confidence": 0.9979166666666667,
+      "dataset": "sugarcrepe_pp",
+      "difference": -0.0032233200196202082,
+      "effect": "interaction",
+      "effect_id": "rn50__interaction__sugarcrepe_pp__both_accuracy",
+      "encoder": "rn50",
+      "family_size": 24,
+      "images": 1542,
+      "items": 4757,
+      "metric": "both_accuracy",
+      "quantile_method": "linear",
+      "replicates": 100000,
+      "seed_difference_std": 0.005719795483748166,
+      "seed_differences": [
+        0.0033634643682993485,
+        -0.006096279167542569,
+        -0.006937145259617406
+      ],
+      "training_seeds": 3
+    }
+  ],
+  "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+  "family_size": 24,
+  "fresh_confirmatory_claim": false,
+  "protocol_sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "scale": "fractions; multiply differences and intervals by100 for percentage points",
+  "test_based_selection": false
+}

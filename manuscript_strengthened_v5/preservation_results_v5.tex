@@ -1,2 +1,12 @@
-\paragraph{Selected preservation procedures.}
-\pending{Report every selected family, frozen reference, and joint practical criterion.}
+\input{preservation_table_v5.tex}
+\paragraph{No selected procedure meets the practical criterion.}
+None of the six families passes the joint criterion on either encoder.
+AD produces nonzero updates for all six selected seeds.
+Its relation-accuracy gains over frozen initialization are $+6.67$ and $+9.02$ points for ViT and RN50.
+Both adjusted intervals exclude zero.
+However, its SugarCrepe++ changes are $-0.13$ and $+0.62$ points; both intervals include zero.
+AD's ViT caption-to-image loss is $1.47$ points, with an adjusted interval below zero.
+The other three AD retrieval intervals include zero but extend below the one-point tolerance.
+Those intervals do not establish retention or prove a large retrieval loss.
+Thus relation learning does not establish the requested caption improvement with retained retrieval.
+Appendix Table~\ref{tab:newgates} reports every criterion and lower bound.

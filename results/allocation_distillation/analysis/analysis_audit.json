@@ -1,0 +1,23 @@
+{
+  "aggregate_checks": 2871,
+  "all_random_draws_equally_weighted": true,
+  "bootstrap_replicates": 100000,
+  "decomposition_effects": 24,
+  "encoders": [
+    "vit_b32",
+    "rn50"
+  ],
+  "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+  "fresh_confirmatory_claim": false,
+  "historical_aggregates_used": false,
+  "maximum_recomputation_difference": 2.220446049250313e-16,
+  "preanalysis_receipt_sha256": "3830823aad0412b4703c25246e60adfc0879f6f22d8327a0eb576ce60123b948",
+  "prediction_archives": 495,
+  "primary_effects": 80,
+  "protocol_sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "scale": "fractions; multiply differences and intervals by100 for percentage points",
+  "scope": "raw-score correctness and aggregate audit; does not independently recompute feature dot products or retrieval ranks",
+  "status": "passed",
+  "test_based_selection": false,
+  "unique_states": 99
+}

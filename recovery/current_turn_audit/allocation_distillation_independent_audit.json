@@ -1,0 +1,56 @@
+{
+  "bootstrap_seed": 20261004,
+  "counts": {
+    "bootstrap_samples": 10400000,
+    "checkpoint_norms": 97,
+    "cross_encoder_gates": 6,
+    "csv_endpoints": 2871,
+    "descriptive_statistics": 3886,
+    "effect_statistics": 1456,
+    "hash_checks": 1193,
+    "practical_gates": 12,
+    "prediction_archives": 495,
+    "raw_aggregate_endpoints": 3960,
+    "states": 99
+  },
+  "decomposition_effects": 24,
+  "excluded_scope": "independent feature extraction and recomputation of retrieval ranks from feature dot products",
+  "independent_implementation": "no project evaluator or statistics imports; cluster multiplicity matrix and explicit quantile interpolation",
+  "input_sha256": {
+    "recovery/current_input_recovery/datasets_rn50.json": "5b098ddd76180daacc9aa3b3da63b425ac158f4b66e1173504f8063e0c029ffd",
+    "recovery/current_input_recovery/datasets_vit_b32.json": "b2373ca810e434cd7d6a7ff5d48044555dec8677617a239dbe799e7d923b8ac3",
+    "results/allocation_distillation/analysis/all_state_metrics.csv": "91b501cbd6dd47dd054e0361ee00fb6212fc2803cb70e2ce76ce9529da8bd03a",
+    "results/allocation_distillation/analysis/analysis_audit.json": "06e2f8fa6ff37e399e7fe6e77cb7b34be7ad990781b116b3e76c203fd96e7919",
+    "results/allocation_distillation/analysis/bootstrap_samples.npz": "c55b785bc2598b2e1f9c3a6039e2d846a4082d4a7eb464b2010a34057e1f974a",
+    "results/allocation_distillation/analysis/decomposition_contrasts.json": "aeb2ab90de5b93e1fd75d62655a0c549d104699a37e1636c63aa855ad2f08c12",
+    "results/allocation_distillation/analysis/practical_success_gates.json": "e56e276bf6ef295b6b718b6aa282f9ded0b26422f62a31cfee8fee8802dbabee",
+    "results/allocation_distillation/analysis/preanalysis_receipt.json": "3830823aad0412b4703c25246e60adfc0879f6f22d8327a0eb576ce60123b948",
+    "results/allocation_distillation/analysis/primary_contrasts.json": "bbe15dece9bf6afce64b8bbb1186229a0a8f509948a62fdbf8720a89f03afd3d",
+    "results/allocation_distillation/analysis/selected_strategy_metrics.json": "7e98c39f72f13d016472d93de47745a7d461ce8aa8c2e39a30df4d34d8fc680d",
+    "results/allocation_distillation/evaluation/rn50/index.json": "bb8704c163b7a04aff6c436ba08a80d0f6e4bb69e719ce827203213a0692fb74",
+    "results/allocation_distillation/evaluation/vit_b32/index.json": "5638412d5b84797e758d7d20e1076f22e5b266ab6ef4ea045af42d8f779eebd6",
+    "results/allocation_distillation/protocol_v1.json": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+    "results/allocation_distillation/selection_lock.json": "91fed90326ca4cbb72abcb4e87cc1afb2d85f66d0b2a9b5553a8a732f26d49af"
+  },
+  "maximum_absolute_differences": {
+    "bootstrap_samples": 1.249000902703301e-16,
+    "checkpoint_norms": 1.7763568394002505e-15,
+    "csv_endpoints": 0.0,
+    "descriptive_statistics": 0.0,
+    "effect_statistics": 1.249000902703301e-16,
+    "raw_aggregate_endpoints": 2.220446049250313e-16
+  },
+  "primary_effects": 80,
+  "protocol_sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "replicates_per_effect": 100000,
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "scope": "saved ranks, score-derived correctness, receipts, all 104 effects, all 100000 draws per effect, gates, and descriptive reports",
+  "source_sha256": {
+    "scripts/audit_allocation_distillation_independent.py": "2b205a3e4a924c80b229cd995e97dc29188210f83ff0365c895b3fb014fa4cc9"
+  },
+  "status": "passed"
+}

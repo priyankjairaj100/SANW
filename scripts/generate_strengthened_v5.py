@@ -239,12 +239,15 @@ def main() -> None:
                         help="Prepare a partial draft while retaining the independent-audit gate.")
     parser.add_argument("--prepare-replications", action="store_true",
                         help="Integrate both audited replications while preservation results remain pending.")
+    parser.add_argument("--prepare-ad", action="store_true",
+                        help="Integrate audited replications and AD before original retention is complete.")
     parser.add_argument("--nonlinear", type=Path, required=True)
     parser.add_argument("--nonlinear-audit", type=Path,
                         help="Bind the partial nonlinear draft to its independent audit.")
     parser.add_argument("--rn50", type=Path)
     parser.add_argument("--rn50-audit", type=Path)
     parser.add_argument("--preservation", type=Path)
+    parser.add_argument("--preservation-audit", type=Path)
     parser.add_argument("--retention", type=Path,
                         help="Original frozen retention analysis with 80 primary and 36 directional effects.")
     parser.add_argument("--audits", nargs="+", type=Path)
@@ -264,8 +267,15 @@ def main() -> None:
         inputs.append({"path": str(path.relative_to(ROOT)), "sha256": digest(path)})
         return data
 
-    if args.prepare_nonlinear and args.prepare_replications:
+    if sum((args.prepare_nonlinear, args.prepare_replications, args.prepare_ad)) > 1:
         parser.error("Choose one partial preparation mode.")
+    if args.prepare_ad:
+        for name in ("rn50", "nonlinear_audit", "rn50_audit", "preservation", "preservation_audit",
+                     "protocol", "protocol_sha256"):
+            if getattr(args, name) is None:
+                parser.error("AD preparation requires --" + name.replace("_", "-"))
+        prepare_ad(args, read, inputs)
+        return
     if args.prepare_replications:
         for name in ("rn50", "nonlinear_audit", "rn50_audit"):
             if getattr(args, name) is None:
@@ -370,7 +380,7 @@ def main() -> None:
         "Entries are percentages averaged across the fixed training seeds. "
         "Both denotes SugarCrepe++ accuracy for both valid captions. "
         "AD random averages three matched assignment draws within each seed.",
-        "tab:newpreservation"))
+        "tab:newpreservation", wide=False, font="footnotesize"))
 
     gate_header = r"Encoder & Family & Trained & I$\to$T lower & T$\to$I lower & Both lower & Joint"
     gate_caption = ("Trained requires all three nonzero selected updates. "
@@ -575,6 +585,173 @@ def prepare_replications(args, read, inputs: list[dict]) -> None:
                "prior_unavailable_outputs_used": False}
     (DEST / "replication_preparation_receipt_v5.json").write_text(json.dumps(receipt, indent=2) + "\n")
     print(json.dumps({"status": receipt["status"], "new_replication_effects": 24, "generated_files": len(outputs)}, indent=2))
+
+
+def prepare_ad(args, read, inputs: list[dict]) -> None:
+    """Integrate the actual negative AD result without substituting another endpoint."""
+    prepare_replications(args, read, inputs)
+    protocol_path = root_path(args.protocol)
+    if digest(protocol_path) != args.protocol_sha256:
+        raise SystemExit("The AD protocol hash changed.")
+    read(protocol_path)
+    independent = read(args.preservation_audit)
+    validate_audit(independent)
+    names = ("primary_contrasts.json", "decomposition_contrasts.json",
+             "selected_strategy_metrics.json", "practical_success_gates.json")
+    require_audit([independent], [args.preservation / name for name in names],
+                  protocol_sha256=args.protocol_sha256, primary_effects=80,
+                  decomposition_effects=24, replicates_per_effect=100000)
+    primary, decomposition, strategies, gates = [read(args.preservation / name) for name in names]
+    production = read(args.preservation / "analysis_audit.json")
+    if len(primary["contrasts"]) != 80 or len(decomposition["contrasts"]) != 24 or production["status"] != "passed":
+        raise SystemExit("The AD analysis is incomplete.")
+    if len(gates["gates"]) != 12 or any(row["passed"] for row in gates["gates"]):
+        raise SystemExit("The no-success statement differs from the actual practical gates.")
+    by_effect = {(row["encoder"], row["left"], row["right"], row["dataset"], row["metric"]): row
+                 for row in primary["contrasts"]}
+    by_factorial = {(row["encoder"], row["effect"], row["dataset"], row["metric"]): row
+                    for row in decomposition["contrasts"]}
+    for encoder in ("vit_b32", "rn50"):
+        relation = by_effect[(encoder, "allocation_distillation", "frozen", "visual_entailment", "accuracy")]
+        caption = by_effect[(encoder, "allocation_distillation", "frozen", "sugarcrepe_pp", "both_accuracy")]
+        if relation["ci_lower"] <= 0 or not caption["ci_lower"] <= 0 <= caption["ci_upper"]:
+            raise SystemExit("The relation-versus-SugarCrepe++ statement differs from the actual intervals.")
+        for direction in ("i2t.r1", "t2i.r1"):
+            effect = by_effect[(encoder, "allocation_distillation", "frozen", "e_vil_test1000", direction)]
+            if effect["ci_lower"] > -.01:
+                raise SystemExit("The AD retrieval-retention failure differs from the actual interval.")
+            if encoder == "vit_b32" and direction == "t2i.r1":
+                if effect["ci_upper"] >= 0:
+                    raise SystemExit("The reported ViT AD retrieval loss is not supported by its interval.")
+            elif not effect["ci_lower"] <= 0 <= effect["ci_upper"]:
+                raise SystemExit("An AD retrieval-uncertainty statement differs from the actual interval.")
+            for intervention in ("allocation_main", "distillation_main"):
+                if by_factorial[(encoder, intervention, "e_vil_test1000", direction)]["ci_lower"] <= 0:
+                    raise SystemExit("The matched retrieval main-effect statement differs from its interval.")
+        if by_factorial[(encoder, "distillation_main", "sugarcrepe_pp", "both_accuracy")]["ci_lower"] <= 0:
+            raise SystemExit("The matched distillation effect on SugarCrepe++ differs from its interval.")
+    if any(row["effect"] == "interaction" and row["ci_lower"] > 0 for row in decomposition["contrasts"]):
+        raise SystemExit("A positive interaction contradicts the prepared statement.")
+    outputs: list[Path] = []
+
+    def write(name: str, content: str) -> None:
+        path = DEST / name
+        path.write_text(content)
+        outputs.append(path)
+
+    family_order = ["frozen", "source", "supported", "allocation", "distilled",
+                    "allocation_distillation", "wise_ft", "matched_allocation_distillation"]
+    lookup = {(row["encoder"], row["family"]): row for row in strategies["strategies"]
+              if row["tolerance_pp"] in (None, 1.)}
+    rows = []
+    for family in family_order:
+        values = []
+        for encoder in ("vit_b32", "rn50"):
+            row = lookup[(encoder, family)]
+            for dataset, metric, _ in (ENDPOINTS[0], ENDPOINTS[1], ENDPOINTS[3]):
+                values.append(f"{100 * row['metrics'][f'{dataset}.{metric}']['mean']:.2f}")
+        rows.append(label(family) + " & " + " & ".join(values) + r"\\")
+    write("preservation_table_v5.tex", table(rows, "lrrrrrr",
+          r"& \multicolumn{3}{c}{ViT} & \multicolumn{3}{c}{RN50}\\"
+          r"Family & I$\to$T & T$\to$I & Both & I$\to$T & T$\to$I & Both",
+          "Selected AD-study procedures. Entries are percentages. Both denotes SugarCrepe++ both-caption accuracy. "
+          "U is frozen for both encoders. RN50 A includes one frozen seed. "
+          "None of six selected families passes the joint criterion.", "tab:newpreservation", wide=False, font="footnotesize"))
+    ad_value = lambda encoder, dataset, metric: 100 * by_effect[(encoder, "allocation_distillation", "frozen", dataset, metric)]["difference"]
+    relation = [ad_value(encoder, "visual_entailment", "accuracy") for encoder in ("vit_b32", "rn50")]
+    caption = [ad_value(encoder, "sugarcrepe_pp", "both_accuracy") for encoder in ("vit_b32", "rn50")]
+    write("preservation_results_v5.tex", "\n".join([
+        r"\input{preservation_table_v5.tex}", r"\paragraph{No selected procedure meets the practical criterion.}",
+        "None of the six families passes the joint criterion on either encoder.",
+        "AD produces nonzero updates for all six selected seeds.",
+        f"Its relation-accuracy gains over frozen initialization are ${relation[0]:+.2f}$ and ${relation[1]:+.2f}$ points for ViT and RN50.",
+        "Both adjusted intervals exclude zero.",
+        f"However, its SugarCrepe++ changes are ${caption[0]:+.2f}$ and ${caption[1]:+.2f}$ points; both intervals include zero.",
+        f"AD's ViT caption-to-image loss is ${-ad_value('vit_b32', 'e_vil_test1000', 't2i.r1'):.2f}$ points, with an adjusted interval below zero.",
+        "The other three AD retrieval intervals include zero but extend below the one-point tolerance.",
+        "Those intervals do not establish retention or prove a large retrieval loss.",
+        "Thus relation learning does not establish the requested caption improvement with retained retrieval.",
+        r"Appendix Table~\ref{tab:newgates} reports every criterion and lower bound.", ""]))
+    distill_caption = [100 * by_factorial[(encoder, "distillation_main", "sugarcrepe_pp", "both_accuracy")]["difference"]
+                       for encoder in ("vit_b32", "rn50")]
+    write("factorial_results_v5.tex", "\n".join([
+        r"\paragraph{Matched effects differ from practical success.}",
+        "At the AD-selected schedule, allocation and distillation each improve both retrieval directions on both encoders.",
+        "All eight adjusted main-effect intervals lie above zero.",
+        f"The distillation main effect also improves SugarCrepe++ by ${distill_caption[0]:+.2f}$ and ${distill_caption[1]:+.2f}$ points.",
+        "These contrasts compare matched objective cells, rather than each selected procedure with frozen initialization.",
+        "All retrieval and SugarCrepe++ interaction intervals include zero.",
+        "RN50 has a negative relation-accuracy interaction.",
+        "No positive interaction is established.", ""]))
+    appendix = [r"\subsection{Allocation and distillation: complete results}",
+                "This exploratory analysis reuses previously examined test datasets.",
+                "Its independent audit checked 99 states, 495 prediction archives, 104 effects, and 10.4 million bootstrap values.",
+                "Every practical family fails at least one declared requirement on each encoder.",
+                "Failure to establish noninferiority does not prove the true retrieval loss exceeds the tolerance.",
+                "Relation accuracy and SugarCrepe++ accuracy remain separate endpoints.",
+                table(gate_rows(gates, primary, 100.), "lllrrrl",
+                      r"Encoder & Family & Trained & I$\to$T lower & T$\to$I lower & Both lower & Joint",
+                      "AD-study practical criteria. Trained requires three nonzero selected updates. "
+                      "Numbers are adjusted lower bounds against frozen initialization, in percentage points. "
+                      "Retrieval bounds must exceed $-1$; the SugarCrepe++ Both bound must exceed zero.", "tab:newgates")]
+    endpoint_labels = {f"{dataset}.{metric}": tex for dataset, metric, tex in ENDPOINTS}
+    for kind, entries in (("primary", primary["contrasts"]), ("factorial", decomposition["contrasts"])):
+        for start in range(0, len(entries), 16):
+            rows = []
+            for row in entries[start:start+16]:
+                comparison = (label(row["left"]) + " $-$ " + label(row["right"])) if kind == "primary" else label(row["effect"])
+                endpoint = endpoint_labels[f"{row['dataset']}.{row['metric']}"]
+                rows.append(f"{label(row['encoder'])} & {comparison} & {endpoint} & "
+                            f"{100*row['difference']:+.3f} & $[{100*row['ci_lower']:+.3f},{100*row['ci_upper']:+.3f}]$ " + r"\\")
+            appendix.append(table(rows, "lllrr", "Encoder & Comparison & Endpoint & Difference & Adjusted interval",
+                f"AD-study {kind} effects, rows {start+1} through {min(start+16,len(entries))}. "
+                "Differences use percentage points. Primary and factorial families adjust over 80 and 24 effects respectively.",
+                f"tab:ad{kind}{start}"))
+    metric_rows, selection_rows = [], []
+    reported = ["e_vil_test1000.i2t.r1", "e_vil_test1000.t2i.r1", "visual_entailment.accuracy",
+                "sugarcrepe.accuracy", "sugarcrepe_pp.both_accuracy", "coco_karpathy.i2t.r1", "coco_karpathy.t2i.r1"]
+    for row in strategies["strategies"]:
+        tolerance = "--" if row["tolerance_pp"] is None else f"{row['tolerance_pp']:g}"
+        values = [f"{100 * row['metrics'][metric]['mean']:.2f}" for metric in reported]
+        metric_rows.append(f"{label(row['encoder'])} & {label(row['family'])} & {tolerance} & " + " & ".join(values) + r"\\")
+        if row["tolerance_pp"] is not None:
+            for state in row["states"]:
+                selection_rows.append(f"{label(row['encoder'])} & {label(row['family'])} ({tolerance}) & "
+                                      + selection_values(state) + r"\\")
+    for start in range(0,len(metric_rows),18):
+        appendix.append(table(metric_rows[start:start+18], "llrrrrrrrr",
+            r"Encoder & Family & Tol. & e I$\to$T & e T$\to$I & Rel. & SC & Both & C I$\to$T & C T$\to$I",
+            "AD selected procedures and descriptive zero-tolerance sensitivity. Values are percentages. "
+            "e denotes e-ViL; C denotes COCO; Rel. denotes relation accuracy; SC denotes SugarCrepe; Both denotes SugarCrepe++.",
+            f"tab:admetrics{start}", font="scriptsize"))
+    for start in range(0,len(selection_rows),20):
+        appendix.append(table(selection_rows[start:start+20], "llrrrrrrrr",
+            r"Encoder & Family & Seed & Draw & Rate & Epoch & $\lambda$ & $\beta$ & $\alpha$ & Norm",
+            "AD-study selected states. Family parentheses give the development tolerance in percentage points. "
+            "Norm denotes the recorded parameter update norm.", f"tab:adselected{start}", font="scriptsize"))
+    appendix.append(r"\pending{Original retention, directional effects, and certificate diagnostics remain pending.}")
+    write("ad_results_appendix_v5.tex", "\n\n".join(appendix) + "\n")
+    existing = (DEST / "results_appendix_v5.tex").read_text()
+    existing = existing.replace(r"\pending{Original retention, AD analyses, and certificate diagnostics remain pending.}",
+                                r"\input{ad_results_appendix_v5.tex}")
+    write("results_appendix_v5.tex", existing)
+    for name, document in (("preservation_primary_v5.json",primary), ("preservation_factorial_v5.json",decomposition),
+                           ("preservation_selected_v5.json",strategies), ("preservation_gates_v5.json",gates)):
+        write(name,json.dumps(document,indent=2)+"\n")
+    replication_receipt_path = DEST / "replication_preparation_receipt_v5.json"
+    replication_receipt = json.loads(replication_receipt_path.read_text())
+    combined = {row["path"]: root_path(row["path"]) for row in replication_receipt["generated_outputs"]}
+    combined.update({str(path.relative_to(ROOT)): path for path in outputs})
+    receipt = {"status":"replications_and_ad_verified_original_retention_pending", "analysis_inputs":inputs,
+               "generated_outputs":[{"path":name,"sha256":digest(path)} for name,path in combined.items()],
+               "generator_sha256":digest(Path(__file__)), "final_build_permitted":False,
+               "practical_success":False,"prior_unavailable_outputs_used":False}
+    (DEST/"ad_preparation_receipt_v5.json").write_text(json.dumps(receipt,indent=2)+"\n")
+    replication_receipt["status"] = "superseded_by_ad_preparation_receipt"
+    replication_receipt["superseding_receipt"] = "manuscript_strengthened_v5/ad_preparation_receipt_v5.json"
+    replication_receipt_path.write_text(json.dumps(replication_receipt,indent=2)+"\n")
+    print(json.dumps({"status":receipt["status"],"AD_effects":104,"passing_practical_families":0,
+                      "generated_files":len(outputs)},indent=2))
 
 
 def prepare_nonlinear(directory: Path, read, inputs: list[dict], independent_path: Path | None = None) -> None:

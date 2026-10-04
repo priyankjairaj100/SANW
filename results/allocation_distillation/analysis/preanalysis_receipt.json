@@ -1,0 +1,25 @@
+{
+  "bootstrap_replicates": 100000,
+  "bootstrap_seed": 20261004,
+  "decomposition_family_size": 24,
+  "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+  "indices": {
+    "results/allocation_distillation/evaluation/rn50/index.json": "bb8704c163b7a04aff6c436ba08a80d0f6e4bb69e719ce827203213a0692fb74",
+    "results/allocation_distillation/evaluation/vit_b32/index.json": "5638412d5b84797e758d7d20e1076f22e5b266ab6ef4ea045af42d8f779eebd6"
+  },
+  "primary_family_size": 80,
+  "protocol_sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "schema_version": 1,
+  "source_hashes": {
+    "scripts/analyze_allocation_distillation.py": "7b515da962d1827a43117821bc2e84a0857ea4b34845c81e0aca9e87390f8c0c",
+    "scripts/analyze_study.py": "8db66e76f5d9ab9affa959822bfa427d6da9d3381d6f6af3faeda2142ee94c84",
+    "scripts/evaluate_allocation_distillation.py": "e7bd812365a11132557af6e9a918fe8afd4e58d289f4fe21649ba4b914ee432f",
+    "scripts/evaluate_study.py": "825dc1de425754e3ed9e38fee4504ee61ecfbf3006403206b0035791c974558c",
+    "src/gcr/allocation_distillation_analysis.py": "19131b5bcbb25c612499e05f03c12ba4f01a424353ec508ef5bb57ea0826771b",
+    "src/gcr/evaluation.py": "ff3b3e0902943ee43d2c3a4ca62829da1f2bbe268ff57fbd72d459f68a5617ba"
+  }
+}

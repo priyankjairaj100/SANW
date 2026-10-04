@@ -2,14 +2,15 @@
 
 Date: 2026-10-04.
 
-Status: response draft with both new replications independently verified.
-Preservation and directional outcomes remain pending.
+Status: both new replications and the AD study passed independent verification.
+The AD study establishes no practical success.
+Original-retention and directional outcomes remain pending.
 
 ## Central response
 
 The revised study asks which caption assignments improve discrimination while preserving retrieval.
 The completed v3 study separates caption identity from promotion count, initial similarity, training schedule, and model selection.
-The current extension tests broader settings and the missing allocation-plus-distillation comparison.
+The completed extension tests broader settings and the missing allocation-plus-distillation comparison.
 It also restores the complete directional and retention program under its original frozen protocol.
 It also gives an exact distance to retrieval failure on a fixed gallery.
 
@@ -57,7 +58,12 @@ All three adjusted lower bounds exceed zero.
 Every corresponding image-to-caption interval includes zero.
 
 **Status.** The original attribution comparison and both new replications are complete.
-Preservation outcomes remain pending.
+The AD study also verifies a relation-accuracy advantage over its matched randomized control.
+The gains are 4.27 points for each encoder, after rounding.
+The respective adjusted intervals are [3.44, 5.17] and [3.41, 5.17].
+SugarCrepe++ improves against that control for ViT only: 1.10 [0.28, 1.93] points.
+The RN50 effect is 0.11 [-0.65, 0.85] points.
+These controlled gains do not establish improvement against frozen initialization.
 
 ### 2. Selected checkpoints used different schedules and objectives
 
@@ -98,7 +104,11 @@ These comparisons retain the same terminal epoch, learning rate, and paired seed
 All six new Source comparisons therefore retain negative adjusted intervals.
 
 **Status.** The original schedule comparison and both new replications are complete.
-New procedure and interaction outcomes remain pending.
+The AD-selected decomposition is complete.
+Allocation and distillation each improve both retrieval directions on both encoders at those matched schedules.
+All eight adjusted main-effect intervals lie above zero.
+No adjusted interaction interval has a positive lower bound.
+The original directional comparison remains pending.
 
 ### 3. Clean full-pool retrieval within the source domain was absent
 
@@ -120,7 +130,8 @@ It does not call that pool the Karpathy Flickr1k benchmark.
 The evaluator binds feature archives, manifests, selected checkpoints, and scoring code before evaluation.
 
 **Status.** The original evaluation gap is resolved.
-The new predictions must pass their own content and aggregate checks.
+Both replication evaluations and the AD evaluation passed their content and aggregate checks.
+The original-retention evaluation remains pending.
 
 ### 4. One adaptation setting and fixed weights supported broad advice
 
@@ -205,9 +216,13 @@ The reverse intervention changes both caption participation and the averaging we
 The resulting effects concern that defined intervention.
 They do not isolate target dilution as the only possible cause.
 
-**Status.** The derivations and implementation checks are complete.
-The matched empirical interactions remain pending.
-Any measured certificate coverage requires its own aligned prediction audit.
+**Status.** The derivations, implementation checks, and AD decomposition are complete.
+The AD decomposition establishes positive allocation and distillation main effects on retrieval within its matched cells.
+Distillation also improves SugarCrepe++ by 2.17 [1.18, 3.17] and 3.43 [2.26, 4.59] points.
+Those effects use the separate 24-effect adjustment and the AD-selected schedule.
+They do not compare each selected procedure against frozen initialization.
+No positive interaction is established.
+The original directional effects and certificate coverage remain pending.
 
 ### Practical improvement
 
@@ -236,9 +251,43 @@ The matched decomposition has a separate family of 24 contrasts.
 Both use 100,000 paired image-cluster bootstrap samples.
 The intervals condition on the fitted seeds, assignment draws, and fixed galleries.
 
-**Pending result.** Report every family and every failed or passed criterion.
-Report frozen selections explicitly.
-Practical improvement remains unestablished until the audited gate passes.
+**Verified result.** None of the six selected AD-study families passes the joint criterion on either encoder.
+Every family fails the adjusted SugarCrepe++ improvement requirement.
+Supported selects epoch zero for all seeds on both encoders.
+RN50 allocation also includes one epoch-zero seed.
+AD trains all three seeds on both encoders, but fails both adjusted retrieval requirements and SugarCrepe++ improvement.
+Only ViT AD caption-to-image retrieval has an adjusted interval wholly below zero among these retrieval comparisons.
+Its loss is 1.47 [-2.91, -0.02] points.
+The other failed retrieval requirements reflect intervals that extend across the one-point tolerance.
+Those failures do not establish large retrieval losses.
+
+| Encoder | Family | Three trained seeds | I2T retention | T2I retention | SugarCrepe++ gain | Joint criterion |
+|---|---|---|---|---|---|---|
+| ViT | Source | Yes | Fail | Fail | Fail | Fail |
+| ViT | Supported | No | Pass | Pass | Fail | Fail |
+| ViT | Allocation | Yes | Fail | Fail | Fail | Fail |
+| ViT | Distillation | Yes | Fail | Pass | Fail | Fail |
+| ViT | AD | Yes | Fail | Fail | Fail | Fail |
+| ViT | WiSE | Yes | Fail | Fail | Fail | Fail |
+| RN50 | Source | Yes | Fail | Pass | Fail | Fail |
+| RN50 | Supported | No | Pass | Pass | Fail | Fail |
+| RN50 | Allocation | No | Fail | Pass | Fail | Fail |
+| RN50 | Distillation | Yes | Fail | Pass | Fail | Fail |
+| RN50 | AD | Yes | Fail | Fail | Fail | Fail |
+| RN50 | WiSE | Yes | Fail | Pass | Fail | Fail |
+
+AD improves relation accuracy against frozen initialization by 6.67 [5.21, 8.17] ViT points.
+Its RN50 relation gain is 9.02 [7.15, 10.96] points.
+Its SugarCrepe++ changes are -0.13 [-1.46, 1.20] and +0.62 [-0.90, 2.10] points.
+Both SugarCrepe++ intervals include zero.
+Relation learning therefore cannot supply the missing practical result.
+
+The independent audit checked 99 states, 495 prediction archives, 104 effects, and 10.4 million bootstrap values.
+Its largest bootstrap difference was below $1.3\times10^{-16}$.
+The intervals remain conditional on the fixed training seeds, assignment draws, and galleries.
+Failure to establish noninferiority does not prove that the true retrieval loss exceeds one point.
+Practical improvement remains unsolved.
+The original retention study still requires completion.
 
 ## The omitted A+D comparison
 
@@ -260,7 +309,9 @@ The new stage is exploratory because previous outcomes informed its design.
 It keeps all declared cells and does not revise the practical tolerance after test inspection.
 
 **Status.** The protocol and implementation passed independent checks.
-The scientific outcome remains pending.
+All 252 fits and the complete evaluation passed independent checks.
+The combined method does not establish the declared practical improvement.
+The matched decomposition finds no positive interaction.
 
 ## Manuscript review completed
 
@@ -287,11 +338,12 @@ The final page balance and empirical claims require another review after results
 | v3 primary effects | [Primary contrasts](../results/review_followup/analysis/primary_contrasts.json) | Audited historical study |
 | Exact rank geometry | [Theory note](STRENGTHEN_RANK_THEORY.md) | Proof and numerical checks available |
 | New AD protocol | [Frozen protocol](../results/allocation_distillation/protocol_v1.json) | Frozen before affected fits |
-| New AD implementation | [Independent design audit](ALLOCATION_DISTILLATION_DESIGN_AUDIT_20261004.md) | 24 training and 11 evaluation tests passed |
+| New AD implementation | [Independent design audit](ALLOCATION_DISTILLATION_DESIGN_AUDIT_20261004.md) | Training and evaluation checks passed |
 | Nonlinear replication findings | [Independent audit](../recovery/current_turn_audit/nonlinear_replication_independent_audit.json) | Passed: twelve effects and 120,000 bootstrap samples |
 | RN50 replication findings | [Independent audit](../recovery/current_turn_audit/rn50_replication_independent_audit.json) | Passed: twelve effects and 120,000 bootstrap samples |
 | Restored directional and retention findings | Original frozen protocols and new raw predictions | Pending |
-| New practical findings | Raw predictions, contrasts, and success gates | Pending |
+| New AD findings | [Independent audit](../recovery/current_turn_audit/allocation_distillation_independent_audit.json) | Passed: 104 effects and 10.4 million bootstrap values |
+| New practical findings | [Declared success gates](../results/allocation_distillation/analysis/practical_success_gates.json) | No selected family passes on either encoder |
 | Four-page manuscript | [Main source](../manuscript_strengthened_v5/main.tex) | Structure complete; results pending |
 
 Protocol SHA256:

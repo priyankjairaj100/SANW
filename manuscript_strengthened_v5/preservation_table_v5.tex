@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{3}{c}{ViT} & \multicolumn{3}{c}{RN50}\\Family & I$\to$T & T$\to$I & Both & I$\to$T & T$\to$I & Both\\
+\midrule
+Frozen & 84.50 & 69.76 & 68.95 & 80.50 & 59.24 & 67.35\\
+Source & 84.50 & 68.96 & 66.76 & 82.20 & 62.47 & 65.02\\
+U & 84.50 & 69.76 & 68.95 & 80.50 & 59.24 & 67.35\\
+A & 83.83 & 69.03 & 67.43 & 81.27 & 61.69 & 65.90\\
+D & 83.10 & 70.21 & 69.31 & 80.13 & 61.44 & 68.26\\
+AD & 83.37 & 68.29 & 68.82 & 79.77 & 59.71 & 67.97\\
+WiSE & 83.80 & 68.87 & 69.27 & 80.30 & 63.36 & 67.37\\
+AD random & 83.23 & 68.10 & 67.72 & 81.21 & 59.99 & 67.86\\
+\bottomrule
+\end{tabular}
+\caption{Selected AD-study procedures. Entries are percentages. Both denotes SugarCrepe++ both-caption accuracy. U is frozen for both encoders. RN50 A includes one frozen seed. None of six selected families passes the joint criterion.}\label{tab:newpreservation}
+\end{table}

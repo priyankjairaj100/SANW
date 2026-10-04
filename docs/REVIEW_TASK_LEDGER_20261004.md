@@ -70,8 +70,8 @@ The [v3 reproduction guide](REVIEW_FOLLOWUP_README.md) records the completed fol
 | Requirement | Exact source | Evidence needed | Current status |
 |---|---|---|---|
 | Broader evidence | Message 768; line 882: “The evidence comes from one adaptation setting.” | Repeat Source, Supported, and score-stratified promotion in materially different settings. | Nonlinear and RN50 results passed independent verification. |
-| Stronger conceptual contribution | Message 768; line 883: “The conceptual advance is limited.” | Connect substantive theory or controlled interventions to useful empirical conclusions. | Exact rank-retention derivations and numerical checks are complete. Directional effects and certificate coverage still require verified results. |
-| Practical improvement | Message 768; line 884: “Practical relevance is diagnostic.” | Show a trained model that preserves retrieval and improves caption discrimination. | This scientific requirement remains open. |
+| Stronger conceptual contribution | Message 768; line 883: “The conceptual advance is limited.” | Connect substantive theory or controlled interventions to useful empirical conclusions. | Exact rank-retention derivations and the audited AD decomposition are complete. Original directional effects and certificate coverage remain pending. |
+| Practical improvement | Message 768; line 884: “Practical relevance is diagnostic.” | Show a trained model that preserves retrieval and improves caption discrimination. | The complete AD study finds no family that passes the declared gate on either encoder. The requirement remains unsolved. |
 
 The explicit next recommendation was “one independent replication in a materially different adaptation setting.”
 See message 768, transcript line 888.
@@ -147,7 +147,9 @@ Its fixed scope is 126 fits per encoder, or 252 fits across both encoders.
 The [freeze receipt](../results/allocation_distillation/protocol_freeze.json) binds the protocol and implementation.
 Its primary comparison family contains 80 effects across both encoders.
 Its separate matched decomposition contains 24 effects.
-Scientific conclusions remain pending evaluation and independent audits.
+All 252 fits, evaluation, and the independent AD audit are complete.
+No selected family passes the joint practical criterion on either encoder.
+The original-retention program remains separate and unfinished.
 
 The new stage must preserve the completed v3 evidence and earlier frozen protocols.
 Its analysis must distinguish prior evidence from new exploratory findings.
@@ -207,6 +209,43 @@ Every RN50 image-to-caption interval against stratified promotion includes zero.
 Both replications retain the defined directional caption-assignment benefit and source-retrieval cost.
 Neither establishes the independent practical criterion.
 
+### Completed AD study and its negative practical result
+
+The AD study completed 126 fits per encoder.
+Its locked evaluation contains 99 unique states and 495 prediction archives.
+The independent audit checked 80 primary effects and 24 matched decomposition effects.
+It reproduced all 10.4 million saved bootstrap values.
+The maximum bootstrap difference was `1.249000902703301e-16`.
+The [independent AD receipt](../recovery/current_turn_audit/allocation_distillation_independent_audit.json) binds the exact inputs.
+
+None of six selected families passes the joint practical criterion on either encoder.
+All twelve family-encoder combinations fail the SugarCrepe++ improvement requirement.
+AD trains every selected seed, but fails both adjusted retrieval requirements for each encoder.
+Supported instead selects frozen initialization for every seed.
+Those frozen selections are not trained improvements.
+
+| AD minus frozen | ViT difference and adjusted interval | RN50 difference and adjusted interval |
+|---|---|---|
+| Image-to-caption R@1 | -1.13 [-4.07, 1.86] | -0.73 [-4.00, 2.40] |
+| Caption-to-image R@1 | -1.47 [-2.91, -0.02] | +0.47 [-1.21, 2.13] |
+| Relation accuracy | +6.67 [5.21, 8.17] | +9.02 [7.15, 10.96] |
+| SugarCrepe++ both-caption accuracy | -0.13 [-1.46, 1.20] | +0.62 [-0.90, 2.10] |
+
+All values use percentage points and the declared 80-effect adjustment.
+Relation accuracy cannot substitute for SugarCrepe++ improvement.
+Failure to establish noninferiority does not prove that the true loss exceeds one point.
+The practical requirement remains unsolved.
+
+The matched decomposition uses the AD-selected schedule and a separate 24-effect adjustment.
+Allocation and distillation each improve both retrieval directions on both encoders within those matched cells.
+Distillation also improves SugarCrepe++ within those cells.
+No adjusted interaction interval has a positive lower bound.
+These effects do not establish improvement against frozen initialization for selected procedures.
+
+AD primary contrast SHA256: `bbe15dece9bf6afce64b8bbb1186229a0a8f509948a62fdbf8720a89f03afd3d`.
+AD decomposition SHA256: `aeb2ab90de5b93e1fd75d62655a0c549d104699a37e1636c63aa855ad2f08c12`.
+AD practical-gate SHA256: `e56e276bf6ef295b6b718b6aa282f9ded0b26422f62a31cfee8fee8802dbabee`.
+
 The primary contrast hashes remain unchanged:
 
 - Nonlinear: `ebf63d3947fef079b914fcadee611def09ad12757cfe484c45b469e4f5a2d538`.
@@ -219,9 +258,10 @@ The original ViT retention grid had not started.
 These are historical restart counts, not a live execution report.
 Repeated baseline executions do not add independent training seeds.
 
-The manuscript now includes both independently verified replication families.
-An interim draft places Limitations on page five.
-Its remaining empirical claims stay marked pending.
+The manuscript includes both independently verified replication families and the complete negative AD result.
+The expanded interim draft retains four main pages, with complete numerical tables before the theory appendix.
+Final layout review remains pending the original-retention results.
+Original-retention and certificate claims stay marked pending.
 The final generator requires exact independent audit bindings for every new result family and certificate index.
 
 The restored [resume record](RESUME_20261004.md) describes an earlier recovery stage.

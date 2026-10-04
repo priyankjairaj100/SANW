@@ -1,0 +1,191 @@
+{
+  "cross_encoder": [
+    {
+      "family": "source",
+      "passed_both_encoders": false
+    },
+    {
+      "family": "supported",
+      "passed_both_encoders": false
+    },
+    {
+      "family": "allocation",
+      "passed_both_encoders": false
+    },
+    {
+      "family": "distilled",
+      "passed_both_encoders": false
+    },
+    {
+      "family": "allocation_distillation",
+      "passed_both_encoders": false
+    },
+    {
+      "family": "wise_ft",
+      "passed_both_encoders": false
+    }
+  ],
+  "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+  "fresh_confirmatory_claim": false,
+  "gates": [
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": false
+      },
+      "confidence_family_size": 80,
+      "encoder": "vit_b32",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "source",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": false,
+        "i2t_retention": true,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "vit_b32",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "supported",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": false
+      },
+      "confidence_family_size": 80,
+      "encoder": "vit_b32",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "allocation",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "vit_b32",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "distilled",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": false
+      },
+      "confidence_family_size": 80,
+      "encoder": "vit_b32",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "allocation_distillation",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": false
+      },
+      "confidence_family_size": 80,
+      "encoder": "vit_b32",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "wise_ft",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "rn50",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "source",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": false,
+        "i2t_retention": true,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "rn50",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "supported",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": false,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "rn50",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "allocation",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "rn50",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "distilled",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": false
+      },
+      "confidence_family_size": 80,
+      "encoder": "rn50",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "allocation_distillation",
+      "passed": false
+    },
+    {
+      "checks": {
+        "all_three_nonzero": true,
+        "i2t_retention": false,
+        "sugarcrepe_pp_improvement": false,
+        "t2i_retention": true
+      },
+      "confidence_family_size": 80,
+      "encoder": "rn50",
+      "evidence_type": "exploratory_extension_reusing_previously_examined_test_sets",
+      "family": "wise_ft",
+      "passed": false
+    }
+  ],
+  "protocol_sha256": "f5ba7e389660bf9930b2713a7173e7a6cd7d55bf755111b259c512bc74c5a4cd",
+  "scale": "fractions; multiply differences and intervals by100 for percentage points",
+  "test_based_selection": false
+}
