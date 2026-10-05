@@ -57,3 +57,19 @@ recovery/resume_20261004/.rsync-tmp/
 recovery/resume_20261004/encode_copy/
 recovery/resume_20261004/helpers/
 recovery/resume_20261004/library-download*.json
+
+# Rebuildable local handoff state
+local/cache/
+local/logs/
+local/state/
+local/reports/
+local/preservation/
+local/retired/
+local/assets/archives/
+local/assets/science_snapshot/scientific_snapshot.tar.xz
+results/practical_v10/frozen_cache/
+results/official_train_expansion/**/features.npz
+results/review_followup/features/**/*.npz
+results/fresh_confirmation1500/
+private_archive_receipts/
+

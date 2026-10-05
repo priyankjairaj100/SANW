@@ -1,0 +1,178 @@
+{
+  "checks": {
+    "asset_fixture_tests_passed": 7,
+    "completed_fit_archive_members_verified": 386,
+    "completed_fit_archives_verified": 4,
+    "documentation_phase_names_match_implementation": true,
+    "dry_run_phases_generated": 26,
+    "frozen_source_and_protocol_identity_checks_passed": 217,
+    "full_report_archive_content_and_manifest_fixture_passed": true,
+    "full_report_numeric_evidence_inclusion_and_large_input_exclusion_reviewed": true,
+    "phase_journal_and_failed_child_log_fixtures_passed": true,
+    "planned_commands_generated": 77,
+    "private_text_pattern_findings": 0,
+    "scientific_asset_archives_independently_reassembled_and_hash_verified": 7,
+    "scientific_asset_chunks_verified": 163,
+    "scientific_scopes_and_stop_rules_reviewed_against_frozen_guides": true,
+    "scientific_snapshot_archive_bytes": 51333288,
+    "scientific_snapshot_archive_sha256": "8ac1fc6cd082ce31125f6c61ec6e59c600a50642db4f33fdec1cb60aeec6ccd8",
+    "scientific_snapshot_files_verified": 4805,
+    "scientific_snapshot_parts_verified": 7,
+    "scientific_snapshot_text_files_scanned_for_private_ids_links_and_tokens": 4737,
+    "selected_and_epoch_checkpoint_identities_verified": 132,
+    "snapshot_restoration_fixture_tests_passed": 9,
+    "total_lightweight_tests_passed": 42,
+    "workflow_tests_passed": 26
+  },
+  "created_at_utc": "2026-10-05T10:10:46.510504+00:00",
+  "empirical_status": {
+    "aggregate_development_gate_completed": false,
+    "complete_joint_fits": 4,
+    "completed_development_evaluations": 2,
+    "empirical_superiority_established": false,
+    "full_independent_numerical_audited_joint_fits": 2,
+    "new_heavy_empirical_compute_in_review": false,
+    "remaining_joint_fits": [
+      "rn50_seed29_restart_from_epoch0",
+      "rn50_seed43"
+    ]
+  },
+  "not_verified": [
+    "Docker image builds or actual container execution: Docker is unavailable in the review environment.",
+    "Availability or successful download of the three pinned public raw assets.",
+    "An end-to-end local empirical campaign, runtime, or hardware capacity.",
+    "New numerical training, audit, development, benchmark, or fresh-confirmation outcomes.",
+    "Final remote GitHub commit and complete remote tree; publication owner must verify these separately.",
+    "Durable off-checkout preservation by the eventual local operator."
+  ],
+  "resolved_findings": [
+    "Encoder image now provides the separate historical fitting runtime used by the frozen qualification subprocess.",
+    "Future fits use fresh local/cache directories, preserving historical metadata whose derived arrays are absent.",
+    "Each executed child receives a command, log, exit, runtime, and Git receipt; compact reports include these records and histories.",
+    "Snapshot restoration refuses dangling and ancestor symlinks, including the assembly directory.",
+    "Preparation restores scientific snapshot sources before restoring scientific asset archives.",
+    "Documentation distinguishes historically interrupted RN50 seed29 from missing partial evidence after maintenance.",
+    "Full-evidence reports now include stored V10 checkpoints and numerical outputs, while excluding rebuildable caches and feature inputs.",
+    "Executed phases record outcomes, errors, runtime, and Git metadata; report packaging checks evidence hashes after archiving."
+  ],
+  "review_passed_with_stated_limits": true,
+  "reviewed_files": [
+    {
+      "bytes": 2438,
+      "path": "AGENTS.md",
+      "sha256": "c3b57630bf7fbaf3ad8cf2b8015221fcb8c80da8cced0d4da3a6f8221118788d"
+    },
+    {
+      "bytes": 27917,
+      "path": "local/run.py",
+      "sha256": "23822e34f1cef888267703569028b2fbfa1e78dc38c157431daca1119d439b9d"
+    },
+    {
+      "bytes": 4366,
+      "path": "local/restore_science.py",
+      "sha256": "a56ea8c984ce19f6c8c86c5bee2a08a72f37cda1b4389d1751425a7a9079da38"
+    },
+    {
+      "bytes": 12462,
+      "path": "local/assets.py",
+      "sha256": "963a8bdf6d2595d1da150730c9205a5e818acc967bd7b1e16e0b45490d91ff0d"
+    },
+    {
+      "bytes": 577,
+      "path": "local/Dockerfile",
+      "sha256": "2c77e35046fb364a67005a64e732fa099c6aea61a22dac851f78319c68565012"
+    },
+    {
+      "bytes": 1133,
+      "path": "local/Dockerfile.encoder",
+      "sha256": "29fd337cb6f5567033bd7e7d1d24c313d9eaad5b03c341cca69a667a26ed4518"
+    },
+    {
+      "bytes": 384,
+      "path": "local/docker.sh",
+      "sha256": "19a37f5941158e188de94e61a7911d86fe17046b62be776390a57ba86810272a"
+    },
+    {
+      "bytes": 4557,
+      "path": "local/README.txt",
+      "sha256": "b9b01b6af5b33680317c157280358822e6b7516ff4872451bce9ea00cf51df64"
+    },
+    {
+      "bytes": 196895,
+      "path": "local/assets_manifest.json",
+      "sha256": "2c0d5dc0f61639e91c2342ce28619ccf58fb2626eb4f0803f93d0874d82fbea4"
+    },
+    {
+      "bytes": 1543,
+      "path": "local/assets_publication_scan.json",
+      "sha256": "afa5bfa5b0216848b6249e37cc62ba758d7ecf5462f7c913f153d673a989d94c"
+    },
+    {
+      "bytes": 1338706,
+      "path": "local/science_snapshot_manifest.json",
+      "sha256": "3ce33350e04d9b7997b5f4fd5e85d5160397f47cd60b5dede7aaa761a2691321"
+    },
+    {
+      "bytes": 12680,
+      "path": "local/tests/test_run.py",
+      "sha256": "67e1012ecfda6c7a060b487da3ded7eb887c0f4e587d96d0323f3d519e4a1dc1"
+    },
+    {
+      "bytes": 5363,
+      "path": "local/tests/test_restore_science.py",
+      "sha256": "8429c30cc084e85825ae4ba3a2c634d368bab9d61bb5c901c5cafb90755003fc"
+    },
+    {
+      "bytes": 5092,
+      "path": "local/test_assets.py",
+      "sha256": "9a73fe77b1091a201e7d83e504ef516abe54bccd38849c95447409624ab459c3"
+    },
+    {
+      "bytes": 5007,
+      "path": "docs/local_handoff/CURRENT_STATUS.txt",
+      "sha256": "5b05f764bbb7c15b8882677f477b9267761cad36ed71bf64d462167ef3ace9c9"
+    },
+    {
+      "bytes": 4882,
+      "path": "docs/local_handoff/EMPIRICAL_EXTENSIONS.txt",
+      "sha256": "fb0eee406401c028235b695a7d2d8fe81512394a2473746f5278f5715f6ac4c0"
+    },
+    {
+      "bytes": 9819,
+      "path": "docs/local_handoff/EMPIRICAL_PROGRAM_FROZEN_V10.txt",
+      "sha256": "26052366ccabe86fb6492986ac95aed5169df5a93d3de0aec3c7a08719f2ab47"
+    },
+    {
+      "bytes": 5081,
+      "path": "docs/local_handoff/IDENTITY_REFERENCE.txt",
+      "sha256": "29cd68ec6ff1ec23f434ac6d59f6f81d3b01d45f34f7d7aa8ec1b255573b5d58"
+    },
+    {
+      "bytes": 4505,
+      "path": "docs/local_handoff/LOCAL_LLM_INSTRUCTIONS.txt",
+      "sha256": "8757cae9e504b68d829ce53a59c0ec1f16dc3c137239b27be673965e5424a37a"
+    },
+    {
+      "bytes": 6631,
+      "path": "docs/local_handoff/OPERATOR_COMMANDS.txt",
+      "sha256": "50dfde2bf91b58d0891cec006c406c94e7c81953a97f0fef37d22d60910c137c"
+    },
+    {
+      "bytes": 4860,
+      "path": "docs/local_handoff/RESULTS_TO_RETURN.txt",
+      "sha256": "f547c4ab2bd3310942c5396e5eac16e27569cf8ebe1457bf2eae7da14fe467cd"
+    },
+    {
+      "bytes": 4932,
+      "path": "docs/local_handoff/SCIENTIFIC_CONTEXT.txt",
+      "sha256": "f335b47a4a0d666175d5c61a19ef8accbac6f23ca76203a72f1c2d8661bd4247"
+    },
+    {
+      "bytes": 2940,
+      "path": "docs/local_handoff/START_HERE.txt",
+      "sha256": "8d455f2391535ab675fa6183fdcf7d1f398f747f9f9ffebb11e873706546a8cb"
+    }
+  ],
+  "schema": "sanw-recovered-local-handoff-independent-review-v1",
+  "scope": "Independent source, restoration, orchestration, scientific-context, and artifact-identity review. This is not a numerical experiment audit."
+}

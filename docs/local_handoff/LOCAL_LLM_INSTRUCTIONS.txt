@@ -12,6 +12,9 @@ First actions
 Read AGENTS.md and every file named in its read order.
 Record the current Git commit.
 Inspect the asset manifest and restoration implementation.
+Build the specified Docker image and execute prepare using OPERATOR_COMMANDS.txt.
+Prepare restores the exact scientific snapshot before input archives and completed fits.
+Do not mistake older baseline files for the restored scientific tree.
 Verify actual file availability and hashes.
 Read the three frozen execution guides.
 Inspect the current local wrapper and its tests before running commands.
@@ -25,7 +28,7 @@ Work order
 
 Complete the missing joint fits.
 Audit every replication fit numerically.
-Create development locks before reading replication outcomes.
+Create development locks and run the current preservation phase before reading replication outcomes.
 Apply the fixed aggregate gate across all six joint fits.
 Stop V10 promotion if that gate fails.
 Run and audit the controls only after the required gate passes.
@@ -51,6 +54,8 @@ Never overwrite unrelated paths.
 Audit rules
 
 Keep original data, selected checkpoints, scripts, contracts, and locks immutable.
+Use current public preserve phases, not unavailable private historical release receipts.
+Never invent a receipt or claim a remote backup that did not occur.
 Check hashes before interpreting a result.
 Preserve failed audits and error logs.
 Use seed 17-only auditors only for seed 17.
@@ -91,5 +96,7 @@ Use the exact result files as the source for every quantitative claim.
 Report negative and positive results together.
 Write short sentences with one idea each.
 Return the evidence listed in RESULTS_TO_RETURN.txt.
+Use report --full-evidence --execute after each major completed stage.
+Use the default compact report only for interim status updates.
 Keep the main paper focused on one defensible contribution.
 Do not copy source-paper prose or disguise borrowed text.

@@ -1,0 +1,154 @@
+SANW: LOCAL OPERATOR COMMANDS
+
+Read local/README.txt and the final validation receipt before execution.
+These commands use the rebuilt wrapper.
+They do not validate themselves or replace the scientific contracts.
+Use x86_64 Linux or WSL2 with Docker.
+Docker explicitly runs linux/amd64 images.
+ARM emulation can be substantially slower.
+Run every command from the repository root.
+
+Clone and prepare
+
+git clone --branch local-handoff-20261005 https://github.com/priyankjairaj100/SANW.git
+cd SANW
+git rev-parse HEAD
+docker build --platform linux/amd64 -t sanw-v10-local - < local/Dockerfile
+bash local/docker.sh prepare
+bash local/docker.sh prepare --execute
+bash local/docker.sh preflight
+bash local/docker.sh status
+
+The final publication message must identify the exact handoff commit or branch.
+Check out that revision if it differs from the default branch.
+Do not execute a revision that lacks these handoff files.
+
+The prepare phase first reconstructs 4805 exact scientific source and evidence files from the snapshot.
+It then reconstructs exact input archives and restores training/development inputs and completed fits.
+No separate host Python command is required.
+The restorer upgrades only recognized historical file bytes and refuses unknown local changes.
+The Docker wrapper mounts this checkout at the historical absolute root.
+It avoids edits to bound scientific ledgers.
+It uses CPU fitting with the recorded runtime versions.
+The frozen fitting code works on precomputed features and follows the audited CPU recipe.
+Having a GPU does not automatically accelerate this unchanged program.
+Do not replace that recipe with a GPU implementation without separate validation.
+
+Command pattern
+
+bash local/docker.sh PHASE
+bash local/docker.sh PHASE --execute
+
+The first command prints the plan.
+The second command executes it.
+Inspect the printed plan before execution.
+Run one phase at a time and check its exit code.
+Do not continue after a failure.
+
+Finish the joint campaign
+
+bash local/docker.sh rn-replicas --execute
+bash local/docker.sh audit-replicas --execute
+bash local/docker.sh lock-replicas --execute
+bash local/docker.sh preserve-development --execute
+
+Back up the preservation archive and receipt outside this working checkout.
+Then run:
+
+bash local/docker.sh evaluate-replicas --execute
+bash local/docker.sh aggregate --execute
+bash local/docker.sh report --full-evidence --execute
+
+Stop if aggregate fails.
+Return the full evidence report before redesigning the method.
+Do not proceed to promoted controls after a failed gate.
+
+Fit the controls after aggregate passes
+
+bash local/docker.sh no-retention --execute
+bash local/docker.sh retrieval-only --execute
+bash local/docker.sh labclip --execute
+bash local/docker.sh prepare-benchmark --execute
+bash local/docker.sh core-lock --execute
+bash local/docker.sh audit-labclip --execute
+bash local/docker.sh supplementary-locks --execute
+bash local/docker.sh release-benchmark --execute
+bash local/docker.sh preserve-benchmark --execute
+
+Back up the preservation archive and receipt outside this working checkout.
+Then run:
+
+bash local/docker.sh score-benchmark --execute
+bash local/docker.sh analyze-benchmark --execute
+bash local/docker.sh report --full-evidence --execute
+
+Report every benchmark family even if the core criterion fails.
+Do not skip a negative result.
+
+Fresh confirmation
+
+Build the separate encoder image before encoding:
+
+docker build --platform linux/amd64 -t sanw-v10-encoder - < local/Dockerfile.encoder
+bash local/docker.sh fresh-lock --execute
+bash local/docker.sh preserve-fresh-inputs --execute
+
+Back up the preservation archive and receipt outside this working checkout.
+Then run:
+
+bash local/docker.sh fresh-prepare --execute
+bash local/docker.sh fresh-encode --execute
+bash local/docker.sh fresh-feature-lock --execute
+bash local/docker.sh fresh-release --execute
+bash local/docker.sh preserve-fresh --execute
+
+Back up the preservation archive and receipt outside this working checkout.
+Then run:
+
+bash local/docker.sh fresh-score --execute
+bash local/docker.sh report --full-evidence --execute
+
+Fresh encoding uses four Torch threads under its unchanged frozen source.
+Fitting and evaluation use their separate runtime.
+The encoder image includes that separate runtime for its frozen qualification subprocess.
+Do not substitute an image tag or model checkpoint.
+Fresh preparation downloads three public resources using pinned URLs and complete-file hashes.
+No download credentials are required by the acquisition implementation.
+The three raw resources total approximately 5.251 GB before extraction.
+
+Return results
+
+bash local/docker.sh report --full-evidence --execute
+
+Send the generated local/reports archive and JSON manifest to the research chat.
+The full report includes V10 checkpoints, predictions, paired counts, bootstrap arrays, logs, and source identities.
+It also includes fresh completion, metadata, and data-manifest records.
+It excludes feature caches, raw images, model downloads, and fresh features.npz.
+Keep those excluded assets locally with their recorded hashes.
+For a quick status update only, omit --full-evidence to create a compact report.
+The compact report does not support every numerical audit.
+
+Interruption handling
+
+Completed fit directories skip fit launch; they still require their scientific audits.
+Incomplete fits move into local/retired before restarting from epoch zero.
+If a multi-command phase stops, inspect its logs before retrying.
+Existing output files can cause a stop to prevent overwriting.
+Do not delete valid outputs merely to make a whole phase rerun.
+Use the wrapper's printed remaining commands only after checking their prerequisites.
+
+Resource planning
+
+The program reuses four completed joint fits.
+Two joint fits remain, followed by 18 control fits after the aggregate gate.
+Full numerical audits and bootstrap analyses also require substantial CPU work.
+Fresh data and model acquisition need additional disk space.
+The current asset manifest states exact archive sizes.
+The seven scientific archives total approximately 1.337 GB.
+Four completed fit archives add approximately 29 MB.
+The exact source and evidence snapshot adds approximately 51.33 MB.
+Reconstructed archives, extracted arrays, caches, outputs, and Docker images require additional space.
+The four full-gallery float64 cache arrays total approximately 5.76 GB across both encoders.
+Keep generous free space beyond the archive and raw-download totals.
+No minimum RAM or end-to-end runtime has been certified for the rebuilt local workflow.
+Do not infer runtime from the number of model parameters alone.

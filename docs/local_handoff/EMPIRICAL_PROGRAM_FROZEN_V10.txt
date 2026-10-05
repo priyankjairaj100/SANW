@@ -2,13 +2,15 @@ SANW: FROZEN V10 EMPIRICAL PROGRAM
 
 Execution authority
 
-Use these existing files for exact script arguments:
+These historical files record the frozen script arguments and scientific sequence:
 
 results/practical_v10/REMAINING_EXECUTION_CHECKLIST_V2.txt
 results/practical_v10/SUPPLEMENT_EXECUTION_CHECKLIST.txt
 results/practical_v10/fresh_confirmation_execution_order_v1.md
 
 Use the current local wrapper only after its validation succeeds.
+Its public preserve phases replace unavailable private historical release receipts.
+Do not require or fabricate those private receipts.
 This document states the ordered program and the meaning of each stage.
 Do not substitute a different seed, model, dataset, endpoint, or selection rule.
 

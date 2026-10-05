@@ -1,0 +1,58 @@
+{
+  "schema": "sanw-local-asset-publication-scan-v1",
+  "archives_scanned": 11,
+  "checks": [
+    "private_library_id",
+    "private_chat_link",
+    "signed_transfer_url",
+    "token"
+  ],
+  "scope": "Text members were scanned. Feature and checkpoint arrays were not evaluated.",
+  "findings": [
+    {
+      "archive": "SANW_SCIENTIFIC_INPUTS_20261004_part_01.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_SCIENTIFIC_INPUTS_20261004_part_02.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_SCIENTIFIC_INPUTS_20261004_part_03.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_SCIENTIFIC_INPUTS_20261004_part_04.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_SCIENTIFIC_INPUTS_20261004_part_05.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_TRAIN6000_VIT_B32_FEATURES_20261005.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_TRAIN6000_RN50_FEATURES_20261005.zip",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_V10_VIT_B32_SEED17_COMPLETED_FIT_20261005.tar.xz",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_V10_RN50_SEED17_COMPLETED_FIT_20261005.tar.xz",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_V10_VIT_B32_SEED29_COMPLETED_FIT_20261005.tar.xz",
+      "text_scan_findings": []
+    },
+    {
+      "archive": "SANW_V10_VIT_B32_SEED43_COMPLETED_FIT_20261005.tar.xz",
+      "text_scan_findings": []
+    }
+  ],
+  "passed": true
+}

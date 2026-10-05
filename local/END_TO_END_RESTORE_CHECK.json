@@ -1,0 +1,11 @@
+{
+  "scientific_files_restored": 4805,
+  "frozen_identity_checks_passed": 217,
+  "protocol_input_checks_passed": 24,
+  "completed_fit_files_restored": 144,
+  "completed_fit_count": 4,
+  "feature_archives_restored_without_loading_arrays": true,
+  "new_numerical_experiments": 0,
+  "fresh_empty_directory_restoration_passed": true,
+  "docker_tested": false
+}

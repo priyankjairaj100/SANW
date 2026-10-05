@@ -1,0 +1,12 @@
+FROM python:3.12.14-slim
+RUN apt-get update && apt-get install -y --no-install-recommends git ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir torch==2.7.1+cpu torchvision==0.22.1+cpu --index-url https://download.pytorch.org/whl/cpu \
+ && pip install --no-cache-dir numpy==2.3.5 Pillow==12.3.0 open_clip_torch==2.32.0
+RUN pip install --no-cache-dir --target /workspace/scratch/81995298881b/practical_python numpy==2.5.2 \
+ && pip install --no-cache-dir --target /workspace/scratch/81995298881b/practical_python torch==2.6.0+cpu --index-url https://download.pytorch.org/whl/cpu
+RUN python -c "import numpy, torch, torchvision, open_clip, PIL; assert (numpy.__version__, torch.__version__, torchvision.__version__, open_clip.__version__, PIL.__version__) == ('2.3.5','2.7.1+cpu','0.22.1+cpu','2.32.0','12.3.0')" \
+ && PYTHONPATH=/workspace/scratch/81995298881b/practical_python python -c "import numpy, torch; assert (numpy.__version__, torch.__version__) == ('2.5.2','2.6.0+cpu')"
+ENV PYTHONUNBUFFERED=1
+WORKDIR /workspace/scratch/81995298881b/SANW_practical_work
+ENTRYPOINT ["python", "local/run.py"]

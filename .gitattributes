@@ -1,0 +1,3 @@
+# Frozen scientific records require exact byte preservation.
+* -text
+local/assets/** -diff -merge

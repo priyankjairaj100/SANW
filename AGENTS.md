@@ -9,6 +9,10 @@ Read these files before making a plan or changing code:
 5. `docs/local_handoff/EMPIRICAL_EXTENSIONS.txt`
 6. `docs/local_handoff/RESULTS_TO_RETURN.txt`
 7. `docs/local_handoff/LOCAL_LLM_INSTRUCTIONS.txt`
+8. `docs/local_handoff/OPERATOR_COMMANDS.txt`
+
+Use `docs/local_handoff/IDENTITY_REFERENCE.txt` for selected known hashes.
+Use the asset manifest and validation receipt for actual restored-file coverage.
 
 These files describe the current direction. Older README files and plans can describe superseded work.
 

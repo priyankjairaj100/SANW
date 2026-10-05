@@ -1,0 +1,13 @@
+PUBLIC HANDOFF SCOPE
+
+The repository includes current handoff instructions, all frozen scientific source, and exact restoration tools.
+The scientific snapshot contains 4805 files, including historical evidence and the working manuscript.
+Seven original archives supply frozen scientific inputs.
+Four completed-fit archives retain every saved epoch and selected state.
+Fresh raw images and pretrained weights use pinned public acquisition.
+Private transfer mappings and private conversation references are excluded.
+Generated score caches and installed runtimes are excluded.
+The incomplete RN50 seed29 run was lost during workspace maintenance and was not present in saved archives.
+No completion or numerical result is inferred for that partial run.
+No empirical computation was launched during handoff preparation.
+The frozen program and proposed extensions have separate status in the handoff documents.

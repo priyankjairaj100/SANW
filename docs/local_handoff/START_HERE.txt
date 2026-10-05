@@ -31,6 +31,9 @@ Use only commands documented by the current implementation.
 The current handoff validation receipt must identify the tested files and exact commit.
 Read local/README.txt for the current commands and runtime setup.
 Follow OPERATOR_COMMANDS.txt after checking the final validation receipt.
+The published snapshot contains 4805 exact scientific source and evidence files.
+The prepare phase restores them before restoring inputs and completed fits.
+Run prepare before inspecting the scientific tree or attempting frozen preflight checks.
 
 Existing frozen execution guides
 
@@ -38,9 +41,11 @@ results/practical_v10/REMAINING_EXECUTION_CHECKLIST_V2.txt
 results/practical_v10/SUPPLEMENT_EXECUTION_CHECKLIST.txt
 results/practical_v10/fresh_confirmation_execution_order_v1.md
 
-These guides specify the executable V10 sequence.
+These historical guides describe the frozen V10 sequence and scientific arguments.
 The prose here explains that sequence and its scientific purpose.
 It does not replace the frozen contracts or command arguments.
+Use the current wrapper's preserve phases instead of unavailable private historical release receipts.
+Those phases save and check new public preservation archives without claiming historical remote persistence.
 
 Immediate empirical task
 

@@ -83,13 +83,25 @@ Recovery and handoff state
 Scratch maintenance removed the unpushed local handoff implementation.
 An earlier handoff test run reportedly passed 21 tests before that loss.
 Those results do not validate the rebuilt files.
-The handoff wrapper and its tests must be rebuilt and checked again.
-Scientific archives are being recovered separately.
-This status file does not certify that every archive is present in the current checkout.
-Consult the current asset manifest and validation receipt for actual availability.
+The handoff wrapper and its tests have been rebuilt.
+The exact scientific snapshot restores 4805 source and evidence files.
+It contains approximately 51.33 MB before chunk transport.
+All four completed fit archives were recovered and their 128 epoch files verified.
+This archive verification is not a new numerical audit of every epoch.
+The recovered source check passed 217 frozen hash checks.
+The rebuilt workflow checked 72 scientific command plans against their actual argument parsers.
+At this checkpoint, 26 workflow tests, seven asset tests, and nine snapshot tests passed.
+Read the final validation receipts for any subsequent additions and their exact file identities.
+Docker was unavailable in the recovery environment.
+The Docker images and actual runtime imports were not tested here.
+Build both required images locally before their corresponding empirical phases.
+Exact scientific and completed-fit archives are listed in local/assets_manifest.json.
+Run prepare to expand the published snapshot and restore the required input files.
+Consult the asset manifest and validation receipts for exact availability and coverage.
 
 Publication status
 
 The authorized destination is https://github.com/priyankjairaj100/SANW.
+The handoff branch is local-handoff-20261005.
 Only the final Git commit and remote verification establish publication.
 Do not treat a local commit or a pending push as completed publication.

@@ -1,0 +1,53 @@
+{
+  "created_at_utc": "2026-10-05T10:09:19.669875+00:00",
+  "study": "local_handoff_orchestration_validation",
+  "tests_passed": 26,
+  "test_command": "python -m unittest discover -s local/tests -p 'test_run.py' -v",
+  "scientific_parser_plans_checked": 72,
+  "frozen_hash_checks_passed": 217,
+  "test_scope": [
+    "Dry-run invokes no numerical program",
+    "Frozen parser AST compatibility",
+    "Failed aggregate stops later fits",
+    "Required common release wrappers",
+    "Full-state preservation and mutation detection",
+    "Partial-fit retirement without deletion",
+    "Child failure output and exit code capture",
+    "Source snapshot restoration precedes all asset restoration",
+    "Full evidence selection includes numerical outputs and excludes fresh features/raw weights/images/caches",
+    "Full evidence archive preserves exact member hashes",
+    "Full-evidence flag applies only to report",
+    "Each executed phase records its status"
+  ],
+  "empirical_jobs_launched": false,
+  "docker_available": false,
+  "docker_images_built": false,
+  "actual_runtime_imports_tested": false,
+  "limitation": "Docker build contains import/version assertions. Run these builds locally before any empirical execution.",
+  "files": [
+    {
+      "path": "local/run.py",
+      "sha256": "23822e34f1cef888267703569028b2fbfa1e78dc38c157431daca1119d439b9d"
+    },
+    {
+      "path": "local/docker.sh",
+      "sha256": "19a37f5941158e188de94e61a7911d86fe17046b62be776390a57ba86810272a"
+    },
+    {
+      "path": "local/Dockerfile",
+      "sha256": "2c77e35046fb364a67005a64e732fa099c6aea61a22dac851f78319c68565012"
+    },
+    {
+      "path": "local/Dockerfile.encoder",
+      "sha256": "29fd337cb6f5567033bd7e7d1d24c313d9eaad5b03c341cca69a667a26ed4518"
+    },
+    {
+      "path": "local/tests/test_run.py",
+      "sha256": "67e1012ecfda6c7a060b487da3ded7eb887c0f4e587d96d0323f3d519e4a1dc1"
+    },
+    {
+      "path": "local/README.txt",
+      "sha256": "b9b01b6af5b33680317c157280358822e6b7516ff4872451bce9ea00cf51df64"
+    }
+  ]
+}
