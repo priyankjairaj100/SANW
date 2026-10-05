@@ -154,3 +154,4 @@ def practical_gate(runs, contrasts):
         checks[name] = matches[0]["ci_lower"] > threshold
     return {"passed": all(checks.values()), "checks": checks,
             "evidence_type": EVIDENCE_TYPE, "confidence_family_size": PRIMARY_FAMILY_SIZE}
+

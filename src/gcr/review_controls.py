@@ -417,3 +417,4 @@ def apply_promotion_assignment(relations: Tensor, image_indices: Sequence[int], 
     output[mask] = SUPPORTED
     output[relations == SOURCE] = SOURCE
     return output
+

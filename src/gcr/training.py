@@ -545,3 +545,4 @@ def select_candidates(repository: Path, study_root: Path, config: StudyConfig, l
     selection["selected_checkpoint_count"] = sum(len(x["runs"]) for x in selection["methods"].values())
     atomic_json(study_root / "selection.json", selection)
     return selection
+

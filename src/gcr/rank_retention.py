@@ -351,3 +351,4 @@ def failures_from_total_kl(
         return int(finite.size)
     budget = total_kl + atol + rtol * total_kl
     return int(np.searchsorted(np.cumsum(finite), budget, side="right"))
+

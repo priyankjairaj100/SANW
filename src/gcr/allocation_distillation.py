@@ -534,3 +534,4 @@ def fit_matched_controls(repository: Path, output: Path, config: StudyConfig, da
     manifest["matched_controls_complete"] = True
     atomic_json(output / "state_manifest.json", manifest)
     return manifest
+

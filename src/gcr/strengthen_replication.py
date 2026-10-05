@@ -607,3 +607,4 @@ def select_and_export(repository: Path, output: Path, config: StudyConfig, ledge
                 'selections': normalized_selections, 'full_state_manifest': file_record(repository, output / 'state_manifest.json')}
     atomic_json(output / 'evaluation_manifest.json', manifest)
     return manifest
+

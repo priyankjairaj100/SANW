@@ -267,3 +267,4 @@ def paired_image_bootstrap(
             "seed_difference_std": float(np.std(by_seed, ddof=1)) if len(by_seed) > 1 else None,
             "conditioning": "selected training runs; seed predictions averaged before image-cluster resampling",
             "quantile_method": "linear", "bootstrap_differences": samples}
+

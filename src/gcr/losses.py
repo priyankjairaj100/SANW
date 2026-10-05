@@ -217,3 +217,4 @@ def contrastive_loss(
         return pairwise_ranking_loss(logits, relations)
     policy = policy_components(relations, method, dtype=logits.dtype, generator=generator, **kwargs)
     return symmetric_weighted_loss(logits, policy)
+

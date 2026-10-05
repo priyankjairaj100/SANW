@@ -524,3 +524,4 @@ def select_and_export(repository: Path, output: Path, config: StudyConfig, ledge
                 "test_outcomes_used_for_selection": False, "draw_aggregation": "aggregate_all_three_draws_without_winner_selection"}
     atomic_json(output / "state_manifest.json", manifest)
     return manifest
+

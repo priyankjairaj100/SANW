@@ -30,3 +30,4 @@ class ResidualAdapter(nn.Module):
 
     def forward(self, images: Tensor, texts: Tensor) -> tuple[Tensor, Tensor]:
         return self.encode_image(images), self.encode_text(texts)
+

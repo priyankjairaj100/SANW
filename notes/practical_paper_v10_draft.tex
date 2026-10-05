@@ -1,0 +1,1142 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,graphicx,xcolor}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Compositional Adaptation with Finite-Gallery Retrieval Constraints},pdfauthor={Private working manuscript},pdfsubject={Audited V10 seed-17 development screens pass; replication and practical evaluation incomplete}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{proposition}{Proposition}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\R}{\mathbb R}
+\newcommand{\indicator}{\mathbf 1}
+\graphicspath{{results/practical_v9/figures/}{../results/practical_v9/figures/}{results/practical_v10/figures/}{../results/practical_v10/figures/}}
+\title{Compositional Adaptation with Finite-Gallery Retrieval Constraints}
+\author{Private working manuscript}
+\date{5 October 2026}
+\makeatletter
+\def\ps@draftstatus{%
+  \def\@oddhead{{\slshape Private working draft --- V10 in progress}\hfil\thepage}%
+  \let\@evenhead\@oddhead
+  \def\@oddfoot{}\let\@evenfoot\@oddfoot}
+\makeatother
+\begin{document}
+\pagestyle{draftstatus}
+\maketitle
+\begin{center}
+\fbox{\parbox{.91\linewidth}{\textbf{Experiment status.}
+This is an incomplete research manuscript, not a submission.
+The V10 seed-17 development screens pass for both encoders and have been
+independently checked. Replication and matched controls remain incomplete;
+no V10 practical benchmark result is reported. Earlier V8 and V9 pilots
+failed their development gates. The practical goal has not been established.}}
+\end{center}
+
+\begin{abstract}
+Compositional adaptation of image--text models should be evaluated together
+with the retrieval behavior it changes. We study this problem using a
+single score on frozen embeddings. A centered bilinear residual is trained
+with full-gallery source retrieval and a joint loss that ranks source and
+image-supported captions above contradictions. Explicit constraints retain
+a fraction of each protected frozen retrieval margin in both directions.
+For fixed galleries, we prove preservation of every previously correct
+top-1 query, including deterministic ties, and describe a numerical
+certificate that checks the complete gallery. The objective is convex,
+although our finite optimizer is not claimed to find its exact optimum.
+Independently audited fits preserve all protected training queries for
+ViT-B/32 LAION2B and RN50 OpenAI. Two pilots on 1,200 owners fail their
+development gates despite training retention. An expanded 6,000-owner
+recipe passes both seed-17 development screens: image-to-text R@1 changes
+by $+1.00$ and $+1.44$ percentage points, with adjusted lower bounds of
+$-.78$ and $-.89$ above the declared $-1$-point tolerance. The respective
+source/support proxy gains are $+.67$ and $+1.08$ points, but both gain
+intervals include zero. The expansion also increases optimizer updates,
+so its effect cannot be attributed to data alone. Replication, matched
+controls and practical benchmark evaluation remain incomplete. The
+supported result is a finite-gallery certificate and a passed initial
+development screen, not a demonstrated practical solution.
+\end{abstract}
+
+\section{Introduction}
+Contrastive image--text models such as CLIP~\cite{clip} support retrieval
+through a shared embedding space. Adapting their scoring geometry can
+improve discrimination between closely related captions, but retrieval
+places a different demand on the same score: each query must compete with
+an entire gallery. A model can distinguish an annotated contradiction more
+reliably while changing which unrelated image or caption ranks first.
+Evaluating only a small set of candidate captions therefore does not
+establish that retrieval has been retained.
+
+The relation between positive captions also matters. A source caption
+identifies a paired image in a retrieval dataset. Another description may
+be supported by that image without being a paraphrase of the source. A
+contradiction asserts incompatible content, whereas a neutral description
+is not necessarily false. Treating these relations as interchangeable
+would alter both supervision and the meaning of the evaluation. In
+particular, a source/support ranking test is not the lexical-invariance
+test in SugarCrepe++, whose positive descriptions are intended to be
+semantically equivalent~\cite{sugarcrepepp}.
+
+We formulate adaptation with these distinctions explicit. Source ownership
+defines a full-gallery bidirectional retrieval objective. A separate
+relation objective requires a source caption and an image-supported
+caption to outrank a contradiction. The two objectives share one learned
+score. Rather than asking a retention penalty alone to preserve existing
+decisions, we constrain every previously correct training query against
+every irrelevant training-gallery competitor. Incorrect frozen decisions
+remain free to improve.
+
+The score is a centered, low-dimensional bilinear residual on fixed
+embeddings. Its parameters enter scores affinely, yielding a convex
+objective and linear margin constraints inside a norm ball. This structure
+makes a finite-gallery retention proposition possible and permits direct
+numerical verification. It does not create an unseen-data guarantee.
+The empirical question is whether the constraint mechanism improves the
+composition--retrieval tradeoff outside the fitting gallery.
+
+Our contribution is narrowly scoped to this constrained formulation, its
+tie-aware finite-gallery analysis, and an auditable evaluation program
+separating training retention from transfer. Linear alignment is already
+studied by LABCLIP~\cite{labclip}; compositional improvement with multimodal
+retention is already studied by CLIC and FSC-CLIP~\cite{clic,fsc}.
+We make no priority claim for those broader ideas. Nor do we presently
+claim an empirical advance over those methods.
+Protecting earlier correct predictions is also established in model-update
+research~\cite{pct,rcat}; our scope is its explicit realization for this
+fixed-feature, bidirectional full-gallery problem.
+
+The completed experiments provide a concrete warning against inferring
+transfer from a training certificate. Both V8 and V9 preserve their
+protected training queries. V8 fails development; V9 improves all four
+development means but still fails the adjusted image-to-text retention
+criterion. An expanded experiment, V10, inherits the selected joint recipe
+and passes the seed-17 development screen on both encoders. Independent
+audits verify its training certificates and development calculations.
+Its composition-gain intervals still include zero, and the fixed three-seed
+screen and matched controls are incomplete. This draft retains the failed
+pilots and distinguishes this intermediate result from the practical
+benchmark evidence needed for a performance or mechanism claim.
+
+\section{Related work}
+\paragraph{Non-regression in model updates.}
+Yan et al.~\cite{pct} study negative flips, where an updated classifier
+fails on examples its predecessor answered correctly, and use focal
+distillation to emphasize those examples. Angioni et al.~\cite{rcat}
+extend the concern to adversarial robustness and analyze learning with
+non-regression constraints. Protecting baseline-correct decisions,
+constrained retention, and the distinction between average gains and
+individual regressions are therefore prior ideas. Our specialization
+uses affine pairwise constraints over complete image--text galleries in
+both directions, coupled to relation supervision and a finite numerical
+audit. The earlier consistency results are not invoked as a generalization
+theorem for our gallery-dependent retrieval procedure.
+
+\paragraph{Frozen-feature alignment.}
+LABCLIP learns a linear alignment of frozen image--text embeddings with
+hard-negative contrastive supervision~\cite{labclip}. Its released scoring
+implementation normalizes the transformed text. This is the closest
+practical pooled-feature comparator. A learned linear map alone is not our
+distinction; explicit complete-gallery ownership constraints and the joint
+source/support objective are. Published results use different pretrained
+checkpoints and training regimes from ours, so their numerical scores are
+not substituted for matched measurements. BiCLIP also studies bilinear
+adaptation, in few-shot classification~\cite{biclip}. These precedents
+motivate a restrained architectural claim.
+
+\paragraph{Composition and retained capabilities.}
+CLIC combines compositional training examples with positive and negative
+caption objectives and reports improvements on SugarCrepe++ and
+retrieval~\cite{clic}. FSC-CLIP uses local hard-negative supervision and
+selective calibration to improve composition while retaining multimodal
+capabilities~\cite{fsc}. Thus retention is an established motivation,
+not a new task introduced here. Our proposed comparison is between soft
+or unconstrained adaptation and a checked finite-gallery constraint
+mechanism. It requires equal-data controls; a favorable comparison to an
+undertrained adaptation would not establish the mechanism's value.
+
+\paragraph{Ranking and local alignment.}
+RankCLIP uses listwise ranking consistency in pretraining~\cite{rankclip}.
+Miranda et al. learn local alignments from frozen patch and token
+representations~\cite{inference}. Our score instead uses cached pooled
+features and protects specific source-ownership decisions. The respective
+data regimes, representation access, and computational budgets differ.
+We do not claim that pooled features are sufficient for all compositional
+phenomena or that a ranking objective is itself new.
+
+\paragraph{Recovering a frozen scoring endpoint.}
+The author project page for CoSE describes a frozen channel and an
+additional learned channel, with exact recovery of the frozen score at a
+mixture endpoint~\cite{cose}. That is another reason not to claim novelty
+for additive adaptation or baseline recovery alone. It differs from
+protecting selected ownership decisions at a nonzero fitted state. This
+citation is scoped to the author page: a paper and code were not linked at
+the access date, and no venue or performance comparison is independently
+established here.
+
+\paragraph{Compatibility with stored gallery features.}
+Backward-compatible training (BCT) learns updated representations that
+can be compared with previously stored features, avoiding gallery
+re-encoding during model updates~\cite{bct}. Reuse of an old gallery is
+therefore an established deployment objective. Our query-only expression
+is elementary algebra for the chosen bilinear score, with exact-real
+equivalence in both retrieval directions. It neither introduces
+backward compatibility in general nor establishes a new approximate
+search guarantee.
+
+\paragraph{Evaluation semantics.}
+The e-ViL work introduces e-SNLI-VE and an explanation benchmark~\cite{evil}.
+We use the relation annotations and associated image/source-caption
+ownership to construct retrieval and relation-ranking evaluations.
+Our R@1 measurements are therefore project-defined retrieval evaluations
+on this data, not the original e-ViL explanation score. SugarCrepe++ tests
+two semantically equivalent, lexically different positive captions against
+a hard negative~\cite{sugarcrepepp}. Its role is deliberately distinct from
+our source/support development proxy.
+
+\section{Problem and method}
+\subsection{Frozen embeddings and relation sets}
+Let $v_i,t_j\in\R^d$ be the declared normalized frozen image and text
+embeddings. Each source caption $j$ has one designated owning image $o(j)$.
+The fitting gallery contains $n$ images and $M$ source captions, with
+source-caption set $P_i$ for image $i$. In the present data, $|P_i|=5$.
+Let $E_i$ contain supported descriptions and $N_i$ annotated contradictions.
+The eligible composition owners are
+$\mathcal I=\{i:|P_i|\,|E_i|\,|N_i|>0\}$.
+
+We remove a contradiction from training supervision if its normalized
+text equals any source or supported text for the same owner. Normalization
+uses Unicode normalization, case folding, and word tokens with digits
+retained. We do not convert neutral annotations into negatives. Such text
+may contribute embeddings to the training-only PCA geometry. These rules
+do not verify the correctness of every retained annotation.
+Source-caption ownership is retained even when an identical string appears
+under multiple images; its ambiguity is disclosed in Section~\ref{sec:data}.
+
+\subsection{One centered residual score}
+Training-only means $\mu_v,\mu_t$ and fixed orthonormal PCA bases
+$U,V\in\R^{d\times r}$ define
+\begin{align}
+ x(v)&=U^\top(v-\mu_v),&y(t)&=V^\top(t-\mu_t),\\
+ s_A(v,t)&=s_0(v,t)+x(v)^\top A y(t),&s_0(v,t)&=v^\top t.
+ \label{eq:score}
+\end{align}
+Only $A\in\R^{r\times r}$ is learned, under $\norm{A}_F\le R$.
+The $r=128$ model has 16,384 optimized parameters; the stored means and
+bases are additional model state. All tasks and retrieval directions use
+Equation~\eqref{eq:score}, with no inference-time labels, owner lookup, or
+task-specific routing. The zero matrix gives the frozen baseline.
+In exact arithmetic, the same score can also be implemented by transforming
+only the query while retaining original frozen gallery vectors in either
+direction (Appendix~\ref{app:query}). This is an elementary property of the
+bilinear form, not a distinct model. Appendix~\ref{app:query} also reports
+a limited arithmetic and warm dense-scoring diagnostic on training queries.
+
+Centering removes an unconditional residual offset in the corresponding
+finite pools: for a fixed text, averaging the residual over training images
+gives zero, and the corresponding identity holds over the full PCA text
+pool for a fixed image. The second pool includes neutral text and is not
+the source-only retrieval gallery. Neither identity is a population
+assumption. The model is an affine-score adaptation, not a claim to preserve
+cosine geometry or a text-paraphrase representation.
+
+\subsection{Full-gallery source retrieval}
+Choose $p_i\in P_i$ as the best frozen-scoring owned caption, with ascending
+manifest index resolving ties. It stays fixed during fitting. With frozen
+positive logit scale $\kappa$, define
+\begin{align}
+ L_I(A)&=\frac1n\sum_i\log\left(1+\sum_{j:o(j)\ne i}
+  \exp\{\kappa[s_A(v_i,t_j)-s_A(v_i,t_{p_i})]\}\right),\label{eq:i2t}\\
+ L_T(A)&=\frac1M\sum_{j=1}^M\log\left(1+\sum_{k\ne o(j)}
+  \exp\{\kappa[s_A(v_k,t_j)-s_A(v_{o(j)},t_j)]\}\right),\label{eq:t2i}\\
+ L_{\mathrm{ret}}(A)&=\tfrac12[L_I(A)+L_T(A)].
+\end{align}
+Other source captions owned by image $i$ are excluded from its I2T
+denominator, avoiding within-owner false negatives. Every source caption
+is a T2I query. Query minibatches do not reduce either candidate gallery.
+Holding the I2T anchor fixed makes each loss a log-sum-exp of affine scores.
+
+\subsection{Joint relation ranking}
+For $p\in P_i,e\in E_i,n\in N_i$, use
+\begin{equation}
+ \ell_{i,p,e,n}(A)=\log\left[
+ 1+\exp\!\left(\frac{s_A(v_i,t_n)-s_A(v_i,t_p)+\delta}{\tau}\right)
+  +\exp\!\left(\frac{s_A(v_i,t_n)-s_A(v_i,t_e)+\delta}{\tau}\right)\right].
+ \label{eq:joint}
+\end{equation}
+Average first over all triples within each image, then equally over
+$\mathcal I$, to obtain $L_{\mathrm{comp}}$. This targets simultaneous
+source and support correctness. It does not minimize a source--support
+embedding distance or assert that the descriptions are equivalent.
+All owners contribute source retrieval even if a relation set is missing.
+
+The regularized objective is
+\begin{align}
+ F(A)&=L_{\mathrm{ret}}(A)+\lambda L_{\mathrm{comp}}(A)
+           +\tfrac\eta2\norm{A}_F^2,\label{eq:objective}\\
+ \lambda&=w\frac{\norm{\nabla L_{\mathrm{ret}}(0)}_F}
+                    {\max(\norm{\nabla L_{\mathrm{comp}}(0)}_F,10^{-12})}.
+ \label{eq:lambda}
+\end{align}
+The ratio is computed once from fitting data. It is not recomputed during
+optimization or selected using official development. The expanded recipe
+inherits $w=.25$; each encoder's actual multiplier depends on its training
+gradients.
+
+\subsection{Full-gallery retention constraints}
+Let $Q_I$ and $Q_T$ be the image and source-caption training queries that
+the frozen score answers correctly. For each $i\in Q_I$ and unowned caption
+$j$, constrain its anchor margin:
+\begin{equation}
+ s_A(v_i,t_{p_i})-s_A(v_i,t_j)
+ \ge\gamma[s_0(v_i,t_{p_i})-s_0(v_i,t_j)].\label{eq:ci}
+\end{equation}
+For each $j\in Q_T$ and $k\ne o(j)$, similarly require
+\begin{equation}
+ s_A(v_{o(j)},t_j)-s_A(v_k,t_j)
+ \ge\gamma[s_0(v_{o(j)},t_j)-s_0(v_k,t_j)].\label{eq:ct}
+\end{equation}
+Here $0<\gamma\le1$; all experiments use $\gamma=.5$.
+Write a frozen margin and its residual feature difference as $(m_a,D_a)$.
+Then the feasible set is
+\begin{equation}
+ \mathcal C=\{A:\norm{A}_F\le R,\quad
+                 \ip{A}{D_a}\ge-(1-\gamma)m_a\ \text{for all protected pairs }a\}.
+ \label{eq:feasible}
+\end{equation}
+It includes zero and is a compact convex set. Both directions compare
+against every irrelevant training competitor; no fixed shortlist defines
+protection.
+
+\begin{proposition}[Finite-gallery top-1 retention]\label{prop:retention}
+For fixed galleries, ownership and features, use exact arithmetic and the
+same ascending-index tie rule before and after adaptation. Choose each
+anchor by frozen best-owned score with that rule. Every $A\in\mathcal C$
+preserves correctness of every query in $Q_I$ and $Q_T$. Neither direction's
+training R@1 decreases.
+\end{proposition}
+The proof, including frozen ties, appears in Appendix~\ref{app:proof}.
+This proposition protects correctness, not every ranking position or the
+identity of a winning owned caption. New owners, new gallery competitors,
+other recall cutoffs, and other data distributions are outside its scope.
+The existence of zero in $\mathcal C$ does not establish a useful nonzero
+solution. Our experimental gates explicitly reject a zero update.
+
+\subsection{Optimization and numerical verification}
+We initialize $A=0$, use seeded image-query minibatches, and combine the
+objective gradient with an active-constraint squared-violation penalty.
+Each update clips the gradient and projects onto the Frobenius ball. At
+epoch end, full-gallery scanning identifies violations, directional passes
+repair active inequalities, and an algebraically computed contraction
+toward zero restores feasibility. The contraction is based on training
+constraints, not a development amplitude search. This repair is not claimed
+to be the closest-point projection.
+
+An accepted constrained checkpoint must satisfy all inequalities within
+$10^{-12}$ and lose zero protected queries under the canonical scorer.
+The scorer uses fixed float64 pair reductions; exhaustive matrix screening
+with conservative error bounds identifies candidates requiring canonical
+rescoring around near ties. The checkpoint with the lowest training
+objective among nonzero feasible states is selected; ties favor the earlier
+epoch. Official development selects neither epoch nor residual amplitude.
+
+The V10 implementation stores the full frozen similarity matrix in two
+immutable, disk-backed orientations and streams query blocks. Every
+candidate remains in the loss and constraint scan. This changes storage
+and floating-point reduction order, not the mathematical gallery or
+objective. Prefit comparisons to the dense implementation and independent
+gradient checks passed. Numerical agreement does not imply bitwise
+identity of entire fitted trajectories.
+
+The objective is strongly convex for $\eta>0$, but our finite stochastic
+optimizer is not proved to reach its unique constrained optimum.
+Appendix~\ref{app:proof} gives the conservative reported bound
+$\ip{\nabla F(A)}{A}+R\norm{\nabla F(A)}_F$. It concerns training objective
+suboptimality, not generalization.
+
+\section{Data and experimental protocol}\label{sec:data}
+\subsection{Encoders and fitting pools}
+We use two pinned, heterogeneous checkpoints: ViT-B/32 trained on LAION2B,
+with 512-dimensional embeddings, and OpenAI RN50, with 1,024-dimensional
+embeddings. The former is not the OpenAI ViT-B/32 used in several published
+comparisons. Images use the pinned 224-pixel RGB preprocessing and texts
+the pinned tokenizer/causal encoder. A declared float32 normalization pass
+precedes float64 adaptation math. The expanded exports preserve the original
+1,200 image and 22,192 text feature rows bitwise; metadata binds encoder
+weights, preprocessing, normalization, and feature hashes.
+
+Relation labels come from official e-SNLI-VE training annotations. V8/V9
+fit 1,200 owners. V10 adds 4,800 owners selected by a fixed SHA-256 ranking
+of eligible official-training IDs, excluding reserved IDs. Training labels
+had been materialized before the sample was frozen, but selection does not
+use labels, features, or measured outcomes. Table~\ref{tab:data} gives the
+raw annotation inventory. These row counts are not independent statistical
+sample sizes. Neutral rows enter geometry only.
+
+\begin{table}[t]
+\centering
+\caption{Fitting-data inventory. Counts are raw image-associated text rows;
+loss eligibility follows the stated conflict rule. V10's two seed-17 fits
+are complete; replication remains ongoing.}\label{tab:data}
+\begin{tabular}{lrr}
+\toprule
+Quantity & V8/V9 & V10 frozen pool\\
+\midrule
+Image owners & 1,200 & 6,000\\
+Source captions & 6,000 & 30,000\\
+Supported descriptions & 5,319 & 26,374\\
+Contradictions & 5,846 & 29,007\\
+Neutral descriptions & 5,027 & 25,135\\
+Total text rows & 22,192 & 110,516\\
+Distinct exact strings & 21,744 & 104,963\\
+Source strings shared across owners & 0 & 22\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The 22 shared source strings in V10 retain their original ownership labels;
+we do not silently relabel equivalence or remove them. They can create
+false negatives and tie ambiguity. Exact normalized contradiction conflicts
+are filtered only as declared. We add no annotation-quality filter claiming
+that all remaining supports or contradictions are correct.
+
+Image audits decoded all 7,500 selected training and fresh-reserve images.
+No exact JPEG or decoded RGB duplicates were found within those selected
+owners. Exact JPEG hashes were checked against 8,377 earlier reserved
+owners; recompressed or perceptually similar images across those earlier
+reserves were not exhaustively excluded. Consequently, owner disjointness
+and these exact checks do not establish absence of all content overlap or
+pretraining contamination.
+
+\subsection{Development endpoints and selection}
+Official development retrieval uses a fixed gallery of 900 images and
+4,500 owned source captions. I2T R@1 is correct if the top caption is owned
+by the image; T2I R@1 is correct if the top image owns the caption.
+Composition development uses 100 image clusters. The original joint metric
+is the within-image mean of
+\begin{equation}
+ \indicator\{\min(s(v_i,t_p),s(v_i,t_e))>s(v_i,t_n)\},
+ \quad p\in P_i,e\in E_i,n\in N_i,
+\end{equation}
+then averaged equally over eligible images. A source-pair companion replaces
+the supported description by a distinct source caption. Original joint
+evaluation retains all raw annotated labels rather than applying the
+training eligibility filter; the source-pair metric uses the fixed
+normalized-conflict and distinct-caption rules. Both use strict positive
+comparisons and never treat neutral labels as contradictions.
+
+V9 chose its configuration using one owner-disjoint 960/240 split of the
+original training pool, shared by both encoders. Only 960 owners contributed
+fitting and PCA; validation queries came from the 240 held-out owners.
+The validation retrieval gallery nevertheless contained all 1,200 images
+and 6,000 source captions. The finite grid used $R\in\{.1,.3,1\}$ and
+$w\in\{.25,1,4\}$ at rank 128. Eligibility required a strictly positive
+original-joint mean gain and nonnegative changes in the other three
+endpoints on both encoders. The common configuration maximized the worst
+encoder's original-joint gain, followed by declared tie rules. Only
+$(R,w)=(1,.25)$ was eligible. This adaptive inner selection is not
+confirmatory evidence.
+
+V10 inherits that one configuration with no new inner grid. Means, bases,
+and the fixed gradient calibration are recomputed from its training pool.
+Table~\ref{tab:recipe} distinguishes the earlier and expanded recipes.
+V8/V9 are successive research attempts, not controlled single-factor
+ablations of each other.
+
+\begin{table}[t]
+\centering\small
+\caption{Locked optimization recipes. Update counts are complete fit
+budgets, not necessarily the selected epoch's update count.}\label{tab:recipe}
+\begin{tabular}{lrrr}
+\toprule
+Setting & V8 & V9 & V10\\
+\midrule
+Owners & 1,200 & 1,200 & 6,000\\
+Rank $r$ & 64 & 128 & 128\\
+Radius $R$ & .1 & 1 & 1\\
+Epoch budget & 24 & 32 & 32\\
+Batch size & 64 & 64 & 64\\
+Optimizer update budget & 456 & 608 & 3,008\\
+Base learning rate & .01 & .03 & .03\\
+Source retrieval loss & absent & present & present\\
+Composition positives & support & source/support & source/support\\
+Weight calibration $w$ & not used & .25 & .25\\
+\bottomrule
+\end{tabular}
+\end{table}
+The learning rate decreases as the inverse square root of the epoch.
+Shared settings are $\gamma=.5$, $\tau=.02$, $\delta=.005$, ridge $.01$,
+active penalty weight 100, gradient clipping at 10, at most 12 repair
+rounds with three directional passes, and tolerance $10^{-12}$.
+The V10 fit uses three CPU threads and query blocks of 64.
+Moving from 608 to 3,008 updates changes data and optimization together,
+along with gallery hardness and PCA geometry. It is an expanded
+data-and-compute recipe, not an isolated data-size or sample-efficiency
+experiment. Feature extraction and adapter fitting costs must be reported
+separately.
+
+\subsection{Uncertainty and unchanged continuation gates}
+Let $D_{is}$ be the paired trained-minus-frozen outcome for image cluster
+$i$ and seed $s$; for T2I it averages the owned caption-query outcomes within
+the image. The fixed three-seed summary is the equal mean of per-query
+outcomes for seeds 17, 29, and 43. It is not a score or feature ensemble.
+We resample paired image clusters with 100,000 draws, bootstrap seed
+20261007, nominal familywise level $.05$, and family size 80. The two-sided
+tail probability is $.05/(2\cdot80)=.0003125$.
+
+SugarCrepe++ has a different aggregation unit from the image-balanced
+development proxy: the target score averages declared caption-triplet
+outcomes over 4,757 items associated with 1,542 images in the fixed
+benchmark manifest. When image clusters are resampled, both their summed outcome
+differences and their numbers of triplets are resampled. The difference
+is their ratio, with a random total-item denominator. It is not the mean
+of equally weighted image-level triplet accuracies. Image clusters still
+preserve dependence between captions belonging to the same image.
+
+Intervals condition on fixed selected states and a fixed full gallery.
+They resample query-cluster outcomes without reranking a randomly sampled
+gallery. They do not measure variation over new training seeds, new
+galleries, or adaptive model selection. Nominal multiplicity adjustment
+does not correct the whole historical search, including earlier reuse of
+the practical benchmark data. The later locked practical comparison
+program contains 60 effects: 30 core, 20 retrieval-only-control, and 10
+expanded LABCLIP-style contrasts. The fresh same-source program contains
+24 effects in a separate declared family. Each uses the inherited
+family-80 adjustment; this is not a pooled simultaneous 95-percent
+statement over all 84 effects.
+
+For each encoder, the seed-17 development screen requires a nonzero update,
+positive original-joint mean gain, nonnegative source-pair mean gain,
+nonnegative mean changes in I2T and T2I, and both adjusted retrieval lower
+bounds strictly greater than $-.01$. Both encoders must pass before
+replication. Seeds 29 and 43 then use the unchanged recipe; the same
+development contract applies to the fixed three-seed mean. Individual
+replication seeds are not selected or required to pass separately.
+A failed stage stops the recipe without an official-development checkpoint
+or amplitude search.
+
+Only after the three-seed development gate passes does the practical
+contract permit a locked final evaluation. It requires both encoders,
+nonzero trained states for all three seeds, e-ViL-derived test retrieval
+over the full 1,000-image/5,000-caption gallery with I2T and T2I adjusted
+lower bounds strictly above $-1$ percentage point, and SugarCrepe++
+both-positive correctness gain with adjusted lower bound strictly above
+zero. COCO full-gallery retrieval is secondary.
+\mbox{Equality fails a strict bound.} No V8/V9 final benchmark result is
+introduced here.
+
+\subsection{Baseline and matched controls}
+The V9 LABCLIP-style comparator uses a full-rank bias-free $W$, initialized
+at identity, and the universal score $v^\top\mathrm{normalize}(Wt)$.
+It uses source positives and one valid owner-associated contradiction;
+supported labels are consulted for exact conflict exclusion but are not
+direct positive targets. Owners with no valid contradiction are omitted
+and recorded, while our source retrieval uses all owners. These are
+important supervision differences.
+
+The published-style control uses batch 1,024, Adam learning rate $.001$,
+10 epochs, and a learned log scale initialized to zero. A separately named
+small-data adaptation uses owner-unique batches of 128, the fixed native
+logit scale, and five source-caption passes per epoch over 32 epochs.
+Its candidate epochs are $1,2,4,8,16,32$. Identity-map normalization is
+evaluated separately from the original frozen scores. We do not use an
+undertrained published-style control as a performance ceiling.
+
+The V10 protocol binds a no-retention control with the same data, geometry,
+objective, calibrated weight, initialization, paired query orders, norm
+radius, optimizer budget, and objective-based checkpoint rule. It removes
+the active retention penalty and feasibility repair; it does not require
+checkpoint feasibility. Training losses and protected-query regressions
+remain diagnostics. This contrast identifies the entire enforcement
+procedure, not hard constraints separately from their optimizer.
+Control fits are scheduled only after both joint seed-17 development
+pilots pass. They are not completed results in this manuscript.
+Any eventual paired effect is conditional on this development-selected
+recipe, not an unconditional causal benefit across all model recipes.
+
+\section{Completed results}
+\subsection{Training certificates and development transfer}
+V8 and V9 both preserve all frozen-correct training queries for both
+encoders. Table~\ref{tab:certificate} reports the protected counts shared
+by these fits. V9's selected states were independently checked over
+20,260,702 inequalities and 14,400,000 full-gallery image--text pairs across
+the two encoders. The recorded numerical checks use tolerance $10^{-12}$
+and independently require zero lost canonical correct queries. Their scope
+is the fitting gallery.
+
+\begin{table}[t]
+\centering
+\caption{Training retention for the 1,200-owner fitting gallery.
+Both V8 and V9 have zero lost protected top-1 queries.}\label{tab:certificate}
+\begin{tabular}{lrr}
+\toprule
+Quantity & ViT-B/32 LAION2B & RN50 OpenAI\\
+\midrule
+Protected I2T queries & 998 & 922\\
+Protected T2I queries & 3,914 & 3,384\\
+Checked inequalities per state & 10,675,896 & 9,584,806\\
+V8 selected coefficient norm & .099934 & .099917\\
+V9 selected coefficient norm & .999191 & .999167\\
+V8 selected epoch & 24 & 23\\
+V9 selected epoch & 32 & 32\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{samepage}
+Table~\ref{tab:means} shows the completed official-development point
+estimates. Frozen R@1 was 85.000/68.200 percent (I2T/T2I) for ViT-B/32 and
+81.222/58.422 percent for RN50. The frozen original-joint proxy was
+81.955 and 78.648 percent, respectively.\par
+\end{samepage}
+
+V8's supported-only adaptation
+has negligible composition changes and negative I2T means. V9 has positive
+means for every endpoint, with its largest change in RN50 T2I.
+V10 also has positive means for all four endpoints and passes the initial
+development screen on both encoders. It does not yet supply a replicated
+effect or a practical benchmark result.
+
+\begin{table}[t]
+\centering\small
+\caption{Seed-17 official-development paired changes, in percentage
+points. Original joint and source-pair joint are development proxies,
+not SugarCrepe++ scores. V8/V9 fail their development screens; V10 passes
+the seed-17 screen only.}
+\label{tab:means}
+\begin{tabular}{llrrrr}
+\toprule
+Recipe & Encoder & I2T R@1 & T2I R@1 & Original joint & Source-pair joint\\
+\midrule
+V8 & ViT-B/32 & $-.3333$ & $-.0889$ & $+.0319$ & $-.2062$\\
+V8 & RN50 & $-.4444$ & $+.1333$ & $-.0262$ & $-.1698$\\
+V9 & ViT-B/32 & $+.6667$ & $+.9333$ & $+.8079$ & $+.1047$\\
+V9 & RN50 & $+1.1111$ & $+3.2444$ & $+.8553$ & $+.0167$\\
+V10 & ViT-B/32 & $+1.0000$ & $+.9111$ & $+.6701$ & $+.0185$\\
+V10 & RN50 & $+1.4444$ & $+4.0889$ & $+1.0788$ & $+.0190$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The favorable V9 means do not satisfy the retention requirement. Its I2T
+adjusted lower bounds are $-1.528$ and $-1.778$ percentage points,
+below the $-1$ threshold (Table~\ref{tab:ci}). The two composition-gain
+intervals also include zero. The development screen requires positive
+composition means, whereas the final practical composition gate would
+require a strictly positive adjusted lower bound. Neither inference can
+be replaced by inspecting favorable point estimates.
+
+\begin{table}[t]
+\centering\small
+\caption{Nominal family-80 adjusted paired bootstrap intervals in
+percentage points. Intervals condition on the selected seed-17 state and
+fixed gallery.}\label{tab:ci}
+\begin{tabular}{llrrr}
+\toprule
+Recipe & Encoder & I2T R@1 & T2I R@1 & Original joint\\
+\midrule
+V8 & ViT-B/32 & $[-1.444,.667]$ & $[-.489,.311]$ & $[-.928,.819]$\\
+V8 & RN50 & $[-1.667,.556]$ & $[-.356,.644]$ & $[-.899,.509]$\\
+V9 & ViT-B/32 & $[-1.528,2.889]$ & $[-.333,2.200]$ & $[-.597,2.293]$\\
+V9 & RN50 & $[-1.778,4.111]$ & $[1.672,4.844]$ & $[-.980,2.607]$\\
+V10 & ViT-B/32 & $[-.778,2.889]$ & $[-.311,2.133]$ & $[-.581,1.854]$\\
+V10 & RN50 & $[-.889,3.889]$ & $[2.689,5.528]$ & $[-.426,2.506]$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The distinction between positive mean and retention evidence is visible
+in the paired I2T counts. V9 corrects 20 cases and regresses on 14 for
+ViT-B/32, a net six out of 900; RN50 corrects 35 and regresses on 25, a
+net ten. The uncertainty depends on this turnover as well as its net
+effect. Increasing training seeds does not automatically remove it:
+per-image seed outcomes can be correlated. No replication occurred after
+these failed screens. We do not use the changed cases for case-specific
+development constraints.
+
+\subsection{What the normalized baseline establishes}
+No common candidate epoch of the adapted LABCLIP-style baseline passed the
+V9 inner gate. All six tested epochs decreased inner T2I R@1 for each
+encoder. The family therefore stopped before full fitting and official
+development. This result is evidence about the declared recipe and one
+inner split, not general inferiority of LABCLIP.
+
+\begin{samepage}
+Different normalization,
+capacity, positive targets, owner eligibility, and update counts prevent
+calling it a single-factor ablation of the constrained method. In
+particular, V9's baseline outcome does not establish its behavior on the
+expanded V10 pool.\par
+\end{samepage}
+
+\subsection{Expanded V10 seed-17 results}
+Both 6,000-owner fits select epoch 32 by their training-only objective,
+after 3,008 updates. Independent full-fit audits verify 64 epoch checkpoint
+files (epochs 1--32 for both encoders) and the recorded minimum selection,
+and recompute the two selected
+states' PCA geometry, objectives, canonical winners and constraints.
+They check 376,071,311 inequalities and 360,000,000 selected-state
+image--text pairs across the encoders. No protected training query is
+lost (Table~\ref{tab:v10certificate}). Objective eligibility uses 5,979
+relation owners and 746,320 triples; every owner contributes retrieval.
+This is a completed numerical certificate for these two states, not a
+claim that all epoch objectives were independently replayed or that the
+finite optimizer reached the unique optimum.
+
+\begin{table}[t]\centering\small
+\caption{V10 seed-17 training states on the 6,000-image/30,000-caption
+gallery. Canonical correct-query counts and retention are independently
+audited with constraint tolerance $10^{-12}$. The multiplier and relaxed
+bound are recorded diagnostics; their gradient calculations were not
+independently replayed.}\label{tab:v10certificate}
+\begin{tabular}{lrr}
+\toprule
+Quantity & ViT-B/32 LAION2B & RN50 OpenAI\\
+\midrule
+Frozen correct I2T / T2I & 3,948 / 14,244 & 3,565 / 10,880\\
+Adapted correct I2T / T2I & 4,295 / 15,435 & 3,938 / 12,813\\
+Lost protected I2T / T2I & 0 / 0 & 0 / 0\\
+Checked inequalities & 203,870,016 & 172,201,295\\
+Coefficient Frobenius norm & .986485 & .983216\\
+Fixed multiplier $\lambda$ & .869346 & 1.656168\\
+Selected training objective & 2.258950 & 3.090089\\
+Ball-relaxed bound & .086495 & .224596\\
+Selected epoch / updates & 32 / 3,008 & 32 / 3,008\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The independently reconstructed seed-17 development effects appear in
+Tables~\ref{tab:means}--\ref{tab:ci} and Figure~\ref{fig:v10development}.
+Both retrieval means increase, with adjusted I2T lower bounds of $-.778$
+and $-.889$ percentage points, respectively. These exceed the $-1$-point
+retention threshold by only $.222$ and $.111$ points. ViT-B/32 corrects
+16 I2T queries and regresses on 7; RN50 corrects 26 and regresses on 13.
+For T2I the corresponding improved/regressed counts are 116/75 and 244/60.
+Thus the development result is compatible with individual regressions;
+the zero-regression certificate applies only to training.
+
+The original-joint gains of $+.6701$ and $+1.0788$ points and the small
+positive source-pair changes satisfy the mean-based composition screen.
+Both original-joint and source-pair gain intervals nevertheless include
+zero. The development screen must not be reported as statistically
+established composition improvement, and it is not SugarCrepe++.
+The independent development audit checks 16,200,000 canonical pairs,
+83,880 frozen/adapted composition triples, and 800,000 bootstrap draws
+across both encoders. Retrieval means and interpolated interval endpoints
+are also checked with exact integer/rational accounting. Replication
+with the fixed seeds 29 and 43 is underway; its aggregate gate is incomplete.
+
+\begin{figure}[!htbp]\centering
+\includegraphics[width=\linewidth]{v10_development_effects.png}
+\caption{Audited V10 seed-17 development effects. The initial screens pass,
+but the composition intervals cross zero. Intervals condition on these
+selected states and fixed galleries; no practical benchmark result or
+three-seed conclusion is shown.}\label{fig:v10development}
+\end{figure}
+
+\clearpage
+\section{Ongoing expanded experiment and missing comparisons}
+\label{sec:ongoing}
+\paragraph{Frozen V10 experiment.}
+Feature exports, the 6,000-owner manifest, inherited recipe, numerical
+implementation, and prefit audit remain locked. The two seed-17 fits and
+development audits are complete and pass their initial screens. The next
+scientific decision is the unchanged two-encoder, fixed-three-seed
+development gate. No complete replication aggregate, matched-control
+effect, practical benchmark result, or fresh-reserve outcome is reported.
+The inherited recipe, epoch budget and checkpoint rule remain unchanged.
+
+\paragraph{Fresh same-source confirmation.}
+A separately salted fixed lock reserves 1,500 unused official-training
+owners, forming a future complete 1,500-image/7,500-caption gallery.
+No fitting or selection uses these owners. The contract forbids their
+feature encoding until all 12 core final states (joint and no-retention,
+two encoders, three seeds) and the evaluation sources are frozen. A
+separate release rule additionally requires all 24 planned states,
+including the retrieval-only and LABCLIP-style controls, before fresh
+outcome scoring. Only the two original families enter fresh contrasts.
+Its contrasts are joint minus frozen, no-retention minus frozen, and joint
+minus no-retention, each on I2T, T2I, original joint and source-pair joint
+for both encoders. This gives 24 declared endpoint contrasts in the
+separate fresh family-80 calculation. All are to be reported; they are not
+pooled with the historical-benchmark family's 60 contrasts.
+
+The supplementary joint-versus-frozen criterion requires both retrieval
+lower bounds $>-.01$, original-joint gain lower bound $>0$, and nonnegative
+source-pair mean change, for both encoders. It remains a same-source,
+owner-held-out check. It cannot substitute for SugarCrepe++ or the required
+full-gallery practical retrieval test, cannot prove a new-domain claim,
+and does not retroactively make historical benchmark reuse confirmatory.
+
+\paragraph{Evidence needed for mechanism and performance claims.}
+The locked joint/no-retention contrast is necessary to attribute a change
+to the enforcement procedure. If both arms behave similarly outside
+training, the certificate remains a property of the constrained fit but
+does not establish an empirical advantage. A constraint benefit alone
+does not show that supported annotations matter.
+
+A separate explanatory retrieval-only contract was frozen before
+V10 held-out outcomes. It uses the same 6,000 owners, complete source
+gallery, retention procedure, rank, radius, 32 epochs, and fixed seeds
+17, 29, and 43, with $\lambda=0$. It selects its own minimum nonzero
+feasible training-objective checkpoint. This arm is explanatory, never a
+candidate for model selection, and runs only if the joint three-seed
+development gate passes and all six no-retention fits are complete. It
+adds joint-minus-retrieval-only and retrieval-only-minus-frozen contrasts
+on five practical endpoints and two encoders, giving 20 effects. It is
+not added to the two-family fresh-1,500
+confirmation contract. Its results are not available here.
+A composition-only arm at matched capacity is still needed to isolate
+the full-gallery retrieval objective; V8 is not that matched arm.
+
+To test the value of support labels, a count-matched source-positive
+control should retain per-owner term counts and negative exposure while
+replacing supported slots with a frozen seeded draw of source captions.
+This matches weighted positive exposure, but not the number of distinct
+descriptions, and must be interpreted accordingly. This support control
+and the composition-only control remain proposed evidence requirements,
+not locked or completed V10 arms.
+
+\newpage
+\paragraph{Expanded normalized alignment comparator.}
+A separately locked explanatory LABCLIP-style arm uses the same 6,000-owner
+feature pool, pure normalized full-rank map, fixed native logit scale,
+owner-unique batch size 128, 32 epochs, five source passes per epoch, and
+seeds 17, 29, and 43. Adam uses learning rate $.001$, betas $(.9,.999)$,
+epsilon $10^{-8}$ and zero weight decay. Owners without a valid contradiction
+are omitted and must be counted. The annotated owner contradictions are a
+declared supervision adaptation, not the published word-shuffle recipe;
+supported labels enter conflict exclusion only. Its possible 7,520 updates
+are not the joint method's 3,008, and the parameter counts also differ.
+
+Each epoch is evaluated on the same seeded, owner-unique HNB audit batches
+covering five source rows per eligible owner, with one fixed contradiction
+per row. The objective is a row-weighted fixed-batch diagnostic, not
+full-gallery or all-negative contrastive loss. Selection takes its earliest
+minimum among functionally nonzero epochs; movement is measured against
+the identity-normalized map on fixed training witnesses. Identity-map
+versus original-frozen numerical parity is reported separately. No held-out outcome
+selects the epoch, normalization or scale.
+
+The arm runs only after the joint three-seed development gate passes,
+cannot replace the primary candidate, and never enters fresh-1,500
+contrasts. All six states must be frozen before practical benchmark scores
+are released. Its ten paired joint-minus-LABCLIP-style contrasts cover the
+five practical endpoints and two encoders; baseline absolute metrics are
+descriptive. No expanded baseline result or superiority claim is available.
+
+A sample-efficiency claim additionally requires an update-matched
+learning-curve design; 1,200 versus 6,000 owners at equal epochs does not
+isolate data. A broad comparison to CLIC/FSC would require matched
+pretrained checkpoints and transparent data/compute accounting, or a
+clearly delimited claim about pooled-feature methods. Published
+cross-checkpoint numbers are contextual evidence only.
+
+\section{Limitations and research integrity}
+\paragraph{No established practical solution.}
+V8 and V9 fail the continuation rule. V10 passes its initial development
+screen, but its composition-gain intervals cross zero and its replication
+aggregate remains incomplete. A passed development screen does not
+establish the practical benchmark goal. Nothing in the theorem guarantees
+a useful nonzero feasible point,
+an improved composition score, or transfer of retained training decisions.
+
+\paragraph{Restricted geometry and supervision.}
+Pooled embeddings may omit information needed for localized composition.
+Rank-restricted residuals cannot create information absent from those
+features. PCA favors high-variance directions rather than necessarily
+composition-relevant directions. Support annotations do not identify
+paraphrases. Ownership labels may mark a semantically compatible caption
+as irrelevant to another image. The duplicate-source issue and remaining
+annotation noise are preserved limitations, not removed by exact conflict
+filtering.
+
+\paragraph{Finite numerical scope.}
+The mathematical proposition uses exact arithmetic. Our audit uses a
+declared tolerance plus direct deterministic rankings. Strong convexity
+does not imply exact convergence of the implemented repair-based optimizer.
+Its feasible set protects baseline-correct queries only; the theorem is
+neither a zero-shot capability guarantee nor protection against a changed
+gallery. Disk-backed exhaustive training scans have quadratic gallery-storage
+cost. The query-only deployment identity avoids re-encoding the gallery,
+but the measured subset does not certify arbitrary floating-point or
+approximate retrieval implementations.
+
+\paragraph{Adaptive evidence and dataset overlap.}
+The current program follows earlier model attempts and historical benchmark
+reuse. The inner split, official development set, and final benchmark
+roles are now explicit, but the family-80 bootstrap adjustment does not
+cover all previous adaptive decisions. We describe reused benchmark
+results as exploratory even if a later locked recipe meets its numerical
+gate. The fresh same-source reserve supplies a different, supplementary
+check after freezing all choices; exact image checks do not establish
+absence of near duplicates or overlap with encoder pretraining.
+
+\paragraph{Incomplete comparison set.}
+The matched enforcement-removal result, objective removals, support-count
+control, expanded normalized baseline, and clean final evidence are not
+available. Without them, attributing improvements to constraints or
+annotations would be premature. No original reviewer text or recovered
+manuscript is quoted here, and no claim is made that these experiments have
+resolved particular review comments. This draft is a new synthesis of
+verified code, protocols, aggregate results, and primary literature.
+
+\section{Conclusion}
+Full-gallery constraints make a limited but testable promise: they retain
+every frozen-correct training top-1 decision under a shared score. The
+completed experiments verify that promise and show why it is insufficient
+for practical transfer. The smaller joint pilot improves development means
+yet fails the retention bound. The expanded recipe passes the initial
+two-encoder development screen, while its composition intervals still
+include zero. Replication and locked controls must establish whether the
+formulation offers an advantage beyond this intermediate result. The
+current contribution is the constrained formulation, its finite-gallery
+analysis, and audited training and development evidence; practical
+compositional improvement with retained retrieval remains unestablished.
+
+\appendix
+\section{Proofs and optimization scope}\label{app:proof}
+\paragraph{Proof of Proposition~\ref{prop:retention}.}
+For an I2T constraint,
+$D_a=x(v_i)[y(t_{p_i})-y(t_j)]^\top$; for T2I,
+$D_a=[x(v_{o(j)})-x(v_k)]y(t_j)^\top$.
+The adapted margin is $m_a+\ip{A}{D_a}\ge\gamma m_a$.
+Frozen correctness implies $m_a\ge0$. A strictly positive frozen margin
+therefore stays positive. If $m_a=0$, the fixed frozen-correct anchor
+precedes the irrelevant competitor under the same index tie rule. The
+adapted margin is nonnegative, so either it becomes positive or the
+unchanged tie rule still favors that anchor. Applying this argument to
+every irrelevant competitor preserves each protected query. Other
+queries may improve or stay incorrect; none can reduce the already
+preserved count. \hfill$\square$
+
+\begin{proposition}[Convexity and a relaxed suboptimality bound]
+For fixed features, anchors, $\lambda\ge0$, and $\eta>0$, $F$ is
+$\eta$-strongly convex and has a unique minimizer $A^*$ on $\mathcal C$.
+For feasible $A$ and $G=\nabla F(A)$,
+\begin{equation}
+ 0\le F(A)-F(A^*)\le\ip{G}{A}+R\norm{G}_F.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Every unregularized term is a log-sum-exp of affine functions of $A$.
+Adding $\eta\norm{A}_F^2/2$ yields strong convexity. The feasible set is
+nonempty, convex and compact, giving existence and uniqueness of the
+minimizer. Convexity gives
+$F(A)-F(A^*)\le\ip{G}{A-A^*}$. Relaxing $A^*\in\mathcal C$ to
+$\norm{A^*}_F\le R$ yields the ball support function and the displayed
+bound. No Slater condition or strict positivity of every frozen margin is
+needed for this bound.
+\end{proof}
+The unique optimum can be zero; the result does not establish nonzero
+feasibility or practical utility. V9's selected numerical bound values are
+approximately .009253 (ViT-B/32) and .012375 (RN50); V10 seed-17 values are
+.086495 and .224596. They are conservative
+ball-relaxed bounds, not an exact constraint duality gap. Floating-point
+gradients and tolerance limit their numerical interpretation.
+
+For a new I2T anchor/competitor, Cauchy--Schwarz gives
+\begin{equation}
+ |[s_A(v,t_p)-s_A(v,t_n)]-[s_0(v,t_p)-s_0(v,t_n)]|
+ \le R\norm{x(v)}_2\norm{y(t_p)-y(t_n)}_2.
+\end{equation}
+A frozen margin exceeding this quantity remains positive. The analogous
+T2I bound exchanges the image difference and text coordinate. These
+deterministic sufficient conditions do not bound population retention
+without assumptions on unseen margins and features.
+
+\subsection{Exact-arithmetic query-only scoring}\label{app:query}
+Let $B=UAV^\top\in\R^{d\times d}$. Define
+\begin{align}
+ q_I(v)&=v+B^\top(v-\mu_v),
+ &c_I(v)&=-(v-\mu_v)^\top B\mu_t,\\
+ q_T(t)&=t+B(t-\mu_t),
+ &c_T(t)&=-\mu_v^\top B(t-\mu_t).
+\end{align}
+Then the one score in Equation~\eqref{eq:score} satisfies
+\begin{equation}
+ s_A(v,t)=q_I(v)^\top t+c_I(v)
+         =v^\top q_T(t)+c_T(t).
+ \label{eq:query-scoring}
+\end{equation}
+To verify the first equality, expand
+$(v-\mu_v)^\top B(t-\mu_t)$ into its term linear in $t$ and its
+remaining query-only term. Expanding instead in $v$ gives the second
+equality. This is elementary bilinear algebra.
+
+Consequently, exact maximum-inner-product retrieval can use the original
+frozen $d$-dimensional gallery vectors in both directions. For each query,
+the corresponding offset is constant across candidates and does not affect
+their order; adding it recovers the raw score. Both query transforms use
+the same $A,U,V,\mu_v,\mu_t$ and implement one function, rather than
+task-conditioned parameter sets. The factored transform requires
+$O(dr+r^2)$ arithmetic per query, or $O(dr)$ with $UA$ precomputed.
+These are algebraic operation counts, not latency or memory guarantees.
+
+This observation gives compatibility with unchanged frozen gallery vectors
+under exact inner-product search. It does not certify an approximate
+nearest-neighbor index or any index-specific search procedure. Nor does
+the identity guarantee bitwise equality after floating-point reassociation:
+the numerical certificates in this study apply to the declared canonical
+scorer and tie rule. A different implementation needs its own numerical
+agreement and retrieval checks before inheriting a practical certificate.
+
+\paragraph{Measured training-query diagnostic.}
+For each audited V10 seed-17 state, we take 32 predetermined, evenly spaced
+training queries in each direction and compare query-transformed dense
+scores against the canonical scorer over the unchanged full gallery.
+Across the two encoders this covers 2,304,000 pairs. All top-1 choices
+agree, both with and without restoring the query-only offset; the largest
+observed restored-score error is $7.22\times10^{-16}$. These are observations
+on this fixed subset, not a worst-case floating-point bound or a replacement
+for the training certificate.
+
+\begin{table}[t]\centering\small
+\caption{Warm CPU dense-scoring diagnostic, batch size 32. Ratios are
+median query-transformed scoring time divided by frozen scoring time;
+they exclude feature encoding, I/O, ANN, top-$k$ extraction and canonical
+rescoring.}\label{tab:querytiming}
+\begin{tabular}{llrr}
+\toprule
+Encoder & Direction & Gallery vectors & Time ratio\\
+\midrule
+ViT-B/32 & I2T & 30,000 & $1.021\times$\\
+ViT-B/32 & T2I & 6,000 & $1.059\times$\\
+RN50 & I2T & 30,000 & $1.012\times$\\
+RN50 & T2I & 6,000 & $1.108\times$\\
+\bottomrule
+\end{tabular}
+\end{table}
+The timing experiment uses float64 dense scoring on the available x86-64
+CPU with one BLAS thread, three warmups and 11 measured repeats, with no
+co-scheduled fitting job. The end-to-end diagnostic includes the factored
+query transform and dense scoring, after fixed model setup. Queries are
+not renormalized. Table~\ref{tab:querytiming} reports batch-cost ratios,
+not single-query latency, encoder inference costs, hardware-independent
+speed claims, or measured approximate-index behavior.
+
+\section{Reproducibility records and exact result provenance}
+All numerical tables above were transcribed from immutable aggregate
+result records, not reconstructed by opening benchmark cases. The
+companion \path|practical_v9_claims_evidence_20261005.json| contains
+the detailed V9 evidence map. The following abbreviated SHA-256 prefixes
+identify central records; full hashes remain in the respective protocols.
+\begin{center}\small
+\begin{tabular}{p{.60\linewidth}l}
+\toprule
+Record & SHA-256 prefix\\
+\midrule
+V8 constrained protocol & \texttt{69ce998049bb}\\
+V9 alignment protocol & \texttt{9e1bd80f901c}\\
+V9 shared inner selection & \texttt{305e5277a8dd}\\
+V9 independent full-fit audit & \texttt{c227361f3886}\\
+V10 expanded training protocol & \texttt{ce04032395f1}\\
+V10 fresh confirmation contract & \texttt{b1f426b28492}\\
+V10 prefit audit & \texttt{32b4d54f7fc1}\\
+V10 seed-17 independent full-fit audit & \texttt{2b2a075cdb57}\\
+V10 seed-17 independent development audit & \texttt{f6daabe669a5}\\
+V10 ViT-B/32 development result & \texttt{09dba4d91b66}\\
+V10 RN50 development result & \texttt{696080db4157}\\
+V10 retrieval-only contract & \texttt{ea3b5cb07328}\\
+V10 replacement LABCLIP-style contract & \texttt{9772bec82d15}\\
+V10 ViT-B/32 query-transform diagnostic & \texttt{0c3a1220045d}\\
+V10 RN50 query-transform diagnostic & \texttt{e749a5ac0be4}\\
+Expanded caption inventory & \texttt{d6de04798e5b}\\
+\bottomrule
+\end{tabular}
+\end{center}
+V8 aggregate effects come from
+\path|results/practical_v8/development/{encoder}_seed17/result.json|;
+V9 effects come from
+\path|results/practical_v9/official_development/{encoder}_seed17/result.json|.
+The V8 independent development audit reconstructed all 800,000 bootstrap
+values for the two encoders. The V9 full-fit audit independently recomputed
+selected-state objectives, canonical retrieval winners, and inequalities.
+Audit success means artifact or numerical correctness, not empirical
+success of the practical contract.
+
+The V10 prefit audit checked 52 bound sources and verified unchanged
+earlier sources, the locked sampling, annotation reconstruction, encoder
+identity, old-row feature parity, full-gallery numerical equivalence,
+and control implementation. Its test report has 29 passing tests and
+16 passing subtests. A preserved profiling timer correction changes only
+timing accounting, not numerical results. These records precede fitting;
+they are distinct from the later model audit. The V10 full-fit audit
+subsequently verifies 64 epoch files and recorded selection, and
+independently recomputes selected-state objectives and complete-gallery
+retention. It does not replay every epoch objective or the initial
+gradient calibration. The development audit independently reconstructs
+the aggregate statistics and continuation decisions. V10 effects come
+from \path|results/practical_v10/official_development/joint_{encoder}_seed17/result.json|.
+
+A workspace reset required restoring sources and issuing a replacement
+LABCLIP-style contract. The restored fitter, runner and tests match their
+original hashes. The replacement transparently records a new audit binding
+and timestamp; the earlier contract hash remains historical. This recovery
+does not add a recipe or outcome-dependent selection. The later evaluator
+requires numerical replay of each selected LABCLIP-style objective and
+identity/selected movement witnesses, plus verification of all 32 checkpoint
+hashes and recorded minima; it does not claim numerical replay of all
+32 audit objectives.
+
+\section{Additional completed development intervals}
+The source-pair intervals omitted from Table~\ref{tab:ci} are:
+V8 ViT-B/32 $[-.930,.260]$, V8 RN50 $[-.698,.176]$,
+V9 ViT-B/32 $[-1.457,1.506]$, V9 RN50 $[-.957,.860]$,
+V10 ViT-B/32 $[-.713,.746]$, and V10 RN50 $[-.939,.891]$ percentage points.
+All cross zero. The V9 and V10 original-joint composition calculations contain
+15,630 declared triples and their source-pair calculations 5,340, each within
+100 image clusters. These triple counts do not replace the image-cluster
+sample size in uncertainty estimation.
+
+\begin{thebibliography}{99}
+\bibitem{clip} A. Radford et al.
+Learning Transferable Visual Models From Natural Language Supervision.
+ICML, 2021. \url{https://proceedings.mlr.press/v139/radford21a.html}.
+\bibitem{pct} S. Yan, Y. Xiong, K. Kundu, S. Yang, S. Deng, M. Wang,
+W. Xia, and S. Soatto.
+Positive-Congruent Training: Towards Regression-Free Model Updates.
+CVPR, 2021, pp. 14299--14308.
+\url{https://openaccess.thecvf.com/content/CVPR2021/html/Yan_Positive-Congruent_Training_Towards_Regression-Free_Model_Updates_CVPR_2021_paper.html}.
+\bibitem{bct} Y. Shen, Y. Xiong, W. Xia, and S. Soatto.
+Towards Backward-Compatible Representation Learning. CVPR, 2020.
+\url{https://arxiv.org/abs/2003.11942}.
+\bibitem{rcat} D. Angioni, L. Demetrio, M. Pintor, L. Oneto, D. Anguita,
+B. Biggio, and F. Roli.
+Robustness-Congruent Adversarial Training for Secure Machine Learning Model
+Updates. arXiv:2402.17390v2, 2025.
+\url{https://arxiv.org/html/2402.17390v2}.
+\bibitem{labclip} D. Koishigarina, A. Uselis, and S. J. Oh.
+CLIP Behaves like a Bag-of-Words Model Cross-modally but not Uni-modally.
+arXiv:2502.03566v3, 2026. \url{https://arxiv.org/html/2502.03566v3}.
+\bibitem{clic} A. Peleg, N. D. Singh, and M. Hein.
+Advancing Compositional Awareness in CLIP with Efficient Fine-Tuning.
+NeurIPS, 2025. \url{https://arxiv.org/html/2505.24424v2}.
+\bibitem{fsc} Y. Oh, J. W. Cho, D.-J. Kim, I. S. Kweon, and J. Kim.
+Preserving Multi-Modal Capabilities of Pre-trained VLMs for Improving
+Vision-Linguistic Compositionality. EMNLP, 2024.
+\url{https://aclanthology.org/2024.emnlp-main.1062/}.
+\bibitem{biclip} P. Mantini and S. K. Shah.
+BiCLIP: Domain Canonicalization via Structured Geometric Transformation.
+arXiv:2603.08942v2, 2026. \url{https://arxiv.org/abs/2603.08942v2}.
+\bibitem{rankclip} Y. Zhang, Z. Zhao, Z. Chen, Z. Feng, Z. Ding, and Y. Sun.
+RankCLIP: Ranking-Consistent Language-Image Pretraining.
+arXiv:2404.09387v3, 2025. \url{https://arxiv.org/abs/2404.09387v3}.
+\bibitem{inference} I. Miranda, A. Salaberria, E. Agirre, and G. Azkune.
+Revisiting Compositionality in Dual-Encoder Vision-Language Models:
+The Role of Inference. arXiv:2604.11496v2, 2026.
+\url{https://arxiv.org/abs/2604.11496v2}.
+\bibitem{evil} M. Kayser, O.-M. Camburu, L. Salewski, C. Emde, V. Do,
+Z. Akata, and T. Lukasiewicz.
+e-ViL: A Dataset and Benchmark for Natural Language Explanations in
+Vision-Language Tasks. ICCV, 2021. \url{https://arxiv.org/abs/2105.03761v2}.
+\bibitem{sugarcrepepp} S. H. Dumpala, A. Jaiswal, C. Sastry, E. Milios,
+S. Oore, and H. Sajjad.
+SugarCrepe++ Dataset: Vision-Language Model Sensitivity to Semantic and
+Lexical Alterations. NeurIPS Datasets and Benchmarks, 2024.
+\url{https://arxiv.org/abs/2406.11171}.
+\bibitem{cose} D. Han, S. Moon, and S. Lee.
+You CAN Teach an Old Model New Tricks: Domain Adaptation via
+Complementary Subspace Expansion. Author project page, accessed
+5 October 2026. \url{https://dhk1349.github.io/cose/}.
+\end{thebibliography}
+\end{document}

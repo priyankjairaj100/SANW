@@ -90,3 +90,4 @@ def retention_loss(images: Tensor, texts: Tensor, relations: Tensor, policy: str
         return (retention_loss(images, texts, relations, "supported", logit_scale)
                 + beta * temperature ** 2 * .5 * (image_kl + text_kl))
     raise ValueError(f"Unknown retention policy: {policy}")
+
