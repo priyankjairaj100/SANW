@@ -1,0 +1,199 @@
+SANW: FROZEN V10 EMPIRICAL PROGRAM
+
+Execution authority
+
+Use these existing files for exact script arguments:
+
+results/practical_v10/REMAINING_EXECUTION_CHECKLIST_V2.txt
+results/practical_v10/SUPPLEMENT_EXECUTION_CHECKLIST.txt
+results/practical_v10/fresh_confirmation_execution_order_v1.md
+
+Use the current local wrapper only after its validation succeeds.
+This document states the ordered program and the meaning of each stage.
+Do not substitute a different seed, model, dataset, endpoint, or selection rule.
+
+Stage 0: verify the handoff
+
+Record the Git commit and working-tree status.
+Verify the frozen protocol, contracts, scripts, data, and selected-state hashes.
+Reconstruct exact archives before extracting their contents.
+Check extracted file identities against the archive inventory.
+Use a clean environment with the recorded versions.
+
+The reference fit runtime used Python 3.12.14, Torch 2.6.0+cpu, and NumPy 2.5.2.
+Fit processes used three OpenBLAS, OMP, and MKL threads.
+Audits and evaluation used one thread.
+Torch feature normalization used one thread.
+Feature encoding used a separate Torch 2.7.1+cpu and OpenCLIP 2.32.0 environment.
+Do not silently replace CPU fitting with GPU fitting.
+Record any necessary runtime departure and validate its scientific effect before continuing.
+
+Historical ledgers contain this absolute repository root:
+/workspace/scratch/81995298881b/SANW_practical_work
+
+Frozen evaluators resolve paths against their repository root.
+A clone at an arbitrary path can fail these checks.
+Use an approved container mount or a safe symlink for path compatibility.
+Never edit a bound ledger solely to replace its path.
+Never overwrite an unrelated directory to create the historical path.
+
+Stage 1: finish the joint fits
+
+Keep the completed ViT seeds 17, 29, and 43.
+Keep the completed RN50 seed 17.
+Verify their completion markers, histories, selected epochs, selected hashes, and fit ledgers.
+If recovered, retire the interrupted RN50 seed 29 directory without deleting its contents.
+Record its location and interruption status.
+If unavailable, record that its eight-epoch partial output was lost during scratch maintenance.
+Restart RN50 seed 29 from epoch zero under the unchanged frozen recipe.
+Run RN50 seed 43 under that recipe.
+Run one fit at a time unless the wrapper explicitly validates safe resource separation.
+
+Expected joint fit matrix:
+ViT-B/32: seeds 17, 29, 43.
+RN50: seeds 17, 29, 43.
+
+Stage 2: independently audit the four replication fits
+
+Audit ViT seeds 29 and 43, then RN50 seeds 29 and 43.
+Use audit_practical_streaming_fullfits_v10.py through its frozen checklist.
+Use one audit process at a time.
+Audit selected numerical objectives and the full protected training gallery.
+Check nonzero selection, feasibility, earliest selection ties, and output identities.
+Save the complete audit receipt for each fit.
+Stop if any required audit fails.
+
+Do not use audit_practical_official_results_v10.py for these four replicas.
+That actual-result audit only supports seed 17.
+Do not mislabel an unsupported replica audit as complete.
+
+Stage 3: freeze replication development locks
+
+Create one development lock for seed 29 and one for seed 43.
+Each lock must bind both encoders and their audited selected states.
+The old checklist names predevelopment_release_seed29_v2.json and predevelopment_release_seed43_v2.json.
+Its preservation requirement binds the locks, unchanged V2 source audit, passed training audits, and saved fit archives.
+The local wrapper uses new public preservation archives instead of recreating private historical receipts.
+Preserve its archive and receipt outside the working checkout before evaluating development outcomes.
+The wrapper checks the archive and current-file identities before scoring.
+A receipt alone does not prove remote persistence.
+Keep the original seed 17 lock and evidence unchanged.
+
+Stage 4: evaluate development outcomes
+
+Evaluate all four replication states using their locks.
+Use exactly the original endpoints, data, and bootstrap rules.
+Do not create individual seed 29 or seed 43 promotion gates.
+Compute the fixed three-seed mean using all six joint states.
+Apply the frozen aggregate development gate.
+
+If the aggregate gate fails, stop V10 promotion.
+Report all six runs and the exact failure reason.
+Do not run promoted controls or benchmarks as if the gate passed.
+A changed method requires a separate protocol and a new evidence plan.
+
+Stage 5: fit the three control families after the gate passes
+
+No-retention control: two encoders times three seeds, giving six fits.
+Retrieval-only control: two encoders times three seeds, giving six fits.
+LABCLIP-style control: two encoders times three seeds, giving six fits.
+
+The no-retention control removes the retention procedure.
+That removal includes the penalty, repair, and eligibility rules.
+It does not isolate hard constraints from soft penalties.
+
+The retrieval-only control sets the composition weight to zero.
+It uses the fixed fit recipe.
+It is an explanatory control, not a new candidate selected from benchmark outcomes.
+Its prerequisites reconstruct aggregate evidence and verify all six no-retention histories.
+The joint full-fit auditor is not a no-retention auditor.
+Use the reviewed control-verification checks for those runs.
+
+The LABCLIP-style control learns a full-dimensional normalized map.
+It uses 32 epochs and five source passes.
+It can use 7520 updates, compared with 3008 joint updates.
+It is not compute-matched.
+It is not a faithful implementation of published word-shuffle training.
+Its fixed training audit bank selects the earliest nonzero minimum.
+Run all six required audit-training checks before creating its lock.
+
+Stage 6: lock all benchmark states before common scoring
+
+Create the core lock for six joint and six no-retention states.
+Create the six-state retrieval-only lock.
+Create the six-state LABCLIP-style lock after its mandatory training audits.
+All 24 selected states must be locked before the common scoring release.
+Preserve the common release and its bound evidence before scoring.
+Do not inspect benchmark outcomes while finishing selection or missing locks.
+
+Stage 7: score all frozen benchmark families
+
+Use the retrieval-only score-core wrapper for core benchmark scoring.
+Do not bypass that wrapper with an earlier direct core-scoring command.
+Its gates enforce the shared scoring order.
+
+Report all 30 core effects.
+Report all 20 retrieval-only effects.
+Report all 10 LABCLIP-style effects.
+Do so regardless of the core benchmark gate outcome.
+Keep each effect's endpoint, contrast, encoder, estimate, interval, and gate role explicit.
+
+Primary practical criterion
+
+Use both encoders and the fixed seeds 17, 29, and 43.
+Compute the seed mean for each outcome.
+Do not ensemble states or resample seeds.
+
+For e-ViL test, use all 1000 images and the full caption gallery.
+The adjusted image-to-text R@1 gain lower bound must exceed -0.01.
+The adjusted text-to-image R@1 gain lower bound must exceed -0.01.
+For SugarCrepe++, the adjusted both-positive correctness gain lower bound must exceed zero.
+The complete practical gate applies to both encoders.
+COCO is secondary evidence.
+
+Use 100000 paired image-cluster bootstrap draws.
+Use bootstrap seed 20261007.
+Use the frozen family-size parameter 80, with alpha 0.05 and tail probability 1/3200.
+The 60 reported benchmark effects retain that conservative parameter.
+Use exact rational comparisons at strict decision boundaries.
+Do not round a failing boundary into a passing one.
+
+SugarCrepe++ contains 4757 items from 1542 images in this frozen program.
+Its endpoint is item-weighted both-positive correctness.
+Its bootstrap uses the specified cluster ratio.
+Do not replace it with image-weighted accuracy or single-positive accuracy.
+
+Benchmark interpretation
+
+These benchmarks have historical test reuse.
+Their results are exploratory within that adaptive history.
+The stated adjustment does not control error across the entire adaptive project history.
+Report earlier failures and changes honestly.
+
+Stage 8: perform the separate fresh confirmation
+
+Follow fresh_confirmation_execution_order_v1.md exactly.
+Use the fixed 1500-owner lock and the frozen fresh contract.
+Lock the 12 joint and no-retention states before encoding fresh data.
+Lock all 24 planned states before rescoring fresh data.
+Acquire and verify the exact public image and encoder resources specified by the existing records.
+Do not change owners or replace unavailable examples based on outcomes.
+
+Score the 24 planned fresh effects as a separate family.
+These use the 12 joint and no-retention states, not all 24 locked states.
+Use both retrieval endpoints and both original/source-pair composition endpoints.
+Use three contrasts: joint versus frozen, no-retention versus frozen, and joint versus no-retention.
+Both encoders are required.
+Keep the frozen family-size parameter 80 for these 24 effects too.
+Do not pool them with the benchmark family or claim combined 84-effect coverage.
+This is a fresh same-source confirmation, not evidence from a new independent source distribution.
+Its full gallery contains 1500 images and 7500 source captions.
+It does not replace the e-ViL test or SugarCrepe++ practical gate.
+
+Stage 9: return evidence and stop for scientific assessment
+
+Use RESULTS_TO_RETURN.txt for the required report.
+Return the complete outcome matrix, including failures and negative effects.
+Keep raw predictions, selected states, audit receipts, and locks available for verification.
+Do not begin the extensions by modifying V10 in place.
+Choose a separate extension protocol after reviewing the frozen outcomes.

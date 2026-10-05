@@ -1,0 +1,112 @@
+SANW: SCIENTIFIC CONTEXT
+
+Research question
+
+Can compositional adaptation improve retrieval while preserving specified baseline-correct training decisions?
+The paper needs a narrow method claim and direct evidence of useful held-out performance.
+Better composition alone is insufficient if retrieval deteriorates beyond the fixed margin.
+
+Method
+
+Keep the pretrained image and text encoders fixed.
+Normalize their original embeddings.
+Fit PCA projections and centering statistics using training data only.
+Add a bilinear correction to the original similarity:
+
+s_A(v,t) = v^T t + x(v)^T A y(t).
+
+The correction has rank budget 128.
+The frozen recipe uses R = 1 and composition weight 0.25.
+Its ridge coefficient is 0.01.
+Its retention fraction is gamma = 0.5.
+
+Retain at least half each protected baseline-correct training margin.
+Compare against the full training gallery.
+Use the frozen index-based rule for ties.
+For image-to-text retrieval, choose a fixed best-owned positive anchor.
+That anchor defines a conservative convex branch of the multi-positive correctness set.
+
+Theory that is supported
+
+The fixed-anchor constraints define a convex feasible set.
+Ridge regularization gives strong convexity and a unique optimum under the stated objective.
+The zero correction is a feasible reference under the stated construction.
+An exactly feasible selected state preserves the protected training decisions.
+The additive map can be applied to queries using exact algebra.
+
+Theory that is not established
+
+No guarantee protects arbitrary unseen queries.
+No theorem ensures a nonzero useful optimum.
+No theorem proves convergence of the finite optimizer used here.
+The fixed-anchor branch need not contain every correction that preserves multi-positive retrieval.
+Query-only implementation does not establish a new gallery-reuse principle.
+
+A proposed tangent-cone diagnostic uses the projected composition gradient.
+That idea follows standard convex analysis.
+It is not implemented or empirically validated.
+It must not appear as completed evidence.
+
+Frozen training data
+
+TRAIN6000 contains 6000 images and 30000 source captions.
+The training representation contains 110516 text or pair rows and 104963 unique strings.
+Twenty-two exact source strings occur under multiple owners and remain included.
+Three exact contradiction conflicts were excluded during training construction.
+The eligible composition set contains 5979 owners and 746320 triples.
+
+TRAIN6000 changed data, update count, gallery, and PCA relative to V9.
+Its comparison with V9 does not isolate the effect of training size.
+Original feature archives contain mixed splits.
+The numerical fit uses the training subset.
+Do not claim that held-out bytes were never loaded.
+
+Frozen optimization
+
+Use seeds 17, 29, and 43 for both encoders.
+Run 32 epochs with batch size 64 and 3008 updates.
+Use learning rate 0.03 / sqrt(epoch).
+Use the specified feasibility tolerance of 1e-12.
+Select the minimum nonzero feasible training objective.
+Resolve selection ties using the earliest epoch.
+Do not select using development or benchmark outcomes.
+
+Novelty positioning
+
+Bilinear ranking itself is established, including OASIS.
+Linear adaptation of frozen CLIP features is established, including LABCLIP.
+Joint composition and retrieval improvement is studied by CLIC.
+Capability preservation is related to FSC.
+Prediction compatibility and non-regression connect to PCT and RCAT.
+Backward-compatible gallery use is studied by BCT.
+
+The defensible candidate contribution is the specific retention construction and its audited empirical behavior.
+Novelty requires a direct comparison with these neighboring ideas.
+A combination of known pieces is not automatically a novel contribution.
+
+Primary reading list
+
+LABCLIP: https://arxiv.org/html/2502.03566v3
+CLIC: https://arxiv.org/html/2505.24424v2
+FSC: https://aclanthology.org/2024.emnlp-main.1062/
+OASIS: https://www.jmlr.org/papers/v11/chechik10a.html
+PCT: https://arxiv.org/abs/2011.09161
+RCAT: https://arxiv.org/html/2402.17390v2
+BCT: https://arxiv.org/abs/2003.11942
+
+Original review issues that still matter
+
+Supported positive labels lacked a count-matched promotion control.
+The old selection objective differed from the reported large-gallery retrieval metric.
+The old work lacked an in-domain full-gallery retrieval evaluation.
+Training selection and deployment evaluation must remain clearly distinguished.
+These concerns motivate the frozen full-gallery program and the additional controls.
+
+Short-paper design
+
+Aim for one construction, one guarantee, and one decisive empirical finding.
+Place related work after the introduction.
+Keep the main body within the verified four-page short-paper limit.
+Use appendices for complete proofs, protocols, audits, and secondary outcomes.
+Do not compress unsupported claims into the abstract.
+Do not promise acceptance, novelty, or superiority before the evidence supports them.

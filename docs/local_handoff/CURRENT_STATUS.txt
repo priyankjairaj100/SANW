@@ -1,0 +1,95 @@
+SANW: CURRENT STATUS
+Snapshot date: 2026-10-05.
+
+Evidence status
+
+Empirical superiority is not established.
+Two seed 17 joint fits have passed full independent numerical training audits.
+Their development evaluation has passed the frozen mean-based criterion.
+Their composition confidence intervals include zero.
+The original composition measure is not SugarCrepe++.
+
+Completed joint fits
+
+Encoder       Seed   Fit status    Full numerical audit   Development evaluation
+ViT-B/32      17     complete      passed                 complete
+RN50          17     complete      passed                 complete
+ViT-B/32      29     complete      pending                pending
+ViT-B/32      43     complete      pending                pending
+RN50          29     interrupted   pending                absent
+RN50          43     absent        pending                absent
+
+RN50 seed 29 stopped after eight epochs.
+The last inspected process state contained no active empirical process.
+The cause of interruption was not established.
+There is no supported restart that preserves its exact trajectory.
+If its partial output is recovered, retire it without deleting evidence.
+The partial output may have been lost during scratch maintenance.
+Do not claim that missing partial files were preserved.
+Restart from epoch zero in either case.
+
+ViT seeds 29 and 43 passed strict file, hash, and selection packaging checks.
+Those checks are not full numerical audits.
+Their held-out results must not be inferred from seed 17.
+
+Seed 17 development effects, percentage points
+
+Metric                          ViT-B/32       RN50
+Image-to-text R@1                +1.0000        +1.4444
+Text-to-image R@1                +0.9111        +4.0889
+Original joint composition      +0.67006       +1.078798
+Source-pair joint composition   +0.018498      +0.019026
+
+Adjusted original composition confidence intervals, percentage points:
+ViT-B/32: [-0.58132, 1.85448].
+RN50: [-0.42565, 2.50582].
+
+The image-to-text lower bounds were -0.7777778 and -0.8888889 percentage points.
+Both exceed the strict -1 percentage point development threshold.
+Individual image-to-text queries still regressed: seven for ViT and thirteen for RN50.
+Mean gains therefore do not imply individual held-out protection.
+
+Training audit scope
+
+Both seed 17 fits selected epoch 32, after 3008 updates.
+Both selected nonzero states passed independent numerical audits.
+The selected-state audit checked 360 million pairs and 376071311 inequalities.
+It found zero protected training losses.
+Sixty-four epoch file identities were checked.
+Every epoch objective was not independently replayed.
+Gradient-based diagnostics were not independently replayed.
+
+The development audit replayed 16.2 million pairs and 83880 triples.
+It also replayed 800000 bootstrap draws.
+This audit is seed 17 only.
+
+Not completed
+
+The three-seed development aggregate gate has not passed.
+The no-retention, retrieval-only, and LABCLIP-style control campaigns have not completed.
+No complete V10 benchmark campaign exists.
+No fresh confirmation outcome exists.
+The proposed extra baselines and ablations remain unimplemented.
+
+Paper state
+
+The current V10 draft is a 19-page working document.
+It is not yet a four-page ACL short paper.
+Its theory and evidence discussion can guide the eventual short paper.
+It does not establish practical success.
+
+Recovery and handoff state
+
+Scratch maintenance removed the unpushed local handoff implementation.
+An earlier handoff test run reportedly passed 21 tests before that loss.
+Those results do not validate the rebuilt files.
+The handoff wrapper and its tests must be rebuilt and checked again.
+Scientific archives are being recovered separately.
+This status file does not certify that every archive is present in the current checkout.
+Consult the current asset manifest and validation receipt for actual availability.
+
+Publication status
+
+The authorized destination is https://github.com/priyankjairaj100/SANW.
+Only the final Git commit and remote verification establish publication.
+Do not treat a local commit or a pending push as completed publication.

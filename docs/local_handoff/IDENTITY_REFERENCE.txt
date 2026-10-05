@@ -1,0 +1,131 @@
+SANW: EXACT SCIENTIFIC IDENTITY REFERENCE
+
+This file records known identities from the prior scientific checkpoint.
+It does not certify availability or successful verification in the current checkout.
+Use the current asset manifest and validation receipt for those decisions.
+All hashes below are SHA-256.
+
+Frozen expanded protocol
+Path: results/practical_v10/expanded_training_protocol_v1.json
+Hash: ce04032395f185519f3f5012a82d403ff41a7e99b8662e998c99028cf719a826
+
+Core joint implementation
+Path: src/gcr/practical_streaming_v10.py
+Hash: 72aeb3fc47476020bb472cd47960ee9a80d67cb340d0c49a5cd0ac5dcb6d367f
+
+No-retention implementation
+Path: src/gcr/practical_no_retention_v10.py
+Hash: 6215f105c06b8e5adcb88233348e6fe5243166fcb7f57e640d97c8e639d61b60
+
+Training-data implementation
+Path: src/gcr/practical_training_data_v10.py
+Hash: 2acb62a2feb09dbd45869d0517ccf22798f00c52ffcc08f36855d0e1353b285d
+
+Training manifest
+Path: data/official_train_expansion/train_6000/manifest.json
+Hash: a9369c593c3c8e0068e45478f3e62da7b93ecfcd21517b6fbfb9dfcbd1768f7f
+
+Expanded ViT features
+Hash: 717cfb962460d3858c95a610231e081115b3192332cf2f67bbed3ef8e5181cba
+
+Expanded RN50 features
+Hash: 700325824e5b0f7a318ca075189bbce0374ccb0a03a586e48c6cde35d19ae362
+
+Exact TRAIN6000 ViT archive
+Bytes: 226903612
+Hash: 2ac7d3350a75f95cdc770712ced047f291855ed9e2af8191185c018c092c2c3f
+
+Exact TRAIN6000 RN50 archive
+Bytes: 450579544
+Hash: 7aac24396730eae278c430037f0f15ac7ea6111bec43cb5da3078519dda9f90b
+
+Original ViT features
+Path: results/resume_features/visual_entailment/features.npz
+Hash: 03e297aef4abdb6f8edd5fb48bb8a0f309eb339c093daf71dd98445c0e23b397
+
+Original RN50 features
+Path: results/strengthen_second_encoder/features/visual_entailment/features.npz
+Hash: 6634f431afca7acf3308fe9074496123a006a0898e4bf17b09c19bf75fa9c2b9
+
+Bound scientific-input index
+Path: recovery/v8_input_recovery/SCIENTIFIC_INPUTS_ORIGINAL_INDEX.json
+Bytes: 13652
+Hash: 898f875d0acc6cb6d3286f9d3c33ea9cd75fe48ca848bbb7b75044b8a19540a6
+Warning: another formatted index has equal JSON values but different bytes.
+Do not substitute formatting-equivalent JSON for this bound file.
+
+Selected ViT seed 17 state
+Hash: 4e70424f79f6d18c4915a8c073e24ab521dd2c0fdbebffdb7f460ebd8b5a038c
+
+Selected RN50 seed 17 state
+Hash: ea35fdb997223e9fe1b9cce378285387e1401d316993bacbeea104ce0a6f37bd
+
+Independent seed 17 development audit
+Path: results/practical_v10/official_development/independent_actual_result_audit_seed17_v1.json
+Hash: f6daabe669a54754c32e722516e22f41a8131e9c8fbd9e1e7b2f0ae9238d9df2
+Expected field: audit_passed is true.
+
+Seed 17 replication gate
+Path: results/practical_v10/replication_gate_seed17_v2.json
+Hash: 882262b6db49d9e159bfd3824a4cbae83d717eadc52441cbe8f26f6a3606acc9
+Meaning: permits replicas, not a practical-success declaration.
+
+Remaining execution checklist
+Path: results/practical_v10/REMAINING_EXECUTION_CHECKLIST_V2.txt
+Hash: a7d7115935b114500c50687d9ac6fd48ca793cdb372c9f454883da1482c732f2
+
+Fresh execution order
+Path: results/practical_v10/fresh_confirmation_execution_order_v1.md
+Hash: 893a04e00547032f06f0d61f8591c3e1445b116875ee2abe2aae526364f1659c
+
+Retrieval-only contract
+Hash: ea3b5cb0732898dc85295dd98f23cfe6d8d791363a0c7203560504ae12e45bc9
+
+LABCLIP-style recovery contract
+Name: expanded_labclip_control_contract_recovery_v2.json
+Hash: 9772bec82d15cbfade05b98b19db2a1abf4ac4fa20a012a035ac07b881620d8d
+
+Fresh 1500 contract
+Hash: b1f426b284925d863bf717fdafdb11e9bf93f134f47b2deab82e492bfc53eee9
+
+Fresh owner lock
+Path: recovery/training_expansion_private/FRESH_CONFIRMATION_1500_OWNER_LOCK.json
+Hash: 2193a3cf22b221c02529d5f5914fdace76c3223c7aebedfeb53808962fc7df82
+
+Completed ViT seed 29 archive
+Name: SANW_V10_VIT_B32_SEED29_COMPLETED_FIT_20261005.tar.xz
+Bytes: 7609436
+Hash: 086258c4cab40724b8f21ac6fe3eaf40e357ce7788d86b8f92dcf649f7e2e1cb
+
+Completed ViT seed 43 archive
+Name: SANW_V10_VIT_B32_SEED43_COMPLETED_FIT_20261005.tar.xz
+Bytes: 7610384
+Hash: a22364be9cb43d040a2c3492feb812e311b98c87cedd3616a866ef350f879a5e
+
+V10 working paper source
+Path: notes/practical_paper_v10_draft.tex
+Hash: e1567dc6e7f0cb539fbfd4eee20d4438be11983c509ef6f38f7b8e84a34bb3ec
+
+V10 working paper PDF
+Path: output/pdf/SANW_PAPER_DRAFT_V10_20261005.pdf
+Hash: 8ab5604a80e9e91c143f76db750bb059e37cea9edeb047d131e262e2974bd4ee
+
+V10 source bundle
+Name: SANW_PAPER_DRAFT_V10_SOURCES_20261005.zip
+Hash: 344a4180460ef84a7892b7dda5bced4a5f78cf37403669cad1886ef2176def08
+
+Fresh image archive expected identity
+Bytes: approximately 4.390 GB
+Hash: 2ce2420c0d17f0531deaa89ac657b4d5067ec519da16ff1ea12acbf5619c7391
+Availability: previously lost; obtain through verified public acquisition records.
+
+ViT public pretrained model
+Repository: laion/CLIP-ViT-B-32-laion2B-s34B-b79K
+Revision: 1a25a446712ba5ee05982a381eed697ef9b435cf
+Weight hash: ac4f8c4b88af6d963118cbf40ad93176d092abbedfcb752601ae1866352656e6
+
+RN50 pretrained weight hash
+Hash: afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762
+
+Use the original acquisition records for URLs and model-loading details.
+Do not infer a download URL from a hash or model nickname.

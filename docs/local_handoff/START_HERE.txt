@@ -1,0 +1,55 @@
+SANW: START HERE
+Snapshot date: 2026-10-05.
+
+Purpose
+
+Continue the empirical program locally. Return compact, auditable result files to the research chat.
+The intended paper is an ACL 2027 short paper.
+The method needs stronger empirical evidence before any superiority claim.
+
+Read order
+
+1. SCIENTIFIC_CONTEXT.txt: question, method, theory, novelty, and claim limits.
+2. CURRENT_STATUS.txt: completed work, incomplete work, and recovery status.
+3. EMPIRICAL_PROGRAM_FROZEN_V10.txt: ordered experiments and stop rules.
+4. EMPIRICAL_EXTENSIONS.txt: additional comparisons needed for stronger claims.
+5. RESULTS_TO_RETURN.txt: required evidence and reporting format.
+6. LOCAL_LLM_INSTRUCTIONS.txt: operating rules for the local agent.
+
+Before execution
+
+Record the exact Git commit.
+Read the publication inventory and asset manifest, when available.
+Restore exact scientific archives through the checked restoration workflow.
+Check every required hash before running a fit or reading a held-out outcome.
+Inspect frozen execution checklists before using any new wrapper.
+Use the original frozen source files as the scientific authority.
+
+The local wrapper was rebuilt after scratch maintenance removed unpushed handoff files.
+Do not assume earlier wrapper commands or tests describe this checkout.
+Use only commands documented by the current implementation.
+The current handoff validation receipt must identify the tested files and exact commit.
+Read local/README.txt for the current commands and runtime setup.
+Follow OPERATOR_COMMANDS.txt after checking the final validation receipt.
+
+Existing frozen execution guides
+
+results/practical_v10/REMAINING_EXECUTION_CHECKLIST_V2.txt
+results/practical_v10/SUPPLEMENT_EXECUTION_CHECKLIST.txt
+results/practical_v10/fresh_confirmation_execution_order_v1.md
+
+These guides specify the executable V10 sequence.
+The prose here explains that sequence and its scientific purpose.
+It does not replace the frozen contracts or command arguments.
+
+Immediate empirical task
+
+Reuse the four completed joint fits after checking their exact artifacts.
+Restart RN50 seed 29 from epoch zero.
+Run RN50 seed 43.
+Then audit and evaluate the four replication fits.
+Apply the fixed six-run development gate before any promoted benchmark campaign.
+
+Never infer practical success from the seed 17 development gate.
+Never change the frozen recipe because a result is disappointing.
+Keep proposed extensions under separate protocols.

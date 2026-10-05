@@ -1,0 +1,103 @@
+SANW: RESULTS TO RETURN
+
+Return one compact archive after each major stage.
+Keep the complete local evidence even when the returned archive is small.
+Use a stage name, date, and Git commit in the archive name.
+Do not include credentials, private chat links, or signed download URLs.
+
+Required summary
+
+1. Exact Git commit and working-tree status.
+2. Stage executed and start/end times, including timezone.
+3. Exact commands, exit codes, and log locations.
+4. Hardware, operating system, Python, NumPy, Torch, and thread settings.
+5. Protocol, contract, dataset, feature, checkpoint, and lock hashes.
+6. Completed jobs, skipped jobs, interrupted jobs, and failures.
+7. Complete metric rows, including negative effects.
+8. Gate decisions and their unrounded inputs.
+9. Any departure from the frozen recipe.
+10. Questions that require a research decision.
+
+For each training run
+
+Report encoder, method, seed, epochs, update count, and wall-clock duration.
+Include the full training history and completion record.
+Include the selected epoch, objective, norm, feasibility status, and checkpoint hash.
+Include the fit ledger and independent audit receipt.
+Distinguish a file audit from a numerical audit.
+Report any resumed, retired, or restarted partial run.
+
+For development
+
+Include every seed's endpoint result for both encoders.
+Include the seed 29 and seed 43 locks.
+Include their new local preservation receipts and evidence of durable preservation before evaluation.
+Do not recreate private historical receipts or claim historical remote persistence.
+Include all six joint states in the fixed aggregate.
+Include the aggregate gate output and strict comparison values.
+Do not return only the best seed or mean improvements.
+
+For benchmark scoring
+
+Include the common scoring release and all state locks.
+Include the full 30-effect core table.
+Include the full 20-effect retrieval-only table.
+Include the full 10-effect LABCLIP-style table.
+Include every adjusted interval and gate decision.
+Keep e-ViL, SugarCrepe++, and COCO results separate.
+Label historical benchmark reuse explicitly.
+
+For fresh confirmation
+
+Include the owner lock, fresh contract, encoding provenance, and feature hashes.
+Include the required pre-encoding and pre-rescoring state locks.
+Include all 24 fresh effects and their separate family adjustment.
+Retain the frozen family-size parameter 80, rather than substituting the observed effect count.
+Report every exclusion or acquisition failure.
+Never conceal a substitution or missing owner.
+
+Recommended compact files
+
+SUMMARY.txt
+ENVIRONMENT.txt
+COMMANDS.txt
+CHANGES_FROM_FROZEN.txt
+RUN_INDEX.json
+METRICS.json
+GATES.json
+SHA256SUMS.txt
+logs/
+audits/
+locks/
+histories/
+
+These are recommended report names, not claims about an existing collection command.
+Use the rebuilt wrapper's report format when its implementation is available.
+Do not duplicate large feature arrays in the compact report.
+Keep their exact identities and verified local locations.
+Include selected checkpoints when requested or when publication needs them.
+
+Metric row fields
+
+stage, family, dataset, split, encoder, method, contrast, seed, endpoint,
+estimate, unit, lower_bound, upper_bound, adjustment_family, bootstrap_seed,
+bootstrap_draws, cluster_unit, gate_role, gate_pass, source_file, source_sha256.
+
+Use explicit units: proportion, percentage points, seconds, or counts.
+Use null for genuinely unavailable fields.
+Do not use zero for a missing result.
+Preserve full precision in machine-readable files.
+Round only in presentation tables.
+
+Minimal message to the research chat
+
+Completed stage:
+Git commit:
+Completed and failed runs:
+Main gate decision:
+Largest positive and negative effects:
+Protocol departures:
+Attached report archive:
+
+The chat can inspect this evidence and plan the next scientific step.
+It cannot validate results from a prose claim of winning alone.

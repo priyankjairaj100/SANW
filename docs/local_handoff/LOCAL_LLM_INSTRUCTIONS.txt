@@ -1,0 +1,95 @@
+SANW: INSTRUCTIONS FOR THE LOCAL LLM
+
+Your task
+
+Help the user execute the frozen empirical program with minimal manual work.
+Keep the research context, exact evidence, and incomplete tasks clear.
+The user will send results back to the research chat.
+Do not rewrite the scientific program merely to make implementation easier.
+
+First actions
+
+Read AGENTS.md and every file named in its read order.
+Record the current Git commit.
+Inspect the asset manifest and restoration implementation.
+Verify actual file availability and hashes.
+Read the three frozen execution guides.
+Inspect the current local wrapper and its tests before running commands.
+
+The earlier unpushed wrapper was lost during scratch maintenance.
+An earlier 21-test result does not validate this rebuilt checkout.
+Use the current validation receipt and actual test results.
+Do not claim that a feature exists because an older chat described it.
+
+Work order
+
+Complete the missing joint fits.
+Audit every replication fit numerically.
+Create development locks before reading replication outcomes.
+Apply the fixed aggregate gate across all six joint fits.
+Stop V10 promotion if that gate fails.
+Run and audit the controls only after the required gate passes.
+Lock all 24 states before the common benchmark scoring release.
+Use the required score-core wrapper.
+Report all frozen benchmark effects.
+Run the separate fresh confirmation in its specified order.
+
+Operational rules
+
+Prefer dry runs and preflight checks before expensive work.
+Do not overwrite a completed run.
+Do not delete recovered interrupted RN50 seed 29 evidence.
+Retire its partial directory if recovered, or record its loss if unavailable.
+Restart that run from epoch zero.
+Do not launch two tasks that write the same output directory.
+Do not assume a stale controller status means a process is running.
+Check processes and files directly.
+Do not change bound paths inside ledgers.
+Use a safe compatibility mount or symlink when required.
+Never overwrite unrelated paths.
+
+Audit rules
+
+Keep original data, selected checkpoints, scripts, contracts, and locks immutable.
+Check hashes before interpreting a result.
+Preserve failed audits and error logs.
+Use seed 17-only auditors only for seed 17.
+Distinguish numerical replay, structural checks, and packaging checks.
+Do not imply broader audit coverage than the receipt records.
+
+Statistical rules
+
+Keep all three fixed seeds.
+Use outcome-wise seed means, not model ensembles.
+Keep the full frozen bootstrap and adjustment rules.
+Use exact comparisons for strict gate boundaries.
+Never choose checkpoints or hyperparameters from benchmark outcomes.
+Do not reclassify exploratory historical benchmarks as fresh confirmation.
+Keep the 24-effect fresh family separate.
+
+Scientific claim rules
+
+Training retention does not imply unseen-query retention.
+The seed 17 composition confidence intervals contain zero.
+The existing LABCLIP-style control is not the faithful published method.
+The no-retention control does not isolate hard constraints alone.
+The V9-to-V10 change does not isolate training size.
+Single operating points do not establish a Pareto frontier.
+Current evidence does not establish state-of-the-art performance.
+
+Extending the work
+
+Read EMPIRICAL_EXTENSIONS.txt after the frozen campaign is assessed.
+Create new protocols without modifying frozen V10.
+Keep outcome-driven decisions in a dated decision log.
+Request a scientific decision when results imply a change of research direction.
+Routine file checks, restoration, and authorized execution do not require repeated confirmation.
+
+Writing and reporting
+
+Use the exact result files as the source for every quantitative claim.
+Report negative and positive results together.
+Write short sentences with one idea each.
+Return the evidence listed in RESULTS_TO_RETURN.txt.
+Keep the main paper focused on one defensible contribution.
+Do not copy source-paper prose or disguise borrowed text.

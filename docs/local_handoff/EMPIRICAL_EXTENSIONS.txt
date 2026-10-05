@@ -1,0 +1,98 @@
+SANW: EXTENSIONS FOR A STRONGER PAPER
+
+Status
+
+These are proposed additions.
+They are not part of executable frozen V10.
+Their implementations and final protocols remain to be created and audited.
+Do not present them as completed experiments.
+
+Why they matter
+
+Passing V10 would support a narrow practical claim.
+It would not establish broad superiority over strong contemporary methods.
+The following comparisons address specific remaining explanation and novelty gaps.
+
+Extension A: count-matched positive promotion
+
+Question: do supported relation labels help beyond promoting the same number of other strings?
+Compare supported promotion with a count-matched promotion control.
+Preserve the source pool, promotion count, optimizer, epochs, and selection rule.
+Define eligible control strings and the sampling rule before looking at outcomes.
+Record every sampled string and its owner relationship.
+Avoid a control that changes data volume or text diversity without measuring that change.
+This addresses the original review's missing positive-expansion control.
+
+Extension B: penalty-only retention
+
+Question: what does hard feasibility add beyond a soft retention penalty?
+The current no-retention control removes several components together.
+It cannot answer this question alone.
+Define a penalty-only method that preserves all other relevant components.
+Specify penalty strength selection without benchmark feedback.
+Compare training violations, held-out retrieval, composition, runtime, and selected-state behavior.
+
+Extension C: composition-only objective
+
+Question: does the retrieval objective cause the observed retrieval outcome?
+Define a composition-only fit with otherwise matched data and adaptation capacity.
+Specify whether retention remains active and explain that choice.
+Keep separate comparisons for objective removal and retention removal.
+Do not infer objective causality from the current retrieval-only control alone.
+
+Extension D: faithful strong baselines
+
+Question: does the method outperform strong alternatives under a fair shared evaluation?
+Implement or reuse faithful published baselines where resources permit.
+At minimum, investigate LABCLIP, CLIC, and FSC as relevant neighbors.
+Verify their original method, available code, training resources, and pretrained checkpoints.
+Use a common pretrained checkpoint when the comparison requires one.
+Do not compare different pretrained encoders and attribute the difference solely to adaptation.
+Give baselines a defensible selection budget using the same allowed development information.
+Distinguish matched-compute results from each method's standard recipe.
+The frozen LABCLIP-style control does not replace this study.
+
+Extension E: trade-off study
+
+Question: does the method improve the retrieval-composition trade-off across useful settings?
+Current controls provide single operating points.
+They do not establish a Pareto frontier.
+Freeze a small, justified sweep before running its final evaluation.
+Select on permitted development data and report the complete sweep.
+Track retrieval, composition, violations, runtime, and adaptation storage.
+Do not select only favorable benchmark points.
+
+Extension F: theory-linked diagnostics
+
+Question: does constrained geometry explain when adaptation succeeds or stalls?
+Define the projected-gradient or tangent-cone diagnostic precisely.
+Derive its numerical procedure and test it on controlled numerical cases first.
+Measure it without using held-out labels for optimization.
+Test its relation to feasible progress and final outcomes.
+Treat correlations as diagnostic evidence unless a stronger design supports causality.
+The current theory does not guarantee a useful nonzero optimum.
+
+Priority
+
+First finish and assess the frozen V10 program.
+Then prioritize count-matched promotion and faithful baseline comparisons.
+Add penalty-only or composition-only studies when the intended claim requires them.
+Add a trade-off study if superiority depends on operating-point choice.
+Use theory diagnostics only if they materially explain the empirical finding.
+
+Protocol rules
+
+Create a distinct protocol directory and version for each new campaign.
+State the question, contrasts, dataset roles, seeds, selection rules, budget, and stopping conditions.
+Record prior exposure to every benchmark.
+Keep outcome-driven changes visible in a decision log.
+Use a fresh confirmation set when making a new confirmatory claim.
+Never silently redefine the frozen V10 gate to improve the headline.
+
+Paper decision
+
+The strongest short paper will center one narrow, well-supported claim.
+Several weak experiments do not replace one decisive comparison.
+If V10 fails, report the failure and redesign explicitly.
+If V10 passes but strong baselines win, revise the claim or improve the method under a new protocol.
+Neither outcome justifies manufacturing empirical superiority.
